@@ -350,6 +350,9 @@ html[data-tema="oscuro"] .hoja h2{color:#7a1327}
         <span class="nota">Estructura oficial del inventario de instalaciones DGSPYT</span>
       </h2>
       <div class="tabla-env"><table id="t-coordinaciones"></table></div>
+      <div class="cuerpo" style="padding-top:0">
+        <div class="aviso a-ambar" id="sin-catalogar"></div>
+      </div>
     </div>
 
     <div class="tarjeta">
@@ -575,8 +578,40 @@ const R=DATOS.resumen;
 let mapa, capas={}, filtro={sector:"TODOS", nivel:"TODOS"}, secSel=null;
 const EDOMEX=[[18.33,-100.62],[20.32,-98.52]];  // envolvente del Estado de México
 
-function copiar(t,b){ navigator.clipboard.writeText(t).then(()=>{
-  const p=b.textContent; b.textContent="Copiado"; setTimeout(()=>b.textContent=p,1400); }); }
+// El portapapeles moderno solo existe en contexto seguro; abriendo el archivo
+// desde USB o dentro de un visor incrustado no esta disponible y el boton
+// parecia muerto. Se cae a execCommand y, si tampoco, se selecciona el texto.
+function copiar(t,b){
+  const aviso=()=>{ const p=b.textContent; b.textContent="Copiado";
+    setTimeout(()=>b.textContent=p,1400); };
+  if(navigator.clipboard&&window.isSecureContext){
+    navigator.clipboard.writeText(t).then(aviso).catch(()=>respaldoCopia(t,b,aviso));
+  } else respaldoCopia(t,b,aviso);
+}
+function respaldoCopia(t,b,aviso){
+  const a=document.createElement("textarea");
+  a.value=t; a.style.position="fixed"; a.style.opacity="0";
+  document.body.appendChild(a); a.select();
+  let ok=false;
+  try{ ok=document.execCommand("copy"); }catch(e){ ok=false; }
+  document.body.removeChild(a);
+  if(ok) aviso();
+  else { const p=b.textContent; b.textContent="Selecciona y copia";
+         setTimeout(()=>b.textContent=p,2200); }
+}
+
+// Windows Maps se abre con el protocolo bingmaps:, que solo responde si la app
+// esta registrada en el equipo. Fuera de ahi el enlace no hacia nada visible,
+// asi que cada ubicacion lleva tambien un enlace web que siempre abre.
+function urlWeb(consulta){
+  return "https://www.bing.com/maps?q="+encodeURIComponent(consulta);
+}
+function botonesMapa(consulta, uriNativo){
+  return `<a class="btn" style="text-decoration:none" target="_blank" rel="noopener"
+            href="${urlWeb(consulta)}" title="Abre en el navegador">Ver mapa</a>
+          <a class="btn" style="text-decoration:none" href="${uriNativo}"
+            title="Abre la app Windows Maps (requiere la app instalada)">Windows Maps</a>`;
+}
 
 function tabla(el,cabeceras,filas){
   document.getElementById(el).innerHTML =
@@ -816,7 +851,9 @@ function popupHD(d){
     ${d.acciones_ssem?`<details style="margin-top:5px"><summary style="cursor:pointer;color:#1d4ed8">Acciones SSEM</summary>
       <div style="margin-top:4px;color:#475467">${E(d.acciones_ssem)}</div></details>`:""}
     <div style="margin-top:7px;padding-top:5px;border-top:1px solid #e6e9ed;font-family:monospace;font-size:.72rem">${E(d.windows_maps_query)}</div>
-    <a href="${d.uri_windows_maps}" style="font-size:.75rem">Abrir en Windows Maps</a></div>`;
+    <a href="${urlWeb(d.windows_maps_query)}" target="_blank" rel="noopener"
+       style="font-size:.75rem">Ver mapa</a> ·
+    <a href="${d.uri_windows_maps}" style="font-size:.75rem">Windows Maps</a></div>`;
 }
 function popup911(d){
   return `<div style="font-family:Inter,sans-serif;font-size:.8rem;line-height:1.5">
@@ -830,8 +867,16 @@ function popup911(d){
 /* ═════════════════════════════ 03 Coordinaciones ═════════════════════════ */
 function coordinaciones(){
   // Resumen por coordinación regional: la unidad con la que sesiona el mando.
-  const C=DATOS.coordinaciones||[];
+  const C=(DATOS.coordinaciones&&DATOS.coordinaciones.coordinaciones)||[];
+  const SC=(DATOS.coordinaciones&&DATOS.coordinaciones.sin_catalogar)||null;
   const maxC=C[0]?C[0].carga_violencia:1;
+  if(SC&&SC.total){
+    document.getElementById("sin-catalogar").innerHTML=
+      `<b>${SC.total} municipios quedan fuera de este cuadro.</b> ${E(SC.motivo)}
+       Concentran ${SC.hd_eventos} homicidio(s) y ${N(SC.llamadas_violentas)} llamadas con
+       violencia que sí están contadas en el detalle municipal de abajo.
+       <div style="margin-top:6px;font-size:.75rem;color:var(--tx3)">${E(SC.municipios.join(" · "))}</div>`;
+  }
   tabla("t-coordinaciones",
     [["#","num"],["Coordinación regional"],["Municipios","num"],["Carga de violencia","num"],
      ["HD","num"],["Víct.","num"],["Llam. viol.","num"],["Arma fuego","num"],
@@ -971,7 +1016,7 @@ function ubicaciones(){
       <td class="m">${E(d.windows_maps_query)}</td>
       <td><span class="et ${d.geo_confianza==="ALTA"?"e-verde":"e-ambar"}">${E(d.geo_confianza)}</span></td>
       <td style="font-size:.73rem;color:var(--tx3)">${E((d.geo_fuentes||[]).join(", "))||"—"}</td>
-      <td><a class="btn" style="text-decoration:none" href="${d.uri_windows_maps}">Maps</a></td></tr>`));
+      <td style="white-space:nowrap">${botonesMapa(d.windows_maps_query,d.uri_windows_maps)}</td></tr>`));
 
   document.getElementById("g-run").addEventListener("click",()=>{
     const r=geocodificar({municipio:document.getElementById("g-mun").value,
@@ -993,8 +1038,9 @@ function ubicaciones(){
       </dl>
       <div style="display:flex;gap:7px;flex-wrap:wrap;margin-top:12px">
         <button class="btn" onclick="copiar('${E(r.query)}',this)">Copiar consulta</button>
-        <a class="btn" style="text-decoration:none" href="${r.uri_windows_maps}">Abrir en Windows Maps</a>
-        <a class="btn" style="text-decoration:none" href="${r.uri_ruta_despacho}">Despachar unidad</a>
+        ${botonesMapa(r.query,r.uri_windows_maps)}
+        <a class="btn" style="text-decoration:none" href="${r.uri_ruta_despacho}"
+           title="Abre la navegación de Windows (requiere la app)">Despachar unidad</a>
       </div></div>`;
   });
 }
@@ -1010,11 +1056,12 @@ function informe(){
   document.getElementById("hoja").innerHTML=`
    <div class="enc">
      <div>
-       <h2>DIRECCIÓN GENERAL DE SEGURIDAD PÚBLICA Y TRÁNSITO</h2>
-       <div style="color:#475467;font-weight:600">Informe ejecutivo de homicidios dolosos · corte julio 2026</div>
+       <h2>HOMICIDIOS DOLOSOS · ANÁLISIS DE CORTE</h2>
+       <div style="color:#475467;font-weight:600">Unidad de Homicidios Dolosos · Julio 2026</div>
      </div>
      <div style="text-align:right;font-size:.78rem;color:#667085">
-       <b>REUNIÓN DE MANDOS · C5</b><br>Unidad de Homicidios Dolosos<br>Generado ${E(R.generado)}</div>
+       Documento de trabajo interno<br>Generado ${E(R.generado)}<br>
+       <span style="font-size:.72rem">Cifras sin validar por las áreas responsables</span></div>
    </div>
 
    <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
@@ -1034,7 +1081,7 @@ function informe(){
    <table><thead><tr><th>#</th><th>Coordinación</th><th>Mpios.</th><th>Carga</th><th>HD</th>
      <th>Llam. viol.</th><th>Arma fuego</th><th>Personal</th><th>Carga /100 elem.</th>
      <th>Desat.</th><th>Sat.</th></tr></thead>
-     <tbody>${(DATOS.coordinaciones||[]).map(c=>`<tr><td>${c.ranking}</td>
+     <tbody>${((DATOS.coordinaciones||{}).coordinaciones||[]).map(c=>`<tr><td>${c.ranking}</td>
        <td>${E(c.coordinacion)}</td><td>${c.total_municipios}</td><td>${c.carga_violencia}</td>
        <td>${c.hd_eventos}</td><td>${c.llamadas_violentas}</td><td>${c.arma_fuego}</td>
        <td>${N(c.personal_total)}</td>

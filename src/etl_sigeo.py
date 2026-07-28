@@ -987,9 +987,15 @@ def perfil_coordinaciones(territorio):
         "personal_total": 0, "sectores_desatendidos": 0,
         "sectores_saturados": 0, "distancias": [],
     })
+    # Los municipios sin inmueble en el inventario NO forman una coordinacion:
+    # son un hueco del catalogo. Se reportan aparte como faltante de dato, no
+    # como una fila mas del ranking, que es lo que confunde en la mesa.
+    sin_asignar = [t for t in territorio if not t["coordinacion"]]
+
     for t in territorio:
-        clave = t["coordinacion"] or "SIN COORDINACIÓN ASIGNADA"
-        g = grupos[clave]
+        if not t["coordinacion"]:
+            continue
+        g = grupos[t["coordinacion"]]
         g["municipios"].append(t["municipio"])
         for campo in ("hd_eventos", "hd_victimas", "llamadas_violentas",
                       "arma_fuego", "bases_en_uso", "personal_total",
@@ -1025,7 +1031,18 @@ def perfil_coordinaciones(territorio):
     salida.sort(key=lambda x: x["carga_violencia"], reverse=True)
     for i, x in enumerate(salida, 1):
         x["ranking"] = i
-    return salida
+
+    return {
+        "coordinaciones": salida,
+        "sin_catalogar": {
+            "municipios": sorted(t["municipio"] for t in sin_asignar),
+            "total": len(sin_asignar),
+            "hd_eventos": sum(t["hd_eventos"] for t in sin_asignar),
+            "llamadas_violentas": sum(t["llamadas_violentas"] for t in sin_asignar),
+            "motivo": ("Sin inmueble propio en el inventario de instalaciones, "
+                       "por lo que el catálogo no declara su coordinación."),
+        },
+    }
 
 
 # --------------------------------------------------------------------------
@@ -1287,7 +1304,8 @@ def main():
     territorio = perfil_territorial(hd, llamadas, bases, sectores)
     coordinaciones = perfil_coordinaciones(territorio)
     print(f"  municipios perfilados ...... {len(territorio)}")
-    print(f"  coordinaciones regionales .. {len(coordinaciones)}")
+    print(f"  coordinaciones regionales .. {len(coordinaciones['coordinaciones'])} "
+          f"(+{coordinaciones['sin_catalogar']['total']} municipios sin catalogar)")
 
     resumen = resumen_ejecutivo(hd, llamadas, bases, sectores, auditoria, serie)
     resumen["territorio_top"] = [
