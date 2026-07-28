@@ -3,7 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SIGEO-HD DGSPYT | Centro de Geointeligencia & Consola SQL / C++ Engine</title>
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>SIGEO-HD DGSPYT | Consola SQL & Motor C++ Core v1785213721</title>
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,8 +25,8 @@
             --bg-dark: #040711;
             --bg-panel: rgba(13, 20, 36, 0.85);
             --bg-card: rgba(22, 33, 56, 0.7);
-            --border-glass: rgba(255, 255, 255, 0.08);
-            --border-glow: rgba(0, 242, 254, 0.3);
+            --border-glass: rgba(255, 255, 255, 0.1);
+            --border-glow: rgba(0, 242, 254, 0.4);
             --text-main: #f1f5f9;
             --text-muted: #94a3b8;
             --accent-cyan: #00f2fe;
@@ -53,10 +56,11 @@
         ::-webkit-scrollbar-track { background: rgba(10, 15, 29, 0.8); }
         ::-webkit-scrollbar-thumb { background: rgba(0, 242, 254, 0.3); border-radius: 4px; }
 
+        /* Top Header */
         header {
-            background: linear-gradient(180deg, rgba(6, 10, 22, 0.98) 0%, rgba(13, 20, 36, 0.9) 100%);
+            background: linear-gradient(180deg, rgba(6, 10, 22, 0.98) 0%, rgba(13, 20, 36, 0.95) 100%);
             backdrop-filter: blur(20px);
-            border-bottom: 1px solid var(--border-glass);
+            border-bottom: 2px solid var(--accent-cyan);
             padding: 14px 28px;
             display: flex;
             justify-content: space-between;
@@ -64,6 +68,7 @@
             position: sticky;
             top: 0;
             z-index: 2000;
+            box-shadow: 0 0 25px rgba(0, 242, 254, 0.15);
         }
 
         .brand-box { display: flex; align-items: center; gap: 16px; }
@@ -100,73 +105,68 @@
             gap: 8px;
         }
 
-        .header-tags { display: flex; gap: 10px; }
+        /* HIGH-VISIBILITY GLOWING TAB SWITCHER */
+        .tab-switcher-banner {
+            background: rgba(13, 20, 36, 0.95);
+            border-bottom: 1px solid var(--border-glass);
+            padding: 12px 28px;
+            display: flex;
+            gap: 16px;
+            align-items: center;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+        }
 
-        .tag-pill {
-            background: rgba(168, 85, 247, 0.15);
-            color: #d8b4fe;
-            border: 1px solid rgba(168, 85, 247, 0.3);
-            padding: 5px 12px;
-            border-radius: 20px;
-            font-size: 0.76rem;
-            font-weight: 700;
-            font-family: var(--font-code);
+        .tab-switcher-title {
+            font-family: var(--font-title);
+            font-size: 0.85rem;
+            font-weight: 800;
+            color: var(--accent-cyan);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
             display: flex;
             align-items: center;
-            gap: 6px;
+            gap: 8px;
         }
 
-        .tag-pill-cpp {
-            background: rgba(0, 242, 254, 0.15);
-            color: var(--accent-cyan);
-            border: 1px solid rgba(0, 242, 254, 0.3);
+        .tab-btn {
+            background: rgba(22, 33, 56, 0.8);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            color: #94a3b8;
+            padding: 10px 22px;
+            border-radius: 10px;
+            font-size: 0.88rem;
+            font-weight: 800;
+            font-family: var(--font-title);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
+
+        .tab-btn:hover {
+            color: #ffffff;
+            background: rgba(30, 45, 77, 1);
+            transform: translateY(-2px);
+        }
+
+        .tab-btn.active {
+            background: linear-gradient(135deg, rgba(0, 242, 254, 0.3) 0%, rgba(168, 85, 247, 0.3) 100%);
+            border: 2px solid var(--accent-cyan);
+            color: #ffffff;
+            box-shadow: 0 0 20px rgba(0, 242, 254, 0.4);
+        }
+
+        .tab-panel { display: none; }
+        .tab-panel.active { display: flex; flex-direction: column; gap: 20px; }
 
         .app-body {
-            padding: 20px 24px;
+            padding: 20px 28px;
             display: flex;
             flex-direction: column;
             gap: 20px;
             flex: 1;
         }
-
-        .tab-bar {
-            display: flex;
-            gap: 12px;
-            border-bottom: 1px solid var(--border-glass);
-            padding-bottom: 10px;
-        }
-
-        .tab-btn {
-            background: rgba(22, 33, 56, 0.6);
-            border: 1px solid var(--border-glass);
-            color: var(--text-muted);
-            padding: 10px 20px;
-            border-radius: 10px;
-            font-size: 0.85rem;
-            font-weight: 700;
-            font-family: var(--font-title);
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            transition: all 0.3s;
-        }
-
-        .tab-btn:hover {
-            color: #ffffff;
-            background: rgba(30, 45, 77, 0.9);
-        }
-
-        .tab-btn.active {
-            background: linear-gradient(135deg, rgba(0, 242, 254, 0.2) 0%, rgba(59, 130, 246, 0.2) 100%);
-            border-color: var(--accent-cyan);
-            color: #ffffff;
-            box-shadow: 0 0 15px rgba(0, 242, 254, 0.2);
-        }
-
-        .tab-panel { display: none; }
-        .tab-panel.active { display: flex; flex-direction: column; gap: 20px; }
 
         .kpi-row {
             display: grid;
@@ -312,95 +312,125 @@
             overflow-y: auto;
         }
 
+        /* Live SQL Terminal Console UI */
         .sql-console-wrapper {
             background: rgba(8, 12, 24, 0.95);
-            border: 1px solid var(--border-glow);
-            border-radius: 14px;
-            padding: 20px;
+            border: 2px solid var(--accent-purple);
+            border-radius: 16px;
+            padding: 24px;
             display: flex;
             flex-direction: column;
-            gap: 16px;
+            gap: 18px;
             font-family: var(--font-code);
+            box-shadow: 0 0 30px rgba(168, 85, 247, 0.2);
         }
 
         .sql-editor {
             width: 100%;
             background: #060913;
-            border: 1px solid rgba(168, 85, 247, 0.4);
-            color: #a855f7;
-            padding: 14px;
-            border-radius: 10px;
+            border: 1px solid rgba(168, 85, 247, 0.6);
+            color: #d8b4fe;
+            padding: 16px;
+            border-radius: 12px;
             font-family: var(--font-code);
-            font-size: 0.9rem;
-            height: 90px;
+            font-size: 0.95rem;
+            height: 100px;
             outline: none;
             resize: none;
         }
 
         .sql-preset-btns { display: flex; gap: 10px; flex-wrap: wrap; }
+
         .btn-preset {
-            background: rgba(168, 85, 247, 0.12);
-            border: 1px solid rgba(168, 85, 247, 0.3);
-            color: #d8b4fe;
-            padding: 6px 12px;
-            border-radius: 6px;
-            font-size: 0.78rem;
+            background: rgba(168, 85, 247, 0.15);
+            border: 1px solid rgba(168, 85, 247, 0.4);
+            color: #e9d5ff;
+            padding: 8px 14px;
+            border-radius: 8px;
+            font-size: 0.8rem;
             cursor: pointer;
             font-family: var(--font-code);
+            font-weight: 600;
         }
-        .btn-preset:hover { background: #a855f7; color: #ffffff; }
+
+        .btn-preset:hover { background: #a855f7; color: #ffffff; box-shadow: 0 0 15px rgba(168, 85, 247, 0.5); }
 
         .sql-table-container {
-            max-height: 400px;
+            max-height: 420px;
             overflow: auto;
             border: 1px solid var(--border-glass);
-            border-radius: 10px;
+            border-radius: 12px;
+            background: #060913;
         }
 
         table.sql-table {
             width: 100%;
             border-collapse: collapse;
-            font-size: 0.8rem;
+            font-size: 0.82rem;
             text-align: left;
         }
 
         table.sql-table th {
             background: rgba(22, 33, 56, 0.95);
             color: var(--accent-cyan);
-            padding: 10px 14px;
-            border-bottom: 1px solid var(--border-glass);
+            padding: 12px 16px;
+            border-bottom: 2px solid var(--accent-purple);
             position: sticky;
             top: 0;
+            font-family: var(--font-code);
         }
 
         table.sql-table td {
-            padding: 8px 14px;
+            padding: 10px 16px;
             border-bottom: 1px solid rgba(255, 255, 255, 0.05);
             color: #cbd5e1;
         }
 
-        table.sql-table tr:hover { background: rgba(0, 242, 254, 0.05); }
+        table.sql-table tr:hover { background: rgba(168, 85, 247, 0.1); }
 
+        /* C++ Core Benchmark Panel UI */
         .cpp-benchmark-wrapper {
             background: rgba(6, 10, 22, 0.95);
-            border: 1px solid rgba(0, 242, 254, 0.3);
-            border-radius: 14px;
-            padding: 20px;
+            border: 2px solid var(--accent-cyan);
+            border-radius: 16px;
+            padding: 24px;
             display: flex;
             flex-direction: column;
-            gap: 16px;
+            gap: 18px;
             font-family: var(--font-code);
+            box-shadow: 0 0 30px rgba(0, 242, 254, 0.2);
         }
 
         .code-block {
             background: #02040a;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 10px;
-            padding: 16px;
-            font-size: 0.82rem;
+            border: 1px solid rgba(0, 242, 254, 0.3);
+            border-radius: 12px;
+            padding: 20px;
+            font-size: 0.85rem;
             color: #38bdf8;
-            line-height: 1.5;
+            line-height: 1.6;
             overflow-x: auto;
+        }
+
+        .btn-action {
+            background: rgba(0, 242, 254, 0.1);
+            border: 1px solid rgba(0, 242, 254, 0.3);
+            color: var(--accent-cyan);
+            padding: 8px 16px;
+            border-radius: 8px;
+            font-size: 0.82rem;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s;
+        }
+
+        .btn-action:hover {
+            background: var(--accent-cyan);
+            color: #040711;
+            box-shadow: 0 0 15px rgba(0, 242, 254, 0.4);
         }
     </style>
 </head>
@@ -417,20 +447,21 @@
                 </div>
             </div>
         </div>
-        <div class="header-tags">
-            <div class="tag-pill"><i class="fa-solid fa-database"></i> SQLite 3 Engine</div>
-            <div class="tag-pill tag-pill-cpp"><i class="fa-solid fa-code"></i> C++ Spatial Core</div>
+        <div style="font-family: var(--font-code); font-size: 0.78rem; color: var(--accent-green);">
+            <i class="fa-solid fa-circle-check"></i> VERSION V3.0 ENGINE ONLINE
         </div>
     </header>
 
+    <!-- HIGH-VISIBILITY NEON TAB SWITCHER BANNER -->
+    <div class="tab-switcher-banner">
+        <div class="tab-switcher-title"><i class="fa-solid fa-sliders"></i> MODOS DE PANTALLA:</div>
+        <button class="tab-btn active" id="tab-btn-map" onclick="switchTab('tab-map')"><i class="fa-solid fa-map-location-dot"></i> 1. TABLERO GEOINTELIGENCIA</button>
+        <button class="tab-btn" id="tab-btn-sql" onclick="switchTab('tab-sql')"><i class="fa-solid fa-terminal" style="color: #a855f7;"></i> 2. CONSOLA DE CONSULTAS SQL EN VIVO</button>
+        <button class="tab-btn" id="tab-btn-cpp" onclick="switchTab('tab-cpp')"><i class="fa-solid fa-bolt" style="color: var(--accent-cyan);"></i> 3. MOTOR NATIVO C++ HAVERSINE</button>
+    </div>
+
     <div class="app-body">
         
-        <div class="tab-bar">
-            <button class="tab-btn active" onclick="switchTab('tab-map')"><i class="fa-solid fa-map-location-dot"></i> 1. TABLERO DE GEOINTELIGENCIA</button>
-            <button class="tab-btn" onclick="switchTab('tab-sql')"><i class="fa-solid fa-terminal" style="color: #a855f7;"></i> 2. CONSOLA DE CONSULTAS SQL EN VIVO</button>
-            <button class="tab-btn" onclick="switchTab('tab-cpp')"><i class="fa-solid fa-bolt" style="color: var(--accent-cyan);"></i> 3. MOTOR NATIVO C++ HAVERSINE</button>
-        </div>
-
         <!-- TAB 1: GEOINTELIGENCIA MAPA -->
         <div id="tab-map" class="tab-panel active">
             
@@ -510,14 +541,14 @@
         <div id="tab-sql" class="tab-panel">
             <div class="sql-console-wrapper">
                 <div style="display: flex; justify-content: space-between; align-items: center;">
-                    <div style="font-family: var(--font-title); font-size: 1.1rem; font-weight: 800; color: #d8b4fe;">
+                    <div style="font-family: var(--font-title); font-size: 1.2rem; font-weight: 800; color: #d8b4fe;">
                         <i class="fa-solid fa-terminal"></i> CONSOLA DE CONSULTAS SQL EN TIEMPO REAL (ENGINE: SQLite 3)
                     </div>
-                    <div style="font-size: 0.78rem; color: var(--text-muted);">Base de datos: <code>sigeo_db.sqlite</code></div>
+                    <div style="font-size: 0.82rem; color: var(--accent-green);"><i class="fa-solid fa-circle-check"></i> Base SQL: <code>sigeo_db.sqlite</code></div>
                 </div>
 
                 <div class="sql-preset-btns">
-                    <span style="font-size: 0.78rem; color: var(--text-muted); display: flex; align-items: center;">Consultas Rápidas:</span>
+                    <span style="font-size: 0.82rem; color: #ffffff; font-weight: 700;">Consultas SQL Rápidas:</span>
                     <button class="btn-preset" onclick="runPresetSQL('SELECT np_consecutivo, fecha_evento, municipio, colonia, posible_movil, total_victimas_hd FROM tb_homicidios_corroborados LIMIT 10;')">1. SELECT Homicidios Corroborados</button>
                     <button class="btn-preset" onclick="runPresetSQL('SELECT * FROM vw_estadisticas_municipales;')">2. Vista SQL Municipios</button>
                     <button class="btn-preset" onclick="runPresetSQL('SELECT * FROM vw_analisis_moviles;')">3. Vista SQL Móviles</button>
@@ -528,8 +559,8 @@
                 <textarea class="sql-editor" id="txt-sql-query">SELECT np_consecutivo, fecha_evento, municipio, colonia, posible_movil, total_victimas_hd FROM tb_homicidios_corroborados LIMIT 10;</textarea>
                 
                 <div style="display: flex; justify-content: space-between; align-items: center;">
-                    <button class="btn-action" style="background: #a855f7; color: #ffffff;" onclick="executeSQLQuery()"><i class="fa-solid fa-play"></i> EJECUTAR CONSULTA SQL</button>
-                    <span style="font-size: 0.78rem; color: var(--accent-cyan);" id="sql-execution-time">Tiempo de ejecución SQL: 0.004 ms</span>
+                    <button class="btn-action" style="background: #a855f7; color: #ffffff; padding: 10px 24px; font-size: 0.9rem;" onclick="executeSQLQuery()"><i class="fa-solid fa-play"></i> EJECUTAR CONSULTA SQL</button>
+                    <span style="font-size: 0.85rem; color: var(--accent-cyan); font-weight: 700;" id="sql-execution-time">Tiempo de ejecución SQL: 0.004 ms</span>
                 </div>
 
                 <div class="sql-table-container">
@@ -545,10 +576,10 @@
         <div id="tab-cpp" class="tab-panel">
             <div class="cpp-benchmark-wrapper">
                 <div style="display: flex; justify-content: space-between; align-items: center;">
-                    <div style="font-family: var(--font-title); font-size: 1.1rem; font-weight: 800; color: var(--accent-cyan);">
-                        <i class="fa-solid fa-bolt"></i> MOTOR NATIVO EN C++ (GEODESIA ESPACIAL HAVERSINE & ALGORITMOS)
+                    <div style="font-family: var(--font-title); font-size: 1.2rem; font-weight: 800; color: var(--accent-cyan);">
+                        <i class="fa-solid fa-bolt"></i> MOTOR NATIVO EN C++ (GEODESIA ESPACIAL HAVERSINE &amp; ALGORITMOS)
                     </div>
-                    <div style="font-size: 0.78rem; color: var(--accent-green);"><i class="fa-solid fa-check"></i> C++ Core Compilado (ISO C++17)</div>
+                    <div style="font-size: 0.82rem; color: var(--accent-green);"><i class="fa-solid fa-check"></i> C++ Core Compilado (ISO C++17)</div>
                 </div>
 
                 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
@@ -565,7 +596,7 @@
                     </div>
 
                     <div class="detail-card">
-                        <div style="font-weight: 800; color: var(--accent-cyan); font-size: 1rem;"><i class="fa-solid fa-gauge-high"></i> PRUEBA DE RENDIMIENTO C++ (BENCHMARK)</div>
+                        <div style="font-weight: 800; color: var(--accent-cyan); font-size: 1.05rem;"><i class="fa-solid fa-gauge-high"></i> PRUEBA DE RENDIMIENTO C++ (BENCHMARK)</div>
                         <div class="kv-row"><span class="kv-key">Matriz Espacial:</span><span class="kv-val">56 HD x 758 Llamadas 911 (42,448 comparaciones)</span></div>
                         <div class="kv-row"><span class="kv-key">Tiempo de Procesamiento C++:</span><span class="kv-val" style="color: var(--accent-green);">0.012 milisegundos (Ultra Rápido)</span></div>
                         <div class="kv-row"><span class="kv-key">Algoritmo:</span><span class="kv-val">Geodesia Esférica Haversine</span></div>
@@ -587,7 +618,10 @@
             document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
             document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
             
-            event.currentTarget.classList.add('active');
+            if (tabId === 'tab-map') document.getElementById('tab-btn-map').classList.add('active');
+            if (tabId === 'tab-sql') document.getElementById('tab-btn-sql').classList.add('active');
+            if (tabId === 'tab-cpp') document.getElementById('tab-btn-cpp').classList.add('active');
+
             document.getElementById(tabId).classList.add('active');
 
             if (tabId === 'tab-map' && map) {
