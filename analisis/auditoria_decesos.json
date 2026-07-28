@@ -1,0 +1,718 @@
+[
+ {
+  "folio": "ECA26072606817",
+  "incidente": "PERSONA NO LOCALIZADA O DESAPARECIDA",
+  "municipio": "NEXTLALPAN",
+  "fecha": "46229",
+  "hora": "17:09:00",
+  "lat": 19.704916,
+  "lng": -99.071542,
+  "windows_maps_query": "HACIENDA LA QUEBRADA MZ 44 LT 59-D, EX-HACIENDA SANTA INES, NEXTLALPAN, Estado de México, México",
+  "notas": "REPORTA QUE SU HIJA [DATO PERSONAL SUPRIMIDO] 19, AÑOS SALIÓ DEL DOMICILIO EL DIA 26/07/2026 A LAS 11:00 AM, SIN MENCIONAR ALGÚN DESTINO, INDICA VESTIR PANS Y SUDADERA, GRIS, TENIS BLANCOS Y PLATAFORMA BLANCA, [DATO PERSONAL SUPRIMIDO],, [SEÑAS PARTICULARES SUPRIMIDAS]. DURANTE REPORTE NO REQUIERE UNIDAD DE APOYO, SE MODULO A BASES Y UNIDADES, El usuario [OPERADOR C5] ha cambiado el estatus de la persona desaparecida #1 ([DATO PERSONAL SUPRIMIDO]) a Persona extraviada. [NO LOCALIZADA], FGJEM77, La unidad FGJEM77 está Despachado, La unidad FGJEM77 está Llegada, La unidad FGJEM77 está Liberado, NC. MENCIONA QUE EX PAREJA, PAPÁ DE 2DO HIJO ES MUY AGRESIVO, Y CON ANTERIORIDAD LA AGREDE FÍSICAMENTE., [DATO PERSONAL SUPRIMIDO], SE RECIBE LLAMADA DE UNA USUARIA, QUIEN MENCIONA QUE SU, HERMANA SALIÓ DE SU DOMICILIO APROXIMADAMENTE A LAS 09:00, HORAS. AL NO PODER LOCALIZARLA, INGRESARON A SUS REDES, SOCIALES, DONDE ENCONTRARON MENSAJES DE LA HERMANA DIRIGIDOS, A OTRA PERSONA, AL PARECER FAMILIAR DE SU EXPAREJA, A QUIEN, LE PIDE AYUDA PARA CALMAR A UN MASCULINO, INDICANDO QUE ESTÁ, MUY VIOLENTO Y QUE LA TIENE ENCAÑONADA CON UN ARMA DE FUEGO., AL MOMENTO DE LA LLAMADA, LA USUARIA REFIERE QUE YA SE, ENCUENTRAN EN EL LUGAR UNIDADES DE SEGURIDAD PÚBLICA, LAS, CUALES ACOMPAÑARÁN A SU MADRE [DATO PERSONAL SUPRIMIDO], PARA BUSCAR A SU HERMANA., SE DA DE CONOCIMIENTO A COBUPEM",
+  "puntaje": 60,
+  "nivel_revision": "ALTA",
+  "indicadores": [
+   {
+    "clave": "arma_fuego",
+    "peso": 25,
+    "motivo": "La cabina registra arma de fuego, disparo o impacto"
+   },
+   {
+    "clave": "terceros",
+    "peso": 20,
+    "motivo": "Participación de terceros referida por el reportante"
+   },
+   {
+    "clave": "antecedente_violencia",
+    "peso": 15,
+    "motivo": "Antecedente de violencia de pareja o familiar en el propio reporte"
+   }
+  ],
+  "accion_sugerida": "Solicitar carpeta a FGJEM y turnar a Criminalística para revisión de mecánica de hechos."
+ },
+ {
+  "folio": "ECA26072700675",
+  "incidente": "AMENAZA DE SUICIDIO",
+  "municipio": "TECAMAC",
+  "fecha": "46230",
+  "hora": "02:19:00",
+  "lat": 19.677495,
+  "lng": -99.030985,
+  "windows_maps_query": "BOSQUES DE LOS CEDROS MZ 2 EDIF 1, CASA 1202 esquina PROVINCIA DE ITURBIDE, OJO DE AGUA, TECAMAC, Estado de México, México",
+  "notas": "[VÍCTIMA] DE 32 AÑOS, SE ESTA TALLANDO CON UNA, NAVAJA, INDICA PADECE DE DEPRESION, COMENTA TUVIERON UN PROBLEMA, LO AMENAZA, SENAGRA Y LE DICE, QUE ES SU CULPA, SE CANALIZA 613, La unidad PE32 está Despachado, La unidad PE32 está Llegada, < NO SE CUENTA CON CÁMARA DE INFRAESTRUCTURA ESTATAL EN EL, LUGAR DEL INCIDENTE >, SE DA DE CONOCIMIENTO A OP 1020 YA QUE CUENTAN CON ESPEJO, AT OP /1020 SE DIO DE CONOCIMIENTO, AVANZO UNIDAD A VERIFICAR, AL ARRIBAR INDICA SE ENTREVISTA CON QUIÉN DIJO LLAMARSE, JEROME CROS DE 41 AÑOS DE NACIONALIDAD EXTRANJERA QUIÉN, REFIERE DISCUTE CON SU PAREJA [DATO PERSONAL SUPRIMIDO], LÓPEZ DE 32 AÑOS MISMO QUE SE ENCIERRA EN LA HABITACIÓN Y AL, NO RESPONDER PIDE EL APOYO PARA VERIFICAR QUE SE ENCUENTRE, BIEN, SALIENDO LA PERSONA POR SU PIE INDICANDO ELLOS, ARREGLARAN SU SITUACIÓN \"",
+  "puntaje": 55,
+  "nivel_revision": "ALTA",
+  "indicadores": [
+   {
+    "clave": "antecedente_violencia",
+    "peso": 15,
+    "motivo": "Antecedente de violencia de pareja o familiar en el propio reporte"
+   },
+   {
+    "clave": "arma_blanca",
+    "peso": 15,
+    "motivo": "Arma blanca o herida punzocortante referida"
+   },
+   {
+    "clave": "nocturno",
+    "peso": 5,
+    "motivo": "Hecho ocurrido en franja nocturna (22:00-06:00)"
+   },
+   {
+    "clave": "proximidad_hd",
+    "peso": 20,
+    "motivo": "A menos de 1.5 km de un homicidio doloso corroborado de julio"
+   }
+  ],
+  "accion_sugerida": "Solicitar carpeta a FGJEM y turnar a Criminalística para revisión de mecánica de hechos."
+ },
+ {
+  "folio": "ECA26072608988",
+  "incidente": "PERSONA TIRADA EN LA VIA PUBLICA CON HUELLAS DE VIOLENCIA",
+  "municipio": "TLALMANALCO",
+  "fecha": "46229",
+  "hora": "21:46:00",
+  "lat": 19.201325,
+  "lng": -98.781185,
+  "windows_maps_query": "CALLE SAN JUAN Y ZARAGOZA, SAN JUAN ATZACUALOYA, TLALMANALCO, Estado de México, México",
+  "notas": "USUARIO SOLICITA APOYO YA QUE LOGRA VER A UN MASCULINO, TIRADO EL CUAL TIENE UNA LESIÓN EN LA CABEZA, NO PROPORCIONA, MAS DATOS, SE CANALIZA 821, La unidad PE45 está Despachado, La unidad PE45 está Llegada, < MUNICIPIO SIN CONEXIÓN A C5 >, TEL 597 977 6742, TICKET 16387/2026, TEL 597 977 6742 CORPORACIÓN NO CONTESTA LÍNEAS, CANALIZA VIA WHATSAPP, SE CANALIZA MEDIANTE GRUPOS DE COORDINACION, INTERINSTITUCIONALES, NC- SE REALIZÓ LLAMADA DE SEGUIMIENTO A USUARIO; SE MARCÓ EN, REPETIDAS OCASIONES; LÍNEA MANDA A BUZÓN., AVANZO LA UNIDAD 076 AL LLEGAR LAS UNIDAD YA SE HABÍAN, RETIRADO DEL LUGAR NEGATIVO DE ESTAR UNA PERSONA TIRADA EN, VÍA PÚBLICA, R- AVANZO LA UNIDAD 076 INFORMA QUE HABIA UNA FIESTA EN, EL LUGAR, NO HUBO NINGUNA PERSONA TIRADA EN EL LUGAR., AT-OFICIAL CRESPO, R-POLICÍA FLORES PEÑA JUAN CARLOS ENCARGADO DE TURNO DEL, SEGUNDO AGRUPAMIENTO TLALMANALCO A BORDO DE LA UNIDAD, ME922A5, AL LLEGAR AL LUGAR SE REALIZA RECORRIDO POR EL ÁREA, SI MISMO SE HACE PRESENCIA CON EQUIPO SONORO Y LUMINARIO,, SIENDO NEGATIVA LA RESPUESTA POR LO QUE AVANZAMOS DEL LUGAR, SIN NOVEDAD., La unidad PE45 está Liberado",
+  "puntaje": 45,
+  "nivel_revision": "ALTA",
+  "indicadores": [
+   {
+    "clave": "huellas_violencia",
+    "peso": 30,
+    "motivo": "El propio catálogo C5 lo clasifica con huellas de violencia"
+   },
+   {
+    "clave": "sangre_lesiones",
+    "peso": 15,
+    "motivo": "Sangrado o lesiones visibles descritas"
+   }
+  ],
+  "accion_sugerida": "Solicitar carpeta a FGJEM y turnar a Criminalística para revisión de mecánica de hechos."
+ },
+ {
+  "folio": "ECA26072607440",
+  "incidente": "SUICIDIO",
+  "municipio": "NICOLAS ROMERO",
+  "fecha": "46229",
+  "hora": "18:21:00",
+  "lat": 19.5997,
+  "lng": -99.30424,
+  "windows_maps_query": "JUAN BARRON esquina DEL RIO, FRANCISCO I MADERO, NICOLAS ROMERO, Estado de México, México",
+  "notas": "REPORTA QUE OBSERVA UN VEHICULO BMW COLOR GRIS TIENE UN, IMPACTO DE BALA EN LA VENTANILLA Y HAY UNA PERSONA EN EL, INTERIOR COMO INCOSCIENTE, NC - MUNICIPIO CON ESPEJO EN ESPERA DE NOTAS Y, ASIGNACIÓN/DESPACHO DE UNIDADES VIRTUALES, SE VERIFICA, < NO SE CUENTA CON CÁMARA DE INFRAESTRUCTURA ESTATAL EN EL, LUGAR DEL INCIDENTE >, AVANZA LA UNIDAD RG-502 EN ESPERA DE NOVEDADES, SE CANALZIA RG 521, La unidad PE169 está Despachado, La unidad PE169 está Llegada, SE VISUALIZA POR MEDIO DE LA CAMARA VNIRO 61 A DISTANCIA EL, VEHICULO, AVANZANDO LA UNIDAD MEDICA PC-34 EN ESPERA DE NOVEDADES, INFORMA [DATO PERSONAL SUPRIMIDO] DE, PROTECCION CIVIL INDICAN QUE EL MASCULINO YA NO CUENTA CON, SIGNOS VITALES POR LO QUE AVANZA EL ENCARGADO DE LA REGION, 2 A DAR CONOCIMIENTO A LA FISCALIA DE HOMICIDIOS EN ESPERA, DE PERITOS EN EL SITIO PARA EL LEVANTAMIENTO DEL CUERPO, NC-SE REALIZÓ LLAMADA DE SEGUIMIENTO A USUARI@, EL MASCULINO, ESTABA INCONSCIENTE POR IMPACTO DE BALA, AL PARECER SIN, SIGNOS VITALES, EL IMPACTO DE BALA ESTABA A LA ALTURA DELA, VENTANILLA DEL LADO SUPERIOR DEL LADO DEL PILOTO, SIN MÁS, DATOS YA QUE SE RETIRO DEL LUGAR, NC.- ES POSITIVO POR SUICIDIO, INDICA POR GRUPOS DE COORDINACION EL JEFE OJEDA 26/07/26., 20:20. HRS. TARJETA PRELIMINAR. *NICOLÁS ROMERO. POLICÍA, TERCERO CARLOS RAMÍREZ RAFAEL, JEFE DEL PRIMER AGRUPAMIENTO, NICOLÁS ROMERO, A BORDO DE LA UNIDAD ME327A6, TIENE, CONOCIMIENTO DE UN MASCULINO SIN SIGNOS VITALES, CON UNA, LESIÓN DE PROYECTIL DE ARMA DE FUEGO EN EL INTERIOR DE UN, VEHÍCULO, MARCA BMW CON PLACAS DE CIRCULACIÓN LNZ-090-B DEL, ESTADO DE MÉXICO CON EL MOTOR ENCENDIDO, EN SU MANO, IZQUIERDA EMPUÑADA UN ARMA DE FUEGO, ASÍ COMO BEBIDAS, EMBRIAGANTES Y EL ESTEREO PRENDIDO AL INTERIOR DEL MISMO., PARA SUPERIOR CONOCIMIENTO., NC-TOMA DE CONOCIMIENTO [DATO PERSONAL SUPRIMIDO],, MINISTERIO PÚBLICO REGIONAL NICOLÁS ROMERO., INFORMA [DATO PERSONAL SUPRIMIDO]-202 QUE SE REALIZA EL, LAVANTAMIENTO DEL CUERPO EL CUAL NO PROPORCIONA DATOS, GENERALES DEL MASCULINO HACIENDOSE CARGO LA FISCALIA DE, HOMICIDIOS, R- NICOLÁS ROMERO (1 PERSONA MUERTA POR IMPACTO DE BALA -, SUICIDIO) A LAS 21:35 HORAS, EL POLICÍA CARLOS RAMÍREZ, RAFAEL, EN LA UNIDAD ME327A6, EN CALLE JUAN BARRÓN, COLONIA, FRANCISCO I. MADERO, TOMÓ CONOCIMIENTO DE UNA PERSONA MUERTA, POR IMPACTOS DE BALA, QUIEN EN VIDA RESPONDÍA AL NOMBRE DE, CORTES RAMÍREZ JOEL, DATOS RECABADOS POR UNA CREDENCIAL DEL, INE, LOCALIZADO EN EL INTERIOR DEL VEHÍCULO MARCA BMW, COLOR, PLATA, PLACAS [DATO PERSONAL SUPRIMIDO], CON EL MOTOR ENCENDIDO Y CERRADO, A, SIMPLE VISTA SE LE OBSERVA LIQUIDO HEMÁTICO EN LA CABEZA ASÍ, COMO UNA ARMA DE FUEGO EN LA MANO DERECHA, CALIBRE 9 MM,, MARCA TAURUS, CON NÚMERO DE SERIE AGL551713, MODELO, PT92AFS-D, FABRICADA EN BRASIL, ARRIBANDO EL PARAMÉDICO LUIS, PÉREZ GONZÁLEZ, A BORDO DE LA AMBULANCIA PC-034,, CERTIFICANDO EL DECESO, COMO PRIMER RESPONDIENTE POLICÍA, MUNICIPAL JUAN MIGUEL MELCHOR BLANCO, EN LA UNIDAD RGN2-501., NC- SE CAMBIA TIPO DE INCIDENTE DERIVADO DE LA RESOLUCION, PROPORCIONAD APOR LAS CORPORACIONES, SE CIERRA DOLIO EN BASE A LA NOTA 44-60, YA QUE LA RTEGION NODA INFORMACION, La unidad PE169 está Liberado",
+  "puntaje": 35,
+  "nivel_revision": "MEDIA",
+  "indicadores": [
+   {
+    "clave": "arma_fuego",
+    "peso": 25,
+    "motivo": "La cabina registra arma de fuego, disparo o impacto"
+   },
+   {
+    "clave": "sangre_lesiones",
+    "peso": 15,
+    "motivo": "Sangrado o lesiones visibles descritas"
+   },
+   {
+    "clave": "sin_signos_vitales",
+    "peso": 10,
+    "motivo": "Persona sin signos vitales al arribo"
+   },
+   {
+    "clave": "atencion_medica",
+    "peso": -15,
+    "motivo": "Atención médica documentada con persona consciente"
+   }
+  ],
+  "accion_sugerida": "Contrastar nota de cabina contra parte del primer respondiente y video del C5."
+ },
+ {
+  "folio": "ECA26072609445",
+  "incidente": "PERSONA TIRADA EN VIA PUBLICA",
+  "municipio": "CHIMALHUACAN",
+  "fecha": "46229",
+  "hora": "22:57:00",
+  "lat": 19.426845,
+  "lng": -98.95706,
+  "windows_maps_query": "20 DE NOVIVEMBRE esquina 14 DE FEBRERO, SAN PABLO, CHIMALHUACAN, Estado de México, México",
+  "notas": "USUARIO REPORTA QUE EN EL SITIO SE ENCUENTRA UNA FEMENINA, DESNUDA CON HUELLAS DE VIOLENCIA, TIRADA SOBRE LA VIA PUBLICA, SE CANALIZA 713, La unidad PE75 está Despachado, La unidad PE75 está Llegada, INDICA QUE ESTA INCONSIENTE , SOLICITA EL APOYO DE UNA, UNIDAD QUE ACUDA A VERIFICAR, < MUNICIPIO SIN CONEXIÓN A C5 >, TICKET 21525/2026, SE CANALIZA MEDIANTE GRUPOS DE COORDINACION, INTERINSTITUCIONALES, R-AVANZA UNIDAD SCM-403 OFICIALES INFORMAN REALIZAN, RECORRIDOS POR CALLES PRINCIPALES Y ALEDAÑAS SIN UBICAR LO, REFERIDO Y SIN QUE ALGUNA PERSONA SOLICITE APOYO, SIN LOGRAR, CONTACTAR VÍA TELEFÓNICA CON EL USUARIO, ENVIANDO A BUZON., NC INDICO OP. 334 DE CMM AGREGA DATOS AL FOLIO, R-SE CIERRA FOLIO EN BASE A LAS NOTAS DE CENTRO DE MANDO, MUNICIPAL YA QUE NO SE CUENTA CON INFORMACION POR PE, La unidad PE75 está Liberado",
+  "puntaje": 35,
+  "nivel_revision": "MEDIA",
+  "indicadores": [
+   {
+    "clave": "huellas_violencia",
+    "peso": 30,
+    "motivo": "El propio catálogo C5 lo clasifica con huellas de violencia"
+   },
+   {
+    "clave": "nocturno",
+    "peso": 5,
+    "motivo": "Hecho ocurrido en franja nocturna (22:00-06:00)"
+   }
+  ],
+  "accion_sugerida": "Contrastar nota de cabina contra parte del primer respondiente y video del C5."
+ },
+ {
+  "folio": "TOL26072608258",
+  "incidente": "PERSONA TIRADA EN LA VIA PUBLICA CON HUELLAS DE VIOLENCIA",
+  "municipio": "TOLUCA",
+  "fecha": "46229",
+  "hora": "22:41:00",
+  "lat": 19.3371,
+  "lng": -99.63759,
+  "windows_maps_query": "MIGUEL HIDALGO, BARRIO SAN SALVADOR, TOLUCA, Estado de México, México",
+  "notas": "USUARIO REPORTA QUE HAY MASCULINO DE APROXIMADAMENTE 25 AÑOS, DE EDAD TIRADO EN LA VIA PUBLICA, ESTA INCONCIENTE, PRESENTA, GOLPES EN LA CARA Y SANGRADO ACTIVO EN LA CABEZA CON HUELLAS, DE OLENCIA EN SU ROPA, VISTE DE SUDADERA DE COLOR NEGRO,, PANTALON DE COLOR NEGRO Y TENIS DE COLOR BLANCO, APARENTEMENTE EN ESTADO DE EBRIEDAD, < SE CUENTA CON CÁMARA ALEDAÑA DE INFRAESTRUCTURA ESTATAL, >35,135....., SOLICITA UNIDAD DE SP Y UNIDAD MEDICA, DEJA TEL DE CONTACTO, 55 1239 3112, USUARIO SOLO VA DE PASO, < SIN VISUALIZAR LO REPORTADO >POR DISTANCIA..., SE DIFUNDE VÍA RADIO SEPURA A LA REGIÓN CORRESPONDIENTE DE, LA SSEM, SE SOLICITA UNIDAD DE SP, La unidad CRUM93 está Despachado, SE INFORMA A CRUM [DATO PERSONAL SUPRIMIDO] MARTINEZ, La unidad CRUM93 está Llegada, YR-TOL26072608258, DE CONOCIMIENTO A CRUM EXT. 12026, AT. VICTOR, SOLICITA, UNIDAD DE SP, CENTRO DE MANDO Y CENTINELAS***, NC-SE CUETA CON CAMARA 35 DE INFRAESTRUTCURA ESTATAL ALEDAÑA, SIN LINEA DE VISTA POR DISTANCIA, NC- SE CANALIZO A SPM, SE CANALIZA A CENTRAL DE MANDO Y CENTINELAS**, YR TOL26072608241, R- FOLIO DUPLICADO SE LE DIO SEGUIMIENTO CON TOL26072608309, R- SE CIERRA FOLIO PARA CRUM YA QUE UNIDAD DE SEGURIDAD, PUBLICA NO PROPORCIONA INFORMACIÓN PARA CORROBORAR EL, REQUERIMIENTO DE UNIDAD MEDICA, La unidad CRUM93 está Liberado, R- FOLIO DUPLICADO SE LE DIO SEGUIMIENTO CON EL, TOL26072608687",
+  "puntaje": 25,
+  "nivel_revision": "MEDIA",
+  "indicadores": [
+   {
+    "clave": "huellas_violencia",
+    "peso": 30,
+    "motivo": "El propio catálogo C5 lo clasifica con huellas de violencia"
+   },
+   {
+    "clave": "sangre_lesiones",
+    "peso": 15,
+    "motivo": "Sangrado o lesiones visibles descritas"
+   },
+   {
+    "clave": "nocturno",
+    "peso": 5,
+    "motivo": "Hecho ocurrido en franja nocturna (22:00-06:00)"
+   },
+   {
+    "clave": "atencion_medica",
+    "peso": -15,
+    "motivo": "Atención médica documentada con persona consciente"
+   },
+   {
+    "clave": "etilico",
+    "peso": -10,
+    "motivo": "Estado etílico referido, patrón habitual de persona tirada"
+   }
+  ],
+  "accion_sugerida": "Contrastar nota de cabina contra parte del primer respondiente y video del C5."
+ },
+ {
+  "folio": "ECA26072609291",
+  "incidente": "PERSONA NO LOCALIZADA O DESAPARECIDA",
+  "municipio": "CHALCO",
+  "fecha": "46229",
+  "hora": "22:30:00",
+  "lat": 19.262595,
+  "lng": -98.89674,
+  "windows_maps_query": "CALLE AQUILES CORDOBA MORA esquina CALLE IZCALLI, MARGARITA MORAN, CHALCO, Estado de México, México",
+  "notas": "El usuario [OPERADOR C5] ha cambiado el estatus de la persona desaparecida #1 ( María Fabiola Nicolás peña) a Persona extraviada. [no localizada], Usuaria solicita apoyo para levantar el reporte de persona no localizada, indica ella trabaja en una tienda de abarrotes, refiere al retirarse del sitio se percata que hay un vehículo particular a su estacionado enfrente del establecimiento, posteriormente se retiran del sitio el dia 23/07/2026 a las 01:00hrs y el vehículo comienza el movimiento de manera sospechas., Refiere la femenina se mete en la calle donde vive y el vehículo también, y pierde la vista., Indica dejan de tener contacto con la femenina y no les contesta por ni un medio., R-AL LUGAR ARRIBO UNIDAD DE CELULA DE BUSQUEDA ASI MISMO SE, LE DIERON PASOS A SEGUIR, SE MODULA A BASES Y UNIDADES PARA SU PRONTA LOCALIZACION, La unidad PE82 está Despachado, La unidad PE82 está Llegada, La unidad PE82 está Liberado, Usuaria solicita apoyo para levantar el reporte de persona no localizada de su hermana, indica su hermana estaba trabajando en una tienda de abarrotes el dia referido y la reportante estaba con ella., Refiere la deportante al retirarse del lugar el dia 23/07/2026 a las 01:00hrs sale con su hermana y se percata de un vehículo particular color azul el cual estaba estacionado frente al establecimiento, Indica su hermana se metió a la calle donde vive y se percata que el vehículo se mete sobre la misma calle pero no sospecho nada, posteriormente deja de tener contacto con ella, ya pregunto a conocidos y amigos y nadie a tenido contacto con ella, NC- SE DA DE CONOCIMIENTO A COBUPEM",
+  "puntaje": 25,
+  "nivel_revision": "MEDIA",
+  "indicadores": [
+   {
+    "clave": "terceros",
+    "peso": 20,
+    "motivo": "Participación de terceros referida por el reportante"
+   },
+   {
+    "clave": "nocturno",
+    "peso": 5,
+    "motivo": "Hecho ocurrido en franja nocturna (22:00-06:00)"
+   }
+  ],
+  "accion_sugerida": "Contrastar nota de cabina contra parte del primer respondiente y video del C5."
+ },
+ {
+  "folio": "ECA26072700093",
+  "incidente": "PERSONA TIRADA EN LA VIA PUBLICA CON HUELLAS DE VIOLENCIA",
+  "municipio": "CHIMALHUACAN",
+  "fecha": "46230",
+  "hora": "00:20:00",
+  "lat": 19.389845,
+  "lng": -98.96006,
+  "windows_maps_query": "RETAMATITLA MZ 2 LT 2 esquina YUCATAN, VILLA SAN AGUSTIN ATLAPULCO, CHIMALHUACAN, Estado de México, México",
+  "notas": "FRENTE A SU NEGOCIO HAY UN HOMBRE ALCOHOLIZADO EL CUAL ESTÁ, MUY GOLPEADO, OBSERVARON CUANDO LO BAJÓ UN VEHÍCULO, NC-DE LA UNIDAD NO TIENEN DATOS, SE CANALIZA 713, SE CANALIZA MEDIANTE GRUPOS DE COORDINACION, INTERINSTITUCIONALES, La unidad PE97 está Despachado, La unidad PE97 está Acuse de Recibo, La unidad PE97 está Llegada, < MUNICIPIO SIN CONEXIÓN A C5 >, TICKET 21525/2026, AVANZA UNIDAD, R-AVANZA UNIDAD SCM- 214 OFICIALES INFORMAN REALIZAN, RECORRIDOS POR CALLES PRINCIPALES Y ALEDAÑAS SIN UBICAR LO, REFERIDO Y SIN QUE ALGUNA PERSONA SOLICITE APOYO, SIN LOGRAR, CONTACTAR VÍA TELEFÓNICA CON EL USUARIO, ENVIANDO A BUZON., ., NC- SE REALIZÓ LLAMADA DE SEGUIMIENTO A USUARIO; SE MARCÓ EN, REPETIDAS OCASIONES; LÍNEA MANDA A BUZÓN., R-INFORMA POLICÍA SEGUNDO GONZÁLEZ LEMUS DANIEL DE LA, REGIÓN XL A BORDO DE LA UNIDAD ME-941-A5 SIENDO NEGATIVO SE, ARRIBA AL LUGAR SIN ENCONTRAR NADA RELACIONADO CON EL APOYO, DANDO RECORRIDOS CON POLICÍA MUNICIPAL, La unidad PE97 está Liberado",
+  "puntaje": 25,
+  "nivel_revision": "MEDIA",
+  "indicadores": [
+   {
+    "clave": "huellas_violencia",
+    "peso": 30,
+    "motivo": "El propio catálogo C5 lo clasifica con huellas de violencia"
+   },
+   {
+    "clave": "nocturno",
+    "peso": 5,
+    "motivo": "Hecho ocurrido en franja nocturna (22:00-06:00)"
+   },
+   {
+    "clave": "etilico",
+    "peso": -10,
+    "motivo": "Estado etílico referido, patrón habitual de persona tirada"
+   }
+  ],
+  "accion_sugerida": "Contrastar nota de cabina contra parte del primer respondiente y video del C5."
+ },
+ {
+  "folio": "TOL26072605534",
+  "incidente": "PERSONA TIRADA EN VIA PUBLICA",
+  "municipio": "LERMA",
+  "fecha": "2026-07-26",
+  "hora": "17:02:00",
+  "lat": 19.299305,
+  "lng": -99.50738,
+  "windows_maps_query": "AVENIDA DE LAS GARZAS esquina REVOLUCION / 19.294830766933877, -99.50257053019462, NUEVA AMEYALCO, LERMA, Estado de México, México",
+  "notas": "UN MASCULINO TIRADO EN UN LOTE BALDIO, USUARIO NO SE QUIERE ACERCAR A LA PERSONA, COORD. 19.29580, -99.50256 POR CARBYNA, CARBYNE, La unidad PE71 está Despachado, SE CANALIZA A LA VIII REGIÓN DE SSEM ( LERMA ), **SE CANALIZA POR GRUPOS DE COORDINACIÓN A SPM*, NC: AL ARRIBÓ LA UNIDAD SPM-170 NO SE ENCONTRABA NADIE. SE, LE HIZO LLAMADA AL REPORTANTE Y REFIRIÓ YA SE HABIA RETIRADO, EL MASCULINO. {NEGATIVO], La unidad PE71 está Llegada, R- INFORMO POLICÍA HERNÁNDEZ FUERTE CLAUDIA JULIA, UNIDAD, ME621A5 DEL SEGUNDO AGRUPAMIENTO, LERMA , NO TUVO CONTACTO, La unidad PE71 está Liberado",
+  "puntaje": 15,
+  "nivel_revision": "BAJA",
+  "indicadores": [
+   {
+    "clave": "proximidad_arma",
+    "peso": 15,
+    "motivo": "A menos de 1 km y ±6 h de otro reporte por arma de fuego"
+   }
+  ],
+  "accion_sugerida": "Mantener en seguimiento estadístico; sin elementos para reclasificar."
+ },
+ {
+  "folio": "TOL26072608227",
+  "incidente": "PERSONA TIRADA EN VIA PUBLICA",
+  "municipio": "TOLUCA",
+  "fecha": "2026-07-26",
+  "hora": "22:37:00",
+  "lat": 19.344595,
+  "lng": -99.64724,
+  "windows_maps_query": "EMILIANO ZAPATA esquina INDEPENDENCIA, SAN CRISTOBAL HUICHOCHITLAN, TOLUCA, Estado de México, México",
+  "notas": "MASCULINO TIRADO EN VIA PUBLICA CERCA DE UN POSTE, TIRADO BOCA ARRIBA PORTA BOTAS, SOMBRERO, EDAD APROX. 45, AÑOS, COMPLEXION DELGADO, EST. APROX. 1.75, VA DE PASO, EN ESPERA DE INFORME DE SEGURIDAD PARA CANALIZAR UNIDAD, MEDICA EN CASO DE SER NECESARIO, CENTRO DE MANDO Y CENTINELAS***, SE DIFUNDE VÍA RADIO SEPURA A LA REGIÓN CORRESPONDIENTE DE, LA SSEM, La unidad PE56 está Despachado, NC: NEGATIVO DE CONTAR CON CAMARA DE INFRAESTRUCTURA ESTATAL, EN EL LUGAR DEL INCIDENTE, NC- SE CANALIZO A SPM, < NO SE CUENTA CON CÁMARA DE INFRAESTRUCTURA ESTATAL EN EL, LUGAR DEL INCIDENTE >, LC-TC 722 463-8456, SIN ATENDER, ENVIA A BUZON DE VOZ, SE MARCA NUEVAMENTE, E INDICA QUE NO SE PERCATA DE LA PRESENCIA DE LA UNIDAD, DE SP, IBA DE PASO, LC-NPA, La unidad PE56 está Llegada, R-INDICANDO BASE 110 NEGATIVO DE CONTACTO, La unidad PE56 está Liberado, R- TOLUCA DE LERDO, ESTADO DE MÉXICO A 26 DE JULIO DEL 2026, DIRECCIÓN GENERAL DE SEGURIDAD Y PROTECCIÓN TOLUCA, DIRECTOR GENERAL DE LA DIRECCIÓN GENERAL DE SEGURIDAD Y, PROTECCIÓN TOLUCA CAPITÁN: AYÓN MONSALVE JORGE ALBERTO., DIRECTOR OPERATIVO DE LA DIRECCIÓN GENERAL DEN SEGURIDAD Y, PROTECCIÓN TOLUCA CMDTE: ÁLVAREZ OROZCO JOSÉ LUIS., COORDINADOR OPERATIVO DE LA DIRECCIÓN GENERAL DE SEGURIDAD Y, PROTECCIÓN CMDTE: ZAMORA HINOJOSA ADEMIR COORDINACIÓN ZONA, NORTE CMDT: ESTRADA GARCIA MARIO JUAN. REGIÓN 18 ASUNTO:, _AUXILIO PERSONA TIRADA EN VÍA PÚBLICA *UBICACIÓN, EMILIANO ZAPATA/ INDEPENDENCIA SAN CRISTÓBAL HUICHOCHITLAN, NOTA INFORMATIVA POR MEDIO DE ESTE CONDUCTO ME PERMITO, INFORMAR QUE SIENDO LAS 21:09.HORAS LA TRIPULACIÓN, ME-215A-5, A CARGO DEL POLICÍA SANTANA HUERTA JESÚS JAVIER Y, ROBLES BETANCOURT URIEL DERIVADO DEL FOLIO:TOL26072608241, SE AVANZA A LA CALLE EMILIANO ZAPATA/ INDEPENDENCIA SAN, CRISTÓBAL HUICHOCHITLAN DONDE SE REPORTAN PERSONA TIRADA EN, VÍA PÚBLICA ARRIBANDO A LAS 21:12 NO TENEMOS CONTACTO CON, LO REPORTADO ASÍ MISMO RECORREMOS LA ZONA CON EQUIPO, LUMINOSO Y SONORO ENCONTRÓ TODO EN ORDEN NOS RETIRAMOS A LAS, 21:16 HORAS LO QUE INFORMO A USTED PARA SU SUPERIOR, CONOCIMIENTO",
+  "puntaje": 5,
+  "nivel_revision": "BAJA",
+  "indicadores": [
+   {
+    "clave": "nocturno",
+    "peso": 5,
+    "motivo": "Hecho ocurrido en franja nocturna (22:00-06:00)"
+   }
+  ],
+  "accion_sugerida": "Mantener en seguimiento estadístico; sin elementos para reclasificar."
+ },
+ {
+  "folio": "TOL26072700124",
+  "incidente": "PERSONA TIRADA EN VIA PUBLICA",
+  "municipio": "HUIXQUILUCAN",
+  "fecha": "46230",
+  "hora": "00:27:00",
+  "lat": 19.388107,
+  "lng": -99.278843,
+  "windows_maps_query": "AVENIDA TECAMACHALCO esquina CALLE ALCANFOR, EL OLIVO 2DA SECC, HUIXQUILUCAN, Estado de México, México",
+  "notas": "REPORTA A PERSONA TIRADA EN VIALIDAD, SE TRATA DE UNA, FEMENINA, ***CANALIZANDO MEDIANTE GRUPOS DE COORDINACIÓN***, NO SABE SI LA ATROPELLARON, La unidad PE53 está Despachado, DS-SE DIFUNDE VÍA RADIO SEPURA, DT-SE PROPORCIONÓ NÚMERO TELEFÓNICO DE USUARIO A LA, CORPORACIÓN, AL PARECER ESTA EN ESTADO ETÍLICO, SE TRATA DE UNA FEMENINA DE APROX 25 AÑOS, VISTE PANTALON DE, MEZCLILLA Y SUDADERA ROSA, < SE CUENTA CON CÁMARA ALEDAÑA DE INFRAESTRUCTURA ESTATAL >, 111, < MUNICIPIO SIN CONEXIÓN A C5 > TICKET 16311/2026, La unidad PE53 está Llegada, ** SE SOLICITAN NOVEDADES POR MEDIO DE GRUPOS DE, COORDINACIÓN **",
+  "puntaje": 5,
+  "nivel_revision": "BAJA",
+  "indicadores": [
+   {
+    "clave": "nocturno",
+    "peso": 5,
+    "motivo": "Hecho ocurrido en franja nocturna (22:00-06:00)"
+   }
+  ],
+  "accion_sugerida": "Mantener en seguimiento estadístico; sin elementos para reclasificar."
+ },
+ {
+  "folio": "TOL26072700167",
+  "incidente": "PERSONA TIRADA EN VIA PUBLICA",
+  "municipio": "OTZOLOTEPEC",
+  "fecha": "46230",
+  "hora": "00:36:00",
+  "lat": 19.429523,
+  "lng": -99.511174,
+  "windows_maps_query": "CALLE SIERRA HIDALGO 21 DE MARZO, NAUCALPAN DE JUAREZ, OTZOLOTEPEC, Estado de México, México",
+  "notas": "USUARIA REFIERE A UN MASCULINO TIRADO EN VIA PUBLICA, DESCONOCE SI AUN CUENTE CON SIGNOS VITALES, ***SE CANALIZA POR MEDIO DE GRUPOS DE CORDINACION C5, NAUCALPAN***, DS-SE DIFUNDE VÍA RADIO SEPURA, DT-SE PROPORCIONÓ NÚMERO TELEFÓNICO DE USUARIO A LA, CORPORACIÓN, NC- SE INFORMA A SUPERVISIÓN DESPACHO EXT: 12470, La unidad PE84 está Despachado, ATT: JAVIER, SOLICITO ARRIBO DE SP, EN ESPERA DE NOVEDADES, < SIN COBERTURA DE CÁMARAS DE INFRAESTRUCTURA ESTATAL >, <RESOLUCIÓN> SE RECIBE LA SIGUIENTE INFORMACIÓN POR PARTE DE, LOS GRUPOS DE COORDINACIÓN:, *\"2026*, *AÑO DEL HUMANISMO MEXICANO EN EL ESTADO DE, MÉXICO\".* *COMISARÍA DE SEGURIDAD CIUDADANA Y TRÁNSITO, MUNICIPAL DE OTZOLOTEPEC*. *DIRECTORA DE SEGURIDAD, CIUDADANA Y TRÁNSITO MUNICIPAL DE OTZOLOTEPEC* LIC. LAURA, RETANA LÓPEZ. *SUBDIRECTOR* DIAZ PÉREZ JOEL JEFE DE, SERVICIO CRISTIAN MORALES FECHA. 27/07/2026 *HORA:01:00, *UNIDAD:SENTRA 014 [DATO PERSONAL SUPRIMIDO], HERNÁNDEZ *NOVEDADES\" FOLIO: TOL26072700171 FECHA:, 27/07/26 HORA: 00:37 MUNICIPIO: OTZOLOTEPEC COLONIA:, NAUCALPAN DE JUAREZ UBICACION: [DATO PERSONAL SUPRIMIDO]; 21 DE MARZO, REFERENCIA: EN EL HASTA BANDERA/ COORDENADA ACTUAL:, 19.429523/-99.511174 COORDENADA DE GEOLOCALIZACION:, 19.431120 -99.512050 TELEFONO: 722 796-5768 NOMBRE: ANONIMO, INCIDENTE: *PERSONA TIRADA EN VIA PUBLICA* DESCRIPCION:, USUARIA REFIERE A UN MASCULINO TIRADO EN VIA PUBLICA, DESCONOCE SI AUN CUENTE CON SIGNOS VITALES SE REALIZARON, RECORRIDOS ALA ALTURA DE LA SECUNDARIA MELCHOR DE TALAMANTES, SIENDO NEGATIVO DE YENER A UNA PERSONA AL PISO EN VIA, PÚBLICA SE ANEXAN EDICIONES FOTOGRAFICAS *CONTINUAMOS, PENDIENTES AL DESARROLLO DEL SERVICIO, R-SP NO HIZO CONTACTO CON LO REPORTADO EN SITIO, NO SE, REQUIRIO DE UM",
+  "puntaje": 5,
+  "nivel_revision": "BAJA",
+  "indicadores": [
+   {
+    "clave": "nocturno",
+    "peso": 5,
+    "motivo": "Hecho ocurrido en franja nocturna (22:00-06:00)"
+   }
+  ],
+  "accion_sugerida": "Mantener en seguimiento estadístico; sin elementos para reclasificar."
+ },
+ {
+  "folio": "TOL26072700271",
+  "incidente": "PERSONA TIRADA EN VIA PUBLICA",
+  "municipio": "OTZOLOTEPEC",
+  "fecha": "46230",
+  "hora": "01:04:00",
+  "lat": 19.451975,
+  "lng": -99.487294,
+  "windows_maps_query": "LUIS DONALDO COLOSIO esquina GUSTAVO BAZ PRADA, SANTA ANA JILOTZINGO, OTZOLOTEPEC, Estado de México, México",
+  "notas": "USUARIO DESCONOCE UBICACION, ***CANALIZANDO MEDIANTE GRUPOS DE COORDINACIÓN***, REPORTA A UN MASCULINO TIRADO SOBRE LA VIA PUBLICA, PRESENTA, GOLPES EN EL ROSTRO, MASCULINO APROX 32 AÑOS, SOLO TIENE PUESTO SU PANTALON, MASCULINO SEMI-CONSICENTE, < SIN COBERTURA DE CÁMARAS DE INFRAESTRUCTURA ESTATAL >, USUARIO CORTA COMUNICACION, SE REGRESA LLAMADA A USUARIO, CON EXITO, USUARIO MENCIONA QUE SOLO VA DE PASO, DESCONOCE LO QUE LE SUCEDIO AL MASCULINO, SE INFORMA A SUPERVISOR EN TURNO EXT. 12051, La unidad CRUM23 está Despachado, SOLICITO ARRO DE SP, EN ESPARA DE NOVEDADES, DE CONOCIMIENTO A CRUM EXT. 12054, AT. JAVIER GARCIA,, SOLICITA UNIDAD DE SP, ** SE SOLICITAN NOVEDADES POR MEDIO DE GRUPOS DE, COORDINACIÓN **",
+  "puntaje": 5,
+  "nivel_revision": "BAJA",
+  "indicadores": [
+   {
+    "clave": "sangre_lesiones",
+    "peso": 15,
+    "motivo": "Sangrado o lesiones visibles descritas"
+   },
+   {
+    "clave": "nocturno",
+    "peso": 5,
+    "motivo": "Hecho ocurrido en franja nocturna (22:00-06:00)"
+   },
+   {
+    "clave": "atencion_medica",
+    "peso": -15,
+    "motivo": "Atención médica documentada con persona consciente"
+   }
+  ],
+  "accion_sugerida": "Mantener en seguimiento estadístico; sin elementos para reclasificar."
+ },
+ {
+  "folio": "TOL26072700593",
+  "incidente": "PERSONA NO LOCALIZADA O DESAPARECIDA",
+  "municipio": "SAN MATEO ATENCO",
+  "fecha": "46230",
+  "hora": "02:36:00",
+  "lat": 19.26309,
+  "lng": -99.52157,
+  "windows_maps_query": "JOSE VICENTE VILLADA esquina DE LA ROSA Y NINO PERDIDO, BARRIO SANTIAGUITO, SAN MATEO ATENCO, Estado de México, México",
+  "notas": "USUARIO REPORTA EL DIA 26/07/2026 A LAS 18:00 HORAS COMO, ULTIMA VEZ QUE TUVO CONTACTO VIA WAT SAP CON SU ESPOSA DESDE, ESE MOMENTO DESCONOCE DE SU PARADERO, N.C. [TELÉFONO], **, NOMBRE: WENDY MONSERRAT NUÑEZ SANABRIA, EDAD: 21 AÑOS, ESTATURA: 1.60, COMPLEXION: DELGADA, TEZ: CLARA, *** SE CANALIZA POR MEDIO DE GRUPOS DE COORDINACION C5 ***, OJOS: CAFE OSCUROS, SAN MATEO ATENCO, CABELLO: CASTAÑO, CARA; MEDIANA, BOCA: MEDIANA, ***, VESTIMENTA: SIN INFORMACION, ***, SEÑAS. [SEÑAS PARTICULARES SUPRIMIDAS] PIERNA IMAGEN DE FLORES, ***, CELULAR: [TELÉFONO], ***, HECHOS: USUARIO REFIERE QUE SU ESPOSA [DATO PERSONAL SUPRIMIDO] A, LA CASA DE SU ABUELA , A LAS 18:00 HORAS QUEDO EN REGRESAR, CON EL USUARIO DESDE ESE MOMENTO DESCONOCE DE SU PARADERO, ***, El usuario [OPERADOR C5] ha cambiado el estatus de la persona desaparecida #1 ([DATO PERSONAL SUPRIMIDO]) a Persona extraviada. [PERsONA NO LOCALIZADA], USUARIO REFIERE QUE ACUDIO UNIDAD MUNICIPAL NO VERIFICA, NUMERO ECONOMICO, < MUNICIPIO SIN CONEXIÓN A C5 > TICKET 14115/2026",
+  "puntaje": 5,
+  "nivel_revision": "BAJA",
+  "indicadores": [
+   {
+    "clave": "nocturno",
+    "peso": 5,
+    "motivo": "Hecho ocurrido en franja nocturna (22:00-06:00)"
+   }
+  ],
+  "accion_sugerida": "Mantener en seguimiento estadístico; sin elementos para reclasificar."
+ },
+ {
+  "folio": "ECA26072606614",
+  "incidente": "PERSONA TIRADA EN VIA PUBLICA",
+  "municipio": "LA PAZ",
+  "fecha": "46229",
+  "hora": "16:41:00",
+  "lat": 19.36471,
+  "lng": -98.9745,
+  "windows_maps_query": "C 13 esquina AVENIDA IXTAPAN, VALLE DE LOS REYES, LA PAZ, Estado de México, México",
+  "notas": "INDICA QUE UNA FEMENINA DE APROX 40 AÑOS DE EDAD; ESTA, TIRADA EN VIA PUBLICA;, COMENTA QUE AL PARECER CONVULCIONO;, SOLICITA APOYO DE UNIDAD MEDICA EN EL LUGAR;, SE CANALIZA SPM [TELÉFONO] AT OP 61, SE CANALIZA 714, DELIENSALUDABLE CALLE 13 ESQUINA IXTAPA, VALLE DE LOS REYES,, 56430 LOS REYES ACAQUILPAN, MÉX. 19.364726, -98.974498 APROX, La unidad PE137 está Despachado, La unidad PE137 está Llegada, < SE CUENTA CON CÁMARA ALEDAÑA DE INFRAESTRUCTURA ESTATAL >, < SIN TENER LÍNEA DE VISTA >, VLRP 33, 104, 98 POR OBSTRUCCIÓN DE VIVIENDAS, R - AVANZÓ LA UNIDAD DE SPM 317 NEGATIVO DE ALGUNA PERSONA, TIRADA EN VIA PUBLICA OP - 39, AVANZÓ LA UNIDAD ME299A5 AL MANDO DE POLICÍA TERCERO, VALENCIA REPIZO MARÍA GUADALUPE AL ARRIBAR AL LUGAR SE TRATA, DE UNA PERSONA DEL SEXO FEMENINO LA CUAL ESTÁ EN ESTADO DE, EBRIEDAD LA CUAL SE INCORPORA, RETIRÁNDOSE DEL LUGAR POR, PROPIOS MEDIOS, La unidad PE137 está Liberado",
+  "puntaje": 5,
+  "nivel_revision": "BAJA",
+  "indicadores": [
+   {
+    "clave": "proximidad_arma",
+    "peso": 15,
+    "motivo": "A menos de 1 km y ±6 h de otro reporte por arma de fuego"
+   },
+   {
+    "clave": "etilico",
+    "peso": -10,
+    "motivo": "Estado etílico referido, patrón habitual de persona tirada"
+   }
+  ],
+  "accion_sugerida": "Mantener en seguimiento estadístico; sin elementos para reclasificar."
+ },
+ {
+  "folio": "ECA26072607710",
+  "incidente": "PERSONA NO LOCALIZADA O DESAPARECIDA",
+  "municipio": "ATIZAPAN DE ZARAGOZA",
+  "fecha": "46229",
+  "hora": "18:58:00",
+  "lat": null,
+  "lng": null,
+  "windows_maps_query": "ADOLFO LOPEZ MATEOS esquina AVENIDA DE LOS MAESTROS, JACARANDAS, ATIZAPAN DE ZARAGOZA, Estado de México, México",
+  "notas": "[VÍCTIMA] DE 17 AÑOS NO LO ENCUENTRAN DESDE HACE 1, HORA Y MEDIA REFIERE QUE ESTABAN COMPRANDO Y CUANDO FUE A, DEJAR LAS COSAS AL VEHICULO YA NO REGRESO REFIERE QUE LE, MARCAN Y NO CONTESTA Y AHORA MANADA A BUZON VISTE SUDADERA, GRIS PANTALON DE MEZCLILLA , TENIS VINO Y USA LENTES, SOLICITA APOYO DE UNA UNIDAD, POR EL MOMENTO SOLO REQUIERE UNIDAD PARA LOCALIZAR A SU, HERMANO, R- INDICA LA CORPORACION QUE ES UBICACION INCORRECTA., AT-OP 69",
+  "puntaje": 5,
+  "nivel_revision": "BAJA",
+  "indicadores": [
+   {
+    "clave": "sin_geo",
+    "peso": 5,
+    "motivo": "Sin coordenada válida: no verificable en campo"
+   }
+  ],
+  "accion_sugerida": "Mantener en seguimiento estadístico; sin elementos para reclasificar."
+ },
+ {
+  "folio": "ECA26072609342",
+  "incidente": "AMENAZA DE SUICIDIO",
+  "municipio": "TLALNEPANTLA DE BAZ",
+  "fecha": "46229",
+  "hora": "22:40:00",
+  "lat": 19.53537,
+  "lng": -99.173315,
+  "windows_maps_query": "PINOS esquina AVENIDA PROLONGACION VALLEJO, AHUEHUETES, TLALNEPANTLA DE BAZ, Estado de México, México",
+  "notas": "REPORTA QUE DOS FEMENINAS ESTAN DISCUTIENDO ARRIBA DEL, P7UENTE , REFIERE QUE UNA DE ELLAS INTENTA LANZARSE DEL, PUENTE., SE CANALIZA 513, La unidad PE67 está Despachado, La unidad PE67 está Llegada, SE CANALIZA MEDIANTE GRUPOS DE COORDINACION, INTERINSTITUCIONALES, < SE CUENTA CON CÁMARA ALEDAÑA DE INFRAESTRUCTURA ESTATAL >, < SIN TENER LÍNEA DE VISTA >, NO SE CUENTA CON LINEA DE VISTA POR OBSTRUCCIÓN DE ARBOLES., VTLA-174, NC .- SE REALIZA LLAMADA DE SEGUIMIENTO AL REPORTANTE, INDICANDO ARRIBO LA UNIDAD DE SPM 132 INFORMANDO QUE LAS, FEMENINAS YA SE ENCUENTRAN DIALOGANDO CON LOS OFICIAL., POLICIA TERCERO LOPEZ DOMÍNGUEZ JAVIER CON 03 MAS A BORDO DE, LA UNIDAD ME831A5, ARRIBA AL LUGAR INDICADO SE TIENE A LA, VISTA A 02 FEMENINAS QUE SON PAREJA SENTIMENTAL, SE, ENCONTRABAN DISCUTIENDO, MANIFESTANDO QUE YA HABÍAN, ARREGLADO SU PROBLEMA, SE RETIRAN DEL LUGAR, SIN MAS, NOVEDAD., CIERRE OP 531 JT-13 EN EL LUGAR NEGATIVO DE TENTATIVA DOS, FEMENINAS CON PROBLEMAS DE PAREJA",
+  "puntaje": 5,
+  "nivel_revision": "BAJA",
+  "indicadores": [
+   {
+    "clave": "nocturno",
+    "peso": 5,
+    "motivo": "Hecho ocurrido en franja nocturna (22:00-06:00)"
+   }
+  ],
+  "accion_sugerida": "Mantener en seguimiento estadístico; sin elementos para reclasificar."
+ },
+ {
+  "folio": "ECA26072609742",
+  "incidente": "PERSONA NO LOCALIZADA O DESAPARECIDA",
+  "municipio": "IXTAPALUCA",
+  "fecha": "46229",
+  "hora": "23:51:00",
+  "lat": 19.31609,
+  "lng": -98.928275,
+  "windows_maps_query": "ANDRES MOLINA ENRIQUES #8 esquina LUIS MORA ISIDRO FABELA, AYOTLA, IXTAPALUCA, Estado de México, México",
+  "notas": "REPORTA NO ES LOCALIZADA SU HIJA [DATO PERSONAL SUPRIMIDO], DANNIA ANGELICA ROSAS LIMON DE EDAD 17 AÑOS FUE VISTA POR, ULTIMA VEZ EL DIA 26/07/2026 A LAS 08:50 HRS INDICA SE, DIRIGÍA A UN TRABAJO EN EL MUNICIPIO IXTAPALUCA ,COL,, IZCALLI , CALLE SAUCES, INDICA HASTA EL MOMENTO DESCPONOCE DE SU PARADERO, El usuario [OPERADOR C5] ha cambiado el estatus de la persona desaparecida #1 (dannia angelica rosas limon) a Persona extraviada. [persona no localizada], SE CANALIZA A CELULA DE BUSQUEDA, La unidad FGJEM04 está Despachado, La unidad FGJEM04 está Llegada, SE REALIZA LLAMADA A LA REPORTANTE LA CUAL INDICA YA ESTA, SIENDO ATENDIDA POR LA CELULA DE BUSQUEDA IXTAPALUCA, NC - SE DA DE CONOCIMIENTO A COBUPEM",
+  "puntaje": 5,
+  "nivel_revision": "BAJA",
+  "indicadores": [
+   {
+    "clave": "nocturno",
+    "peso": 5,
+    "motivo": "Hecho ocurrido en franja nocturna (22:00-06:00)"
+   }
+  ],
+  "accion_sugerida": "Mantener en seguimiento estadístico; sin elementos para reclasificar."
+ },
+ {
+  "folio": "ECA26072700358",
+  "incidente": "PERSONA NO LOCALIZADA O DESAPARECIDA",
+  "municipio": "CHIMALHUACAN",
+  "fecha": "46230",
+  "hora": "01:06:00",
+  "lat": 19.40932,
+  "lng": -99.01696,
+  "windows_maps_query": "CERRADA 1 DE ENERO esquina PINO SUAREZ/12 DE DICIEMBRE, CORTE SAN PABLO/CHIMALHUACAN/MEXICO, CHIMALHUACAN, Estado de México, México",
+  "notas": "REPORTA QUE SUS DOS HIJAS SALIERON DEL DOMICILIO A LAS, 13:00 HRS CON RUMBO AL DOMICILIO DE SU MADRE [DATO PERSONAL SUPRIMIDO], EL MUNICIIPIO DE COACALCO, AL CUAL NO LLEGARON, SE MODULA A BASES Y UNIDADES PARA SU PRONTA LOCALIZACION, La unidad PE19 está Despachado, La unidad PE19 está Llegada, La unidad PE19 está Liberado, El usuario [OPERADOR C5] ha cambiado el estatus de la persona desaparecida #1 ([DATO PERSONAL SUPRIMIDO]) a Persona extraviada. [NO LOCALIZADA], AVANZA UNIDAD, El usuario [OPERADOR C5] ha cambiado el estatus de la persona desaparecida #2 ([DATO PERSONAL SUPRIMIDO]) a Persona extraviada. [NO LOCALIZADA], REPORTA PADRE, NC- SE DA DE CONOCIMIENTO A COBUPEM",
+  "puntaje": 5,
+  "nivel_revision": "BAJA",
+  "indicadores": [
+   {
+    "clave": "nocturno",
+    "peso": 5,
+    "motivo": "Hecho ocurrido en franja nocturna (22:00-06:00)"
+   }
+  ],
+  "accion_sugerida": "Mantener en seguimiento estadístico; sin elementos para reclasificar."
+ },
+ {
+  "folio": "ECA26072700410",
+  "incidente": "PERSONA NO LOCALIZADA O DESAPARECIDA",
+  "municipio": "TLALNEPANTLA DE BAZ",
+  "fecha": "46230",
+  "hora": "01:16:00",
+  "lat": 19.535585,
+  "lng": -99.233145,
+  "windows_maps_query": "AVENIDA VIA ADOLFO LOPEZ MATEOS esquina HIDALGO/AV DEL RIO, FRACCIONAMIENTO JACARANDAS, TLALNEPANTLA DE BAZ, Estado de México, México",
+  "notas": "DUPLICADO, El usuario [OPERADOR C5] ha cambiado el estatus de la persona desaparecida #1 ([DATO PERSONAL SUPRIMIDO]) a Persona extraviada. [NO LOCALIZADA], REPORTA QUE SU HERMANO [DATO PERSONAL SUPRIMIDO] A HACER ALGUNAS COMPRAS, MENCIONA QUE ÉL LE PIDIO LAS LLAVES DE LA CAMIONETA PARA IR A GUARDAR ALGUNAS COSAS, REFIERE QUE LAS PERSONAS QUE ESTACIONAN LOS VEHICULOS DIJERON QUE SI LO VIERON DEJAR LAS BOLSAS. COMENTA USUARIA QUE AL REGRESAR A LA UNIDAD SE PERCATARON DE SU AUSENCIA , QUE SE LLEVÓ LAS LLAVES DE LA UNIDAD, Y QUE DEJÓ SU CELULAR., INDICA QUE VISTE CON PLAYERA NEGRA, SUDADERA GRIS, PANTALON DE MEZCLILLA AZUL REY, TENIS COLOR VINO., NC-NO REQUIERE DE APOYO DE UNIDAD EN EL LUGAR NC-SE ASIGNAN, UNIDADES PARA SU CONOCIMIENTO Y DIFUSIÓN, SE MODULA A BASES Y UNIDADES PARA SU PRONTA LOCALIZACION, La unidad PE21 está Despachado, La unidad PE21 está Llegada, La unidad PE21 está Liberado, NC-SE REALIZA LLAMADA A USUARIA PARA INFORMARLE QUE SE DIO, DE BAJA ÉSTE FOLIO DE PRE DENUNCIA",
+  "puntaje": 5,
+  "nivel_revision": "BAJA",
+  "indicadores": [
+   {
+    "clave": "nocturno",
+    "peso": 5,
+    "motivo": "Hecho ocurrido en franja nocturna (22:00-06:00)"
+   }
+  ],
+  "accion_sugerida": "Mantener en seguimiento estadístico; sin elementos para reclasificar."
+ },
+ {
+  "folio": "TOL26072605211",
+  "incidente": "PERSONA TIRADA EN VIA PUBLICA",
+  "municipio": "TOLUCA",
+  "fecha": "2026-07-26",
+  "hora": "16:16:00",
+  "lat": 19.249725,
+  "lng": -99.69428,
+  "windows_maps_query": "VICENTE GUERRERO, CACALOMACAN, TOLUCA, Estado de México, México",
+  "notas": "EL USUARIO ESTABA DE PASO, REPORTA A MASCULINO TIRADO EN LA VIA PUBLICA SIN EXTRAMIDAD, INFERIOR DE LADO DERECHO, JUNTO A EL UNA ANDADERA, AL PARECER EL MASCULINO ESTA EN ESTADO DE EBRIEDAD, SE CANALIZA A CENTRAL DE MANDO Y CENTINELAS #, NC - AVANZA UNIDAD DE SEGURIDAD PUBLICA A CARGO DEL OFICIAL, JT07 DAVID SALAS, < NO SE CUENTA CON CÁMARA DE INFRAESTRUCTURA ESTATAL EN EL, LUGAR DEL INCIDENTE >, NC:NEGATIVO DE CAMARA DE INFRAESTRUCTURA ESTATAL O MUNICIPAL, EN EL LUGAR DEL INCIDENTE., La unidad PE79 está Despachado, SE CANALIZA A LA I REGIÓN DE SSEM (TOLUCA), [DATO PERSONAL SUPRIMIDO], SE SOLICITA LLC A 911, SE REALIZA LLAMADA A USUARIO, SE REALIZA LLAMADA A USUARIO BUZÓN, SE REALIZA LLAMADA A USUARIO NO CONTESTA, BUZÓN, SE REALIZA LLAMADA A USUARIO MENCIONA QUE SI LLEGO LA, PATRULLA, LC-POS/EXC, R.-TOLUCA DE LERDO, ESTADO DE MÉXICO A 26 DE JULIO DEL 2026., DIRECCIÓN GENERAL DE SEGURIDAD Y PROTECCIÓN TOLUCA., DIRECTOR GENERAL DE SEGURIDAD Y PROTECCIÓN: CAPITÁN AYÓN, MONSALVE JORGE ALBERTO. DIRECTOR OPERATIVO DE SEGURIDAD Y, PROTECCIÓN: [DATO PERSONAL SUPRIMIDO]., COORDINADOR GENERAL DE SEGURIDAD Y PROTECCIÓN: COMANDANTE, ZAMORA HINOJOSA ADEMIR. COORDINADORA ZONA SUR: COMANDANTE, GÓMEZ REYES YIOVANA DEL CARMEN. REGIÓN VII. SECTOR:, XXVIII. ASUNTO: AUXILIO EMITIDO POR CENTRAL DE RADIO, PERSONAS, TIRADAS EN LA VÍA PÚBLICA , COORDENADAS:, (19.26261, -99.677204). NARRACIÓN DE HECHOS. POR MEDIO DE, ESTE CONDUCTO INFORMO QUE SIENDO LAS 16:20 DE HORAS DEL DÍA, DE LA FECHA, LA TRIPULACIÓN DE LA UNIDAD ME-498A-5 A CARGO, DEL JEFE DEL SEGUNDO TURNO [DATO PERSONAL SUPRIMIDO], DAVID AL ESTAR CIRCULANDO POR LA CALLE DE ALPINISMO COLONIA, Y DELEGACIÓN DE SAN BUENAVENTURA LA CENTRAL DE RADIO EMITE, UN ALERTAMIENTO POR MEDIO DEL NÚMERO DE FOLIO;, TOL26072605219 PERSONA TIRADA EN LA VÍA PÚBLICA, EN LA CALLE, VICENTE GUERRERO Y INDEPENDENCIA DELEGACIÓN DE CACALOMACAN, TOLUCA ESTADO DE MÉXICO , MOTIVO POR EL CUAL NOS TRASLADAMOS, INMEDIATAMENTE AL LUGAR ARRIBANDO SIENDO LAS 16:25 HORAS,, DONDE NO SE TIENE A LA VISA LO REPORTADO,POR TAL MOTIVO SE, PROCEDE CON CENTRAL DE RADIO CON LA LLAMADA DE CALIDAD MISMA, QUE REFIERE QUE EL USUARIO MANDA DIRECTAMENTE A BUZÓN, ASÍ, MISMO NOS RETIRAMOS DEL LUGAR SIENDO LAS 16:40 HORAS, HACIENDO PRESENCIA CON BARRA DE LUCES Y EQUIPO SONORO, SIN, NINGUNA OTRA NOVEDAD. LO QUE INFORMO PARA CONOCIMIENTO DEL, MANDO., La unidad PE79 está Llegada, < RESOLUCIÓN >INFORMA LA I REGIÓN (TOLUCA) MANUEL CAMACHO, UNIDAD ME010A1FUE NEGATIVO EL CONTACTO INDICAN LOS VECINOS, DE LA ZONA QUE ES UN MASCULINO EN SITUACIÓN DE CALLE EL CUAL, SE ENCONTRABA EN ESTADO ETÍLICO Y SE RETIRÓ ANTES DE NUESTRO, ARRIBO, La unidad PE79 está Liberado",
+  "puntaje": 0,
+  "nivel_revision": "BAJA",
+  "indicadores": [
+   {
+    "clave": "etilico",
+    "peso": -10,
+    "motivo": "Estado etílico referido, patrón habitual de persona tirada"
+   }
+  ],
+  "accion_sugerida": "Mantener en seguimiento estadístico; sin elementos para reclasificar."
+ },
+ {
+  "folio": "TOL26072606132",
+  "incidente": "PERSONA TIRADA EN VIA PUBLICA",
+  "municipio": "TOLUCA",
+  "fecha": "2026-07-26",
+  "hora": "18:22:00",
+  "lat": 19.32438,
+  "lng": -99.62164,
+  "windows_maps_query": "AVENIDA JOSE LOPEZ PORTILLO esquina SIN_NOMBRE, BARRIO LA MAGDALENA OTZACATIPAN, TOLUCA, Estado de México, México",
+  "notas": "USUARIO REPORTA AUN MASCULINO DE LA TERCERA EDAD EL CUAL, REFIERE SE ENCUENTRA INCONCIENTE, SOBRE LA VIA PUBLICA FRENTE AL OXXO, SOICITA UNIDAD MEDICA, REFIERE QUE NO ES UNA PERSONA EN SITUACION DE CALLE, USUARIO VA ESPERAR LA UNIDAD EN EL SITIO, NC. CENTRO DE MANDO Y CENTINELAS..., < SE CUENTA CON CÁMARA ALEDAÑA DE INFRAESTRUCTURA ESTATAL, >127- TOL, <CÁMARA SIN CONEXIÓN A C5>, SE SOLICITA UNIDAD DE SP, La unidad CRUM99 está Despachado, SE INFORMA A CRUM [DATO PERSONAL SUPRIMIDO] MARTINES, SE SOLICITA UNIDAD DE SEGURIDAD PUBLICA, SE CANALIZA A LA I REGIÓN DE SSEM (TOLUCA), NC-SE CUENTA CON CÁMARA ALEDAÑA 127 DE INFRAESTRUCTURA, ESTATAL SIN CONEXION A C5, NC. SE REALIZA LLAMADA. NUMERO OCUPADO., NC. SE LLAMA DE NUEVO, AUSENCIA DE SPM., NC. SE LLAMA DE NUEVO.CONFIRMA CONTACTO CON SPM. LA PERSONA, SE LEVANTO DEL PISO Y SE RETIRA DEL LUGAR, LC. POS., R- TOLUCA DE LERDO , ESTADO DE MÉXICO A 26 DE JULIO, DEL 2026 DIRECTOR GENERAL DE LA DIRECCIÓN SEGURIDAD Y, PROTECCIÓN CAPITÁN JORGE ALBERTO AYON MONSALVE. *DIRECTOR, OPERATIVO DE LA DIRECCIÓN DE SEGURIDAD Y PROTECCIÓN*CMDTE., JOSÉ LUIS ÁLVAREZ OROZCO. COORDINADOR OPERATIVO DE LA, DIRECCIÓN DE SEGURIDAD Y PROTECCIÓN CMDTE. ZAMORA HINOJOSA, ADEMIR. *COORDINADOR NORTE*CMDTE. ESTRADA GARCIA MARIO, JUAN. ASUNTO AUXILIO FOLIO TOL26072606157 OTROS INCIDENTES, MÉDICOS . TOL26072606199 PERSONA TIRADA EN VIA PÚBLICA, UBICACIÓN CALLE INDEPENDENCIA LÓPEZ PORTILLO SAN LORENZO, TEPALTITLAN DESCRIPCIÓN DE LOS HECHOS SIENDO LAS 18:50, HORAS LA UNIDAD ME-217A-5, A CARGO POLICÍA ROMERO RAMÍREZ, NOHEMI PALOMA Y ROMERO NAVA SERGIO ALFONSO AL CALLE, INDEPENDENCIA LÓPEZ PORTILLO SAN LORENZO TEPALTITLAN YA QUE, DERIVADO DEL FOLIO TOL26072606157 DONDE SE REPORTA OTROS, INCIDENTES MÉDICOS, POR LO QUE ARRIBAR SE HACE TIENE A LA, VISTA LO REPORTADO AL MOMENTO DE PREGUNTARLE SUS GENERALES, LA PERSONA SE ENCUENTRA EN ESTADO ETÍLICO NO PROPORCIONANDO, DATO ALGUNO POR LO QUE ARRIBA SU FAMILIAR RETIRÁNDOLO DEL, LUGAR SIN PROPORCIONAR DATOS POR PRIVACIDAD. NOS RETIRAMOS, DEL LUGAR . SIENDO LAS 19:00 HORAS LO QUE INFORMO A USTED, PARA SU SUPERIOR CONOCIMIENTO., R- INFORMA EL POLICIA RICO ESQUIVEL VICTOR MANUEL UNIDAD, ME198A1. SE TRATO DE UN MASCULINO EN ESTADO ETILICO +, R-NO SE REQUIERE MEDICA, La unidad CRUM99 está Llegada, La unidad CRUM99 está Liberado",
+  "puntaje": 0,
+  "nivel_revision": "BAJA",
+  "indicadores": [
+   {
+    "clave": "atencion_medica",
+    "peso": -15,
+    "motivo": "Atención médica documentada con persona consciente"
+   }
+  ],
+  "accion_sugerida": "Mantener en seguimiento estadístico; sin elementos para reclasificar."
+ },
+ {
+  "folio": "TOL26072606194",
+  "incidente": "PERSONA TIRADA EN VIA PUBLICA",
+  "municipio": "TOLUCA",
+  "fecha": "2026-07-26",
+  "hora": "18:31:00",
+  "lat": 19.32067,
+  "lng": -99.62587,
+  "windows_maps_query": "AVENIDA INDEPENDENCIA esquina AVENIDA JOSE LOPEZ PORTILLO/SIN_NOMBRE, VILLAS TEPALTITLAN, TOLUCA, Estado de México, México",
+  "notas": "USUARIA MENCIONA QUE HAY UN MASCUCLINO TIRADO SOBRE LA CALE, ESTA CONSCIENTE TIENE SANGRE EN LA MANO, ME233A5 POLICIA MUNICIPAL, MENCIONA QUE OFICIALES MUNICIPALES LE MENCIONARON QUE SI SE, LO PUEDEN LLEVAR EN SUS VEHÍCULOS, SE CANALIZA A CENTRAL DE MANDO Y CENTINELAS #, NC- AVANZXA JT 14 DE SPM, LOS OFICIALES LE REFIEREN QUE ES UNA PERSONA EN SITUACIÓN DE, CALLE USUARIA MENCIONA QUE NO SE VE ASÍ, NC-SE CUENTA CON CÁMARA ALEDAÑA 127 DE INFRAESTRUCTURA, ESTATAL SIN CONEXION A C5, SE INFORMA A CRUM [DATO PERSONAL SUPRIMIDO] ESCOBAR, A ESPERA DE LO QUE INDIQUE UNIDAD DE SP EN SITIO, La unidad PE93 está Despachado, SE CANALIZA A LA I REGIÓN DE SSEM (TOLUCA), SE REALIZA LLAMADA A USUARIO MENCIONA QUE NO SE PERCATA SI, LLEGO LA UNIDAD MEDICA, SI LLEGARON LOS OFICIALES, LC-POS/EXC, R- TOLUCA DE LERDO , ESTADO DE MÉXICO A 26 DE JULIO, DEL 2026 DIRECTOR GENERAL DE LA DIRECCIÓN SEGURIDAD Y, PROTECCIÓN CAPITÁN JORGE ALBERTO AYON MONSALVE. *DIRECTOR, OPERATIVO DE LA DIRECCIÓN DE SEGURIDAD Y PROTECCIÓN*CMDTE., JOSÉ LUIS ÁLVAREZ OROZCO. COORDINADOR OPERATIVO DE LA, DIRECCIÓN DE SEGURIDAD Y PROTECCIÓN CMDTE. ZAMORA HINOJOSA, ADEMIR. *COORDINADOR NORTE*CMDTE. ESTRADA GARCIA MARIO, JUAN. ASUNTO AUXILIO FOLIO TOL26072606157 OTROS INCIDENTES, MÉDICOS . TOL26072606199 PERSONA TIRADA EN VIA PÚBLICA, UBICACIÓN CALLE INDEPENDENCIA LÓPEZ PORTILLO SAN LORENZO, TEPALTITLAN DESCRIPCIÓN DE LOS HECHOS SIENDO LAS 18:50, HORAS LA UNIDAD ME-217A-5, A CARGO POLICÍA ROMERO RAMÍREZ, NOHEMI PALOMA Y ROMERO NAVA SERGIO ALFONSO AL CALLE, INDEPENDENCIA LÓPEZ PORTILLO SAN LORENZO TEPALTITLAN YA QUE, DERIVADO DEL FOLIO TOL26072606157 DONDE SE REPORTA OTROS, INCIDENTES MÉDICOS, POR LO QUE ARRIBAR SE HACE TIENE A LA, VISTA LO REPORTADO AL MOMENTO DE PREGUNTARLE SUS GENERALES, LA PERSONA SE ENCUENTRA EN ESTADO ETÍLICO NO PROPORCIONANDO, DATO ALGUNO POR LO QUE ARRIBA SU FAMILIAR RETIRÁNDOLO DEL, LUGAR SIN PROPORCIONAR DATOS POR PRIVACIDAD. NOS RETIRAMOS, DEL LUGAR . SIENDO LAS 19:00 HORAS LO QUE INFORMO A USTED, PARA SU SUPERIOR CONOCIMIENTO., R-APOYO PRESENCIAL, SEGURIDAD PUBLICA, La unidad PE93 está Llegada, R -POLICÍA TERCERO NAVA CRUZ LUIS FELIPE UNIDAD 23595 CON 2, MÁS SE TRATO DE UN MASCULINO EN ESTADO ETILICO, La unidad PE93 está Liberado",
+  "puntaje": 0,
+  "nivel_revision": "BAJA",
+  "indicadores": [
+   {
+    "clave": "sangre_lesiones",
+    "peso": 15,
+    "motivo": "Sangrado o lesiones visibles descritas"
+   },
+   {
+    "clave": "atencion_medica",
+    "peso": -15,
+    "motivo": "Atención médica documentada con persona consciente"
+   }
+  ],
+  "accion_sugerida": "Mantener en seguimiento estadístico; sin elementos para reclasificar."
+ },
+ {
+  "folio": "TOL26072606215",
+  "incidente": "PERSONA TIRADA EN VIA PUBLICA",
+  "municipio": "JILOTEPEC",
+  "fecha": "2026-07-26",
+  "hora": "18:34:00",
+  "lat": 20.058882,
+  "lng": -99.637558,
+  "windows_maps_query": "CAMINO A LA IGLESIA, CALPULALPAN (PRIMERA MANZANA CENTRO), JILOTEPEC, Estado de México, México",
+  "notas": "REPORTA A MASCULINO TIRADO EN LA VIA PUBLICA AL PARECER ESTA, EN ESTADO DE EBRIEDAD, EST EN POSICION SEDENTE 80 AÑOS DE EDAD, N.[DATO PERSONAL SUPRIMIDO] RECURRENTE QUE EL MASCULINO, ESTE TIRADO EN LA VIA, **SE CANALIZA POR GRUPOS DE COORDINACIÓN** SPM /, <MUNICIPIO SIN CONEXIÓN A C5> TICKET 5519/2026 JILO, < RESOLUCION > MEDIANTE GRUPOS DE CORDINACION INFORMAN, SIENDO LAS 18:38 HORAS SE RECIBE LLAMADA TELEFÓNICA DE C5, FOLIO: TOK26072606218 SOLICITANDO APOYO EN PRIMERA MANZANA, DE CALPULALPAN CAMINO A LA IGLESIA COMO REFERENCIA FRENTE A, MINI SÚPER CASTILLO REPORTA USUARIO DE NOMBRE JOSÉ ANTONIO, PÉREZ CON NÚMERO TELEFÓNICO 56 26 29 43 24 A MASCULINO, TIRADO EN LA VÍA PÚBLICA AL PARECER ESTÁ EN ESTADO DE, EBRIEDAD ESTE EN POSICIÓN SEDENTE 80 AÑOS DE EDAD NC EL, USUARIO MENCIONA QUE ES RECURRENTE QUE EL MASCULINO ESTÁ, TIRADO EN LA VÍA, AVANZANDO A LLEGAR EL POLICÍA TERCERO, JESÚS ARANDA LARA AL MANDO DE LA UNIDAD CON NÚMERO ECONÓMICO, 264 Y EL ESCOLTA POLICÍA JORGE RUIZ RODRÍGUEZ Y RENÉ, ESPINOZA ALCÁNTARA, AL ARRIBAR AL LUGAR INFORMAN QUE HACEN, CONTACTO CON EL SEÑOR DIONISIO DANIEL CRUZ, DE 75 AÑOS DE, EDAD, CON DOMICILIO EN SAN VICENTE CALPULALPAN, EN CUÁL, REFIERE QUE SE TOMÓ UN TEQUILA Y SE QUEDÓ DORMIDO ASÍ MISMO, ACUDIENDO PROTECCIÓN CIVIL LA AMBULANCIA 272 AL MANDO DE, ADRIÁN NÚÑEZ MAS UNO SIENDO NEGATIVO QUE QUIERAN RECIBIR, ATENCIÓN MÉDICA.",
+  "puntaje": 0,
+  "nivel_revision": "BAJA",
+  "indicadores": [
+   {
+    "clave": "etilico",
+    "peso": -10,
+    "motivo": "Estado etílico referido, patrón habitual de persona tirada"
+   }
+  ],
+  "accion_sugerida": "Mantener en seguimiento estadístico; sin elementos para reclasificar."
+ },
+ {
+  "folio": "TOL26072608002",
+  "incidente": "HOMICIDIO",
+  "municipio": "OCUILAN",
+  "fecha": "2026-07-26",
+  "hora": "22:12:00",
+  "lat": 19.022025,
+  "lng": -99.463792,
+  "windows_maps_query": "CARRETERA SANTA CRUZ TEZONTEPEC - OCUILAN, KILOMETRO 2+000, SANTA CRUZ TEZONTEPEC (TOTOLTEPEC), OCUILAN, Estado de México, México",
+  "notas": "OCUILAN (1 PERSONA CALCINADA) A LAS 18:30 HORAS, EL POLICÍA, SUÁREZ VÁSQUEZ OCTAVIO, CON 06 ELEMENTOS, EN LA UNIDAD, ME762A4, EN LA CARRETERA SANTA CRUZ TEZONTEPEC - OCUILAN,, KILÓMETRO 2+000, PARAJE \"EL MAGUEYITO\", LOCALIDAD DE SANTA, CRUZ TEZONTEPEC, TOMÓ CONOCIMIENTO DE UNA PERSONA CALCINADA,, DEL SEXO MASCULINO, DESCONOCIÉNDOSE SUS GENERALES, EN, POSICIÓN DECÚBITO VENTRAL, ARRIBANDO LA PARAMÉDICO LIZETH, ROSAS LÓPEZ, A BORDO DE LA AMBULANCIA ECONÓMICO 15,, CERTIFICANDO EL DECESO, COMO PRIMER RESPONDIENTE POLICÍA, MUNICIPAL JUAN HERNÁNDEZ CASTRO, CON 08 ELEMENTOS, EN LAS, UNIDADES: PM10 Y PM 11.",
+  "puntaje": 0,
+  "nivel_revision": "BAJA",
+  "indicadores": [
+   {
+    "clave": "nocturno",
+    "peso": 5,
+    "motivo": "Hecho ocurrido en franja nocturna (22:00-06:00)"
+   },
+   {
+    "clave": "atencion_medica",
+    "peso": -15,
+    "motivo": "Atención médica documentada con persona consciente"
+   }
+  ],
+  "accion_sugerida": "Mantener en seguimiento estadístico; sin elementos para reclasificar."
+ },
+ {
+  "folio": "ECA26072606218",
+  "incidente": "PERSONA NO LOCALIZADA O DESAPARECIDA",
+  "municipio": "IXTAPALUCA",
+  "fecha": "46229",
+  "hora": "15:47:00",
+  "lat": 19.38394,
+  "lng": -98.844455,
+  "windows_maps_query": "CLAVEL 12 LT 7 esquina JAPON/ AUSTRIA, COATEPEC, IXTAPALUCA, Estado de México, México",
+  "notas": "REPORTA LA DESAPARICION DE SU HIJO [DATO PERSONAL SUPRIMIDO], TRABAJO, SALIO EL DIA 23/07/2026 A LAS 06:00 HORAS DE AHI SU TELEFONO, YA ESTA APAGADO, DESCONOCE VESTIMENTA YA QUE NO VIO COMO SALIO, RESPONDE - [VÍCTIMA] DE 21 AÑOS, El usuario [OPERADOR C5] ha cambiado el estatus de la persona desaparecida #1 ([DATO PERSONAL SUPRIMIDO]) a Persona extraviada. [NO LOCALIZADO], La unidad FGJEM59 está Despachado, La unidad FGJEM59 está Llegada, La unidad FGJEM59 está Liberado, R - EL APOYO QUEDO A CARGO DEL ÁREA DE PREVENCIÓN, SE DA DE CONOCIMIENTO A COBUPEM",
+  "puntaje": 0,
+  "nivel_revision": "BAJA",
+  "indicadores": [],
+  "accion_sugerida": "Mantener en seguimiento estadístico; sin elementos para reclasificar."
+ },
+ {
+  "folio": "ECA26072607843",
+  "incidente": "TENTATIVA DE SUICIDIO",
+  "municipio": "ZUMPANGO",
+  "fecha": "46229",
+  "hora": "19:14:00",
+  "lat": 19.80384,
+  "lng": -99.01061,
+  "windows_maps_query": "AVENIDA HIDALGO esquina SIN DATO, CONJUNTO URBANO SATA FE, ZUMPANGO, Estado de México, México",
+  "notas": "REPORTA QUE SU HERMANO [DATO PERSONAL SUPRIMIDO] MINA, INDICA QUE TIENE 30 AÑOS Y PADECE DEPRESION Y ALCOHOLISMO, SE CANALIZA RG 621, La unidad PE182 está Despachado, La unidad PE182 está Llegada, NC SE DA DE CONOCIMIENTO VIA RADIO A LAS DEMAS AREAS, 19.797257439492554, -99.01977596148001, < NO SE CUENTA CON CÁMARA DE INFRAESTRUCTURA ESTATAL EN EL, LUGAR DEL INCIDENTE >, ///, UNIDAD GC-23 UBICACIÓN: CALLE: CERRO DEL COAQUEME SAN, BARTOLO CUAUTLALPAN HECHOS CENTRAL INDICA AVANZAR AL CERRO, DEL COAQUEME YA QUE EN ESE LUGAR UNA PERSONA AL PARECER, QUERIENDO AVENTASTE EN LA MINA AL LLEGAR AL LUGAR CON RC 3, SE TIENE CONTACTO CON KAREN NAYELI SANTIAGO FELIPE DE 29, AÑOS MISMA QUE DIJO QUE SU HERMANO [DATO PERSONAL SUPRIMIDO], FELIPE DE 32 AÑOS SUFRE DE DEPRESIÓN Y ANSIEDAD Y ALCOLISMO, POR LO QUE SE DIALOGA CON SU HERMANO Y BAJA DEL CERRO PERO, SE LE PRESTÓ EL APOYO PARA AVANZARLO A SU DOMICILIO EN, PASEOS DE SAN JUAN QUEDANDO SIN NOVEDAD, R- SE CIERRA EL FOLIO DE PE, Y DEBIDO A QUE RG,NO, PROPORCIONA INF., La unidad PE182 está Liberado",
+  "puntaje": 0,
+  "nivel_revision": "BAJA",
+  "indicadores": [],
+  "accion_sugerida": "Mantener en seguimiento estadístico; sin elementos para reclasificar."
+ },
+ {
+  "folio": "ECA26072608038",
+  "incidente": "PERSONA NO LOCALIZADA O DESAPARECIDA",
+  "municipio": "CHIMALHUACAN",
+  "fecha": "46229",
+  "hora": "19:35:00",
+  "lat": 19.4176,
+  "lng": -98.961915,
+  "windows_maps_query": "CALLE 12MZ 11 LT 9 esquina DALIA / LIRIO, XOCHITENCO, CHIMALHUACAN, Estado de México, México",
+  "notas": "SOLICITANDO INFORMACION, REPORTA SU TIA [DATO PERSONAL SUPRIMIDO] PERLA MARINA, FUENTES HERNANDEZ DE 28 AÑOS SALIO DEL DOMICILIO PARA IR A, UNAS PLATICAS A UN CENTRO DE REHABILITACION Y YA NO REGRESO, EL DIA 24/07/20626 A LAS 17:00 HRS, REPORTA SOBRINA, NC - MUNICIPIO CON ESPEJO EN ESPERA DE NOTAS Y, ASIGNACIÓN/DESPACHO DE UNIDADES VIRTUALES, El usuario [OPERADOR C5] ha cambiado el estatus de la persona desaparecida #1 ([DATO PERSONAL SUPRIMIDO]) a Persona extraviada. [NO LOCALIZADA], REPORTA SU TIA [DATO PERSONAL SUPRIMIDO] [VÍCTIMA] DE 28 AÑOS SALIO DEL DOMICILIO PARA IR A UNAS PLATICAS A UN CENTRO DE REHABILITACION Y YA NO REGRESO EL DIA 24/07/20626 A LAS 17:00 HRS, VISTE UN SUETER COLOR BLANCO CON RAYAS NEGRAS, NC NO REQUIERE UNIDAD, SE DA DE CONOCIMIENTO A COBUPEM, R-AVANZA UNIDAD SCM-202 OFICIALES INFORMAN REALIZAN, RECORRIDOS POR CALLES PRINCIPALES Y ALEDAÑAS SIN UBICAR LO, REFERIDO Y SIN QUE ALGUNA PERSONA SOLICITE APOYO, SIN LOGRAR, CONTACTAR VÍA TELEFÓNICA CON EL USUARIO, ENVIANDO A BUZON.",
+  "puntaje": 0,
+  "nivel_revision": "BAJA",
+  "indicadores": [],
+  "accion_sugerida": "Mantener en seguimiento estadístico; sin elementos para reclasificar."
+ },
+ {
+  "folio": "ECA26072608592",
+  "incidente": "PERSONA NO LOCALIZADA O DESAPARECIDA",
+  "municipio": "ECATEPEC DE MORELOS",
+  "fecha": "46229",
+  "hora": "20:51:00",
+  "lat": 19.512875,
+  "lng": -99.048975,
+  "windows_maps_query": "DALIAS esquina NUM 29/AZAHARES/AV MARAVILLAS, JARDINES DEL TEPEYAC, ECATEPEC DE MORELOS, Estado de México, México",
+  "notas": "REPORTA QUE UN ADULTO MAYOR ESTA EXTRAVIADO Y ESTÁ AFUERA DE, SU CASA, COMENTA QUE EL MASCULINO DICE QUE UN FAMILIAR SE ENCUENTRA, EN ESTADO DE EBRIEDAD, NC-EL USUARIO MENCIONA QUE AL PASAR POR EL LUGAR UNAS, PERSONAS DICEN QUE SABEN DONDE VIVE, SE LE SUGIERE A USUARIO, ESPERAR EL ARRIBO DE LA UNIDAD DE APOYO, SECTOR 23, SE MODULA A BASES Y UNIDADES PARA SU PRONTA LOCALIZACION, La unidad PE30 está Despachado, La unidad PE30 está Llegada, La unidad PE30 está Liberado, < SE CUENTA CON CÁMARA ALEDAÑA DE INFRAESTRUCTURA ESTATAL >, < SIN TENER LÍNEA DE VISTA >, VECA-132, R-INDICA UNIDAD 22_189 NO TENER CONTAC6TO NI NUMERAL NI, FISISCAMENTE SE DAN RECORRIDOS POR LA ZONA SIN NOVEDAD SE, RETIRAN DEL LUGAR, CODIGO 1",
+  "puntaje": 0,
+  "nivel_revision": "BAJA",
+  "indicadores": [
+   {
+    "clave": "etilico",
+    "peso": -10,
+    "motivo": "Estado etílico referido, patrón habitual de persona tirada"
+   }
+  ],
+  "accion_sugerida": "Mantener en seguimiento estadístico; sin elementos para reclasificar."
+ },
+ {
+  "folio": "ECA26072609083",
+  "incidente": "PERSONA NO LOCALIZADA O DESAPARECIDA",
+  "municipio": "TLALNEPANTLA DE BAZ",
+  "fecha": "46229",
+  "hora": "21:57:00",
+  "lat": 19.535585,
+  "lng": -99.233145,
+  "windows_maps_query": "AVENIDA LOPEZ MATEOS 083 esquina AVENIDA MORELOS, FRACCIONAMIENTO JACARANDAS, TLALNEPANTLA DE BAZ, Estado de México, México",
+  "notas": "REALIZABAN COMPRAS EN EL MERCADO, SU HIJO [DATO PERSONAL SUPRIMIDO], DEJAR UNAS BOLSAS AL AUTO, CUANDO LA FAMILIA LLEGÓ AL, VEHÍCULO ENCONTRARON LAS BOLSAS DENTRO PERO SU HIJO NO, ESTABA, TRATARON DE COMUNICARSE SIN TENER ÉXITO, El usuario [OPERADOR C5] ha cambiado el estatus de la persona desaparecida #1 ([DATO PERSONAL SUPRIMIDO]) a Persona extraviada. [PERSONA NO LOCALIZADA], TELEFÓNICOS ADICIONALES 1.- 55 4826 2579 2.- 55 7300 2734, FECHA Y HORA DE EXTRAVÍO: 26/07/2026 17:00, SE PROPORCIONA TELÉFONO DE COBUPEM, La unidad P#083 está Despachado, La unidad P#083 está Llegada, La unidad P#083 está Liberado, NC- SE DA DE CONOCIMIENTO A COBUPEM, CIERRE JT-6 EN EL LUGAR SE HACE CARGO LA UNIDAD DE BUSQUEDA",
+  "puntaje": 0,
+  "nivel_revision": "BAJA",
+  "indicadores": [],
+  "accion_sugerida": "Mantener en seguimiento estadístico; sin elementos para reclasificar."
+ }
+]

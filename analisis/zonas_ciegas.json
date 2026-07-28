@@ -1,0 +1,4820 @@
+[
+ {
+  "sector_id": "SEC-967_-4983",
+  "lat": 19.35,
+  "lng": -99.65,
+  "municipio": "TOLUCA",
+  "municipios_involucrados": [
+   "TOLUCA"
+  ],
+  "colonias": [],
+  "eventos_hd": 0,
+  "victimas_hd": 0,
+  "llamadas_violentas": 6,
+  "indice_violencia": 16.5,
+  "incidentes_top": [
+   [
+    "VIOLENCIA CONTRA LAS MUJERES",
+    2
+   ],
+   [
+    "PERSONA AGRESIVA",
+    1
+   ],
+   [
+    "ROBO DE VEHICULO PARTICULAR CON VIOLENCIA",
+    1
+   ],
+   [
+    "PERSONA TIRADA EN VIA PUBLICA",
+    1
+   ]
+  ],
+  "familias": {
+   "rina": 1,
+   "robo_violento": 1,
+   "deceso_dudoso": 1,
+   "violencia_genero": 2,
+   "arma_fuego": 1
+  },
+  "base_cercana": "1.- AGRUPAMIENTO A.S.T.R.O.S. TOLUCA, DE LA I REGION",
+  "base_cercana_municipio": "Toluca",
+  "dist_base_km": 4.14,
+  "bases_en_3km": 0,
+  "personal_1km": 0,
+  "personal_3km": 0,
+  "sin_camaras_reportado": false,
+  "indice_ceguera": 50.6,
+  "clasificacion": "DESATENDIDO",
+  "diagnostico": "Violencia registrada sin despliegue a distancia útil: procede extender cobertura o reasignar cuadrante.",
+  "hd_detalle": [],
+  "limitrofe": false,
+  "rank_violencia": 18,
+  "ranking": 1
+ },
+ {
+  "sector_id": "SEC-962_-4947",
+  "lat": 19.25,
+  "lng": -98.93,
+  "municipio": "VALLE DE CHALCO",
+  "municipios_involucrados": [
+   "VALLE DE CHALCO"
+  ],
+  "colonias": [
+   "SAN MIGUEL XICO"
+  ],
+  "eventos_hd": 1,
+  "victimas_hd": 2,
+  "llamadas_violentas": 0,
+  "indice_violencia": 20.0,
+  "incidentes_top": [],
+  "familias": {},
+  "base_cercana": "1.- COMANDANCIA SUBDIRECCION OPERATIVA REGIONAL VOLCANES 2.- COMANDANCIA DE LA XLVII REGION",
+  "base_cercana_municipio": "Chalco",
+  "dist_base_km": 3.03,
+  "bases_en_3km": 0,
+  "personal_1km": 0,
+  "personal_3km": 0,
+  "sin_camaras_reportado": false,
+  "indice_ceguera": 50.3,
+  "clasificacion": "DESATENDIDO",
+  "diagnostico": "Violencia registrada sin despliegue a distancia útil: procede extender cobertura o reasignar cuadrante.",
+  "hd_detalle": [
+   {
+    "id": 22,
+    "fecha": "2026-07-11",
+    "colonia": "SAN MIGUEL XICO",
+    "movil": "Se desconoce el móvil de la agresión"
+   }
+  ],
+  "limitrofe": false,
+  "rank_violencia": 9,
+  "ranking": 2
+ },
+ {
+  "sector_id": "SEC-979_-4960",
+  "lat": 19.59,
+  "lng": -99.19,
+  "municipio": "TLALNEPANTLA DE BAZ",
+  "municipios_involucrados": [
+   "TLALNEPANTLA DE BAZ",
+   "TLALNEPANTLA",
+   "CUAUTITLAN IZCALLI"
+  ],
+  "colonias": [
+   "SAN PEDRO BARRIENTOS",
+   "SANTA MARÍA DE GUADALUPE, LA QUEBRADA"
+  ],
+  "eventos_hd": 2,
+  "victimas_hd": 5,
+  "llamadas_violentas": 2,
+  "indice_violencia": 54.0,
+  "incidentes_top": [
+   [
+    "ROBO A TRANSPORTISTA O VEHICULO COMERCIAL CON VIOLENCIA",
+    1
+   ],
+   [
+    "ROBO A NEGOCIO CON VIOLENCIA",
+    1
+   ]
+  ],
+  "familias": {
+   "robo_violento": 2
+  },
+  "base_cercana": "1.- 6° AGRUPAMIENTO CANINO TLALNEPANTLA",
+  "base_cercana_municipio": "Tlalnepantla de Baz",
+  "dist_base_km": 0.99,
+  "bases_en_3km": 3,
+  "personal_1km": 13,
+  "personal_3km": 95,
+  "sin_camaras_reportado": false,
+  "indice_ceguera": 49.5,
+  "clasificacion": "SATURADO",
+  "diagnostico": "Hay base y personal a menos de 1.5 km y aun así concentra violencia: revisar efectividad y horarios del patrullaje existente, no sumar inmuebles.",
+  "hd_detalle": [
+   {
+    "id": 6,
+    "fecha": "2026-07-03",
+    "colonia": "SAN PEDRO BARRIENTOS",
+    "movil": "Posible ajuste de cuentas"
+   },
+   {
+    "id": 52,
+    "fecha": "2026-07-25",
+    "colonia": "SANTA MARÍA DE GUADALUPE, LA QUEBRADA",
+    "movil": "Se desconoce el móvil de la agresión"
+   }
+  ],
+  "limitrofe": true,
+  "rank_violencia": 1,
+  "ranking": 3
+ },
+ {
+  "sector_id": "SEC-970_-4949",
+  "lat": 19.41,
+  "lng": -98.97,
+  "municipio": "CHIMALHUACAN",
+  "municipios_involucrados": [
+   "CHIMALHUACAN"
+  ],
+  "colonias": [
+   "XALTIPAC"
+  ],
+  "eventos_hd": 1,
+  "victimas_hd": 1,
+  "llamadas_violentas": 2,
+  "indice_violencia": 17.0,
+  "incidentes_top": [
+   [
+    "DETONACION POR ARMA DE FUEGO",
+    1
+   ],
+   [
+    "PERSONA NO LOCALIZADA O DESAPARECIDA",
+    1
+   ]
+  ],
+  "familias": {
+   "arma_fuego": 1,
+   "desaparicion": 1
+  },
+  "base_cercana": "1.- 3° AGRUPAMIENTO SAN AGUSTIN DE LA XL REGION",
+  "base_cercana_municipio": "Chimalhuacán",
+  "dist_base_km": 3.8,
+  "bases_en_3km": 0,
+  "personal_1km": 0,
+  "personal_3km": 0,
+  "sin_camaras_reportado": false,
+  "indice_ceguera": 49.3,
+  "clasificacion": "DESATENDIDO",
+  "diagnostico": "Violencia registrada sin despliegue a distancia útil: procede extender cobertura o reasignar cuadrante.",
+  "hd_detalle": [
+   {
+    "id": 46,
+    "fecha": "2026-07-22",
+    "colonia": "XALTIPAC",
+    "movil": "Se desconoce el móvil de la agresión"
+   }
+  ],
+  "limitrofe": false,
+  "rank_violencia": 17,
+  "ranking": 4
+ },
+ {
+  "sector_id": "SEC-972_-4963",
+  "lat": 19.45,
+  "lng": -99.25,
+  "municipio": "NAUCALPAN DE JUAREZ",
+  "municipios_involucrados": [
+   "NAUCALPAN DE JUAREZ"
+  ],
+  "colonias": [],
+  "eventos_hd": 0,
+  "victimas_hd": 0,
+  "llamadas_violentas": 11,
+  "indice_violencia": 40.5,
+  "incidentes_top": [
+   [
+    "PERSONA LESIONADA POR PROYECTIL DE ARMA DE FUEGO",
+    4
+   ],
+   [
+    "DETONACION POR ARMA DE FUEGO",
+    2
+   ],
+   [
+    "PERSONA AGRESIVA",
+    1
+   ],
+   [
+    "VIOLENCIA FAMILIAR",
+    1
+   ]
+  ],
+  "familias": {
+   "arma_fuego": 6,
+   "rina": 3,
+   "violencia_genero": 2
+  },
+  "base_cercana": "1.- 2° AGRUPAMIENTO DE LA XXIV REGION SAN CRISTOBAL",
+  "base_cercana_municipio": "Huixquilucan",
+  "dist_base_km": 1.81,
+  "bases_en_3km": 3,
+  "personal_1km": 0,
+  "personal_3km": 89,
+  "sin_camaras_reportado": false,
+  "indice_ceguera": 48.5,
+  "clasificacion": "MIXTO",
+  "diagnostico": "Cobertura intermedia: verificar recorridos y tiempos de respuesta en el cuadrante.",
+  "hd_detalle": [],
+  "limitrofe": false,
+  "rank_violencia": 2,
+  "ranking": 5
+ },
+ {
+  "sector_id": "SEC-984_-4957",
+  "lat": 19.69,
+  "lng": -99.13,
+  "municipio": "TULTEPEC",
+  "municipios_involucrados": [
+   "TULTEPEC",
+   "MELCHOR OCAMPO"
+  ],
+  "colonias": [
+   "OXTOC"
+  ],
+  "eventos_hd": 1,
+  "victimas_hd": 1,
+  "llamadas_violentas": 1,
+  "indice_violencia": 12.0,
+  "incidentes_top": [
+   [
+    "VIOLENCIA CONTRA LAS MUJERES",
+    1
+   ]
+  ],
+  "familias": {
+   "violencia_genero": 1
+  },
+  "base_cercana": "1.- 2° AGRUPAMIENTO TULTEPEC, REGION XXXV, SUBDIRECCION CIRCUITO EXTERIOR MEXIQUENSE",
+  "base_cercana_municipio": "Tultepec",
+  "dist_base_km": 5.21,
+  "bases_en_3km": 0,
+  "personal_1km": 0,
+  "personal_3km": 0,
+  "sin_camaras_reportado": false,
+  "indice_ceguera": 43.2,
+  "clasificacion": "DESATENDIDO",
+  "diagnostico": "Violencia registrada sin despliegue a distancia útil: procede extender cobertura o reasignar cuadrante.",
+  "hd_detalle": [
+   {
+    "id": 25,
+    "fecha": "2026-07-13",
+    "colonia": "OXTOC",
+    "movil": "Se desconoce el móvil de la agresión"
+   }
+  ],
+  "limitrofe": true,
+  "rank_violencia": 32,
+  "ranking": 6
+ },
+ {
+  "sector_id": "SEC-990_-4953",
+  "lat": 19.81,
+  "lng": -99.05,
+  "municipio": "ZUMPANGO",
+  "municipios_involucrados": [
+   "ZUMPANGO"
+  ],
+  "colonias": [
+   "FRACCIONAMIENTO SANTA CECILIA"
+  ],
+  "eventos_hd": 1,
+  "victimas_hd": 1,
+  "llamadas_violentas": 0,
+  "indice_violencia": 10.0,
+  "incidentes_top": [],
+  "familias": {},
+  "base_cercana": "1.- 1° AGRUPAMIENTO ZUMPANGO, XXXIII REGION",
+  "base_cercana_municipio": "Zumpango",
+  "dist_base_km": 6.41,
+  "bases_en_3km": 0,
+  "personal_1km": 0,
+  "personal_3km": 0,
+  "sin_camaras_reportado": false,
+  "indice_ceguera": 40.0,
+  "clasificacion": "DESATENDIDO",
+  "diagnostico": "Violencia registrada sin despliegue a distancia útil: procede extender cobertura o reasignar cuadrante.",
+  "hd_detalle": [
+   {
+    "id": 41,
+    "fecha": "2026-07-20",
+    "colonia": "FRACCIONAMIENTO SANTA CECILIA",
+    "movil": "Se desconoce el móvil de la agresión"
+   }
+  ],
+  "limitrofe": false,
+  "rank_violencia": 59,
+  "ranking": 7
+ },
+ {
+  "sector_id": "SEC-972_-4994",
+  "lat": 19.45,
+  "lng": -99.87,
+  "municipio": "ALMOLOYA DE JUAREZ",
+  "municipios_involucrados": [
+   "ALMOLOYA DE JUAREZ"
+  ],
+  "colonias": [],
+  "eventos_hd": 0,
+  "victimas_hd": 0,
+  "llamadas_violentas": 2,
+  "indice_violencia": 10.0,
+  "incidentes_top": [
+   [
+    "DETONACION POR ARMA DE FUEGO",
+    1
+   ],
+   [
+    "PERSONA LESIONADA POR PROYECTIL DE ARMA DE FUEGO",
+    1
+   ]
+  ],
+  "familias": {
+   "arma_fuego": 2
+  },
+  "base_cercana": "1.- AGRUPAMIENTO G.I.P. VII VILLA VICTORIA",
+  "base_cercana_municipio": "Villa Victoria",
+  "dist_base_km": 6.88,
+  "bases_en_3km": 0,
+  "personal_1km": 0,
+  "personal_3km": 0,
+  "sin_camaras_reportado": false,
+  "indice_ceguera": 40.0,
+  "clasificacion": "DESATENDIDO",
+  "diagnostico": "Violencia registrada sin despliegue a distancia útil: procede extender cobertura o reasignar cuadrante.",
+  "hd_detalle": [],
+  "limitrofe": false,
+  "rank_violencia": 65,
+  "ranking": 8
+ },
+ {
+  "sector_id": "SEC-951_-4974",
+  "lat": 19.03,
+  "lng": -99.47,
+  "municipio": "OCUILAN",
+  "municipios_involucrados": [
+   "OCUILAN"
+  ],
+  "colonias": [],
+  "eventos_hd": 0,
+  "victimas_hd": 0,
+  "llamadas_violentas": 1,
+  "indice_violencia": 10.0,
+  "incidentes_top": [
+   [
+    "HOMICIDIO",
+    1
+   ]
+  ],
+  "familias": {
+   "letal": 1
+  },
+  "base_cercana": "1.- 3° AGRUPAMIENTO DE LA XI REGION JOQUICINGO",
+  "base_cercana_municipio": "Joquicingo",
+  "dist_base_km": 6.48,
+  "bases_en_3km": 0,
+  "personal_1km": 0,
+  "personal_3km": 0,
+  "sin_camaras_reportado": false,
+  "indice_ceguera": 40.0,
+  "clasificacion": "DESATENDIDO",
+  "diagnostico": "Violencia registrada sin despliegue a distancia útil: procede extender cobertura o reasignar cuadrante.",
+  "hd_detalle": [],
+  "limitrofe": false,
+  "rank_violencia": 66,
+  "ranking": 9
+ },
+ {
+  "sector_id": "SEC-983_-4957",
+  "lat": 19.67,
+  "lng": -99.13,
+  "municipio": "TULTEPEC",
+  "municipios_involucrados": [
+   "TULTEPEC"
+  ],
+  "colonias": [
+   "SANTIAGO TEYAHUALCO"
+  ],
+  "eventos_hd": 1,
+  "victimas_hd": 1,
+  "llamadas_violentas": 0,
+  "indice_violencia": 10.0,
+  "incidentes_top": [],
+  "familias": {},
+  "base_cercana": "1.- 1° AGRUPAMIENTO COACALCO, REGION XXXIV",
+  "base_cercana_municipio": "Coacalco de Berriozabal",
+  "dist_base_km": 5.41,
+  "bases_en_3km": 0,
+  "personal_1km": 0,
+  "personal_3km": 0,
+  "sin_camaras_reportado": false,
+  "indice_ceguera": 37.1,
+  "clasificacion": "DESATENDIDO",
+  "diagnostico": "Violencia registrada sin despliegue a distancia útil: procede extender cobertura o reasignar cuadrante.",
+  "hd_detalle": [
+   {
+    "id": 19,
+    "fecha": "2026-07-10",
+    "colonia": "SANTIAGO TEYAHUALCO",
+    "movil": "Riña"
+   }
+  ],
+  "limitrofe": false,
+  "rank_violencia": 49,
+  "ranking": 10
+ },
+ {
+  "sector_id": "SEC-972_-4964",
+  "lat": 19.45,
+  "lng": -99.27,
+  "municipio": "NAUCALPAN DE JUAREZ",
+  "municipios_involucrados": [
+   "NAUCALPAN DE JUAREZ",
+   "NAUCALPAN"
+  ],
+  "colonias": [
+   "LOMA COLORADA"
+  ],
+  "eventos_hd": 1,
+  "victimas_hd": 1,
+  "llamadas_violentas": 5,
+  "indice_violencia": 18.5,
+  "incidentes_top": [
+   [
+    "VIOLENCIA FAMILIAR",
+    2
+   ],
+   [
+    "ALTERACION DEL ORDEN PUBLICO POR PERSONA ALCOHOLIZADA",
+    2
+   ],
+   [
+    "PERSONA AGRESIVA",
+    1
+   ]
+  ],
+  "familias": {
+   "rina": 3,
+   "violencia_genero": 2
+  },
+  "base_cercana": "1.- 2° AGRUPAMIENTO DE LA XXIV REGION SAN CRISTOBAL",
+  "base_cercana_municipio": "Huixquilucan",
+  "dist_base_km": 2.79,
+  "bases_en_3km": 1,
+  "personal_1km": 0,
+  "personal_3km": 30,
+  "sin_camaras_reportado": false,
+  "indice_ceguera": 36.9,
+  "clasificacion": "MIXTO",
+  "diagnostico": "Cobertura intermedia: verificar recorridos y tiempos de respuesta en el cuadrante.",
+  "hd_detalle": [
+   {
+    "id": 43,
+    "fecha": "2026-07-21",
+    "colonia": "LOMA COLORADA",
+    "movil": "Ajuste de cuentas"
+   }
+  ],
+  "limitrofe": true,
+  "rank_violencia": 13,
+  "ranking": 11
+ },
+ {
+  "sector_id": "SEC-955_-4978",
+  "lat": 19.11,
+  "lng": -99.55,
+  "municipio": "TENANGO DEL VALLE",
+  "municipios_involucrados": [
+   "TENANGO DEL VALLE"
+  ],
+  "colonias": [
+   "SANTA MARÍA JAJALPA"
+  ],
+  "eventos_hd": 1,
+  "victimas_hd": 2,
+  "llamadas_violentas": 0,
+  "indice_violencia": 20.0,
+  "incidentes_top": [],
+  "familias": {},
+  "base_cercana": "1.- 3° AGRUPAMIENTO ZONA ORIENTE TENANGO DEL VALLE, DE LA IX REGION",
+  "base_cercana_municipio": "Tenango del Valle",
+  "dist_base_km": 2.09,
+  "bases_en_3km": 1,
+  "personal_1km": 0,
+  "personal_3km": 29,
+  "sin_camaras_reportado": false,
+  "indice_ceguera": 34.2,
+  "clasificacion": "MIXTO",
+  "diagnostico": "Cobertura intermedia: verificar recorridos y tiempos de respuesta en el cuadrante.",
+  "hd_detalle": [
+   {
+    "id": 45,
+    "fecha": "2026-07-22",
+    "colonia": "SANTA MARÍA JAJALPA",
+    "movil": "Disputa por el control de la plaza"
+   }
+  ],
+  "limitrofe": false,
+  "rank_violencia": 11,
+  "ranking": 12
+ },
+ {
+  "sector_id": "SEC-966_-4985",
+  "lat": 19.33,
+  "lng": -99.69,
+  "municipio": "TOLUCA",
+  "municipios_involucrados": [
+   "TOLUCA"
+  ],
+  "colonias": [],
+  "eventos_hd": 0,
+  "victimas_hd": 0,
+  "llamadas_violentas": 5,
+  "indice_violencia": 8.5,
+  "incidentes_top": [
+   [
+    "VIOLENCIA FAMILIAR",
+    2
+   ],
+   [
+    "PERSONA LESIONADA POR OBJETO CONTUNDENTE",
+    1
+   ],
+   [
+    "PERSONA AGRESIVA",
+    1
+   ],
+   [
+    "ALTERACION DEL ORDEN PUBLICO POR PERSONA ALCOHOLIZADA",
+    1
+   ]
+  ],
+  "familias": {
+   "violencia_genero": 2,
+   "rina": 3
+  },
+  "base_cercana": "1.- 1° AGRUPAMIENTO ZINACANTEPEC, DE LA III REGION",
+  "base_cercana_municipio": "Zinacantepec",
+  "dist_base_km": 5.98,
+  "bases_en_3km": 0,
+  "personal_1km": 0,
+  "personal_3km": 0,
+  "sin_camaras_reportado": false,
+  "indice_ceguera": 33.9,
+  "clasificacion": "MIXTO",
+  "diagnostico": "Cobertura intermedia: verificar recorridos y tiempos de respuesta en el cuadrante.",
+  "hd_detalle": [],
+  "limitrofe": false,
+  "rank_violencia": 76,
+  "ranking": 13
+ },
+ {
+  "sector_id": "SEC-984_-4973",
+  "lat": 19.69,
+  "lng": -99.45,
+  "municipio": "VILLA DEL CARBON",
+  "municipios_involucrados": [
+   "VILLA DEL CARBON"
+  ],
+  "colonias": [],
+  "eventos_hd": 0,
+  "victimas_hd": 0,
+  "llamadas_violentas": 2,
+  "indice_violencia": 8.0,
+  "incidentes_top": [
+   [
+    "DETONACION DE ARMA DE FUEGO EN ESCUELA",
+    1
+   ],
+   [
+    "DETONACION POR ARMA DE FUEGO",
+    1
+   ]
+  ],
+  "familias": {
+   "arma_fuego": 2
+  },
+  "base_cercana": "1.- SEGUNDO AGRUPAMIENTO ISIDRO FABELA DE LA XXVIII REGION",
+  "base_cercana_municipio": "Isidro Fabela",
+  "dist_base_km": 15.23,
+  "bases_en_3km": 0,
+  "personal_1km": 0,
+  "personal_3km": 0,
+  "sin_camaras_reportado": false,
+  "indice_ceguera": 32.0,
+  "clasificacion": "MIXTO",
+  "diagnostico": "Cobertura intermedia: verificar recorridos y tiempos de respuesta en el cuadrante.",
+  "hd_detalle": [],
+  "limitrofe": false,
+  "rank_violencia": 79,
+  "ranking": 14
+ },
+ {
+  "sector_id": "SEC-988_-4961",
+  "lat": 19.77,
+  "lng": -99.21,
+  "municipio": "COYOTEPEC",
+  "municipios_involucrados": [
+   "COYOTEPEC"
+  ],
+  "colonias": [
+   "LA CABECERA"
+  ],
+  "eventos_hd": 1,
+  "victimas_hd": 1,
+  "llamadas_violentas": 3,
+  "indice_violencia": 17.5,
+  "incidentes_top": [
+   [
+    "PORTACION DE ARMA BLANCA",
+    1
+   ],
+   [
+    "PERSONA AGRESIVA",
+    1
+   ],
+   [
+    "DETONACION POR ARMA DE FUEGO",
+    1
+   ]
+  ],
+  "familias": {
+   "arma_blanca": 1,
+   "rina": 1,
+   "arma_fuego": 1
+  },
+  "base_cercana": "1.- 4° AGRUPAMIENTO COYOTEPEC, XXXIII REGION",
+  "base_cercana_municipio": "Coyotepec",
+  "dist_base_km": 2.35,
+  "bases_en_3km": 1,
+  "personal_1km": 0,
+  "personal_3km": 32,
+  "sin_camaras_reportado": false,
+  "indice_ceguera": 31.4,
+  "clasificacion": "MIXTO",
+  "diagnostico": "Cobertura intermedia: verificar recorridos y tiempos de respuesta en el cuadrante.",
+  "hd_detalle": [
+   {
+    "id": 48,
+    "fecha": "2026-07-23",
+    "colonia": "LA CABECERA",
+    "movil": "Riña"
+   }
+  ],
+  "limitrofe": false,
+  "rank_violencia": 16,
+  "ranking": 15
+ },
+ {
+  "sector_id": "SEC-972_-4965",
+  "lat": 19.45,
+  "lng": -99.29,
+  "municipio": "NAUCALPAN DE JUAREZ",
+  "municipios_involucrados": [
+   "NAUCALPAN DE JUAREZ"
+  ],
+  "colonias": [],
+  "eventos_hd": 0,
+  "victimas_hd": 0,
+  "llamadas_violentas": 3,
+  "indice_violencia": 9.5,
+  "incidentes_top": [
+   [
+    "DETONACION POR ARMA DE FUEGO",
+    2
+   ],
+   [
+    "PERSONA AGRESIVA",
+    1
+   ]
+  ],
+  "familias": {
+   "arma_fuego": 2,
+   "rina": 1
+  },
+  "base_cercana": "1.- 2° AGRUPAMIENTO DE LA XXIV REGION SAN CRISTOBAL",
+  "base_cercana_municipio": "Huixquilucan",
+  "dist_base_km": 4.59,
+  "bases_en_3km": 0,
+  "personal_1km": 0,
+  "personal_3km": 0,
+  "sin_camaras_reportado": false,
+  "indice_ceguera": 31.3,
+  "clasificacion": "MIXTO",
+  "diagnostico": "Cobertura intermedia: verificar recorridos y tiempos de respuesta en el cuadrante.",
+  "hd_detalle": [],
+  "limitrofe": false,
+  "rank_violencia": 67,
+  "ranking": 16
+ },
+ {
+  "sector_id": "SEC-969_-4948",
+  "lat": 19.39,
+  "lng": -98.95,
+  "municipio": "CHIMALHUACAN",
+  "municipios_involucrados": [
+   "CHIMALHUACAN"
+  ],
+  "colonias": [
+   "ARENITAS"
+  ],
+  "eventos_hd": 1,
+  "victimas_hd": 2,
+  "llamadas_violentas": 0,
+  "indice_violencia": 20.0,
+  "incidentes_top": [],
+  "familias": {},
+  "base_cercana": "1.- 3° AGRUPAMIENTO SAN AGUSTIN DE LA XL REGION",
+  "base_cercana_municipio": "Chimalhuacán",
+  "dist_base_km": 2.62,
+  "bases_en_3km": 1,
+  "personal_1km": 0,
+  "personal_3km": 75,
+  "sin_camaras_reportado": false,
+  "indice_ceguera": 30.8,
+  "clasificacion": "MIXTO",
+  "diagnostico": "Cobertura intermedia: verificar recorridos y tiempos de respuesta en el cuadrante.",
+  "hd_detalle": [
+   {
+    "id": 31,
+    "fecha": "2026-07-16",
+    "colonia": "ARENITAS",
+    "movil": "Ajuste de cuentas"
+   }
+  ],
+  "limitrofe": false,
+  "rank_violencia": 10,
+  "ranking": 17
+ },
+ {
+  "sector_id": "SEC-983_-4946",
+  "lat": 19.67,
+  "lng": -98.91,
+  "municipio": "TEOTIHUACAN",
+  "municipios_involucrados": [
+   "TEOTIHUACAN"
+  ],
+  "colonias": [
+   "SANTIAGO ATLATONGO"
+  ],
+  "eventos_hd": 1,
+  "victimas_hd": 1,
+  "llamadas_violentas": 0,
+  "indice_violencia": 10.0,
+  "incidentes_top": [],
+  "familias": {},
+  "base_cercana": "1.- COMANDANCIA DE LA REGION XXXII ACOLMAN",
+  "base_cercana_municipio": "Acolman",
+  "dist_base_km": 3.94,
+  "bases_en_3km": 0,
+  "personal_1km": 0,
+  "personal_3km": 0,
+  "sin_camaras_reportado": false,
+  "indice_ceguera": 29.7,
+  "clasificacion": "DESATENDIDO",
+  "diagnostico": "Violencia registrada sin despliegue a distancia útil: procede extender cobertura o reasignar cuadrante.",
+  "hd_detalle": [
+   {
+    "id": 26,
+    "fecha": "2026-07-13",
+    "colonia": "SANTIAGO ATLATONGO",
+    "movil": "Se desconoce el móvil de la agresión"
+   }
+  ],
+  "limitrofe": false,
+  "rank_violencia": 52,
+  "ranking": 18
+ },
+ {
+  "sector_id": "SEC-986_-4939",
+  "lat": 19.73,
+  "lng": -98.77,
+  "municipio": "AXAPUSCO",
+  "municipios_involucrados": [
+   "AXAPUSCO"
+  ],
+  "colonias": [
+   "AXAPUSCO"
+  ],
+  "eventos_hd": 1,
+  "victimas_hd": 1,
+  "llamadas_violentas": 0,
+  "indice_violencia": 10.0,
+  "incidentes_top": [],
+  "familias": {},
+  "base_cercana": "1.- COMANDANCIA XLIV REGION 2.- 1° AGRUPAMIENTO OTUMBA XLIV REGION",
+  "base_cercana_municipio": "Otumba",
+  "dist_base_km": 3.87,
+  "bases_en_3km": 0,
+  "personal_1km": 0,
+  "personal_3km": 0,
+  "sin_camaras_reportado": false,
+  "indice_ceguera": 29.3,
+  "clasificacion": "DESATENDIDO",
+  "diagnostico": "Violencia registrada sin despliegue a distancia útil: procede extender cobertura o reasignar cuadrante.",
+  "hd_detalle": [
+   {
+    "id": 9,
+    "fecha": "2026-07-04",
+    "colonia": "AXAPUSCO",
+    "movil": "Se desconoce el móvil de la agresión"
+   }
+  ],
+  "limitrofe": false,
+  "rank_violencia": 48,
+  "ranking": 19
+ },
+ {
+  "sector_id": "SEC-966_-4982",
+  "lat": 19.33,
+  "lng": -99.63,
+  "municipio": "TOLUCA",
+  "municipios_involucrados": [
+   "TOLUCA"
+  ],
+  "colonias": [],
+  "eventos_hd": 0,
+  "victimas_hd": 0,
+  "llamadas_violentas": 7,
+  "indice_violencia": 23.0,
+  "incidentes_top": [
+   [
+    "PERSONA TIRADA EN VIA PUBLICA",
+    2
+   ],
+   [
+    "VIOLENCIA DE PAREJA",
+    1
+   ],
+   [
+    "PERSONA TIRADA EN LA VIA PUBLICA CON HUELLAS DE VIOLENCIA",
+    1
+   ],
+   [
+    "ROBO A TRANSEUNTE CON VIOLENCIA",
+    1
+   ]
+  ],
+  "familias": {
+   "deceso_dudoso": 2,
+   "violencia_genero": 1,
+   "letal": 1,
+   "robo_violento": 2,
+   "arma_fuego": 1
+  },
+  "base_cercana": "1.- AGRUPAMIENTO A.S.T.R.O.S. TOLUCA, DE LA I REGION",
+  "base_cercana_municipio": "Toluca",
+  "dist_base_km": 1.65,
+  "bases_en_3km": 2,
+  "personal_1km": 0,
+  "personal_3km": 68,
+  "sin_camaras_reportado": false,
+  "indice_ceguera": 28.9,
+  "clasificacion": "MIXTO",
+  "diagnostico": "Cobertura intermedia: verificar recorridos y tiempos de respuesta en el cuadrante.",
+  "hd_detalle": [],
+  "limitrofe": false,
+  "rank_violencia": 8,
+  "ranking": 20
+ },
+ {
+  "sector_id": "SEC-982_-4957",
+  "lat": 19.65,
+  "lng": -99.13,
+  "municipio": "TULTITLAN",
+  "municipios_involucrados": [
+   "TULTITLAN"
+  ],
+  "colonias": [
+   "VILLA ESMERALDA"
+  ],
+  "eventos_hd": 1,
+  "victimas_hd": 1,
+  "llamadas_violentas": 0,
+  "indice_violencia": 10.0,
+  "incidentes_top": [],
+  "familias": {},
+  "base_cercana": "1.- 1° AGRUPAMIENTO COACALCO, REGION XXXIV",
+  "base_cercana_municipio": "Coacalco de Berriozabal",
+  "dist_base_km": 3.65,
+  "bases_en_3km": 0,
+  "personal_1km": 0,
+  "personal_3km": 0,
+  "sin_camaras_reportado": false,
+  "indice_ceguera": 28.3,
+  "clasificacion": "DESATENDIDO",
+  "diagnostico": "Violencia registrada sin despliegue a distancia útil: procede extender cobertura o reasignar cuadrante.",
+  "hd_detalle": [
+   {
+    "id": 28,
+    "fecha": "2026-07-15",
+    "colonia": "VILLA ESMERALDA",
+    "movil": "Posible ajuste de cuentas"
+   }
+  ],
+  "limitrofe": false,
+  "rank_violencia": 53,
+  "ranking": 21
+ },
+ {
+  "sector_id": "SEC-986_-4954",
+  "lat": 19.73,
+  "lng": -99.07,
+  "municipio": "NEXTLALPAN",
+  "municipios_involucrados": [
+   "NEXTLALPAN"
+  ],
+  "colonias": [],
+  "eventos_hd": 0,
+  "victimas_hd": 0,
+  "llamadas_violentas": 5,
+  "indice_violencia": 9.0,
+  "incidentes_top": [
+   [
+    "PERSONA AGRESIVA",
+    2
+   ],
+   [
+    "ROBO A ESCUELA CON VIOLENCIA",
+    1
+   ],
+   [
+    "VIOLENCIA CONTRA LAS MUJERES",
+    1
+   ],
+   [
+    "ROBO DE MOTOCICLETA CON VIOLENCIA",
+    1
+   ]
+  ],
+  "familias": {
+   "rina": 2,
+   "robo_violento": 2,
+   "violencia_genero": 1
+  },
+  "base_cercana": "1.- 2° AGRUPAMIENTO TULTEPEC, REGION XXXV, SUBDIRECCION CIRCUITO EXTERIOR MEXIQUENSE",
+  "base_cercana_municipio": "Tultepec",
+  "dist_base_km": 4.27,
+  "bases_en_3km": 0,
+  "personal_1km": 0,
+  "personal_3km": 0,
+  "sin_camaras_reportado": false,
+  "indice_ceguera": 28.2,
+  "clasificacion": "MIXTO",
+  "diagnostico": "Cobertura intermedia: verificar recorridos y tiempos de respuesta en el cuadrante.",
+  "hd_detalle": [],
+  "limitrofe": false,
+  "rank_violencia": 72,
+  "ranking": 22
+ },
+ {
+  "sector_id": "SEC-972_-4953",
+  "lat": 19.45,
+  "lng": -99.05,
+  "municipio": "NEZAHUALCOYOTL",
+  "municipios_involucrados": [
+   "NEZAHUALCOYOTL"
+  ],
+  "colonias": [
+   "C CIUDAD LAGO"
+  ],
+  "eventos_hd": 1,
+  "victimas_hd": 1,
+  "llamadas_violentas": 2,
+  "indice_violencia": 18.0,
+  "incidentes_top": [
+   [
+    "DETONACION POR ARMA DE FUEGO",
+    2
+   ]
+  ],
+  "familias": {
+   "arma_fuego": 2
+  },
+  "base_cercana": "1.- COMANDANCIA XXXIX REGION 2.- 1° AGRUPAMIENTO LAS ARMAS DE LA XXXIX REGION",
+  "base_cercana_municipio": "Nezahualcóyotl",
+  "dist_base_km": 2.36,
+  "bases_en_3km": 1,
+  "personal_1km": 0,
+  "personal_3km": 70,
+  "sin_camaras_reportado": false,
+  "indice_ceguera": 26.8,
+  "clasificacion": "MIXTO",
+  "diagnostico": "Cobertura intermedia: verificar recorridos y tiempos de respuesta en el cuadrante.",
+  "hd_detalle": [
+   {
+    "id": 13,
+    "fecha": "2026-07-07",
+    "colonia": "C CIUDAD LAGO",
+    "movil": "Posible ajuste de cuentas"
+   }
+  ],
+  "limitrofe": false,
+  "rank_violencia": 14,
+  "ranking": 23
+ },
+ {
+  "sector_id": "SEC-964_-4976",
+  "lat": 19.29,
+  "lng": -99.51,
+  "municipio": "LERMA",
+  "municipios_involucrados": [
+   "LERMA"
+  ],
+  "colonias": [],
+  "eventos_hd": 0,
+  "victimas_hd": 0,
+  "llamadas_violentas": 4,
+  "indice_violencia": 10.0,
+  "incidentes_top": [
+   [
+    "PERSONA TIRADA EN VIA PUBLICA",
+    1
+   ],
+   [
+    "ALTERACION DEL ORDEN PUBLICO POR PERSONA ALCOHOLIZADA",
+    1
+   ],
+   [
+    "DETONACION POR ARMA DE FUEGO",
+    1
+   ],
+   [
+    "RIÑA",
+    1
+   ]
+  ],
+  "familias": {
+   "deceso_dudoso": 1,
+   "rina": 2,
+   "arma_fuego": 1
+  },
+  "base_cercana": "1.- COMANDANCIA DE LA VIII REGION 2.- 1° AGRUPAMIENTO 3.- 2° AGRUPAMIENTO",
+  "base_cercana_municipio": "San Mateo Atenco",
+  "dist_base_km": 3.3,
+  "bases_en_3km": 0,
+  "personal_1km": 0,
+  "personal_3km": 0,
+  "sin_camaras_reportado": false,
+  "indice_ceguera": 26.5,
+  "clasificacion": "DESATENDIDO",
+  "diagnostico": "Violencia registrada sin despliegue a distancia útil: procede extender cobertura o reasignar cuadrante.",
+  "hd_detalle": [],
+  "limitrofe": false,
+  "rank_violencia": 64,
+  "ranking": 24
+ },
+ {
+  "sector_id": "SEC-967_-4949",
+  "lat": 19.35,
+  "lng": -98.97,
+  "municipio": "LA PAZ",
+  "municipios_involucrados": [
+   "LA PAZ"
+  ],
+  "colonias": [
+   "EMILIANO ZAPATA"
+  ],
+  "eventos_hd": 1,
+  "victimas_hd": 1,
+  "llamadas_violentas": 3,
+  "indice_violencia": 16.0,
+  "incidentes_top": [
+   [
+    "ROBO A NEGOCIO CON VIOLENCIA",
+    1
+   ],
+   [
+    "ROBO A BANCO CON VIOLENCIA",
+    1
+   ],
+   [
+    "PORTACION DE ARMA BLANCA",
+    1
+   ]
+  ],
+  "familias": {
+   "robo_violento": 2,
+   "arma_blanca": 1
+  },
+  "base_cercana": "1.- 3° AGRUPAMIENTO SAN AGUSTIN DE LA XL REGION",
+  "base_cercana_municipio": "Chimalhuacán",
+  "dist_base_km": 2.87,
+  "bases_en_3km": 1,
+  "personal_1km": 0,
+  "personal_3km": 75,
+  "sin_camaras_reportado": false,
+  "indice_ceguera": 26.0,
+  "clasificacion": "MIXTO",
+  "diagnostico": "Cobertura intermedia: verificar recorridos y tiempos de respuesta en el cuadrante.",
+  "hd_detalle": [
+   {
+    "id": 11,
+    "fecha": "2026-07-05",
+    "colonia": "EMILIANO ZAPATA",
+    "movil": "Posible ajuste de cuentas"
+   }
+  ],
+  "limitrofe": false,
+  "rank_violencia": 19,
+  "ranking": 25
+ },
+ {
+  "sector_id": "SEC-962_-4985",
+  "lat": 19.25,
+  "lng": -99.69,
+  "municipio": "TOLUCA",
+  "municipios_involucrados": [
+   "TOLUCA"
+  ],
+  "colonias": [],
+  "eventos_hd": 0,
+  "victimas_hd": 0,
+  "llamadas_violentas": 5,
+  "indice_violencia": 9.0,
+  "incidentes_top": [
+   [
+    "PERSONA AGRESIVA",
+    3
+   ],
+   [
+    "ALTERACION DEL ORDEN PUBLICO POR PERSONA ALCOHOLIZADA",
+    1
+   ],
+   [
+    "PERSONA TIRADA EN VIA PUBLICA",
+    1
+   ]
+  ],
+  "familias": {
+   "rina": 4,
+   "deceso_dudoso": 1
+  },
+  "base_cercana": "1.- 4° AGRUPAMIENTO I REGION",
+  "base_cercana_municipio": "Toluca",
+  "dist_base_km": 3.48,
+  "bases_en_3km": 0,
+  "personal_1km": 0,
+  "personal_3km": 0,
+  "sin_camaras_reportado": false,
+  "indice_ceguera": 24.7,
+  "clasificacion": "MIXTO",
+  "diagnostico": "Cobertura intermedia: verificar recorridos y tiempos de respuesta en el cuadrante.",
+  "hd_detalle": [],
+  "limitrofe": false,
+  "rank_violencia": 70,
+  "ranking": 26
+ },
+ {
+  "sector_id": "SEC-983_-4948",
+  "lat": 19.67,
+  "lng": -98.95,
+  "municipio": "TECAMAC",
+  "municipios_involucrados": [
+   "TECAMAC"
+  ],
+  "colonias": [],
+  "eventos_hd": 0,
+  "victimas_hd": 0,
+  "llamadas_violentas": 4,
+  "indice_violencia": 6.5,
+  "incidentes_top": [
+   [
+    "PERSONA AGRESIVA",
+    3
+   ],
+   [
+    "VIOLENCIA CONTRA LAS MUJERES",
+    1
+   ]
+  ],
+  "familias": {
+   "violencia_genero": 1,
+   "rina": 3
+  },
+  "base_cercana": "1.- COMANDANCIA DE LA REGION XXXII ACOLMAN",
+  "base_cercana_municipio": "Acolman",
+  "dist_base_km": 5.42,
+  "bases_en_3km": 0,
+  "personal_1km": 0,
+  "personal_3km": 0,
+  "sin_camaras_reportado": false,
+  "indice_ceguera": 24.1,
+  "clasificacion": "MIXTO",
+  "diagnostico": "Cobertura intermedia: verificar recorridos y tiempos de respuesta en el cuadrante.",
+  "hd_detalle": [],
+  "limitrofe": false,
+  "rank_violencia": 91,
+  "ranking": 27
+ },
+ {
+  "sector_id": "SEC-972_-4993",
+  "lat": 19.45,
+  "lng": -99.85,
+  "municipio": "ALMOLOYA DE JUAREZ",
+  "municipios_involucrados": [
+   "ALMOLOYA DE JUAREZ"
+  ],
+  "colonias": [],
+  "eventos_hd": 0,
+  "victimas_hd": 0,
+  "llamadas_violentas": 1,
+  "indice_violencia": 6.0,
+  "incidentes_top": [
+   [
+    "PERSONA LESIONADA POR PROYECTIL DE ARMA DE FUEGO",
+    1
+   ]
+  ],
+  "familias": {
+   "arma_fuego": 1
+  },
+  "base_cercana": "1.- AGRUPAMIENTO G.I.P. VII VILLA VICTORIA",
+  "base_cercana_municipio": "Villa Victoria",
+  "dist_base_km": 8.61,
+  "bases_en_3km": 0,
+  "personal_1km": 0,
+  "personal_3km": 0,
+  "sin_camaras_reportado": false,
+  "indice_ceguera": 24.0,
+  "clasificacion": "MIXTO",
+  "diagnostico": "Cobertura intermedia: verificar recorridos y tiempos de respuesta en el cuadrante.",
+  "hd_detalle": [],
+  "limitrofe": false,
+  "rank_violencia": 96,
+  "ranking": 28
+ },
+ {
+  "sector_id": "SEC-952_-5003",
+  "lat": 19.05,
+  "lng": -100.05,
+  "municipio": "TEMASCALTEPEC",
+  "municipios_involucrados": [
+   "TEMASCALTEPEC"
+  ],
+  "colonias": [],
+  "eventos_hd": 0,
+  "victimas_hd": 0,
+  "llamadas_violentas": 3,
+  "indice_violencia": 6.0,
+  "incidentes_top": [
+   [
+    "VIOLENCIA CONTRA LAS MUJERES",
+    3
+   ]
+  ],
+  "familias": {
+   "violencia_genero": 3
+  },
+  "base_cercana": "1.- 3° AGRUPAMIENTO CASAS VIEJAS",
+  "base_cercana_municipio": "Valle de Bravo",
+  "dist_base_km": 13.67,
+  "bases_en_3km": 0,
+  "personal_1km": 0,
+  "personal_3km": 0,
+  "sin_camaras_reportado": false,
+  "indice_ceguera": 24.0,
+  "clasificacion": "MIXTO",
+  "diagnostico": "Cobertura intermedia: verificar recorridos y tiempos de respuesta en el cuadrante.",
+  "hd_detalle": [],
+  "limitrofe": false,
+  "rank_violencia": 98,
+  "ranking": 29
+ },
+ {
+  "sector_id": "SEC-956_-4972",
+  "lat": 19.13,
+  "lng": -99.43,
+  "municipio": "TIANGUISTENCO",
+  "municipios_involucrados": [
+   "TIANGUISTENCO"
+  ],
+  "colonias": [],
+  "eventos_hd": 0,
+  "victimas_hd": 0,
+  "llamadas_violentas": 2,
+  "indice_violencia": 6.0,
+  "incidentes_top": [
+   [
+    "VIOLENCIA CONTRA LAS MUJERES",
+    1
+   ],
+   [
+    "TENTATIVA DE PRIVACION DE LA LIBERTAD",
+    1
+   ]
+  ],
+  "familias": {
+   "violencia_genero": 1,
+   "alta_incidencia": 1
+  },
+  "base_cercana": "1.- COMANDANCIA SUBDIRECCION OPERATIVA REGIONAL SANTIAGO TIANGUISTENCO 2.- COMANDANCIA V REGION, 3.- 1° AGRUPAMIENTO, 4.- 3° AGRUPAMIENTO, 5.-AGRUPAMIENTO F.A.R. II, 6.-COMEDOR OPERATIVO 7.- RECURSOS HUMANOS",
+  "base_cercana_municipio": "Tianguistenco",
+  "dist_base_km": 5.88,
+  "bases_en_3km": 0,
+  "personal_1km": 0,
+  "personal_3km": 0,
+  "sin_camaras_reportado": false,
+  "indice_ceguera": 23.6,
+  "clasificacion": "MIXTO",
+  "diagnostico": "Cobertura intermedia: verificar recorridos y tiempos de respuesta en el cuadrante.",
+  "hd_detalle": [],
+  "limitrofe": false,
+  "rank_violencia": 99,
+  "ranking": 30
+ },
+ {
+  "sector_id": "SEC-988_-4959",
+  "lat": 19.77,
+  "lng": -99.17,
+  "municipio": "TEOLOYUCAN",
+  "municipios_involucrados": [
+   "TEOLOYUCAN"
+  ],
+  "colonias": [],
+  "eventos_hd": 0,
+  "victimas_hd": 0,
+  "llamadas_violentas": 2,
+  "indice_violencia": 8.0,
+  "incidentes_top": [
+   [
+    "DETONACION POR ARMA DE FUEGO",
+    2
+   ]
+  ],
+  "familias": {
+   "arma_fuego": 2
+  },
+  "base_cercana": "1.- 4° AGRUPAMIENTO COYOTEPEC, XXXIII REGION",
+  "base_cercana_municipio": "Coyotepec",
+  "dist_base_km": 3.85,
+  "bases_en_3km": 0,
+  "personal_1km": 0,
+  "personal_3km": 0,
+  "sin_camaras_reportado": false,
+  "indice_ceguera": 23.4,
+  "clasificacion": "MIXTO",
+  "diagnostico": "Cobertura intermedia: verificar recorridos y tiempos de respuesta en el cuadrante.",
+  "hd_detalle": [],
+  "limitrofe": false,
+  "rank_violencia": 80,
+  "ranking": 31
+ },
+ {
+  "sector_id": "SEC-983_-4958",
+  "lat": 19.67,
+  "lng": -99.15,
+  "municipio": "CUAUTITLAN",
+  "municipios_involucrados": [
+   "CUAUTITLAN"
+  ],
+  "colonias": [],
+  "eventos_hd": 0,
+  "victimas_hd": 0,
+  "llamadas_violentas": 4,
+  "indice_violencia": 6.5,
+  "incidentes_top": [
+   [
+    "PERSONA AGRESIVA",
+    2
+   ],
+   [
+    "VIOLENCIA CONTRA LAS MUJERES",
+    1
+   ],
+   [
+    "RIÑA",
+    1
+   ]
+  ],
+  "familias": {
+   "rina": 3,
+   "violencia_genero": 1
+  },
+  "base_cercana": "1.-COMANDANCIA DE LA SUBDIRECCION OPERATIVA REGIONAL VALLE CUAUTITLAN 2.-COMANDANCIA XXIX REGION 3.- AGPTO A.S.T.R.O.S. XI DE LA XXIX REGION 4.- AGPTO F.A.R. XI DE LA XXIX REGION 5.- AGPTO G.I.P. XI DE LA XXIX REGION 6. AGRUPAMIENTO DE TRANSITO VALLE CUAUTITLAN.",
+  "base_cercana_municipio": "Cuautitlán Izcalli",
+  "dist_base_km": 4.61,
+  "bases_en_3km": 0,
+  "personal_1km": 0,
+  "personal_3km": 0,
+  "sin_camaras_reportado": false,
+  "indice_ceguera": 21.5,
+  "clasificacion": "MIXTO",
+  "diagnostico": "Cobertura intermedia: verificar recorridos y tiempos de respuesta en el cuadrante.",
+  "hd_detalle": [],
+  "limitrofe": false,
+  "rank_violencia": 93,
+  "ranking": 32
+ },
+ {
+  "sector_id": "SEC-969_-4947",
+  "lat": 19.39,
+  "lng": -98.93,
+  "municipio": "CHICOLOAPAN",
+  "municipios_involucrados": [
+   "CHICOLOAPAN",
+   "LA PAZ"
+  ],
+  "colonias": [
+   "EMILIANO ZAPATA"
+  ],
+  "eventos_hd": 1,
+  "victimas_hd": 1,
+  "llamadas_violentas": 2,
+  "indice_violencia": 13.5,
+  "incidentes_top": [
+   [
+    "ALTERACION DEL ORDEN PUBLICO POR PERSONA ALCOHOLIZADA",
+    1
+   ],
+   [
+    "ROBO DE VEHICULO PARTICULAR CON VIOLENCIA",
+    1
+   ]
+  ],
+  "familias": {
+   "rina": 1,
+   "robo_violento": 1
+  },
+  "base_cercana": "1.- 1° AGRUPAMIENTO CHIMALHUACAN DE LA XL REGION",
+  "base_cercana_municipio": "Chimalhuacán",
+  "dist_base_km": 2.79,
+  "bases_en_3km": 1,
+  "personal_1km": 0,
+  "personal_3km": 81,
+  "sin_camaras_reportado": false,
+  "indice_ceguera": 21.0,
+  "clasificacion": "MIXTO",
+  "diagnostico": "Cobertura intermedia: verificar recorridos y tiempos de respuesta en el cuadrante.",
+  "hd_detalle": [
+   {
+    "id": 27,
+    "fecha": "2026-07-14",
+    "colonia": "EMILIANO ZAPATA",
+    "movil": "Ajuste de cuentas"
+   }
+  ],
+  "limitrofe": true,
+  "rank_violencia": 26,
+  "ranking": 33
+ },
+ {
+  "sector_id": "SEC-979_-4950",
+  "lat": 19.59,
+  "lng": -98.99,
+  "municipio": "ACOLMAN",
+  "municipios_involucrados": [
+   "ACOLMAN"
+  ],
+  "colonias": [
+   "LOS ÁNGELES",
+   "TEPEXPAN"
+  ],
+  "eventos_hd": 2,
+  "victimas_hd": 2,
+  "llamadas_violentas": 2,
+  "indice_violencia": 24.0,
+  "incidentes_top": [
+   [
+    "VIOLENCIA CONTRA LAS MUJERES",
+    2
+   ]
+  ],
+  "familias": {
+   "violencia_genero": 2
+  },
+  "base_cercana": "1.- 1° AGRUPAMIENTO ACOLMAN, XXXII REGION",
+  "base_cercana_municipio": "Acolman",
+  "dist_base_km": 0.96,
+  "bases_en_3km": 2,
+  "personal_1km": 47,
+  "personal_3km": 111,
+  "sin_camaras_reportado": false,
+  "indice_ceguera": 20.4,
+  "clasificacion": "SATURADO",
+  "diagnostico": "Hay base y personal a menos de 1.5 km y aun así concentra violencia: revisar efectividad y horarios del patrullaje existente, no sumar inmuebles.",
+  "hd_detalle": [
+   {
+    "id": 3,
+    "fecha": "2026-07-01",
+    "colonia": "LOS ÁNGELES",
+    "movil": "Se desconoce el móvil de la agresión"
+   },
+   {
+    "id": 20,
+    "fecha": "2026-07-10",
+    "colonia": "TEPEXPAN",
+    "movil": "Posible ajuste de cuentas"
+   }
+  ],
+  "limitrofe": false,
+  "rank_violencia": 5,
+  "ranking": 34
+ },
+ {
+  "sector_id": "SEC-971_-4963",
+  "lat": 19.43,
+  "lng": -99.25,
+  "municipio": "NAUCALPAN DE JUAREZ",
+  "municipios_involucrados": [
+   "NAUCALPAN DE JUAREZ",
+   "TECAMAC",
+   "NAUCALPAN"
+  ],
+  "colonias": [
+   "LOS HÉROES TECÁMAC III",
+   "BENITO JUÁREZ"
+  ],
+  "eventos_hd": 2,
+  "victimas_hd": 2,
+  "llamadas_violentas": 2,
+  "indice_violencia": 23.0,
+  "incidentes_top": [
+   [
+    "PERSONA AGRESIVA",
+    1
+   ],
+   [
+    "ALTERACION DEL ORDEN PUBLICO POR PERSONA ALCOHOLIZADA",
+    1
+   ]
+  ],
+  "familias": {
+   "rina": 2
+  },
+  "base_cercana": "1.- 2° AGRUPAMIENTO DE LA XXIV REGION SAN CRISTOBAL",
+  "base_cercana_municipio": "Huixquilucan",
+  "dist_base_km": 0.41,
+  "bases_en_3km": 2,
+  "personal_1km": 55,
+  "personal_3km": 55,
+  "sin_camaras_reportado": false,
+  "indice_ceguera": 20.3,
+  "clasificacion": "SATURADO",
+  "diagnostico": "Hay base y personal a menos de 1.5 km y aun así concentra violencia: revisar efectividad y horarios del patrullaje existente, no sumar inmuebles.",
+  "hd_detalle": [
+   {
+    "id": 16,
+    "fecha": "2026-07-09",
+    "colonia": "LOS HÉROES TECÁMAC III",
+    "movil": "Posible ajuste de cuentas"
+   },
+   {
+    "id": 18,
+    "fecha": "2026-07-10",
+    "colonia": "BENITO JUÁREZ",
+    "movil": "Posible ajuste de cuentas"
+   }
+  ],
+  "limitrofe": true,
+  "rank_violencia": 7,
+  "ranking": 35
+ },
+ {
+  "sector_id": "SEC-978_-4953",
+  "lat": 19.57,
+  "lng": -99.05,
+  "municipio": "ECATEPEC DE MORELOS",
+  "municipios_involucrados": [
+   "ECATEPEC DE MORELOS",
+   "ECATEPEC"
+  ],
+  "colonias": [
+   "FUENTES DE ECATEPEC I"
+  ],
+  "eventos_hd": 1,
+  "victimas_hd": 1,
+  "llamadas_violentas": 2,
+  "indice_violencia": 13.5,
+  "incidentes_top": [
+   [
+    "PERSONA AGRESIVA",
+    1
+   ],
+   [
+    "VIOLENCIA CONTRA LAS MUJERES",
+    1
+   ]
+  ],
+  "familias": {
+   "rina": 1,
+   "violencia_genero": 1
+  },
+  "base_cercana": "1.- 2° AGRUPAMIENTO AZTECAS, DE LA XXXI-A",
+  "base_cercana_municipio": "Ecatepec de Morelos",
+  "dist_base_km": 2.35,
+  "bases_en_3km": 1,
+  "personal_1km": 0,
+  "personal_3km": 73,
+  "sin_camaras_reportado": false,
+  "indice_ceguera": 19.7,
+  "clasificacion": "MIXTO",
+  "diagnostico": "Cobertura intermedia: verificar recorridos y tiempos de respuesta en el cuadrante.",
+  "hd_detalle": [
+   {
+    "id": 53,
+    "fecha": "2026-07-25",
+    "colonia": "FUENTES DE ECATEPEC I",
+    "movil": "Ajuste de cuentas por venta de drogas"
+   }
+  ],
+  "limitrofe": true,
+  "rank_violencia": 27,
+  "ranking": 36
+ },
+ {
+  "sector_id": "SEC-975_-4951",
+  "lat": 19.51,
+  "lng": -99.01,
+  "municipio": "ECATEPEC DE MORELOS",
+  "municipios_involucrados": [
+   "ECATEPEC DE MORELOS"
+  ],
+  "colonias": [],
+  "eventos_hd": 0,
+  "victimas_hd": 0,
+  "llamadas_violentas": 3,
+  "indice_violencia": 12.0,
+  "incidentes_top": [
+   [
+    "DETONACION POR ARMA DE FUEGO",
+    3
+   ]
+  ],
+  "familias": {
+   "arma_fuego": 3
+  },
+  "base_cercana": "1.- 3° AGRUPAMIENTO ARAGON, DE LA XXXI-A",
+  "base_cercana_municipio": "Ecatepec de Morelos",
+  "dist_base_km": 2.65,
+  "bases_en_3km": 1,
+  "personal_1km": 0,
+  "personal_3km": 66,
+  "sin_camaras_reportado": false,
+  "indice_ceguera": 19.4,
+  "clasificacion": "MIXTO",
+  "diagnostico": "Cobertura intermedia: verificar recorridos y tiempos de respuesta en el cuadrante.",
+  "hd_detalle": [],
+  "limitrofe": false,
+  "rank_violencia": 33,
+  "ranking": 37
+ },
+ {
+  "sector_id": "SEC-974_-4964",
+  "lat": 19.49,
+  "lng": -99.27,
+  "municipio": "NAUCALPAN",
+  "municipios_involucrados": [
+   "NAUCALPAN"
+  ],
+  "colonias": [
+   "COLINAS DE SAN MATEO"
+  ],
+  "eventos_hd": 1,
+  "victimas_hd": 1,
+  "llamadas_violentas": 0,
+  "indice_violencia": 10.0,
+  "incidentes_top": [],
+  "familias": {},
+  "base_cercana": "1.- CARRETERAS X DE LA XXV REGION",
+  "base_cercana_municipio": "Naucalpan de Juarez",
+  "dist_base_km": 2.84,
+  "bases_en_3km": 1,
+  "personal_1km": 0,
+  "personal_3km": 38,
+  "sin_camaras_reportado": false,
+  "indice_ceguera": 19.3,
+  "clasificacion": "MIXTO",
+  "diagnostico": "Cobertura intermedia: verificar recorridos y tiempos de respuesta en el cuadrante.",
+  "hd_detalle": [
+   {
+    "id": 44,
+    "fecha": "2026-07-21",
+    "colonia": "COLINAS DE SAN MATEO",
+    "movil": "Se desconoce el móvil de la agresión"
+   }
+  ],
+  "limitrofe": false,
+  "rank_violencia": 60,
+  "ranking": 38
+ },
+ {
+  "sector_id": "SEC-984_-4962",
+  "lat": 19.69,
+  "lng": -99.23,
+  "municipio": "CUAUTITLAN IZCALLI",
+  "municipios_involucrados": [
+   "CUAUTITLAN IZCALLI"
+  ],
+  "colonias": [
+   "COFRADÍA DE SAN MIGUEL I"
+  ],
+  "eventos_hd": 1,
+  "victimas_hd": 1,
+  "llamadas_violentas": 1,
+  "indice_violencia": 14.0,
+  "incidentes_top": [
+   [
+    "DETONACION POR ARMA DE FUEGO",
+    1
+   ]
+  ],
+  "familias": {
+   "arma_fuego": 1
+  },
+  "base_cercana": "1.- 3° AGRUPAMIENTO INFONZAVIT NORTE, DE LA REGION XXIX",
+  "base_cercana_municipio": "Cuautitlán Izcalli",
+  "dist_base_km": 2.3,
+  "bases_en_3km": 2,
+  "personal_1km": 0,
+  "personal_3km": 85,
+  "sin_camaras_reportado": false,
+  "indice_ceguera": 19.2,
+  "clasificacion": "MIXTO",
+  "diagnostico": "Cobertura intermedia: verificar recorridos y tiempos de respuesta en el cuadrante.",
+  "hd_detalle": [
+   {
+    "id": 55,
+    "fecha": "2026-07-26",
+    "colonia": "COFRADÍA DE SAN MIGUEL I",
+    "movil": "Se desconoce el móvil de la agresión"
+   }
+  ],
+  "limitrofe": false,
+  "rank_violencia": 25,
+  "ranking": 39
+ },
+ {
+  "sector_id": "SEC-979_-4951",
+  "lat": 19.59,
+  "lng": -99.01,
+  "municipio": "ECATEPEC",
+  "municipios_involucrados": [
+   "ECATEPEC",
+   "ECATEPEC DE MORELOS"
+  ],
+  "colonias": [
+   "LAS AMÉRICAS",
+   "JARDINES DE MORELOS",
+   "LAS AMERICAS"
+  ],
+  "eventos_hd": 3,
+  "victimas_hd": 3,
+  "llamadas_violentas": 1,
+  "indice_violencia": 31.5,
+  "incidentes_top": [
+   [
+    "PERSONA AGRESIVA",
+    1
+   ]
+  ],
+  "familias": {
+   "rina": 1
+  },
+  "base_cercana": "1.- COMANDANCIA DEL AREA REGIONAL ECATEPEC. 2.- RECURSOS HUMANOS. 3.- COMEDOR COORDINACION ECATEPEC. 4.- AGRUPAMIENTO FAR. XII. 5.- AGRUPAMIENTO PAE AMERICAS. 6.- AGRUPAMIENTO TRAASITO ECATEPEC. 7.- AGRUPAMIENTO FES (ECO 10). 8.- AGRUPAMIENTO RECUPERACION DE VEHICULOS ECATEPEC. 9.- GRUPO DE INTELIGENCIA ECATEPEC.",
+  "base_cercana_municipio": "Ecatepec de Morelos",
+  "dist_base_km": 1.12,
+  "bases_en_3km": 5,
+  "personal_1km": 0,
+  "personal_3km": 241,
+  "sin_camaras_reportado": false,
+  "indice_ceguera": 18.8,
+  "clasificacion": "SATURADO",
+  "diagnostico": "Hay base y personal a menos de 1.5 km y aun así concentra violencia: revisar efectividad y horarios del patrullaje existente, no sumar inmuebles.",
+  "hd_detalle": [
+   {
+    "id": 17,
+    "fecha": "2026-07-09",
+    "colonia": "LAS AMÉRICAS",
+    "movil": "Posible ajuste de cuentas"
+   },
+   {
+    "id": 21,
+    "fecha": "2026-07-11",
+    "colonia": "JARDINES DE MORELOS",
+    "movil": "Ajuste de cuentas"
+   },
+   {
+    "id": 30,
+    "fecha": "2026-07-16",
+    "colonia": "LAS AMERICAS",
+    "movil": "Se desconoce el móvil de la agresión"
+   }
+  ],
+  "limitrofe": true,
+  "rank_violencia": 3,
+  "ranking": 40
+ },
+ {
+  "sector_id": "SEC-980_-4965",
+  "lat": 19.61,
+  "lng": -99.29,
+  "municipio": "NICOLAS ROMERO",
+  "municipios_involucrados": [
+   "NICOLAS ROMERO"
+  ],
+  "colonias": [
+   "SAN ISIDRO LA PAZ"
+  ],
+  "eventos_hd": 1,
+  "victimas_hd": 1,
+  "llamadas_violentas": 2,
+  "indice_violencia": 13.0,
+  "incidentes_top": [
+   [
+    "RIÑA",
+    1
+   ],
+   [
+    "PERSONA AGRESIVA",
+    1
+   ]
+  ],
+  "familias": {
+   "rina": 2
+  },
+  "base_cercana": "1.- COMANDANCIA XXVIII REGION 2.- PRIMER AGRUPAMIENTO NICOLAS ROMERO",
+  "base_cercana_municipio": "Nicolás Romero",
+  "dist_base_km": 2.27,
+  "bases_en_3km": 1,
+  "personal_1km": 0,
+  "personal_3km": 72,
+  "sin_camaras_reportado": false,
+  "indice_ceguera": 18.8,
+  "clasificacion": "MIXTO",
+  "diagnostico": "Cobertura intermedia: verificar recorridos y tiempos de respuesta en el cuadrante.",
+  "hd_detalle": [
+   {
+    "id": 50,
+    "fecha": "2026-07-24",
+    "colonia": "SAN ISIDRO LA PAZ",
+    "movil": "Posible ajuste de cuentas"
+   }
+  ],
+  "limitrofe": false,
+  "rank_violencia": 29,
+  "ranking": 41
+ },
+ {
+  "sector_id": "SEC-998_-4994",
+  "lat": 19.97,
+  "lng": -99.87,
+  "municipio": "ACAMBAY",
+  "municipios_involucrados": [
+   "ACAMBAY"
+  ],
+  "colonias": [
+   "ESDOCA"
+  ],
+  "eventos_hd": 1,
+  "victimas_hd": 1,
+  "llamadas_violentas": 0,
+  "indice_violencia": 10.0,
+  "incidentes_top": [],
+  "familias": {},
+  "base_cercana": "1.- COMANDANCIA DE LA XXIII REGION ACAMBAY 2.- 1° AGRUPAMIENTO ACAMBAY",
+  "base_cercana_municipio": "Acambay",
+  "dist_base_km": 2.66,
+  "bases_en_3km": 1,
+  "personal_1km": 0,
+  "personal_3km": 40,
+  "sin_camaras_reportado": false,
+  "indice_ceguera": 18.4,
+  "clasificacion": "MIXTO",
+  "diagnostico": "Cobertura intermedia: verificar recorridos y tiempos de respuesta en el cuadrante.",
+  "hd_detalle": [
+   {
+    "id": 36,
+    "fecha": "2026-07-18",
+    "colonia": "ESDOCA",
+    "movil": "Ajuste de cuentas"
+   }
+  ],
+  "limitrofe": false,
+  "rank_violencia": 56,
+  "ranking": 42
+ },
+ {
+  "sector_id": "SEC-984_-4960",
+  "lat": 19.69,
+  "lng": -99.19,
+  "municipio": "CUAUTITLAN IZCALLI",
+  "municipios_involucrados": [
+   "CUAUTITLAN IZCALLI"
+  ],
+  "colonias": [
+   "SAN SEBATIAN XHALA"
+  ],
+  "eventos_hd": 1,
+  "victimas_hd": 1,
+  "llamadas_violentas": 0,
+  "indice_violencia": 10.0,
+  "incidentes_top": [],
+  "familias": {},
+  "base_cercana": "1.- 3° AGRUPAMIENTO INFONZAVIT NORTE, DE LA REGION XXIX",
+  "base_cercana_municipio": "Cuautitlán Izcalli",
+  "dist_base_km": 2.85,
+  "bases_en_3km": 1,
+  "personal_1km": 0,
+  "personal_3km": 56,
+  "sin_camaras_reportado": false,
+  "indice_ceguera": 17.7,
+  "clasificacion": "MIXTO",
+  "diagnostico": "Cobertura intermedia: verificar recorridos y tiempos de respuesta en el cuadrante.",
+  "hd_detalle": [
+   {
+    "id": 38,
+    "fecha": "2026-07-19",
+    "colonia": "SAN SEBATIAN XHALA",
+    "movil": "Robo"
+   }
+  ],
+  "limitrofe": false,
+  "rank_violencia": 58,
+  "ranking": 43
+ },
+ {
+  "sector_id": "SEC-967_-4982",
+  "lat": 19.35,
+  "lng": -99.63,
+  "municipio": "TOLUCA",
+  "municipios_involucrados": [
+   "TOLUCA"
+  ],
+  "colonias": [],
+  "eventos_hd": 0,
+  "victimas_hd": 0,
+  "llamadas_violentas": 3,
+  "indice_violencia": 6.0,
+  "incidentes_top": [
+   [
+    "VIOLENCIA FAMILIAR",
+    2
+   ],
+   [
+    "VIOLENCIA DE PAREJA",
+    1
+   ]
+  ],
+  "familias": {
+   "violencia_genero": 3
+  },
+  "base_cercana": "1.- AGRUPAMIENTO A.S.T.R.O.S. TOLUCA, DE LA I REGION",
+  "base_cercana_municipio": "Toluca",
+  "dist_base_km": 3.84,
+  "bases_en_3km": 0,
+  "personal_1km": 0,
+  "personal_3km": 0,
+  "sin_camaras_reportado": false,
+  "indice_ceguera": 17.5,
+  "clasificacion": "MIXTO",
+  "diagnostico": "Cobertura intermedia: verificar recorridos y tiempos de respuesta en el cuadrante.",
+  "hd_detalle": [],
+  "limitrofe": false,
+  "rank_violencia": 97,
+  "ranking": 44
+ },
+ {
+  "sector_id": "SEC-984_-4961",
+  "lat": 19.69,
+  "lng": -99.21,
+  "municipio": "CUAUTITLAN IZCALLI",
+  "municipios_involucrados": [
+   "CUAUTITLAN IZCALLI"
+  ],
+  "colonias": [
+   "BOSQUES DE LA HACIENDA 1RA SECCIÓN"
+  ],
+  "eventos_hd": 1,
+  "victimas_hd": 1,
+  "llamadas_violentas": 2,
+  "indice_violencia": 15.5,
+  "incidentes_top": [
+   [
+    "PERSONA AGRESIVA",
+    1
+   ],
+   [
+    "DETONACION POR ARMA DE FUEGO",
+    1
+   ]
+  ],
+  "familias": {
+   "rina": 1,
+   "arma_fuego": 1
+  },
+  "base_cercana": "1.- 3° AGRUPAMIENTO INFONZAVIT NORTE, DE LA REGION XXIX",
+  "base_cercana_municipio": "Cuautitlán Izcalli",
+  "dist_base_km": 1.52,
+  "bases_en_3km": 2,
+  "personal_1km": 0,
+  "personal_3km": 85,
+  "sin_camaras_reportado": false,
+  "indice_ceguera": 17.4,
+  "clasificacion": "MIXTO",
+  "diagnostico": "Cobertura intermedia: verificar recorridos y tiempos de respuesta en el cuadrante.",
+  "hd_detalle": [
+   {
+    "id": 42,
+    "fecha": "2026-07-20",
+    "colonia": "BOSQUES DE LA HACIENDA 1RA SECCIÓN",
+    "movil": "Se desconoce el móvil de la agresión"
+   }
+  ],
+  "limitrofe": false,
+  "rank_violencia": 20,
+  "ranking": 45
+ },
+ {
+  "sector_id": "SEC-981_-4962",
+  "lat": 19.63,
+  "lng": -99.23,
+  "municipio": "CUAUTITLAN IZCALLI",
+  "municipios_involucrados": [
+   "CUAUTITLAN IZCALLI"
+  ],
+  "colonias": [],
+  "eventos_hd": 0,
+  "victimas_hd": 0,
+  "llamadas_violentas": 4,
+  "indice_violencia": 9.0,
+  "incidentes_top": [
+   [
+    "PERSONA AGRESIVA",
+    2
+   ],
+   [
+    "VIOLENCIA CONTRA LAS MUJERES",
+    1
+   ],
+   [
+    "DETONACION POR ARMA DE FUEGO",
+    1
+   ]
+  ],
+  "familias": {
+   "rina": 2,
+   "violencia_genero": 1,
+   "arma_fuego": 1
+  },
+  "base_cercana": "1.- COMANDANCIA DE LA REGION XXXVII 2.-1° AGRUPAMIENTO CIRCUITO EXTERIOR MEXIQUENSE",
+  "base_cercana_municipio": "Cuautitlán Izcalli",
+  "dist_base_km": 2.77,
+  "bases_en_3km": 1,
+  "personal_1km": 0,
+  "personal_3km": 35,
+  "sin_camaras_reportado": false,
+  "indice_ceguera": 17.4,
+  "clasificacion": "MIXTO",
+  "diagnostico": "Cobertura intermedia: verificar recorridos y tiempos de respuesta en el cuadrante.",
+  "hd_detalle": [],
+  "limitrofe": false,
+  "rank_violencia": 71,
+  "ranking": 46
+ },
+ {
+  "sector_id": "SEC-971_-4947",
+  "lat": 19.43,
+  "lng": -98.93,
+  "municipio": "CHIMALHUACAN",
+  "municipios_involucrados": [
+   "CHIMALHUACAN"
+  ],
+  "colonias": [
+   "ACUITLAPILCO"
+  ],
+  "eventos_hd": 1,
+  "victimas_hd": 1,
+  "llamadas_violentas": 5,
+  "indice_violencia": 17.5,
+  "incidentes_top": [
+   [
+    "RIÑA",
+    3
+   ],
+   [
+    "PERSONA AGRESIVA",
+    2
+   ]
+  ],
+  "familias": {
+   "rina": 5
+  },
+  "base_cercana": "1.- 1° AGRUPAMIENTO CHIMALHUACAN DE LA XL REGION",
+  "base_cercana_municipio": "Chimalhuacán",
+  "dist_base_km": 1.66,
+  "bases_en_3km": 2,
+  "personal_1km": 0,
+  "personal_3km": 135,
+  "sin_camaras_reportado": false,
+  "indice_ceguera": 16.8,
+  "clasificacion": "MIXTO",
+  "diagnostico": "Cobertura intermedia: verificar recorridos y tiempos de respuesta en el cuadrante.",
+  "hd_detalle": [
+   {
+    "id": 33,
+    "fecha": "2026-07-17",
+    "colonia": "ACUITLAPILCO",
+    "movil": "Se desconoce el móvil de la agresión"
+   }
+  ],
+  "limitrofe": false,
+  "rank_violencia": 15,
+  "ranking": 47
+ },
+ {
+  "sector_id": "SEC-985_-4955",
+  "lat": 19.71,
+  "lng": -99.09,
+  "municipio": "NEXTLALPAN",
+  "municipios_involucrados": [
+   "NEXTLALPAN"
+  ],
+  "colonias": [
+   "PRADOS DE SAN FRANCISCO"
+  ],
+  "eventos_hd": 1,
+  "victimas_hd": 1,
+  "llamadas_violentas": 0,
+  "indice_violencia": 10.0,
+  "incidentes_top": [],
+  "familias": {},
+  "base_cercana": "1.- 2° AGRUPAMIENTO TULTEPEC, REGION XXXV, SUBDIRECCION CIRCUITO EXTERIOR MEXIQUENSE",
+  "base_cercana_municipio": "Tultepec",
+  "dist_base_km": 2.15,
+  "bases_en_3km": 1,
+  "personal_1km": 0,
+  "personal_3km": 35,
+  "sin_camaras_reportado": false,
+  "indice_ceguera": 16.8,
+  "clasificacion": "MIXTO",
+  "diagnostico": "Cobertura intermedia: verificar recorridos y tiempos de respuesta en el cuadrante.",
+  "hd_detalle": [
+   {
+    "id": 2,
+    "fecha": "2026-07-01",
+    "colonia": "PRADOS DE SAN FRANCISCO",
+    "movil": "Riña"
+   }
+  ],
+  "limitrofe": false,
+  "rank_violencia": 45,
+  "ranking": 48
+ },
+ {
+  "sector_id": "SEC-973_-4964",
+  "lat": 19.47,
+  "lng": -99.27,
+  "municipio": "NAUCALPAN DE JUAREZ",
+  "municipios_involucrados": [
+   "NAUCALPAN DE JUAREZ"
+  ],
+  "colonias": [],
+  "eventos_hd": 0,
+  "victimas_hd": 0,
+  "llamadas_violentas": 2,
+  "indice_violencia": 6.0,
+  "incidentes_top": [
+   [
+    "VIOLENCIA CONTRA LAS MUJERES",
+    1
+   ],
+   [
+    "DETONACION POR ARMA DE FUEGO",
+    1
+   ]
+  ],
+  "familias": {
+   "violencia_genero": 1,
+   "arma_fuego": 1
+  },
+  "base_cercana": "1.- 4° AGRUPAMIENTO DE LA XXV REGION (MOLINO)",
+  "base_cercana_municipio": "Naucalpan de Juarez",
+  "dist_base_km": 3.36,
+  "bases_en_3km": 0,
+  "personal_1km": 0,
+  "personal_3km": 0,
+  "sin_camaras_reportado": false,
+  "indice_ceguera": 16.1,
+  "clasificacion": "MIXTO",
+  "diagnostico": "Cobertura intermedia: verificar recorridos y tiempos de respuesta en el cuadrante.",
+  "hd_detalle": [],
+  "limitrofe": false,
+  "rank_violencia": 100,
+  "ranking": 49
+ },
+ {
+  "sector_id": "SEC-968_-4949",
+  "lat": 19.37,
+  "lng": -98.97,
+  "municipio": "LA PAZ",
+  "municipios_involucrados": [
+   "LA PAZ"
+  ],
+  "colonias": [],
+  "eventos_hd": 0,
+  "victimas_hd": 0,
+  "llamadas_violentas": 9,
+  "indice_violencia": 23.5,
+  "incidentes_top": [
+   [
+    "VIOLENCIA CONTRA LAS MUJERES",
+    3
+   ],
+   [
+    "EXTORSION O INTENTO DE EXTORSION (NO TELEFONICA)",
+    1
+   ],
+   [
+    "PERSONA TIRADA EN VIA PUBLICA",
+    1
+   ],
+   [
+    "DETONACION POR ARMA DE FUEGO",
+    1
+   ]
+  ],
+  "familias": {
+   "alta_incidencia": 1,
+   "violencia_genero": 3,
+   "deceso_dudoso": 1,
+   "arma_fuego": 2,
+   "robo_violento": 1,
+   "rina": 1
+  },
+  "base_cercana": "1.- 3° AGRUPAMIENTO SAN AGUSTIN DE LA XL REGION",
+  "base_cercana_municipio": "Chimalhuacán",
+  "dist_base_km": 0.65,
+  "bases_en_3km": 2,
+  "personal_1km": 75,
+  "personal_3km": 149,
+  "sin_camaras_reportado": false,
+  "indice_ceguera": 15.6,
+  "clasificacion": "SATURADO",
+  "diagnostico": "Hay base y personal a menos de 1.5 km y aun así concentra violencia: revisar efectividad y horarios del patrullaje existente, no sumar inmuebles.",
+  "hd_detalle": [],
+  "limitrofe": false,
+  "rank_violencia": 6,
+  "ranking": 50
+ },
+ {
+  "sector_id": "SEC-973_-4962",
+  "lat": 19.47,
+  "lng": -99.23,
+  "municipio": "NAUCALPAN DE JUAREZ",
+  "municipios_involucrados": [
+   "NAUCALPAN DE JUAREZ",
+   "NAUCALPAN"
+  ],
+  "colonias": [
+   "AMPLIACIÓN SAN ESTEBAN"
+  ],
+  "eventos_hd": 1,
+  "victimas_hd": 1,
+  "llamadas_violentas": 6,
+  "indice_violencia": 19.5,
+  "incidentes_top": [
+   [
+    "PERSONA AGRESIVA",
+    3
+   ],
+   [
+    "ALTERACION DEL ORDEN PUBLICO POR PERSONA ALCOHOLIZADA",
+    2
+   ],
+   [
+    "ROBO A CASA HABITACION CON VIOLENCIA",
+    1
+   ]
+  ],
+  "familias": {
+   "rina": 5,
+   "robo_violento": 1
+  },
+  "base_cercana": "1.- 4° AGRUPAMIENTO DE LA XXV REGION (MOLINO)",
+  "base_cercana_municipio": "Naucalpan de Juarez",
+  "dist_base_km": 0.93,
+  "bases_en_3km": 3,
+  "personal_1km": 34,
+  "personal_3km": 132,
+  "sin_camaras_reportado": false,
+  "indice_ceguera": 15.2,
+  "clasificacion": "MIXTO",
+  "diagnostico": "Cobertura intermedia: verificar recorridos y tiempos de respuesta en el cuadrante.",
+  "hd_detalle": [
+   {
+    "id": 51,
+    "fecha": "2026-07-24",
+    "colonia": "AMPLIACIÓN SAN ESTEBAN",
+    "movil": "Ajuste de cuentas"
+   }
+  ],
+  "limitrofe": true,
+  "rank_violencia": 12,
+  "ranking": 51
+ },
+ {
+  "sector_id": "SEC-962_-4941",
+  "lat": 19.25,
+  "lng": -98.81,
+  "municipio": "CHALCO",
+  "municipios_involucrados": [
+   "CHALCO"
+  ],
+  "colonias": [],
+  "eventos_hd": 0,
+  "victimas_hd": 0,
+  "llamadas_violentas": 2,
+  "indice_violencia": 6.0,
+  "incidentes_top": [
+   [
+    "ROBO DE VEHICULO PARTICULAR CON VIOLENCIA",
+    1
+   ],
+   [
+    "DETONACION POR ARMA DE FUEGO",
+    1
+   ]
+  ],
+  "familias": {
+   "robo_violento": 1,
+   "arma_fuego": 1
+  },
+  "base_cercana": "1.- COMANDANCIA DE LA COORDINACION REGIONAL CHALCO 2.- AGRUPAMIENTO F.A.R. IXTAPALUCA DE LA XLV REGION IXTAPALUCA 3.- AGRUAMIENTO F.A.R. CHALCO DE LA XLVII REGION CHALCO 4.- AGRUPAMIENTO DE TRANSITO ESTATAL VOLCANES 5.- 6A. COMAPAÑIA DE POLICIA F.E.S. 6.- AGRUPAMIENTO PARA LA PREVENCION DEL ROBO A TRANSPORTE REGION VOLCANES",
+  "base_cercana_municipio": "Chalco",
+  "dist_base_km": 3.07,
+  "bases_en_3km": 0,
+  "personal_1km": 0,
+  "personal_3km": 0,
+  "sin_camaras_reportado": false,
+  "indice_ceguera": 15.2,
+  "clasificacion": "MIXTO",
+  "diagnostico": "Cobertura intermedia: verificar recorridos y tiempos de respuesta en el cuadrante.",
+  "hd_detalle": [],
+  "limitrofe": false,
+  "rank_violencia": 102,
+  "ranking": 52
+ },
+ {
+  "sector_id": "SEC-976_-4953",
+  "lat": 19.53,
+  "lng": -99.05,
+  "municipio": "ECATEPEC DE MORELOS",
+  "municipios_involucrados": [
+   "ECATEPEC DE MORELOS",
+   "ECATEPEC"
+  ],
+  "colonias": [
+   "MIGUEL HIDALGO"
+  ],
+  "eventos_hd": 1,
+  "victimas_hd": 2,
+  "llamadas_violentas": 5,
+  "indice_violencia": 31.0,
+  "incidentes_top": [
+   [
+    "PERSONA AGRESIVA",
+    2
+   ],
+   [
+    "VIOLENCIA CONTRA LAS MUJERES",
+    1
+   ],
+   [
+    "ROBO DE VEHICULO PARTICULAR CON VIOLENCIA",
+    1
+   ],
+   [
+    "DETONACION POR ARMA DE FUEGO",
+    1
+   ]
+  ],
+  "familias": {
+   "rina": 2,
+   "violencia_genero": 1,
+   "robo_violento": 1,
+   "arma_fuego": 1
+  },
+  "base_cercana": "1.- 4° AGRUPAMIENTO GRANJAS VALLE DE GUADALUPE, XXXI-A",
+  "base_cercana_municipio": "Ecatepec de Morelos",
+  "dist_base_km": 0.36,
+  "bases_en_3km": 3,
+  "personal_1km": 80,
+  "personal_3km": 219,
+  "sin_camaras_reportado": false,
+  "indice_ceguera": 14.9,
+  "clasificacion": "SATURADO",
+  "diagnostico": "Hay base y personal a menos de 1.5 km y aun así concentra violencia: revisar efectividad y horarios del patrullaje existente, no sumar inmuebles.",
+  "hd_detalle": [
+   {
+    "id": 29,
+    "fecha": "2026-07-15",
+    "colonia": "MIGUEL HIDALGO",
+    "movil": "Posible ajuste de cuentas"
+   }
+  ],
+  "limitrofe": true,
+  "rank_violencia": 4,
+  "ranking": 53
+ },
+ {
+  "sector_id": "SEC-998_-4959",
+  "lat": 19.97,
+  "lng": -99.17,
+  "municipio": "APAXCO",
+  "municipios_involucrados": [
+   "APAXCO"
+  ],
+  "colonias": [
+   "LOMA BONITA"
+  ],
+  "eventos_hd": 1,
+  "victimas_hd": 1,
+  "llamadas_violentas": 0,
+  "indice_violencia": 10.0,
+  "incidentes_top": [],
+  "familias": {},
+  "base_cercana": "1.- 2° AGRUPAMIENTO APAXCO, REGION XXXIII",
+  "base_cercana_municipio": "Apaxco",
+  "dist_base_km": 1.59,
+  "bases_en_3km": 1,
+  "personal_1km": 0,
+  "personal_3km": 30,
+  "sin_camaras_reportado": false,
+  "indice_ceguera": 14.9,
+  "clasificacion": "MIXTO",
+  "diagnostico": "Cobertura intermedia: verificar recorridos y tiempos de respuesta en el cuadrante.",
+  "hd_detalle": [
+   {
+    "id": 35,
+    "fecha": "2026-07-17",
+    "colonia": "LOMA BONITA",
+    "movil": "Robo"
+   }
+  ],
+  "limitrofe": false,
+  "rank_violencia": 55,
+  "ranking": 54
+ },
+ {
+  "sector_id": "SEC-979_-4953",
+  "lat": 19.59,
+  "lng": -99.05,
+  "municipio": "ECATEPEC DE MORELOS",
+  "municipios_involucrados": [
+   "ECATEPEC DE MORELOS",
+   "ECATEPEC"
+  ],
+  "colonias": [
+   "LOMAS DE SAN CARLOS"
+  ],
+  "eventos_hd": 1,
+  "victimas_hd": 1,
+  "llamadas_violentas": 2,
+  "indice_violencia": 14.0,
+  "incidentes_top": [
+   [
+    "ROBO A NEGOCIO CON VIOLENCIA",
+    1
+   ],
+   [
+    "VIOLENCIA CONTRA LAS MUJERES",
+    1
+   ]
+  ],
+  "familias": {
+   "robo_violento": 1,
+   "violencia_genero": 1
+  },
+  "base_cercana": "1.-1° AGRUPAMIENTO ECATEPEC, DE LA XXXI",
+  "base_cercana_municipio": "Ecatepec de Morelos",
+  "dist_base_km": 1.78,
+  "bases_en_3km": 3,
+  "personal_1km": 0,
+  "personal_3km": 118,
+  "sin_camaras_reportado": false,
+  "indice_ceguera": 14.8,
+  "clasificacion": "MIXTO",
+  "diagnostico": "Cobertura intermedia: verificar recorridos y tiempos de respuesta en el cuadrante.",
+  "hd_detalle": [
+   {
+    "id": 15,
+    "fecha": "2026-07-08",
+    "colonia": "LOMAS DE SAN CARLOS",
+    "movil": "Posible ajuste de cuentas"
+   }
+  ],
+  "limitrofe": true,
+  "rank_violencia": 24,
+  "ranking": 55
+ },
+ {
+  "sector_id": "SEC-972_-4962",
+  "lat": 19.45,
+  "lng": -99.23,
+  "municipio": "NAUCALPAN DE JUAREZ",
+  "municipios_involucrados": [
+   "NAUCALPAN DE JUAREZ",
+   "NAUCALPAN"
+  ],
+  "colonias": [
+   "SAN ESTEBAN"
+  ],
+  "eventos_hd": 1,
+  "victimas_hd": 1,
+  "llamadas_violentas": 2,
+  "indice_violencia": 13.0,
+  "incidentes_top": [
+   [
+    "PERSONA AGRESIVA",
+    2
+   ]
+  ],
+  "familias": {
+   "rina": 2
+  },
+  "base_cercana": "1.- 3° AGRUPAMIENTO DE LA XXV REGION (TOREO)",
+  "base_cercana_municipio": "Naucalpan de Juarez",
+  "dist_base_km": 1.98,
+  "bases_en_3km": 3,
+  "personal_1km": 0,
+  "personal_3km": 124,
+  "sin_camaras_reportado": false,
+  "indice_ceguera": 14.2,
+  "clasificacion": "MIXTO",
+  "diagnostico": "Cobertura intermedia: verificar recorridos y tiempos de respuesta en el cuadrante.",
+  "hd_detalle": [
+   {
+    "id": 10,
+    "fecha": "2026-07-05",
+    "colonia": "SAN ESTEBAN",
+    "movil": "Se desconoce el móvil de la agresión"
+   }
+  ],
+  "limitrofe": true,
+  "rank_violencia": 28,
+  "ranking": 56
+ },
+ {
+  "sector_id": "SEC-960_-5007",
+  "lat": 19.21,
+  "lng": -100.13,
+  "municipio": "VALLE DE BRAVO",
+  "municipios_involucrados": [
+   "VALLE DE BRAVO"
+  ],
+  "colonias": [
+   "BARRIO DE GUADALUPE"
+  ],
+  "eventos_hd": 1,
+  "victimas_hd": 1,
+  "llamadas_violentas": 0,
+  "indice_violencia": 10.0,
+  "incidentes_top": [],
+  "familias": {},
+  "base_cercana": "1.- 1° AGRUPAMIENTO EL ARCO",
+  "base_cercana_municipio": "Valle de Bravo",
+  "dist_base_km": 1.52,
+  "bases_en_3km": 1,
+  "personal_1km": 0,
+  "personal_3km": 38,
+  "sin_camaras_reportado": false,
+  "indice_ceguera": 14.0,
+  "clasificacion": "MIXTO",
+  "diagnostico": "Cobertura intermedia: verificar recorridos y tiempos de respuesta en el cuadrante.",
+  "hd_detalle": [
+   {
+    "id": 49,
+    "fecha": "2026-07-23",
+    "colonia": "BARRIO DE GUADALUPE",
+    "movil": "Ajuste de cuentas"
+   }
+  ],
+  "limitrofe": false,
+  "rank_violencia": 61,
+  "ranking": 57
+ },
+ {
+  "sector_id": "SEC-981_-4957",
+  "lat": 19.63,
+  "lng": -99.13,
+  "municipio": "TULTITLAN",
+  "municipios_involucrados": [
+   "TULTITLAN",
+   "COACALCO DE BERRIOZABAL"
+  ],
+  "colonias": [],
+  "eventos_hd": 0,
+  "victimas_hd": 0,
+  "llamadas_violentas": 3,
+  "indice_violencia": 7.5,
+  "incidentes_top": [
+   [
+    "VIOLENCIA FAMILIAR",
+    1
+   ],
+   [
+    "PERSONA AGRESIVA",
+    1
+   ],
+   [
+    "DETONACION POR ARMA DE FUEGO",
+    1
+   ]
+  ],
+  "familias": {
+   "violencia_genero": 1,
+   "rina": 1,
+   "arma_fuego": 1
+  },
+  "base_cercana": "1.- 1° AGRUPAMIENTO COACALCO, REGION XXXIV",
+  "base_cercana_municipio": "Coacalco de Berriozabal",
+  "dist_base_km": 2.71,
+  "bases_en_3km": 1,
+  "personal_1km": 0,
+  "personal_3km": 39,
+  "sin_camaras_reportado": false,
+  "indice_ceguera": 14.0,
+  "clasificacion": "MIXTO",
+  "diagnostico": "Cobertura intermedia: verificar recorridos y tiempos de respuesta en el cuadrante.",
+  "hd_detalle": [],
+  "limitrofe": true,
+  "rank_violencia": 83,
+  "ranking": 58
+ },
+ {
+  "sector_id": "SEC-979_-4959",
+  "lat": 19.59,
+  "lng": -99.17,
+  "municipio": "TULTITLAN",
+  "municipios_involucrados": [
+   "TULTITLAN"
+  ],
+  "colonias": [
+   "AMPLIACIÓN SAN MARCOS"
+  ],
+  "eventos_hd": 1,
+  "victimas_hd": 1,
+  "llamadas_violentas": 1,
+  "indice_violencia": 11.5,
+  "incidentes_top": [
+   [
+    "PERSONA AGRESIVA",
+    1
+   ]
+  ],
+  "familias": {
+   "rina": 1
+  },
+  "base_cercana": "1.- AGRUPAMIENTO A.S.E.S. XI DE LA XXX REGION",
+  "base_cercana_municipio": "Tultitlan",
+  "dist_base_km": 1.03,
+  "bases_en_3km": 2,
+  "personal_1km": 0,
+  "personal_3km": 43,
+  "sin_camaras_reportado": false,
+  "indice_ceguera": 13.5,
+  "clasificacion": "MIXTO",
+  "diagnostico": "Cobertura intermedia: verificar recorridos y tiempos de respuesta en el cuadrante.",
+  "hd_detalle": [
+   {
+    "id": 5,
+    "fecha": "2026-07-02",
+    "colonia": "AMPLIACIÓN SAN MARCOS",
+    "movil": "Se desconoce el móvil de la agresión"
+   }
+  ],
+  "limitrofe": false,
+  "rank_violencia": 35,
+  "ranking": 59
+ },
+ {
+  "sector_id": "SEC-984_-4952",
+  "lat": 19.69,
+  "lng": -99.03,
+  "municipio": "TECAMAC",
+  "municipios_involucrados": [
+   "TECAMAC"
+  ],
+  "colonias": [
+   "SAN PEDRO ATZOMPA"
+  ],
+  "eventos_hd": 1,
+  "victimas_hd": 1,
+  "llamadas_violentas": 0,
+  "indice_violencia": 10.0,
+  "incidentes_top": [],
+  "familias": {},
+  "base_cercana": "1.- COMANDANCIA DE LA SUBDIRECCION OPERATIVA REGIONAL ZUMPANGO 2.- 3 AGRUPAMIENTO TONANITLA, XXXIV REGION. 3.- G.I.P. XII ZUMPANGO 4.- OFICINA AUXILIAR DE RECURSOS HUMANOS ZUMPANGO 5.- COMEDOR OPERATIVO ZUMPANGO",
+  "base_cercana_municipio": "Tonanitla",
+  "dist_base_km": 2.49,
+  "bases_en_3km": 1,
+  "personal_1km": 0,
+  "personal_3km": 102,
+  "sin_camaras_reportado": false,
+  "indice_ceguera": 13.4,
+  "clasificacion": "MIXTO",
+  "diagnostico": "Cobertura intermedia: verificar recorridos y tiempos de respuesta en el cuadrante.",
+  "hd_detalle": [
+   {
+    "id": 56,
+    "fecha": "2026-07-26",
+    "colonia": "SAN PEDRO ATZOMPA",
+    "movil": "Se desconoce el móvil de la agresión"
+   }
+  ],
+  "limitrofe": false,
+  "rank_violencia": 63,
+  "ranking": 60
+ },
+ {
+  "sector_id": "SEC-980_-4966",
+  "lat": 19.61,
+  "lng": -99.31,
+  "municipio": "NICOLAS ROMERO",
+  "municipios_involucrados": [
+   "NICOLAS ROMERO"
+  ],
+  "colonias": [
+   "LIBERTAD"
+  ],
+  "eventos_hd": 1,
+  "victimas_hd": 1,
+  "llamadas_violentas": 1,
+  "indice_violencia": 11.5,
+  "incidentes_top": [
+   [
+    "PERSONA AGRESIVA",
+    1
+   ]
+  ],
+  "familias": {
+   "rina": 1
+  },
+  "base_cercana": "1.- AGRUPAMIENTO DE TRANSITO METROPOLITANO",
+  "base_cercana_municipio": "Nicolás Romero",
+  "dist_base_km": 2.01,
+  "bases_en_3km": 2,
+  "personal_1km": 0,
+  "personal_3km": 115,
+  "sin_camaras_reportado": false,
+  "indice_ceguera": 13.0,
+  "clasificacion": "MIXTO",
+  "diagnostico": "Cobertura intermedia: verificar recorridos y tiempos de respuesta en el cuadrante.",
+  "hd_detalle": [
+   {
+    "id": 39,
+    "fecha": "2026-07-19",
+    "colonia": "LIBERTAD",
+    "movil": "Ajuste de cuentas por venta de drogas"
+   }
+  ],
+  "limitrofe": false,
+  "rank_violencia": 37,
+  "ranking": 61
+ },
+ {
+  "sector_id": "SEC-968_-4951",
+  "lat": 19.37,
+  "lng": -99.01,
+  "municipio": "NEZAHUALCOYOTL",
+  "municipios_involucrados": [
+   "NEZAHUALCOYOTL"
+  ],
+  "colonias": [
+   "LAS AGUILAS"
+  ],
+  "eventos_hd": 1,
+  "victimas_hd": 1,
+  "llamadas_violentas": 0,
+  "indice_violencia": 10.0,
+  "incidentes_top": [],
+  "familias": {},
+  "base_cercana": "1.- CUARTO AGRUPAMIENTO \"MANANTIALES\" DE LA XXXVIII REGION",
+  "base_cercana_municipio": "Nezahualcóyotl",
+  "dist_base_km": 1.87,
+  "bases_en_3km": 1,
+  "personal_1km": 0,
+  "personal_3km": 74,
+  "sin_camaras_reportado": false,
+  "indice_ceguera": 13.0,
+  "clasificacion": "MIXTO",
+  "diagnostico": "Cobertura intermedia: verificar recorridos y tiempos de respuesta en el cuadrante.",
+  "hd_detalle": [
+   {
+    "id": 7,
+    "fecha": "2026-07-03",
+    "colonia": "LAS AGUILAS",
+    "movil": "Posible ajuste de cuentas"
+   }
+  ],
+  "limitrofe": false,
+  "rank_violencia": 46,
+  "ranking": 62
+ },
+ {
+  "sector_id": "SEC-979_-4962",
+  "lat": 19.59,
+  "lng": -99.23,
+  "municipio": "ATIZAPAN DE ZARAGOZA",
+  "municipios_involucrados": [
+   "ATIZAPAN DE ZARAGOZA"
+  ],
+  "colonias": [],
+  "eventos_hd": 0,
+  "victimas_hd": 0,
+  "llamadas_violentas": 3,
+  "indice_violencia": 6.5,
+  "incidentes_top": [
+   [
+    "PERSONA AGRESIVA",
+    1
+   ],
+   [
+    "ROBO A NEGOCIO CON VIOLENCIA",
+    1
+   ],
+   [
+    "PORTACION DE ARMAS DE FUEGO O CARTUCHOS",
+    1
+   ]
+  ],
+  "familias": {
+   "rina": 1,
+   "robo_violento": 1,
+   "arma_fuego": 1
+  },
+  "base_cercana": "1.- 3° AGRUPAMIENTO DE DA XXVII REGION, (VILLAS DE LA HACIENDA)",
+  "base_cercana_municipio": "Atizapan de Zaragoza",
+  "dist_base_km": 2.78,
+  "bases_en_3km": 1,
+  "personal_1km": 0,
+  "personal_3km": 32,
+  "sin_camaras_reportado": false,
+  "indice_ceguera": 12.8,
+  "clasificacion": "MIXTO",
+  "diagnostico": "Cobertura intermedia: verificar recorridos y tiempos de respuesta en el cuadrante.",
+  "hd_detalle": [],
+  "limitrofe": false,
+  "rank_violencia": 94,
+  "ranking": 63
+ },
+ {
+  "sector_id": "SEC-969_-4979",
+  "lat": 19.39,
+  "lng": -99.57,
+  "municipio": "OTZOLOTEPEC",
+  "municipios_involucrados": [
+   "OTZOLOTEPEC"
+  ],
+  "colonias": [
+   "GUADALUPE VICTORIA"
+  ],
+  "eventos_hd": 1,
+  "victimas_hd": 1,
+  "llamadas_violentas": 0,
+  "indice_violencia": 10.0,
+  "incidentes_top": [],
+  "familias": {},
+  "base_cercana": "1.- 1° AGRUPAMIENTO OTZOLOTEPEC",
+  "base_cercana_municipio": "Otzolotepec",
+  "dist_base_km": 1.4,
+  "bases_en_3km": 2,
+  "personal_1km": 0,
+  "personal_3km": 50,
+  "sin_camaras_reportado": false,
+  "indice_ceguera": 12.7,
+  "clasificacion": "MIXTO",
+  "diagnostico": "Cobertura intermedia: verificar recorridos y tiempos de respuesta en el cuadrante.",
+  "hd_detalle": [
+   {
+    "id": 23,
+    "fecha": "2026-07-12",
+    "colonia": "GUADALUPE VICTORIA",
+    "movil": "Riña"
+   }
+  ],
+  "limitrofe": false,
+  "rank_violencia": 50,
+  "ranking": 64
+ },
+ {
+  "sector_id": "SEC-969_-4951",
+  "lat": 19.39,
+  "lng": -99.01,
+  "municipio": "NEZAHUALCOYOTL",
+  "municipios_involucrados": [
+   "NEZAHUALCOYOTL"
+  ],
+  "colonias": [
+   "AMPLIACIÓN VICENTE VILLADA"
+  ],
+  "eventos_hd": 1,
+  "victimas_hd": 1,
+  "llamadas_violentas": 1,
+  "indice_violencia": 14.0,
+  "incidentes_top": [
+   [
+    "DETONACION POR ARMA DE FUEGO",
+    1
+   ]
+  ],
+  "familias": {
+   "arma_fuego": 1
+  },
+  "base_cercana": "1.- CUARTO AGRUPAMIENTO \"MANANTIALES\" DE LA XXXVIII REGION",
+  "base_cercana_municipio": "Nezahualcóyotl",
+  "dist_base_km": 2.28,
+  "bases_en_3km": 4,
+  "personal_1km": 0,
+  "personal_3km": 209,
+  "sin_camaras_reportado": false,
+  "indice_ceguera": 12.5,
+  "clasificacion": "MIXTO",
+  "diagnostico": "Cobertura intermedia: verificar recorridos y tiempos de respuesta en el cuadrante.",
+  "hd_detalle": [
+   {
+    "id": 12,
+    "fecha": "2026-07-06",
+    "colonia": "AMPLIACIÓN VICENTE VILLADA",
+    "movil": "Posible ajuste de cuentas"
+   }
+  ],
+  "limitrofe": false,
+  "rank_violencia": 23,
+  "ranking": 65
+ },
+ {
+  "sector_id": "SEC-976_-4963",
+  "lat": 19.53,
+  "lng": -99.25,
+  "municipio": "ATIZAPAN DE ZARAGOZA",
+  "municipios_involucrados": [
+   "ATIZAPAN DE ZARAGOZA"
+  ],
+  "colonias": [],
+  "eventos_hd": 0,
+  "victimas_hd": 0,
+  "llamadas_violentas": 3,
+  "indice_violencia": 7.0,
+  "incidentes_top": [
+   [
+    "RIÑA",
+    2
+   ],
+   [
+    "DETONACION POR ARMA DE FUEGO",
+    1
+   ]
+  ],
+  "familias": {
+   "rina": 2,
+   "arma_fuego": 1
+  },
+  "base_cercana": "1.- 1° AGRUPAMIENTO XXV REGION SATELITE 2.- 6° AGRUPAMIENTO XXV REGION LOMAS VERDES",
+  "base_cercana_municipio": "Naucalpan de Juarez",
+  "dist_base_km": 2.42,
+  "bases_en_3km": 1,
+  "personal_1km": 0,
+  "personal_3km": 49,
+  "sin_camaras_reportado": false,
+  "indice_ceguera": 11.7,
+  "clasificacion": "MIXTO",
+  "diagnostico": "Cobertura intermedia: verificar recorridos y tiempos de respuesta en el cuadrante.",
+  "hd_detalle": [],
+  "limitrofe": false,
+  "rank_violencia": 88,
+  "ranking": 66
+ },
+ {
+  "sector_id": "SEC-992_-4962",
+  "lat": 19.85,
+  "lng": -99.23,
+  "municipio": "HUEHUETOCA",
+  "municipios_involucrados": [
+   "HUEHUETOCA"
+  ],
+  "colonias": [
+   "CIUDAD SANTA TERESA VII"
+  ],
+  "eventos_hd": 1,
+  "victimas_hd": 1,
+  "llamadas_violentas": 0,
+  "indice_violencia": 10.0,
+  "incidentes_top": [],
+  "familias": {},
+  "base_cercana": "1.- COMANDANCIA DE LA XXXIII REGION ZUMPANGO",
+  "base_cercana_municipio": "Huehuetoca",
+  "dist_base_km": 1.0,
+  "bases_en_3km": 1,
+  "personal_1km": 0,
+  "personal_3km": 45,
+  "sin_camaras_reportado": true,
+  "indice_ceguera": 11.5,
+  "clasificacion": "MIXTO",
+  "diagnostico": "Cobertura intermedia: verificar recorridos y tiempos de respuesta en el cuadrante.",
+  "hd_detalle": [
+   {
+    "id": 1,
+    "fecha": "2026-07-01",
+    "colonia": "CIUDAD SANTA TERESA VII",
+    "movil": "Se desconoce el móvil de la agresión"
+   }
+  ],
+  "limitrofe": false,
+  "rank_violencia": 44,
+  "ranking": 67
+ },
+ {
+  "sector_id": "SEC-973_-4963",
+  "lat": 19.47,
+  "lng": -99.25,
+  "municipio": "NAUCALPAN",
+  "municipios_involucrados": [
+   "NAUCALPAN"
+  ],
+  "colonias": [
+   "LA RIVERA"
+  ],
+  "eventos_hd": 1,
+  "victimas_hd": 1,
+  "llamadas_violentas": 0,
+  "indice_violencia": 10.0,
+  "incidentes_top": [],
+  "familias": {},
+  "base_cercana": "1.- 4° AGRUPAMIENTO DE LA XXV REGION (MOLINO)",
+  "base_cercana_municipio": "Naucalpan de Juarez",
+  "dist_base_km": 1.29,
+  "bases_en_3km": 2,
+  "personal_1km": 0,
+  "personal_3km": 72,
+  "sin_camaras_reportado": false,
+  "indice_ceguera": 11.1,
+  "clasificacion": "MIXTO",
+  "diagnostico": "Cobertura intermedia: verificar recorridos y tiempos de respuesta en el cuadrante.",
+  "hd_detalle": [
+   {
+    "id": 24,
+    "fecha": "2026-07-12",
+    "colonia": "LA RIVERA",
+    "movil": "Riña"
+   }
+  ],
+  "limitrofe": false,
+  "rank_violencia": 51,
+  "ranking": 68
+ },
+ {
+  "sector_id": "SEC-971_-4964",
+  "lat": 19.43,
+  "lng": -99.27,
+  "municipio": "NAUCALPAN DE JUAREZ",
+  "municipios_involucrados": [
+   "NAUCALPAN DE JUAREZ"
+  ],
+  "colonias": [],
+  "eventos_hd": 0,
+  "victimas_hd": 0,
+  "llamadas_violentas": 2,
+  "indice_violencia": 8.0,
+  "incidentes_top": [
+   [
+    "DETONACION POR ARMA DE FUEGO",
+    2
+   ]
+  ],
+  "familias": {
+   "arma_fuego": 2
+  },
+  "base_cercana": "1.- 2° AGRUPAMIENTO DE LA XXIV REGION SAN CRISTOBAL",
+  "base_cercana_municipio": "Huixquilucan",
+  "dist_base_km": 2.16,
+  "bases_en_3km": 3,
+  "personal_1km": 0,
+  "personal_3km": 79,
+  "sin_camaras_reportado": false,
+  "indice_ceguera": 10.9,
+  "clasificacion": "MIXTO",
+  "diagnostico": "Cobertura intermedia: verificar recorridos y tiempos de respuesta en el cuadrante.",
+  "hd_detalle": [],
+  "limitrofe": false,
+  "rank_violencia": 78,
+  "ranking": 69
+ },
+ {
+  "sector_id": "SEC-968_-4948",
+  "lat": 19.37,
+  "lng": -98.95,
+  "municipio": "LA PAZ",
+  "municipios_involucrados": [
+   "LA PAZ"
+  ],
+  "colonias": [],
+  "eventos_hd": 0,
+  "victimas_hd": 0,
+  "llamadas_violentas": 4,
+  "indice_violencia": 7.5,
+  "incidentes_top": [
+   [
+    "ROBO A TRANSEUNTE CON VIOLENCIA",
+    1
+   ],
+   [
+    "ROBO A NEGOCIO CON VIOLENCIA",
+    1
+   ],
+   [
+    "VIOLENCIA CONTRA LAS MUJERES",
+    1
+   ],
+   [
+    "PERSONA AGRESIVA",
+    1
+   ]
+  ],
+  "familias": {
+   "robo_violento": 2,
+   "violencia_genero": 1,
+   "rina": 1
+  },
+  "base_cercana": "1.- 3° AGRUPAMIENTO SAN AGUSTIN DE LA XL REGION",
+  "base_cercana_municipio": "Chimalhuacán",
+  "dist_base_km": 2.19,
+  "bases_en_3km": 2,
+  "personal_1km": 0,
+  "personal_3km": 75,
+  "sin_camaras_reportado": false,
+  "indice_ceguera": 10.5,
+  "clasificacion": "MIXTO",
+  "diagnostico": "Cobertura intermedia: verificar recorridos y tiempos de respuesta en el cuadrante.",
+  "hd_detalle": [],
+  "limitrofe": false,
+  "rank_violencia": 82,
+  "ranking": 70
+ },
+ {
+  "sector_id": "SEC-976_-4962",
+  "lat": 19.53,
+  "lng": -99.23,
+  "municipio": "ATIZAPAN DE ZARAGOZA",
+  "municipios_involucrados": [
+   "ATIZAPAN DE ZARAGOZA",
+   "TLALNEPANTLA DE BAZ"
+  ],
+  "colonias": [],
+  "eventos_hd": 0,
+  "victimas_hd": 0,
+  "llamadas_violentas": 4,
+  "indice_violencia": 9.0,
+  "incidentes_top": [
+   [
+    "RIÑA",
+    2
+   ],
+   [
+    "PERSONA NO LOCALIZADA O DESAPARECIDA",
+    2
+   ]
+  ],
+  "familias": {
+   "rina": 2,
+   "desaparicion": 2
+  },
+  "base_cercana": "1.- 1° AGRUPAMIENTO XXV REGION SATELITE 2.- 6° AGRUPAMIENTO XXV REGION LOMAS VERDES",
+  "base_cercana_municipio": "Naucalpan de Juarez",
+  "dist_base_km": 1.65,
+  "bases_en_3km": 2,
+  "personal_1km": 0,
+  "personal_3km": 88,
+  "sin_camaras_reportado": false,
+  "indice_ceguera": 10.4,
+  "clasificacion": "MIXTO",
+  "diagnostico": "Cobertura intermedia: verificar recorridos y tiempos de respuesta en el cuadrante.",
+  "hd_detalle": [],
+  "limitrofe": true,
+  "rank_violencia": 74,
+  "ranking": 71
+ },
+ {
+  "sector_id": "SEC-969_-4949",
+  "lat": 19.39,
+  "lng": -98.97,
+  "municipio": "CHIMALHUACAN",
+  "municipios_involucrados": [
+   "CHIMALHUACAN"
+  ],
+  "colonias": [],
+  "eventos_hd": 0,
+  "victimas_hd": 0,
+  "llamadas_violentas": 5,
+  "indice_violencia": 11.5,
+  "incidentes_top": [
+   [
+    "PERSONA AGRESIVA",
+    2
+   ],
+   [
+    "RIÑA",
+    1
+   ],
+   [
+    "VIOLENCIA DE PAREJA",
+    1
+   ],
+   [
+    "PERSONA TIRADA EN LA VIA PUBLICA CON HUELLAS DE VIOLENCIA",
+    1
+   ]
+  ],
+  "familias": {
+   "rina": 3,
+   "violencia_genero": 1,
+   "letal": 1
+  },
+  "base_cercana": "1.- 3° AGRUPAMIENTO SAN AGUSTIN DE LA XL REGION",
+  "base_cercana_municipio": "Chimalhuacán",
+  "dist_base_km": 1.58,
+  "bases_en_3km": 2,
+  "personal_1km": 0,
+  "personal_3km": 149,
+  "sin_camaras_reportado": false,
+  "indice_ceguera": 10.3,
+  "clasificacion": "MIXTO",
+  "diagnostico": "Cobertura intermedia: verificar recorridos y tiempos de respuesta en el cuadrante.",
+  "hd_detalle": [],
+  "limitrofe": false,
+  "rank_violencia": 40,
+  "ranking": 72
+ },
+ {
+  "sector_id": "SEC-980_-4959",
+  "lat": 19.61,
+  "lng": -99.17,
+  "municipio": "TULTITLAN",
+  "municipios_involucrados": [
+   "TULTITLAN"
+  ],
+  "colonias": [],
+  "eventos_hd": 0,
+  "victimas_hd": 0,
+  "llamadas_violentas": 3,
+  "indice_violencia": 7.5,
+  "incidentes_top": [
+   [
+    "DETONACION POR ARMA DE FUEGO",
+    1
+   ],
+   [
+    "ROBO A REPARTIDOR CON VIOLENCIA",
+    1
+   ],
+   [
+    "RIÑA",
+    1
+   ]
+  ],
+  "familias": {
+   "arma_fuego": 1,
+   "robo_violento": 1,
+   "rina": 1
+  },
+  "base_cercana": "1.- AGRUPAMIENTO A.S.E.S. XI DE LA XXX REGION",
+  "base_cercana_municipio": "Tultitlan",
+  "dist_base_km": 1.22,
+  "bases_en_3km": 1,
+  "personal_1km": 0,
+  "personal_3km": 30,
+  "sin_camaras_reportado": false,
+  "indice_ceguera": 10.1,
+  "clasificacion": "MIXTO",
+  "diagnostico": "Cobertura intermedia: verificar recorridos y tiempos de respuesta en el cuadrante.",
+  "hd_detalle": [],
+  "limitrofe": false,
+  "rank_violencia": 81,
+  "ranking": 73
+ },
+ {
+  "sector_id": "SEC-964_-4948",
+  "lat": 19.29,
+  "lng": -98.95,
+  "municipio": "VALLE DE CHALCO SOLIDARIDAD",
+  "municipios_involucrados": [
+   "VALLE DE CHALCO SOLIDARIDAD"
+  ],
+  "colonias": [],
+  "eventos_hd": 0,
+  "victimas_hd": 0,
+  "llamadas_violentas": 5,
+  "indice_violencia": 9.5,
+  "incidentes_top": [
+   [
+    "PERSONA AGRESIVA",
+    3
+   ],
+   [
+    "PORTACION DE ARMA BLANCA",
+    1
+   ],
+   [
+    "PERSONA LESIONADA POR ARMA BLANCA",
+    1
+   ]
+  ],
+  "familias": {
+   "rina": 3,
+   "arma_blanca": 2
+  },
+  "base_cercana": "1.- 1° AGRUPAMIENTO PUENTE BLANCO DE LA XLVI VALLE DE CHALCO SOLIDARIDAD",
+  "base_cercana_municipio": "Valle de Chalco Solidaridad",
+  "dist_base_km": 0.83,
+  "bases_en_3km": 1,
+  "personal_1km": 52,
+  "personal_3km": 52,
+  "sin_camaras_reportado": false,
+  "indice_ceguera": 10.0,
+  "clasificacion": "MIXTO",
+  "diagnostico": "Cobertura intermedia: verificar recorridos y tiempos de respuesta en el cuadrante.",
+  "hd_detalle": [],
+  "limitrofe": false,
+  "rank_violencia": 68,
+  "ranking": 74
+ },
+ {
+  "sector_id": "SEC-982_-4966",
+  "lat": 19.65,
+  "lng": -99.31,
+  "municipio": "NICOLAS ROMERO",
+  "municipios_involucrados": [
+   "NICOLAS ROMERO"
+  ],
+  "colonias": [],
+  "eventos_hd": 0,
+  "victimas_hd": 0,
+  "llamadas_violentas": 3,
+  "indice_violencia": 6.0,
+  "incidentes_top": [
+   [
+    "VIOLENCIA CONTRA LAS MUJERES",
+    3
+   ]
+  ],
+  "familias": {
+   "violencia_genero": 3
+  },
+  "base_cercana": "1.- COMANDANCIA XXVIII REGION 2.- PRIMER AGRUPAMIENTO NICOLAS ROMERO",
+  "base_cercana_municipio": "Nicolás Romero",
+  "dist_base_km": 2.87,
+  "bases_en_3km": 1,
+  "personal_1km": 0,
+  "personal_3km": 72,
+  "sin_camaras_reportado": false,
+  "indice_ceguera": 9.9,
+  "clasificacion": "MIXTO",
+  "diagnostico": "Cobertura intermedia: verificar recorridos y tiempos de respuesta en el cuadrante.",
+  "hd_detalle": [],
+  "limitrofe": false,
+  "rank_violencia": 104,
+  "ranking": 75
+ },
+ {
+  "sector_id": "SEC-974_-4952",
+  "lat": 19.49,
+  "lng": -99.03,
+  "municipio": "ECATEPEC",
+  "municipios_involucrados": [
+   "ECATEPEC"
+  ],
+  "colonias": [
+   "EJÉRCITO DEL TRABAJO II"
+  ],
+  "eventos_hd": 1,
+  "victimas_hd": 1,
+  "llamadas_violentas": 0,
+  "indice_violencia": 10.0,
+  "incidentes_top": [],
+  "familias": {},
+  "base_cercana": "2.-SEGUNDO AGRUPAMIENTO VALLE DE ARAGON DE LA XXXIX REGION",
+  "base_cercana_municipio": "Nezahualcóyotl",
+  "dist_base_km": 1.86,
+  "bases_en_3km": 2,
+  "personal_1km": 0,
+  "personal_3km": 145,
+  "sin_camaras_reportado": false,
+  "indice_ceguera": 9.8,
+  "clasificacion": "MIXTO",
+  "diagnostico": "Cobertura intermedia: verificar recorridos y tiempos de respuesta en el cuadrante.",
+  "hd_detalle": [
+   {
+    "id": 8,
+    "fecha": "2026-07-04",
+    "colonia": "EJÉRCITO DEL TRABAJO II",
+    "movil": "Riña"
+   }
+  ],
+  "limitrofe": false,
+  "rank_violencia": 47,
+  "ranking": 76
+ },
+ {
+  "sector_id": "SEC-991_-4961",
+  "lat": 19.83,
+  "lng": -99.21,
+  "municipio": "HUEHUETOCA",
+  "municipios_involucrados": [
+   "HUEHUETOCA"
+  ],
+  "colonias": [],
+  "eventos_hd": 0,
+  "victimas_hd": 0,
+  "llamadas_violentas": 3,
+  "indice_violencia": 7.0,
+  "incidentes_top": [
+   [
+    "ALTERACION DEL ORDEN PUBLICO POR PERSONA DROGADA",
+    1
+   ],
+   [
+    "PERSONA AGRESIVA",
+    1
+   ],
+   [
+    "TENTATIVA DE PRIVACION DE LA LIBERTAD",
+    1
+   ]
+  ],
+  "familias": {
+   "rina": 2,
+   "alta_incidencia": 1
+  },
+  "base_cercana": "1.- 3° AGRUPAMIENTO HUEHUETOCA XXXIII REGION",
+  "base_cercana_municipio": "Huehuetoca",
+  "dist_base_km": 2.28,
+  "bases_en_3km": 2,
+  "personal_1km": 0,
+  "personal_3km": 92,
+  "sin_camaras_reportado": false,
+  "indice_ceguera": 9.3,
+  "clasificacion": "MIXTO",
+  "diagnostico": "Cobertura intermedia: verificar recorridos y tiempos de respuesta en el cuadrante.",
+  "hd_detalle": [],
+  "limitrofe": false,
+  "rank_violencia": 86,
+  "ranking": 77
+ },
+ {
+  "sector_id": "SEC-946_-4972",
+  "lat": 18.93,
+  "lng": -99.43,
+  "municipio": "MALINALCO",
+  "municipios_involucrados": [
+   "MALINALCO"
+  ],
+  "colonias": [
+   "CHALMA"
+  ],
+  "eventos_hd": 1,
+  "victimas_hd": 1,
+  "llamadas_violentas": 0,
+  "indice_violencia": 10.0,
+  "incidentes_top": [],
+  "familias": {},
+  "base_cercana": "2° AGRUPAMIENTO DE LA XI REGION",
+  "base_cercana_municipio": "Malinalco",
+  "dist_base_km": 0.65,
+  "bases_en_3km": 1,
+  "personal_1km": 79,
+  "personal_3km": 79,
+  "sin_camaras_reportado": false,
+  "indice_ceguera": 8.7,
+  "clasificacion": "MIXTO",
+  "diagnostico": "Cobertura intermedia: verificar recorridos y tiempos de respuesta en el cuadrante.",
+  "hd_detalle": [
+   {
+    "id": 37,
+    "fecha": "2026-07-18",
+    "colonia": "CHALMA",
+    "movil": "Posible ajuste de cuentas"
+   }
+  ],
+  "limitrofe": false,
+  "rank_violencia": 57,
+  "ranking": 78
+ },
+ {
+  "sector_id": "SEC-983_-4960",
+  "lat": 19.67,
+  "lng": -99.19,
+  "municipio": "CUAUTITLAN IZCALLI",
+  "municipios_involucrados": [
+   "CUAUTITLAN IZCALLI",
+   "CUAUTITLAN"
+  ],
+  "colonias": [
+   "SAN MATEO IXTACALCO"
+  ],
+  "eventos_hd": 1,
+  "victimas_hd": 1,
+  "llamadas_violentas": 1,
+  "indice_violencia": 11.5,
+  "incidentes_top": [
+   [
+    "PERSONA AGRESIVA",
+    1
+   ]
+  ],
+  "familias": {
+   "rina": 1
+  },
+  "base_cercana": "1.-COMANDANCIA DE LA SUBDIRECCION OPERATIVA REGIONAL VALLE CUAUTITLAN 2.-COMANDANCIA XXIX REGION 3.- AGPTO A.S.T.R.O.S. XI DE LA XXIX REGION 4.- AGPTO F.A.R. XI DE LA XXIX REGION 5.- AGPTO G.I.P. XI DE LA XXIX REGION 6. AGRUPAMIENTO DE TRANSITO VALLE CUAUTITLAN.",
+  "base_cercana_municipio": "Cuautitlán Izcalli",
+  "dist_base_km": 1.23,
+  "bases_en_3km": 2,
+  "personal_1km": 0,
+  "personal_3km": 178,
+  "sin_camaras_reportado": false,
+  "indice_ceguera": 8.5,
+  "clasificacion": "MIXTO",
+  "diagnostico": "Cobertura intermedia: verificar recorridos y tiempos de respuesta en el cuadrante.",
+  "hd_detalle": [
+   {
+    "id": 47,
+    "fecha": "2026-07-23",
+    "colonia": "SAN MATEO IXTACALCO",
+    "movil": "Posible ajuste de cuentas"
+   }
+  ],
+  "limitrofe": true,
+  "rank_violencia": 38,
+  "ranking": 79
+ },
+ {
+  "sector_id": "SEC-964_-4947",
+  "lat": 19.29,
+  "lng": -98.93,
+  "municipio": "VALLE DE CHALCO SOLIDARIDAD",
+  "municipios_involucrados": [
+   "VALLE DE CHALCO SOLIDARIDAD"
+  ],
+  "colonias": [],
+  "eventos_hd": 0,
+  "victimas_hd": 0,
+  "llamadas_violentas": 6,
+  "indice_violencia": 11.0,
+  "incidentes_top": [
+   [
+    "PERSONA AGRESIVA",
+    3
+   ],
+   [
+    "PORTACION DE ARMAS DE FUEGO O CARTUCHOS",
+    1
+   ],
+   [
+    "ROBO DE MOTOCICLETA CON VIOLENCIA",
+    1
+   ],
+   [
+    "RIÑA",
+    1
+   ]
+  ],
+  "familias": {
+   "arma_fuego": 1,
+   "rina": 4,
+   "robo_violento": 1
+  },
+  "base_cercana": "1.- COMANDANCIA DE LA XLVI REGION VALLE DE CHALCO 2.- 3ER. AGRUPAMIENTO PUENTE ROJO, DE LA REGION XLVI VALLE DE CHALCO SOLIDARIDAD",
+  "base_cercana_municipio": "Chalco",
+  "dist_base_km": 1.48,
+  "bases_en_3km": 4,
+  "personal_1km": 0,
+  "personal_3km": 203,
+  "sin_camaras_reportado": false,
+  "indice_ceguera": 8.1,
+  "clasificacion": "MIXTO",
+  "diagnostico": "Cobertura intermedia: verificar recorridos y tiempos de respuesta en el cuadrante.",
+  "hd_detalle": [],
+  "limitrofe": false,
+  "rank_violencia": 42,
+  "ranking": 80
+ },
+ {
+  "sector_id": "SEC-963_-4977",
+  "lat": 19.27,
+  "lng": -99.53,
+  "municipio": "SAN MATEO ATENCO",
+  "municipios_involucrados": [
+   "SAN MATEO ATENCO"
+  ],
+  "colonias": [],
+  "eventos_hd": 0,
+  "victimas_hd": 0,
+  "llamadas_violentas": 3,
+  "indice_violencia": 6.5,
+  "incidentes_top": [
+   [
+    "PERSONA AGRESIVA",
+    1
+   ],
+   [
+    "VIOLENCIA CONTRA LAS MUJERES",
+    1
+   ],
+   [
+    "PERSONA NO LOCALIZADA O DESAPARECIDA",
+    1
+   ]
+  ],
+  "familias": {
+   "rina": 1,
+   "violencia_genero": 1,
+   "desaparicion": 1
+  },
+  "base_cercana": "1.- COMANDANCIA DE LA VIII REGION 2.- 1° AGRUPAMIENTO 3.- 2° AGRUPAMIENTO",
+  "base_cercana_municipio": "San Mateo Atenco",
+  "dist_base_km": 1.81,
+  "bases_en_3km": 1,
+  "personal_1km": 0,
+  "personal_3km": 84,
+  "sin_camaras_reportado": false,
+  "indice_ceguera": 7.9,
+  "clasificacion": "MIXTO",
+  "diagnostico": "Cobertura intermedia: verificar recorridos y tiempos de respuesta en el cuadrante.",
+  "hd_detalle": [],
+  "limitrofe": false,
+  "rank_violencia": 89,
+  "ranking": 81
+ },
+ {
+  "sector_id": "SEC-969_-4953",
+  "lat": 19.39,
+  "lng": -99.05,
+  "municipio": "NEZAHUALCOYOTL",
+  "municipios_involucrados": [
+   "NEZAHUALCOYOTL"
+  ],
+  "colonias": [
+   "BENITO JUAREZ"
+  ],
+  "eventos_hd": 1,
+  "victimas_hd": 1,
+  "llamadas_violentas": 1,
+  "indice_violencia": 11.5,
+  "incidentes_top": [
+   [
+    "ALTERACION DEL ORDEN PUBLICO POR PERSONA ALCOHOLIZADA",
+    1
+   ]
+  ],
+  "familias": {
+   "rina": 1
+  },
+  "base_cercana": "1.- 1° AGRUPAMIENTO \"MARAVILLAS\" DE LA XXXVIII REGION",
+  "base_cercana_municipio": "Nezahualcóyotl",
+  "dist_base_km": 0.75,
+  "bases_en_3km": 2,
+  "personal_1km": 86,
+  "personal_3km": 157,
+  "sin_camaras_reportado": false,
+  "indice_ceguera": 7.7,
+  "clasificacion": "MIXTO",
+  "diagnostico": "Cobertura intermedia: verificar recorridos y tiempos de respuesta en el cuadrante.",
+  "hd_detalle": [
+   {
+    "id": 34,
+    "fecha": "2026-07-17",
+    "colonia": "BENITO JUAREZ",
+    "movil": "Se desconoce el móvil de la agresión"
+   }
+  ],
+  "limitrofe": false,
+  "rank_violencia": 36,
+  "ranking": 82
+ },
+ {
+  "sector_id": "SEC-975_-4952",
+  "lat": 19.51,
+  "lng": -99.03,
+  "municipio": "ECATEPEC DE MORELOS",
+  "municipios_involucrados": [
+   "ECATEPEC DE MORELOS"
+  ],
+  "colonias": [],
+  "eventos_hd": 0,
+  "victimas_hd": 0,
+  "llamadas_violentas": 3,
+  "indice_violencia": 7.0,
+  "incidentes_top": [
+   [
+    "PERSONA AGRESIVA",
+    2
+   ],
+   [
+    "DETONACION POR ARMA DE FUEGO",
+    1
+   ]
+  ],
+  "familias": {
+   "rina": 2,
+   "arma_fuego": 1
+  },
+  "base_cercana": "1.- 3° AGRUPAMIENTO ARAGON, DE LA XXXI-A",
+  "base_cercana_municipio": "Ecatepec de Morelos",
+  "dist_base_km": 1.17,
+  "bases_en_3km": 1,
+  "personal_1km": 0,
+  "personal_3km": 66,
+  "sin_camaras_reportado": false,
+  "indice_ceguera": 7.7,
+  "clasificacion": "MIXTO",
+  "diagnostico": "Cobertura intermedia: verificar recorridos y tiempos de respuesta en el cuadrante.",
+  "hd_detalle": [],
+  "limitrofe": false,
+  "rank_violencia": 85,
+  "ranking": 83
+ },
+ {
+  "sector_id": "SEC-971_-4948",
+  "lat": 19.43,
+  "lng": -98.95,
+  "municipio": "CHIMALHUACAN",
+  "municipios_involucrados": [
+   "CHIMALHUACAN",
+   "CHICOLOAPAN"
+  ],
+  "colonias": [],
+  "eventos_hd": 0,
+  "victimas_hd": 0,
+  "llamadas_violentas": 4,
+  "indice_violencia": 10.5,
+  "incidentes_top": [
+   [
+    "VIOLENCIA CONTRA LAS MUJERES",
+    1
+   ],
+   [
+    "PERSONA TIRADA EN VIA PUBLICA",
+    1
+   ],
+   [
+    "DETONACION POR ARMA DE FUEGO",
+    1
+   ],
+   [
+    "RIÑA",
+    1
+   ]
+  ],
+  "familias": {
+   "violencia_genero": 1,
+   "deceso_dudoso": 1,
+   "arma_fuego": 1,
+   "rina": 1
+  },
+  "base_cercana": "1.- COMANDANCIA DE LA XL REGION 2.- 2° AGRUPAMIENTO VIDRIEROS 3.- 4° XALTIPAC 4.- G.I.P. ORIENTE",
+  "base_cercana_municipio": "Chimalhuacán",
+  "dist_base_km": 2.11,
+  "bases_en_3km": 2,
+  "personal_1km": 0,
+  "personal_3km": 296,
+  "sin_camaras_reportado": false,
+  "indice_ceguera": 7.3,
+  "clasificacion": "MIXTO",
+  "diagnostico": "Cobertura intermedia: verificar recorridos y tiempos de respuesta en el cuadrante.",
+  "hd_detalle": [],
+  "limitrofe": true,
+  "rank_violencia": 43,
+  "ranking": 84
+ },
+ {
+  "sector_id": "SEC-963_-4984",
+  "lat": 19.27,
+  "lng": -99.67,
+  "municipio": "TOLUCA",
+  "municipios_involucrados": [
+   "TOLUCA"
+  ],
+  "colonias": [],
+  "eventos_hd": 0,
+  "victimas_hd": 0,
+  "llamadas_violentas": 8,
+  "indice_violencia": 15.0,
+  "incidentes_top": [
+   [
+    "VIOLENCIA CONTRA LAS MUJERES",
+    5
+   ],
+   [
+    "ALTERACION DEL ORDEN PUBLICO POR PERSONA DROGADA",
+    2
+   ],
+   [
+    "PORTACION DE ARMA BLANCA",
+    1
+   ]
+  ],
+  "familias": {
+   "arma_blanca": 1,
+   "rina": 2,
+   "violencia_genero": 5
+  },
+  "base_cercana": "1.- 4° AGRUPAMIENTO I REGION",
+  "base_cercana_municipio": "Toluca",
+  "dist_base_km": 0.47,
+  "bases_en_3km": 4,
+  "personal_1km": 60,
+  "personal_3km": 249,
+  "sin_camaras_reportado": false,
+  "indice_ceguera": 7.0,
+  "clasificacion": "MIXTO",
+  "diagnostico": "Cobertura intermedia: verificar recorridos y tiempos de respuesta en el cuadrante.",
+  "hd_detalle": [],
+  "limitrofe": false,
+  "rank_violencia": 21,
+  "ranking": 85
+ },
+ {
+  "sector_id": "SEC-977_-4954",
+  "lat": 19.55,
+  "lng": -99.07,
+  "municipio": "ECATEPEC DE MORELOS",
+  "municipios_involucrados": [
+   "ECATEPEC DE MORELOS"
+  ],
+  "colonias": [],
+  "eventos_hd": 0,
+  "victimas_hd": 0,
+  "llamadas_violentas": 4,
+  "indice_violencia": 7.0,
+  "incidentes_top": [
+   [
+    "PERSONA AGRESIVA",
+    2
+   ],
+   [
+    "VIOLENCIA FAMILIAR",
+    2
+   ]
+  ],
+  "familias": {
+   "rina": 2,
+   "violencia_genero": 2
+  },
+  "base_cercana": "1.- 2° AGRUPAMIENTO AZTECAS, DE LA XXXI-A",
+  "base_cercana_municipio": "Ecatepec de Morelos",
+  "dist_base_km": 1.96,
+  "bases_en_3km": 2,
+  "personal_1km": 0,
+  "personal_3km": 153,
+  "sin_camaras_reportado": false,
+  "indice_ceguera": 6.9,
+  "clasificacion": "MIXTO",
+  "diagnostico": "Cobertura intermedia: verificar recorridos y tiempos de respuesta en el cuadrante.",
+  "hd_detalle": [],
+  "limitrofe": false,
+  "rank_violencia": 87,
+  "ranking": 86
+ },
+ {
+  "sector_id": "SEC-974_-4953",
+  "lat": 19.49,
+  "lng": -99.05,
+  "municipio": "ECATEPEC DE MORELOS",
+  "municipios_involucrados": [
+   "ECATEPEC DE MORELOS"
+  ],
+  "colonias": [],
+  "eventos_hd": 0,
+  "victimas_hd": 0,
+  "llamadas_violentas": 6,
+  "indice_violencia": 11.5,
+  "incidentes_top": [
+   [
+    "VIOLENCIA CONTRA LAS MUJERES",
+    3
+   ],
+   [
+    "ROBO A TRANSEUNTE CON VIOLENCIA",
+    2
+   ],
+   [
+    "RIÑA",
+    1
+   ]
+  ],
+  "familias": {
+   "robo_violento": 2,
+   "violencia_genero": 3,
+   "rina": 1
+  },
+  "base_cercana": "2.-SEGUNDO AGRUPAMIENTO VALLE DE ARAGON DE LA XXXIX REGION",
+  "base_cercana_municipio": "Nezahualcóyotl",
+  "dist_base_km": 0.34,
+  "bases_en_3km": 2,
+  "personal_1km": 75,
+  "personal_3km": 145,
+  "sin_camaras_reportado": false,
+  "indice_ceguera": 6.8,
+  "clasificacion": "MIXTO",
+  "diagnostico": "Cobertura intermedia: verificar recorridos y tiempos de respuesta en el cuadrante.",
+  "hd_detalle": [],
+  "limitrofe": false,
+  "rank_violencia": 39,
+  "ranking": 87
+ },
+ {
+  "sector_id": "SEC-970_-4951",
+  "lat": 19.41,
+  "lng": -99.01,
+  "municipio": "NEZAHUALCOYOTL",
+  "municipios_involucrados": [
+   "NEZAHUALCOYOTL",
+   "CHIMALHUACAN"
+  ],
+  "colonias": [],
+  "eventos_hd": 0,
+  "victimas_hd": 0,
+  "llamadas_violentas": 6,
+  "indice_violencia": 11.0,
+  "incidentes_top": [
+   [
+    "ALTERACION DEL ORDEN PUBLICO POR PERSONA ALCOHOLIZADA",
+    3
+   ],
+   [
+    "RIÑA",
+    1
+   ],
+   [
+    "VIOLENCIA CONTRA LAS MUJERES",
+    1
+   ],
+   [
+    "PERSONA NO LOCALIZADA O DESAPARECIDA",
+    1
+   ]
+  ],
+  "familias": {
+   "rina": 4,
+   "violencia_genero": 1,
+   "desaparicion": 1
+  },
+  "base_cercana": "1.- COMANDANCIA DE LA XXXVIII REGION 2.- DELEGACION DEL AREA JURIDICA 3.- AREA DE RECURSOS HUMANOS 4.- POLICIA DE GENERO",
+  "base_cercana_municipio": "Nezahualcóyotl",
+  "dist_base_km": 0.25,
+  "bases_en_3km": 4,
+  "personal_1km": 64,
+  "personal_3km": 126,
+  "sin_camaras_reportado": false,
+  "indice_ceguera": 6.7,
+  "clasificacion": "MIXTO",
+  "diagnostico": "Cobertura intermedia: verificar recorridos y tiempos de respuesta en el cuadrante.",
+  "hd_detalle": [],
+  "limitrofe": true,
+  "rank_violencia": 41,
+  "ranking": 88
+ },
+ {
+  "sector_id": "SEC-976_-4944",
+  "lat": 19.53,
+  "lng": -98.87,
+  "municipio": "TEXCOCO",
+  "municipios_involucrados": [
+   "TEXCOCO"
+  ],
+  "colonias": [],
+  "eventos_hd": 0,
+  "victimas_hd": 0,
+  "llamadas_violentas": 5,
+  "indice_violencia": 9.5,
+  "incidentes_top": [
+   [
+    "VIOLENCIA CONTRA LAS MUJERES",
+    4
+   ],
+   [
+    "PERSONA AGRESIVA",
+    1
+   ]
+  ],
+  "familias": {
+   "violencia_genero": 4,
+   "rina": 1
+  },
+  "base_cercana": "1.- COMANDANCIA DE LA SUBDIRECCION OPERATIVA REGIONAL TEXCOCO 2.- COMANDANCIA DE LA XLIII REGION 3.- 1° AGRUPAMIENTO TEXCOCO 4.- F.A.R TEXCOCO",
+  "base_cercana_municipio": "Texcoco",
+  "dist_base_km": 1.79,
+  "bases_en_3km": 2,
+  "personal_1km": 0,
+  "personal_3km": 258,
+  "sin_camaras_reportado": false,
+  "indice_ceguera": 6.6,
+  "clasificacion": "MIXTO",
+  "diagnostico": "Cobertura intermedia: verificar recorridos y tiempos de respuesta en el cuadrante.",
+  "hd_detalle": [],
+  "limitrofe": false,
+  "rank_violencia": 69,
+  "ranking": 89
+ },
+ {
+  "sector_id": "SEC-978_-4952",
+  "lat": 19.57,
+  "lng": -99.03,
+  "municipio": "ECATEPEC DE MORELOS",
+  "municipios_involucrados": [
+   "ECATEPEC DE MORELOS"
+  ],
+  "colonias": [],
+  "eventos_hd": 0,
+  "victimas_hd": 0,
+  "llamadas_violentas": 4,
+  "indice_violencia": 9.0,
+  "incidentes_top": [
+   [
+    "PERSONA AGRESIVA",
+    2
+   ],
+   [
+    "VIOLENCIA CONTRA LAS MUJERES",
+    1
+   ],
+   [
+    "DETONACION POR ARMA DE FUEGO",
+    1
+   ]
+  ],
+  "familias": {
+   "violencia_genero": 1,
+   "rina": 2,
+   "arma_fuego": 1
+  },
+  "base_cercana": "1.- COMANDANCIA DE LA SUBDIRECCION OPERATIVA CIRCUITO EXTERIOR MEXIQUENSE",
+  "base_cercana_municipio": "Ecatepec de Morelos",
+  "dist_base_km": 1.15,
+  "bases_en_3km": 3,
+  "personal_1km": 0,
+  "personal_3km": 172,
+  "sin_camaras_reportado": false,
+  "indice_ceguera": 6.6,
+  "clasificacion": "MIXTO",
+  "diagnostico": "Cobertura intermedia: verificar recorridos y tiempos de respuesta en el cuadrante.",
+  "hd_detalle": [],
+  "limitrofe": false,
+  "rank_violencia": 73,
+  "ranking": 90
+ },
+ {
+  "sector_id": "SEC-982_-4961",
+  "lat": 19.65,
+  "lng": -99.21,
+  "municipio": "CUAUTITLAN IZCALLI",
+  "municipios_involucrados": [
+   "CUAUTITLAN IZCALLI"
+  ],
+  "colonias": [],
+  "eventos_hd": 0,
+  "victimas_hd": 0,
+  "llamadas_violentas": 5,
+  "indice_violencia": 8.5,
+  "incidentes_top": [
+   [
+    "PERSONA AGRESIVA",
+    2
+   ],
+   [
+    "VIOLENCIA DE PAREJA",
+    1
+   ],
+   [
+    "RIÑA",
+    1
+   ],
+   [
+    "VIOLENCIA FAMILIAR",
+    1
+   ]
+  ],
+  "familias": {
+   "violencia_genero": 2,
+   "rina": 3
+  },
+  "base_cercana": "1.- COMANDANCIA DE LA REGION XXXVII 2.-1° AGRUPAMIENTO CIRCUITO EXTERIOR MEXIQUENSE",
+  "base_cercana_municipio": "Cuautitlán Izcalli",
+  "dist_base_km": 1.75,
+  "bases_en_3km": 3,
+  "personal_1km": 0,
+  "personal_3km": 213,
+  "sin_camaras_reportado": false,
+  "indice_ceguera": 6.6,
+  "clasificacion": "MIXTO",
+  "diagnostico": "Cobertura intermedia: verificar recorridos y tiempos de respuesta en el cuadrante.",
+  "hd_detalle": [],
+  "limitrofe": false,
+  "rank_violencia": 77,
+  "ranking": 91
+ },
+ {
+  "sector_id": "SEC-964_-4944",
+  "lat": 19.29,
+  "lng": -98.87,
+  "municipio": "CHALCO",
+  "municipios_involucrados": [
+   "CHALCO"
+  ],
+  "colonias": [
+   "SAN MARCOS HUIXTOCO"
+  ],
+  "eventos_hd": 1,
+  "victimas_hd": 1,
+  "llamadas_violentas": 1,
+  "indice_violencia": 11.5,
+  "incidentes_top": [
+   [
+    "PERSONA AGRESIVA",
+    1
+   ]
+  ],
+  "familias": {
+   "rina": 1
+  },
+  "base_cercana": "1.- 2° AGRUPAMIENTO, DE LA XXXVI REGION CIRCUITO EXTERIOR MEXIQUENSE",
+  "base_cercana_municipio": "Ixtapaluca",
+  "dist_base_km": 1.19,
+  "bases_en_3km": 5,
+  "personal_1km": 0,
+  "personal_3km": 288,
+  "sin_camaras_reportado": true,
+  "indice_ceguera": 6.3,
+  "clasificacion": "MIXTO",
+  "diagnostico": "Cobertura intermedia: verificar recorridos y tiempos de respuesta en el cuadrante.",
+  "hd_detalle": [
+   {
+    "id": 4,
+    "fecha": "2026-07-01",
+    "colonia": "SAN MARCOS HUIXTOCO",
+    "movil": "Riña"
+   }
+  ],
+  "limitrofe": false,
+  "rank_violencia": 34,
+  "ranking": 92
+ },
+ {
+  "sector_id": "SEC-963_-4945",
+  "lat": 19.27,
+  "lng": -98.89,
+  "municipio": "CHALCO",
+  "municipios_involucrados": [
+   "CHALCO"
+  ],
+  "colonias": [],
+  "eventos_hd": 0,
+  "victimas_hd": 0,
+  "llamadas_violentas": 7,
+  "indice_violencia": 12.5,
+  "incidentes_top": [
+   [
+    "ALTERACION DEL ORDEN PUBLICO POR PERSONA ALCOHOLIZADA",
+    2
+   ],
+   [
+    "PERSONA AGRESIVA",
+    2
+   ],
+   [
+    "VIOLENCIA CONTRA LAS MUJERES",
+    1
+   ],
+   [
+    "PERSONA NO LOCALIZADA O DESAPARECIDA",
+    1
+   ]
+  ],
+  "familias": {
+   "rina": 5,
+   "violencia_genero": 1,
+   "desaparicion": 1
+  },
+  "base_cercana": "1.- G.I.P. DE LA XLVII REGION CHALCO",
+  "base_cercana_municipio": "Chalco",
+  "dist_base_km": 0.94,
+  "bases_en_3km": 6,
+  "personal_1km": 59,
+  "personal_3km": 303,
+  "sin_camaras_reportado": false,
+  "indice_ceguera": 6.1,
+  "clasificacion": "MIXTO",
+  "diagnostico": "Cobertura intermedia: verificar recorridos y tiempos de respuesta en el cuadrante.",
+  "hd_detalle": [],
+  "limitrofe": false,
+  "rank_violencia": 30,
+  "ranking": 93
+ },
+ {
+  "sector_id": "SEC-964_-4989",
+  "lat": 19.29,
+  "lng": -99.77,
+  "municipio": "ALMOLOYA DE JUAREZ",
+  "municipios_involucrados": [
+   "ALMOLOYA DE JUAREZ"
+  ],
+  "colonias": [],
+  "eventos_hd": 0,
+  "victimas_hd": 0,
+  "llamadas_violentas": 2,
+  "indice_violencia": 6.0,
+  "incidentes_top": [
+   [
+    "DETONACION POR ARMA DE FUEGO",
+    1
+   ],
+   [
+    "VIOLENCIA CONTRA LAS MUJERES",
+    1
+   ]
+  ],
+  "familias": {
+   "arma_fuego": 1,
+   "violencia_genero": 1
+  },
+  "base_cercana": "1.- COMANDANCIA DE LA COORDINACION DE SUBDIRECCIONES VALLE TOLUCA 2. COMANDANCIA DE LA UNIDAD DE MONTADOS, CANINOS Y GAMA 3.- 1° AGRUPAMIENTO MONTADO ZINACANTEPEC 4.- 2° AGRUPAMIENTO VALLE DE BRAVO 5.- 3ER. AGRUPAMIENTO MONTADO JILOTEPEC 6.- 5° AGRUPAMIENTO CANINO ZINACANTEPEC 7.- COMANDANCIA DE LA III REGION 8.- AGRUPAMIENTO G.I.P. I - III REGION ZINACANTEPEC",
+  "base_cercana_municipio": "Zinacantepec",
+  "dist_base_km": 2.52,
+  "bases_en_3km": 1,
+  "personal_1km": 0,
+  "personal_3km": 193,
+  "sin_camaras_reportado": false,
+  "indice_ceguera": 5.9,
+  "clasificacion": "MIXTO",
+  "diagnostico": "Cobertura intermedia: verificar recorridos y tiempos de respuesta en el cuadrante.",
+  "hd_detalle": [],
+  "limitrofe": false,
+  "rank_violencia": 95,
+  "ranking": 94
+ },
+ {
+  "sector_id": "SEC-979_-4952",
+  "lat": 19.59,
+  "lng": -99.03,
+  "municipio": "ECATEPEC",
+  "municipios_involucrados": [
+   "ECATEPEC",
+   "ECATEPEC DE MORELOS"
+  ],
+  "colonias": [
+   "JARDINES DE ECATEPEC"
+  ],
+  "eventos_hd": 1,
+  "victimas_hd": 1,
+  "llamadas_violentas": 1,
+  "indice_violencia": 12.0,
+  "incidentes_top": [
+   [
+    "VIOLENCIA CONTRA LAS MUJERES",
+    1
+   ]
+  ],
+  "familias": {
+   "violencia_genero": 1
+  },
+  "base_cercana": "1.- 3° AGRUPAMIENTO AMERICAS, DE LA XXXI REGION",
+  "base_cercana_municipio": "Ecatepec de Morelos",
+  "dist_base_km": 0.65,
+  "bases_en_3km": 5,
+  "personal_1km": 32,
+  "personal_3km": 258,
+  "sin_camaras_reportado": false,
+  "indice_ceguera": 5.8,
+  "clasificacion": "MIXTO",
+  "diagnostico": "Cobertura intermedia: verificar recorridos y tiempos de respuesta en el cuadrante.",
+  "hd_detalle": [
+   {
+    "id": 14,
+    "fecha": "2026-07-08",
+    "colonia": "JARDINES DE ECATEPEC",
+    "movil": "Posible ajuste de cuentas"
+   }
+  ],
+  "limitrofe": true,
+  "rank_violencia": 31,
+  "ranking": 95
+ },
+ {
+  "sector_id": "SEC-965_-4983",
+  "lat": 19.31,
+  "lng": -99.65,
+  "municipio": "TOLUCA",
+  "municipios_involucrados": [
+   "TOLUCA"
+  ],
+  "colonias": [],
+  "eventos_hd": 0,
+  "victimas_hd": 0,
+  "llamadas_violentas": 4,
+  "indice_violencia": 14.5,
+  "incidentes_top": [
+   [
+    "DETONACION POR ARMA DE FUEGO",
+    1
+   ],
+   [
+    "PERSONA LESIONADA POR PROYECTIL DE ARMA DE FUEGO",
+    1
+   ],
+   [
+    "PORTACION DE ARMAS DE FUEGO O CARTUCHOS",
+    1
+   ],
+   [
+    "ALTERACION DEL ORDEN PUBLICO POR PERSONA ALCOHOLIZADA",
+    1
+   ]
+  ],
+  "familias": {
+   "arma_fuego": 3,
+   "rina": 1
+  },
+  "base_cercana": "1.- AGRUPAMIENTO A.S.T.R.O.S. TOLUCA, DE LA I REGION",
+  "base_cercana_municipio": "Toluca",
+  "dist_base_km": 1.75,
+  "bases_en_3km": 5,
+  "personal_1km": 0,
+  "personal_3km": 578,
+  "sin_camaras_reportado": false,
+  "indice_ceguera": 5.6,
+  "clasificacion": "MIXTO",
+  "diagnostico": "Cobertura intermedia: verificar recorridos y tiempos de respuesta en el cuadrante.",
+  "hd_detalle": [],
+  "limitrofe": false,
+  "rank_violencia": 22,
+  "ranking": 96
+ },
+ {
+  "sector_id": "SEC-965_-4947",
+  "lat": 19.31,
+  "lng": -98.93,
+  "municipio": "IXTAPALUCA",
+  "municipios_involucrados": [
+   "IXTAPALUCA"
+  ],
+  "colonias": [],
+  "eventos_hd": 0,
+  "victimas_hd": 0,
+  "llamadas_violentas": 3,
+  "indice_violencia": 6.0,
+  "incidentes_top": [
+   [
+    "PERSONA AGRESIVA",
+    2
+   ],
+   [
+    "PERSONA NO LOCALIZADA O DESAPARECIDA",
+    1
+   ]
+  ],
+  "familias": {
+   "rina": 2,
+   "desaparicion": 1
+  },
+  "base_cercana": "1.- 1ER. AGRUPAMIENTO IXTAPALUCA DE LA XLV REGION IXTAPALUCA",
+  "base_cercana_municipio": "Ixtapaluca",
+  "dist_base_km": 1.49,
+  "bases_en_3km": 4,
+  "personal_1km": 0,
+  "personal_3km": 159,
+  "sin_camaras_reportado": false,
+  "indice_ceguera": 5.1,
+  "clasificacion": "MIXTO",
+  "diagnostico": "Cobertura intermedia: verificar recorridos y tiempos de respuesta en el cuadrante.",
+  "hd_detalle": [],
+  "limitrofe": false,
+  "rank_violencia": 101,
+  "ranking": 97
+ },
+ {
+  "sector_id": "SEC-977_-4961",
+  "lat": 19.55,
+  "lng": -99.21,
+  "municipio": "TLALNEPANTLA",
+  "municipios_involucrados": [
+   "TLALNEPANTLA"
+  ],
+  "colonias": [
+   "SAN ANDRÉS ATENCO"
+  ],
+  "eventos_hd": 1,
+  "victimas_hd": 1,
+  "llamadas_violentas": 0,
+  "indice_violencia": 10.0,
+  "incidentes_top": [],
+  "familias": {},
+  "base_cercana": "1.- 6° AGRUPAMIENTO DE LA XXVI REGION VALLE DORADO",
+  "base_cercana_municipio": "Tlalnepantla de Baz",
+  "dist_base_km": 1.39,
+  "bases_en_3km": 2,
+  "personal_1km": 0,
+  "personal_3km": 392,
+  "sin_camaras_reportado": false,
+  "indice_ceguera": 4.7,
+  "clasificacion": "MIXTO",
+  "diagnostico": "Cobertura intermedia: verificar recorridos y tiempos de respuesta en el cuadrante.",
+  "hd_detalle": [
+   {
+    "id": 32,
+    "fecha": "2026-07-17",
+    "colonia": "SAN ANDRÉS ATENCO",
+    "movil": "Intento de robo"
+   }
+  ],
+  "limitrofe": false,
+  "rank_violencia": 54,
+  "ranking": 98
+ },
+ {
+  "sector_id": "SEC-971_-4949",
+  "lat": 19.43,
+  "lng": -98.97,
+  "municipio": "CHIMALHUACAN",
+  "municipios_involucrados": [
+   "CHIMALHUACAN"
+  ],
+  "colonias": [],
+  "eventos_hd": 0,
+  "victimas_hd": 0,
+  "llamadas_violentas": 4,
+  "indice_violencia": 6.0,
+  "incidentes_top": [
+   [
+    "RIÑA",
+    2
+   ],
+   [
+    "PERSONA AGRESIVA",
+    1
+   ],
+   [
+    "ALTERACION DEL ORDEN PUBLICO POR PERSONA ALCOHOLIZADA",
+    1
+   ]
+  ],
+  "familias": {
+   "rina": 4
+  },
+  "base_cercana": "1.- COMANDANCIA DE LA XL REGION 2.- 2° AGRUPAMIENTO VIDRIEROS 3.- 4° XALTIPAC 4.- G.I.P. ORIENTE",
+  "base_cercana_municipio": "Chimalhuacán",
+  "dist_base_km": 1.71,
+  "bases_en_3km": 1,
+  "personal_1km": 0,
+  "personal_3km": 215,
+  "sin_camaras_reportado": false,
+  "indice_ceguera": 4.6,
+  "clasificacion": "MIXTO",
+  "diagnostico": "Cobertura intermedia: verificar recorridos y tiempos de respuesta en el cuadrante.",
+  "hd_detalle": [],
+  "limitrofe": false,
+  "rank_violencia": 106,
+  "ranking": 99
+ },
+ {
+  "sector_id": "SEC-973_-4953",
+  "lat": 19.47,
+  "lng": -99.05,
+  "municipio": "NEZAHUALCOYOTL",
+  "municipios_involucrados": [
+   "NEZAHUALCOYOTL"
+  ],
+  "colonias": [],
+  "eventos_hd": 0,
+  "victimas_hd": 0,
+  "llamadas_violentas": 3,
+  "indice_violencia": 6.0,
+  "incidentes_top": [
+   [
+    "ALTERACION DEL ORDEN PUBLICO POR PERSONA ALCOHOLIZADA",
+    1
+   ],
+   [
+    "PORTACION DE ARMAS DE FUEGO O CARTUCHOS",
+    1
+   ],
+   [
+    "RIÑA",
+    1
+   ]
+  ],
+  "familias": {
+   "rina": 2,
+   "arma_fuego": 1
+  },
+  "base_cercana": "1.- COMANDANCIA XXXIX REGION 2.- 1° AGRUPAMIENTO LAS ARMAS DE LA XXXIX REGION",
+  "base_cercana_municipio": "Nezahualcóyotl",
+  "dist_base_km": 0.77,
+  "bases_en_3km": 2,
+  "personal_1km": 70,
+  "personal_3km": 145,
+  "sin_camaras_reportado": false,
+  "indice_ceguera": 4.2,
+  "clasificacion": "MIXTO",
+  "diagnostico": "Cobertura intermedia: verificar recorridos y tiempos de respuesta en el cuadrante.",
+  "hd_detalle": [],
+  "limitrofe": false,
+  "rank_violencia": 105,
+  "ranking": 100
+ },
+ {
+  "sector_id": "SEC-969_-4952",
+  "lat": 19.39,
+  "lng": -99.03,
+  "municipio": "NEZAHUALCOYOTL",
+  "municipios_involucrados": [
+   "NEZAHUALCOYOTL"
+  ],
+  "colonias": [],
+  "eventos_hd": 0,
+  "victimas_hd": 0,
+  "llamadas_violentas": 1,
+  "indice_violencia": 6.0,
+  "incidentes_top": [
+   [
+    "PERSONA LESIONADA POR PROYECTIL DE ARMA DE FUEGO",
+    1
+   ]
+  ],
+  "familias": {
+   "arma_fuego": 1
+  },
+  "base_cercana": "1.- 2° AGRUPAMIENTO \"NEZAHUALCOYOTL\" DE LA XXXVIII REGION",
+  "base_cercana_municipio": "Nezahualcóyotl",
+  "dist_base_km": 0.42,
+  "bases_en_3km": 2,
+  "personal_1km": 71,
+  "personal_3km": 157,
+  "sin_camaras_reportado": false,
+  "indice_ceguera": 3.5,
+  "clasificacion": "MIXTO",
+  "diagnostico": "Cobertura intermedia: verificar recorridos y tiempos de respuesta en el cuadrante.",
+  "hd_detalle": [],
+  "limitrofe": false,
+  "rank_violencia": 103,
+  "ranking": 101
+ },
+ {
+  "sector_id": "SEC-975_-4954",
+  "lat": 19.51,
+  "lng": -99.07,
+  "municipio": "ECATEPEC",
+  "municipios_involucrados": [
+   "ECATEPEC"
+  ],
+  "colonias": [
+   "GRANJAS VALLE"
+  ],
+  "eventos_hd": 1,
+  "victimas_hd": 1,
+  "llamadas_violentas": 0,
+  "indice_violencia": 10.0,
+  "incidentes_top": [],
+  "familias": {},
+  "base_cercana": "1.- COMANDANCIA XXXI-A REGION 2.- 1° AGRUPAMIENTO MORELOS",
+  "base_cercana_municipio": "Ecatepec de Morelos",
+  "dist_base_km": 1.24,
+  "bases_en_3km": 2,
+  "personal_1km": 0,
+  "personal_3km": 559,
+  "sin_camaras_reportado": false,
+  "indice_ceguera": 3.4,
+  "clasificacion": "MIXTO",
+  "diagnostico": "Cobertura intermedia: verificar recorridos y tiempos de respuesta en el cuadrante.",
+  "hd_detalle": [
+   {
+    "id": 54,
+    "fecha": "2026-07-26",
+    "colonia": "GRANJAS VALLE",
+    "movil": "Intento de robo de vehículo"
+   }
+  ],
+  "limitrofe": false,
+  "rank_violencia": 62,
+  "ranking": 102
+ },
+ {
+  "sector_id": "SEC-975_-4955",
+  "lat": 19.51,
+  "lng": -99.09,
+  "municipio": "ECATEPEC DE MORELOS",
+  "municipios_involucrados": [
+   "ECATEPEC DE MORELOS",
+   "TLALNEPANTLA DE BAZ"
+  ],
+  "colonias": [],
+  "eventos_hd": 0,
+  "victimas_hd": 0,
+  "llamadas_violentas": 4,
+  "indice_violencia": 7.5,
+  "incidentes_top": [
+   [
+    "VIOLENCIA CONTRA LAS MUJERES",
+    2
+   ],
+   [
+    "ALTERACION DEL ORDEN PUBLICO POR PERSONA DROGADA",
+    1
+   ],
+   [
+    "ROBO DE MOTOCICLETA CON VIOLENCIA",
+    1
+   ]
+  ],
+  "familias": {
+   "violencia_genero": 2,
+   "rina": 1,
+   "robo_violento": 1
+  },
+  "base_cercana": "1.- COMANDANCIA XXXI-A REGION 2.- 1° AGRUPAMIENTO MORELOS",
+  "base_cercana_municipio": "Ecatepec de Morelos",
+  "dist_base_km": 1.17,
+  "bases_en_3km": 2,
+  "personal_1km": 0,
+  "personal_3km": 515,
+  "sin_camaras_reportado": false,
+  "indice_ceguera": 2.7,
+  "clasificacion": "MIXTO",
+  "diagnostico": "Cobertura intermedia: verificar recorridos y tiempos de respuesta en el cuadrante.",
+  "hd_detalle": [],
+  "limitrofe": true,
+  "rank_violencia": 84,
+  "ranking": 103
+ },
+ {
+  "sector_id": "SEC-976_-4955",
+  "lat": 19.53,
+  "lng": -99.09,
+  "municipio": "TLALNEPANTLA DE BAZ",
+  "municipios_involucrados": [
+   "TLALNEPANTLA DE BAZ"
+  ],
+  "colonias": [],
+  "eventos_hd": 0,
+  "victimas_hd": 0,
+  "llamadas_violentas": 3,
+  "indice_violencia": 6.5,
+  "incidentes_top": [
+   [
+    "PORTACION DE ARMAS DE FUEGO O CARTUCHOS",
+    1
+   ],
+   [
+    "PERSONA AGRESIVA",
+    1
+   ],
+   [
+    "VIOLENCIA CONTRA LAS MUJERES",
+    1
+   ]
+  ],
+  "familias": {
+   "arma_fuego": 1,
+   "rina": 1,
+   "violencia_genero": 1
+  },
+  "base_cercana": "2DO AGRUPAMIENTO DE LA XXVI REGION",
+  "base_cercana_municipio": "Tlalnepantla de Baz",
+  "dist_base_km": 1.4,
+  "bases_en_3km": 2,
+  "personal_1km": 0,
+  "personal_3km": 515,
+  "sin_camaras_reportado": false,
+  "indice_ceguera": 2.5,
+  "clasificacion": "MIXTO",
+  "diagnostico": "Cobertura intermedia: verificar recorridos y tiempos de respuesta en el cuadrante.",
+  "hd_detalle": [],
+  "limitrofe": false,
+  "rank_violencia": 92,
+  "ranking": 104
+ },
+ {
+  "sector_id": "SEC-963_-4983",
+  "lat": 19.27,
+  "lng": -99.65,
+  "municipio": "TOLUCA",
+  "municipios_involucrados": [
+   "TOLUCA"
+  ],
+  "colonias": [],
+  "eventos_hd": 0,
+  "victimas_hd": 0,
+  "llamadas_violentas": 5,
+  "indice_violencia": 8.5,
+  "incidentes_top": [
+   [
+    "PERSONA AGRESIVA",
+    3
+   ],
+   [
+    "VIOLENCIA CONTRA LAS MUJERES",
+    1
+   ],
+   [
+    "ROBO A TRANSEUNTE CON VIOLENCIA",
+    1
+   ]
+  ],
+  "familias": {
+   "violencia_genero": 1,
+   "robo_violento": 1,
+   "rina": 3
+  },
+  "base_cercana": "1.- UNIDAD DE SERVICIOS ESPECIALES DE SEGURIDAD",
+  "base_cercana_municipio": "Toluca",
+  "dist_base_km": 1.07,
+  "bases_en_3km": 7,
+  "personal_1km": 0,
+  "personal_3km": 775,
+  "sin_camaras_reportado": false,
+  "indice_ceguera": 2.1,
+  "clasificacion": "MIXTO",
+  "diagnostico": "Cobertura intermedia: verificar recorridos y tiempos de respuesta en el cuadrante.",
+  "hd_detalle": [],
+  "limitrofe": false,
+  "rank_violencia": 75,
+  "ranking": 105
+ },
+ {
+  "sector_id": "SEC-964_-4982",
+  "lat": 19.29,
+  "lng": -99.63,
+  "municipio": "TOLUCA",
+  "municipios_involucrados": [
+   "TOLUCA"
+  ],
+  "colonias": [],
+  "eventos_hd": 0,
+  "victimas_hd": 0,
+  "llamadas_violentas": 4,
+  "indice_violencia": 6.5,
+  "incidentes_top": [
+   [
+    "PERSONA AGRESIVA",
+    2
+   ],
+   [
+    "PORTACION DE ARMA BLANCA",
+    1
+   ],
+   [
+    "ALTERACION DEL ORDEN PUBLICO POR PERSONA ALCOHOLIZADA",
+    1
+   ]
+  ],
+  "familias": {
+   "arma_blanca": 1,
+   "rina": 3
+  },
+  "base_cercana": "1.- OFICINAS CENTRALES DE LA DIRECCION GENERAL DE SEGURIDAD PUBLICA Y TRANSITO 2.- UNIDAD DE SERVICIOS MEDICOS Y APOYO A LA POBLACION 3.- ESTADO MAYOR 4.- COMANDO CENTRAL OPERATIVO",
+  "base_cercana_municipio": "Toluca",
+  "dist_base_km": 0.78,
+  "bases_en_3km": 8,
+  "personal_1km": 192,
+  "personal_3km": 711,
+  "sin_camaras_reportado": false,
+  "indice_ceguera": 1.6,
+  "clasificacion": "MIXTO",
+  "diagnostico": "Cobertura intermedia: verificar recorridos y tiempos de respuesta en el cuadrante.",
+  "hd_detalle": [],
+  "limitrofe": false,
+  "rank_violencia": 90,
+  "ranking": 106
+ }
+]

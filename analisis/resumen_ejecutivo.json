@@ -1,0 +1,208 @@
+{
+ "generado": "2026-07-28 11:03",
+ "corte": "Homicidios dolosos julio 2026 · Llamadas C5 26-27 julio 2026",
+ "hd": {
+  "eventos": 56,
+  "victimas": 63,
+  "georreferenciados": 55,
+  "sin_coordenada": 1,
+  "municipios": 27,
+  "top_municipios": [
+   [
+    "ECATEPEC",
+    9
+   ],
+   [
+    "NAUCALPAN",
+    6
+   ],
+   [
+    "CUAUTITLAN IZCALLI",
+    5
+   ],
+   [
+    "NEZAHUALCOYOTL",
+    4
+   ],
+   [
+    "CHIMALHUACAN",
+    3
+   ],
+   [
+    "ACOLMAN",
+    2
+   ]
+  ],
+  "top_moviles": [
+   [
+    "Se desconoce el móvil de la agresión",
+    18
+   ],
+   [
+    "Posible ajuste de cuentas",
+    16
+   ],
+   [
+    "Riña",
+    7
+   ],
+   [
+    "Ajuste de cuentas",
+    7
+   ],
+   [
+    "Robo",
+    2
+   ]
+  ],
+  "nocturnos": 31
+ },
+ "c5": {
+  "llamadas_totales": 7414,
+  "llamadas_violentas": 647,
+  "arma_fuego": 68,
+  "con_coordenada": 3195,
+  "top_incidentes_violentos": [
+   [
+    "PERSONA AGRESIVA",
+    193
+   ],
+   [
+    "VIOLENCIA CONTRA LAS MUJERES",
+    121
+   ],
+   [
+    "RIÑA",
+    62
+   ],
+   [
+    "ALTERACION DEL ORDEN PUBLICO POR PERSONA ALCOHOLIZADA",
+    51
+   ],
+   [
+    "DETONACION POR ARMA DE FUEGO",
+    41
+   ],
+   [
+    "VIOLENCIA FAMILIAR",
+    31
+   ],
+   [
+    "PORTACION DE ARMAS DE FUEGO O CARTUCHOS",
+    15
+   ],
+   [
+    "PORTACION DE ARMA BLANCA",
+    14
+   ]
+  ]
+ },
+ "geocodificacion": {
+  "distribucion_confianza": {
+   "NULA": 3960,
+   "COORDENADA": 3195,
+   "ALTA": 60,
+   "BAJA": 123,
+   "MEDIA": 76
+  },
+  "sin_coordenada_original": 4219,
+  "sin_coordenada_sin_texto": 3756,
+  "universo_recuperable": 463,
+  "recuperadas_por_nlp": 136,
+  "porcentaje_recuperado": 29.4,
+  "violentas_sin_coordenada": 27,
+  "violentas_recuperadas": 25,
+  "porcentaje_violentas_recuperado": 92.6
+ },
+ "cobertura": {
+  "bases_inventariadas": 198,
+  "bases_en_uso_georreferenciadas": 167,
+  "personal_total": 11147,
+  "dist_hd_base_promedio_km": 2.1,
+  "dist_hd_base_mediana_km": 1.9,
+  "dist_hd_base_maxima_km": 6.23,
+  "hd_a_mas_de_3km_de_base": 14
+ },
+ "zonas_ciegas": {
+  "sectores_detectados": 106,
+  "top": [
+   {
+    "sector_id": "SEC-967_-4983",
+    "municipio": "TOLUCA",
+    "indice_ceguera": 50.6,
+    "dist_base_km": 4.14,
+    "eventos_hd": 0,
+    "llamadas_violentas": 6
+   },
+   {
+    "sector_id": "SEC-962_-4947",
+    "municipio": "VALLE DE CHALCO",
+    "indice_ceguera": 50.3,
+    "dist_base_km": 3.03,
+    "eventos_hd": 1,
+    "llamadas_violentas": 0
+   },
+   {
+    "sector_id": "SEC-979_-4960",
+    "municipio": "TLALNEPANTLA DE BAZ",
+    "indice_ceguera": 49.5,
+    "dist_base_km": 0.99,
+    "eventos_hd": 2,
+    "llamadas_violentas": 2
+   },
+   {
+    "sector_id": "SEC-970_-4949",
+    "municipio": "CHIMALHUACAN",
+    "indice_ceguera": 49.3,
+    "dist_base_km": 3.8,
+    "eventos_hd": 1,
+    "llamadas_violentas": 2
+   },
+   {
+    "sector_id": "SEC-972_-4963",
+    "municipio": "NAUCALPAN DE JUAREZ",
+    "indice_ceguera": 48.5,
+    "dist_base_km": 1.81,
+    "eventos_hd": 0,
+    "llamadas_violentas": 11
+   }
+  ]
+ },
+ "auditoria": {
+  "casos_revisados": 30,
+  "prioridad_alta": 3,
+  "prioridad_media": 5,
+  "prioridad_baja": 22,
+  "por_tipo": [
+   [
+    "PERSONA NO LOCALIZADA O DESAPARECIDA",
+    11
+   ],
+   [
+    "PERSONA TIRADA EN VIA PUBLICA",
+    11
+   ],
+   [
+    "PERSONA TIRADA EN LA VIA PUBLICA CON HUELLAS DE VIOLENCIA",
+    3
+   ],
+   [
+    "AMENAZA DE SUICIDIO",
+    2
+   ],
+   [
+    "SUICIDIO",
+    1
+   ],
+   [
+    "HOMICIDIO",
+    1
+   ],
+   [
+    "TENTATIVA DE SUICIDIO",
+    1
+   ]
+  ]
+ },
+ "anonimizado": true
+}
