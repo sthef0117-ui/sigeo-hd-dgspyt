@@ -241,24 +241,17 @@ html[data-tema="oscuro"] .hoja h2{color:#7a1327}
     </div>
 
     <div class="tarjeta">
-      <h2>Demanda de emergencia hora por hora
-        <span class="nota" id="nota-serie"></span></h2>
-      <div class="cuerpo">
-        <div class="lienzo" style="height:210px"><canvas id="cSerie"></canvas></div>
-        <div class="leyenda" style="margin-top:10px">
-          <span><span class="pt" style="background:#8a94a2"></span>Todas las llamadas</span>
-          <span><span class="pt" style="background:#c1121f"></span>Con violencia</span>
-        </div>
-      </div>
+      <h2>Homicidios dolosos por día <span class="nota">56 eventos · julio 2026</span></h2>
+      <div class="cuerpo"><div class="lienzo" style="height:200px"><canvas id="cDiaGrande"></canvas></div></div>
     </div>
 
     <div class="rej r2">
       <div class="tarjeta">
-        <h2>Homicidios por día del corte <span class="nota">julio 2026</span></h2>
-        <div class="cuerpo"><div class="lienzo"><canvas id="cDia"></canvas></div></div>
+        <h2>Homicidios por municipio <span class="nota">los 8 de mayor incidencia</span></h2>
+        <div class="cuerpo"><div class="lienzo"><canvas id="cMun"></canvas></div></div>
       </div>
       <div class="tarjeta">
-        <h2>Distribución por hora <span class="nota" id="nota-noct"></span></h2>
+        <h2>Homicidios por hora del día <span class="nota" id="nota-noct"></span></h2>
         <div class="cuerpo"><div class="lienzo"><canvas id="cHora"></canvas></div></div>
       </div>
     </div>
@@ -271,6 +264,19 @@ html[data-tema="oscuro"] .hoja h2{color:#7a1327}
       <div class="tarjeta">
         <h2>Móvil de la agresión</h2>
         <div class="tabla-env"><table id="t-moviles"></table></div>
+      </div>
+    </div>
+
+    <div class="tarjeta">
+      <h2>Contexto: demanda de emergencia del 911
+        <span class="nota" id="nota-serie"></span></h2>
+      <div class="cuerpo">
+        <div class="lienzo" style="height:170px"><canvas id="cSerie"></canvas></div>
+        <div class="leyenda" style="margin-top:10px">
+          <span><span class="pt" style="background:#8a94a2"></span>Todas las llamadas</span>
+          <span><span class="pt" style="background:#c1121f"></span>Con violencia</span>
+          <span style="margin-left:auto;color:var(--tx3)">Marco de referencia del corte; el eje del análisis son los homicidios.</span>
+        </div>
       </div>
     </div>
   </section>
@@ -292,10 +298,11 @@ html[data-tema="oscuro"] .hoja h2{color:#7a1327}
         <h2>Mapa operativo
           <span class="filtros" id="capas">
             <button class="pastilla on" data-capa="hd">Homicidios</button>
-            <button class="pastilla on" data-capa="c5">Llamadas</button>
+            <button class="pastilla" data-capa="c5">Llamadas 911</button>
             <button class="pastilla" data-capa="bases">Bases</button>
             <button class="pastilla" data-capa="calor">Calor</button>
             <button class="pastilla" data-capa="sectores">Sectores</button>
+            <button class="pastilla" id="ver-estado" style="border-color:var(--guinda);color:var(--guinda)">Estado completo</button>
           </span>
         </h2>
         <div id="mapa"></div>
@@ -710,10 +717,21 @@ function graficas(){
   DATOS.hd.forEach(d=>{ if(d.fecha) porDia[d.fecha]=(porDia[d.fecha]||0)+1; });
   const dias=Object.keys(porDia).sort();
   if(window._cDia) window._cDia.destroy();
-  window._cDia=new Chart(document.getElementById("cDia"),{type:"bar",
+  window._cDia=new Chart(document.getElementById("cDiaGrande"),{type:"bar",
     data:{labels:dias.map(d=>d.slice(8)+"/"+d.slice(5,7)),
       datasets:[{data:dias.map(d=>porDia[d]),backgroundColor:guinda,borderRadius:3,barPercentage:.75}]},
     options:op});
+
+  // Homicidios por municipio: el eje del analisis.
+  const topMun=DATOS.resumen.hd.top_municipios;
+  if(window._cMun) window._cMun.destroy();
+  window._cMun=new Chart(document.getElementById("cMun"),{type:"bar",
+    data:{labels:topMun.map(m=>m[0]),
+      datasets:[{data:topMun.map(m=>m[1]),backgroundColor:guinda,borderRadius:3,barPercentage:.7}]},
+    options:{...op,indexAxis:"y",
+      scales:{x:{beginAtZero:true,ticks:{color:tx3,font:{size:10},precision:0},
+                 grid:{color:bd},border:{display:false}},
+              y:{ticks:{color:tx3,font:{size:9}},grid:{display:false},border:{color:bd}}}}});
 
   const horas=new Array(24).fill(0);
   DATOS.hd.forEach(d=>{ const h=parseInt((d.hora||"").slice(0,2),10); if(!isNaN(h)) horas[h]++; });
@@ -783,29 +801,33 @@ function iniciarMapa(){
   // La jurisdiccion es estatal: el mapa abre con el Estado de Mexico completo.
   // El encuadre exacto se aplica al mostrar la vista, porque Leaflet no puede
   // medir un contenedor oculto y encuadraria el mundo entero.
-  mapa=L.map("mapa",{zoomControl:false}).setView([19.35,-99.6],8);
+  mapa=L.map("mapa",{zoomControl:false}).setView([19.52,-99.10],10);
   L.control.zoom({position:"bottomright"}).addTo(mapa);
-  // Mismo esquema de capas base que Windows Maps.
-  const carretera=L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png",
-    {maxZoom:19,attribution:"&copy; OpenStreetMap · DGSPYT"});
-  const aerea=L.tileLayer("https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
+  // Capas base limpias. Los mosaicos de Microsoft (Bing / Azure Maps) exigen
+  // llave de suscripcion y no pueden servirse sin ella; mientras no exista esa
+  // llave se usa cartografia Esri, que si permite uso directo.
+  const gris=L.tileLayer(
+    "https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}",
+    {maxZoom:16,attribution:"&copy; Esri · DGSPYT"});
+  const calles=L.tileLayer(
+    "https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}",
+    {maxZoom:19,attribution:"&copy; Esri · DGSPYT"});
+  const aerea=L.tileLayer(
+    "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
     {maxZoom:19,attribution:"Imagery &copy; Esri · DGSPYT"});
-  const etiq=L.tileLayer("https://server.arcgisonline.com/ArcGIS/rest/services/Reference/World_Boundaries_and_Places/MapServer/tile/{z}/{y}/{x}",{maxZoom:19});
-  carretera.addTo(mapa);
-  L.control.layers({"Carretera":carretera,"Vista aérea":aerea,
-    "Híbrido":L.layerGroup([aerea,etiq])},null,{position:"topright",collapsed:false}).addTo(mapa);
-
-  // Perímetro del Estado de México: la jurisdicción de la Dirección, marcada
-  // en toda su orilla. Doble trazo para que resalte sobre carretera y aérea.
-  if(DATOS.perimetro){
-    L.geoJSON(DATOS.perimetro,{style:{color:"#ffffff",weight:7,opacity:.85,
-      fill:false,lineJoin:"round"},interactive:false}).addTo(mapa);
-    L.geoJSON(DATOS.perimetro,{style:{color:"#7a1327",weight:3.5,opacity:1,
-      fill:false,lineJoin:"round"},interactive:false}).addTo(mapa);
-  }
+  const etiq=L.tileLayer(
+    "https://server.arcgisonline.com/ArcGIS/rest/services/Reference/World_Boundaries_and_Places/MapServer/tile/{z}/{y}/{x}",
+    {maxZoom:19});
+  const rotulos=L.tileLayer(
+    "https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Reference/MapServer/tile/{z}/{y}/{x}",
+    {maxZoom:16});
+  const mapaBase=L.layerGroup([gris,rotulos]).addTo(mapa);
+  L.control.layers({"Mapa base":mapaBase,"Calles":calles,
+    "Vista aérea":L.layerGroup([aerea,etiq])},null,
+    {position:"topright",collapsed:false}).addTo(mapa);
 
   capas.hd=L.layerGroup().addTo(mapa);
-  capas.c5=L.layerGroup().addTo(mapa);
+  capas.c5=L.layerGroup();
   capas.bases=L.layerGroup();
   capas.sectores=L.layerGroup();
 
@@ -833,6 +855,10 @@ function iniciarMapa(){
     DATOS.llamadas.filter(d=>d.lat&&d.peso_violencia>0).map(d=>[d.lat,d.lng,Math.min(d.peso_violencia/6,1)])
       .concat(DATOS.hd.filter(d=>d.lat).map(d=>[d.lat,d.lng,1])),
     {radius:25,blur:20,maxZoom:14});
+
+  document.getElementById("ver-estado").addEventListener("click",()=>{
+    mapa.fitBounds(EDOMEX,{animate:false,padding:[12,12]});
+  });
 
   document.querySelectorAll("[data-capa]").forEach(b=>b.addEventListener("click",()=>{
     b.classList.toggle("on");
@@ -1175,9 +1201,13 @@ function irA(id){
     mapa.invalidateSize();
     // Sin animate:false el zoom del encuadre se pierde: la animacion arranca
     // en el mismo cuadro en que el contenedor acaba de cambiar de tamano.
+    // Abre sobre la zona de mayor incidencia; el estado completo queda a un
+    // clic. Encuadrar todo el estado dejaba los puntos diminutos.
     if(!window._encuadrado){
       window._encuadrado=true;
-      mapa.fitBounds(EDOMEX,{animate:false,padding:[12,12]});
+      const conHD=DATOS.hd.filter(d=>d.lat);
+      if(conHD.length) mapa.fitBounds(
+        L.latLngBounds(conHD.map(d=>[d.lat,d.lng])),{animate:false,padding:[26,26]});
     }
   },150);
   // Chart.js no puede medir un lienzo oculto: si el tema cambio mientras esta

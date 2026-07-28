@@ -149,6 +149,20 @@ coordinación asignada» en lugar de asignarles una a la fuerza.
 
 ---
 
+## Power BI
+
+`python src/export_powerbi.py` genera en `powerbi/` un modelo en estrella en CSV
+(3 dimensiones y 4 tablas de hechos) listo para cargar en Power BI Desktop.
+`powerbi/MODELO.md` trae las relaciones, las medidas DAX y el armado de las
+cuatro páginas.
+
+El visual de mapa de Power BI usa **Bing Maps de forma nativa**, sin tramitar
+llave. En el tablero HTML no es posible: Bing y Azure Maps requieren clave de
+suscripción y servir sus mosaicos sin ella viola la licencia, por eso ahí se usa
+cartografía Esri.
+
+---
+
 ## Diseño
 
 Interfaz institucional sobria, no de maqueta: navegación lateral por decisión,
