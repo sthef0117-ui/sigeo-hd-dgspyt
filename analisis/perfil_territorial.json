@@ -1,7 +1,7 @@
 [
  {
   "municipio": "TOLUCA",
-  "coordinacion": "DIRECCION DE POLICIA DE TRANSITO",
+  "coordinacion": "VALLE TOLUCA",
   "subdireccion": "VALLE TOLUCA",
   "hd_eventos": 0,
   "hd_victimas": 0,
@@ -141,8 +141,8 @@
  },
  {
   "municipio": "NEZAHUALCOYOTL",
-  "coordinacion": "VALLE TOLUCA",
-  "subdireccion": "MONTADOS CANININOS Y GAMA",
+  "coordinacion": "ORIENTE",
+  "subdireccion": "ORIENTE",
   "hd_eventos": 4,
   "hd_victimas": 4,
   "hd_nocturnos": 2,

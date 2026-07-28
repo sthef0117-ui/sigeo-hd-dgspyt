@@ -63,47 +63,28 @@
    "CHAPULTEPEC",
    "METEPEC",
    "MEXICALTZINGO",
-   "NEZAHUALCOYOTL",
    "OCOYOACAC",
    "OTZOLOTEPEC",
    "SAN MATEO ATENCO",
    "TEMOAYA",
    "TIANGUISTENCO",
+   "TOLUCA",
    "XALATLACO",
    "ZINACANTEPEC"
   ],
   "total_municipios": 12,
-  "hd_eventos": 5,
-  "hd_victimas": 5,
-  "llamadas_violentas": 476,
-  "arma_fuego": 44,
-  "carga_violencia": 526,
+  "hd_eventos": 1,
+  "hd_victimas": 1,
+  "llamadas_violentas": 770,
+  "arma_fuego": 68,
+  "carga_violencia": 780,
   "bases_en_uso": 26,
-  "personal_total": 1341,
-  "dist_media_hd_base_km": 1.12,
-  "sectores_desatendidos": 14,
-  "sectores_saturados": 4,
-  "carga_por_100_elementos": 39.2,
+  "personal_total": 1498,
+  "dist_media_hd_base_km": 0.79,
+  "sectores_desatendidos": 26,
+  "sectores_saturados": 8,
+  "carga_por_100_elementos": 52.1,
   "ranking": 3
- },
- {
-  "coordinacion": "DIRECCION DE POLICIA DE TRANSITO",
-  "municipios": [
-   "TOLUCA"
-  ],
-  "total_municipios": 1,
-  "hd_eventos": 0,
-  "hd_victimas": 0,
-  "llamadas_violentas": 442,
-  "arma_fuego": 39,
-  "carga_violencia": 442,
-  "bases_en_uso": 11,
-  "personal_total": 742,
-  "dist_media_hd_base_km": null,
-  "sectores_desatendidos": 13,
-  "sectores_saturados": 7,
-  "carga_por_100_elementos": 59.6,
-  "ranking": 4
  },
  {
   "coordinacion": "ORIENTE",
@@ -113,25 +94,26 @@
    "CHICONCUAC",
    "CHIMALHUACAN",
    "LA PAZ",
+   "NEZAHUALCOYOTL",
    "OTUMBA",
    "SAN MARTIN DE LAS PIRAMIDES",
    "TEOTIHUACAN",
    "TEXCOCO",
    "TEZOYUCA"
   ],
-  "total_municipios": 10,
-  "hd_eventos": 7,
-  "hd_victimas": 8,
-  "llamadas_violentas": 362,
-  "arma_fuego": 42,
-  "carga_violencia": 432,
-  "bases_en_uso": 13,
-  "personal_total": 1462,
-  "dist_media_hd_base_km": 3.28,
-  "sectores_desatendidos": 5,
-  "sectores_saturados": 3,
-  "carga_por_100_elementos": 29.5,
-  "ranking": 5
+  "total_municipios": 11,
+  "hd_eventos": 11,
+  "hd_victimas": 12,
+  "llamadas_violentas": 510,
+  "arma_fuego": 57,
+  "carga_violencia": 620,
+  "bases_en_uso": 24,
+  "personal_total": 2047,
+  "dist_media_hd_base_km": 2.91,
+  "sectores_desatendidos": 6,
+  "sectores_saturados": 6,
+  "carga_por_100_elementos": 30.3,
+  "ranking": 4
  },
  {
   "coordinacion": "CHALCO",
@@ -159,7 +141,7 @@
   "sectores_desatendidos": 4,
   "sectores_saturados": 6,
   "carga_por_100_elementos": 21.1,
-  "ranking": 6
+  "ranking": 5
  },
  {
   "coordinacion": "SIN COORDINACIÓN ASIGNADA",
@@ -199,7 +181,7 @@
   "sectores_desatendidos": 9,
   "sectores_saturados": 0,
   "carga_por_100_elementos": null,
-  "ranking": 7
+  "ranking": 6
  },
  {
   "coordinacion": "ATLACOMULCO",
@@ -231,7 +213,7 @@
   "sectores_desatendidos": 2,
   "sectores_saturados": 0,
   "carga_por_100_elementos": 19.2,
-  "ranking": 8
+  "ranking": 7
  },
  {
   "coordinacion": "IXTAPAN",
@@ -260,7 +242,7 @@
   "sectores_desatendidos": 2,
   "sectores_saturados": 1,
   "carga_por_100_elementos": 13.2,
-  "ranking": 9
+  "ranking": 8
  },
  {
   "coordinacion": "VALLE DE BRAVO",
@@ -285,6 +267,6 @@
   "sectores_desatendidos": 0,
   "sectores_saturados": 0,
   "carga_por_100_elementos": 13.3,
-  "ranking": 10
+  "ranking": 9
  }
 ]

@@ -837,6 +837,15 @@ def serie_temporal(llamadas, hd):
 # 6. Perfil territorial por municipio
 # --------------------------------------------------------------------------
 
+# Unidades del inventario que no mandan territorio: alojan personal en un
+# municipio pero no son la coordinacion regional responsable de ese tramo.
+UNIDADES_NO_TERRITORIALES = {
+    "DIRECCION DE POLICIA DE TRANSITO",
+    "UNIDAD DE SERVICIOS ESPECIALES DE SEGURIDAD",
+    "DIRECCION GENERAL DE SEGURIDAD PUBLICA Y TRANSITO",
+}
+
+
 def perfil_territorial(hd, llamadas, bases, sectores):
     """
     Ficha por municipio para la mesa con coordinadores territoriales.
@@ -885,15 +894,23 @@ def perfil_territorial(hd, llamadas, bases, sectores):
 
     # Coordinacion y subdireccion oficiales, tomadas del inventario de
     # instalaciones. Es la division con la que sesiona el mando.
-    coordinacion_de, subdireccion_de = {}, {}
+    #
+    # Se asigna la coordinacion mas frecuente entre las bases del municipio, no
+    # la primera: un municipio con varios inmuebles puede alojar ademas una
+    # unidad no territorial, y tomar la primera hacia que Toluca apareciera bajo
+    # "Direccion de Policia de Transito" en lugar de Valle Toluca.
+    conteo_coord = defaultdict(Counter)
+    conteo_sub = defaultdict(Counter)
     for b in bases:
         if not b["municipio"]:
             continue
-        if b["coordinacion"] and b["municipio"] not in coordinacion_de:
-            coordinacion_de[b["municipio"]] = b["coordinacion"]
-        if b["subdireccion"] and b["subdireccion"] != "N/A" \
-                and b["municipio"] not in subdireccion_de:
-            subdireccion_de[b["municipio"]] = b["subdireccion"]
+        if b["coordinacion"] and b["coordinacion"] not in UNIDADES_NO_TERRITORIALES:
+            conteo_coord[b["municipio"]][b["coordinacion"]] += 1
+        if b["subdireccion"] and b["subdireccion"] != "N/A":
+            conteo_sub[b["municipio"]][b["subdireccion"]] += 1
+
+    coordinacion_de = {m: c.most_common(1)[0][0] for m, c in conteo_coord.items()}
+    subdireccion_de = {m: c.most_common(1)[0][0] for m, c in conteo_sub.items()}
 
     bases_geo = [b for b in bases if b["lat"] and b["en_uso"]]
     for h in hd:
