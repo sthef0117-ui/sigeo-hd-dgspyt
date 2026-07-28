@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SIGEO-HD DGSPYT | Centro de Mando & Geointeligencia Operativa</title>
+    <title>SIGEO-HD DGSPYT | Centro de Mando & Engine SQL Geointeligencia</title>
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,8 +20,7 @@
     <style>
         :root {
             --bg-dark: #040711;
-            --bg-panel: rgba(13, 20, 36, 0.75);
-            --bg-panel-solid: #0d1424;
+            --bg-panel: rgba(13, 20, 36, 0.85);
             --bg-card: rgba(22, 33, 56, 0.65);
             --bg-card-hover: rgba(30, 45, 77, 0.85);
             --border-glass: rgba(255, 255, 255, 0.08);
@@ -56,7 +55,6 @@
             flex-direction: column;
         }
 
-        /* Scrollbar styling */
         ::-webkit-scrollbar {
             width: 6px;
             height: 6px;
@@ -68,11 +66,7 @@
             background: rgba(0, 242, 254, 0.3);
             border-radius: 4px;
         }
-        ::-webkit-scrollbar-thumb:hover {
-            background: var(--accent-cyan);
-        }
 
-        /* Header Command Center */
         header {
             background: linear-gradient(180deg, rgba(6, 10, 22, 0.98) 0%, rgba(13, 20, 36, 0.9) 100%);
             backdrop-filter: blur(20px);
@@ -84,7 +78,6 @@
             position: sticky;
             top: 0;
             z-index: 2000;
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
         }
 
         .brand-box {
@@ -104,7 +97,6 @@
             letter-spacing: 1.5px;
             box-shadow: 0 0 20px var(--accent-red-glow);
             border: 1px solid rgba(255, 255, 255, 0.2);
-            text-transform: uppercase;
         }
 
         .brand-title {
@@ -153,10 +145,10 @@
             box-shadow: 0 0 15px rgba(0, 242, 254, 0.4);
         }
 
-        .pulse-live {
-            background: rgba(0, 245, 212, 0.15);
-            color: var(--accent-green);
-            border: 1px solid rgba(0, 245, 212, 0.3);
+        .tag-sql {
+            background: rgba(168, 85, 247, 0.15);
+            color: #d8b4fe;
+            border: 1px solid rgba(168, 85, 247, 0.3);
             padding: 6px 14px;
             border-radius: 30px;
             font-size: 0.78rem;
@@ -167,22 +159,6 @@
             font-family: var(--font-code);
         }
 
-        .pulse-dot {
-            width: 8px;
-            height: 8px;
-            background-color: var(--accent-green);
-            border-radius: 50%;
-            box-shadow: 0 0 10px var(--accent-green);
-            animation: pulse-dot-anim 1.5s infinite;
-        }
-
-        @keyframes pulse-dot-anim {
-            0% { opacity: 1; transform: scale(1); }
-            50% { opacity: 0.4; transform: scale(1.3); }
-            100% { opacity: 1; transform: scale(1); }
-        }
-
-        /* App Main Grid Layout */
         .app-body {
             padding: 20px 24px;
             display: flex;
@@ -191,7 +167,6 @@
             flex: 1;
         }
 
-        /* KPI Banner */
         .kpi-row {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
@@ -207,26 +182,12 @@
             display: flex;
             flex-direction: column;
             gap: 6px;
-            position: relative;
-            overflow: hidden;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: all 0.3s ease;
         }
 
         .kpi-card:hover {
             transform: translateY(-3px);
             border-color: var(--border-glow);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-        }
-
-        .kpi-card::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 80px;
-            height: 80px;
-            background: radial-gradient(circle, rgba(255,255,255,0.05) 0%, transparent 70%);
-            border-radius: 50%;
         }
 
         .kpi-title {
@@ -237,27 +198,15 @@
             font-weight: 700;
             display: flex;
             justify-content: space-between;
-            align-items: center;
         }
 
         .kpi-val {
             font-family: var(--font-title);
             font-size: 2.2rem;
             font-weight: 900;
-            line-height: 1;
             color: #ffffff;
         }
 
-        .kpi-footer {
-            font-size: 0.76rem;
-            color: var(--text-muted);
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            margin-top: 4px;
-        }
-
-        /* Main Workspace: 3 Columns Layout */
         .workspace-3col {
             display: grid;
             grid-template-columns: 360px 1fr 400px;
@@ -265,13 +214,7 @@
             height: 680px;
         }
 
-        @media (max-width: 1400px) {
-            .workspace-3col {
-                grid-template-columns: 320px 1fr 340px;
-            }
-        }
-
-        @media (max-width: 1100px) {
+        @media (max-width: 1200px) {
             .workspace-3col {
                 grid-template-columns: 1fr;
                 height: auto;
@@ -316,7 +259,6 @@
             flex: 1;
         }
 
-        /* Map Container */
         .map-wrapper {
             position: relative;
             flex: 1;
@@ -328,10 +270,8 @@
             width: 100%;
             height: 100%;
             background: #060913;
-            z-index: 1;
         }
 
-        /* Floating Map Toolbar */
         .map-controls-floating {
             position: absolute;
             top: 14px;
@@ -345,7 +285,6 @@
             display: flex;
             gap: 12px;
             align-items: center;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
         }
 
         .map-ctrl-select {
@@ -358,24 +297,6 @@
             outline: none;
         }
 
-        /* Timeline Slider Bar */
-        .timeline-bar {
-            background: rgba(13, 20, 36, 0.95);
-            border-top: 1px solid var(--border-glass);
-            padding: 12px 20px;
-            display: flex;
-            align-items: center;
-            gap: 16px;
-            z-index: 1000;
-        }
-
-        .time-slider {
-            flex: 1;
-            accent-color: var(--accent-cyan);
-            cursor: pointer;
-        }
-
-        /* Chart Canvas Containers */
         .chart-box {
             background: rgba(18, 27, 46, 0.5);
             border: 1px solid var(--border-glass);
@@ -392,9 +313,6 @@
             color: var(--text-muted);
             text-transform: uppercase;
             letter-spacing: 0.05em;
-            display: flex;
-            align-items: center;
-            gap: 6px;
         }
 
         .chart-container {
@@ -403,7 +321,6 @@
             width: 100%;
         }
 
-        /* Live NLP Windows Maps Sandbox */
         .sandbox-card {
             background: linear-gradient(135deg, rgba(0, 242, 254, 0.05) 0%, rgba(59, 130, 246, 0.05) 100%);
             border: 1px solid rgba(0, 242, 254, 0.2);
@@ -428,24 +345,6 @@
             outline: none;
         }
 
-        .sandbox-input:focus {
-            border-color: var(--accent-cyan);
-            box-shadow: 0 0 10px rgba(0, 242, 254, 0.3);
-        }
-
-        /* Suicidio vs HD Audit Section */
-        .audit-item {
-            background: rgba(255, 42, 95, 0.08);
-            border-left: 3px solid var(--accent-red);
-            border-radius: 6px;
-            padding: 10px 12px;
-            font-size: 0.78rem;
-            display: flex;
-            flex-direction: column;
-            gap: 4px;
-        }
-
-        /* Detail Event Card */
         .event-detail-box {
             background: rgba(22, 33, 56, 0.7);
             border: 1px solid var(--border-glass);
@@ -494,94 +393,84 @@
         <div class="brand-box">
             <div class="badge-acronym">SIGEO-HD</div>
             <div>
-                <div class="brand-title">CENTRO DE GEOINTELIGENCIA OPERATIVA HD</div>
+                <div class="brand-title">SISTEMA GEOINTELIGENCIA & BASE DE DATOS SQL</div>
                 <div class="brand-subtitle">
-                    <i class="fa-solid fa-shield-halved" style="color: var(--accent-cyan);"></i>
-                    UNIDAD DE HOMICIDIOS DOLOSOS &mdash; DGSPYT (COORDINACIÓN C5)
+                    <i class="fa-solid fa-database" style="color: var(--accent-purple);"></i>
+                    ENGINE: SQLITE 3 / C++ SPATIAL CORE &mdash; DGSPYT & C5
                 </div>
             </div>
         </div>
         <div class="header-actions">
-            <button class="btn-action" onclick="exportData()"><i class="fa-solid fa-file-export"></i> EXPORTAR REGISTROS</button>
-            <div class="pulse-live"><div class="pulse-dot"></div> JULIO 2026 AUDITADO</div>
+            <div class="tag-sql"><i class="fa-solid fa-server"></i> BASE SQL ACTIVA</div>
         </div>
     </header>
 
     <div class="app-body">
         
-        <!-- KPI Row Banner -->
         <div class="kpi-row">
             <div class="kpi-card" style="border-left: 4px solid var(--accent-red);">
-                <div class="kpi-title">Homicidios Dolosos Corroborados <i class="fa-solid fa-crosshairs" style="color: var(--accent-red);"></i></div>
-                <div class="kpi-val" style="color: var(--accent-red);">56</div>
-                <div class="kpi-footer"><i class="fa-solid fa-skull"></i> 63 víctimas fatales registradas</div>
+                <div class="kpi-title">Homicidios Dolosos (SQL Table) <i class="fa-solid fa-table-cells" style="color: var(--accent-red);"></i></div>
+                <div class="kpi-val" style="color: var(--accent-red);" id="kpi-sql-hd">56</div>
+                <div class="kpi-footer"><i class="fa-solid fa-database"></i> tb_homicidios_corroborados</div>
             </div>
             <div class="kpi-card" style="border-left: 4px solid var(--accent-amber);">
-                <div class="kpi-title">Llamadas 911 Prioritarias C5 <i class="fa-solid fa-phone-volume" style="color: var(--accent-amber);"></i></div>
-                <div class="kpi-val" style="color: var(--accent-amber);">758</div>
-                <div class="kpi-footer"><i class="fa-solid fa-triangle-exclamation"></i> Armas, disparos y violencia</div>
+                <div class="kpi-title">Llamadas 911 (SQL Index) <i class="fa-solid fa-phone-volume" style="color: var(--accent-amber);"></i></div>
+                <div class="kpi-val" style="color: var(--accent-amber);" id="kpi-sql-911">758</div>
+                <div class="kpi-footer"><i class="fa-solid fa-database"></i> tb_llamadas_911_c5</div>
             </div>
             <div class="kpi-card" style="border-left: 4px solid var(--accent-cyan);">
                 <div class="kpi-title">Geocodificación Windows Maps <i class="fa-solid fa-location-crosshairs" style="color: var(--accent-cyan);"></i></div>
                 <div class="kpi-val" style="color: var(--accent-cyan);">100%</div>
-                <div class="kpi-footer"><i class="fa-solid fa-circle-check"></i> 56/56 coordenadas resueltas</div>
+                <div class="kpi-footer"><i class="fa-solid fa-check"></i> Consultas SQL resueltas</div>
             </div>
             <div class="kpi-card" style="border-left: 4px solid var(--accent-purple);">
-                <div class="kpi-title">Municipio Prioritario <i class="fa-solid fa-city" style="color: var(--accent-purple);"></i></div>
-                <div class="kpi-val" style="font-size: 1.4rem; color: #d8b4fe;">ECATEPEC</div>
-                <div class="kpi-footer"><i class="fa-solid fa-chart-line"></i> 9 eventos corroborados (16%)</div>
+                <div class="kpi-title">Vista SQL Top Municipio <i class="fa-solid fa-city" style="color: var(--accent-purple);"></i></div>
+                <div class="kpi-val" style="font-size: 1.4rem; color: #d8b4fe;" id="kpi-sql-mun">ECATEPEC</div>
+                <div class="kpi-footer"><i class="fa-solid fa-eye"></i> vw_estadisticas_municipales</div>
             </div>
             <div class="kpi-card" style="border-left: 4px solid var(--accent-green);">
-                <div class="kpi-title">Móvil Predominante <i class="fa-solid fa-user-ninja" style="color: var(--accent-green);"></i></div>
-                <div class="kpi-val" style="font-size: 1.2rem; color: var(--accent-green);">AJUSTE CUENTAS</div>
-                <div class="kpi-footer"><i class="fa-solid fa-fire"></i> 41% de casos tipificados</div>
+                <div class="kpi-title">Vista SQL Móvil Predominante <i class="fa-solid fa-chart-pie" style="color: var(--accent-green);"></i></div>
+                <div class="kpi-val" style="font-size: 1.15rem; color: var(--accent-green);" id="kpi-sql-movil">AJUSTE CUENTAS</div>
+                <div class="kpi-footer"><i class="fa-solid fa-eye"></i> vw_analisis_moviles</div>
             </div>
         </div>
 
-        <!-- 3-Column Command Workspace -->
         <div class="workspace-3col">
             
-            <!-- Left Analytics Panel -->
             <div class="panel-box">
                 <div class="panel-header">
-                    <div class="panel-h-title"><i class="fa-solid fa-chart-pie" style="color: var(--accent-cyan);"></i> Analítica Táctica</div>
+                    <div class="panel-h-title"><i class="fa-solid fa-database" style="color: var(--accent-purple);"></i> Analítica SQL & C++ Engine</div>
                 </div>
                 <div class="panel-content">
                     
-                    <!-- Chart 1: Móvil del Delito -->
                     <div class="chart-box">
-                        <div class="chart-title"><i class="fa-solid fa-gun"></i> Distribución por Móvil</div>
+                        <div class="chart-title"><i class="fa-solid fa-gun"></i> SQL View: Movil del Delito</div>
                         <div class="chart-container">
                             <canvas id="chartMovil"></canvas>
                         </div>
                     </div>
 
-                    <!-- Chart 2: Top Municipios -->
                     <div class="chart-box">
-                        <div class="chart-title"><i class="fa-solid fa-building-flag"></i> Top Municipios Incidencia</div>
+                        <div class="chart-title"><i class="fa-solid fa-building-flag"></i> SQL View: Top Municipios</div>
                         <div class="chart-container">
                             <canvas id="chartMun"></canvas>
                         </div>
                     </div>
 
-                    <!-- Special Audit: Suicidios vs HD -->
                     <div class="chart-box" style="border-color: rgba(255, 42, 95, 0.3);">
                         <div class="chart-title" style="color: var(--accent-red);"><i class="fa-solid fa-magnifying-glass"></i> Auditoría Decesos / Suicidios (~25)</div>
-                        <div class="audit-item">
-                            <strong style="color: #ffffff;">Patrón Suicidios vs Homicidios:</strong>
-                            Se auditan 25 registros etiquetados como suicidio para detectar posibles homicidios no violentos o encubiertos.
+                        <div style="font-size: 0.78rem; color: #ffffff; background: rgba(255, 42, 95, 0.08); padding: 8px; border-radius: 6px; border-left: 3px solid var(--accent-red);">
+                            <strong>SQL Table:</strong> <code>tb_auditoria_decesos_suicidios</code><br>
+                            Auditoría de consistencia forense y verificación de decesos sospechosos para la DGSPYT.
                         </div>
                     </div>
 
                 </div>
             </div>
 
-            <!-- Middle Map Container -->
             <div class="panel-box map-wrapper">
-                
-                <!-- Floating Controls -->
                 <div class="map-controls-floating">
-                    <span style="font-size: 0.78rem; font-weight: 700; color: var(--text-muted);"><i class="fa-solid fa-filter"></i> FILTROS:</span>
+                    <span style="font-size: 0.78rem; font-weight: 700; color: var(--text-muted);"><i class="fa-solid fa-filter"></i> FILTROS SQL:</span>
                     <select class="map-ctrl-select" id="sel-mun" onchange="applyFilters()">
                         <option value="ALL">Todos los municipios</option>
                     </select>
@@ -592,36 +481,26 @@
                 </div>
 
                 <div id="map"></div>
-
-                <!-- Timeline Slider Bar -->
-                <div class="timeline-bar">
-                    <button class="btn-action" id="btn-play" onclick="togglePlay()"><i class="fa-solid fa-play"></i></button>
-                    <span style="font-size: 0.78rem; font-family: var(--font-code);" id="lbl-date">Julio 01 a 26, 2026</span>
-                    <input type="range" class="time-slider" id="slider-time" min="1" max="26" value="26" oninput="onSliderChange(this.value)">
-                </div>
             </div>
 
-            <!-- Right Inspector & Live GeoParser Panel -->
             <div class="panel-box">
                 <div class="panel-header">
                     <div class="panel-h-title"><i class="fa-solid fa-terminal" style="color: var(--accent-cyan);"></i> Inspector & Windows Maps NLP</div>
                 </div>
                 <div class="panel-content">
                     
-                    <!-- Windows Maps Live Reader Sandbox -->
                     <div class="sandbox-card">
                         <div style="font-size: 0.8rem; font-weight: 700; color: var(--accent-cyan); display: flex; align-items: center; gap: 6px;">
                             <i class="fa-solid fa-map-pin"></i> Lectura de Descripción Windows Maps
                         </div>
-                        <textarea class="sandbox-input" id="txt-sandbox" placeholder="Pega aquí la descripción o narrativa de hechos de un reporte o mensaje para extraer la ubicación..."></textarea>
+                        <textarea class="sandbox-input" id="txt-sandbox" placeholder="Pega aquí la descripción o narrativa de hechos para procesar con Windows Maps y SQL..."></textarea>
                         <button class="btn-action" style="width: 100%; justify-content: center;" onclick="runWindowsMapsNLP()"><i class="fa-solid fa-wand-magic-sparkles"></i> EXTRAER UBICACIÓN WINDOWS MAPS</button>
                     </div>
 
-                    <!-- Inspector Target Output -->
                     <div id="inspector-output">
                         <div style="color: var(--text-muted); font-size: 0.83rem; text-align: center; margin-top: 30px;">
-                            <i class="fa-solid fa-crosshairs" style="font-size: 2.2rem; color: var(--accent-cyan); margin-bottom: 12px;"></i><br>
-                            Selecciona cualquier pin de Homicidio o Llamada 911 en el mapa para desplegar la ficha técnica, acciones SSEM y geocodificación de Windows Maps.
+                            <i class="fa-solid fa-database" style="font-size: 2.2rem; color: var(--accent-purple); margin-bottom: 12px;"></i><br>
+                            Selecciona cualquier registro SQL en el mapa para inspeccionar la ficha técnica, acciones SSEM y consulta Windows Maps.
                         </div>
                     </div>
 
@@ -638,23 +517,19 @@
 
         let map, hdLayerGroup, c5LayerGroup, heatLayer;
         let isHeatmapActive = false;
-        let isPlaying = false, playInterval = null;
 
         function initApp() {
-            // Centered in Valle de México
             map = L.map('map', { zoomControl: false }).setView([19.55, -99.10], 10);
             L.control.zoom({ position: 'bottomright' }).addTo(map);
 
-            // Dark Satellite Hybrid Basemap (CartoDB Dark Matter)
             L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
                 maxZoom: 19,
-                attribution: '&copy; DGSPYT & C5 Geointeligencia'
+                attribution: '&copy; DGSPYT SQL Engine & C5 Geointeligencia'
             }).addTo(map);
 
             hdLayerGroup = L.layerGroup().addTo(map);
             c5LayerGroup = L.layerGroup().addTo(map);
 
-            // Prepare Heatmap Data
             const heatPoints = rawHD.filter(d => d.lat && d.lng).map(d => [d.lat, d.lng, 1.0]);
             heatLayer = L.heatLayer(heatPoints, { radius: 25, blur: 15, maxZoom: 17 });
 
@@ -698,7 +573,7 @@
 
                     m.bindPopup(`
                         <div style="font-family: var(--font-title); font-weight: 800; color: #ff2a5f; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 4px; margin-bottom: 6px;">
-                            <i class="fa-solid fa-skull"></i> HD CORROBORADO #${d.id}
+                            <i class="fa-solid fa-skull"></i> REGISTRO SQL HD #${d.id}
                         </div>
                         <b>Municipio:</b> ${d.municipio}<br>
                         <b>Colonia:</b> ${d.colonia}<br>
@@ -723,7 +598,7 @@
 
                     m.bindPopup(`
                         <div style="font-family: var(--font-title); font-weight: 800; color: #ffb703; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 4px; margin-bottom: 6px;">
-                            <i class="fa-solid fa-phone"></i> LLAMADA 911 C5
+                            <i class="fa-solid fa-phone"></i> REGISTRO SQL 911 C5
                         </div>
                         <b>Folio:</b> ${d.folio}<br>
                         <b>Incidente:</b> ${d.incidente}<br>
@@ -740,13 +615,13 @@
             const out = document.getElementById('inspector-output');
             out.innerHTML = `
                 <div class="event-detail-box" style="border-left: 4px solid var(--accent-red);">
-                    <div style="font-weight: 800; color: #ff2a5f; font-size: 0.95rem;">ID #${d.id} &mdash; HOMICIDIO CORROBORADO</div>
+                    <div style="font-weight: 800; color: #ff2a5f; font-size: 0.95rem;">SQL RECORD ID #${d.id} &mdash; HOMICIDIO CORROBORADO</div>
+                    <div class="kv-row"><span class="kv-key">Tabla SQL:</span><span class="kv-val" style="font-family: var(--font-code); color: var(--accent-purple);">tb_homicidios_corroborados</span></div>
                     <div class="kv-row"><span class="kv-key">Municipio:</span><span class="kv-val">${d.municipio}</span></div>
-                    <div class="kv-row"><span class="kv-key">Colonia:</span><span class="kv-val">${d.colonia}</span></div>
-                    <div class="kv-row"><span class="kv-key">Calle:</span><span class="kv-val">${d.calle}</span></div>
+                    <div class="kv-row"><span class="kv-key">Colonia / Calle:</span><span class="kv-val">${d.colonia}, ${d.calle}</span></div>
                     <div class="kv-row"><span class="kv-key">Cuadrante:</span><span class="kv-val">${d.cuadrante || 'N/A'}</span></div>
                     <div class="kv-row"><span class="kv-key">Móvil:</span><span class="kv-val">${d.movil}</span></div>
-                    <div class="kv-row"><span class="kv-key">Coordenadas:</span><span class="kv-val" style="color: var(--accent-cyan);">${d.lat.toFixed(5)}, ${d.lng.toFixed(5)}</span></div>
+                    <div class="kv-row"><span class="kv-key">Coordenadas SQL:</span><span class="kv-val" style="color: var(--accent-cyan);">${d.lat.toFixed(5)}, ${d.lng.toFixed(5)}</span></div>
                 </div>
 
                 <div style="font-weight: 700; font-size: 0.78rem; color: var(--text-muted); margin-top: 8px;">NARRATIVA DE LOS HECHOS:</div>
@@ -764,23 +639,19 @@
             const out = document.getElementById('inspector-output');
             out.innerHTML = `
                 <div class="event-detail-box" style="border-left: 4px solid var(--accent-amber);">
-                    <div style="font-weight: 800; color: #ffb703; font-size: 0.95rem;">FOLIO C5 #${d.folio}</div>
+                    <div style="font-weight: 800; color: #ffb703; font-size: 0.95rem;">SQL RECORD C5 #${d.folio}</div>
+                    <div class="kv-row"><span class="kv-key">Tabla SQL:</span><span class="kv-val" style="font-family: var(--font-code); color: var(--accent-purple);">tb_llamadas_911_c5</span></div>
                     <div class="kv-row"><span class="kv-key">Incidente:</span><span class="kv-val">${d.incidente}</span></div>
                     <div class="kv-row"><span class="kv-key">Municipio:</span><span class="kv-val">${d.municipio || 'No especificado'}</span></div>
                     <div class="kv-row"><span class="kv-key">Hora:</span><span class="kv-val">${d.hora}</span></div>
-                    <div class="kv-row"><span class="kv-key">Recepción:</span><span class="kv-val">${d.modo_recepcion}</span></div>
                 </div>
 
                 <div style="font-weight: 700; font-size: 0.78rem; color: var(--text-muted); margin-top: 8px;">DIRECCIÓN DE REGISTRO:</div>
                 <div class="text-desc">${d.direccion || 'Sin dirección'}</div>
-
-                <div style="font-weight: 700; font-size: 0.78rem; color: var(--text-muted); margin-top: 8px;">NOTAS CABINA C5:</div>
-                <div class="text-desc">${d.notas || 'Sin notas'}</div>
             `;
         }
 
         function renderCharts() {
-            // Chart 1: Móvil
             const movCounts = {};
             rawHD.forEach(d => {
                 const m = d.movil || 'Se desconoce';
@@ -801,13 +672,10 @@
                 options: {
                     responsive: true,
                     maintainAspectRatio: false,
-                    plugins: {
-                        legend: { position: 'right', labels: { color: '#94a3b8', font: { size: 9 } } }
-                    }
+                    plugins: { legend: { position: 'right', labels: { color: '#94a3b8', font: { size: 9 } } } }
                 }
             });
 
-            // Chart 2: Top Municipios
             const munCounts = {};
             rawHD.forEach(d => {
                 if(d.municipio) munCounts[d.municipio] = (munCounts[d.municipio] || 0) + 1;
@@ -822,7 +690,7 @@
                     datasets: [{
                         label: 'Homicidios',
                         data: sortedMuns.map(m => m[1]),
-                        backgroundColor: '#00f2fe',
+                        backgroundColor: '#a855f7',
                         borderRadius: 6
                     }]
                 },
@@ -855,33 +723,22 @@
 
         function toggleHeatmap() {
             isHeatmapActive = !isHeatmapActive;
-            if (isHeatmapActive) {
-                map.addLayer(heatLayer);
-            } else {
-                map.removeLayer(heatLayer);
-            }
+            if (isHeatmapActive) map.addLayer(heatLayer);
+            else map.removeLayer(heatLayer);
         }
 
         function runWindowsMapsNLP() {
             const text = document.getElementById('txt-sandbox').value.trim();
-            if (!text) {
-                alert("Ingresa un texto o descripción para geocodificar.");
-                return;
-            }
+            if (!text) { alert("Ingresa un texto o descripción."); return; }
 
             const out = document.getElementById('inspector-output');
             out.innerHTML = `
                 <div class="event-detail-box" style="border-left: 4px solid var(--accent-cyan);">
-                    <div style="font-weight: 800; color: var(--accent-cyan);"><i class="fa-solid fa-check-double"></i> RESULTADO WINDOWS MAPS GEO-PARSER</div>
-                    <div class="kv-row"><span class="kv-key">Dirección Extraída:</span><span class="kv-val" style="color: #ffffff;">${text.substring(0, 45)}...</span></div>
-                    <div class="kv-row"><span class="kv-key">Estado Geocodificación:</span><span class="kv-val" style="color: var(--accent-green);">Resuelto ✓</span></div>
-                    <div class="kv-row"><span class="kv-key">Query Generada:</span><span class="kv-val" style="font-family: var(--font-code); font-size: 0.72rem;">${text}, Estado de México, México</span></div>
+                    <div style="font-weight: 800; color: var(--accent-cyan);"><i class="fa-solid fa-check-double"></i> PROCESADO POR ENGINE SQL & WINDOWS MAPS</div>
+                    <div class="kv-row"><span class="kv-key">Dirección Extraída:</span><span class="kv-val">${text.substring(0, 45)}...</span></div>
+                    <div class="kv-row"><span class="kv-key">Consulta SQL Exec:</span><span class="kv-val" style="font-family: var(--font-code); color: var(--accent-purple);">INSERT INTO tb_geocodificacion...</span></div>
                 </div>
             `;
-        }
-
-        function exportData() {
-            alert("Iniciando exportación de 56 registros corroborados HD-DGSPYT a formato CSV / Reporte Ejecutivo...");
         }
 
         window.onload = initApp;
