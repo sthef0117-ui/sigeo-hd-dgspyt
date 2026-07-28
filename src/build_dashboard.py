@@ -29,6 +29,7 @@ ARCHIVOS = {
     "bases": "bases_dgspyt.json",
     "zonas": "zonas_ciegas.json",
     "auditoria": "auditoria_decesos.json",
+    "territorio": "perfil_territorial.json",
 }
 
 

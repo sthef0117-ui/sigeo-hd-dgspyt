@@ -1,7 +1,7 @@
 [
  {
   "cvo": 1,
-  "municipio": "Acambay",
+  "municipio": "ACAMBAY",
   "ubicacion": "CARRETERA PANAMERICANA KILOMETRO 85, ESQUINA CON CALLE ALDAMA, COLONIA CENTRO, C.P. 50300, MUNICIPIO DE ACAMBAY, ESTADO DE MEXICO.",
   "unidad": "1.- COMANDANCIA DE LA XXIII REGION ACAMBAY 2.- 1° AGRUPAMIENTO ACAMBAY",
   "tipo_construccion": "MODULO DE VIGILANCIA (TECALLI)",
@@ -14,7 +14,7 @@
  },
  {
   "cvo": 2,
-  "municipio": "Acolman",
+  "municipio": "ACOLMAN",
   "ubicacion": "CALLE AYUNTAMIENTO S/N, COLONIA CENTRO, C.P. 55870, FRACCIONAMIENTO LOS PINOS MUNICIPIO DE ACOLMAN, ESTADO DE MEXICO.",
   "unidad": "1.- COMANDANCIA DE LA REGION XXXII ACOLMAN",
   "tipo_construccion": "EDIFICIO (2 O MAS PLANTAS)",
@@ -27,7 +27,7 @@
  },
  {
   "cvo": 3,
-  "municipio": "Acolman",
+  "municipio": "ACOLMAN",
   "ubicacion": "PRIMERA CALLE DE VALLE VERDE, ESQUINA REAL DEL VALLE SUR, FRACCIONAMIENTO REAL DEL VALLE, C.P.55885, MUNICIPIO DE ACOLMAN, ESTADO DE MEXICO.",
   "unidad": "1.- 1° AGRUPAMIENTO ACOLMAN, XXXII REGION",
   "tipo_construccion": "EDIFICIO (1 PLANTA)",
@@ -40,7 +40,7 @@
  },
  {
   "cvo": 4,
-  "municipio": "Aculco",
+  "municipio": "ACULCO",
   "ubicacion": "CARRETERA ACULCO-EL ROSAL KILOMETRO 3+500, COLONIA SANTA MARIA NATIVITAS, C.P. 50360, MUNICIPIO DE ACULCO, ESTADO DE MEXICO.",
   "unidad": "1.- 2° AGRUPAMIENTO ACULCO, XXXIII REGION.",
   "tipo_construccion": "CASA",
@@ -53,7 +53,7 @@
  },
  {
   "cvo": 5,
-  "municipio": "Almoloya de Juarez",
+  "municipio": "ALMOLOYA",
   "ubicacion": "CIRCUITO OJO DE AGUA Y CALLE MANUEL BERNAL S/N, BARRIO SAN PEDRO, C.P. 50900, MUNICIPIO DE ALMOLOYA DE JUAREZ., ESTADO DE MEXICO.",
   "unidad": "1.- 2° AGRUPAMIENTO ALMOLOYA DE JUAREZ",
   "tipo_construccion": "MODULO DE VIGILANCIA (TECALLI)",
@@ -66,7 +66,7 @@
  },
  {
   "cvo": 6,
-  "municipio": "Amanalco",
+  "municipio": "AMANALCO",
   "ubicacion": "KM. 56 CARRETERA TOLUCA- VALLE DE BRAVO, VIA AMANALCO, LOCALIDAD DE POLVILLOS, MUNICIPIO DE AMANALCO, ESTADO DE MEXICO.",
   "unidad": "1.- 2° AGRUPAMIENTO AMANALCO, XVI REGION",
   "tipo_construccion": "CASA",
@@ -79,7 +79,7 @@
  },
  {
   "cvo": 7,
-  "municipio": "Amatepec",
+  "municipio": "AMATEPEC",
   "ubicacion": "CARRETERA A PALMAR CHICO-SALITRE KILOMETRO S/N., C.P. 51530, MUNICIPO DE AMATEPEC, ESTADO DE MEXICO.",
   "unidad": "DESOCUPADO POR DELINCUENCIA ORGANIZADA",
   "tipo_construccion": "MODULO DE VIGILANCIA (TECALLI)",
@@ -92,7 +92,7 @@
  },
  {
   "cvo": 8,
-  "municipio": "Amecameca",
+  "municipio": "AMECAMECA",
   "ubicacion": "CALLE CORONEL SILVESTRE LOPEZ S/N, COLONIA EL CASTILLO, C. P. 56903, AMECAMECA, ESTADO DE MEXICO",
   "unidad": "1.- 1° AGRUPAMIENTO AMECAMECA 2.- COMANDANCIA DE LA REGION XLVIII AMECAMECA",
   "tipo_construccion": "EDIFICIO (1 PLANTA)",
@@ -105,7 +105,7 @@
  },
  {
   "cvo": 9,
-  "municipio": "Amecameca",
+  "municipio": "AMECAMECA",
   "ubicacion": "CALLE CUAUHTEMOC, CARRETERA FEDERAL MEXICO-CUAUTLA NO. 115, KILOMETRO 29+500, EN LA GASOLINERA, BARRIO EL TORITO, C.P. 56960, MUNICIPIO DE AMECAMECA, ESTADO DE MEXICO.",
   "unidad": "1.- F.A.R. AMECAMECA DE LA REGION XLVIII AMECAMECA",
   "tipo_construccion": "EDIFICIO (1 PLANTA)",
@@ -118,7 +118,7 @@
  },
  {
   "cvo": 10,
-  "municipio": "Apaxco",
+  "municipio": "APAXCO",
   "ubicacion": "AVENIDA JUAREZ NORTE, S/N, COLONIA OLIMPICA, C.P. 55660, MUNICIPIO DE APAXCO, ESTADO DE MEXICO.",
   "unidad": "1.- 2° AGRUPAMIENTO APAXCO, REGION XXXIII",
   "tipo_construccion": "EDIFICIO (2 O MAS PLANTAS)",
@@ -131,7 +131,7 @@
  },
  {
   "cvo": 11,
-  "municipio": "Atizapan Santa Cruz",
+  "municipio": "ATIZAPAN SANTA CRUZ",
   "ubicacion": "CARRETERA SANTIAGO-MEXICALTZINGO, ESQUINA CON ACUEDUCTO, AVENIDA LIBERTAD, C.P. 52500, SANTA CRUZ ATIZAPAN, ESTADO DE MEXICO.",
   "unidad": "1.- 2° AGRUPAMIENTO SANTA CRUZ ATIZAPAN, DE LA VII REGION",
   "tipo_construccion": "EDIFICIO (1 PLANTA)",
@@ -144,7 +144,7 @@
  },
  {
   "cvo": 12,
-  "municipio": "Atizapan de Zaragoza",
+  "municipio": "ATIZAPAN",
   "ubicacion": "AVENIDA ADOLFO LOPEZ MATEOS, NO. 9, COLONIA ATIZAPAN CENTRO, C.P. 52900 MUNICIPIO DE ATIZAPAN DE ZARAGOZA, ESTADO DE MEXICO.",
   "unidad": "1.- A.S.E.S. X DE LA XXVII REGION",
   "tipo_construccion": "EDIFICIO (1 PLANTA)",
@@ -157,7 +157,7 @@
  },
  {
   "cvo": 13,
-  "municipio": "Atizapan de Zaragoza",
+  "municipio": "ATIZAPAN",
   "ubicacion": "AVENIDA EMILIANO ZAPATA, NO. 49, COLONIA LA UAM, C.P. 52919 MUNICIPIO DE ATIZAPAN DE ZARAGOZA, ESTADO DE MEXICO.",
   "unidad": "1.- 3° AGRUPAMIENTO DE DA XXVII REGION, (VILLAS DE LA HACIENDA)",
   "tipo_construccion": "EDIFICIO (1 PLANTA)",
@@ -170,7 +170,7 @@
  },
  {
   "cvo": 14,
-  "municipio": "Atizapan de Zaragoza",
+  "municipio": "ATIZAPAN",
   "ubicacion": "AVENIDA JUAREZ S/N ESQUINA CON CALZADA SAN MATEO, COLONIA CENTRO, C.P. 52900, MUNICIPIO DE ATIZAPAN DE ZARAGOZA, ESTADO DE MEXICO.",
   "unidad": "1.- COMANDANCIA DE LA XXVII REGION 2.- 1° AGRUPAMIENTO ARBOLEDAS XXVII REGION",
   "tipo_construccion": "MODULO DE VIGILANCIA (TECALLI)",
@@ -183,7 +183,7 @@
  },
  {
   "cvo": 15,
-  "municipio": "Atizapan de Zaragoza",
+  "municipio": "ATIZAPAN",
   "ubicacion": "CALLE VERACRUZ S/N ESQUINA CON PIONEROS DE ROCHDALE, COLONIA MEXICO NUEVO, C.P. 52966, MUNICIPIO DE ATIZAPAN DE ZARAGOZA, ESTADO DE MEXICO.",
   "unidad": "1.- 2° AGRUPAMIENTO DE LA XXVII REGION (ATIZAPAN)",
   "tipo_construccion": "EDIFICIO (2 O MAS PLANTAS)",
@@ -196,7 +196,7 @@
  },
  {
   "cvo": 16,
-  "municipio": "Atlacomulco",
+  "municipio": "ATLACOMULCO",
   "ubicacion": "CALLE OCTAVIO VALDEZ Y LEOPOLDO VELAZCO MERCADO, DELEGACION MUNICIPAL DE SANTIAGO ACUTZILAPAN, C.P. 50483, MUNICIPIO DE ATLACOMULCO, ESTADO DE MEXICO.",
   "unidad": "1.- 3° AGRUPAMIENTO SANTIAGO ACUTZILAPAN",
   "tipo_construccion": "EDIFICIO (2 O MAS PLANTAS)",
@@ -209,7 +209,7 @@
  },
  {
   "cvo": 17,
-  "municipio": "Atlacomulco",
+  "municipio": "ATLACOMULCO",
   "ubicacion": "CALZADA PANAMERICANA, MANZANA 001, COLONIA SAN MARTIN, C.P. 50454, MUNICIPIO DE ATLACOMULCO, ESTADO DE MEXICO.",
   "unidad": "1.- 4° AGRUPAMIENTO SAN LORENZO TLACOTEPEC",
   "tipo_construccion": "EDIFICIO (1 PLANTA)",
@@ -222,7 +222,7 @@
  },
  {
   "cvo": 18,
-  "municipio": "Atlacomulco",
+  "municipio": "ATLACOMULCO",
   "ubicacion": "CIRCUITO VIAL JORGE JIMENEZ CANTU SIN NUMERO, ESQUINA AV. INSURGENTES, COLONIA BONGONI, C.P. 50450 ATLACOMULCO, ESTADO DE MEXICO.",
   "unidad": "1.-COMANDANCIA DEL AREA REGIONAL ATLACOMULCO 2.- COMANDANCIA DE LA SUBDIRECCION OPERATIVA REGIONAL ATLACOMULCO 3.-COMANDANCIA XX REGION 4.- F.A.R. VIII 5.- G.I.P. VIII 6.- A.S.T.R.O.S. VIII 7. AGRUPAMIENTO DE TRANSITO ATLACOMULCO",
   "tipo_construccion": "EDIFICIO (2 O MAS PLANTAS)",
@@ -235,7 +235,7 @@
  },
  {
   "cvo": 19,
-  "municipio": "Atlacomulco",
+  "municipio": "ATLACOMULCO",
   "ubicacion": "LIBRAMIENTO JORGE JIMENEZ CANTU, S/N, COLONIA BONGONI, C.P. 50450, MUNICIPIO DE ATLACOMULCO, ESTADO DE MEXICO.",
   "unidad": "1.- 1° AGRUPAMIENTO DE LA XX REGION ATLACOMULCO",
   "tipo_construccion": "MODULO DE VIGILANCIA (TECALLI)",
@@ -248,7 +248,7 @@
  },
  {
   "cvo": 20,
-  "municipio": "Atlautla",
+  "municipio": "ATLAUTLA",
   "ubicacion": "PLAZA DE LA CONSTITUCION S/N, BARRIO SAN JACINTO. C.P. 56970, MUNICIPIO DE ATLAUTLA, ESTADO DE MEXICO.",
   "unidad": "1.- 3ERO. AGRUPAMIENTO AMECAMECA DE LA REGION XLVIII AMECAMECA",
   "tipo_construccion": "EDIFICIO (1 PLANTA)",
@@ -261,7 +261,7 @@
  },
  {
   "cvo": 21,
-  "municipio": "Axapusco",
+  "municipio": "AXAPUSCO",
   "ubicacion": "KILOMETRO 17 DE LA CARRETERA OTUMBA-CIUDAD SAHAGUN, EJIDOS DE XALA, C.P. 55963, MUNICIPIO DE AXAPUSCO, ESTADO DE MEXICO.",
   "unidad": "1.- 2° AGRUPAMIENTO AXAPUSCO XLIV REGION",
   "tipo_construccion": "EDIFICIO (2 O MAS PLANTAS)",
@@ -274,7 +274,7 @@
  },
  {
   "cvo": 22,
-  "municipio": "Ayapango",
+  "municipio": "AYAPANGO",
   "ubicacion": "CALLE VICENTE GUERRERO NO. 21, DELEGACION SAN DIEGO CHALCATEPEHUACAN, C.P. 56765, AYAPANGO, ESTADO DE MEXICO",
   "unidad": "1.- 4TO. AGRUPAMIENTO AYAPANGO DE LA REGION XLVIII AMECAMECA",
   "tipo_construccion": "EDIFICIO (2 O MAS PLANTAS)",
@@ -287,7 +287,7 @@
  },
  {
   "cvo": 23,
-  "municipio": "Calimaya",
+  "municipio": "CALIMAYA",
   "ubicacion": "CARRETERA DE TERRACERIA A CALIMAYA, CALLE JESUS MARIA S/N, ESQUINA PRIVADA DE LA CRUZ, SANTA MARIA NATIVITAS, C.P. 52230, MUNICIPIO DE CALIMAYA, ESTADO DE MEXICO.",
   "unidad": "1.- 2° AGRUPAMIENTO CALIMAYA, IX REGION, TENANGO DEL VALLE",
   "tipo_construccion": "MODULO DE VIGILANCIA (TECALLI)",
@@ -300,7 +300,7 @@
  },
  {
   "cvo": 24,
-  "municipio": "Chalco",
+  "municipio": "CHALCO",
   "ubicacion": "AVENIDA ADOLFO LOPEZ MATEOS, ESQUINA CON CALLE ORIENTE 34, COLONIA UNION DE GUADALUPE, C.P. 56617, MUNICIPIO DE CHALCO, ESTADO DE MEXICO.",
   "unidad": "1.- A. S. T. R. O. S. IXTAPALUCA",
   "tipo_construccion": "EDIFICIO (1 PLANTA)",
@@ -313,7 +313,7 @@
  },
  {
   "cvo": 25,
-  "municipio": "Chalco",
+  "municipio": "CHALCO",
   "ubicacion": "AVENIDA CUAUHTEMOC S/N, COLONIA EMILIANO ZAPATA. C.P. 56608, MUNICIPIO DE CHALCO, ESTADO DE MEXICO.",
   "unidad": "1.- G.I.P. DE LA XLVII REGION CHALCO",
   "tipo_construccion": "MODULO DE VIGILANCIA (TECALLI)",
@@ -326,7 +326,7 @@
  },
  {
   "cvo": 26,
-  "municipio": "Chalco",
+  "municipio": "CHALCO",
   "ubicacion": "AVENIDA NACIONAL S/N, MZ 10, LOTE 18, VILLAS DE SAN MARTIN, LOCALIDAD DE SAN MARTIN CUAUTLALPAN, MUNICIPIO DE CHALCO, ESTADO DE MEXICO.",
   "unidad": "1.- COMANDANCIA DE LA COORDINACION REGIONAL CHALCO 2.- AGRUPAMIENTO F.A.R. IXTAPALUCA DE LA XLV REGION IXTAPALUCA 3.- AGRUAMIENTO F.A.R. CHALCO DE LA XLVII REGION CHALCO 4.- AGRUPAMIENTO DE TRANSITO ESTATAL VOLCANES 5.- 6A. COMAPAÑIA DE POLICIA F.E.S. 6.- AGRUPAMIENTO PARA LA PREVENCION DEL ROBO A TRANSPORTE REGION VOLCANES",
   "tipo_construccion": "EDIFICIO (2 O MAS PLANTAS)",
@@ -339,7 +339,7 @@
  },
  {
   "cvo": 27,
-  "municipio": "Chalco",
+  "municipio": "CHALCO",
   "ubicacion": "AVENIDA SOLIDARIDAD NO. 1801-A, ESQUINA AVENIDA DEL CANAL, COLONIA COVADONGA, C.P. 56607, MUNICIPIO DE CHALCO, ESTADO DE MEXICO.",
   "unidad": "1.- 2DO AGRUPAMIENTO SOLIDARIDAD DE LA REGION XLVI VALLE DE CHALCO SOLIDARIDAD",
   "tipo_construccion": "MODULO DE VIGILANCIA (TECALLI)",
@@ -352,7 +352,7 @@
  },
  {
   "cvo": 28,
-  "municipio": "Chalco",
+  "municipio": "CHALCO",
   "ubicacion": "AVENIDA SOLIDARIDAD S/N, ESQUINA AVENIDA ADOLFO LOPEZ MATEOS, COLONIA UNION DE GUADALUPE, C.P. 56606, MUNICIPIO DE CHALCO, ESTADO DE MEXICO.",
   "unidad": "1.- COMANDANCIA DE LA XLVI REGION VALLE DE CHALCO 2.- 3ER. AGRUPAMIENTO PUENTE ROJO, DE LA REGION XLVI VALLE DE CHALCO SOLIDARIDAD",
   "tipo_construccion": "MODULO DE VIGILANCIA (TECALLI)",
@@ -365,7 +365,7 @@
  },
  {
   "cvo": 29,
-  "municipio": "Chalco",
+  "municipio": "CHALCO",
   "ubicacion": "CALLE SALITRERIA S/N, BARRIO SAN SEBASTIAN, C.P. 56600, MUNICIPIO DE CHALCO, ESTADO DE MEXICO.",
   "unidad": "1.- COMANDANCIA SUBDIRECCION OPERATIVA REGIONAL VOLCANES 2.- COMANDANCIA DE LA XLVII REGION",
   "tipo_construccion": "EDIFICIO (2 O MAS PLANTAS)",
@@ -378,7 +378,7 @@
  },
  {
   "cvo": 30,
-  "municipio": "Chalco",
+  "municipio": "CHALCO",
   "ubicacion": "CARRETERA CHALCO-SANTA MARIA HUEXOCULCO S/N, C.P 56640, CHALCO DE DIAZ COVARRUBIAS, ESTADO DE MEXICO.",
   "unidad": "1.- 1ERO. AGRUPAMIENTO DE LA REGION XLVII CHALCO",
   "tipo_construccion": "EDIFICIO (1 PLANTA)",
@@ -391,7 +391,7 @@
  },
  {
   "cvo": 31,
-  "municipio": "Chapa de Mota",
+  "municipio": "CHAPA DE MOTA",
   "ubicacion": "CARRETERA CHAPA DE MOTA-LA CONCEPCION, COLONIA CENTRO, C.P. 54350, MUNICIPIO DE CHAPA DE MOTA, ESTADO DE MEXICO.",
   "unidad": "1.- 2° AGRUPAMIENTO CHAPA DE MOTA",
   "tipo_construccion": "EDIFICIO (1 PLANTA)",
@@ -404,7 +404,7 @@
  },
  {
   "cvo": 32,
-  "municipio": "Chapultepec",
+  "municipio": "CHAPULTEPEC",
   "ubicacion": "AVENIDA OYAMELES, SIN NUMERO, COLONIA LA LAGUNITA, MUNICIPIO DE CHAPULTEPEC, C.P. 52254",
   "unidad": "1.- 3° AGRUPAMIENTO, VII REGION",
   "tipo_construccion": "MODULO DE VIGILANCIA (TECALLI)",
@@ -417,7 +417,7 @@
  },
  {
   "cvo": 33,
-  "municipio": "Chiautla",
+  "municipio": "CHIAUTLA",
   "ubicacion": "CALLE RAYON S/N, BARRIO SAN SEBASTIAN, C.P. 56030, MUNICIPIO DE CHIAUTLA, ESTADO DE MEXICO.",
   "unidad": "1.- 2° AGRUPAMIENTO TEZOYUCA DE LA XLII REGION",
   "tipo_construccion": "CASA",
@@ -430,7 +430,7 @@
  },
  {
   "cvo": 34,
-  "municipio": "Chiconcuac",
+  "municipio": "CHICONCUAC",
   "ubicacion": "CALLE RIO JALAPANGO S/N ESQUINA CON CALLE PROLONGACION HIDALGO, BARRIO SAN PEDRO, C.P. 56270, MUNICIPIO DE CHICONCUAC, ESTADO DE MEXICO",
   "unidad": "1.- G.I.P TEXCOCO DE LA XLIII REGION",
   "tipo_construccion": "EDIFICIO (2 O MAS PLANTAS)",
@@ -443,7 +443,7 @@
  },
  {
   "cvo": 35,
-  "municipio": "Chimalhuacán",
+  "municipio": "CHIMALHUACAN",
   "ubicacion": "AVENIDA LUIS ECHEVERRIA, ESQUINA CALLE VERACRUZ, COLONIA EJIDOS DE SAN AGUSTIN, SEGUNDA SECCION, C.P. 56344, MUNICIPIO DE CHIMALHUACAN, ESTADO DE MEXICO.",
   "unidad": "1.- 3° AGRUPAMIENTO SAN AGUSTIN DE LA XL REGION",
   "tipo_construccion": "MODULO DE VIGILANCIA (TECALLI)",
@@ -456,7 +456,7 @@
  },
  {
   "cvo": 36,
-  "municipio": "Chimalhuacán",
+  "municipio": "CHIMALHUACAN",
   "ubicacion": "CALLE PRIMAVERA NUMERO 23, COLONIA SANTA MARIA NATIVITAS, C.P. 56335, MUNICIPIO DE CHIMALHUACAN, ESTADO DE MEXICO.",
   "unidad": "1.- 1° AGRUPAMIENTO CHIMALHUACAN DE LA XL REGION",
   "tipo_construccion": "ALMACEN",
@@ -469,7 +469,7 @@
  },
  {
   "cvo": 37,
-  "municipio": "Chimalhuacán",
+  "municipio": "CHIMALHUACAN",
   "ubicacion": "AV. EJIDO COLECTIVO MANZANA 060, TLATEL XOCHITENCO, 56366, MUNICIPIO DE CHIMALHUACAN, ESTADO DE MEXICO.",
   "unidad": "1.- COMANDANCIA DE LA XL REGION 2.- 2° AGRUPAMIENTO VIDRIEROS 3.- 4° XALTIPAC 4.- G.I.P. ORIENTE",
   "tipo_construccion": "EDIFICIO (1 PLANTA)",
@@ -482,7 +482,7 @@
  },
  {
   "cvo": 38,
-  "municipio": "Coacalco de Berriozabal",
+  "municipio": "COACALCO DE BERRIOZABAL",
   "ubicacion": "AV. CARLOS HANK GONZALEZ, ESQUINA SEVERIANO REYES, S/N, COLONIA CENTRO, C.P. 55700, MUNICIPIO DE COACALCO DE BERRIOZABAL, ESTADO DE MEXICO.",
   "unidad": "1.- 1° AGRUPAMIENTO COACALCO, REGION XXXIV",
   "tipo_construccion": "EDIFICIO (1 PLANTA)",
@@ -495,7 +495,7 @@
  },
  {
   "cvo": 39,
-  "municipio": "Coacalco de Berriozabal",
+  "municipio": "COACALCO DE BERRIOZABAL",
   "ubicacion": "AV.JUANA MARIA PAVON No.162, MORELOS 1RA SECCION , C.P. 55718, SAN FRANCISCO COACALCO, ESTADO DE MEXICO.",
   "unidad": "1.- COMANDANCIA DE LA XXXIV REGION COACALCO, 2.- F.A.R. XIII ZUMPANGO",
   "tipo_construccion": "EDIFICIO (1 PLANTA)",
@@ -508,7 +508,7 @@
  },
  {
   "cvo": 40,
-  "municipio": "Coatepec Harinas",
+  "municipio": "COATEPEC HARINAS",
   "ubicacion": "CALLE BENITO JUAREZ ESQUINA MARIA LUISA ULLOA, BARRIO SEGUNDA DE SAN MIGUEL, C.P. 51700, MUNICIPIO DE COATEPEC HARINAS, ESTADO DE MEXICO.",
   "unidad": "DESOCUPADO POR DELINCUENCIA ORGANIZADA",
   "tipo_construccion": "MODULO DE VIGILANCIA (TECALLI)",
@@ -521,7 +521,7 @@
  },
  {
   "cvo": 41,
-  "municipio": "Coyotepec",
+  "municipio": "COYOTEPEC",
   "ubicacion": "CARRETERA LAS ANIMAS S/N, BARRIO IXTAPACALCO, C.P. 54666 COYOTEPEC, ESTADO DE MEXICO",
   "unidad": "1.- 4° AGRUPAMIENTO COYOTEPEC, XXXIII REGION",
   "tipo_construccion": "MODULO DE VIGILANCIA (TECALLI)",
@@ -534,7 +534,7 @@
  },
  {
   "cvo": 42,
-  "municipio": "Cuautitlán",
+  "municipio": "CUAUTITLAN",
   "ubicacion": "AVENIDA FRANCISCO I. MADERO S/N, ESQUINA AVENIDA FERRONALES, COLONIA EL INFIERNILLO, C.P. 54878, MUNICIPIO DE CUAUTITLAN, ESTADO DE MEXICO.",
   "unidad": "1.- COMANDANCIA DE LA XXX REGION 2.- 1° AGRUPAMIENTO CUAUTITLAN MEXICO 3.- 2° AGRUPAMIENTO TULTITLAN",
   "tipo_construccion": "EDIFICIO (1 PLANTA)",
@@ -547,7 +547,7 @@
  },
  {
   "cvo": 43,
-  "municipio": "Cuautitlán Izcalli",
+  "municipio": "CUAUTITLAN IZCALLI",
   "ubicacion": "AVENIDA DERRAMADERO S/N, COLONIA HACIENDA DEL PARQUE SEGUNDA SECCION, C.P. 54769, MUNICIPIO DE CUAUTITLAN IZCALLI, ESTADO DE MEXICO.",
   "unidad": "1.- 1° AGRUPAMIENTO CUAUTITLAN IZCALLI, REGION XXIX",
   "tipo_construccion": "EDIFICIO (1 PLANTA)",
@@ -560,7 +560,7 @@
  },
  {
   "cvo": 44,
-  "municipio": "Cuautitlán Izcalli",
+  "municipio": "CUAUTITLAN IZCALLI",
   "ubicacion": "AVENIDA JAMES WATT S/N, COLONIA PARQUE INDUSTRIAL CUAMATLA DISTRITO I-13, C.P. 54730, MUNICIPIO DE CUAUTITLAN IZCALLI, ESTADO DE MEXICO.",
   "unidad": "1.-COMANDANCIA DE LA SUBDIRECCION OPERATIVA REGIONAL VALLE CUAUTITLAN 2.-COMANDANCIA XXIX REGION 3.- AGPTO A.S.T.R.O.S. XI DE LA XXIX REGION 4.- AGPTO F.A.R. XI DE LA XXIX REGION 5.- AGPTO G.I.P. XI DE LA XXIX REGION 6. AGRUPAMIENTO DE TRANSITO VALLE CUAUTITLAN.",
   "tipo_construccion": "EDIFICIO (2 O MAS PLANTAS)",
@@ -573,7 +573,7 @@
  },
  {
   "cvo": 45,
-  "municipio": "Cuautitlán Izcalli",
+  "municipio": "CUAUTITLAN IZCALLI",
   "ubicacion": "AVENIDA PRIMERO DE MAYO ESQUINA CON AVENIDA JORGE JIMENEZ CANTU, U.H. FERROCARRILERA, COLONIA INFONAVIT NORTE, C.P. 54720, CUAUTITLAN IZCALLI",
   "unidad": "1.- 3° AGRUPAMIENTO INFONZAVIT NORTE, DE LA REGION XXIX",
   "tipo_construccion": "MODULO DE VIGILANCIA (TECALLI)",
@@ -586,7 +586,7 @@
  },
  {
   "cvo": 46,
-  "municipio": "Cuautitlán Izcalli",
+  "municipio": "CUAUTITLAN IZCALLI",
   "ubicacion": "CIRCUITO EXTERIOR MEXIQUENSE A LA ALTURA DEL KM. 4+150, COLONIA TEPALCAPA, C.P. 54745, MUNICIPIO DE CUAUTITLAN IZCALLI, ESTADO DE MEXICO",
   "unidad": "1.- COMANDANCIA DE LA REGION XXXVII 2.-1° AGRUPAMIENTO CIRCUITO EXTERIOR MEXIQUENSE",
   "tipo_construccion": "",
@@ -599,7 +599,7 @@
  },
  {
   "cvo": 47,
-  "municipio": "Donato Guerra",
+  "municipio": "DONATO GUERRA",
   "ubicacion": "ANDADOR EMILIANO ZAPATA S/N, CABECERA DE INDIGENAS, C.P. 51030, MUNICIPIO DE DONATO GUERRA, ESTADO DE MEXICO.",
   "unidad": "1.- COMANDANCIA DE LA XVIII REGION 2.- 2° AGRUPAMIENTO DONATO GUERRA",
   "tipo_construccion": "EDIFICIO (1 PLANTA)",
@@ -612,7 +612,7 @@
  },
  {
   "cvo": 49,
-  "municipio": "Ecatepec de Morelos",
+  "municipio": "ECATEPEC",
   "ubicacion": "AV. CARLOS HANK GONZALEZ 50, COLONIA FUENTES DE ARAGON, C.P. 55248, ECATEPEC DE MORELOS, ESTADO DE MEXICO",
   "unidad": "1.- 3° AGRUPAMIENTO ARAGON, DE LA XXXI-A",
   "tipo_construccion": "EDIFICIO (1 PLANTA)",
@@ -625,7 +625,7 @@
  },
  {
   "cvo": 50,
-  "municipio": "Ecatepec de Morelos",
+  "municipio": "ECATEPEC",
   "ubicacion": "AVENIDA DE CASA NUEVA S/N, COLONIA JARDINES DE CASA NUEVA, C.P. 55430, MUNICIPIO DE ECATEPEC DE MORELOS, ESTADO DE MEXICO.",
   "unidad": "1.- 2° AGRUPAMIENTO AZTECAS, DE LA XXXI-A",
   "tipo_construccion": "MODULO DE VIGILANCIA (TECALLI)",
@@ -638,7 +638,7 @@
  },
  {
   "cvo": 51,
-  "municipio": "Ecatepec de Morelos",
+  "municipio": "ECATEPEC",
   "ubicacion": "AVENIDA PRIMERO DE MAYO, ESQUINA CON AVENIDA CENTRAL, COLONIA JARDINES DE MORELOS QUINTA SECCION, C.P. 55075, MUNICIPIO DE ECATEPEC DE MORELOS, ESTADO DE MEXICO.",
   "unidad": "1.- 3° AGRUPAMIENTO AMERICAS, DE LA XXXI REGION",
   "tipo_construccion": "EDIFICIO (1 PLANTA)",
@@ -651,7 +651,7 @@
  },
  {
   "cvo": 52,
-  "municipio": "Ecatepec de Morelos",
+  "municipio": "ECATEPEC",
   "ubicacion": "AVENIDA REVOLUCION S/N, COLONIA EL CARMEN, C.P. 55025, MUNICIPIO DE ECATEPEC DE MORELOS, ESTADO DE MEXICO.",
   "unidad": "1.-COMANDANCIA REGION XXXI 2.- ASTROS XII",
   "tipo_construccion": "EDIFICIO (1 PLANTA)",
@@ -664,7 +664,7 @@
  },
  {
   "cvo": 53,
-  "municipio": "Ecatepec de Morelos",
+  "municipio": "ECATEPEC",
   "ubicacion": "AVENIDA VICENTE LOMBARDO TOLEDANO NO. 140, COLONIA MIGUEL HIDALGO, C.P. 55490, MUNICIPIO DE ECATEPEC DE MORELOS, ESTADO DE MEXICO.",
   "unidad": "1.- 4° AGRUPAMIENTO GRANJAS VALLE DE GUADALUPE, XXXI-A",
   "tipo_construccion": "EDIFICIO (1 PLANTA)",
@@ -677,7 +677,7 @@
  },
  {
   "cvo": 54,
-  "municipio": "Ecatepec de Morelos",
+  "municipio": "ECATEPEC",
   "ubicacion": "CALLE CARLOS B. ZETINA NO. 401-B, COLONIA INDUSTRIAL XALOSTOC, C.P. 55348, MUNICIPIO DE ECATEPEC DE MORELOS, ESTADO DE MEXICO.",
   "unidad": "1.- COMANDANCIA XXXI-A REGION 2.- 1° AGRUPAMIENTO MORELOS",
   "tipo_construccion": "EDIFICIO (1 PLANTA)",
@@ -690,7 +690,7 @@
  },
  {
   "cvo": 55,
-  "municipio": "Ecatepec de Morelos",
+  "municipio": "ECATEPEC",
   "ubicacion": "CALLE JOSE FRANCISCO CORDOVA ESQUINA CON CALLE IGNACIO LOPEZ RAYON EN CONJUNTO URBANO DE TIPO MIXTO \"LAS AMERICAS\", C.P. 55076, MUNICIPIO DE ECATEPEC DE MORELOS, ESTADO DE MEXICO.",
   "unidad": "1.- COMANDANCIA DEL AREA REGIONAL ECATEPEC. 2.- RECURSOS HUMANOS. 3.- COMEDOR COORDINACION ECATEPEC. 4.- AGRUPAMIENTO FAR. XII. 5.- AGRUPAMIENTO PAE AMERICAS. 6.- AGRUPAMIENTO TRAASITO ECATEPEC. 7.- AGRUPAMIENTO FES (ECO 10). 8.- AGRUPAMIENTO RECUPERACION DE VEHICULOS ECATEPEC. 9.- GRUPO DE INTELIGENCIA ECATEPEC.",
   "tipo_construccion": "EDIFICIO (2 O MAS PLANTAS)",
@@ -703,7 +703,7 @@
  },
  {
   "cvo": 56,
-  "municipio": "Ecatepec de Morelos",
+  "municipio": "ECATEPEC",
   "ubicacion": "LATERAL CARRETERA LIBRE LECHERIA TEXCOCO, MANZANA 008, COLONIA SANTA CRUZ VENTA DE CARPIO, C.P. 56065, MUNICIPIO DE ECATEPEC DE MORELOS, ESTADO DE MEXICO.",
   "unidad": "1.- 2° AGRUPAMIENTO VENTA DE CARPIO, REGION XXXI REGION",
   "tipo_construccion": "MODULO DE VIGILANCIA (TECALLI)",
@@ -716,7 +716,7 @@
  },
  {
   "cvo": 57,
-  "municipio": "Ecatepec de Morelos",
+  "municipio": "ECATEPEC",
   "ubicacion": "VIALIDAD CIRCUITO EXTERIOR MEXIQUENSE KILOMETRO 39+000, CASETA T-2, COLONIA POTRERO CHICO, C.P. 55119, MUNICIPIO DE ECATEPEC DE MORELOS, ESTADO DE MEXICO.",
   "unidad": "1.- COMANDANCIA DE LA SUBDIRECCION OPERATIVA CIRCUITO EXTERIOR MEXIQUENSE",
   "tipo_construccion": "MODULO DE VIGILANCIA (TECALLI)",
@@ -729,7 +729,7 @@
  },
  {
   "cvo": 58,
-  "municipio": "Ecatepec de Morelos",
+  "municipio": "ECATEPEC",
   "ubicacion": "AVENIDA VIA MORELOS #56, COLONIA SAN JUAN ALCAHUACAN, MUNICIPIO DE ECATEPEC DE MORELOS. C.P. 55045, ESTADO DE MEXICO",
   "unidad": "1.-1° AGRUPAMIENTO ECATEPEC, DE LA XXXI",
   "tipo_construccion": "EDIFICIO (1 PLANTA)",
@@ -742,7 +742,7 @@
  },
  {
   "cvo": 59,
-  "municipio": "El Oro",
+  "municipio": "EL ORO",
   "ubicacion": "CARRETERA EL ORO-TLALPUJAHUA-VILLA VICTORIA KILOMETRO 1+000, COLONIA CENTRO, C.P. 50600, MUNICIPIO DE EL ORO, ESTADO DE MEXICO.",
   "unidad": "1.- 3° AGRUPAMIENTO EL ORO DE LA XIX REGION SAN FELIPE DEL PROGRESO",
   "tipo_construccion": "MODULO DE VIGILANCIA (TECALLI)",
@@ -755,7 +755,7 @@
  },
  {
   "cvo": 60,
-  "municipio": "Huehuetoca",
+  "municipio": "HUEHUETOCA",
   "ubicacion": "CALLE PASEO DE AGUARIBAY 15-B, COLONIA SANTA TERESA, C.P. 54694, MUNICIPIO DE HUEHUETOCA",
   "unidad": "1.- COMANDANCIA DE LA XXXIII REGION ZUMPANGO",
   "tipo_construccion": "EDIFICIO (1 PLANTA)",
@@ -768,7 +768,7 @@
  },
  {
   "cvo": 61,
-  "municipio": "Huehuetoca",
+  "municipio": "HUEHUETOCA",
   "ubicacion": "CIRCUITO EXTERIOR MEXIQUENSE KILOMETRO 00+316 COLONIA SALITRILLO, C.P. 54685, MUNICIPIO DE HUEHUETOCA, ESTADO DE MEXICO.",
   "unidad": "1.- COMANDANCIA DE LA REGION XXXV 2.- PRIMER AGRUPAMIENTO HUEHUETOCA, REGION XXXV, SUBDIRECCION OPERATIVA CIRCUITO EXTERIOR MEXIQUENSE",
   "tipo_construccion": "MODULO DE VIGILANCIA (TECALLI)",
@@ -781,7 +781,7 @@
  },
  {
   "cvo": 62,
-  "municipio": "Huehuetoca",
+  "municipio": "HUEHUETOCA",
   "ubicacion": "PROLONGACION JALAPA, S/N, BARRIO CAÑADA, C.P. 54685, MUNICIPIO DE HUEHUETOCA, ESTADO DE MEXICO.",
   "unidad": "1.- 3° AGRUPAMIENTO HUEHUETOCA XXXIII REGION",
   "tipo_construccion": "MODULO DE VIGILANCIA (TECALLI)",
@@ -794,7 +794,7 @@
  },
  {
   "cvo": 63,
-  "municipio": "Huixquilucan",
+  "municipio": "HUIXQUILUCAN",
   "ubicacion": "AVENIDA JESUS DEL MONTE ESQUINA PIRULES COLONIA PIRULES, MUNICIPIO DE HUIXQUILUCAN, ESTADO DE MEXICO.",
   "unidad": "1.- 3° AGRUPAMIENTO DE LA XXIV REGION (INTERLOMAS)",
   "tipo_construccion": "MODULO DE VIGILANCIA (TECALLI)",
@@ -807,7 +807,7 @@
  },
  {
   "cvo": 64,
-  "municipio": "Huixquilucan",
+  "municipio": "HUIXQUILUCAN",
   "ubicacion": "AVENIDA MEXICO NO. 45, POBLADO DE DOS RIOS, C.P. 52790, MUNICIPIO DE HUIXQUILUCAN, ESTADO DE MEXICO.",
   "unidad": "1.- 1° AGRUPAMIENTO DE LA XXIV REGION HUIXQUILUCAN",
   "tipo_construccion": "EDIFICIO (2 O MAS PLANTAS)",
@@ -820,7 +820,7 @@
  },
  {
   "cvo": 65,
-  "municipio": "Huixquilucan",
+  "municipio": "HUIXQUILUCAN",
   "ubicacion": "CALLE 12 SIN NUMERO, ESQUINA CALLE DIECISEIS, COLONIA INDEPENDENCIA, C.P. 53830, MUNICIPIO DE NAUCALPAN DE JUAREZ, ESTADO DE MÉXICO",
   "unidad": "1.- 2° AGRUPAMIENTO DE LA XXIV REGION SAN CRISTOBAL",
   "tipo_construccion": "EDIFICIO (1 PLANTA)",
@@ -833,7 +833,7 @@
  },
  {
   "cvo": 66,
-  "municipio": "Isidro Fabela",
+  "municipio": "ISIDRO FABELA",
   "ubicacion": "CARRETERA NICOLAS ROMERO-ISIDRO FABELA, AVENIDA REVOLUCION, S/N, COLONIA MIRAFLORES. MUNICIPIO DE ISIDRO FABELA, ESTADO DE MEXICO.",
   "unidad": "1.- SEGUNDO AGRUPAMIENTO ISIDRO FABELA DE LA XXVIII REGION",
   "tipo_construccion": "MODULO DE VIGILANCIA (TECALLI)",
@@ -846,7 +846,7 @@
  },
  {
   "cvo": 67,
-  "municipio": "Ixtapaluca",
+  "municipio": "IXTAPALUCA",
   "ubicacion": "AVENIDA LA ESPINITA S/N CARRETERA FEDERAL MEXICO–CUAUTLA, COLONIA JARDIN INDUSTRIAL, C.P. 56535, MUNICIPIO DE IXTAPALUCA, ESTADO DE MEXICO.",
   "unidad": "1.- 3ER. AGRUPAMIENTO CUATRO VIENTOS DE LA XLV REGION IXTAPALUCA",
   "tipo_construccion": "CASA",
@@ -859,7 +859,7 @@
  },
  {
   "cvo": 68,
-  "municipio": "Ixtapaluca",
+  "municipio": "IXTAPALUCA",
   "ubicacion": "AVENIDA PASEO DE SAN BUENAVENTURA S/N, UNIDAD HABITACIONAL SAN BUENAVENTURA, C.P. 56536, MUNICIPIO DE IXTAPALUCA, ESTADO DE MEXICO.",
   "unidad": "1.- 2DO. AGRUPAMIENTO SAN BUENAVENTURA DE LA XLV REGION IXTAPALUCA",
   "tipo_construccion": "MODULO DE VIGILANCIA (TECALLI)",
@@ -872,7 +872,7 @@
  },
  {
   "cvo": 69,
-  "municipio": "Ixtapaluca",
+  "municipio": "IXTAPALUCA",
   "ubicacion": "CALLE ANGEL TENORIO S/N ESQUINA CON CALLE SOR JUANA INES DE LA CRUZ, COLONIA LOMA BONITA, C.P. 56560, MUNICIPIO DE IXTAPALUCA",
   "unidad": "1.- 1ER. AGRUPAMIENTO IXTAPALUCA DE LA XLV REGION IXTAPALUCA",
   "tipo_construccion": "MODULO DE VIGILANCIA (TECALLI)",
@@ -885,7 +885,7 @@
  },
  {
   "cvo": 70,
-  "municipio": "Ixtapaluca",
+  "municipio": "IXTAPALUCA",
   "ubicacion": "CALLE LAZARO CARDENAS NUMERO 5 , COLONIA SANTA BARBARA, C.P. 56530, MUNICIPIO DE IXTAPALUCA, ESTADO DE MEXICO.",
   "unidad": "1.- COMANDANCIA DE LA SUBDIRECCION OPERATIVA REGIONAL IXTAPALUCA 2.- UNIDADES ADMINISTRATIVAS.",
   "tipo_construccion": "CASA",
@@ -898,7 +898,7 @@
  },
  {
   "cvo": 71,
-  "municipio": "Ixtapaluca",
+  "municipio": "IXTAPALUCA",
   "ubicacion": "CARRETERA FEDERAL MEXICO-PUEBLA KILOMETRO 24+500 COLONIA RANCHO DEL CARMEN , C.P. 56540, MUNICIPIO IXTAPALUCA",
   "unidad": "1.- AGRUPAMIENTO A.S.E.S. DE LA XLVI VALLE DE CHALCO SOLIDARIDAD",
   "tipo_construccion": "MODULO DE VIGILANCIA (TECALLI)",
@@ -911,7 +911,7 @@
  },
  {
   "cvo": 72,
-  "municipio": "Ixtapaluca",
+  "municipio": "IXTAPALUCA",
   "ubicacion": "CARRETERA FEDERAL MEXICO-PUEBLA, KILOMETRO 29+500, COLONIA SANTA BARBARA, C.P. 56530, MUNICIPIO DE IXTAPALUCA, ESTADO DE MEXICO.",
   "unidad": "1.- COMANDANCIA XLV REGION IXTAPALUCA",
   "tipo_construccion": "MODULO DE VIGILANCIA (TECALLI)",
@@ -924,7 +924,7 @@
  },
  {
   "cvo": 73,
-  "municipio": "Ixtapaluca",
+  "municipio": "IXTAPALUCA",
   "ubicacion": "CIRCUITO EXTERIOR MEXIQUENSE A LA ALTURA DE KM. 86+560, COLONIA SAN BUENAVENTURA, C.P. 56643, MUNICIPIO IXTAPALUCA, ESTADO DE MEXICO",
   "unidad": "1.- 2° AGRUPAMIENTO, DE LA XXXVI REGION CIRCUITO EXTERIOR MEXIQUENSE",
   "tipo_construccion": "MODULO DE VIGILANCIA (TECALLI)",
@@ -937,7 +937,7 @@
  },
  {
   "cvo": 74,
-  "municipio": "Ixtapan de La Sal",
+  "municipio": "IXTAPAN DE LA SAL",
   "ubicacion": "BOULEVARD ARTURO SAN ROMAN, S/N, COLONIA IXTAPITA, C.P. 51900, MUNICIPIO DE IXTAPAN DE LA SAL, ESTADO DE MEXICO.",
   "unidad": "1.- COMANDANCIA SUBDIRECCION OPERATIVA REGIONAL IXTAPAN",
   "tipo_construccion": "EDIFICIO (2 O MAS PLANTAS)",
@@ -950,7 +950,7 @@
  },
  {
   "cvo": 75,
-  "municipio": "Ixtapan de La Sal",
+  "municipio": "IXTAPAN DE LA SAL",
   "ubicacion": "CALLE FRESNO S/N, BARRIO SANTA ANA, IXTAPAN DE LA SAL.CP.51900 IXTAPAN DE LA SAL",
   "unidad": "1.- 3° AGRUPAMIENTO COATEPEC DE HARINAS, DE LA XII REGION",
   "tipo_construccion": "EDIFICIO (1 PLANTA)",
@@ -963,7 +963,7 @@
  },
  {
   "cvo": 76,
-  "municipio": "Ixtapan de La Sal",
+  "municipio": "IXTAPAN DE LA SAL",
   "ubicacion": "CALLE OYAMEL S/N COLONIA INFONAVIT, C.P. 51900, MUNICIPIO DE IXTAPAN DEL A SAL, ESTADO DE MEXICO.",
   "unidad": "1.- 1° AGRUPAMIENTO DE LA XII REGION IXTAPAN DE LA SAL",
   "tipo_construccion": "EDIFICIO (1 PLANTA)",
@@ -976,7 +976,7 @@
  },
  {
   "cvo": 77,
-  "municipio": "Ixtapan de La Sal",
+  "municipio": "IXTAPAN DE LA SAL",
   "ubicacion": "CARRETERA FEDERAL PALMILLAS AXIXINTLA KILOMETRO 82+200 COLONIA 10 DE AGOSTO, C.P. 51900, MUNICIPIO DE IXTAPAN DE LA SAL, ESTADO DE MEXICO.",
   "unidad": "1.- COMANDANCIA DE LA XII REGION IXTAPAN DE LA SAL",
   "tipo_construccion": "MODULO DE VIGILANCIA (TECALLI)",
@@ -989,7 +989,7 @@
  },
  {
   "cvo": 78,
-  "municipio": "Ixtlahuaca",
+  "municipio": "IXTLAHUACA",
   "ubicacion": "CARRETERA JIQUIPILCO - IXTLAHUACA CALLE 15 DE SEPTIEMBRE S/N, BARRIO DE SAN PEDRO, C.P. 50773, MUNICIPIO DE IXTLAHUACA, ESTADO DE MEXICO.",
   "unidad": "1.- COMANDANCIA XXI REGION IXTLAHUACA 2.- 1° AGRUPAMIENTO IXTLAHUACA 3.- A.S.E.S. VIII",
   "tipo_construccion": "EDIFICIO (2 O MAS PLANTAS)",
@@ -1002,7 +1002,7 @@
  },
  {
   "cvo": 79,
-  "municipio": "Jaltenco",
+  "municipio": "JALTENCO",
   "ubicacion": "AVENIDA QUEBRADA Y PENINSULA S/N, UNIDAD HABITACIONAL ALBORADA JALTENCO, C.P. 55783, MUNICIPIO DE JALTENCO, ESTADO DE MEXICO.",
   "unidad": "1.- 2° AGRUPAMIENTO JALTENCO, XXXIV REGION",
   "tipo_construccion": "EDIFICIO (1 PLANTA)",
@@ -1015,7 +1015,7 @@
  },
  {
   "cvo": 80,
-  "municipio": "Jilotepec",
+  "municipio": "JILOTEPEC",
   "ubicacion": "CARRETERA JILOTEPEC-IXTLAHUACA KILOMETRO 0+500, COLONIA LAS MANZANAS, C.P. 54240, MUNICIPIO DE JILOTEPEC, ESTADO DE MEXICO.",
   "unidad": "1.- COMANDANCIA SUBDIRECCION OPERATIVA REGIONAL JILOTEPEC 2.- COMANDANCIA XXII REGION 3.- F.A.R. IX 4.- A.S.E.S. IX 5.- G.I.P. IX 6.- 1° AGRUPAMIENTO JILOTEPEC",
   "tipo_construccion": "EDIFICIO (2 O MAS PLANTAS)",
@@ -1028,7 +1028,7 @@
  },
  {
   "cvo": 81,
-  "municipio": "Jilotepec",
+  "municipio": "JILOTEPEC",
   "ubicacion": "LIBRAMIENTO HUITRON HUITRON, COLONIA JAVIER BARRIOS, C.P. 54240, MUNICIPIO DE JILOTEPEC, ESTADO DE MEXICO.",
   "unidad": "1.- 5° AGRUPAMIENTO LAS MANZANAS, XXII REGION",
   "tipo_construccion": "MODULO DE VIGILANCIA (TECALLI)",
@@ -1041,7 +1041,7 @@
  },
  {
   "cvo": 82,
-  "municipio": "Jiquipilco",
+  "municipio": "JIQUIPILCO",
   "ubicacion": "CARRETERA BUENOS AIRES - SAN ANTONIO NIXINI, EJIDO LOMA DE MALACOTA, C.P. 50810, MUNICIPIO DE JIQUIPILCO",
   "unidad": "1.- 4° AGRUPAMIENTO JIQUIPILCO, XXII REGION",
   "tipo_construccion": "EDIFICIO (1 PLANTA)",
@@ -1054,7 +1054,7 @@
  },
  {
   "cvo": 83,
-  "municipio": "Jocotitlan",
+  "municipio": "JOCOTITLAN",
   "ubicacion": "BOULEVARD EMILIO CHUAYFFET CHEMOR S/N, BARRIO LA TENERIA, C.P. 50736, MUNICIPIO DE JOCOTITLAN, ESTADO DE MEXICO.",
   "unidad": "1.- 3° AGRUPAMIENTO JOCOTITLAN, XXII REGION",
   "tipo_construccion": "EDIFICIO (1 PLANTA)",
@@ -1067,7 +1067,7 @@
  },
  {
   "cvo": 84,
-  "municipio": "Joquicingo",
+  "municipio": "JOQUICINGO",
   "ubicacion": "VIA ALFREDO DEL MAZO S/N, BARRIO EL PUENTECITO, C.P. 52370, MUNICIPIO DE JOQUICINGO, ESTADO DE MEXICO.",
   "unidad": "1.- 3° AGRUPAMIENTO DE LA XI REGION JOQUICINGO",
   "tipo_construccion": "MODULO DE VIGILANCIA (TECALLI)",
@@ -1080,7 +1080,7 @@
  },
  {
   "cvo": 85,
-  "municipio": "Juchitepec",
+  "municipio": "JUCHITEPEC",
   "ubicacion": "CARRETERA COCOTITLAN TEPETLIXPA KILOMETRO15+600 COLONIA BARRIO CUAUTZOZONGO, MUNICIPIO DE JUCHITEPEC, C.P. 56890, ESTADO DE MEXICO.",
   "unidad": "1.- 3ERO AGRUPAMIENTO JUCHITEPEC XLVII REGION CHALCO",
   "tipo_construccion": "EDIFICIO (1 PLANTA)",
@@ -1093,7 +1093,7 @@
  },
  {
   "cvo": 86,
-  "municipio": "La Paz",
+  "municipio": "LA PAZ",
   "ubicacion": "CAMINO AL CERRO EL PINO, LOMAS DE SAN ISIDRO, C.P. 56516 MUNICIPIO LA PAZ, ESTADO DE MEXICO",
   "unidad": "1.- COMANDANCIA DE LA COORDINACION DE SUBDIRECCIONES ORIENTE 2.- COMANDANCIA DE LA SUBDIRECCION OPERATIVA REGIONAL ORIENTE 3.- COMANDANCIA DE LA XLI REGION 4.- 1° AGRUPAMIENTO LA PAZ 5.-2° AGRUPAMIENTO CHICOLOAPAN 6.- F.A.R. ORIENTE. 7.- COMANDANCIA DE LA COORDINACION DE TRANSITO ORIENTE 8. AGRUPAMIENTO DE TRANSITO ORIENTE",
   "tipo_construccion": "EDIFICIO (1 PLANTA)",
@@ -1106,7 +1106,7 @@
  },
  {
   "cvo": 87,
-  "municipio": "Luvianos",
+  "municipio": "LUVIANOS",
   "ubicacion": "AVENIDA SALVADOR SANCHEZ COLIN ESQUINA NARDOS, COLONIA ADOLFO LOPEZ MATEOS, C.P. 51440, MUNICIPIO DE LUVIANOS, ESTADO DE MEXICO.",
   "unidad": "DESOCUPADO POR DELINCUENCIA ORGANIZADA",
   "tipo_construccion": "EDIFICIO (1 PLANTA)",
@@ -1119,7 +1119,7 @@
  },
  {
   "cvo": 88,
-  "municipio": "Malinalco",
+  "municipio": "MALINALCO",
   "ubicacion": "AVENIDA HIDALGO, SIN NUMERO, DELEGACION DE CHALMA, C.P. 52490, MUNICIPIO DE MALINALCO.",
   "unidad": "2° AGRUPAMIENTO DE LA XI REGION",
   "tipo_construccion": "MODULO DE VIGILANCIA (TECALLI)",
@@ -1132,7 +1132,7 @@
  },
  {
   "cvo": 89,
-  "municipio": "Malinalco",
+  "municipio": "MALINALCO",
   "ubicacion": "AVENIDA DEL PANTEON S/N, BARRIO SAN JUAN, C.P. 52440, MUNICIPIO DE MALINALCO, ESTADO DE MEXICO.",
   "unidad": "1.- COMANDANCIA XI REGION 2.- 2° AGRUPAMIENTO DE LA XI REGION 3.- AGRUPAMIENTO A.S.E.S. IV MALINALCO",
   "tipo_construccion": "EDIFICIO (1 PLANTA)",
@@ -1145,7 +1145,7 @@
  },
  {
   "cvo": 90,
-  "municipio": "Metepec",
+  "municipio": "METEPEC",
   "ubicacion": "AVENIDA BAJA VELOCIDAD TOLLOCAN ESQUINA DIAGONAL SANTA MARIA S/N, COLONIA CASA BLANCA, C.P. 52179, MUNICIPIO DE METEPEC, ESTADO DE MEXICO.",
   "unidad": "3.- 2° AGRUPAMIENTO",
   "tipo_construccion": "MODULO DE VIGILANCIA (TECALLI)",
@@ -1158,7 +1158,7 @@
  },
  {
   "cvo": 91,
-  "municipio": "Metepec",
+  "municipio": "METEPEC",
   "ubicacion": "AVENIDA ESTADO DE MEXICO S/N, BARRIO DE SAN MIGUEL, COLONIA MAYORAZGO A UN COSTADO DE TV. MEXIQUENSE, C.P. 52140, MUNICIPIO DE METEPEC, ESTADO DE MEXICO.",
   "unidad": "1.- AGRUPAMIENTO F.A.R. METEPEC",
   "tipo_construccion": "EDIFICIO (1 PLANTA)",
@@ -1171,7 +1171,7 @@
  },
  {
   "cvo": 92,
-  "municipio": "Metepec",
+  "municipio": "METEPEC",
   "ubicacion": "AVENIDA JAGUEY, COLONIA LLANO GRANDE, MUNICIPIO DE METEPEC, ESTADO DE MEXICO",
   "unidad": "1. COMANDANCIA DE LA SUBDIRECCION OPERATIVA REGIONAL VALLE TOLUCA, 2. AGRUPAMIENTO A.S.E.S. I 3. DIRECCION GENERAL DE POLICIA DE GENERO",
   "tipo_construccion": "EDIFICIO (1 PLANTA)",
@@ -1184,7 +1184,7 @@
  },
  {
   "cvo": 93,
-  "municipio": "Mexicaltzingo",
+  "municipio": "MEXICALTZINGO",
   "ubicacion": "BOULEVARD BENITO JUAREZ ESQUINA CON AVENIDA INDEPENDENCIA S/N COLONIA \"LA ESTACION\", C.P. 52180, MUNICIPIO DE MEXICALTZINGO, ESTADO DE MEXICO.",
   "unidad": "1.- 3° AGRUPAMIENTO VII REGION",
   "tipo_construccion": "MODULO DE VIGILANCIA (TECALLI)",
@@ -1197,7 +1197,7 @@
  },
  {
   "cvo": 94,
-  "municipio": "Morelos",
+  "municipio": "MORELOS",
   "ubicacion": "CAMINO REAL, S/N PARAJE EL PATIO, BARRIO TERCERO C.P. 50584, MUNICIPIO DE MORELOS, ESTADO DE MEXICO.",
   "unidad": "1.- 2° AGRUPAMIENTO MORELOS, XXI REGION",
   "tipo_construccion": "EDIFICIO (2 O MAS PLANTAS)",
@@ -1210,7 +1210,7 @@
  },
  {
   "cvo": 95,
-  "municipio": "Naucalpan de Juarez",
+  "municipio": "NAUCALPAN",
   "ubicacion": "AVENIDA INGENIEROS MILITARES Y TRANSMISIONES MILITARES, COLONIA SAN FRANCISCO CUAUTLALPAN, C.P. 53960, MUNICIPIO DE NAUCALPAN DE JUAREZ, ESTADO DE MEXICO.",
   "unidad": "1.- 3° AGRUPAMIENTO DE LA XXV REGION (TOREO)",
   "tipo_construccion": "EDIFICIO (1 PLANTA)",
@@ -1223,7 +1223,7 @@
  },
  {
   "cvo": 96,
-  "municipio": "Naucalpan de Juarez",
+  "municipio": "NAUCALPAN",
   "ubicacion": "AVENIDA PASEO BOSQUES DE LA HERRADURA S/N, COLONIA HEROES DE LA REVOLUCION, C.P. 53840, MUNICIPIO DE NAUCALPAN, ESTADO DE MEXICO.",
   "unidad": "1.- COMANDANCIA XXIV REGION 2.- 4° AGRUPAMIENTO DE LA XXIV REGION (TECAMACHALCO)",
   "tipo_construccion": "EDIFICIO (1 PLANTA)",
@@ -1236,7 +1236,7 @@
  },
  {
   "cvo": 97,
-  "municipio": "Naucalpan de Juarez",
+  "municipio": "NAUCALPAN",
   "ubicacion": "AVENIDA PASEO DE LOS MEXICAS, NO. 63, C.P. 53150, MUNICIPIO DE NAUCALPAN DE JUAREZ, ESTADO DE MEXICO.",
   "unidad": "1.- CARRETERAS X DE LA XXV REGION",
   "tipo_construccion": "EDIFICIO (1 PLANTA)",
@@ -1249,7 +1249,7 @@
  },
  {
   "cvo": 98,
-  "municipio": "Naucalpan de Juarez",
+  "municipio": "NAUCALPAN",
   "ubicacion": "AVENIDA PRIMERO. DE MAYO ESQUINA CON VIA GUSTAVO BAZ COLONIA SAN LUIS TLATILCO, C.P. 53630, NAUCALPAN DE JUAREZ, ESTADO DE MEXICO.",
   "unidad": "1.- 4° AGRUPAMIENTO DE LA XXV REGION (MOLINO)",
   "tipo_construccion": "MODULO DE VIGILANCIA (TECALLI)",
@@ -1262,7 +1262,7 @@
  },
  {
   "cvo": 99,
-  "municipio": "Naucalpan de Juarez",
+  "municipio": "NAUCALPAN",
   "ubicacion": "CALLE CAPILLA S/N. COLONIA FRACCIONAMIENTO LOS PASTORES C.P. 53340, MUNICIPIO DE NAUCALPAN DE JUAREZ",
   "unidad": "1.- 2° AGRUPAMIENTO ALCE BLANCO XXV REGION",
   "tipo_construccion": "EDIFICIO (2 O MAS PLANTAS)",
@@ -1275,7 +1275,7 @@
  },
  {
   "cvo": 100,
-  "municipio": "Naucalpan de Juarez",
+  "municipio": "NAUCALPAN",
   "ubicacion": "CALLE SAN LUIS NUMERO 2-C , COLONIA SAN ANTONIO ZOMEYUCAN, MUNICIPIO DE NAUCALPAN DE JUAREZ, ESTADO DE MEXICO.",
   "unidad": "1.- COMANDANCIA XXV REGION 2.- 5TO., AGRUPAMIENTO XXV REGION ZONA CENTRO 3.- AGRUPAMIENTO G.I.P. X, XXV REGION.",
   "tipo_construccion": "ALMACEN",
@@ -1288,7 +1288,7 @@
  },
  {
   "cvo": 101,
-  "municipio": "Naucalpan de Juarez",
+  "municipio": "NAUCALPAN",
   "ubicacion": "CIRCUITO METALURGISTAS S/N, COLONIA CIUDAD SATELITE, C.P. 53100, MUNICIPIO DE NAUCALPAN DE JUAREZ, ESTADO DE MEXICO.",
   "unidad": "1.- 1° AGRUPAMIENTO XXV REGION SATELITE 2.- 6° AGRUPAMIENTO XXV REGION LOMAS VERDES",
   "tipo_construccion": "EDIFICIO (2 O MAS PLANTAS)",
@@ -1301,7 +1301,7 @@
  },
  {
   "cvo": 102,
-  "municipio": "Nezahualcóyotl",
+  "municipio": "NEZAHUALCOYOTL",
   "ubicacion": "AVENIDA BORDO DE XOCHIACA S/N COLONIA BENITO JUAREZ. C.P. 57000, MUNICIPIO DE NEZAHUALCOYOTL, ESTADO DE MEXICO.",
   "unidad": "1.- 7° AGRUPAMIENTO CANINO NEZAHUALCOYOTL",
   "tipo_construccion": "EDIFICIO (1 PLANTA)",
@@ -1314,7 +1314,7 @@
  },
  {
   "cvo": 103,
-  "municipio": "Nezahualcóyotl",
+  "municipio": "NEZAHUALCOYOTL",
   "ubicacion": "AVENIDA CENTRAL Y CALLE VALLE DEL YAQUI, COLONIA VALLE DE ARAGON SEGUNDA SECCION, C.P. 57100, MUNICIPIO DE NEZAHUALCOYOTL, ESTADO DE MEXICO.",
   "unidad": "2.-SEGUNDO AGRUPAMIENTO VALLE DE ARAGON DE LA XXXIX REGION",
   "tipo_construccion": "",
@@ -1327,7 +1327,7 @@
  },
  {
   "cvo": 104,
-  "municipio": "Nezahualcóyotl",
+  "municipio": "NEZAHUALCOYOTL",
   "ubicacion": "AVENIDA DR. GUSTAVO BAZ ESQUINA CALLE GAVILANES, COLONIA BENITO JUAREZ, C.P. 57000, MUNICIPIO DE NEZAHUALCOYOTL, ESTADO DE MEXICO.",
   "unidad": "1.- ASES ORIENTE DE LA XXXVIII REGION 2.- 3° AGRUPAMIENTO BENITO JUAREZ",
   "tipo_construccion": "EDIFICIO (1 PLANTA)",
@@ -1340,7 +1340,7 @@
  },
  {
   "cvo": 105,
-  "municipio": "Nezahualcóyotl",
+  "municipio": "NEZAHUALCOYOTL",
   "ubicacion": "AVENIDA SOR JUANA INES DE LA CRUZ NO. 699-A, COLONIA BENITO JUAREZ, C.P. 57000, MUNICIPIO DE NEZAHUALCOYOTL, ESTADO DE MEXICO.",
   "unidad": "1.- COMANDANCIA DE LA XXXVIII REGION 2.- DELEGACION DEL AREA JURIDICA 3.- AREA DE RECURSOS HUMANOS 4.- POLICIA DE GENERO",
   "tipo_construccion": "EDIFICIO (2 O MAS PLANTAS)",
@@ -1353,7 +1353,7 @@
  },
  {
   "cvo": 106,
-  "municipio": "Nezahualcóyotl",
+  "municipio": "NEZAHUALCOYOTL",
   "ubicacion": "AVENIDA SOR JUANA INES DE LA CRUZ, ESQUINA CALLE INDIO TRISTE, CAMELLON CENTRAL, FRENTE AL NO. 100, COLONIA METROPOLITANA SEGUNDA. SECCION , C.P. 57740, MUNICIPIO DE NEZAHUALCOYOTL, ESTADO DE MEXICO..",
   "unidad": "1.- A.S.T.R.O.S. ORIENTE DE LA XXXVIII REGION",
   "tipo_construccion": "MODULO DE VIGILANCIA (TECALLI)",
@@ -1366,7 +1366,7 @@
  },
  {
   "cvo": 107,
-  "municipio": "Nezahualcóyotl",
+  "municipio": "NEZAHUALCOYOTL",
   "ubicacion": "AVENIDA TEXCOCO S/N, ESQUINA CALLE OSCAR, (PLANTA BAJA) COLONIA PAVON, C.P.57610, MUNICIPIO DE NEZAHUALCOYOTL, ESTADO DE MEXICO.",
   "unidad": "1.- 1° AGRUPAMIENTO \"MARAVILLAS\" DE LA XXXVIII REGION",
   "tipo_construccion": "EDIFICIO (2 O MAS PLANTAS)",
@@ -1379,7 +1379,7 @@
  },
  {
   "cvo": 108,
-  "municipio": "Nezahualcóyotl",
+  "municipio": "NEZAHUALCOYOTL",
   "ubicacion": "AVENIDA TEXCOCO S/N, ESQUINA CON CALLE CABALLITO NO. 2, COLONIA METROPOLITANA SEGUNDA SECCION, C.P. 57740, MUNICIPIO DE NEZAHUALCOYOTL, ESTADO DE MEXICO.",
   "unidad": "1.- 2° AGRUPAMIENTO \"NEZAHUALCOYOTL\" DE LA XXXVIII REGION",
   "tipo_construccion": "EDIFICIO (2 O MAS PLANTAS)",
@@ -1392,7 +1392,7 @@
  },
  {
   "cvo": 109,
-  "municipio": "Nezahualcóyotl",
+  "municipio": "NEZAHUALCOYOTL",
   "ubicacion": "CALLE MIGUEL ALEMAN, ESQUINA NICOLAS BRAVO S/N, COLONIA MANANTIALES, C.P.57930, MUNICIPIO DE NEZAHUALCOYOTL, ESTADO DE MEXICO.",
   "unidad": "1.- CUARTO AGRUPAMIENTO \"MANANTIALES\" DE LA XXXVIII REGION",
   "tipo_construccion": "EDIFICIO (1 PLANTA)",
@@ -1405,7 +1405,7 @@
  },
  {
   "cvo": 110,
-  "municipio": "Nezahualcóyotl",
+  "municipio": "NEZAHUALCOYOTL",
   "ubicacion": "CERRADA DE ADMINISTRADORES S/N, FRACCIONAMIENTO LAS ARMAS, C.P. 57170, MUNICIPIO DE NEZAHUALCOYOTL, ESTADO DE MEXICO.",
   "unidad": "1.- COMANDANCIA XXXIX REGION 2.- 1° AGRUPAMIENTO LAS ARMAS DE LA XXXIX REGION",
   "tipo_construccion": "EDIFICIO (1 PLANTA)",
@@ -1418,7 +1418,7 @@
  },
  {
   "cvo": 111,
-  "municipio": "Nezahualcóyotl",
+  "municipio": "NEZAHUALCOYOTL",
   "ubicacion": "KILOMETRO 54+920 A UN COSTADO DE LA CASETA T-3 NABOR CARRILLO, DE LA VIALIDAD CIRCUITO EXTERIOR MEXIQUENSE, C.P. 57000, MUNICIPIO DE NEZAHUALCOYOTL, ESTADO DE MEXICO.",
   "unidad": "1.- 1° AGRUPAMIENTO NEZAHUALCOYOTL 2.- COMANDANCIA DE LA REGION XXXVI NEZAHUALCOYOTL DE LA SUBDIRECCION OPERATIVA CIRCUITO EXTERIOR MEXIQUENSE",
   "tipo_construccion": "EDIFICIO 1 PLANTA",
@@ -1431,7 +1431,7 @@
  },
  {
   "cvo": 112,
-  "municipio": "Nicolás Romero",
+  "municipio": "NICOLAS ROMERO",
   "ubicacion": "AVENIDA LAGO TEXCOCO S/N, COLONIA LOMA DE GUADALUPE, C.P. 54417, MUNICIPIO DE NICOLAS ROMERO, ESTADO DE MEXICO.",
   "unidad": "1.- COMANDANCIA XXVIII REGION 2.- PRIMER AGRUPAMIENTO NICOLAS ROMERO",
   "tipo_construccion": "EDIFICIO (2 O MAS PLANTAS)",
@@ -1444,7 +1444,7 @@
  },
  {
   "cvo": 113,
-  "municipio": "Nicolás Romero",
+  "municipio": "NICOLAS ROMERO",
   "ubicacion": "CALLE GUADALUPE VICTORIA NO. 11, COLONIA SANTA ANITA, C.P. 54434, MUNICIPIO DE NICOLAS ROMERO, ESTADO DE MEXICO.",
   "unidad": "1.- AGRUPAMIENTO DE TRANSITO METROPOLITANO",
   "tipo_construccion": "EDIFICIO 1 PLANTA",
@@ -1457,7 +1457,7 @@
  },
  {
   "cvo": 114,
-  "municipio": "Ocoyoacac",
+  "municipio": "OCOYOACAC",
   "ubicacion": "CARRETERA AMOMOLULCO-OCOYOACAC, ESQUINA ACUEDUCTO EL ALTO LERMA, BARRIO DE SANTA MARIA, C.P. 52740, MUNICIPIO DE OCOYOACAC, ESTADO DE MEXICO.",
   "unidad": "1.- COMANDANCIA DE LA VII REGION 2.- 1° AGRUPAMIENTO OCOYOACAC",
   "tipo_construccion": "MODULO DE VIGILANCIA (TECALLI)",
@@ -1470,7 +1470,7 @@
  },
  {
   "cvo": 115,
-  "municipio": "Ocoyoacac",
+  "municipio": "OCOYOACAC",
   "ubicacion": "PARQUE MIGUEL HIDALGO S/N, LA MARQUESA, MUNICIPIO DE OCOYOACAC, ESTADO DE MEXICO C.P.52743",
   "unidad": "1.- 4° AGRUPAMIENTO MONTADO LA MARQUESA",
   "tipo_construccion": "EDIFICIO (1 PLANTA)",
@@ -1483,7 +1483,7 @@
  },
  {
   "cvo": 116,
-  "municipio": "Ocuilan",
+  "municipio": "OCUILAN",
   "ubicacion": "CALLE 20 DE NOVIEMBRE S/N CASI ESQUINA CON AVENIDA PROGRESO, DELEGACION EL CALVARIO, C.P. 52480, MUNICIPIO DE OCUILAN, ESTADO DE MEXICO.",
   "unidad": "1.- 1° AGRUPAMIENTO, DE LA XI REGION",
   "tipo_construccion": "CASA",
@@ -1496,7 +1496,7 @@
  },
  {
   "cvo": 117,
-  "municipio": "Otumba",
+  "municipio": "OTUMBA",
   "ubicacion": "AVENIDA TORRES ADALID NO. 18, COLONIA CENTRO, C.P. 55900, MUNICIPIO DE OTUMBA, ESTADO DE MEXICO.",
   "unidad": "1.- COMANDANCIA XLIV REGION 2.- 1° AGRUPAMIENTO OTUMBA XLIV REGION",
   "tipo_construccion": "EDIFICIO (1 PLANTA)",
@@ -1509,7 +1509,7 @@
  },
  {
   "cvo": 118,
-  "municipio": "Otzoloapan",
+  "municipio": "OTZOLOAPAN",
   "ubicacion": "FRAY SERVANDO TERESA DE MIER, BARRIO LA VIRGENCITA, C.P. 51130, MUNICIPIO DE OTZOLOAPAN, ESTADO DE MEXICO.",
   "unidad": "DESOCUPADO POR DELINCUENCIA ORGANIZADA",
   "tipo_construccion": "EDIFICIO (2 O MAS PLANTAS)",
@@ -1522,7 +1522,7 @@
  },
  {
   "cvo": 119,
-  "municipio": "Otzolotepec",
+  "municipio": "OTZOLOTEPEC",
   "ubicacion": "AVENIDA TOLUCA , COLONIA GUADALUPE VICTORIA, OTZOLOTEPEC, MEXICO",
   "unidad": "1.- 1° AGRUPAMIENTO OTZOLOTEPEC",
   "tipo_construccion": "EDIFICIO (1 PLANTA)",
@@ -1535,7 +1535,7 @@
  },
  {
   "cvo": 120,
-  "municipio": "Ozumba",
+  "municipio": "OZUMBA",
   "ubicacion": "CARRETERA FEDERAL MEXICO-CUAUTLA KILOMETRO 39+500 DELEGACION DE SAN MATEO TECALCO, C.P. 56800, MUNICIPIO DE OZUMBA, ESTADO DE MEXICO.",
   "unidad": "1.- 5TO. AGRUPAMIENTO OZUMBA DE LA REGION XLVIII AMECAMECA",
   "tipo_construccion": "EDIFICIO (2 O MAS PLANTAS)",
@@ -1548,7 +1548,7 @@
  },
  {
   "cvo": 121,
-  "municipio": "Polotitlán",
+  "municipio": "POLOTITLAN",
   "ubicacion": "ANDADOR MATAMOROS, ESQUINA CALLE ALLENDE, COLONIA CENTRO, C.P. 54200, MUNICIPIO DE POLOTITLAN, ESTADO DE MEXICO.",
   "unidad": "1.- 4° AGRUPAMIENTO POLOTITLAN, XXIII REGION",
   "tipo_construccion": "CASA",
@@ -1561,7 +1561,7 @@
  },
  {
   "cvo": 122,
-  "municipio": "Rayon",
+  "municipio": "RAYON",
   "ubicacion": "CARRETERA DE TERRACERIA A CALIMAYA, CALLE JESUS MARIA S/N, ESQUINA PRIVADA DE LA CRUZ, SANTA MARIA NATIVITAS, C.P. 52230, MUNICIPIO DE CALIMAYA, ESTADO DE MEXICO.",
   "unidad": "1.- 2° AGRUPAMIENTO CALIMAYA, IX REGION, TENANGO DEL VALLE",
   "tipo_construccion": "MODULO DE VIGILANCIA (TECALLI)",
@@ -1574,7 +1574,7 @@
  },
  {
   "cvo": 123,
-  "municipio": "San Felipe del Progreso",
+  "municipio": "SAN FELIPE DEL PROGRESO",
   "ubicacion": "CALLE MARIA DE LA LUZ RODRIGUEZ, ESQUINA CON CALLE MARIPOSA MONARCA S/N, COLONIA CENTRO, C.P. 50640, MUNICIPIO DE SAN FELIPE DEL PROGRESO, ESTADO DE MEXICO.",
   "unidad": "1.- 1° AGRUPAMIENTO 2.- COMANDANCIA DE LA XIX REGION SAN FELIPE DEL PROGRESO",
   "tipo_construccion": "EDIFICIO (1 PLANTA)",
@@ -1587,7 +1587,7 @@
  },
  {
   "cvo": 124,
-  "municipio": "San Jose del Rincon",
+  "municipio": "SAN JOSE DEL RINCON",
   "ubicacion": "SOBRE CARRETERA ESTATAL VILLA VICTORIA-EL ORO KILOMETRO 32+000, A LA ALTURA DE LA LOCALIDAD ESTACION TRINIDAD, C.P. 50664, MUNICIPIO DE SAN JOSE DEL RINCON, ESTADO DE MEXICO.",
   "unidad": "1.- 2° AGRUPAMIENTO SAN JOSE DEL RINCON DE LA XIX REGION",
   "tipo_construccion": "MODULO DE VIGILANCIA (TECALLI)",
@@ -1600,7 +1600,7 @@
  },
  {
   "cvo": 125,
-  "municipio": "San Martin de Las Piramides",
+  "municipio": "SAN MARTIN DE LAS PIRAMIDES",
   "ubicacion": "PLAZA JUAREZ S/N, COLONIA PIRAMIDES CENTRO, C.P. 55850, SAN MARTIN DE LAS PIRAMIDES, ESTADO DE MEXICO.",
   "unidad": "1.- COMANDANCIA XLII REGION TEOTIHUACAN 2.- 2° AGRUPAMIENTO SAN MARTIN",
   "tipo_construccion": "EDIFICIO (2 O MAS PLANTAS)",
@@ -1613,7 +1613,7 @@
  },
  {
   "cvo": 126,
-  "municipio": "San Mateo Atenco",
+  "municipio": "SAN MATEO ATENCO",
   "ubicacion": "BOULEVARD SANTA ELENA ESQUINA SAN DIEGO DE LOS PADRES, FRACCIONAMIENTO SANTA ELENA, C.P. 52105, MUNICIPIO DE SAN MATEO ATENCO, ESTADO DE MEXICO.",
   "unidad": "1.- COMANDANCIA DE LA VIII REGION 2.- 1° AGRUPAMIENTO 3.- 2° AGRUPAMIENTO",
   "tipo_construccion": "EDIFICIO (1 PLANTA)",
@@ -1626,7 +1626,7 @@
  },
  {
   "cvo": 127,
-  "municipio": "Soyaniquilpan",
+  "municipio": "SOYANIQUILPAN",
   "ubicacion": "BOULEVARD 16 DE SEPTIEMBRE, COLONIA CENTRO, C.P. 54280, MUNICIPIO DE SOYANIQUILPAN, ESTADO DE MEXICO.",
   "unidad": "1.- 3° AGRUPAMIENTO SOYANIQUILPAN, XXII REGION",
   "tipo_construccion": "MODULO DE VIGILANCIA (TECALLI)",
@@ -1639,7 +1639,7 @@
  },
  {
   "cvo": 128,
-  "municipio": "Tecamac",
+  "municipio": "TECAMAC",
   "ubicacion": "CALLE LAZARO CARDENAS S/N, ESQUINA CALLE ESMERALDA, COLONIA LOMAS DE TECAMAC, C.P. 55765, MUNICIPIO DE TECAMAC, ESTADO DE MEXICO.",
   "unidad": "1.- COMANDANCIA SUBDIRECCION OPERATIVA REGIONAL ECATEPEC 2.- A.S.E.S. XII, REGION XXXI 3.- AGRUPAMIENTO PEA TECAMAC, REGION XXXII 4.- OFICINA JURIDICA AUXILIAR PIRAMIDES, SUBDIRECCION ECATEPEC",
   "tipo_construccion": "EDIFICIO (1 PLANTA)",
@@ -1652,7 +1652,7 @@
  },
  {
   "cvo": 129,
-  "municipio": "Tecamac",
+  "municipio": "TECAMAC",
   "ubicacion": "CALLE VALLE SAN MIGUEL, ESQUINA VALLE SAN URIEL, FRACCIONAMIENTO URBVILLAS DEL CAMPO, C.P. 55767, MUNICIPIO DE TECAMAC, ESTADO DE MEXICO",
   "unidad": "1.- 2° AGRUPAMIENTO OJO DE AGUA, REGION XXXII, SUBDIRECCION OPERATIVA REGIONAL ECATEPEC",
   "tipo_construccion": "EDIFICIO (2 O MAS PLANTAS)",
@@ -1665,7 +1665,7 @@
  },
  {
   "cvo": 130,
-  "municipio": "Tecamac",
+  "municipio": "TECAMAC",
   "ubicacion": "CARRETERA LIBRE MEXICO-PACHUCA KILOMETRO 43+500, COLONIA SAN PEDRO POZOHUACAN, C.P. 55740, MUNICIPIO DE TECAMAC, ESTADO DE MEXICO.",
   "unidad": "1.- 3° AGRUPAMIENTO DE LA XXXII REGION TECAMAC",
   "tipo_construccion": "EDIFICIO (2 O MAS PLANTAS)",
@@ -1678,7 +1678,7 @@
  },
  {
   "cvo": 131,
-  "municipio": "Tejupilco",
+  "municipio": "TEJUPILCO",
   "ubicacion": "AVENIDA 27 DE SEPTIEMBRE, COLONIA BENITO JUÁREZ, C.P. 51400, MUNICIPIO DE TEJUPILCO, ESTADO DE MÉXICO.",
   "unidad": "DESOCUPADO, DERIVADO DE LOS HECHOS OCURRIDOS EN EL MES DE NOVIEMBRE DE 2022",
   "tipo_construccion": "MODULO DE VIGILANCIA (TECALLI)",
@@ -1691,7 +1691,7 @@
  },
  {
   "cvo": 132,
-  "municipio": "Tejupilco",
+  "municipio": "TEJUPILCO",
   "ubicacion": "AVENIDA CRISTOBAL HIDALGO, COLONIA LAS ROSAS, C.P. 51400, MUNICIPIO DE TEJUPILCO, ESTADO DE MEXICO.",
   "unidad": "1.- COMANDANCIA DE LA SUBDIRECCION SUR 2.- COMANDANCIA DE LA XIV REGION 3. COMANDANCIA DE LA XV REGION",
   "tipo_construccion": "EDIFICIO (2 O MAS PLANTAS)",
@@ -1704,7 +1704,7 @@
  },
  {
   "cvo": 133,
-  "municipio": "Temamatla",
+  "municipio": "TEMAMATLA",
   "ubicacion": "PROLONGACIÓN TABASCO, S/N, COLONIA GUADALUPANA, UMINICIPIO DE TEMAMATLA, C.P. 56650ESTADO DE MÉXICO",
   "unidad": "1.- 4TO. AGRUPAMIENTO TEMAMATLA DE LA REGION XLVII CHALCO",
   "tipo_construccion": "MODULO DE VIGILANCIA (TECALLI)",
@@ -1717,7 +1717,7 @@
  },
  {
   "cvo": 134,
-  "municipio": "Temascalcingo",
+  "municipio": "TEMASCALCINGO",
   "ubicacion": "CARRETERA TEMASCALCINGO-AMEALCO, KILOMETRO 0+500, UNIDAD DEPORTIVA DE MARO, C.P. 50410, MUNICIPIO DE TEMASCALCINGO, ESTADO DE MEXICO.",
   "unidad": "1.- 2° AGRUPAMIENTO TEMASCALCINGO, XX REGION",
   "tipo_construccion": "EDIFICIO (1 PLANTA)",
@@ -1730,7 +1730,7 @@
  },
  {
   "cvo": 135,
-  "municipio": "Temoaya",
+  "municipio": "TEMOAYA",
   "ubicacion": "CARRETERA TOLUCA TEMOAYA ESQUINA CALLE MIGUEL HIDALGO LLANO DE LA Y, C.P. 50884, MUNICIPIO DE TEMOAYA, ESTADO DE MEXICO.",
   "unidad": "1.- 2° AGRUPAMIENTO, TEMOAYA",
   "tipo_construccion": "MODULO DE VIGILANCIA (TECALLI)",
@@ -1743,7 +1743,7 @@
  },
  {
   "cvo": 136,
-  "municipio": "Tenancingo",
+  "municipio": "TENANCINGO",
   "ubicacion": "CALLE CERRADA DEL SALTO, S/N BARRIO DEL CHIFLON, C.P. 52400, MUNICIPIO DE TENANCINGO, ESTADO DE MEXICO.",
   "unidad": "1. COMANDANCIA COORDINACION IXTAPAN 2. COMANDANCIA X REGION 3. PRIMER AGRUPAMIENTO X REGION 4. AGRUPAMIENTO FAR IV TENANCINGO 5. OFICINA AUXILIAR JURIDICO IXTAPAN 6. OFICINA HABILITACION RH IXTAPAN",
   "tipo_construccion": "EDIFICIO (2 O MAS PLANTAS)",
@@ -1756,7 +1756,7 @@
  },
  {
   "cvo": 137,
-  "municipio": "Tenancingo",
+  "municipio": "TENANCINGO",
   "ubicacion": "CALLE MOCTEZUMA PONIENTE NUMERO 801, IN BARRIO LA CAMPANA, C.P. 52400, MUNICIPIO DE TENANCINGO, ESTADO DE MEXICO.",
   "unidad": "1.- 2° AGRUPAMIENTO 2.- 4° AGRUPAMIENTO DE LA X REGION",
   "tipo_construccion": "EDIFICIO (1 PLANTA)",
@@ -1769,7 +1769,7 @@
  },
  {
   "cvo": 138,
-  "municipio": "Tenancingo",
+  "municipio": "TENANCINGO",
   "ubicacion": "PASEO DE LOS INSURGENTES S/N, COLONIA MORELOS, MUNICIPIO DE TENANCINGO, ESTADO DE MEXICO.",
   "unidad": "1.- GIP IV",
   "tipo_construccion": "MODULO DE VIGILANCIA (TECALLI)",
@@ -1782,7 +1782,7 @@
  },
  {
   "cvo": 139,
-  "municipio": "Tenango del Valle",
+  "municipio": "TENANGO DEL VALLE",
   "ubicacion": "CALLE 4-C, CAMINO VIEJO A SANTIAGUITO S/N, DELEGACION DE SANTIAGUITO COAXUSTENCO, SAN ANTONIO LA ISLA, C.P. 52315, MUNICIPIO DE TENANGO DE VALLE, ESTADO DE MEXICO.",
   "unidad": "1.- 5° AGRUPAMIENTO DE LA IX REGION",
   "tipo_construccion": "MODULO DE VIGILANCIA (TECALLI)",
@@ -1795,7 +1795,7 @@
  },
  {
   "cvo": 140,
-  "municipio": "Tenango del Valle",
+  "municipio": "TENANGO DEL VALLE",
   "ubicacion": "CALLE MIGUEL HIDALGO PONIENTE S/N, SANTIAGUITO COAXUSTENCO, C.P. 52315, MUNICIPIO DE TENANGO DE VALLE, ESTADO DE MEXICO.",
   "unidad": "1.- AGRUPAMIENTO DE TRANSITO IXTAPAN",
   "tipo_construccion": "MODULO DE VIGILANCIA (TECALLI)",
@@ -1808,7 +1808,7 @@
  },
  {
   "cvo": 141,
-  "municipio": "Tenango del Valle",
+  "municipio": "TENANGO DEL VALLE",
   "ubicacion": "CARRETERA TENANCINGO -TOLUCA, KILOMETRO 22+200, COLONIA BUENOS AIRES, C.P. 52300, MUNICIPIO DE TENANGO DE VALLE, ESTADO DE MEXICO.",
   "unidad": "1.- 1° AGRUPAMIENTO TENANGO DEL VALLE, DE LA IX REGION",
   "tipo_construccion": "MODULO DE VIGILANCIA (TECALLI)",
@@ -1821,7 +1821,7 @@
  },
  {
   "cvo": 142,
-  "municipio": "Tenango del Valle",
+  "municipio": "TENANGO DEL VALLE",
   "ubicacion": "CARRETERA TENANGO MARQUEZA KILOMETRO 36 CRUCERO SANTA MARIA JAJALPA MUNICIPIO DE TENANGO DEL VALLE C.P. 52320",
   "unidad": "1.- 3° AGRUPAMIENTO ZONA ORIENTE TENANGO DEL VALLE, DE LA IX REGION",
   "tipo_construccion": "MODULO DE VIGILANCIA (TECALLI)",
@@ -1834,7 +1834,7 @@
  },
  {
   "cvo": 143,
-  "municipio": "Tenango del Valle",
+  "municipio": "TENANGO DEL VALLE",
   "ubicacion": "PROLONGACION LEON GUZMAN, COLONIA LA CAMPESINA, MUNICIPIO DE TENANGO DEL VALLE, C.P 52300",
   "unidad": "1.- COMANDANCIA DE LA IX REGION, TENANGO DEL VALLE 2.- 6° AGRUPAMIENTO TENANGO DEL VALLE DE LA IX REGION",
   "tipo_construccion": "EDIFICIO (2 O MAS PLANTAS)",
@@ -1847,7 +1847,7 @@
  },
  {
   "cvo": 144,
-  "municipio": "Teotihuacan",
+  "municipio": "TEOTIHUACAN",
   "ubicacion": "AVENIDA CARLOS HANK GONZALEZ, COLONIA NUEVA EVANGELISTA, C.P. 55816, MUNICIPIO DE TEOTIHUACAN, ESTADO DE MEXICO.",
   "unidad": "1.- 1° AGRUPAMIENTO TEOTIHUACAN, DE LA XLII",
   "tipo_construccion": "EDIFICIO (1 PLANTA)",
@@ -1860,7 +1860,7 @@
  },
  {
   "cvo": 145,
-  "municipio": "Tepetlixpa",
+  "municipio": "TEPETLIXPA",
   "ubicacion": "CARRETERA FEDERAL CUAUTLA-MEXICO KILOMETRO 56, COLONIA CENTRO, C.P. 56880, MUNICIPIO DE TEPETLIXPA, ESTADO DE MEXICO.",
   "unidad": "1.- G.A.R.I.P DE LA REGION XLVIII AMECAMECA",
   "tipo_construccion": "EDIFICIO (1 PLANTA)",
@@ -1873,7 +1873,7 @@
  },
  {
   "cvo": 146,
-  "municipio": "Tepetlixpa",
+  "municipio": "TEPETLIXPA",
   "ubicacion": "CARRETERA FEDERAL NUMERO 115 MEXICO- CUAUTLA, KILOMETRO 68+500, DELEGACION NEPANTLA.CP 56890 MUNICIPIO DE TEPETLIXPA",
   "unidad": "1.- 2° AGRUPAMIENTO TEPETLIXPA DE LA REGION XLVIII AMECAMECA",
   "tipo_construccion": "MODULO DE VIGILANCIA (TECALLI)",
@@ -1886,7 +1886,7 @@
  },
  {
   "cvo": 147,
-  "municipio": "Tepotzotlan",
+  "municipio": "TEPOTZOTLAN",
   "ubicacion": "AVENIDA INSURGENTES NO. 3, BARRIO TEXCACOA, C.P. 54600, MUNICIPIO DE TEPOTZOTLAN, ESTADO DE MEXICO.",
   "unidad": "1.- 2° AGRUPAMIENTO DE LA XXIX REGION TEPOTZOTLAN",
   "tipo_construccion": "EDIFICIO (2 O MAS PLANTAS)",
@@ -1899,7 +1899,7 @@
  },
  {
   "cvo": 148,
-  "municipio": "Texcaltitlan",
+  "municipio": "TEXCALTITLAN",
   "ubicacion": "CARRETERA PALMILLAS - CHILTEPEC, COMUNIDAD DE AGUA BENDITA, C.P. 51674, MUNICIPIO DE TEXCALTITLAN",
   "unidad": "1.- PERSONAL DE SERVICIO EN LA XIII REGION",
   "tipo_construccion": "EDIFICIO 1 PLANTA",
@@ -1912,7 +1912,7 @@
  },
  {
   "cvo": 149,
-  "municipio": "Texcaltitlan",
+  "municipio": "TEXCALTITLAN",
   "ubicacion": "CARRETERA PALMILLAS - CHILTEPEC, COMUNIDAD DE PALMILLAS, C.P. 51674 MUNICIPIO DE TEXCALTITLAN",
   "unidad": "1.- CENTRO DE MANDO XIII REGION",
   "tipo_construccion": "",
@@ -1925,7 +1925,7 @@
  },
  {
   "cvo": 150,
-  "municipio": "Texcaltitlan",
+  "municipio": "TEXCALTITLAN",
   "ubicacion": "CARRETERA TOLUCA - SULTEPEC, S/N, KILOMETRO 43+500, PARAJE SAN AGUSTIN, C.P. 51675, MUNICIPIO DE TEXCALTITLAN, ESTADO DE MEXICO.",
   "unidad": "1.- COMANDANCIA DE LA XIII REGION",
   "tipo_construccion": "EDIFICIO (2 O MAS PLANTAS)",
@@ -1938,7 +1938,7 @@
  },
  {
   "cvo": 151,
-  "municipio": "Texcoco",
+  "municipio": "TEXCOCO",
   "ubicacion": "CALLE BENJAMIN ROBLES S/N COLONIA SAN MATEO, C.P. 56110, MUNICIPIO DE TEXCOCO, ESTADO DE MEXICO.",
   "unidad": "1.- COMANDANCIA DE LA SUBDIRECCION OPERATIVA REGIONAL TEXCOCO 2.- COMANDANCIA DE LA XLIII REGION 3.- 1° AGRUPAMIENTO TEXCOCO 4.- F.A.R TEXCOCO",
   "tipo_construccion": "EDIFICIO (2 O MAS PLANTAS)",
@@ -1951,7 +1951,7 @@
  },
  {
   "cvo": 152,
-  "municipio": "Texcoco",
+  "municipio": "TEXCOCO",
   "ubicacion": "CALLE CHALCO ESQUINA OLMILLOS FRACCIONAMIENTO TEJOCOTE, C.P. 56250, MUNICIPIO DE TEXCOCO, ESTADO DE MEXICO.",
   "unidad": "1.- 3° AGRUPAMIENTO TEJOCOTE DE LA XLIII REGION",
   "tipo_construccion": "EDIFICIO (2 O MAS PLANTAS)",
@@ -1964,7 +1964,7 @@
  },
  {
   "cvo": 153,
-  "municipio": "Tezoyuca",
+  "municipio": "TEZOYUCA",
   "ubicacion": "CALLE SOLIDARIDAD S/N, COLONIA BARRIO SANTIAGO, C.P. 56005, MUNICIPIO DE TEZOYUCA, ESTADO DE MEXICO.",
   "unidad": "1.- A.S.E.S TEXCOCO DE LA XLIII REGION",
   "tipo_construccion": "MODULO DE VIGILANCIA (TECALLI)",
@@ -1977,7 +1977,7 @@
  },
  {
   "cvo": 154,
-  "municipio": "Tianguistenco",
+  "municipio": "TIANGUISTENCO",
   "ubicacion": "CARRETERA SANTIAGO- CHALMA KILOMETRO 0+500, COLONIA IZCALLI, C.P. 52600, MUNICIPIO DE SANTIAGO TIANGUISTENCO, ESTADO DE MEXICO.",
   "unidad": "1.- COMANDANCIA SUBDIRECCION OPERATIVA REGIONAL SANTIAGO TIANGUISTENCO 2.- COMANDANCIA V REGION, 3.- 1° AGRUPAMIENTO, 4.- 3° AGRUPAMIENTO, 5.-AGRUPAMIENTO F.A.R. II, 6.-COMEDOR OPERATIVO 7.- RECURSOS HUMANOS",
   "tipo_construccion": "MODULO DE VIGILANCIA (TECALLI)",
@@ -1990,7 +1990,7 @@
  },
  {
   "cvo": 155,
-  "municipio": "Timilpan",
+  "municipio": "TIMILPAN",
   "ubicacion": "CARRETERA TIMILPAN-PATHE KILOMETRO 2+500, PARAJE LA PUERTA, MUNICIPIO DE TIMILPAN, ESTADO DE MEXICO",
   "unidad": "1.- TERCER AGRUPAMIENTO TIMILPAN",
   "tipo_construccion": "MODULO DE VIGILANCIA (TECALLI)",
@@ -2003,7 +2003,7 @@
  },
  {
   "cvo": 156,
-  "municipio": "Tlalmanalco",
+  "municipio": "TLALMANALCO",
   "ubicacion": "CALLE SAN LUIS NUMERO 50, COLONIA CENTRO, C.P. 56700, MUNICIPIO DE TLALMANALCO, ESTADO DE MEXICO.",
   "unidad": "2° AGRUPAMIENTO DE LA XLVIII REGION",
   "tipo_construccion": "CASA",
@@ -2016,7 +2016,7 @@
  },
  {
   "cvo": 157,
-  "municipio": "Tlalnepantla de Baz",
+  "municipio": "TLALNEPANTLA",
   "ubicacion": "CERCA DE PARADA DE SAN JOSÉ, AUTOPISTA MÉXICO-PACHUCA Y C. SAN JOSÉ, MANZANA 007, COLINAS DE SAN JOSE, 54195 TLALNEPANTLA, MÉX.",
   "unidad": "2DO AGRUPAMIENTO DE LA XXVI REGION",
   "tipo_construccion": "EDIFICIO (1 PLANTA)",
@@ -2029,7 +2029,7 @@
  },
  {
   "cvo": 158,
-  "municipio": "Tlalnepantla de Baz",
+  "municipio": "TLALNEPANTLA",
   "ubicacion": "AVENIDA DEL TRABAJO S/N, COLONIA SAN PEDRO BARRIENTOS, C.P. 54010, MUNICIPIO DE TLALNEPANTLA DE BAZ, ESTADO DE MEXICO.",
   "unidad": "1.- 6° AGRUPAMIENTO CANINO TLALNEPANTLA",
   "tipo_construccion": "EDIFICIO (1 PLANTA)",
@@ -2042,7 +2042,7 @@
  },
  {
   "cvo": 159,
-  "municipio": "Tlalnepantla de Baz",
+  "municipio": "TLALNEPANTLA",
   "ubicacion": "AVENIDA GUSTAVO BAZ, ESQUINA CON CALLE TULE, COLONIA BELLAVISTA, C.P. 54080, MUNICIPIO DE TLALNEPANTLA DE BAZ, ESTADO DE MEXICO.",
   "unidad": "1.- 3° AGRUPAMIENTO XXVI REGION (LOS ROSARIOS)",
   "tipo_construccion": "MODULO DE VIGILANCIA (TECALLI)",
@@ -2055,7 +2055,7 @@
  },
  {
   "cvo": 160,
-  "municipio": "Tlalnepantla de Baz",
+  "municipio": "TLALNEPANTLA",
   "ubicacion": "AVENIDA INDUSTRIAL ESQUINA CALLE 16 DE SEPTIEMBRE S/N, PUEBLO DE LOS REYES, 54075 TLALNEPANTLA, MEX.",
   "unidad": "1.- 1° AGRUPAMIENTO DE LA XXVI REGION TLALNEPANTLA",
   "tipo_construccion": "EDIFICIO (1 PLANTA)",
@@ -2068,7 +2068,7 @@
  },
  {
   "cvo": 161,
-  "municipio": "Tlalnepantla de Baz",
+  "municipio": "TLALNEPANTLA",
   "ubicacion": "AVENIDA MIGUEL HIDALGO S/N, ESQUINA PROLONGACION RADIAL TOLTECAS, COLONIA LOS REYES IXTACALA, C.P. 54089, MUNICIPIO DE TLALNEPANTLA DE BAZ, ESTADO DE MEXICO.",
   "unidad": "1.- COORDINACION DE SUBDIRECCIONES METROPOLITANA 2.- SUBDIRECCION OPERATIVA REGIONAL METROPOLITANA, COMANDANCIA XXVI REGION 3.- 5TO. AGRUPAMIENTO XXVI REGION (TABLA HONDA) 4.- A.S.T.R.O.S. X XXVI REGION 5.- AGRUPAMIENTO FAR X XXVI REGION 6.- OFICINAS AUXILIARES JURIDICAS Y RECURSOS HUMANOS",
   "tipo_construccion": "EDIFICIO (2 O MAS PLANTAS)",
@@ -2081,7 +2081,7 @@
  },
  {
   "cvo": 162,
-  "municipio": "Tlalnepantla de Baz",
+  "municipio": "TLALNEPANTLA",
   "ubicacion": "AVENIDA REYES HEROLES S/N., COLONIA BOSQUES DE CEYLAN, C.P. 54170, MUNICIPIO DE TLALNEPANTLA DE BAZ, ESTADO DE MEXICO.",
   "unidad": "1.- 2° AGRUPAMIENTO PUENTE DE VIGAS, XXXVII REGION SUBDIRECCION CIRCUITO EXTERIOR MEXIQUENSE",
   "tipo_construccion": "MODULO DE VIGILANCIA (TECALLI)",
@@ -2094,7 +2094,7 @@
  },
  {
   "cvo": 163,
-  "municipio": "Tlalnepantla de Baz",
+  "municipio": "TLALNEPANTLA",
   "ubicacion": "CALLE CORDOVA ESQUINA VALPARAISO S/N, FRACCIONAMIENTO VALLE DORADO, C.P. 54091, MUNICIPIO DE TLALNEPANTLA DE BAZ, ESTADO DE MEXICO.",
   "unidad": "1.- 6° AGRUPAMIENTO DE LA XXVI REGION VALLE DORADO",
   "tipo_construccion": "EDIFICIO (1 PLANTA)",
@@ -2107,7 +2107,7 @@
  },
  {
   "cvo": 164,
-  "municipio": "Tlalnepantla de Baz",
+  "municipio": "TLALNEPANTLA",
   "ubicacion": "CALLE ISLA SAN JUAN DE ULLOA S/N, COLONIA PRADO VALLEJO, C.P. 54170, MUNICIPIO DE TLALNEPANTLA DE BAZ, ESTADO DE MEXICO.",
   "unidad": "1.- 4° AGRUPAMIENTO DE LA XXVI REGION TENAYUCA",
   "tipo_construccion": "EDIFICIO (1 PLANTA)",
@@ -2120,7 +2120,7 @@
  },
  {
   "cvo": 165,
-  "municipio": "Tlatlaya",
+  "municipio": "TLATLAYA",
   "ubicacion": "CARRETERA TLATLAYA- SAN PEDRO LIMON, MUNICIPIO DE TLATLAYA, ESTADO DE MEXICO.",
   "unidad": "DESOCUPADO POR DELINCUENCIA ORGANIZADA",
   "tipo_construccion": "MODULO DE VIGILANCIA (TECALLI)",
@@ -2133,7 +2133,7 @@
  },
  {
   "cvo": 166,
-  "municipio": "Tlatlaya",
+  "municipio": "TLATLAYA",
   "ubicacion": "KILOMETRO 39 DE LA CARRETERA LOS CUERVOS-ARCELIA, COMUNIDAD DE CUADRILLA NUEVA, C.P. 51584, MUNICIPIO DE TLATLAYA, ESTADO DE MEXICO.",
   "unidad": "DESOCUPADO POR DELINCUENCIA ORGANIZADA",
   "tipo_construccion": "MODULO DE VIGILANCIA (TECALLI)",
@@ -2146,7 +2146,7 @@
  },
  {
   "cvo": 167,
-  "municipio": "Toluca",
+  "municipio": "TOLUCA",
   "ubicacion": "CALLE 28 DE OCTUBRE ESQUINA FIDEL VELAZQUEZ, COLONIA VERTICE, C.P. 50150, MUNICIPIO DE TOLUCA, ESTADO DE MEXICO.",
   "unidad": "1.- OFICINAS CENTRALES DE LA DIRECCION GENERAL DE SEGURIDAD PUBLICA Y TRANSITO 2.- UNIDAD DE SERVICIOS MEDICOS Y APOYO A LA POBLACION 3.- ESTADO MAYOR 4.- COMANDO CENTRAL OPERATIVO",
   "tipo_construccion": "",
@@ -2159,7 +2159,7 @@
  },
  {
   "cvo": 168,
-  "municipio": "Toluca",
+  "municipio": "TOLUCA",
   "ubicacion": "AVENIDA JOSE VICENTE VILLADA NO. 420, COLONIA FRANCISCO MURGUIA (EL RANCHITO), C.P. 50130, MUNICIPIO DE TOLUCA, ESTADO DE MEXICO.",
   "unidad": "1.- DIRECCION DE POLICIA DE TRANSITO 2.- AGRUPAMIENTO DE TRANSITO TOLUCA 3.- PRIMER AGRUPAMIENTO DE LA I REGION",
   "tipo_construccion": "EDIFICIO (2 O MAS PLANTAS)",
@@ -2172,7 +2172,7 @@
  },
  {
   "cvo": 169,
-  "municipio": "Toluca",
+  "municipio": "TOLUCA",
   "ubicacion": "BOULEVARD ALFREDO DEL MAZO VELEZ Y CALLE INDUSTRIA MINERA, SAN LORENZO TEPATITLAN, C.P. 50010, MUNICIPIO DE TOLUCA, ESTADO DE MEXICO.",
   "unidad": "1.- AGRUPAMIENTO A.S.T.R.O.S. TOLUCA, DE LA I REGION",
   "tipo_construccion": "MODULO DE VIGILANCIA (TECALLI)",
@@ -2185,7 +2185,7 @@
  },
  {
   "cvo": 170,
-  "municipio": "Toluca",
+  "municipio": "TOLUCA",
   "ubicacion": "BOULEVARD SOLIDARIDAD LAS TORRES ESQUINA AVENIDA DEL VOLCAN, C.P. 50025, MUNICIPIO DE TOLUCA, ESTADO DE MEXICO.",
   "unidad": "1.- 4° AGRUPAMIENTO I REGION",
   "tipo_construccion": "MODULO DE VIGILANCIA (TECALLI)",
@@ -2198,7 +2198,7 @@
  },
  {
   "cvo": 171,
-  "municipio": "Toluca",
+  "municipio": "TOLUCA",
   "ubicacion": "CALLE 4 SUR INTERIOR PARQUE INDUSTRIAL TOLUCA 2000, C.P. 50233, MUNICIPIO DE TOLUCA, ESTADO DE MEXICO.",
   "unidad": "1.- COMANDANCIA DE LA IV REGION",
   "tipo_construccion": "CASA",
@@ -2211,7 +2211,7 @@
  },
  {
   "cvo": 172,
-  "municipio": "Toluca",
+  "municipio": "TOLUCA",
   "ubicacion": "CALLE GUILLERMO MARCONI S/N COLONIA CIENTIFICOS, C.P. 50075, MUNICIPIO DE TOLUCA, ESTADO DE MEXICO.",
   "unidad": "1.- 5° AGRUPAMIENTO REGION I",
   "tipo_construccion": "MODULO DE VIGILANCIA (TECALLI)",
@@ -2224,7 +2224,7 @@
  },
  {
   "cvo": 173,
-  "municipio": "Toluca",
+  "municipio": "TOLUCA",
   "ubicacion": "CALLE JESUS CARRANZA 228, ESQ. JUAN RODRIGUEZ RESIDENCIAL COLON, COLONIA CIPRES TOLUCA, MEX.",
   "unidad": "1.- UNIDAD DE SERVICIOS ESPECIALES DE SEGURIDAD",
   "tipo_construccion": "EDIFICIO (1 PLANTA)",
@@ -2237,7 +2237,7 @@
  },
  {
   "cvo": 174,
-  "municipio": "Toluca",
+  "municipio": "TOLUCA",
   "ubicacion": "CALLE NICOLAS BRAVO NORTE NUMERO 703, COLONIA SANTA BARBARA, MUNICIPIO DE TOLUCA",
   "unidad": "1.- UNIDAD DE SERVICIOS ESPECIALES DE SEGURIDAD",
   "tipo_construccion": "EDIFICIO (1 PLANTA)",
@@ -2250,7 +2250,7 @@
  },
  {
   "cvo": 175,
-  "municipio": "Toluca",
+  "municipio": "TOLUCA",
   "ubicacion": "CALLE URAWA S/N, COLONIA SECTRO PROGRESO, C.P. 50150, MUNICIPIO DE TOLUCA DE LERDO, ESTADO DE MEXICO.",
   "unidad": "1.- 3° AGRUPAMIENTO DE LA I REGION.",
   "tipo_construccion": "EDIFICIO (1 PLANTA)",
@@ -2263,7 +2263,7 @@
  },
  {
   "cvo": 176,
-  "municipio": "Toluca",
+  "municipio": "TOLUCA",
   "ubicacion": "CALLE VALENTIN GOMEZ FARIAS S/N, COLONIA VERTICE, C.P. 50090, MUNICIPIO DE TOLUCA, ESTADO DE MEXICO.",
   "unidad": "1.- EDIFICIO DEL AGRUPAMIENTO FUERZA DE ACCION Y REACCION F.A.R. I 2.- AGRUPAMIENTO A.F.F.E. 3.- COMEDOR OPERATIVO FAR I",
   "tipo_construccion": "EDIFICIO (2 O MAS PLANTAS)",
@@ -2276,7 +2276,7 @@
  },
  {
   "cvo": 177,
-  "municipio": "Toluca",
+  "municipio": "TOLUCA",
   "ubicacion": "CAMINO VIEJO A LA MAGDALENA S/N, COLONIA EX RANCHO CUAUHTEMOC, C.P. 50200, MUNICIPIO DE TOLUCA, ESTADO DE MEXICO.",
   "unidad": "1.- COMANDANCIA DE LA I REGION 2.- 2° AGRUPAMIENTO, I REGION",
   "tipo_construccion": "EDIFICIO (1 PLANTA)",
@@ -2289,7 +2289,7 @@
  },
  {
   "cvo": 178,
-  "municipio": "Tonanitla",
+  "municipio": "TONANITLA",
   "ubicacion": "AV. 16 DE SEPTIEMBRE S/N, COLONIA CENTRO, C.P. 55785, TONANITLA",
   "unidad": "1.- COMANDANCIA DE LA SUBDIRECCION OPERATIVA REGIONAL ZUMPANGO 2.- 3 AGRUPAMIENTO TONANITLA, XXXIV REGION. 3.- G.I.P. XII ZUMPANGO 4.- OFICINA AUXILIAR DE RECURSOS HUMANOS ZUMPANGO 5.- COMEDOR OPERATIVO ZUMPANGO",
   "tipo_construccion": "EDIFICIO (2 O MAS PLANTAS)",
@@ -2328,7 +2328,7 @@
  },
  {
   "cvo": 181,
-  "municipio": "Tultepec",
+  "municipio": "TULTEPEC",
   "ubicacion": "CIRCUITO EXTERIOR MEXIQUENSE KILOMETRO 24+316 DIRECCION NORTE SUR, C.P. 55963, MUNICIPIO DE TULTEPEC, ESTADO DE MEXICO.",
   "unidad": "1.- 2° AGRUPAMIENTO TULTEPEC, REGION XXXV, SUBDIRECCION CIRCUITO EXTERIOR MEXIQUENSE",
   "tipo_construccion": "EDIFICIO 1 PLANTA",
@@ -2341,7 +2341,7 @@
  },
  {
   "cvo": 182,
-  "municipio": "Tultitlan",
+  "municipio": "TULTITLAN",
   "ubicacion": "BOULEVARD REFORMA NO. 23, COLONIA JARDINES DE LA CAÑADA, C.P. 54958, MUNICIPIO DE TULTITLAN, ESTADO DE MEXICO.",
   "unidad": "1.- AGRUPAMIENTO A.S.E.S. XI DE LA XXX REGION",
   "tipo_construccion": "MODULO DE VIGILANCIA (TECALLI)",
@@ -2354,7 +2354,7 @@
  },
  {
   "cvo": 183,
-  "municipio": "Valle de Bravo",
+  "municipio": "VALLE DE BRAVO",
   "ubicacion": "AV. JOSE GUADARRAMA, S/N, VILLA DE COLORINES, C.P. 51230, MUNICIPIO DE VALLE DE BRAVO",
   "unidad": "1.- COMANDANCIA DE LA XVII REGION 2.- 1° AGRUPAMIENTO XVII REGION OTZOLOAPAN 3.- 2° AGRUPAMIENTO AMANALCO",
   "tipo_construccion": "EDIFICIO (1 PLANTA)",
@@ -2367,7 +2367,7 @@
  },
  {
   "cvo": 184,
-  "municipio": "Valle de Bravo",
+  "municipio": "VALLE DE BRAVO",
   "ubicacion": "AVENIDA DEL CARMEN, ESQUINA AVENIDA DE LOS ROSALES, LOCALIDAD DE AVANDARO, C.P. 51200, MUNICIPIO DE VALLE DE BRAVO, ESTADO DE MEXICO.",
   "unidad": "1.- ASES VI VALLE DE BRAVO (TECALLI AVANDARO)",
   "tipo_construccion": "MODULO DE VIGILANCIA (TECALLI)",
@@ -2380,7 +2380,7 @@
  },
  {
   "cvo": 185,
-  "municipio": "Valle de Bravo",
+  "municipio": "VALLE DE BRAVO",
   "ubicacion": "AVENIDA FRAY GREGORIO JIMENEZ DE LA CUENCA, NO. 119, BARRIO DE SAN ANTONIO, C.P. 51200, MUNICIPIO DE VALLE DE BRAVO, ESTADO DE MEXICO.",
   "unidad": "1.- COMANDANCIA DEL AREA REGIONAL VALLE DE BRAVO 2.- COMANDANCIA SUBDIRECCION OPERATIVA REGIONAL VALLE DE BRAVO 3.- COMANDANCIA XVI REGION 4.- AGRUPAMIENTO F.A.R.",
   "tipo_construccion": "EDIFICIO (2 O MAS PLANTAS)",
@@ -2393,7 +2393,7 @@
  },
  {
   "cvo": 186,
-  "municipio": "Valle de Bravo",
+  "municipio": "VALLE DE BRAVO",
   "ubicacion": "CARRETERA FEDERAL MONUMENTO VALLE DE BRAVO KILOMETRO 32+500. COMUNIDAD DEL ARCO, C.P. 51200, MUNICIPIO DE VALLE DE BRAVO, ESTADO DE MEXICO.",
   "unidad": "1.- 1° AGRUPAMIENTO EL ARCO",
   "tipo_construccion": "MODULO DE VIGILANCIA (TECALLI)",
@@ -2406,7 +2406,7 @@
  },
  {
   "cvo": 187,
-  "municipio": "Valle de Bravo",
+  "municipio": "VALLE DE BRAVO",
   "ubicacion": "KILOMETRO 28+500 DE LA CARRETERA ESTATAL SAN FRANCISCO OXTOTILPAN-VALLE DE BRAVO, COMUNIDAD DE MESA DE JAIMES, C.P. 51200, MUNICIPIO DE VALLE DE BRAVO, ESTADO DE MEXICO.",
   "unidad": "1.- 3° AGRUPAMIENTO CASAS VIEJAS",
   "tipo_construccion": "MODULO DE VIGILANCIA (TECALLI)",
@@ -2419,7 +2419,7 @@
  },
  {
   "cvo": 188,
-  "municipio": "Valle de Chalco Solidaridad",
+  "municipio": "VALLE DE CHALCO",
   "ubicacion": "AVENIDA HERMENEGILDO GALEANA ESQUINA CALLE PONIENTE 15, COLONIA MARÍA ISABEL, MUNICIPIO DE VALLE DE CHALCO SOLIDARIDAD, ESTADO DE MÉXICO.",
   "unidad": "1.- 1° AGRUPAMIENTO PUENTE BLANCO DE LA XLVI VALLE DE CHALCO SOLIDARIDAD",
   "tipo_construccion": "MODULO DE VIGILANCIA (TECALLI)",
@@ -2432,7 +2432,7 @@
  },
  {
   "cvo": 189,
-  "municipio": "Villa del Carbon",
+  "municipio": "VILLA DEL CARBON",
   "ubicacion": "AVENIDA ELISEO GONZALEZ S/N, COLONIA SAN JERONIMO ZACAPEXCO, C.P. 54310, MUNICIPIO DE VILLA DEL CARBON, ESTADO DE MEXICO.",
   "unidad": "1.- 4° AGRUPAMIENTO VILLA DEL CARBON, XXII REGION",
   "tipo_construccion": "MODULO DE VIGILANCIA (TECALLI)",
@@ -2445,7 +2445,7 @@
  },
  {
   "cvo": 190,
-  "municipio": "Villa Guerrero",
+  "municipio": "VILLA GUERRERO",
   "ubicacion": "CARRETERA FEDERAL PALMILLAS AXIXINTLA KILOMETRO 57+500, MUNICIPIO DE VILLA GUERRERO, ESTADO DE MEXICO.",
   "unidad": "1.- 3° AGRUPAMIENTO DE LA X REGION",
   "tipo_construccion": "MODULO DE VIGILANCIA (TECALLI)",
@@ -2458,7 +2458,7 @@
  },
  {
   "cvo": 191,
-  "municipio": "Villa Victoria",
+  "municipio": "VILLA VICTORIA",
   "ubicacion": "200 MTS. DE LA DESVIACION A LA GAVIA, CARRETERA FEDERAL TOLUCA - ZITACUARO, COLONIA DR. GUSTAVO BAZ, KILOMETRO 36+000, MUNICIPIO DE VILLA VICTORIA, ESTADO DE MEXICO.",
   "unidad": "1.- AGRUPAMIENTO G.I.P. VII VILLA VICTORIA",
   "tipo_construccion": "MODULO DE VIGILANCIA (TECALLI)",
@@ -2471,7 +2471,7 @@
  },
  {
   "cvo": 192,
-  "municipio": "Villa Victoria",
+  "municipio": "VILLA VICTORIA",
   "ubicacion": "CALLE GUADALUPE VICTORIA ESQUINA CALLE EL ENCINO, COLONIA CENTRO, C.P. 50690, MUNICIPIO DE VILLA VICTORIA, ESTADO DE MEXICO.",
   "unidad": "1.- COMANDANCIA DE LA SUBDIRECCION OPERATIVA REGIONAL VILLA VICTORIA 2.- 1° AGRUPAMIENTO VILLA VICTORIA",
   "tipo_construccion": "EDIFICIO (1 PLANTA)",
@@ -2484,7 +2484,7 @@
  },
  {
   "cvo": 193,
-  "municipio": "Xalatlaco",
+  "municipio": "XALATLACO",
   "ubicacion": "BOULEVARD ISABEL DE MOCTEZUMA, KILOMETRO 1 +800, A LA ALTURA DEL PARAJE \"INDUSTRIAS PENHAS\" C.P. 52600, MUNICIPIO DE XALATLACO, ESTADO DE MEXICO.",
   "unidad": "1.- 2° AGRUPAMIENTO, DE LA V REGION",
   "tipo_construccion": "MODULO DE VIGILANCIA (TECALLI)",
@@ -2497,7 +2497,7 @@
  },
  {
   "cvo": 194,
-  "municipio": "Xonacatlan",
+  "municipio": "XONACATLAN",
   "ubicacion": "PARQUE PRINCIPAL DEL POBLADO, COLONIA CENTRO, MUNICIPIO DE XONACATLÁN, ESTADO DE MÉXICO.",
   "unidad": "1° AGRUPAMIENTO OTZOLOTEPEC",
   "tipo_construccion": "EDIFICIO 1 PLANTA",
@@ -2510,7 +2510,7 @@
  },
  {
   "cvo": 195,
-  "municipio": "Zacualpan",
+  "municipio": "ZACUALPAN",
   "ubicacion": "CALLE MELCHOR OCAMPO, COLONIA CENTRO, MUNICIPIO DE ZACUALPAN, ESTADO DE MEXICO.",
   "unidad": "DESOCUPADO POR DELINCUENCIA ORGANIZADA",
   "tipo_construccion": "MODULO DE VIGILANCIA (TECALLI)",
@@ -2523,7 +2523,7 @@
  },
  {
   "cvo": 196,
-  "municipio": "Zinacantepec",
+  "municipio": "ZINACANTEPEC",
   "ubicacion": "CIRCUITO MIGUEL DE LA MADRID S/N, RANCHO LAS ANIMAS, POBLADO DE SAN ANTONIO ACAHUALCO. C.P. 51350, MUNICIPIO DE ZINACANTEPEC, ESTADO DE MEXICO.",
   "unidad": "1.- COMANDANCIA DE LA COORDINACION DE SUBDIRECCIONES VALLE TOLUCA 2. COMANDANCIA DE LA UNIDAD DE MONTADOS, CANINOS Y GAMA 3.- 1° AGRUPAMIENTO MONTADO ZINACANTEPEC 4.- 2° AGRUPAMIENTO VALLE DE BRAVO 5.- 3ER. AGRUPAMIENTO MONTADO JILOTEPEC 6.- 5° AGRUPAMIENTO CANINO ZINACANTEPEC 7.- COMANDANCIA DE LA III REGION 8.- AGRUPAMIENTO G.I.P. I - III REGION ZINACANTEPEC",
   "tipo_construccion": "EDIFICIO (1 PLANTA)",
@@ -2536,7 +2536,7 @@
  },
  {
   "cvo": 197,
-  "municipio": "Zinacantepec",
+  "municipio": "ZINACANTEPEC",
   "ubicacion": "VIALIDAD ADOLFO LOPEZ MATEOS, ENTRONQUE CON 16 DE SEPTIEMBRE, SAN LUIS MEXTEPEC, C.P. 51350, MUNICIPIO DE ZINACANTEPEC, ESTADO DE MEXICO.",
   "unidad": "1.- 1° AGRUPAMIENTO ZINACANTEPEC, DE LA III REGION",
   "tipo_construccion": "MODULO DE VIGILANCIA (TECALLI)",
@@ -2549,7 +2549,7 @@
  },
  {
   "cvo": 198,
-  "municipio": "Zumpango",
+  "municipio": "ZUMPANGO",
   "ubicacion": "CALLE BARRANCA DE LA ESTRELLA, S/N BARRIO SAN LORENZO, C.P. 55620, MUNICIPIO DE ZUMPANGO",
   "unidad": "1.- 1° AGRUPAMIENTO ZUMPANGO, XXXIII REGION",
   "tipo_construccion": "MODULO DE VIGILANCIA (TECALLI)",
@@ -2562,7 +2562,7 @@
  },
  {
   "cvo": 199,
-  "municipio": "Zumpango",
+  "municipio": "ZUMPANGO",
   "ubicacion": "CALLE NEFERTITI S/N, COLONIA MAGISTERIAL, BARRIO DE SANTIAGO, C.P. 55600, CARRETERA ZUMPANGO MELCHOR OCAMPO S/N.",
   "unidad": "1.- 1° AGRUPAMIENTO ZUMPANGO, XXXIII REGION",
   "tipo_construccion": "MODULO DE VIGILANCIA (TECALLI)",

@@ -19,85 +19,78 @@ python src/etl_sigeo.py
 python src/build_dashboard.py
 ```
 
-El primer comando lee los Excel de `insumos/`, calcula los cuatro módulos y
-escribe `analisis/*.json` más las tablas de `database/sigeo_db.sqlite`.
+El primer comando lee los Excel de `insumos/`, calcula los indicadores y escribe
+`analisis/*.json` más las tablas de `database/sigeo_db.sqlite`.
 El segundo ensambla `index.html`, un archivo único y autocontenido que se abre
 desde GitHub Pages o desde una memoria USB en la sala de juntas, sin servidor.
 
 ---
 
-## Módulos
+## Organización
 
-### 1. Mapa geoespacial
-Homicidios corroborados, llamadas 911 con violencia, inventario de bases DGSPYT,
-mapa de calor y sectores de zona ciega, sobre el mismo esquema de capas base que
-Windows Maps: **Carretera**, **Vista aérea** e **Híbrido**. Al seleccionar un
-evento, la ficha muestra hechos, acciones SSEM y la cobertura de patrullaje real
-del punto (base más cercana, distancia y personal adscrito).
+El tablero se organiza por **decisión**, no por módulo técnico. Seis vistas en tres
+bloques, en el orden en que se usan en una reunión de mandos.
 
-### 2. Extractor NLP de ubicaciones — formato Windows Maps
-Resuelve el problema planteado en la reunión de mandos: *«la tabla carece de
-datos suficientes, algunas traen descripción — encontrar la forma de que un
-sistema lo lea»*.
+### Decidir
 
-Lee los tres campos que la cabina sí captura (`DIRECCIÓN` en formato
-`;CALLE|COLONIA`, `REFERENCIA DE UBICACIÓN` y `NOTAS` en lenguaje natural),
-extrae vialidad, número, cruce, entre-calles, asentamiento y punto de referencia,
-y arma la cadena que Windows Maps resuelve, más los URI nativos `bingmaps:`
-(abrir en la app) y `ms-drive-to:` (despachar unidad).
+**01 · Panorama** — la portada del Director. Cuatro cifras del corte y, debajo,
+*qué atender en esta reunión*: los sectores donde falta cobertura, los sectores
+donde ya hay despliegue y aun así hay violencia, y los expedientes que conviene
+pedir a la FGJEM. Cada bloque trae el acuerdo sugerido.
 
-Incluye una consola en vivo para el operador de cabina.
+**02 · Territorio** — mapa y detector de zonas ciegas en una sola pantalla, porque
+son la misma pregunta. Capas base al estilo Windows Maps (Carretera, Vista aérea,
+Híbrido), capas operativas conmutables (homicidios, llamadas, bases, calor,
+sectores) y una lista de sectores a la derecha; al hacer clic el mapa vuela al
+sector y abre su evidencia.
 
-**Resultado sobre el corte actual:** de las 4,219 llamadas sin coordenada,
-3,756 son mudas, colgadas, de broma o transferidas y no contienen descripción
-alguna. El universo recuperable es de **463**; el extractor resuelve **136**
-(29.4%) con confianza alta o media. En el subconjunto que importa —llamadas con
-violencia sin coordenada— la recuperación es de **25 de 27 (92.6%)**.
-
-El extractor no inventa ubicaciones: sin señal suficiente marca confianza
-`NULA` y no emite consulta.
-
-Implementación: `src/nlp_geocoder.py` (lote) y su puerto JavaScript dentro del
-tablero (vivo). Ambos aplican las mismas reglas y niveles de confianza.
-
-### 3. Detector de zonas ciegas de patrullaje
-*«¿Por qué no se patrulla ahí?»* convertido en métrica reproducible.
-
-El territorio se divide en celdas de ~2.2 km. En cada una se suma la violencia
-registrada (homicidio corroborado ×10 y cada llamada 911 según su gravedad), se
-mide la distancia a la base DGSPYT **en uso** más cercana del inventario de
-inmuebles y se contabiliza el personal adscrito a 3 km:
+*«¿Por qué no se patrulla ahí?»* se calcula así: el territorio se divide en celdas
+de ~2.2 km; en cada una se suma la violencia registrada (homicidio corroborado ×10
+y cada llamada 911 según su gravedad), se mide la distancia a la base DGSPYT **en
+uso** más cercana y se cuenta el personal adscrito a 3 km.
 
 ```
-índice_ceguera = violencia × (1 + min(dist_base, 6)/2) × 1/(1 + personal_3km/150)
+índice_ceguera = violencia × (1 + mín(dist_base, 6)/2) × 1/(1 + personal_3km/150)
 ```
-
-Cada sector recibe un diagnóstico, y cada diagnóstico exige una decisión distinta:
 
 | Diagnóstico | Situación | Decisión |
 |---|---|---|
 | `DESATENDIDO` | Violencia sin despliegue a distancia útil | Extender cobertura o reasignar cuadrante |
-| `SATURADO` | Base y personal a menos de 1.5 km y aun así concentra violencia | Revisar efectividad y horarios del patrullaje, no sumar inmuebles |
+| `SATURADO` | Base y personal a menos de 1.5 km y aun así concentra violencia | Revisar efectividad y horarios; sumar inmuebles no resuelve |
 | `MIXTO` | Cobertura intermedia | Verificar recorridos y tiempos de respuesta |
 
-La tabla se ordena por brecha de cobertura o por concentración de violencia, y
-cada sector expone su evidencia: incidentes registrados, homicidios del sector y
-si las acciones SSEM asientan ausencia de cámaras de videovigilancia.
+**03 · Coordinaciones** — la herramienta para la mesa con coordinadores
+territoriales. Ficha por municipio con homicidios, llamadas violentas, bases,
+personal, distancia media al despliegue y sectores con brecha, ordenada por índice
+de presión. Al hacer clic en la fila se despliega cómo se compone ese número.
 
-### 4. Auditoría algorítmica de decesos dudosos, suicidios y no localizados
-Conforme al apunte *«Suicidio → 25… + identificar, desaparecidos, homicidios
-dolosos. Investigar si son suicidios»*.
+```
+índice_presión = (HD×10 + llamadas violentas)
+                 × (1 + mín(dist media, 6)/4)
+                 × (1 + sectores desatendidos × 0.25)
+```
 
-La cohorte son los **30 reportes reales** del corte C5 clasificados como
-suicidio, tentativa o amenaza de suicidio, persona tirada en vía pública —con y
-sin huellas de violencia—, persona no localizada y homicidio.
+> **Qué mide y qué no.** Mide condiciones del territorio. **No mide el desempeño de
+> una persona:** los insumos no contienen asignación nominal de mando, turnos ni
+> recorridos, así que atribuir un resultado a un coordinador específico no se
+> sostiene con estos datos. Sirve para abrir la conversación con evidencia, no para
+> calificar gente.
 
-Cada caso se puntúa con indicadores explícitos sobre el texto de cabina y la
-geometría del hecho: mención de arma de fuego, indicios de ocultamiento,
-participación de terceros, antecedente de violencia de pareja, proximidad
-(≤1.5 km) a un homicidio corroborado, proximidad espacio-temporal a otro reporte
-por arma de fuego, y también indicadores de descarte (persona localizada,
-atención médica con persona consciente, estado etílico).
+### Investigar
+
+**04 · Casos a revisar** — auditoría de decesos dudosos, suicidios y personas no
+localizadas, conforme al apunte *«Suicidio → 25… + identificar, desaparecidos,
+homicidios dolosos. Investigar si son suicidios»*.
+
+La cohorte son los **30 reportes reales** del corte C5 clasificados como suicidio,
+tentativa o amenaza de suicidio, persona tirada en vía pública —con y sin huellas
+de violencia—, persona no localizada y homicidio. Cada caso se puntúa con
+indicadores explícitos sobre el texto de cabina y la geometría del hecho: mención
+de arma de fuego, indicios de ocultamiento, participación de terceros, antecedente
+de violencia de pareja, proximidad (≤1.5 km) a un homicidio corroborado,
+proximidad espacio-temporal a otro reporte por arma de fuego, y también
+indicadores de descarte (persona localizada, atención médica con persona
+consciente, estado etílico).
 
 > **Límite del módulo.** El resultado es una **prioridad de revisión documental**,
 > no un dictamen pericial. No afirma la mecánica de la muerte: esa determinación
@@ -105,16 +98,49 @@ atención médica con persona consciente, estado etílico).
 > indicadores exactos que elevaron o bajaron su prioridad, para que el mando
 > audite el criterio y no la conclusión.
 
-### 5. Reporte ejecutivo para la reunión de mandos C5
-Ficha imprimible (hoja de estilo de impresión incluida) con incidencia por
-municipio, cobertura de patrullaje, resultados de geocodificación, casos de
-prioridad alta y acuerdos propuestos. Todas las cifras provienen del pipeline.
+### Operar
+
+**05 · Ubicaciones** — extractor NLP en formato Windows Maps. Resuelve el problema
+planteado en la reunión: *«la tabla carece de datos suficientes, algunas traen
+descripción — encontrar la forma de que un sistema lo lea»*.
+
+Lee los tres campos que la cabina sí captura (`DIRECCIÓN` en formato
+`;CALLE|COLONIA`, `REFERENCIA DE UBICACIÓN` y `NOTAS` en lenguaje natural), extrae
+vialidad, número, cruce, entre-calles, asentamiento y punto de referencia, y arma
+la cadena que Windows Maps resuelve, más los URI nativos `bingmaps:` (abrir en la
+app) y `ms-drive-to:` (despachar unidad). Incluye consola en vivo para el operador.
+
+**Resultado sobre el corte actual:** de las 4,219 llamadas sin coordenada, 3,756
+son mudas, colgadas, de broma o transferidas y no contienen descripción alguna. El
+universo recuperable es de **463**; el extractor resuelve **136** (29.4%) con
+confianza alta o media. En el subconjunto que importa —llamadas con violencia sin
+coordenada— la recuperación es de **25 de 27 (92.6%)**.
+
+El extractor no inventa ubicaciones: sin señal suficiente marca confianza `NULA` y
+no emite consulta. Implementación en `src/nlp_geocoder.py` (lote) y su puerto
+JavaScript dentro del tablero (vivo); ambos aplican las mismas reglas.
+
+**06 · Informe de mandos** — hoja ejecutiva imprimible con hoja de estilo de
+impresión propia: presión territorial, cobertura y zonas ciegas, geocodificación,
+casos de prioridad alta y acuerdos propuestos. Todas las cifras provienen del
+pipeline.
+
+---
+
+## Diseño
+
+Interfaz institucional sobria, no de maqueta: navegación lateral por decisión,
+tipografía con numeración tabular, tablas densas y paleta guinda institucional.
+Modo claro por defecto —lee mejor en sala y en impresión— con modo oscuro para el
+videowall del C5.
 
 ---
 
 ## Protección de datos personales
 
-El tablero se publica en Internet abierto. Las notas de cabina y el desarrollo
+El acceso al tablero es interno, por enlace. Aun así conviene mantener la
+supresión activa: un repositorio público en GitHub Pages es indexable por
+buscadores aunque nadie comparta el enlace, y las notas de cabina y el desarrollo
 de hechos contienen datos personales y sensibles: nombres de víctimas y de
 personas desaparecidas, edad, estatura, tatuajes, vestimenta, teléfonos y claves
 de operador.
@@ -136,7 +162,7 @@ python src/etl_sigeo.py --sin-anonimizar
 
 ```
 src/
-  etl_sigeo.py            Pipeline: Excel -> JSON + SQLite. Cálculo de los 4 módulos.
+  etl_sigeo.py            Pipeline: Excel -> JSON + SQLite. Todos los cálculos.
   nlp_geocoder.py         Extractor NLP de ubicaciones en formato Windows Maps.
   anonimizar.py           Supresión de datos personales para publicación.
   build_dashboard.py      Ensamblador del tablero de archivo único.

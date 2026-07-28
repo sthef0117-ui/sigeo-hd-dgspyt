@@ -1,5 +1,5 @@
 {
- "generado": "2026-07-28 11:03",
+ "generado": "2026-07-28 11:57",
  "corte": "Homicidios dolosos julio 2026 · Llamadas C5 26-27 julio 2026",
  "hd": {
   "eventos": 56,
@@ -144,7 +144,7 @@
    },
    {
     "sector_id": "SEC-979_-4960",
-    "municipio": "TLALNEPANTLA DE BAZ",
+    "municipio": "TLALNEPANTLA",
     "indice_ceguera": 49.5,
     "dist_base_km": 0.99,
     "eventos_hd": 2,
@@ -160,7 +160,7 @@
    },
    {
     "sector_id": "SEC-972_-4963",
-    "municipio": "NAUCALPAN DE JUAREZ",
+    "municipio": "NAUCALPAN",
     "indice_ceguera": 48.5,
     "dist_base_km": 1.81,
     "eventos_hd": 0,
@@ -204,5 +204,55 @@
    ]
   ]
  },
+ "territorio_top": [
+  {
+   "municipio": "ECATEPEC",
+   "indice_presion": 213.8,
+   "hd_eventos": 9,
+   "llamadas_violentas": 60,
+   "sectores_desatendidos": 0,
+   "personal_total": 978
+  },
+  {
+   "municipio": "TOLUCA",
+   "indice_presion": 166.9,
+   "hd_eventos": 0,
+   "llamadas_violentas": 89,
+   "sectores_desatendidos": 1,
+   "personal_total": 897
+  },
+  {
+   "municipio": "NAUCALPAN",
+   "indice_presion": 153.1,
+   "hd_eventos": 6,
+   "llamadas_violentas": 44,
+   "sectores_desatendidos": 0,
+   "personal_total": 318
+  },
+  {
+   "municipio": "CHIMALHUACAN",
+   "indice_presion": 112.4,
+   "hd_eventos": 3,
+   "llamadas_violentas": 24,
+   "sectores_desatendidos": 1,
+   "personal_total": 371
+  },
+  {
+   "municipio": "CUAUTITLAN IZCALLI",
+   "indice_presion": 101.0,
+   "hd_eventos": 5,
+   "llamadas_violentas": 20,
+   "sectores_desatendidos": 0,
+   "personal_total": 265
+  },
+  {
+   "municipio": "NEZAHUALCOYOTL",
+   "indice_presion": 84.5,
+   "hd_eventos": 4,
+   "llamadas_violentas": 22,
+   "sectores_desatendidos": 0,
+   "personal_total": 536
+  }
+ ],
  "anonimizado": true
 }

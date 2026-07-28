@@ -117,6 +117,33 @@ def haversine_km(lat1, lng1, lat2, lng2):
     return 2 * r * math.asin(math.sqrt(a))
 
 
+# Los tres insumos escriben el mismo municipio de forma distinta: la tabla de
+# HD usa "ECATEPEC", la del 911 "ECATEPEC DE MORELOS" y el inventario de
+# inmuebles "Ecatepec de Morelos". Sin unificar, un municipio aparece partido
+# en dos y sus homicidios quedan separados de sus propias llamadas.
+SUFIJOS_MUNICIPIO = (
+    " DE MORELOS", " DE JUAREZ", " DE ZARAGOZA", " DE BAZ", " SOLIDARIDAD",
+)
+ALIAS_MUNICIPIO = {
+    "CIUDAD NEZAHUALCOYOTL": "NEZAHUALCOYOTL",
+    "NEZA": "NEZAHUALCOYOTL",
+    "CUAUTITLAN MEXICO": "CUAUTITLAN",
+}
+
+
+def municipio_canonico(nombre):
+    """Nombre unico de municipio para poder cruzar los tres insumos."""
+    n = _norm(nombre)
+    if not n or n in NULOS:
+        return ""
+    n = ALIAS_MUNICIPIO.get(n, n)
+    for sufijo in SUFIJOS_MUNICIPIO:
+        if n.endswith(sufijo):
+            n = n[: -len(sufijo)].strip()
+            break
+    return n
+
+
 def en_edomex(lat, lng):
     """Descarta coordenadas fuera del envolvente del Estado de Mexico."""
     return lat is not None and lng is not None and 18.2 <= lat <= 20.4 and -100.7 <= lng <= -98.3
@@ -137,7 +164,7 @@ def cargar_hd():
         lat, lng = a_float(fila[7]), a_float(fila[8])
         if not en_edomex(lat, lng):
             lat = lng = None
-        municipio = limpio(fila[4])
+        municipio = municipio_canonico(fila[4])
         colonia = limpio(fila[5])
         calle = limpio(fila[6])
         geo = geocodificar(municipio=municipio, colonia=colonia, calle=calle,
@@ -216,7 +243,7 @@ def cargar_911():
         lat, lng = a_float(fila[28]), a_float(fila[29])
         if not en_edomex(lat, lng):
             lat = lng = None
-        municipio = limpio(fila[9])
+        municipio = municipio_canonico(fila[9])
         direccion = limpio(fila[10])
         referencia = limpio(fila[27])
         notas = limpio(fila[14])
@@ -278,7 +305,7 @@ def cargar_bases():
 
         bases.append({
             "cvo": int(float(cvo)),
-            "municipio": limpio(fila[1]),
+            "municipio": municipio_canonico(fila[1]),
             "ubicacion": limpio(fila[3]) or limpio(fila[2]),
             "unidad": limpio(fila[5]) or limpio(fila[4]),
             "tipo_construccion": limpio(fila[12]),
@@ -598,7 +625,120 @@ def auditar_decesos(llamadas, hd):
 
 
 # --------------------------------------------------------------------------
-# 6. Resumen ejecutivo calculado
+# 6. Perfil territorial por municipio
+# --------------------------------------------------------------------------
+
+def perfil_territorial(hd, llamadas, bases, sectores):
+    """
+    Ficha por municipio para la mesa con coordinadores territoriales.
+
+    Del apunte de la reunion: "presionar a coordinadores territoriales,
+    perfilado de desempeno".
+
+    Importante sobre el alcance: esto mide CONDICIONES DEL TERRITORIO
+    (violencia registrada, despliegue disponible, brechas de cobertura), no
+    el desempeno individual de una persona. Los insumos no contienen
+    asignacion nominal de mando, turnos ni recorridos, asi que atribuir un
+    resultado a un coordinador especifico no se sostiene con estos datos.
+    Sirve para abrir la conversacion con evidencia, no para calificar gente.
+    """
+    perfiles = defaultdict(lambda: {
+        "hd_eventos": 0, "hd_victimas": 0, "llamadas_violentas": 0,
+        "arma_fuego": 0, "bases_en_uso": 0, "personal_total": 0,
+        "sectores_desatendidos": 0, "sectores_saturados": 0,
+        "distancias": [], "colonias_hd": Counter(), "hd_nocturnos": 0,
+    })
+
+    for h in hd:
+        p = perfiles[h["municipio"]]
+        p["hd_eventos"] += 1
+        p["hd_victimas"] += h["total_hd"]
+        if h["colonia"]:
+            p["colonias_hd"][h["colonia"]] += 1
+        mm = minutos(h["hora"])
+        if mm is not None and (mm >= 22 * 60 or mm < 6 * 60):
+            p["hd_nocturnos"] += 1
+
+    for l in llamadas:
+        if l["peso_violencia"] <= 0 or not l["municipio"]:
+            continue
+        p = perfiles[l["municipio"]]
+        p["llamadas_violentas"] += 1
+        if l["familia"] == "arma_fuego":
+            p["arma_fuego"] += 1
+
+    # El inventario de inmuebles escribe el municipio en otra caja tipografica
+    # y a veces con sufijo ("Ecatepec de Morelos" vs "ECATEPEC").
+    def clave(nombre):
+        return _norm(nombre).replace(" DE MORELOS", "").replace(" DE JUAREZ", "") \
+                            .replace(" DE ZARAGOZA", "").replace(" DE BAZ", "").strip()
+
+    indice_bases = defaultdict(list)
+    for b in bases:
+        if b["en_uso"]:
+            indice_bases[clave(b["municipio"])].append(b)
+
+    bases_geo = [b for b in bases if b["lat"] and b["en_uso"]]
+    for h in hd:
+        if not h["lat"]:
+            continue
+        d = min((haversine_km(h["lat"], h["lng"], b["lat"], b["lng"])
+                 for b in bases_geo), default=None)
+        if d is not None:
+            perfiles[h["municipio"]]["distancias"].append(d)
+
+    for s in sectores:
+        if s["clasificacion"] == "DESATENDIDO":
+            perfiles[s["municipio"]]["sectores_desatendidos"] += 1
+        elif s["clasificacion"] == "SATURADO":
+            perfiles[s["municipio"]]["sectores_saturados"] += 1
+
+    salida = []
+    for municipio, p in perfiles.items():
+        if not municipio:
+            continue
+        propias = indice_bases.get(municipio, [])
+        p["bases_en_uso"] = len(propias)
+        p["personal_total"] = sum(b["personal_total"] for b in propias)
+
+        carga = p["hd_eventos"] * 10 + p["llamadas_violentas"]
+        dist_media = (round(sum(p["distancias"]) / len(p["distancias"]), 2)
+                      if p["distancias"] else None)
+        hd_lejanos = sum(1 for d in p["distancias"] if d > 3)
+
+        # Indice de presion: carga de violencia, penalizada por lejania del
+        # despliegue y por sectores sin atender. Los tres componentes se
+        # muestran en la ficha para que el numero sea discutible.
+        factor_dist = 1.0 + (min(dist_media, 6.0) / 4.0 if dist_media else 0.5)
+        factor_gap = 1.0 + p["sectores_desatendidos"] * 0.25
+        indice_presion = round(carga * factor_dist * factor_gap, 1)
+
+        salida.append({
+            "municipio": municipio,
+            "hd_eventos": p["hd_eventos"],
+            "hd_victimas": p["hd_victimas"],
+            "hd_nocturnos": p["hd_nocturnos"],
+            "llamadas_violentas": p["llamadas_violentas"],
+            "arma_fuego": p["arma_fuego"],
+            "carga_violencia": carga,
+            "bases_en_uso": p["bases_en_uso"],
+            "personal_total": p["personal_total"],
+            "dist_media_hd_base_km": dist_media,
+            "hd_a_mas_de_3km": hd_lejanos,
+            "sectores_desatendidos": p["sectores_desatendidos"],
+            "sectores_saturados": p["sectores_saturados"],
+            "colonias_reincidentes": [c for c, n in p["colonias_hd"].most_common(3) if n > 1],
+            "indice_presion": indice_presion,
+        })
+
+    salida.sort(key=lambda x: x["indice_presion"], reverse=True)
+    for i, x in enumerate(salida, 1):
+        x["ranking"] = i
+    return salida
+
+
+# --------------------------------------------------------------------------
+# 7. Resumen ejecutivo calculado
 # --------------------------------------------------------------------------
 
 def resumen_ejecutivo(hd, llamadas, bases, sectores, auditoria):
@@ -828,7 +968,15 @@ def main():
     altas = sum(1 for a in auditoria if a['nivel_revision'] == 'ALTA')
     print(f"  casos auditados ............ {len(auditoria)} ({altas} prioridad alta)")
 
+    territorio = perfil_territorial(hd, llamadas, bases, sectores)
+    print(f"  municipios perfilados ...... {len(territorio)}")
+
     resumen = resumen_ejecutivo(hd, llamadas, bases, sectores, auditoria)
+    resumen["territorio_top"] = [
+        {k: t[k] for k in ("municipio", "indice_presion", "hd_eventos",
+                           "llamadas_violentas", "sectores_desatendidos",
+                           "personal_total")}
+        for t in territorio[:6]]
 
     # El tablero se distribuye como archivo unico (se abre desde USB en la
     # reunion de mandos), asi que la carga util va recortada: solo llamadas con
@@ -858,6 +1006,7 @@ def main():
     escribir_json("llamadas_911_sigeo.json", publicable(llamadas_tablero))
     escribir_json("bases_dgspyt.json", bases)
     escribir_json("zonas_ciegas.json", sectores)
+    escribir_json("perfil_territorial.json", territorio)
     escribir_json("auditoria_decesos.json", publicable(auditoria))
     escribir_json("resumen_ejecutivo.json", resumen)
     escribir_sqlite(hd, llamadas, bases, sectores, auditoria)
