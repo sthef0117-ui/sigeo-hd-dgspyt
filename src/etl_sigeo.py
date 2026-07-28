@@ -25,7 +25,7 @@ import sqlite3
 import sys
 import unicodedata
 from collections import Counter, defaultdict
-from datetime import datetime
+from datetime import datetime, timedelta
 from pathlib import Path
 
 import openpyxl
@@ -40,10 +40,8 @@ ANALISIS = RAIZ / "analisis"
 BD = RAIZ / "database" / "sigeo_db.sqlite"
 
 XLS_HD = INSUMOS / "excel" / "ACCIONES DE HD JULIO DGSPYT.xlsx"
-XLS_911 = (INSUMOS / "excel" /
-           "LLAMADAS_911_CORTE_DE_LAS_15.00_DEL_26_DE_JULIO_A_LAS_03.00_"
-           "DEL_27_DE_JULIO_DE_2026_LIMPIO.xlsx")
 XLS_BASES = INSUMOS / "whatsapp" / "INMUEBLES GENERAL DGSPYT.xlsx"
+# Los cortes de 911 se descubren solos en insumos/excel: ver cortes_911().
 
 NULOS = {"", "0", "0.0", "NONE", "NULL", "N/A", "NA", "SIN DATO",
          "SIN INFORMACION", "SIN DOCUMENTO", "SIN DOCUMENTACION"}
@@ -88,7 +86,17 @@ def a_hora(valor):
     return ""
 
 
+EPOCA_EXCEL = datetime(1899, 12, 30)
+
+
 def a_fecha(valor):
+    """
+    Normaliza las fechas de los Excel del C5.
+
+    La exportacion mezcla tres formatos en la misma columna: datetime real,
+    cadena "dd/mm/aaaa" y numero de serie de Excel ("46229"). Sin convertir el
+    serie, miles de registros quedaban con la fecha literal "46229".
+    """
     if valor is None:
         return ""
     if hasattr(valor, "strftime"):
@@ -99,6 +107,12 @@ def a_fecha(valor):
             return datetime.strptime(s, fmt).strftime("%Y-%m-%d")
         except ValueError:
             continue
+    try:  # numero de serie de Excel
+        serie = float(s)
+        if 20000 <= serie <= 80000:
+            return (EPOCA_EXCEL + timedelta(days=int(serie))).strftime("%Y-%m-%d")
+    except ValueError:
+        pass
     return s[:10]
 
 
@@ -229,16 +243,44 @@ def clasificar_incidente(descripcion):
     return 0.0, "no_violento"
 
 
-def cargar_911():
-    wb = openpyxl.load_workbook(XLS_911, read_only=True, data_only=True)
-    ws = wb["REPORTE C.A.LL.E 9-1-1"]
+def cortes_911():
+    """
+    Todos los cortes del C5 disponibles en insumos/excel/.
+
+    El C5 entrega la informacion en cortes de 12 horas, en archivos separados y
+    con folios que se repiten entre cortes contiguos. Se leen todos y se
+    deduplica por folio, para poder medir tendencia en lugar de una foto fija.
+    Los archivos temporales de Excel (~$) se ignoran.
+    """
+    rutas = sorted(p for p in (INSUMOS / "excel").glob("*.xlsx")
+                   if not p.name.startswith("~$")
+                   and ("911" in p.name or "9-1-1" in p.name))
+    return rutas
+
+
+def cargar_911(rutas=None):
+    rutas = rutas or cortes_911()
+    registros = []
+    vistos = set()
+    for ruta in rutas:
+        wb = openpyxl.load_workbook(ruta, read_only=True, data_only=True)
+        if "REPORTE C.A.LL.E 9-1-1" not in wb.sheetnames:
+            wb.close()
+            continue
+        registros += _leer_corte_911(wb["REPORTE C.A.LL.E 9-1-1"], ruta.name, vistos)
+        wb.close()
+    return registros
+
+
+def _leer_corte_911(ws, origen, vistos):
     registros = []
     # Fila 4 = encabezados; los datos inician en la 5.
     # Columnas de reportante (11,12,13) se descartan por proteccion de datos.
     for fila in ws.iter_rows(min_row=5, values_only=True):
         folio = limpio(fila[1])
-        if not folio:
+        if not folio or folio in vistos:
             continue
+        vistos.add(folio)
         incidente = limpio(fila[3])
         lat, lng = a_float(fila[28]), a_float(fila[29])
         if not en_edomex(lat, lng):
@@ -265,6 +307,7 @@ def cargar_911():
             "corporacion": limpio(fila[23]),
             "modo_recepcion": limpio(fila[25]),
             "codigo_cancelacion": limpio(fila[26]),
+            "corte": origen,
             "lat": lat,
             "lng": lng,
             "windows_maps_query": geo["query"],
@@ -274,13 +317,19 @@ def cargar_911():
             "uri_windows_maps": geo["uri_windows_maps"],
             "uri_ruta_despacho": geo["uri_ruta_despacho"],
         })
-    wb.close()
     return registros
 
 
 # --------------------------------------------------------------------------
 # 3. Inventario de inmuebles / bases DGSPYT
 # --------------------------------------------------------------------------
+
+_RE_REGION = re.compile(r"REGI[OÓ]N\s+([IVXL]+)")
+_RE_AGRUP = re.compile(r"\b(PRIMER|SEGUNDO|TERCER|CUARTO|QUINTO|SEXTO|[1-9])[°ºO]?\s*"
+                       r"(?:ER|O|DO|TO)?\s*AGRUPAMIENTO")
+_ORDINAL = {"PRIMER": "1", "SEGUNDO": "2", "TERCER": "3", "CUARTO": "4",
+            "QUINTO": "5", "SEXTO": "6"}
+
 
 def cargar_bases():
     wb = openpyxl.load_workbook(XLS_BASES, read_only=True, data_only=True)
@@ -303,8 +352,17 @@ def cargar_bases():
             except (TypeError, ValueError):
                 return 0
 
+        # La estructura estatal (region y agrupamiento) viene embebida en el
+        # nombre de la unidad usuaria: "1er Agrupamiento Acolman, XXXII Region".
+        unidad = limpio(fila[5]) or limpio(fila[4])
+        mr = _RE_REGION.search(_norm(unidad))
+        ma = _RE_AGRUP.search(_norm(unidad))
+        agr = ma.group(1) if ma else ""
+
         bases.append({
             "cvo": int(float(cvo)),
+            "region": mr.group(1) if mr else "",
+            "agrupamiento": _ORDINAL.get(agr, agr),
             "municipio": municipio_canonico(fila[1]),
             "ubicacion": limpio(fila[3]) or limpio(fila[2]),
             "unidad": limpio(fila[5]) or limpio(fila[4]),
@@ -625,6 +683,61 @@ def auditar_decesos(llamadas, hd):
 
 
 # --------------------------------------------------------------------------
+# 5b. Serie de tiempo
+# --------------------------------------------------------------------------
+
+def serie_temporal(llamadas, hd):
+    """
+    Tendencia horaria de la demanda de emergencia y diaria de homicidios.
+
+    Con un solo corte el tablero solo daba una foto fija. Al leer todos los
+    cortes disponibles se puede ver la curva: a que hora repunta la violencia
+    y como se comporta entre un turno y otro.
+    """
+    horas = defaultdict(lambda: {"total": 0, "violentas": 0, "arma_fuego": 0})
+    for l in llamadas:
+        if not l["fecha"] or not l["hora"]:
+            continue
+        clave = f"{l['fecha']} {l['hora'][:2]}"
+        h = horas[clave]
+        h["total"] += 1
+        if l["peso_violencia"] > 0:
+            h["violentas"] += 1
+        if l["familia"] == "arma_fuego":
+            h["arma_fuego"] += 1
+
+    serie_911 = [{"hora": k, **v} for k, v in sorted(horas.items())]
+
+    dias_hd = defaultdict(lambda: {"eventos": 0, "victimas": 0})
+    for d in hd:
+        if not d["fecha"]:
+            continue
+        x = dias_hd[d["fecha"]]
+        x["eventos"] += 1
+        x["victimas"] += d["total_hd"]
+    serie_hd = [{"fecha": k, **v} for k, v in sorted(dias_hd.items())]
+
+    # Perfil de las 24 horas del dia, agregando todos los cortes.
+    perfil = [{"h": h, "total": 0, "violentas": 0} for h in range(24)]
+    for l in llamadas:
+        if not l["hora"]:
+            continue
+        try:
+            h = int(l["hora"][:2])
+        except ValueError:
+            continue
+        if 0 <= h < 24:
+            perfil[h]["total"] += 1
+            if l["peso_violencia"] > 0:
+                perfil[h]["violentas"] += 1
+
+    return {"por_hora": serie_911, "hd_por_dia": serie_hd, "perfil_24h": perfil,
+            "cortes": sorted({l["corte"] for l in llamadas if l.get("corte")}),
+            "desde": serie_911[0]["hora"] if serie_911 else "",
+            "hasta": serie_911[-1]["hora"] if serie_911 else ""}
+
+
+# --------------------------------------------------------------------------
 # 6. Perfil territorial por municipio
 # --------------------------------------------------------------------------
 
@@ -667,16 +780,19 @@ def perfil_territorial(hd, llamadas, bases, sectores):
         if l["familia"] == "arma_fuego":
             p["arma_fuego"] += 1
 
-    # El inventario de inmuebles escribe el municipio en otra caja tipografica
-    # y a veces con sufijo ("Ecatepec de Morelos" vs "ECATEPEC").
-    def clave(nombre):
-        return _norm(nombre).replace(" DE MORELOS", "").replace(" DE JUAREZ", "") \
-                            .replace(" DE ZARAGOZA", "").replace(" DE BAZ", "").strip()
-
+    # Los tres insumos ya llegan con el municipio normalizado por
+    # municipio_canonico(), asi que el cruce es directo.
     indice_bases = defaultdict(list)
     for b in bases:
         if b["en_uso"]:
-            indice_bases[clave(b["municipio"])].append(b)
+            indice_bases[b["municipio"]].append(b)
+
+    # La region estatal solo esta declarada en una parte del inventario; se
+    # deduce donde existe y se deja vacia donde no, sin inventarla.
+    region_de = {}
+    for b in bases:
+        if b["region"] and b["municipio"] and b["municipio"] not in region_de:
+            region_de[b["municipio"]] = b["region"]
 
     bases_geo = [b for b in bases if b["lat"] and b["en_uso"]]
     for h in hd:
@@ -713,8 +829,11 @@ def perfil_territorial(hd, llamadas, bases, sectores):
         factor_gap = 1.0 + p["sectores_desatendidos"] * 0.25
         indice_presion = round(carga * factor_dist * factor_gap, 1)
 
+        agrupamientos = sorted({b["agrupamiento"] for b in propias if b["agrupamiento"]})
         salida.append({
             "municipio": municipio,
+            "region": region_de.get(municipio, ""),
+            "agrupamientos": agrupamientos,
             "hd_eventos": p["hd_eventos"],
             "hd_victimas": p["hd_victimas"],
             "hd_nocturnos": p["hd_nocturnos"],
@@ -741,7 +860,7 @@ def perfil_territorial(hd, llamadas, bases, sectores):
 # 7. Resumen ejecutivo calculado
 # --------------------------------------------------------------------------
 
-def resumen_ejecutivo(hd, llamadas, bases, sectores, auditoria):
+def resumen_ejecutivo(hd, llamadas, bases, sectores, auditoria, serie=None):
     hd_geo = [h for h in hd if h["lat"]]
     violentas = [l for l in llamadas if l["peso_violencia"] > 0]
     arma_fuego = [l for l in llamadas if l["familia"] == "arma_fuego"]
@@ -832,6 +951,19 @@ def resumen_ejecutivo(hd, llamadas, bases, sectores, auditoria):
                      "llamadas_violentas": s["llamadas_violentas"]}
                     for s in sectores[:5]],
         },
+        "estructura_estatal": {
+            "bases_con_region_declarada": sum(1 for b in bases if b["region"]),
+            "bases_con_agrupamiento": sum(1 for b in bases if b["agrupamiento"]),
+            "regiones_detectadas": sorted({b["region"] for b in bases if b["region"]}),
+            "nota": ("La region estatal solo esta declarada en parte del inventario "
+                     "de inmuebles. Con el catalogo oficial region-municipio la "
+                     "agregacion seria completa."),
+        },
+        "serie": {
+            "cortes": len(serie["cortes"]) if serie else 0,
+            "desde": serie["desde"] if serie else "",
+            "hasta": serie["hasta"] if serie else "",
+        },
         "auditoria": {
             "casos_revisados": len(auditoria),
             "prioridad_alta": sum(1 for a in auditoria if a["nivel_revision"] == "ALTA"),
@@ -861,8 +993,9 @@ def escribir_sqlite(hd, llamadas, bases, sectores, auditoria):
     cur.executescript("""
         DROP TABLE IF EXISTS tb_bases_dgspyt;
         CREATE TABLE tb_bases_dgspyt (
-            cvo INTEGER PRIMARY KEY, municipio TEXT, unidad TEXT, ubicacion TEXT,
-            tipo_construccion TEXT, en_uso INTEGER, latitud REAL, longitud REAL,
+            cvo INTEGER PRIMARY KEY, municipio TEXT, region TEXT, agrupamiento TEXT,
+            unidad TEXT, ubicacion TEXT, tipo_construccion TEXT, en_uso INTEGER,
+            latitud REAL, longitud REAL,
             personal_hombres INTEGER, personal_mujeres INTEGER, personal_total INTEGER
         );
         DROP TABLE IF EXISTS tb_zonas_ciegas;
@@ -888,8 +1021,9 @@ def escribir_sqlite(hd, llamadas, bases, sectores, auditoria):
     """)
 
     cur.executemany(
-        "INSERT INTO tb_bases_dgspyt VALUES (?,?,?,?,?,?,?,?,?,?,?)",
-        [(b["cvo"], b["municipio"], b["unidad"], b["ubicacion"],
+        "INSERT INTO tb_bases_dgspyt VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)",
+        [(b["cvo"], b["municipio"], b["region"], b["agrupamiento"],
+          b["unidad"], b["ubicacion"],
           b["tipo_construccion"], int(b["en_uso"]), b["lat"], b["lng"],
           b["personal_hombres"], b["personal_mujeres"], b["personal_total"])
          for b in bases])
@@ -956,8 +1090,10 @@ def main():
     print("SIGEO-HD DGSPYT · pipeline de datos")
     hd = cargar_hd()
     print(f"  homicidios corroborados .... {len(hd)}")
-    llamadas = cargar_911()
-    print(f"  llamadas C5 ................ {len(llamadas)}")
+    rutas = cortes_911()
+    llamadas = cargar_911(rutas)
+    print(f"  llamadas C5 ................ {len(llamadas)} únicas "
+          f"de {len(rutas)} corte(s)")
     bases = cargar_bases()
     geo_bases = sum(1 for b in bases if b['lat'])
     print(f"  inmuebles DGSPYT ........... {len(bases)} ({geo_bases} georreferenciados)")
@@ -968,10 +1104,14 @@ def main():
     altas = sum(1 for a in auditoria if a['nivel_revision'] == 'ALTA')
     print(f"  casos auditados ............ {len(auditoria)} ({altas} prioridad alta)")
 
+    serie = serie_temporal(llamadas, hd)
+    print(f"  cortes C5 integrados ....... {len(serie['cortes'])} "
+          f"({serie['desde']}h a {serie['hasta']}h)")
+
     territorio = perfil_territorial(hd, llamadas, bases, sectores)
     print(f"  municipios perfilados ...... {len(territorio)}")
 
-    resumen = resumen_ejecutivo(hd, llamadas, bases, sectores, auditoria)
+    resumen = resumen_ejecutivo(hd, llamadas, bases, sectores, auditoria, serie)
     resumen["territorio_top"] = [
         {k: t[k] for k in ("municipio", "indice_presion", "hd_eventos",
                            "llamadas_violentas", "sectores_desatendidos",
@@ -993,9 +1133,10 @@ def main():
         if not relevante:
             continue
         fila = {c: l[c] for c in CAMPOS_TABLERO}
-        # La nota completa vive en SQLite; el tablero solo muestra el extracto.
-        nota = l["notas"]
-        fila["notas"] = nota[:500] + "…" if len(nota) > 500 else nota
+        # La nota completa vive en SQLite. El tablero solo la muestra en la
+        # ficha de una llamada con violencia, asi que solo esas la cargan.
+        nota = l["notas"] if l["peso_violencia"] > 0 else ""
+        fila["notas"] = nota[:400] + "…" if len(nota) > 400 else nota
         llamadas_tablero.append(fila)
 
     def publicable(registros):
@@ -1007,6 +1148,7 @@ def main():
     escribir_json("bases_dgspyt.json", bases)
     escribir_json("zonas_ciegas.json", sectores)
     escribir_json("perfil_territorial.json", territorio)
+    escribir_json("serie_temporal.json", serie)
     escribir_json("auditoria_decesos.json", publicable(auditoria))
     escribir_json("resumen_ejecutivo.json", resumen)
     escribir_sqlite(hd, llamadas, bases, sectores, auditoria)

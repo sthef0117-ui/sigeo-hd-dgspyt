@@ -21,6 +21,11 @@ python src/build_dashboard.py
 
 El primer comando lee los Excel de `insumos/`, calcula los indicadores y escribe
 `analisis/*.json` más las tablas de `database/sigeo_db.sqlite`.
+
+**Para agregar un corte nuevo del C5 basta copiarlo a `insumos/excel/` y volver a
+ejecutar.** El pipeline descubre solo todos los archivos de llamadas, los une y
+deduplica por folio: los cortes contiguos repiten folios y sin deduplicar se
+contarían dos veces.
 El segundo ensambla `index.html`, un archivo único y autocontenido que se abre
 desde GitHub Pages o desde una memoria USB en la sala de juntas, sin servidor.
 
@@ -33,16 +38,19 @@ bloques, en el orden en que se usan en una reunión de mandos.
 
 ### Decidir
 
-**01 · Panorama** — la portada del Director. Cuatro cifras del corte y, debajo,
+**01 · Panorama** — la portada del Director. Abre con la curva de demanda de
+emergencia hora por hora de todos los cortes integrados, cuatro cifras del periodo
+y, debajo,
 *qué atender en esta reunión*: los sectores donde falta cobertura, los sectores
 donde ya hay despliegue y aun así hay violencia, y los expedientes que conviene
 pedir a la FGJEM. Cada bloque trae el acuerdo sugerido.
 
 **02 · Territorio** — mapa y detector de zonas ciegas en una sola pantalla, porque
-son la misma pregunta. Capas base al estilo Windows Maps (Carretera, Vista aérea,
-Híbrido), capas operativas conmutables (homicidios, llamadas, bases, calor,
-sectores) y una lista de sectores a la derecha; al hacer clic el mapa vuela al
-sector y abre su evidencia.
+son la misma pregunta. El mapa abre encuadrado en el **Estado de México completo**,
+que es la jurisdicción de la Dirección, no solo en la zona metropolitana. Capas
+base al estilo Windows Maps (Carretera, Vista aérea, Híbrido), capas operativas
+conmutables (homicidios, llamadas, bases, calor, sectores) y una lista de sectores
+a la derecha; al hacer clic el mapa vuela al sector y abre su evidencia.
 
 *«¿Por qué no se patrulla ahí?»* se calcula así: el territorio se divide en celdas
 de ~2.2 km; en cada una se suma la violencia registrada (homicidio corroborado ×10
@@ -82,7 +90,7 @@ de presión. Al hacer clic en la fila se despliega cómo se compone ese número.
 localizadas, conforme al apunte *«Suicidio → 25… + identificar, desaparecidos,
 homicidios dolosos. Investigar si son suicidios»*.
 
-La cohorte son los **30 reportes reales** del corte C5 clasificados como suicidio,
+La cohorte son los **90 reportes reales** de los cortes C5 clasificados como suicidio,
 tentativa o amenaza de suicidio, persona tirada en vía pública —con y sin huellas
 de violencia—, persona no localizada y homicidio. Cada caso se puntúa con
 indicadores explícitos sobre el texto de cabina y la geometría del hecho: mención
@@ -110,11 +118,11 @@ vialidad, número, cruce, entre-calles, asentamiento y punto de referencia, y ar
 la cadena que Windows Maps resuelve, más los URI nativos `bingmaps:` (abrir en la
 app) y `ms-drive-to:` (despachar unidad). Incluye consola en vivo para el operador.
 
-**Resultado sobre el corte actual:** de las 4,219 llamadas sin coordenada, 3,756
-son mudas, colgadas, de broma o transferidas y no contienen descripción alguna. El
-universo recuperable es de **463**; el extractor resuelve **136** (29.4%) con
-confianza alta o media. En el subconjunto que importa —llamadas con violencia sin
-coordenada— la recuperación es de **25 de 27 (92.6%)**.
+**Resultado sobre los cortes integrados:** la mayoría de las llamadas sin
+coordenada son mudas, colgadas, de broma o transferidas y no contienen descripción
+alguna. El universo recuperable es de **887**; el extractor resuelve **330**
+(37.2%) con confianza alta o media. En el subconjunto que importa —llamadas con
+violencia sin coordenada— la recuperación es de **59 de 61 (96.7%)**.
 
 El extractor no inventa ubicaciones: sin señal suficiente marca confianza `NULA` y
 no emite consulta. Implementación en `src/nlp_geocoder.py` (lote) y su puerto
@@ -124,6 +132,21 @@ JavaScript dentro del tablero (vivo); ambos aplican las mismas reglas.
 impresión propia: presión territorial, cobertura y zonas ciegas, geocodificación,
 casos de prioridad alta y acuerdos propuestos. Todas las cifras provienen del
 pipeline.
+
+---
+
+## Estructura estatal: lo que falta
+
+La Dirección es estatal y el tablero ya cubre el Estado de México completo por
+municipio. Para agregar por **región** de la estructura estatal, el pipeline
+deduce la región del nombre de la unidad usuaria del inventario de inmuebles
+(«1er Agrupamiento Acolman, XXXII Región»), pero solo **35 de 198** inmuebles la
+declaran, lo que alcanza para 22 municipios. El agrupamiento sí está en 132.
+
+Con el **catálogo oficial región ↔ municipio** la agregación regional queda
+completa y el perfil territorial se puede presentar por región, que es como
+sesiona la estructura de mando. El pipeline no inventa la región donde no está
+declarada: la deja vacía.
 
 ---
 
@@ -179,5 +202,5 @@ index.html                Tablero generado. No editar a mano: se regenera.
 | Archivo | Contenido |
 |---|---|
 | `ACCIONES DE HD JULIO DGSPYT.xlsx` | 56 homicidios corroborados (julio 2026) y 90 registros FGR |
-| `LLAMADAS_911_CORTE...xlsx` | 7,414 llamadas C5 del 26-27 de julio de 2026 |
+| `LLAMADAS_911_CORTE...xlsx` (×3) | 10,823 llamadas únicas del C5, del 26 al 28 de julio de 2026 (36 h continuas) |
 | `INMUEBLES GENERAL DGSPYT.xlsx` | 198 inmuebles DGSPYT; 167 en uso y georreferenciados, 11,147 elementos adscritos |

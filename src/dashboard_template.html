@@ -240,6 +240,18 @@ html[data-tema="oscuro"] .hoja h2{color:#7a1327}
       <div class="rej r3" id="prioridades"></div>
     </div>
 
+    <div class="tarjeta">
+      <h2>Demanda de emergencia hora por hora
+        <span class="nota" id="nota-serie"></span></h2>
+      <div class="cuerpo">
+        <div class="lienzo" style="height:210px"><canvas id="cSerie"></canvas></div>
+        <div class="leyenda" style="margin-top:10px">
+          <span><span class="pt" style="background:#8a94a2"></span>Todas las llamadas</span>
+          <span><span class="pt" style="background:#c1121f"></span>Con violencia</span>
+        </div>
+      </div>
+    </div>
+
     <div class="rej r2">
       <div class="tarjeta">
         <h2>Homicidios por día del corte <span class="nota">julio 2026</span></h2>
@@ -552,6 +564,7 @@ const E=s=>String(s==null?"":s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">
 const PCT=(a,b)=>b?Math.round(a*1000/b)/10:0;
 const R=DATOS.resumen;
 let mapa, capas={}, filtro={sector:"TODOS", nivel:"TODOS"}, secSel=null;
+const EDOMEX=[[18.33,-100.62],[20.32,-98.52]];  // envolvente del Estado de México
 
 function copiar(t,b){ navigator.clipboard.writeText(t).then(()=>{
   const p=b.textContent; b.textContent="Copiado"; setTimeout(()=>b.textContent=p,1400); }); }
@@ -634,6 +647,21 @@ function graficas(){
             y:{beginAtZero:true,ticks:{color:tx3,font:{size:10},precision:0},
                grid:{color:bd},border:{display:false}}}};
 
+  const S=DATOS.serie;
+  const gris=est.getPropertyValue("--tx3").trim(), rojo=est.getPropertyValue("--rojo").trim();
+  if(window._cSerie) window._cSerie.destroy();
+  window._cSerie=new Chart(document.getElementById("cSerie"),{type:"line",
+    data:{labels:S.por_hora.map(h=>h.hora.slice(5).replace(" ","·")+"h"),
+      datasets:[
+        {label:"Todas",data:S.por_hora.map(h=>h.total),borderColor:gris,
+         backgroundColor:gris+"22",fill:true,tension:.3,pointRadius:0,borderWidth:1.6},
+        {label:"Con violencia",data:S.por_hora.map(h=>h.violentas),borderColor:rojo,
+         backgroundColor:rojo+"33",fill:true,tension:.3,pointRadius:0,borderWidth:2}
+      ]},
+    options:{...op,plugins:{legend:{display:false},tooltip:{padding:9,cornerRadius:6,mode:"index",intersect:false}}}});
+  document.getElementById("nota-serie").textContent=
+    `${S.cortes.length} cortes del C5 · ${S.desde}h a ${S.hasta}h · ${S.por_hora.length} horas`;
+
   const porDia={};
   DATOS.hd.forEach(d=>{ if(d.fecha) porDia[d.fecha]=(porDia[d.fecha]||0)+1; });
   const dias=Object.keys(porDia).sort();
@@ -708,7 +736,10 @@ function popupSector(z){
 }
 
 function iniciarMapa(){
-  mapa=L.map("mapa",{zoomControl:false}).setView([19.45,-99.3],9);
+  // La jurisdiccion es estatal: el mapa abre con el Estado de Mexico completo.
+  // El encuadre exacto se aplica al mostrar la vista, porque Leaflet no puede
+  // medir un contenedor oculto y encuadraria el mundo entero.
+  mapa=L.map("mapa",{zoomControl:false}).setView([19.35,-99.6],8);
   L.control.zoom({position:"bottomright"}).addTo(mapa);
   // Mismo esquema de capas base que Windows Maps.
   const carretera=L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png",
@@ -781,10 +812,11 @@ function popup911(d){
 /* ═════════════════════════════ 03 Coordinaciones ═════════════════════════ */
 function coordinaciones(){
   const max=DATOS.territorio[0]?DATOS.territorio[0].indice_presion:1;
-  const filas=DATOS.territorio.filter(t=>t.carga_violencia>0).slice(0,30).map(t=>`
+  const filas=DATOS.territorio.filter(t=>t.carga_violencia>0).map(t=>`
     <tr class="click" data-mun="${E(t.municipio)}">
       <td class="num">${t.ranking}</td>
       <td><b>${E(t.municipio)}</b>
+        ${t.region?`<span class="et e-gris">Región ${E(t.region)}</span>`:""}
         ${t.colonias_reincidentes.length?`<div style="font-size:.73rem;color:var(--tx3)">reincidentes: ${E(t.colonias_reincidentes.join(", "))}</div>`:""}</td>
       <td class="num"><b>${t.indice_presion}</b>
         <div class="barra"><i style="width:${Math.round(t.indice_presion/max*100)}%"></i></div></td>
@@ -1036,7 +1068,10 @@ function irA(id){
   document.querySelectorAll(".vista").forEach(v=>v.classList.toggle("on",v.id===id));
   document.getElementById("titulo").textContent=TITULOS[id][0];
   document.getElementById("contexto").textContent=TITULOS[id][1];
-  if(id==="v-territorio"&&mapa) setTimeout(()=>mapa.invalidateSize(),150);
+  if(id==="v-territorio"&&mapa) setTimeout(()=>{
+    mapa.invalidateSize();
+    if(!window._encuadrado){ window._encuadrado=true; mapa.fitBounds(EDOMEX); }
+  },150);
   // Chart.js no puede medir un lienzo oculto: si el tema cambio mientras esta
   // vista no estaba visible, las graficas se redibujan al volver a ella.
   if(id==="v-panorama"&&window._temaSucio){ window._temaSucio=false; setTimeout(graficas,60); }
@@ -1065,6 +1100,10 @@ document.querySelectorAll("[data-nv]").forEach(b=>b.addEventListener("click",()=
 
 window.addEventListener("load",()=>{
   document.getElementById("sello").textContent=R.generado;
+  const S0=DATOS.serie;
+  document.querySelector("header .ctx").dataset.base="";
+  TITULOS["v-panorama"][1]=`Estado de México · ${R.serie.cortes} cortes del C5, `+
+    `${S0.desde}h a ${S0.hasta}h · ${N(R.c5.llamadas_totales)} llamadas`;
   document.getElementById("contexto").textContent=TITULOS["v-panorama"][1];
   panorama(); graficas(); iniciarMapa(); territorio();
   coordinaciones(); casos(); ubicaciones(); informe();

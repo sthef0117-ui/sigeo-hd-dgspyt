@@ -1,0 +1,481 @@
+{
+ "por_hora": [
+  {
+   "hora": "2026-07-26 15",
+   "total": 830,
+   "violentas": 34,
+   "arma_fuego": 6
+  },
+  {
+   "hora": "2026-07-26 16",
+   "total": 688,
+   "violentas": 35,
+   "arma_fuego": 2
+  },
+  {
+   "hora": "2026-07-26 17",
+   "total": 771,
+   "violentas": 44,
+   "arma_fuego": 7
+  },
+  {
+   "hora": "2026-07-26 18",
+   "total": 667,
+   "violentas": 52,
+   "arma_fuego": 1
+  },
+  {
+   "hora": "2026-07-26 19",
+   "total": 619,
+   "violentas": 67,
+   "arma_fuego": 8
+  },
+  {
+   "hora": "2026-07-26 20",
+   "total": 867,
+   "violentas": 69,
+   "arma_fuego": 3
+  },
+  {
+   "hora": "2026-07-26 21",
+   "total": 745,
+   "violentas": 71,
+   "arma_fuego": 5
+  },
+  {
+   "hora": "2026-07-26 22",
+   "total": 677,
+   "violentas": 67,
+   "arma_fuego": 7
+  },
+  {
+   "hora": "2026-07-26 23",
+   "total": 495,
+   "violentas": 77,
+   "arma_fuego": 10
+  },
+  {
+   "hora": "2026-07-27 00",
+   "total": 412,
+   "violentas": 59,
+   "arma_fuego": 7
+  },
+  {
+   "hora": "2026-07-27 01",
+   "total": 324,
+   "violentas": 37,
+   "arma_fuego": 3
+  },
+  {
+   "hora": "2026-07-27 02",
+   "total": 319,
+   "violentas": 35,
+   "arma_fuego": 9
+  },
+  {
+   "hora": "2026-07-27 03",
+   "total": 98,
+   "violentas": 29,
+   "arma_fuego": 9
+  },
+  {
+   "hora": "2026-07-27 04",
+   "total": 68,
+   "violentas": 11,
+   "arma_fuego": 0
+  },
+  {
+   "hora": "2026-07-27 05",
+   "total": 55,
+   "violentas": 14,
+   "arma_fuego": 0
+  },
+  {
+   "hora": "2026-07-27 06",
+   "total": 68,
+   "violentas": 15,
+   "arma_fuego": 0
+  },
+  {
+   "hora": "2026-07-27 07",
+   "total": 100,
+   "violentas": 17,
+   "arma_fuego": 0
+  },
+  {
+   "hora": "2026-07-27 08",
+   "total": 106,
+   "violentas": 24,
+   "arma_fuego": 5
+  },
+  {
+   "hora": "2026-07-27 09",
+   "total": 119,
+   "violentas": 28,
+   "arma_fuego": 2
+  },
+  {
+   "hora": "2026-07-27 10",
+   "total": 144,
+   "violentas": 32,
+   "arma_fuego": 2
+  },
+  {
+   "hora": "2026-07-27 11",
+   "total": 155,
+   "violentas": 25,
+   "arma_fuego": 0
+  },
+  {
+   "hora": "2026-07-27 12",
+   "total": 173,
+   "violentas": 41,
+   "arma_fuego": 1
+  },
+  {
+   "hora": "2026-07-27 13",
+   "total": 156,
+   "violentas": 31,
+   "arma_fuego": 3
+  },
+  {
+   "hora": "2026-07-27 14",
+   "total": 157,
+   "violentas": 28,
+   "arma_fuego": 0
+  },
+  {
+   "hora": "2026-07-27 15",
+   "total": 191,
+   "violentas": 29,
+   "arma_fuego": 1
+  },
+  {
+   "hora": "2026-07-27 16",
+   "total": 178,
+   "violentas": 23,
+   "arma_fuego": 1
+  },
+  {
+   "hora": "2026-07-27 17",
+   "total": 177,
+   "violentas": 29,
+   "arma_fuego": 1
+  },
+  {
+   "hora": "2026-07-27 18",
+   "total": 183,
+   "violentas": 34,
+   "arma_fuego": 2
+  },
+  {
+   "hora": "2026-07-27 19",
+   "total": 212,
+   "violentas": 46,
+   "arma_fuego": 6
+  },
+  {
+   "hora": "2026-07-27 20",
+   "total": 202,
+   "violentas": 61,
+   "arma_fuego": 8
+  },
+  {
+   "hora": "2026-07-27 21",
+   "total": 204,
+   "violentas": 57,
+   "arma_fuego": 4
+  },
+  {
+   "hora": "2026-07-27 22",
+   "total": 178,
+   "violentas": 34,
+   "arma_fuego": 3
+  },
+  {
+   "hora": "2026-07-27 23",
+   "total": 167,
+   "violentas": 37,
+   "arma_fuego": 2
+  },
+  {
+   "hora": "2026-07-28 00",
+   "total": 128,
+   "violentas": 26,
+   "arma_fuego": 5
+  },
+  {
+   "hora": "2026-07-28 01",
+   "total": 121,
+   "violentas": 17,
+   "arma_fuego": 0
+  },
+  {
+   "hora": "2026-07-28 02",
+   "total": 69,
+   "violentas": 8,
+   "arma_fuego": 0
+  }
+ ],
+ "hd_por_dia": [
+  {
+   "fecha": "2026-07-01",
+   "eventos": 4,
+   "victimas": 4
+  },
+  {
+   "fecha": "2026-07-02",
+   "eventos": 1,
+   "victimas": 1
+  },
+  {
+   "fecha": "2026-07-03",
+   "eventos": 2,
+   "victimas": 3
+  },
+  {
+   "fecha": "2026-07-04",
+   "eventos": 2,
+   "victimas": 2
+  },
+  {
+   "fecha": "2026-07-05",
+   "eventos": 2,
+   "victimas": 2
+  },
+  {
+   "fecha": "2026-07-06",
+   "eventos": 1,
+   "victimas": 1
+  },
+  {
+   "fecha": "2026-07-07",
+   "eventos": 1,
+   "victimas": 1
+  },
+  {
+   "fecha": "2026-07-08",
+   "eventos": 2,
+   "victimas": 2
+  },
+  {
+   "fecha": "2026-07-09",
+   "eventos": 2,
+   "victimas": 2
+  },
+  {
+   "fecha": "2026-07-10",
+   "eventos": 3,
+   "victimas": 3
+  },
+  {
+   "fecha": "2026-07-11",
+   "eventos": 2,
+   "victimas": 3
+  },
+  {
+   "fecha": "2026-07-12",
+   "eventos": 2,
+   "victimas": 2
+  },
+  {
+   "fecha": "2026-07-13",
+   "eventos": 2,
+   "victimas": 2
+  },
+  {
+   "fecha": "2026-07-14",
+   "eventos": 1,
+   "victimas": 1
+  },
+  {
+   "fecha": "2026-07-15",
+   "eventos": 2,
+   "victimas": 3
+  },
+  {
+   "fecha": "2026-07-16",
+   "eventos": 2,
+   "victimas": 3
+  },
+  {
+   "fecha": "2026-07-17",
+   "eventos": 4,
+   "victimas": 4
+  },
+  {
+   "fecha": "2026-07-18",
+   "eventos": 2,
+   "victimas": 2
+  },
+  {
+   "fecha": "2026-07-19",
+   "eventos": 3,
+   "victimas": 3
+  },
+  {
+   "fecha": "2026-07-20",
+   "eventos": 2,
+   "victimas": 2
+  },
+  {
+   "fecha": "2026-07-21",
+   "eventos": 2,
+   "victimas": 2
+  },
+  {
+   "fecha": "2026-07-22",
+   "eventos": 2,
+   "victimas": 3
+  },
+  {
+   "fecha": "2026-07-23",
+   "eventos": 3,
+   "victimas": 3
+  },
+  {
+   "fecha": "2026-07-24",
+   "eventos": 2,
+   "victimas": 2
+  },
+  {
+   "fecha": "2026-07-25",
+   "eventos": 2,
+   "victimas": 4
+  },
+  {
+   "fecha": "2026-07-26",
+   "eventos": 3,
+   "victimas": 3
+  }
+ ],
+ "perfil_24h": [
+  {
+   "h": 0,
+   "total": 540,
+   "violentas": 85
+  },
+  {
+   "h": 1,
+   "total": 445,
+   "violentas": 54
+  },
+  {
+   "h": 2,
+   "total": 388,
+   "violentas": 43
+  },
+  {
+   "h": 3,
+   "total": 98,
+   "violentas": 29
+  },
+  {
+   "h": 4,
+   "total": 68,
+   "violentas": 11
+  },
+  {
+   "h": 5,
+   "total": 55,
+   "violentas": 14
+  },
+  {
+   "h": 6,
+   "total": 68,
+   "violentas": 15
+  },
+  {
+   "h": 7,
+   "total": 100,
+   "violentas": 17
+  },
+  {
+   "h": 8,
+   "total": 106,
+   "violentas": 24
+  },
+  {
+   "h": 9,
+   "total": 119,
+   "violentas": 28
+  },
+  {
+   "h": 10,
+   "total": 144,
+   "violentas": 32
+  },
+  {
+   "h": 11,
+   "total": 155,
+   "violentas": 25
+  },
+  {
+   "h": 12,
+   "total": 173,
+   "violentas": 41
+  },
+  {
+   "h": 13,
+   "total": 156,
+   "violentas": 31
+  },
+  {
+   "h": 14,
+   "total": 157,
+   "violentas": 28
+  },
+  {
+   "h": 15,
+   "total": 1021,
+   "violentas": 63
+  },
+  {
+   "h": 16,
+   "total": 866,
+   "violentas": 58
+  },
+  {
+   "h": 17,
+   "total": 948,
+   "violentas": 73
+  },
+  {
+   "h": 18,
+   "total": 850,
+   "violentas": 86
+  },
+  {
+   "h": 19,
+   "total": 831,
+   "violentas": 113
+  },
+  {
+   "h": 20,
+   "total": 1069,
+   "violentas": 130
+  },
+  {
+   "h": 21,
+   "total": 949,
+   "violentas": 128
+  },
+  {
+   "h": 22,
+   "total": 855,
+   "violentas": 101
+  },
+  {
+   "h": 23,
+   "total": 662,
+   "violentas": 114
+  }
+ ],
+ "cortes": [
+  "LLAMADAS_911_CORTE_DE_LAS_03.00_A_LAS_15.00_DEL_27_DE_JULIO_DE_2026_LIMPIO.xlsx",
+  "LLAMADAS_911_CORTE_DE_LAS_15.00_DEL_26_DE_JULIO_A_LAS_03.00_DEL_27_DE_JULIO_DE_2026_LIMPIO.xlsx",
+  "LLAMADAS_911_CORTE_DE_LAS_15.00_DEL_27_DE_JULIO_A_LAS_03.00_DEL_28_DE_JULIO_DE_2026_LIMPIO.xlsx"
+ ],
+ "desde": "2026-07-26 15",
+ "hasta": "2026-07-28 02"
+}
