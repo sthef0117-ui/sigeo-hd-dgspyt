@@ -30,7 +30,9 @@ ARCHIVOS = {
     "zonas": "zonas_ciegas.json",
     "auditoria": "auditoria_decesos.json",
     "territorio": "perfil_territorial.json",
+    "coordinaciones": "perfil_coordinaciones.json",
     "serie": "serie_temporal.json",
+    "perimetro": "perimetro_edomex.json",
 }
 
 

@@ -90,7 +90,7 @@ de presión. Al hacer clic en la fila se despliega cómo se compone ese número.
 localizadas, conforme al apunte *«Suicidio → 25… + identificar, desaparecidos,
 homicidios dolosos. Investigar si son suicidios»*.
 
-La cohorte son los **90 reportes reales** de los cortes C5 clasificados como suicidio,
+La cohorte son los **247 reportes reales** de los cortes C5 clasificados como suicidio,
 tentativa o amenaza de suicidio, persona tirada en vía pública —con y sin huellas
 de violencia—, persona no localizada y homicidio. Cada caso se puntúa con
 indicadores explícitos sobre el texto de cabina y la geometría del hecho: mención
@@ -120,9 +120,9 @@ app) y `ms-drive-to:` (despachar unidad). Incluye consola en vivo para el operad
 
 **Resultado sobre los cortes integrados:** la mayoría de las llamadas sin
 coordenada son mudas, colgadas, de broma o transferidas y no contienen descripción
-alguna. El universo recuperable es de **887**; el extractor resuelve **330**
-(37.2%) con confianza alta o media. En el subconjunto que importa —llamadas con
-violencia sin coordenada— la recuperación es de **59 de 61 (96.7%)**.
+alguna. El universo recuperable es de **2,590**; el extractor resuelve **970**
+(37.5%) con confianza alta o media. En el subconjunto que importa —llamadas con
+violencia sin coordenada— la recuperación es de **182 de 189 (96.3%)**.
 
 El extractor no inventa ubicaciones: sin señal suficiente marca confianza `NULA` y
 no emite consulta. Implementación en `src/nlp_geocoder.py` (lote) y su puerto
@@ -135,18 +135,17 @@ pipeline.
 
 ---
 
-## Estructura estatal: lo que falta
+## Estructura territorial oficial
 
-La Dirección es estatal y el tablero ya cubre el Estado de México completo por
-municipio. Para agregar por **región** de la estructura estatal, el pipeline
-deduce la región del nombre de la unidad usuaria del inventario de inmuebles
-(«1er Agrupamiento Acolman, XXXII Región»), pero solo **35 de 198** inmuebles la
-declaran, lo que alcanza para 22 municipios. El agrupamiento sí está en 132.
+La Dirección es estatal y el tablero cubre el Estado de México completo. El mapa
+abre con el **perímetro del estado trazado en toda su orilla** y la agregación
+usa la división real de mando, tomada de `INSTALACIONES_DGSPYT`: **8
+coordinaciones regionales** territoriales (Metropolitana, Ecatepec, Valle Toluca,
+Oriente, Chalco, Atlacomulco, Ixtapan, Valle de Bravo), 22 subdirecciones y 95
+municipios asignados. Es la misma división del mapa mural de la Dirección.
 
-Con el **catálogo oficial región ↔ municipio** la agregación regional queda
-completa y el perfil territorial se puede presentar por región, que es como
-sesiona la estructura de mando. El pipeline no inventa la región donde no está
-declarada: la deja vacía.
+Los municipios sin inmueble en el inventario quedan agrupados como «sin
+coordinación asignada» en lugar de asignarles una a la fuerza.
 
 ---
 
@@ -202,5 +201,7 @@ index.html                Tablero generado. No editar a mano: se regenera.
 | Archivo | Contenido |
 |---|---|
 | `ACCIONES DE HD JULIO DGSPYT.xlsx` | 56 homicidios corroborados (julio 2026) y 90 registros FGR |
-| `LLAMADAS_911_CORTE...xlsx` (×3) | 10,823 llamadas únicas del C5, del 26 al 28 de julio de 2026 (36 h continuas) |
-| `INMUEBLES GENERAL DGSPYT.xlsx` | 198 inmuebles DGSPYT; 167 en uso y georreferenciados, 11,147 elementos adscritos |
+| `CONCENTRADO_HISTORICO_LLAMADAS_911_089_C5.xlsx` + cortes diarios | 22,811 llamadas únicas del C5, del 22 al 28 de julio de 2026 (120 h) |
+| `INSTALACIONES_DGSPYT_290426_QR L.xlsx` | 198 inmuebles con coordinación regional, subdirección, coordenadas y personal |
+| `poligonos/perimetro_edomex.geojson` | Perímetro del Estado de México (201 vértices) |
+| `INMUEBLES GENERAL DGSPYT.xlsx` | Inventario anterior, sin coordinación regional. Se usa solo como respaldo |

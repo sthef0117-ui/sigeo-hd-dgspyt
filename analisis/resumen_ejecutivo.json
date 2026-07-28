@@ -1,5 +1,5 @@
 {
- "generado": "2026-07-28 12:33",
+ "generado": "2026-07-28 15:50",
  "corte": "Homicidios dolosos julio 2026 · Llamadas C5 26-27 julio 2026",
  "hd": {
   "eventos": 56,
@@ -58,226 +58,223 @@
   "nocturnos": 31
  },
  "c5": {
-  "llamadas_totales": 10823,
-  "llamadas_violentas": 1343,
-  "arma_fuego": 123,
-  "con_coordenada": 6009,
+  "llamadas_totales": 22811,
+  "llamadas_violentas": 3735,
+  "arma_fuego": 368,
+  "con_coordenada": 15352,
   "top_incidentes_violentos": [
    [
     "PERSONA AGRESIVA",
-    417
+    1106
    ],
    [
     "VIOLENCIA CONTRA LAS MUJERES",
-    237
-   ],
-   [
-    "RIÑA",
-    98
+    569
    ],
    [
     "ALTERACION DEL ORDEN PUBLICO POR PERSONA ALCOHOLIZADA",
-    82
+    297
+   ],
+   [
+    "RIÑA",
+    266
    ],
    [
     "DETONACION POR ARMA DE FUEGO",
-    71
+    224
    ],
    [
     "VIOLENCIA FAMILIAR",
-    65
+    189
    ],
    [
-    "PERSONA TIRADA EN VIA PUBLICA",
-    37
+    "VIOLENCIA DE PAREJA",
+    113
    ],
    [
     "PORTACION DE ARMAS DE FUEGO O CARTUCHOS",
-    36
+    105
    ]
   ]
  },
  "geocodificacion": {
   "distribucion_confianza": {
-   "COORDENADA": 6009,
-   "MEDIA": 173,
-   "ALTA": 157,
-   "BAJA": 202,
-   "NULA": 4282
+   "COORDENADA": 15352,
+   "BAJA": 537,
+   "MEDIA": 511,
+   "ALTA": 459,
+   "NULA": 5952
   },
-  "sin_coordenada_original": 4814,
-  "sin_coordenada_sin_texto": 3927,
-  "universo_recuperable": 887,
-  "recuperadas_por_nlp": 330,
-  "porcentaje_recuperado": 37.2,
-  "violentas_sin_coordenada": 61,
-  "violentas_recuperadas": 59,
-  "porcentaje_violentas_recuperado": 96.7
+  "sin_coordenada_original": 7459,
+  "sin_coordenada_sin_texto": 4869,
+  "universo_recuperable": 2590,
+  "recuperadas_por_nlp": 970,
+  "porcentaje_recuperado": 37.5,
+  "violentas_sin_coordenada": 189,
+  "violentas_recuperadas": 182,
+  "porcentaje_violentas_recuperado": 96.3
  },
  "cobertura": {
   "bases_inventariadas": 198,
   "bases_en_uso_georreferenciadas": 167,
-  "personal_total": 11147,
+  "personal_total": 10877,
   "dist_hd_base_promedio_km": 2.1,
   "dist_hd_base_mediana_km": 1.9,
   "dist_hd_base_maxima_km": 6.23,
   "hd_a_mas_de_3km_de_base": 14
  },
  "zonas_ciegas": {
-  "sectores_detectados": 188,
+  "sectores_detectados": 363,
   "top": [
+   {
+    "sector_id": "SEC-973_-4964",
+    "municipio": "NAUCALPAN",
+    "indice_ceguera": 166.0,
+    "dist_base_km": 3.36,
+    "eventos_hd": 0,
+    "llamadas_violentas": 21
+   },
+   {
+    "sector_id": "SEC-972_-4964",
+    "municipio": "NAUCALPAN",
+    "indice_ceguera": 161.1,
+    "dist_base_km": 2.79,
+    "eventos_hd": 1,
+    "llamadas_violentas": 33
+   },
    {
     "sector_id": "SEC-967_-4983",
     "municipio": "TOLUCA",
-    "indice_ceguera": 78.3,
+    "indice_ceguera": 150.4,
     "dist_base_km": 4.14,
     "eventos_hd": 0,
-    "llamadas_violentas": 10
+    "llamadas_violentas": 22
    },
    {
-    "sector_id": "SEC-984_-4957",
-    "municipio": "TULTEPEC",
-    "indice_ceguera": 70.3,
-    "dist_base_km": 5.21,
-    "eventos_hd": 1,
-    "llamadas_violentas": 4
+    "sector_id": "SEC-968_-4984",
+    "municipio": "TOLUCA",
+    "indice_ceguera": 140.0,
+    "dist_base_km": 6.48,
+    "eventos_hd": 0,
+    "llamadas_violentas": 17
    },
    {
     "sector_id": "SEC-972_-4963",
     "municipio": "NAUCALPAN",
-    "indice_ceguera": 68.8,
+    "indice_ceguera": 128.2,
     "dist_base_km": 1.81,
     "eventos_hd": 0,
-    "llamadas_violentas": 14
-   },
-   {
-    "sector_id": "SEC-970_-4949",
-    "municipio": "CHIMALHUACAN",
-    "indice_ceguera": 65.2,
-    "dist_base_km": 3.8,
-    "eventos_hd": 1,
-    "llamadas_violentas": 5
-   },
-   {
-    "sector_id": "SEC-983_-4957",
-    "municipio": "TULTEPEC",
-    "indice_ceguera": 57.4,
-    "dist_base_km": 5.41,
-    "eventos_hd": 1,
-    "llamadas_violentas": 3
+    "llamadas_violentas": 35
    }
   ]
  },
  "estructura_estatal": {
-  "bases_con_region_declarada": 35,
-  "bases_con_agrupamiento": 132,
-  "regiones_detectadas": [
-   "I",
-   "IX",
-   "L",
-   "V",
-   "XLVI",
-   "XLVII",
-   "XLVIII",
-   "XXIX",
-   "XXXI",
-   "XXXII",
-   "XXXIII",
-   "XXXIV",
-   "XXXV",
-   "XXXVI",
-   "XXXVII"
+  "coordinaciones": [
+   "ATLACOMULCO",
+   "CHALCO",
+   "DIRECCION DE POLICIA DE TRANSITO",
+   "DIRECCION GENERAL DE SEGURIDAD PUBLICA Y TRANSITO",
+   "ECATEPEC",
+   "IXTAPAN",
+   "METROPOLITANA",
+   "ORIENTE",
+   "UNIDAD DE SERVICIOS ESPECIALES DE SEGURIDAD",
+   "VALLE DE BRAVO",
+   "VALLE TOLUCA"
   ],
-  "nota": "La region estatal solo esta declarada en parte del inventario de inmuebles. Con el catalogo oficial region-municipio la agregacion seria completa."
+  "subdirecciones": 21,
+  "bases_con_coordinacion": 198,
+  "municipios_con_coordinacion": 94
  },
  "serie": {
-  "cortes": 3,
-  "desde": "2026-07-26 15",
+  "archivos": 4,
+  "horas": 120,
+  "desde": "2026-07-22 15",
   "hasta": "2026-07-28 02"
  },
  "auditoria": {
-  "casos_revisados": 90,
-  "prioridad_alta": 7,
-  "prioridad_media": 20,
-  "prioridad_baja": 63,
+  "casos_revisados": 247,
+  "prioridad_alta": 20,
+  "prioridad_media": 53,
+  "prioridad_baja": 174,
   "por_tipo": [
    [
     "PERSONA TIRADA EN VIA PUBLICA",
-    37
+    93
    ],
    [
     "PERSONA NO LOCALIZADA O DESAPARECIDA",
-    32
-   ],
-   [
-    "PERSONA TIRADA EN LA VIA PUBLICA CON HUELLAS DE VIOLENCIA",
-    5
-   ],
-   [
-    "HOMICIDIO",
-    5
-   ],
-   [
-    "AMENAZA DE SUICIDIO",
-    5
+    77
    ],
    [
     "TENTATIVA DE SUICIDIO",
-    5
+    25
+   ],
+   [
+    "PERSONA TIRADA EN LA VIA PUBLICA CON HUELLAS DE VIOLENCIA",
+    19
+   ],
+   [
+    "HOMICIDIO",
+    13
+   ],
+   [
+    "AMENAZA DE SUICIDIO",
+    12
    ],
    [
     "SUICIDIO",
-    1
+    8
    ]
   ]
  },
  "territorio_top": [
   {
    "municipio": "TOLUCA",
-   "indice_presion": 723.8,
+   "indice_presion": 2817.8,
    "hd_eventos": 0,
-   "llamadas_violentas": 193,
-   "sectores_desatendidos": 6,
-   "personal_total": 897
+   "llamadas_violentas": 442,
+   "sectores_desatendidos": 13,
+   "personal_total": 742
   },
   {
    "municipio": "ECATEPEC",
-   "indice_presion": 402.6,
+   "indice_presion": 1104.7,
    "hd_eventos": 9,
-   "llamadas_violentas": 136,
-   "sectores_desatendidos": 1,
-   "personal_total": 978
+   "llamadas_violentas": 353,
+   "sectores_desatendidos": 3,
+   "personal_total": 1056
   },
   {
    "municipio": "NAUCALPAN",
-   "indice_presion": 291.6,
+   "indice_presion": 796.3,
    "hd_eventos": 6,
-   "llamadas_violentas": 72,
-   "sectores_desatendidos": 2,
-   "personal_total": 318
+   "llamadas_violentas": 249,
+   "sectores_desatendidos": 3,
+   "personal_total": 309
   },
   {
    "municipio": "CHIMALHUACAN",
-   "indice_presion": 195.6,
+   "indice_presion": 407.9,
    "hd_eventos": 3,
-   "llamadas_violentas": 64,
+   "llamadas_violentas": 166,
    "sectores_desatendidos": 1,
    "personal_total": 371
   },
   {
    "municipio": "CUAUTITLAN IZCALLI",
-   "indice_presion": 138.5,
+   "indice_presion": 380.8,
    "hd_eventos": 5,
-   "llamadas_violentas": 46,
-   "sectores_desatendidos": 0,
-   "personal_total": 265
+   "llamadas_violentas": 126,
+   "sectores_desatendidos": 2,
+   "personal_total": 268
   },
   {
    "municipio": "ZUMPANGO",
-   "indice_presion": 125.0,
+   "indice_presion": 341.2,
    "hd_eventos": 1,
-   "llamadas_violentas": 30,
-   "sectores_desatendidos": 1,
+   "llamadas_violentas": 68,
+   "sectores_desatendidos": 3,
    "personal_total": 51
   }
  ],

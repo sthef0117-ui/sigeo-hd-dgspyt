@@ -329,6 +329,8 @@ html[data-tema="oscuro"] .hoja h2{color:#7a1327}
       <span><span class="pt" style="background:#f59e0b"></span>Llamada 911 con violencia</span>
       <span><span class="pt" style="background:#0f766e"></span>Base DGSPYT en uso</span>
       <span><span class="pt" style="background:#6d28d9"></span>Sector detectado</span>
+      <span><span style="display:inline-block;width:16px;height:3px;background:#7a1327;
+        outline:2px solid #fff;margin-right:6px;vertical-align:middle"></span>Perímetro del Estado de México</span>
       <span style="margin-left:auto;color:var(--tx3)">Capa base: Carretera · Vista aérea · Híbrido</span>
     </div>
   </section>
@@ -344,7 +346,14 @@ html[data-tema="oscuro"] .hoja h2{color:#7a1327}
     </div>
 
     <div class="tarjeta">
-      <h2>Perfil territorial por municipio
+      <h2>Coordinaciones regionales
+        <span class="nota">Estructura oficial del inventario de instalaciones DGSPYT</span>
+      </h2>
+      <div class="tabla-env"><table id="t-coordinaciones"></table></div>
+    </div>
+
+    <div class="tarjeta">
+      <h2>Detalle por municipio
         <span class="nota">Ordenado por índice de presión · clic en la fila para el desglose</span>
       </h2>
       <div class="tabla-env"><table id="t-territorio"></table></div>
@@ -751,6 +760,15 @@ function iniciarMapa(){
   L.control.layers({"Carretera":carretera,"Vista aérea":aerea,
     "Híbrido":L.layerGroup([aerea,etiq])},null,{position:"topright",collapsed:false}).addTo(mapa);
 
+  // Perímetro del Estado de México: la jurisdicción de la Dirección, marcada
+  // en toda su orilla. Doble trazo para que resalte sobre carretera y aérea.
+  if(DATOS.perimetro){
+    L.geoJSON(DATOS.perimetro,{style:{color:"#ffffff",weight:7,opacity:.85,
+      fill:false,lineJoin:"round"},interactive:false}).addTo(mapa);
+    L.geoJSON(DATOS.perimetro,{style:{color:"#7a1327",weight:3.5,opacity:1,
+      fill:false,lineJoin:"round"},interactive:false}).addTo(mapa);
+  }
+
   capas.hd=L.layerGroup().addTo(mapa);
   capas.c5=L.layerGroup().addTo(mapa);
   capas.bases=L.layerGroup();
@@ -811,12 +829,38 @@ function popup911(d){
 
 /* ═════════════════════════════ 03 Coordinaciones ═════════════════════════ */
 function coordinaciones(){
+  // Resumen por coordinación regional: la unidad con la que sesiona el mando.
+  const C=DATOS.coordinaciones||[];
+  const maxC=C[0]?C[0].carga_violencia:1;
+  tabla("t-coordinaciones",
+    [["#","num"],["Coordinación regional"],["Municipios","num"],["Carga de violencia","num"],
+     ["HD","num"],["Víct.","num"],["Llam. viol.","num"],["Arma fuego","num"],
+     ["Bases","num"],["Personal","num"],["Carga /100 elem.","num"],
+     ["Desat.","num"],["Sat.","num"]],
+    C.map(c=>`<tr>
+      <td class="num">${c.ranking}</td>
+      <td><b>${E(c.coordinacion)}</b>
+        <div style="font-size:.72rem;color:var(--tx3)">${E(c.municipios.slice(0,6).join(", "))}${c.municipios.length>6?` +${c.municipios.length-6}`:""}</div></td>
+      <td class="num">${c.total_municipios}</td>
+      <td class="num"><b>${c.carga_violencia}</b>
+        <div class="barra"><i style="width:${Math.round(c.carga_violencia/maxC*100)}%"></i></div></td>
+      <td class="num">${c.hd_eventos}</td>
+      <td class="num">${c.hd_victimas}</td>
+      <td class="num">${c.llamadas_violentas}</td>
+      <td class="num">${c.arma_fuego}</td>
+      <td class="num">${c.bases_en_uso}</td>
+      <td class="num">${N(c.personal_total)}</td>
+      <td class="num">${c.carga_por_100_elementos==null?"—":c.carga_por_100_elementos}</td>
+      <td class="num">${c.sectores_desatendidos||"—"}</td>
+      <td class="num">${c.sectores_saturados||"—"}</td>
+    </tr>`));
+
   const max=DATOS.territorio[0]?DATOS.territorio[0].indice_presion:1;
   const filas=DATOS.territorio.filter(t=>t.carga_violencia>0).map(t=>`
     <tr class="click" data-mun="${E(t.municipio)}">
       <td class="num">${t.ranking}</td>
       <td><b>${E(t.municipio)}</b>
-        ${t.region?`<span class="et e-gris">Región ${E(t.region)}</span>`:""}
+        ${t.coordinacion?`<span class="et e-gris">${E(t.coordinacion)}</span>`:""}
         ${t.colonias_reincidentes.length?`<div style="font-size:.73rem;color:var(--tx3)">reincidentes: ${E(t.colonias_reincidentes.join(", "))}</div>`:""}</td>
       <td class="num"><b>${t.indice_presion}</b>
         <div class="barra"><i style="width:${Math.round(t.indice_presion/max*100)}%"></i></div></td>
@@ -986,16 +1030,28 @@ function informe(){
        <ul>${R.hd.top_moviles.map(m=>`<li><b>${E(m[0])}:</b> ${m[1]} (${PCT(m[1],R.hd.eventos)}%)</li>`).join("")}</ul></div>
    </div>
 
-   <h3>1. Presión territorial por municipio</h3>
-   <table><thead><tr><th>#</th><th>Municipio</th><th>Índice</th><th>HD</th><th>Llam. viol.</th>
-     <th>Bases</th><th>Personal</th><th>Dist. media</th><th>Desat.</th></tr></thead>
-     <tbody>${DATOS.territorio.slice(0,8).map(t=>`<tr><td>${t.ranking}</td><td>${E(t.municipio)}</td>
+   <h3>1. Carga por coordinación regional</h3>
+   <table><thead><tr><th>#</th><th>Coordinación</th><th>Mpios.</th><th>Carga</th><th>HD</th>
+     <th>Llam. viol.</th><th>Arma fuego</th><th>Personal</th><th>Carga /100 elem.</th>
+     <th>Desat.</th><th>Sat.</th></tr></thead>
+     <tbody>${(DATOS.coordinaciones||[]).map(c=>`<tr><td>${c.ranking}</td>
+       <td>${E(c.coordinacion)}</td><td>${c.total_municipios}</td><td>${c.carga_violencia}</td>
+       <td>${c.hd_eventos}</td><td>${c.llamadas_violentas}</td><td>${c.arma_fuego}</td>
+       <td>${N(c.personal_total)}</td>
+       <td>${c.carga_por_100_elementos==null?"—":c.carga_por_100_elementos}</td>
+       <td>${c.sectores_desatendidos}</td><td>${c.sectores_saturados}</td></tr>`).join("")}</tbody></table>
+
+   <h4 style="margin-top:16px;font-size:.9rem">Municipios de mayor presión</h4>
+   <table><thead><tr><th>#</th><th>Municipio</th><th>Coordinación</th><th>Índice</th><th>HD</th>
+     <th>Llam. viol.</th><th>Personal</th><th>Dist. media</th><th>Desat.</th></tr></thead>
+     <tbody>${DATOS.territorio.slice(0,10).map(t=>`<tr><td>${t.ranking}</td><td>${E(t.municipio)}</td>
+       <td>${E(t.coordinacion)||"—"}</td>
        <td>${t.indice_presion}</td><td>${t.hd_eventos}</td><td>${t.llamadas_violentas}</td>
-       <td>${t.bases_en_uso}</td><td>${N(t.personal_total)}</td>
+       <td>${N(t.personal_total)}</td>
        <td>${t.dist_media_hd_base_km==null?"—":t.dist_media_hd_base_km+" km"}</td>
        <td>${t.sectores_desatendidos}</td></tr>`).join("")}</tbody></table>
    <p style="font-size:.76rem;color:#667085;margin-top:6px">
-     El índice mide condiciones del territorio (violencia, despliegue disponible y brechas de cobertura),
+     Los índices miden condiciones del territorio (violencia, despliegue disponible y brechas de cobertura),
      no el desempeño individual de un mando: los insumos no contienen asignación nominal, turnos ni recorridos.</p>
 
    <h3>2. Cobertura de patrullaje y zonas ciegas</h3>
@@ -1070,7 +1126,12 @@ function irA(id){
   document.getElementById("contexto").textContent=TITULOS[id][1];
   if(id==="v-territorio"&&mapa) setTimeout(()=>{
     mapa.invalidateSize();
-    if(!window._encuadrado){ window._encuadrado=true; mapa.fitBounds(EDOMEX); }
+    // Sin animate:false el zoom del encuadre se pierde: la animacion arranca
+    // en el mismo cuadro en que el contenedor acaba de cambiar de tamano.
+    if(!window._encuadrado){
+      window._encuadrado=true;
+      mapa.fitBounds(EDOMEX,{animate:false,padding:[12,12]});
+    }
   },150);
   // Chart.js no puede medir un lienzo oculto: si el tema cambio mientras esta
   // vista no estaba visible, las graficas se redibujan al volver a ella.
@@ -1102,8 +1163,8 @@ window.addEventListener("load",()=>{
   document.getElementById("sello").textContent=R.generado;
   const S0=DATOS.serie;
   document.querySelector("header .ctx").dataset.base="";
-  TITULOS["v-panorama"][1]=`Estado de México · ${R.serie.cortes} cortes del C5, `+
-    `${S0.desde}h a ${S0.hasta}h · ${N(R.c5.llamadas_totales)} llamadas`;
+  TITULOS["v-panorama"][1]=`Estado de México · C5 del ${S0.desde}h al ${S0.hasta}h `+
+    `(${R.serie.horas} horas) · ${N(R.c5.llamadas_totales)} llamadas`;
   document.getElementById("contexto").textContent=TITULOS["v-panorama"][1];
   panorama(); graficas(); iniciarMapa(); territorio();
   coordinaciones(); casos(); ubicaciones(); informe();

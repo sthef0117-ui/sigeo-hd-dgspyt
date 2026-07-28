@@ -40,7 +40,10 @@ ANALISIS = RAIZ / "analisis"
 BD = RAIZ / "database" / "sigeo_db.sqlite"
 
 XLS_HD = INSUMOS / "excel" / "ACCIONES DE HD JULIO DGSPYT.xlsx"
+XLS_INSTALACIONES = (INSUMOS / "estructura" /
+                     "INSTALACIONES_DGSPYT_290426_QR L.xlsx")
 XLS_BASES = INSUMOS / "whatsapp" / "INMUEBLES GENERAL DGSPYT.xlsx"
+PERIMETRO = RAIZ / "poligonos" / "perimetro_edomex.geojson"
 # Los cortes de 911 se descubren solos en insumos/excel: ver cortes_911().
 
 NULOS = {"", "0", "0.0", "NONE", "NULL", "N/A", "NA", "SIN DATO",
@@ -258,55 +261,108 @@ def cortes_911():
     return rutas
 
 
+# El C5 entrega dos formatos: el corte diario (hoja "REPORTE C.A.LL.E 9-1-1",
+# encabezado en la fila 4) y el concentrado historico (hoja "CONCENTRADO_911",
+# encabezado en la fila 1). Las columnas se localizan por nombre y no por
+# posicion, para que ambos formatos entren por la misma puerta.
+HOJAS_911 = ("REPORTE C.A.LL.E 9-1-1", "CONCENTRADO_911")
+
+COLUMNAS_911 = {
+    "folio": ("FOLIO",),
+    "tipo": ("TIPO",),
+    "incidente": ("INCIDENTE",),
+    "fecha": ("DIA", "FECHA"),
+    "hora": ("HORA",),
+    "municipio": ("MUNICIPIO",),
+    "direccion": ("DIRECCION",),
+    "notas": ("NOTAS",),
+    "corporacion": ("CORPORACION",),
+    "modo_recepcion": ("MODO DE RECEPCION",),
+    "codigo_cancelacion": ("CODIGO DE CANCELACION",),
+    "referencia": ("REFERENCIA DE UBICACION",),
+    "lat": ("LATITUD",),
+    "lng": ("LONGITUD",),
+}
+
+
+def _mapa_columnas(ws, limite=8):
+    """Localiza la fila de encabezados y devuelve {campo: indice}."""
+    for fila in ws.iter_rows(min_row=1, max_row=limite, values_only=True):
+        etiquetas = [_norm(v) for v in fila]
+        if "FOLIO" not in etiquetas or "INCIDENTE" not in etiquetas:
+            continue
+        mapa = {}
+        for campo, alias in COLUMNAS_911.items():
+            for i, etiqueta in enumerate(etiquetas):
+                if etiqueta in alias:
+                    mapa[campo] = i
+                    break
+        return mapa
+    return None
+
+
 def cargar_911(rutas=None):
     rutas = rutas or cortes_911()
     registros = []
     vistos = set()
     for ruta in rutas:
         wb = openpyxl.load_workbook(ruta, read_only=True, data_only=True)
-        if "REPORTE C.A.LL.E 9-1-1" not in wb.sheetnames:
-            wb.close()
-            continue
-        registros += _leer_corte_911(wb["REPORTE C.A.LL.E 9-1-1"], ruta.name, vistos)
+        for nombre in HOJAS_911:
+            if nombre in wb.sheetnames:
+                registros += _leer_corte_911(wb[nombre], ruta.name, vistos)
+                break
         wb.close()
     return registros
 
 
 def _leer_corte_911(ws, origen, vistos):
+    mapa = _mapa_columnas(ws)
+    if not mapa or "folio" not in mapa:
+        return []
+    encabezado_visto = False
+
+    def col(fila, campo):
+        i = mapa.get(campo)
+        return fila[i] if i is not None and i < len(fila) else None
+
     registros = []
-    # Fila 4 = encabezados; los datos inician en la 5.
-    # Columnas de reportante (11,12,13) se descartan por proteccion de datos.
-    for fila in ws.iter_rows(min_row=5, values_only=True):
-        folio = limpio(fila[1])
+    # Las columnas de reportante (nombre, apellido, telefono) no se leen nunca,
+    # por proteccion de datos personales.
+    for fila in ws.iter_rows(values_only=True):
+        folio = limpio(col(fila, "folio"))
+        if not encabezado_visto:
+            if _norm(folio) == "FOLIO":
+                encabezado_visto = True
+            continue
         if not folio or folio in vistos:
             continue
         vistos.add(folio)
-        incidente = limpio(fila[3])
-        lat, lng = a_float(fila[28]), a_float(fila[29])
+        incidente = limpio(col(fila, "incidente"))
+        lat, lng = a_float(col(fila, "lat")), a_float(col(fila, "lng"))
         if not en_edomex(lat, lng):
             lat = lng = None
-        municipio = municipio_canonico(fila[9])
-        direccion = limpio(fila[10])
-        referencia = limpio(fila[27])
-        notas = limpio(fila[14])
+        municipio = municipio_canonico(col(fila, "municipio"))
+        direccion = limpio(col(fila, "direccion"))
+        referencia = limpio(col(fila, "referencia"))
+        notas = limpio(col(fila, "notas"))
         peso, familia = clasificar_incidente(incidente)
         geo = geocodificar(municipio=municipio, direccion=direccion,
                            referencia=referencia, notas=notas, lat=lat, lng=lng)
         registros.append({
             "folio": folio,
-            "tipo": limpio(fila[2]),
+            "tipo": limpio(col(fila, "tipo")),
             "incidente": incidente,
             "familia": familia,
             "peso_violencia": peso,
-            "fecha": a_fecha(fila[4]),
-            "hora": a_hora(fila[6]),
+            "fecha": a_fecha(col(fila, "fecha")),
+            "hora": a_hora(col(fila, "hora")),
             "municipio": municipio,
             "direccion": direccion,
             "referencia": referencia,
             "notas": notas,
-            "corporacion": limpio(fila[23]),
-            "modo_recepcion": limpio(fila[25]),
-            "codigo_cancelacion": limpio(fila[26]),
+            "corporacion": limpio(col(fila, "corporacion")),
+            "modo_recepcion": limpio(col(fila, "modo_recepcion")),
+            "codigo_cancelacion": limpio(col(fila, "codigo_cancelacion")),
             "corte": origen,
             "lat": lat,
             "lng": lng,
@@ -331,7 +387,66 @@ _ORDINAL = {"PRIMER": "1", "SEGUNDO": "2", "TERCER": "3", "CUARTO": "4",
             "QUINTO": "5", "SEXTO": "6"}
 
 
+def _entero(v):
+    try:
+        return int(float(str(v)))
+    except (TypeError, ValueError):
+        return 0
+
+
+def _coordenada(texto):
+    """El inventario guarda la posicion como una cadena "lat, lng" de Google Maps."""
+    m = re.match(r"^\s*(-?\d+\.?\d*)\s*,\s*(-?\d+\.?\d*)\s*$", limpio(texto))
+    if not m:
+        return None, None
+    lat, lng = a_float(m.group(1)), a_float(m.group(2))
+    return (lat, lng) if en_edomex(lat, lng) else (None, None)
+
+
 def cargar_bases():
+    """
+    Inventario de inmuebles con la estructura territorial oficial.
+
+    Se prefiere INSTALACIONES_DGSPYT, que trae las columnas COORDINACION y
+    SUBDIRECCION: esa es la division con la que sesiona el mando, la misma del
+    mapa mural de la Direccion. El inventario anterior (INMUEBLES GENERAL) no
+    las traia y obligaba a deducir la region del nombre de la unidad usuaria.
+    """
+    if XLS_INSTALACIONES.exists():
+        return _cargar_instalaciones()
+    return _cargar_inmuebles_legado()
+
+
+def _cargar_instalaciones():
+    wb = openpyxl.load_workbook(XLS_INSTALACIONES, read_only=True, data_only=True)
+    ws = wb[wb.sheetnames[0]]
+    bases = []
+    for fila in ws.iter_rows(min_row=7, values_only=True):
+        cvo = limpio(fila[0])
+        if not cvo or not cvo.replace(".0", "").isdigit():
+            continue
+        lat, lng = _coordenada(fila[7])
+        unidad = limpio(fila[5])
+        bases.append({
+            "cvo": int(float(cvo)),
+            "coordinacion": _norm(fila[1]),
+            "subdireccion": _norm(fila[2]),
+            "municipio": municipio_canonico(fila[3]),
+            "ubicacion": limpio(fila[4]),
+            "unidad": unidad,
+            "tipo_construccion": limpio(fila[11]),
+            "en_uso": limpio(fila[12]).upper().startswith("SI"),
+            "lat": lat,
+            "lng": lng,
+            "personal_hombres": _entero(fila[14]),
+            "personal_mujeres": _entero(fila[15]),
+            "personal_total": _entero(fila[16]),
+        })
+    wb.close()
+    return bases
+
+
+def _cargar_inmuebles_legado():
     wb = openpyxl.load_workbook(XLS_BASES, read_only=True, data_only=True)
     ws = wb["DGSPYT"]
     bases = []
@@ -339,30 +454,11 @@ def cargar_bases():
         cvo = limpio(fila[0])
         if not cvo or not cvo.replace(".0", "").isdigit():
             continue
-        coord = limpio(fila[7])
-        m = re.match(r"^\s*(-?\d+\.?\d*)\s*,\s*(-?\d+\.?\d*)\s*$", coord)
-        lat = a_float(m.group(1)) if m else None
-        lng = a_float(m.group(2)) if m else None
-        if not en_edomex(lat, lng):
-            lat = lng = None
-
-        def entero(v):
-            try:
-                return int(float(str(v)))
-            except (TypeError, ValueError):
-                return 0
-
-        # La estructura estatal (region y agrupamiento) viene embebida en el
-        # nombre de la unidad usuaria: "1er Agrupamiento Acolman, XXXII Region".
-        unidad = limpio(fila[5]) or limpio(fila[4])
-        mr = _RE_REGION.search(_norm(unidad))
-        ma = _RE_AGRUP.search(_norm(unidad))
-        agr = ma.group(1) if ma else ""
-
+        lat, lng = _coordenada(fila[7])
         bases.append({
             "cvo": int(float(cvo)),
-            "region": mr.group(1) if mr else "",
-            "agrupamiento": _ORDINAL.get(agr, agr),
+            "coordinacion": "",
+            "subdireccion": "",
             "municipio": municipio_canonico(fila[1]),
             "ubicacion": limpio(fila[3]) or limpio(fila[2]),
             "unidad": limpio(fila[5]) or limpio(fila[4]),
@@ -370,9 +466,9 @@ def cargar_bases():
             "en_uso": limpio(fila[13]).upper().startswith("SI"),
             "lat": lat,
             "lng": lng,
-            "personal_hombres": entero(fila[22]),
-            "personal_mujeres": entero(fila[23]),
-            "personal_total": entero(fila[24]),
+            "personal_hombres": _entero(fila[22]),
+            "personal_mujeres": _entero(fila[23]),
+            "personal_total": _entero(fila[24]),
         })
     wb.close()
     return bases
@@ -787,12 +883,17 @@ def perfil_territorial(hd, llamadas, bases, sectores):
         if b["en_uso"]:
             indice_bases[b["municipio"]].append(b)
 
-    # La region estatal solo esta declarada en una parte del inventario; se
-    # deduce donde existe y se deja vacia donde no, sin inventarla.
-    region_de = {}
+    # Coordinacion y subdireccion oficiales, tomadas del inventario de
+    # instalaciones. Es la division con la que sesiona el mando.
+    coordinacion_de, subdireccion_de = {}, {}
     for b in bases:
-        if b["region"] and b["municipio"] and b["municipio"] not in region_de:
-            region_de[b["municipio"]] = b["region"]
+        if not b["municipio"]:
+            continue
+        if b["coordinacion"] and b["municipio"] not in coordinacion_de:
+            coordinacion_de[b["municipio"]] = b["coordinacion"]
+        if b["subdireccion"] and b["subdireccion"] != "N/A" \
+                and b["municipio"] not in subdireccion_de:
+            subdireccion_de[b["municipio"]] = b["subdireccion"]
 
     bases_geo = [b for b in bases if b["lat"] and b["en_uso"]]
     for h in hd:
@@ -829,11 +930,10 @@ def perfil_territorial(hd, llamadas, bases, sectores):
         factor_gap = 1.0 + p["sectores_desatendidos"] * 0.25
         indice_presion = round(carga * factor_dist * factor_gap, 1)
 
-        agrupamientos = sorted({b["agrupamiento"] for b in propias if b["agrupamiento"]})
         salida.append({
             "municipio": municipio,
-            "region": region_de.get(municipio, ""),
-            "agrupamientos": agrupamientos,
+            "coordinacion": coordinacion_de.get(municipio, ""),
+            "subdireccion": subdireccion_de.get(municipio, ""),
             "hd_eventos": p["hd_eventos"],
             "hd_victimas": p["hd_victimas"],
             "hd_nocturnos": p["hd_nocturnos"],
@@ -851,6 +951,61 @@ def perfil_territorial(hd, llamadas, bases, sectores):
         })
 
     salida.sort(key=lambda x: x["indice_presion"], reverse=True)
+    for i, x in enumerate(salida, 1):
+        x["ranking"] = i
+    return salida
+
+
+def perfil_coordinaciones(territorio):
+    """
+    Agrega el perfil municipal a la division con la que sesiona el mando.
+
+    El mapa mural de la Direccion esta dividido en coordinaciones regionales,
+    no en municipios sueltos. Presentar la mesa en esa unidad es lo que permite
+    hablar con cada coordinador de su propio tramo.
+    """
+    grupos = defaultdict(lambda: {
+        "municipios": [], "hd_eventos": 0, "hd_victimas": 0,
+        "llamadas_violentas": 0, "arma_fuego": 0, "bases_en_uso": 0,
+        "personal_total": 0, "sectores_desatendidos": 0,
+        "sectores_saturados": 0, "distancias": [],
+    })
+    for t in territorio:
+        clave = t["coordinacion"] or "SIN COORDINACIÓN ASIGNADA"
+        g = grupos[clave]
+        g["municipios"].append(t["municipio"])
+        for campo in ("hd_eventos", "hd_victimas", "llamadas_violentas",
+                      "arma_fuego", "bases_en_uso", "personal_total",
+                      "sectores_desatendidos", "sectores_saturados"):
+            g[campo] += t[campo]
+        if t["dist_media_hd_base_km"] is not None:
+            g["distancias"].append(t["dist_media_hd_base_km"])
+
+    salida = []
+    for nombre, g in grupos.items():
+        carga = g["hd_eventos"] * 10 + g["llamadas_violentas"]
+        dist = (round(sum(g["distancias"]) / len(g["distancias"]), 2)
+                if g["distancias"] else None)
+        salida.append({
+            "coordinacion": nombre,
+            "municipios": sorted(g["municipios"]),
+            "total_municipios": len(g["municipios"]),
+            "hd_eventos": g["hd_eventos"],
+            "hd_victimas": g["hd_victimas"],
+            "llamadas_violentas": g["llamadas_violentas"],
+            "arma_fuego": g["arma_fuego"],
+            "carga_violencia": carga,
+            "bases_en_uso": g["bases_en_uso"],
+            "personal_total": g["personal_total"],
+            "dist_media_hd_base_km": dist,
+            "sectores_desatendidos": g["sectores_desatendidos"],
+            "sectores_saturados": g["sectores_saturados"],
+            # Carga de violencia por cada 100 elementos adscritos: dice si el
+            # tramo esta sobrecargado respecto de su propio despliegue.
+            "carga_por_100_elementos": (round(carga * 100 / g["personal_total"], 1)
+                                        if g["personal_total"] else None),
+        })
+    salida.sort(key=lambda x: x["carga_violencia"], reverse=True)
     for i, x in enumerate(salida, 1):
         x["ranking"] = i
     return salida
@@ -952,15 +1107,17 @@ def resumen_ejecutivo(hd, llamadas, bases, sectores, auditoria, serie=None):
                     for s in sectores[:5]],
         },
         "estructura_estatal": {
-            "bases_con_region_declarada": sum(1 for b in bases if b["region"]),
-            "bases_con_agrupamiento": sum(1 for b in bases if b["agrupamiento"]),
-            "regiones_detectadas": sorted({b["region"] for b in bases if b["region"]}),
-            "nota": ("La region estatal solo esta declarada en parte del inventario "
-                     "de inmuebles. Con el catalogo oficial region-municipio la "
-                     "agregacion seria completa."),
+            "coordinaciones": sorted({b["coordinacion"] for b in bases
+                                      if b["coordinacion"]}),
+            "subdirecciones": len({b["subdireccion"] for b in bases
+                                   if b["subdireccion"] and b["subdireccion"] != "N/A"}),
+            "bases_con_coordinacion": sum(1 for b in bases if b["coordinacion"]),
+            "municipios_con_coordinacion": len({b["municipio"] for b in bases
+                                                if b["coordinacion"] and b["municipio"]}),
         },
         "serie": {
-            "cortes": len(serie["cortes"]) if serie else 0,
+            "archivos": serie.get("archivos", 0) if serie else 0,
+            "horas": len(serie["por_hora"]) if serie else 0,
             "desde": serie["desde"] if serie else "",
             "hasta": serie["hasta"] if serie else "",
         },
@@ -993,7 +1150,7 @@ def escribir_sqlite(hd, llamadas, bases, sectores, auditoria):
     cur.executescript("""
         DROP TABLE IF EXISTS tb_bases_dgspyt;
         CREATE TABLE tb_bases_dgspyt (
-            cvo INTEGER PRIMARY KEY, municipio TEXT, region TEXT, agrupamiento TEXT,
+            cvo INTEGER PRIMARY KEY, municipio TEXT, coordinacion TEXT, subdireccion TEXT,
             unidad TEXT, ubicacion TEXT, tipo_construccion TEXT, en_uso INTEGER,
             latitud REAL, longitud REAL,
             personal_hombres INTEGER, personal_mujeres INTEGER, personal_total INTEGER
@@ -1022,7 +1179,7 @@ def escribir_sqlite(hd, llamadas, bases, sectores, auditoria):
 
     cur.executemany(
         "INSERT INTO tb_bases_dgspyt VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)",
-        [(b["cvo"], b["municipio"], b["region"], b["agrupamiento"],
+        [(b["cvo"], b["municipio"], b["coordinacion"], b["subdireccion"],
           b["unidad"], b["ubicacion"],
           b["tipo_construccion"], int(b["en_uso"]), b["lat"], b["lng"],
           b["personal_hombres"], b["personal_mujeres"], b["personal_total"])
@@ -1105,11 +1262,15 @@ def main():
     print(f"  casos auditados ............ {len(auditoria)} ({altas} prioridad alta)")
 
     serie = serie_temporal(llamadas, hd)
-    print(f"  cortes C5 integrados ....... {len(serie['cortes'])} "
-          f"({serie['desde']}h a {serie['hasta']}h)")
+    serie["archivos"] = len(rutas)
+    print(f"  archivos C5 integrados ..... {len(rutas)} "
+          f"· ventana {serie['desde']}h a {serie['hasta']}h "
+          f"({len(serie['por_hora'])} horas)")
 
     territorio = perfil_territorial(hd, llamadas, bases, sectores)
+    coordinaciones = perfil_coordinaciones(territorio)
     print(f"  municipios perfilados ...... {len(territorio)}")
+    print(f"  coordinaciones regionales .. {len(coordinaciones)}")
 
     resumen = resumen_ejecutivo(hd, llamadas, bases, sectores, auditoria, serie)
     resumen["territorio_top"] = [
@@ -1128,8 +1289,12 @@ def main():
     )
     llamadas_tablero = []
     for l in llamadas:
-        relevante = (l["peso_violencia"] > 0 or l["lat"] is not None
-                     or l["geo_confianza"] in ("ALTA", "MEDIA"))
+        # El mapa solo dibuja llamadas con violencia, y la vista de ubicaciones
+        # solo las que el extractor recupero. El resto no se dibuja en ningun
+        # lado y solo engordaria el archivo que viaja en USB.
+        relevante = (l["peso_violencia"] > 0
+                     or (l["lat"] is None
+                         and l["geo_confianza"] in ("ALTA", "MEDIA")))
         if not relevante:
             continue
         fila = {c: l[c] for c in CAMPOS_TABLERO}
@@ -1148,7 +1313,13 @@ def main():
     escribir_json("bases_dgspyt.json", bases)
     escribir_json("zonas_ciegas.json", sectores)
     escribir_json("perfil_territorial.json", territorio)
+    escribir_json("perfil_coordinaciones.json", coordinaciones)
     escribir_json("serie_temporal.json", serie)
+    # El perimetro del estado viaja con los demas insumos calculados para que
+    # el ensamblador lo incruste en el tablero.
+    if PERIMETRO.exists():
+        escribir_json("perimetro_edomex.json",
+                      json.loads(PERIMETRO.read_text(encoding="utf-8")))
     escribir_json("auditoria_decesos.json", publicable(auditoria))
     escribir_json("resumen_ejecutivo.json", resumen)
     escribir_sqlite(hd, llamadas, bases, sectores, auditoria)
