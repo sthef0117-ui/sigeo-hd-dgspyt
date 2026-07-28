@@ -1,0 +1,236 @@
+{
+  "id": 0,
+  "resourcePackages": [],
+  "sections": [
+    {
+      "name": "pagina0",
+      "displayName": "Homicidios dolosos",
+      "filters": "[]",
+      "ordinal": 0,
+      "visualContainers": [
+        {
+          "x": 20,
+          "y": 20,
+          "z": 1,
+          "width": 285,
+          "height": 120,
+          "config": "{\"name\": \"v1-card-20-20\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 20, \"y\": 20, \"z\": 1, \"width\": 285, \"height\": 120}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Values\": [{\"queryRef\": \"dim_coordinacion.Homicidios\"}]}, \"drillFilterOtherVisuals\": true, \"vcObjects\": {\"title\": [{\"properties\": {\"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Homicidios'\"}}}, \"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 325,
+          "y": 20,
+          "z": 2,
+          "width": 285,
+          "height": 120,
+          "config": "{\"name\": \"v2-card-325-20\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 325, \"y\": 20, \"z\": 2, \"width\": 285, \"height\": 120}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Values\": [{\"queryRef\": \"dim_coordinacion.Víctimas\"}]}, \"drillFilterOtherVisuals\": true, \"vcObjects\": {\"title\": [{\"properties\": {\"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Víctimas'\"}}}, \"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 630,
+          "y": 20,
+          "z": 3,
+          "width": 285,
+          "height": 120,
+          "config": "{\"name\": \"v3-card-630-20\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 630, \"y\": 20, \"z\": 3, \"width\": 285, \"height\": 120}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Values\": [{\"queryRef\": \"dim_coordinacion.% nocturnos\"}]}, \"drillFilterOtherVisuals\": true, \"vcObjects\": {\"title\": [{\"properties\": {\"text\": {\"expr\": {\"Literal\": {\"Value\": \"'% nocturnos'\"}}}, \"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 935,
+          "y": 20,
+          "z": 4,
+          "width": 285,
+          "height": 120,
+          "config": "{\"name\": \"v4-card-935-20\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 935, \"y\": 20, \"z\": 4, \"width\": 285, \"height\": 120}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Values\": [{\"queryRef\": \"dim_coordinacion.Distancia mediana a base\"}]}, \"drillFilterOtherVisuals\": true, \"vcObjects\": {\"title\": [{\"properties\": {\"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Distancia mediana a base'\"}}}, \"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 20,
+          "y": 155,
+          "z": 5,
+          "width": 610,
+          "height": 270,
+          "config": "{\"name\": \"v5-columnChart-20-155\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 20, \"y\": 155, \"z\": 5, \"width\": 610, \"height\": 270}}], \"singleVisual\": {\"visualType\": \"columnChart\", \"projections\": {\"Category\": [{\"queryRef\": \"dim_calendario.fecha\"}], \"Y\": [{\"queryRef\": \"dim_coordinacion.Homicidios\"}]}, \"drillFilterOtherVisuals\": true, \"vcObjects\": {\"title\": [{\"properties\": {\"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Homicidios dolosos por día'\"}}}, \"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 645,
+          "y": 155,
+          "z": 6,
+          "width": 615,
+          "height": 270,
+          "config": "{\"name\": \"v6-barChart-645-155\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 645, \"y\": 155, \"z\": 6, \"width\": 615, \"height\": 270}}], \"singleVisual\": {\"visualType\": \"barChart\", \"projections\": {\"Category\": [{\"queryRef\": \"dim_municipio.municipio\"}], \"Y\": [{\"queryRef\": \"dim_coordinacion.Homicidios\"}]}, \"drillFilterOtherVisuals\": true, \"vcObjects\": {\"title\": [{\"properties\": {\"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Homicidios por municipio'\"}}}, \"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 20,
+          "y": 440,
+          "z": 7,
+          "width": 400,
+          "height": 240,
+          "config": "{\"name\": \"v7-columnChart-20-440\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 20, \"y\": 440, \"z\": 7, \"width\": 400, \"height\": 240}}], \"singleVisual\": {\"visualType\": \"columnChart\", \"projections\": {\"Category\": [{\"queryRef\": \"fact_homicidios.hora_num\"}], \"Y\": [{\"queryRef\": \"dim_coordinacion.Homicidios\"}]}, \"drillFilterOtherVisuals\": true, \"vcObjects\": {\"title\": [{\"properties\": {\"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Homicidios por hora del día'\"}}}, \"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 435,
+          "y": 440,
+          "z": 8,
+          "width": 400,
+          "height": 240,
+          "config": "{\"name\": \"v8-donutChart-435-440\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 435, \"y\": 440, \"z\": 8, \"width\": 400, \"height\": 240}}], \"singleVisual\": {\"visualType\": \"donutChart\", \"projections\": {\"Category\": [{\"queryRef\": \"fact_homicidios.movil\"}], \"Y\": [{\"queryRef\": \"dim_coordinacion.Homicidios\"}]}, \"drillFilterOtherVisuals\": true, \"vcObjects\": {\"title\": [{\"properties\": {\"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Móvil de la agresión'\"}}}, \"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 850,
+          "y": 440,
+          "z": 9,
+          "width": 410,
+          "height": 240,
+          "config": "{\"name\": \"v9-slicer-850-440\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 850, \"y\": 440, \"z\": 9, \"width\": 410, \"height\": 240}}], \"singleVisual\": {\"visualType\": \"slicer\", \"projections\": {\"Values\": [{\"queryRef\": \"dim_coordinacion.coordinacion\"}]}, \"drillFilterOtherVisuals\": true, \"vcObjects\": {\"title\": [{\"properties\": {\"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Coordinación regional'\"}}}, \"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}}}]}}}",
+          "filters": "[]"
+        }
+      ],
+      "config": "{\"visibility\": 0}",
+      "displayOption": 1,
+      "width": 1280.0,
+      "height": 720.0
+    },
+    {
+      "name": "pagina1",
+      "displayName": "Territorio",
+      "filters": "[]",
+      "ordinal": 1,
+      "visualContainers": [
+        {
+          "x": 20,
+          "y": 20,
+          "z": 1,
+          "width": 620,
+          "height": 400,
+          "config": "{\"name\": \"v1-map-20-20\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 20, \"y\": 20, \"z\": 1, \"width\": 620, \"height\": 400}}], \"singleVisual\": {\"visualType\": \"map\", \"projections\": {\"Category\": [{\"queryRef\": \"fact_homicidios.municipio\"}], \"Size\": [{\"queryRef\": \"dim_coordinacion.Homicidios\"}]}, \"drillFilterOtherVisuals\": true, \"vcObjects\": {\"title\": [{\"properties\": {\"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Homicidios dolosos en el territorio'\"}}}, \"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 655,
+          "y": 20,
+          "z": 2,
+          "width": 605,
+          "height": 400,
+          "config": "{\"name\": \"v2-map-655-20\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 655, \"y\": 20, \"z\": 2, \"width\": 605, \"height\": 400}}], \"singleVisual\": {\"visualType\": \"map\", \"projections\": {\"Category\": [{\"queryRef\": \"fact_sectores.sector_id\"}], \"Size\": [{\"queryRef\": \"fact_sectores.indice_ceguera\"}], \"Series\": [{\"queryRef\": \"fact_sectores.clasificacion\"}]}, \"drillFilterOtherVisuals\": true, \"vcObjects\": {\"title\": [{\"properties\": {\"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Sectores de zona ciega'\"}}}, \"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 20,
+          "y": 435,
+          "z": 3,
+          "width": 940,
+          "height": 245,
+          "config": "{\"name\": \"v3-tableEx-20-435\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 20, \"y\": 435, \"z\": 3, \"width\": 940, \"height\": 245}}], \"singleVisual\": {\"visualType\": \"tableEx\", \"projections\": {\"Values\": [{\"queryRef\": \"fact_sectores.ranking\"}, {\"queryRef\": \"fact_sectores.municipio\"}, {\"queryRef\": \"fact_sectores.clasificacion\"}, {\"queryRef\": \"fact_sectores.indice_ceguera\"}, {\"queryRef\": \"fact_sectores.dist_base_km\"}, {\"queryRef\": \"fact_sectores.personal_3km\"}, {\"queryRef\": \"fact_sectores.diagnostico\"}]}, \"drillFilterOtherVisuals\": true, \"vcObjects\": {\"title\": [{\"properties\": {\"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Sectores ordenados por brecha de cobertura'\"}}}, \"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 975,
+          "y": 435,
+          "z": 4,
+          "width": 285,
+          "height": 245,
+          "config": "{\"name\": \"v4-slicer-975-435\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 975, \"y\": 435, \"z\": 4, \"width\": 285, \"height\": 245}}], \"singleVisual\": {\"visualType\": \"slicer\", \"projections\": {\"Values\": [{\"queryRef\": \"fact_sectores.clasificacion\"}]}, \"drillFilterOtherVisuals\": true, \"vcObjects\": {\"title\": [{\"properties\": {\"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Diagnóstico'\"}}}, \"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}}}]}}}",
+          "filters": "[]"
+        }
+      ],
+      "config": "{\"visibility\": 0}",
+      "displayOption": 1,
+      "width": 1280.0,
+      "height": 720.0
+    },
+    {
+      "name": "pagina2",
+      "displayName": "Coordinaciones",
+      "filters": "[]",
+      "ordinal": 2,
+      "visualContainers": [
+        {
+          "x": 20,
+          "y": 20,
+          "z": 1,
+          "width": 1240,
+          "height": 300,
+          "config": "{\"name\": \"v1-tableEx-20-20\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 20, \"y\": 20, \"z\": 1, \"width\": 1240, \"height\": 300}}], \"singleVisual\": {\"visualType\": \"tableEx\", \"projections\": {\"Values\": [{\"queryRef\": \"dim_coordinacion.ranking\"}, {\"queryRef\": \"dim_coordinacion.coordinacion\"}, {\"queryRef\": \"dim_coordinacion.total_municipios\"}, {\"queryRef\": \"dim_coordinacion.Carga de violencia\"}, {\"queryRef\": \"dim_coordinacion.Personal desplegado\"}, {\"queryRef\": \"dim_coordinacion.Carga por 100 elementos\"}, {\"queryRef\": \"dim_coordinacion.Sectores desatendidos\"}, {\"queryRef\": \"dim_coordinacion.Sectores saturados\"}]}, \"drillFilterOtherVisuals\": true, \"vcObjects\": {\"title\": [{\"properties\": {\"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Coordinaciones regionales'\"}}}, \"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 20,
+          "y": 335,
+          "z": 2,
+          "width": 620,
+          "height": 345,
+          "config": "{\"name\": \"v2-barChart-20-335\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 20, \"y\": 335, \"z\": 2, \"width\": 620, \"height\": 345}}], \"singleVisual\": {\"visualType\": \"barChart\", \"projections\": {\"Category\": [{\"queryRef\": \"dim_coordinacion.coordinacion\"}], \"Y\": [{\"queryRef\": \"dim_coordinacion.Carga por 100 elementos\"}]}, \"drillFilterOtherVisuals\": true, \"vcObjects\": {\"title\": [{\"properties\": {\"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Carga de violencia por cada 100 elementos adscritos'\"}}}, \"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 655,
+          "y": 335,
+          "z": 3,
+          "width": 605,
+          "height": 345,
+          "config": "{\"name\": \"v3-tableEx-655-335\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 655, \"y\": 335, \"z\": 3, \"width\": 605, \"height\": 345}}], \"singleVisual\": {\"visualType\": \"tableEx\", \"projections\": {\"Values\": [{\"queryRef\": \"dim_municipio.municipio\"}, {\"queryRef\": \"dim_municipio.coordinacion\"}, {\"queryRef\": \"dim_municipio.indice_presion\"}, {\"queryRef\": \"dim_municipio.personal_total\"}, {\"queryRef\": \"dim_municipio.sectores_desatendidos\"}]}, \"drillFilterOtherVisuals\": true, \"vcObjects\": {\"title\": [{\"properties\": {\"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Detalle por municipio'\"}}}, \"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}}}]}}}",
+          "filters": "[]"
+        }
+      ],
+      "config": "{\"visibility\": 0}",
+      "displayOption": 1,
+      "width": 1280.0,
+      "height": 720.0
+    },
+    {
+      "name": "pagina3",
+      "displayName": "Casos a revisar",
+      "filters": "[]",
+      "ordinal": 3,
+      "visualContainers": [
+        {
+          "x": 20,
+          "y": 20,
+          "z": 1,
+          "width": 285,
+          "height": 120,
+          "config": "{\"name\": \"v1-card-20-20\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 20, \"y\": 20, \"z\": 1, \"width\": 285, \"height\": 120}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Values\": [{\"queryRef\": \"dim_coordinacion.Casos auditados\"}]}, \"drillFilterOtherVisuals\": true, \"vcObjects\": {\"title\": [{\"properties\": {\"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Casos auditados'\"}}}, \"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 325,
+          "y": 20,
+          "z": 2,
+          "width": 285,
+          "height": 120,
+          "config": "{\"name\": \"v2-card-325-20\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 325, \"y\": 20, \"z\": 2, \"width\": 285, \"height\": 120}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Values\": [{\"queryRef\": \"dim_coordinacion.Casos prioridad alta\"}]}, \"drillFilterOtherVisuals\": true, \"vcObjects\": {\"title\": [{\"properties\": {\"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Casos prioridad alta'\"}}}, \"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 630,
+          "y": 20,
+          "z": 3,
+          "width": 630,
+          "height": 120,
+          "config": "{\"name\": \"v3-slicer-630-20\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 630, \"y\": 20, \"z\": 3, \"width\": 630, \"height\": 120}}], \"singleVisual\": {\"visualType\": \"slicer\", \"projections\": {\"Values\": [{\"queryRef\": \"fact_auditoria.nivel_revision\"}]}, \"drillFilterOtherVisuals\": true, \"vcObjects\": {\"title\": [{\"properties\": {\"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Prioridad de revisión'\"}}}, \"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 20,
+          "y": 155,
+          "z": 4,
+          "width": 1240,
+          "height": 525,
+          "config": "{\"name\": \"v4-tableEx-20-155\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 20, \"y\": 155, \"z\": 4, \"width\": 1240, \"height\": 525}}], \"singleVisual\": {\"visualType\": \"tableEx\", \"projections\": {\"Values\": [{\"queryRef\": \"fact_auditoria.folio\"}, {\"queryRef\": \"fact_auditoria.municipio\"}, {\"queryRef\": \"fact_auditoria.incidente\"}, {\"queryRef\": \"fact_auditoria.nivel_revision\"}, {\"queryRef\": \"fact_auditoria.puntaje\"}, {\"queryRef\": \"fact_auditoria.indicadores\"}, {\"queryRef\": \"fact_auditoria.accion_sugerida\"}]}, \"drillFilterOtherVisuals\": true, \"vcObjects\": {\"title\": [{\"properties\": {\"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Decesos dudosos, suicidios y personas no localizadas'\"}}}, \"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}}}]}}}",
+          "filters": "[]"
+        }
+      ],
+      "config": "{\"visibility\": 0}",
+      "displayOption": 1,
+      "width": 1280.0,
+      "height": 720.0
+    }
+  ],
+  "config": "{\"version\": \"5.43\", \"themeCollection\": {\"baseTheme\": {\"name\": \"CY24SU10\"}}, \"activeSectionIndex\": 0, \"defaultDrillFilterOtherVisuals\": true, \"settings\": {\"useStylableVisualContainerHeader\": true}}",
+  "layoutOptimization": 0
+}

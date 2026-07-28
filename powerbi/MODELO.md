@@ -1,16 +1,43 @@
 # SIGEO-HD en Power BI — guía de armado
 
-Los CSV de esta carpeta ya son un modelo en estrella. No hay que transformarlos:
-se cargan y se relacionan.
+## Camino corto: abrir el proyecto ya armado
+
+**Doble clic en `SIGEO-HD.pbip`.** El proyecto trae el modelo completo: las 7
+tablas, las 8 relaciones, las 17 medidas DAX y las 4 páginas con sus visuales.
+No hay que arrastrar campos ni escribir medidas.
+
+Requisitos: **Power BI Desktop de 2024 en adelante** (el formato de proyecto
+`.pbip` no existe en versiones anteriores). Descarga en
+<https://powerbi.microsoft.com/desktop/> o desde Microsoft Store.
+
+La ruta de los CSV vive en el parámetro **RutaDatos** (Inicio → Transformar
+datos → Administrar parámetros). Si mueven la carpeta de sitio, se cambia ahí y
+se actualiza; no hay que tocar cada consulta.
+
+> **Advertencia honesta.** Este proyecto se generó por archivo, sin abrirlo en
+> Power BI Desktop, porque la aplicación no está instalada en el equipo donde se
+> construyó. El modelo está validado contra los CSV —columnas, relaciones y
+> referencias DAX resuelven— pero el acomodo de los visuales puede requerir
+> ajustes al abrirlo. Si alguna página sale vacía, el modelo sigue bueno: se
+> arrastran los campos y listo. Repórtelo y lo corrijo.
+
+---
+
+## Camino largo: armarlo a mano
+
+Si prefieren construirlo paso a paso, o si su versión de Power BI Desktop no
+abre proyectos `.pbip`, los CSV de esta carpeta ya son un modelo en estrella. No
+hay que transformarlos: se cargan y se relacionan.
 
 El mapa de Power BI usa **Bing Maps de forma nativa**, sin tramitar ninguna
 llave. Eso resuelve el requisito de usar cartografía de Microsoft.
 
-Regenerar los datos:
+Regenerar todo:
 
 ```bash
 python src/etl_sigeo.py
 python src/export_powerbi.py
+python src/build_pbip.py
 ```
 
 ---

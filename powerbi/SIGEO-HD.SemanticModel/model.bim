@@ -1,0 +1,934 @@
+{
+  "compatibilityLevel": 1567,
+  "model": {
+    "culture": "es-MX",
+    "dataAccessOptions": {
+      "legacyRedirects": true,
+      "returnErrorValuesAsNull": true
+    },
+    "defaultPowerBIDataSourceVersion": "powerBI_V3",
+    "sourceQueryCulture": "es-MX",
+    "expressions": [
+      {
+        "name": "RutaDatos",
+        "kind": "m",
+        "expression": "\"C:\\\\Users\\\\xXZaB\\\\.gemini\\\\antigravity\\\\scratch\\\\sigeo_hd_dgspyt\\\\.claude\\\\worktrees\\\\plus-sign-9e7899\\\\powerbi\" meta [IsParameterQuery=true, Type=\"Text\", IsParameterQueryRequired=true]",
+        "lineageTag": "expr-ruta-datos",
+        "annotations": [
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "Navegación"
+          },
+          {
+            "name": "PBI_ResultType",
+            "value": "Text"
+          }
+        ]
+      }
+    ],
+    "tables": [
+      {
+        "name": "dim_calendario",
+        "lineageTag": "tbl-dim_calendario",
+        "columns": [
+          {
+            "name": "fecha",
+            "dataType": "dateTime",
+            "sourceColumn": "fecha",
+            "lineageTag": "col-dim_calendario-fecha",
+            "summarizeBy": "none",
+            "formatString": "yyyy-mm-dd",
+            "isKey": true
+          },
+          {
+            "name": "anio",
+            "dataType": "int64",
+            "sourceColumn": "anio",
+            "lineageTag": "col-dim_calendario-anio",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "mes",
+            "dataType": "int64",
+            "sourceColumn": "mes",
+            "lineageTag": "col-dim_calendario-mes",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "nombre_mes",
+            "dataType": "string",
+            "sourceColumn": "nombre_mes",
+            "lineageTag": "col-dim_calendario-nombre_mes",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "dia",
+            "dataType": "int64",
+            "sourceColumn": "dia",
+            "lineageTag": "col-dim_calendario-dia",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "dia_semana",
+            "dataType": "string",
+            "sourceColumn": "dia_semana",
+            "lineageTag": "col-dim_calendario-dia_semana",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "num_dia_semana",
+            "dataType": "int64",
+            "sourceColumn": "num_dia_semana",
+            "lineageTag": "col-dim_calendario-num_dia_semana",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "es_fin_de_semana",
+            "dataType": "string",
+            "sourceColumn": "es_fin_de_semana",
+            "lineageTag": "col-dim_calendario-es_fin_de_semana",
+            "summarizeBy": "none"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "dim_calendario",
+            "mode": "import",
+            "source": {
+              "type": "m",
+              "expression": "let\n    Origen = Csv.Document(File.Contents(RutaDatos & \"\\dim_calendario.csv\"), [Delimiter=\",\", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),\n    Encabezados = Table.PromoteHeaders(Origen, [PromoteAllScalars=true]),\n    Tipos = Table.TransformColumnTypes(Encabezados, {{\"fecha\", type date}, {\"anio\", Int64.Type}, {\"mes\", Int64.Type}, {\"nombre_mes\", type text}, {\"dia\", Int64.Type}, {\"dia_semana\", type text}, {\"num_dia_semana\", Int64.Type}, {\"es_fin_de_semana\", type text}})\nin\n    Tipos"
+            }
+          }
+        ],
+        "dataCategory": "Time"
+      },
+      {
+        "name": "dim_municipio",
+        "lineageTag": "tbl-dim_municipio",
+        "columns": [
+          {
+            "name": "municipio",
+            "dataType": "string",
+            "sourceColumn": "municipio",
+            "lineageTag": "col-dim_municipio-municipio",
+            "summarizeBy": "none",
+            "dataCategory": "City"
+          },
+          {
+            "name": "coordinacion",
+            "dataType": "string",
+            "sourceColumn": "coordinacion",
+            "lineageTag": "col-dim_municipio-coordinacion",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "subdireccion",
+            "dataType": "string",
+            "sourceColumn": "subdireccion",
+            "lineageTag": "col-dim_municipio-subdireccion",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "bases_en_uso",
+            "dataType": "int64",
+            "sourceColumn": "bases_en_uso",
+            "lineageTag": "col-dim_municipio-bases_en_uso",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "personal_total",
+            "dataType": "int64",
+            "sourceColumn": "personal_total",
+            "lineageTag": "col-dim_municipio-personal_total",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "sectores_desatendidos",
+            "dataType": "int64",
+            "sourceColumn": "sectores_desatendidos",
+            "lineageTag": "col-dim_municipio-sectores_desatendidos",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "sectores_saturados",
+            "dataType": "int64",
+            "sourceColumn": "sectores_saturados",
+            "lineageTag": "col-dim_municipio-sectores_saturados",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "dist_media_hd_base_km",
+            "dataType": "double",
+            "sourceColumn": "dist_media_hd_base_km",
+            "lineageTag": "col-dim_municipio-dist_media_hd_base_km",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "indice_presion",
+            "dataType": "double",
+            "sourceColumn": "indice_presion",
+            "lineageTag": "col-dim_municipio-indice_presion",
+            "summarizeBy": "none"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "dim_municipio",
+            "mode": "import",
+            "source": {
+              "type": "m",
+              "expression": "let\n    Origen = Csv.Document(File.Contents(RutaDatos & \"\\dim_municipio.csv\"), [Delimiter=\",\", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),\n    Encabezados = Table.PromoteHeaders(Origen, [PromoteAllScalars=true]),\n    Tipos = Table.TransformColumnTypes(Encabezados, {{\"municipio\", type text}, {\"coordinacion\", type text}, {\"subdireccion\", type text}, {\"bases_en_uso\", Int64.Type}, {\"personal_total\", Int64.Type}, {\"sectores_desatendidos\", Int64.Type}, {\"sectores_saturados\", Int64.Type}, {\"dist_media_hd_base_km\", type number}, {\"indice_presion\", type number}})\nin\n    Tipos"
+            }
+          }
+        ]
+      },
+      {
+        "name": "dim_coordinacion",
+        "lineageTag": "tbl-dim_coordinacion",
+        "columns": [
+          {
+            "name": "coordinacion",
+            "dataType": "string",
+            "sourceColumn": "coordinacion",
+            "lineageTag": "col-dim_coordinacion-coordinacion",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "total_municipios",
+            "dataType": "int64",
+            "sourceColumn": "total_municipios",
+            "lineageTag": "col-dim_coordinacion-total_municipios",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "bases_en_uso",
+            "dataType": "int64",
+            "sourceColumn": "bases_en_uso",
+            "lineageTag": "col-dim_coordinacion-bases_en_uso",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "personal_total",
+            "dataType": "int64",
+            "sourceColumn": "personal_total",
+            "lineageTag": "col-dim_coordinacion-personal_total",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "carga_violencia",
+            "dataType": "int64",
+            "sourceColumn": "carga_violencia",
+            "lineageTag": "col-dim_coordinacion-carga_violencia",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "carga_por_100_elementos",
+            "dataType": "double",
+            "sourceColumn": "carga_por_100_elementos",
+            "lineageTag": "col-dim_coordinacion-carga_por_100_elementos",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "sectores_desatendidos",
+            "dataType": "int64",
+            "sourceColumn": "sectores_desatendidos",
+            "lineageTag": "col-dim_coordinacion-sectores_desatendidos",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "sectores_saturados",
+            "dataType": "int64",
+            "sourceColumn": "sectores_saturados",
+            "lineageTag": "col-dim_coordinacion-sectores_saturados",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "ranking",
+            "dataType": "int64",
+            "sourceColumn": "ranking",
+            "lineageTag": "col-dim_coordinacion-ranking",
+            "summarizeBy": "none"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "dim_coordinacion",
+            "mode": "import",
+            "source": {
+              "type": "m",
+              "expression": "let\n    Origen = Csv.Document(File.Contents(RutaDatos & \"\\dim_coordinacion.csv\"), [Delimiter=\",\", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),\n    Encabezados = Table.PromoteHeaders(Origen, [PromoteAllScalars=true]),\n    Tipos = Table.TransformColumnTypes(Encabezados, {{\"coordinacion\", type text}, {\"total_municipios\", Int64.Type}, {\"bases_en_uso\", Int64.Type}, {\"personal_total\", Int64.Type}, {\"carga_violencia\", Int64.Type}, {\"carga_por_100_elementos\", type number}, {\"sectores_desatendidos\", Int64.Type}, {\"sectores_saturados\", Int64.Type}, {\"ranking\", Int64.Type}})\nin\n    Tipos"
+            }
+          }
+        ],
+        "measures": [
+          {
+            "name": "Homicidios",
+            "expression": "COUNTROWS ( fact_homicidios )",
+            "formatString": "#,0",
+            "lineageTag": "med-0"
+          },
+          {
+            "name": "Víctimas",
+            "expression": "SUM ( fact_homicidios[victimas] )",
+            "formatString": "#,0",
+            "lineageTag": "med-1"
+          },
+          {
+            "name": "Llamadas con violencia",
+            "expression": "COUNTROWS ( fact_llamadas )",
+            "formatString": "#,0",
+            "lineageTag": "med-2"
+          },
+          {
+            "name": "Llamadas por arma de fuego",
+            "expression": "CALCULATE ( [Llamadas con violencia], fact_llamadas[familia] = \"arma_fuego\" )",
+            "formatString": "#,0",
+            "lineageTag": "med-3"
+          },
+          {
+            "name": "Homicidios nocturnos",
+            "expression": "CALCULATE ( [Homicidios], fact_homicidios[franja] = \"nocturna (22-06)\" )",
+            "formatString": "#,0",
+            "lineageTag": "med-4"
+          },
+          {
+            "name": "% nocturnos",
+            "expression": "DIVIDE ( [Homicidios nocturnos], [Homicidios] )",
+            "formatString": "0.0%",
+            "lineageTag": "med-5"
+          },
+          {
+            "name": "Personal desplegado",
+            "expression": "SUM ( dim_municipio[personal_total] )",
+            "formatString": "#,0",
+            "lineageTag": "med-6"
+          },
+          {
+            "name": "Carga de violencia",
+            "expression": "[Homicidios] * 10 + [Llamadas con violencia]",
+            "formatString": "#,0",
+            "lineageTag": "med-7"
+          },
+          {
+            "name": "Carga por 100 elementos",
+            "expression": "DIVIDE ( [Carga de violencia] * 100, [Personal desplegado] )",
+            "formatString": "#,0.0",
+            "lineageTag": "med-8"
+          },
+          {
+            "name": "Distancia mediana a base",
+            "expression": "MEDIANX ( fact_homicidios, fact_homicidios[dist_base_km] )",
+            "formatString": "#,0.00",
+            "lineageTag": "med-9"
+          },
+          {
+            "name": "Homicidios lejos de base",
+            "expression": "CALCULATE ( [Homicidios], fact_homicidios[dist_base_km] > 3 )",
+            "formatString": "#,0",
+            "lineageTag": "med-10"
+          },
+          {
+            "name": "Sectores desatendidos",
+            "expression": "CALCULATE ( COUNTROWS ( fact_sectores ), fact_sectores[clasificacion] = \"DESATENDIDO\" )",
+            "formatString": "#,0",
+            "lineageTag": "med-11"
+          },
+          {
+            "name": "Sectores saturados",
+            "expression": "CALCULATE ( COUNTROWS ( fact_sectores ), fact_sectores[clasificacion] = \"SATURADO\" )",
+            "formatString": "#,0",
+            "lineageTag": "med-12"
+          },
+          {
+            "name": "Casos prioridad alta",
+            "expression": "CALCULATE ( COUNTROWS ( fact_auditoria ), fact_auditoria[nivel_revision] = \"ALTA\" )",
+            "formatString": "#,0",
+            "lineageTag": "med-13"
+          },
+          {
+            "name": "Casos auditados",
+            "expression": "COUNTROWS ( fact_auditoria )",
+            "formatString": "#,0",
+            "lineageTag": "med-14"
+          },
+          {
+            "name": "Homicidios periodo anterior",
+            "expression": "CALCULATE ( [Homicidios], DATEADD ( dim_calendario[fecha], -7, DAY ) )",
+            "formatString": "#,0",
+            "lineageTag": "med-15"
+          },
+          {
+            "name": "Variación semanal",
+            "expression": "DIVIDE ( [Homicidios] - [Homicidios periodo anterior], [Homicidios periodo anterior] )",
+            "formatString": "0.0%",
+            "lineageTag": "med-16"
+          }
+        ]
+      },
+      {
+        "name": "fact_homicidios",
+        "lineageTag": "tbl-fact_homicidios",
+        "columns": [
+          {
+            "name": "id",
+            "dataType": "int64",
+            "sourceColumn": "id",
+            "lineageTag": "col-fact_homicidios-id",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "fecha",
+            "dataType": "dateTime",
+            "sourceColumn": "fecha",
+            "lineageTag": "col-fact_homicidios-fecha",
+            "summarizeBy": "none",
+            "formatString": "yyyy-mm-dd"
+          },
+          {
+            "name": "hora",
+            "dataType": "string",
+            "sourceColumn": "hora",
+            "lineageTag": "col-fact_homicidios-hora",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "hora_num",
+            "dataType": "int64",
+            "sourceColumn": "hora_num",
+            "lineageTag": "col-fact_homicidios-hora_num",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "franja",
+            "dataType": "string",
+            "sourceColumn": "franja",
+            "lineageTag": "col-fact_homicidios-franja",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "municipio",
+            "dataType": "string",
+            "sourceColumn": "municipio",
+            "lineageTag": "col-fact_homicidios-municipio",
+            "summarizeBy": "none",
+            "dataCategory": "City"
+          },
+          {
+            "name": "coordinacion",
+            "dataType": "string",
+            "sourceColumn": "coordinacion",
+            "lineageTag": "col-fact_homicidios-coordinacion",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "colonia",
+            "dataType": "string",
+            "sourceColumn": "colonia",
+            "lineageTag": "col-fact_homicidios-colonia",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "calle",
+            "dataType": "string",
+            "sourceColumn": "calle",
+            "lineageTag": "col-fact_homicidios-calle",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "latitud",
+            "dataType": "double",
+            "sourceColumn": "latitud",
+            "lineageTag": "col-fact_homicidios-latitud",
+            "summarizeBy": "none",
+            "dataCategory": "Latitude"
+          },
+          {
+            "name": "longitud",
+            "dataType": "double",
+            "sourceColumn": "longitud",
+            "lineageTag": "col-fact_homicidios-longitud",
+            "summarizeBy": "none",
+            "dataCategory": "Longitude"
+          },
+          {
+            "name": "victimas",
+            "dataType": "int64",
+            "sourceColumn": "victimas",
+            "lineageTag": "col-fact_homicidios-victimas",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "sexo",
+            "dataType": "string",
+            "sourceColumn": "sexo",
+            "lineageTag": "col-fact_homicidios-sexo",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "movil",
+            "dataType": "string",
+            "sourceColumn": "movil",
+            "lineageTag": "col-fact_homicidios-movil",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "observaciones",
+            "dataType": "string",
+            "sourceColumn": "observaciones",
+            "lineageTag": "col-fact_homicidios-observaciones",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "dist_base_km",
+            "dataType": "double",
+            "sourceColumn": "dist_base_km",
+            "lineageTag": "col-fact_homicidios-dist_base_km",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "windows_maps_query",
+            "dataType": "string",
+            "sourceColumn": "windows_maps_query",
+            "lineageTag": "col-fact_homicidios-windows_maps_query",
+            "summarizeBy": "none"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "fact_homicidios",
+            "mode": "import",
+            "source": {
+              "type": "m",
+              "expression": "let\n    Origen = Csv.Document(File.Contents(RutaDatos & \"\\fact_homicidios.csv\"), [Delimiter=\",\", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),\n    Encabezados = Table.PromoteHeaders(Origen, [PromoteAllScalars=true]),\n    Tipos = Table.TransformColumnTypes(Encabezados, {{\"id\", Int64.Type}, {\"fecha\", type date}, {\"hora\", type text}, {\"hora_num\", Int64.Type}, {\"franja\", type text}, {\"municipio\", type text}, {\"coordinacion\", type text}, {\"colonia\", type text}, {\"calle\", type text}, {\"latitud\", type number}, {\"longitud\", type number}, {\"victimas\", Int64.Type}, {\"sexo\", type text}, {\"movil\", type text}, {\"observaciones\", type text}, {\"dist_base_km\", type number}, {\"windows_maps_query\", type text}})\nin\n    Tipos"
+            }
+          }
+        ]
+      },
+      {
+        "name": "fact_llamadas",
+        "lineageTag": "tbl-fact_llamadas",
+        "columns": [
+          {
+            "name": "folio",
+            "dataType": "string",
+            "sourceColumn": "folio",
+            "lineageTag": "col-fact_llamadas-folio",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "fecha",
+            "dataType": "dateTime",
+            "sourceColumn": "fecha",
+            "lineageTag": "col-fact_llamadas-fecha",
+            "summarizeBy": "none",
+            "formatString": "yyyy-mm-dd"
+          },
+          {
+            "name": "hora",
+            "dataType": "string",
+            "sourceColumn": "hora",
+            "lineageTag": "col-fact_llamadas-hora",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "hora_num",
+            "dataType": "int64",
+            "sourceColumn": "hora_num",
+            "lineageTag": "col-fact_llamadas-hora_num",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "franja",
+            "dataType": "string",
+            "sourceColumn": "franja",
+            "lineageTag": "col-fact_llamadas-franja",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "municipio",
+            "dataType": "string",
+            "sourceColumn": "municipio",
+            "lineageTag": "col-fact_llamadas-municipio",
+            "summarizeBy": "none",
+            "dataCategory": "City"
+          },
+          {
+            "name": "coordinacion",
+            "dataType": "string",
+            "sourceColumn": "coordinacion",
+            "lineageTag": "col-fact_llamadas-coordinacion",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "incidente",
+            "dataType": "string",
+            "sourceColumn": "incidente",
+            "lineageTag": "col-fact_llamadas-incidente",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "familia",
+            "dataType": "string",
+            "sourceColumn": "familia",
+            "lineageTag": "col-fact_llamadas-familia",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "peso_violencia",
+            "dataType": "double",
+            "sourceColumn": "peso_violencia",
+            "lineageTag": "col-fact_llamadas-peso_violencia",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "latitud",
+            "dataType": "double",
+            "sourceColumn": "latitud",
+            "lineageTag": "col-fact_llamadas-latitud",
+            "summarizeBy": "none",
+            "dataCategory": "Latitude"
+          },
+          {
+            "name": "longitud",
+            "dataType": "double",
+            "sourceColumn": "longitud",
+            "lineageTag": "col-fact_llamadas-longitud",
+            "summarizeBy": "none",
+            "dataCategory": "Longitude"
+          },
+          {
+            "name": "geo_confianza",
+            "dataType": "string",
+            "sourceColumn": "geo_confianza",
+            "lineageTag": "col-fact_llamadas-geo_confianza",
+            "summarizeBy": "none"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "fact_llamadas",
+            "mode": "import",
+            "source": {
+              "type": "m",
+              "expression": "let\n    Origen = Csv.Document(File.Contents(RutaDatos & \"\\fact_llamadas.csv\"), [Delimiter=\",\", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),\n    Encabezados = Table.PromoteHeaders(Origen, [PromoteAllScalars=true]),\n    Tipos = Table.TransformColumnTypes(Encabezados, {{\"folio\", type text}, {\"fecha\", type date}, {\"hora\", type text}, {\"hora_num\", Int64.Type}, {\"franja\", type text}, {\"municipio\", type text}, {\"coordinacion\", type text}, {\"incidente\", type text}, {\"familia\", type text}, {\"peso_violencia\", type number}, {\"latitud\", type number}, {\"longitud\", type number}, {\"geo_confianza\", type text}})\nin\n    Tipos"
+            }
+          }
+        ]
+      },
+      {
+        "name": "fact_sectores",
+        "lineageTag": "tbl-fact_sectores",
+        "columns": [
+          {
+            "name": "sector_id",
+            "dataType": "string",
+            "sourceColumn": "sector_id",
+            "lineageTag": "col-fact_sectores-sector_id",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "ranking",
+            "dataType": "int64",
+            "sourceColumn": "ranking",
+            "lineageTag": "col-fact_sectores-ranking",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "municipio",
+            "dataType": "string",
+            "sourceColumn": "municipio",
+            "lineageTag": "col-fact_sectores-municipio",
+            "summarizeBy": "none",
+            "dataCategory": "City"
+          },
+          {
+            "name": "coordinacion",
+            "dataType": "string",
+            "sourceColumn": "coordinacion",
+            "lineageTag": "col-fact_sectores-coordinacion",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "colonias",
+            "dataType": "string",
+            "sourceColumn": "colonias",
+            "lineageTag": "col-fact_sectores-colonias",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "clasificacion",
+            "dataType": "string",
+            "sourceColumn": "clasificacion",
+            "lineageTag": "col-fact_sectores-clasificacion",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "latitud",
+            "dataType": "double",
+            "sourceColumn": "latitud",
+            "lineageTag": "col-fact_sectores-latitud",
+            "summarizeBy": "none",
+            "dataCategory": "Latitude"
+          },
+          {
+            "name": "longitud",
+            "dataType": "double",
+            "sourceColumn": "longitud",
+            "lineageTag": "col-fact_sectores-longitud",
+            "summarizeBy": "none",
+            "dataCategory": "Longitude"
+          },
+          {
+            "name": "indice_ceguera",
+            "dataType": "double",
+            "sourceColumn": "indice_ceguera",
+            "lineageTag": "col-fact_sectores-indice_ceguera",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "indice_violencia",
+            "dataType": "double",
+            "sourceColumn": "indice_violencia",
+            "lineageTag": "col-fact_sectores-indice_violencia",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "eventos_hd",
+            "dataType": "int64",
+            "sourceColumn": "eventos_hd",
+            "lineageTag": "col-fact_sectores-eventos_hd",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "llamadas_violentas",
+            "dataType": "int64",
+            "sourceColumn": "llamadas_violentas",
+            "lineageTag": "col-fact_sectores-llamadas_violentas",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "dist_base_km",
+            "dataType": "double",
+            "sourceColumn": "dist_base_km",
+            "lineageTag": "col-fact_sectores-dist_base_km",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "personal_3km",
+            "dataType": "int64",
+            "sourceColumn": "personal_3km",
+            "lineageTag": "col-fact_sectores-personal_3km",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "limitrofe",
+            "dataType": "string",
+            "sourceColumn": "limitrofe",
+            "lineageTag": "col-fact_sectores-limitrofe",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "diagnostico",
+            "dataType": "string",
+            "sourceColumn": "diagnostico",
+            "lineageTag": "col-fact_sectores-diagnostico",
+            "summarizeBy": "none"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "fact_sectores",
+            "mode": "import",
+            "source": {
+              "type": "m",
+              "expression": "let\n    Origen = Csv.Document(File.Contents(RutaDatos & \"\\fact_sectores.csv\"), [Delimiter=\",\", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),\n    Encabezados = Table.PromoteHeaders(Origen, [PromoteAllScalars=true]),\n    Tipos = Table.TransformColumnTypes(Encabezados, {{\"sector_id\", type text}, {\"ranking\", Int64.Type}, {\"municipio\", type text}, {\"coordinacion\", type text}, {\"colonias\", type text}, {\"clasificacion\", type text}, {\"latitud\", type number}, {\"longitud\", type number}, {\"indice_ceguera\", type number}, {\"indice_violencia\", type number}, {\"eventos_hd\", Int64.Type}, {\"llamadas_violentas\", Int64.Type}, {\"dist_base_km\", type number}, {\"personal_3km\", Int64.Type}, {\"limitrofe\", type text}, {\"diagnostico\", type text}})\nin\n    Tipos"
+            }
+          }
+        ]
+      },
+      {
+        "name": "fact_auditoria",
+        "lineageTag": "tbl-fact_auditoria",
+        "columns": [
+          {
+            "name": "folio",
+            "dataType": "string",
+            "sourceColumn": "folio",
+            "lineageTag": "col-fact_auditoria-folio",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "fecha",
+            "dataType": "dateTime",
+            "sourceColumn": "fecha",
+            "lineageTag": "col-fact_auditoria-fecha",
+            "summarizeBy": "none",
+            "formatString": "yyyy-mm-dd"
+          },
+          {
+            "name": "hora",
+            "dataType": "string",
+            "sourceColumn": "hora",
+            "lineageTag": "col-fact_auditoria-hora",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "municipio",
+            "dataType": "string",
+            "sourceColumn": "municipio",
+            "lineageTag": "col-fact_auditoria-municipio",
+            "summarizeBy": "none",
+            "dataCategory": "City"
+          },
+          {
+            "name": "coordinacion",
+            "dataType": "string",
+            "sourceColumn": "coordinacion",
+            "lineageTag": "col-fact_auditoria-coordinacion",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "incidente",
+            "dataType": "string",
+            "sourceColumn": "incidente",
+            "lineageTag": "col-fact_auditoria-incidente",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "nivel_revision",
+            "dataType": "string",
+            "sourceColumn": "nivel_revision",
+            "lineageTag": "col-fact_auditoria-nivel_revision",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "puntaje",
+            "dataType": "int64",
+            "sourceColumn": "puntaje",
+            "lineageTag": "col-fact_auditoria-puntaje",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "num_indicadores",
+            "dataType": "int64",
+            "sourceColumn": "num_indicadores",
+            "lineageTag": "col-fact_auditoria-num_indicadores",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "indicadores",
+            "dataType": "string",
+            "sourceColumn": "indicadores",
+            "lineageTag": "col-fact_auditoria-indicadores",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "accion_sugerida",
+            "dataType": "string",
+            "sourceColumn": "accion_sugerida",
+            "lineageTag": "col-fact_auditoria-accion_sugerida",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "latitud",
+            "dataType": "double",
+            "sourceColumn": "latitud",
+            "lineageTag": "col-fact_auditoria-latitud",
+            "summarizeBy": "none",
+            "dataCategory": "Latitude"
+          },
+          {
+            "name": "longitud",
+            "dataType": "double",
+            "sourceColumn": "longitud",
+            "lineageTag": "col-fact_auditoria-longitud",
+            "summarizeBy": "none",
+            "dataCategory": "Longitude"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "fact_auditoria",
+            "mode": "import",
+            "source": {
+              "type": "m",
+              "expression": "let\n    Origen = Csv.Document(File.Contents(RutaDatos & \"\\fact_auditoria.csv\"), [Delimiter=\",\", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),\n    Encabezados = Table.PromoteHeaders(Origen, [PromoteAllScalars=true]),\n    Tipos = Table.TransformColumnTypes(Encabezados, {{\"folio\", type text}, {\"fecha\", type date}, {\"hora\", type text}, {\"municipio\", type text}, {\"coordinacion\", type text}, {\"incidente\", type text}, {\"nivel_revision\", type text}, {\"puntaje\", Int64.Type}, {\"num_indicadores\", Int64.Type}, {\"indicadores\", type text}, {\"accion_sugerida\", type text}, {\"latitud\", type number}, {\"longitud\", type number}})\nin\n    Tipos"
+            }
+          }
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "name": "rel-0",
+        "fromTable": "fact_homicidios",
+        "fromColumn": "fecha",
+        "toTable": "dim_calendario",
+        "toColumn": "fecha",
+        "crossFilteringBehavior": "oneDirection"
+      },
+      {
+        "name": "rel-1",
+        "fromTable": "fact_llamadas",
+        "fromColumn": "fecha",
+        "toTable": "dim_calendario",
+        "toColumn": "fecha",
+        "crossFilteringBehavior": "oneDirection"
+      },
+      {
+        "name": "rel-2",
+        "fromTable": "fact_auditoria",
+        "fromColumn": "fecha",
+        "toTable": "dim_calendario",
+        "toColumn": "fecha",
+        "crossFilteringBehavior": "oneDirection"
+      },
+      {
+        "name": "rel-3",
+        "fromTable": "fact_homicidios",
+        "fromColumn": "municipio",
+        "toTable": "dim_municipio",
+        "toColumn": "municipio",
+        "crossFilteringBehavior": "oneDirection"
+      },
+      {
+        "name": "rel-4",
+        "fromTable": "fact_llamadas",
+        "fromColumn": "municipio",
+        "toTable": "dim_municipio",
+        "toColumn": "municipio",
+        "crossFilteringBehavior": "oneDirection"
+      },
+      {
+        "name": "rel-5",
+        "fromTable": "fact_sectores",
+        "fromColumn": "municipio",
+        "toTable": "dim_municipio",
+        "toColumn": "municipio",
+        "crossFilteringBehavior": "oneDirection"
+      },
+      {
+        "name": "rel-6",
+        "fromTable": "fact_auditoria",
+        "fromColumn": "municipio",
+        "toTable": "dim_municipio",
+        "toColumn": "municipio",
+        "crossFilteringBehavior": "oneDirection"
+      },
+      {
+        "name": "rel-7",
+        "fromTable": "dim_municipio",
+        "fromColumn": "coordinacion",
+        "toTable": "dim_coordinacion",
+        "toColumn": "coordinacion",
+        "crossFilteringBehavior": "oneDirection"
+      }
+    ],
+    "annotations": [
+      {
+        "name": "PBI_QueryOrder",
+        "value": "[\"RutaDatos\", \"dim_calendario\", \"dim_municipio\", \"dim_coordinacion\", \"fact_homicidios\", \"fact_llamadas\", \"fact_sectores\", \"fact_auditoria\"]"
+      }
+    ]
+  }
+}
