@@ -113,6 +113,25 @@ catálogo y 22 por vecindad.
 
 ### Investigar
 
+**04 · ¿Es o no es homicidio?** — el cruce que da razón de ser al proyecto.
+Contrasta la tabla de homicidios corroborados contra los hechos fatales que
+registró el C5 para separar lo que es de lo que no es un homicidio. Dos registros
+se consideran el mismo hecho si están a menos de 1.5 km y dentro de ±12 horas.
+
+Devuelve cuatro veredictos, cada uno con su lectura y su límite:
+
+| Veredicto | Significa | Qué NO significa |
+|---|---|---|
+| `CONFIRMADO` | Carpeta y llamada del mismo hecho | — |
+| `C5_SIN_CARPETA` | El C5 registró una muerte violenta ausente de la tabla de HD | No prueba subregistro: puede ser rezago de corroboración o un reporte que al llegar resultó ser otra cosa |
+| `HD_SIN_RASTRO_C5` | La carpeta existe y ninguna llamada coincide | No implica error: pudo reportarse por policía municipal o por la Fiscalía |
+| `REVISAR_CLASIFICACION` | Hallazgo con huellas de violencia sin homicidio asociado | — |
+
+**El cruce solo corre en la intersección de ambas coberturas.** El C5 cubre del 22
+al 28 de julio y la tabla de HD del 1 al 26, así que la ventana real es del 22 al
+26. Fuera de ella una ausencia no significa nada, y las muertes que caen fuera se
+reportan aparte en lugar de contarse como discrepancia.
+
 **04 · Casos a revisar** — auditoría de decesos dudosos, suicidios y personas no
 localizadas, conforme al apunte *«Suicidio → 25… + identificar, desaparecidos,
 homicidios dolosos. Investigar si son suicidios»*.

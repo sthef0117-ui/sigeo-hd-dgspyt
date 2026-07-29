@@ -780,6 +780,202 @@ def auditar_decesos(llamadas, hd):
 
 
 # --------------------------------------------------------------------------
+# 5a. Cruce de hechos fatales: qué es y qué no es un homicidio
+# --------------------------------------------------------------------------
+
+# Tipos del catalogo C5 que describen una muerte o un hecho que puede serlo.
+# El peso no es de violencia sino de "cercania a un homicidio doloso".
+HECHOS_FATALES = {
+    "HOMICIDIO": ("muerte_violenta", "El C5 lo captura directamente como homicidio"),
+    "PERSONAS FALLECIDAS POR PROYECTIL DE ARMA DE FUEGO":
+        ("muerte_violenta", "Persona fallecida por arma de fuego"),
+    "PERSONA TIRADA EN LA VIA PUBLICA CON HUELLAS DE VIOLENCIA":
+        ("muerte_dudosa", "Hallazgo con huellas de violencia"),
+    "PERSONA LESIONADA POR PROYECTIL DE ARMA DE FUEGO":
+        ("lesion_grave", "Lesión por arma de fuego que puede derivar en deceso"),
+    "SUICIDIO": ("suicidio", "Clasificado como suicidio"),
+    "TENTATIVA DE SUICIDIO": ("suicidio", "Tentativa de suicidio"),
+    "PERSONA TIRADA EN VIA PUBLICA": ("hallazgo", "Hallazgo sin causa declarada"),
+    "PERSONA LESIONADA POR ARMA BLANCA":
+        ("lesion_grave", "Lesión por arma blanca"),
+}
+
+# Ventanas de coincidencia entre una carpeta y una llamada del mismo hecho.
+RADIO_KM = 1.5
+HORAS_MARGEN = 12
+
+
+def _cerca(a_lat, a_lng, a_fecha, a_hora, b_lat, b_lng, b_fecha, b_hora,
+           radio=RADIO_KM, horas=HORAS_MARGEN):
+    """¿Dos registros describen plausiblemente el mismo hecho?"""
+    if None in (a_lat, b_lat):
+        return None
+    d = haversine_km(a_lat, a_lng, b_lat, b_lng)
+    if d > radio:
+        return None
+    if a_fecha and b_fecha:
+        try:
+            f1 = datetime.strptime(a_fecha, "%Y-%m-%d")
+            f2 = datetime.strptime(b_fecha, "%Y-%m-%d")
+        except ValueError:
+            return d
+        m1, m2 = minutos(a_hora) or 0, minutos(b_hora) or 0
+        delta = abs((f1 - f2).total_seconds() / 60 + (m1 - m2))
+        if delta > horas * 60:
+            return None
+    return d
+
+
+def cruce_hechos_fatales(hd, llamadas, serie):
+    """
+    Contrasta la tabla de homicidios corroborados contra los hechos fatales
+    que registró el C5, para separar lo que es de lo que no es un homicidio.
+
+    El proyecto abre por los homicidios dolosos, y son pocos: eso permite
+    revisarlos uno por uno. El cruce responde tres preguntas concretas:
+
+      ¿Cada homicidio de la tabla tiene rastro en el 911?
+        Si no lo tiene, el hecho nunca entró al sistema de emergencia o la
+        cabina no lo capturó. Es un hueco de registro, no necesariamente
+        un error de clasificacion.
+
+      ¿Cada muerte violenta que registró el 911 llegó a la tabla de HD?
+        Si no llegó, o se clasificó como otra cosa, o falta la carpeta. Este
+        es el hallazgo que importa: homicidios que no se están contando.
+
+      ¿Que hechos fatales quedaron clasificados como suicidio o hallazgo
+       teniendo indicios de violencia de terceros?
+        Son los candidatos a reclasificacion.
+
+    El cruce solo puede correr donde las dos fuentes se traslapan en el
+    tiempo. Fuera de esa ventana no se afirma nada.
+    """
+    c5_desde, c5_hasta = serie.get("desde", "")[:10], serie.get("hasta", "")[:10]
+    fechas_hd = sorted(h["fecha"] for h in hd if h["fecha"])
+    if not c5_desde or not fechas_hd:
+        return {"ventana": {}, "hechos": [], "resumen": {}}
+
+    # La ventana de cruce es la interseccion de las dos coberturas, no la del
+    # C5 a secas. La tabla de HD termina antes que el corte de llamadas, y sin
+    # recortar, cada muerte de los dias posteriores aparecia como carpeta
+    # faltante cuando en realidad es el corte de la tabla lo que se acaba.
+    desde = max(c5_desde, fechas_hd[0])
+    hasta = min(c5_hasta, fechas_hd[-1])
+    if desde > hasta:
+        return {"ventana": {"sin_traslape": True}, "hechos": [], "resumen": {}}
+
+    hd_ventana = [h for h in hd if h["fecha"] and desde <= h["fecha"] <= hasta]
+    fatales, fuera_de_corte = [], 0
+    for l in llamadas:
+        clave = _norm(l["incidente"])
+        if clave not in HECHOS_FATALES:
+            continue
+        familia, glosa = HECHOS_FATALES[clave]
+        if l["fecha"] and not (desde <= l["fecha"] <= hasta):
+            if familia in ("muerte_violenta", "muerte_dudosa"):
+                fuera_de_corte += 1
+            continue
+        fatales.append((l, familia, glosa))
+
+    hechos = []
+
+    # --- Lado 1: cada homicidio corroborado contra las llamadas del C5 ---
+    for h in hd_ventana:
+        coincidencias = []
+        for l, familia, _ in fatales:
+            d = _cerca(h["lat"], h["lng"], h["fecha"], h["hora"],
+                       l["lat"], l["lng"], l["fecha"], l["hora"])
+            if d is not None:
+                coincidencias.append({"folio": l["folio"], "incidente": l["incidente"],
+                                      "familia": familia, "hora": l["hora"],
+                                      "distancia_km": round(d, 2)})
+        coincidencias.sort(key=lambda c: c["distancia_km"])
+        if coincidencias:
+            veredicto = "CONFIRMADO"
+            lectura = (f"La carpeta tiene respaldo en el C5: "
+                       f"{len(coincidencias)} llamada(s) del mismo lugar y hora.")
+        elif not h["lat"]:
+            veredicto = "NO_VERIFICABLE"
+            lectura = "Sin coordenada en la tabla de HD: no se puede cruzar."
+        else:
+            veredicto = "HD_SIN_RASTRO_C5"
+            lectura = ("Homicidio corroborado sin ninguna llamada de emergencia "
+                       "cerca: el hecho no entró al 911 o la cabina no lo capturó.")
+        hechos.append({
+            "origen": "DGSPYT", "referencia": f"HD-{h['id']}",
+            "fecha": h["fecha"], "hora": h["hora"], "municipio": h["municipio"],
+            "colonia": h["colonia"], "descripcion": h["movil"],
+            "clasificacion_origen": "HOMICIDIO DOLOSO",
+            "lat": h["lat"], "lng": h["lng"],
+            "veredicto": veredicto, "lectura": lectura,
+            "coincidencias": coincidencias[:5],
+        })
+
+    # --- Lado 2: cada muerte del C5 contra la tabla de homicidios ---
+    for l, familia, glosa in fatales:
+        if familia not in ("muerte_violenta", "muerte_dudosa"):
+            continue
+        coincidencias = []
+        for h in hd_ventana:
+            d = _cerca(l["lat"], l["lng"], l["fecha"], l["hora"],
+                       h["lat"], h["lng"], h["fecha"], h["hora"])
+            if d is not None:
+                coincidencias.append({"referencia": f"HD-{h['id']}",
+                                      "municipio": h["municipio"],
+                                      "fecha": h["fecha"],
+                                      "distancia_km": round(d, 2)})
+        if coincidencias:
+            continue  # ya quedó contado del lado de la carpeta
+        if not l["lat"]:
+            veredicto, lectura = ("NO_VERIFICABLE",
+                                  "Llamada sin coordenada: no se puede cruzar.")
+        elif familia == "muerte_violenta":
+            veredicto = "C5_SIN_CARPETA"
+            lectura = ("El C5 registró una muerte violenta y no aparece en la "
+                       "tabla de homicidios corroborados. Procede verificar si "
+                       "existe carpeta o si se clasificó como otro delito.")
+        else:
+            veredicto = "REVISAR_CLASIFICACION"
+            lectura = ("Hallazgo con huellas de violencia sin homicidio "
+                       "corroborado asociado. Procede contrastar con el parte "
+                       "del primer respondiente.")
+        hechos.append({
+            "origen": "C5", "referencia": l["folio"],
+            "fecha": l["fecha"], "hora": l["hora"], "municipio": l["municipio"],
+            "colonia": "", "descripcion": (l["notas"] or "")[:260],
+            "clasificacion_origen": l["incidente"],
+            "lat": l["lat"], "lng": l["lng"],
+            "veredicto": veredicto, "lectura": lectura,
+            "coincidencias": [],
+        })
+
+    orden = {"C5_SIN_CARPETA": 0, "HD_SIN_RASTRO_C5": 1, "REVISAR_CLASIFICACION": 2,
+             "CONFIRMADO": 3, "NO_VERIFICABLE": 4}
+    hechos.sort(key=lambda x: (orden.get(x["veredicto"], 9), x["fecha"], x["hora"]))
+
+    conteo = Counter(x["veredicto"] for x in hechos)
+    familias = Counter(f for _, f, _ in fatales)
+    return {
+        "ventana": {"desde": desde, "hasta": hasta,
+                    "c5_desde": c5_desde, "c5_hasta": c5_hasta,
+                    "hd_desde": fechas_hd[0], "hd_hasta": fechas_hd[-1],
+                    "hd_en_ventana": len(hd_ventana),
+                    "hd_totales": len(hd),
+                    "hechos_fatales_c5": len(fatales),
+                    "muertes_fuera_de_corte": fuera_de_corte},
+        "hechos": hechos,
+        "resumen": {
+            "confirmados": conteo.get("CONFIRMADO", 0),
+            "hd_sin_rastro": conteo.get("HD_SIN_RASTRO_C5", 0),
+            "c5_sin_carpeta": conteo.get("C5_SIN_CARPETA", 0),
+            "revisar_clasificacion": conteo.get("REVISAR_CLASIFICACION", 0),
+            "no_verificables": conteo.get("NO_VERIFICABLE", 0),
+            "familias_c5": dict(familias),
+        },
+    }
+
+
+# --------------------------------------------------------------------------
 # 5b. Serie de tiempo
 # --------------------------------------------------------------------------
 
@@ -1399,6 +1595,12 @@ def main():
           f"· ventana {serie['desde']}h a {serie['hasta']}h "
           f"({len(serie['por_hora'])} horas)")
 
+    cruce = cruce_hechos_fatales(hd, llamadas, serie)
+    r = cruce["resumen"]
+    print(f"  cruce de hechos fatales .... {r['confirmados']} confirmados · "
+          f"{r['c5_sin_carpeta']} sin carpeta · {r['hd_sin_rastro']} sin rastro C5 · "
+          f"{r['revisar_clasificacion']} por reclasificar")
+
     territorio = perfil_territorial(hd, llamadas, bases, sectores)
     territorio = completar_coordinaciones(territorio)
     origen = Counter(t["coordinacion_origen"] or "sin asignar" for t in territorio)
@@ -1452,6 +1654,8 @@ def main():
     escribir_json("perfil_territorial.json", territorio)
     escribir_json("perfil_coordinaciones.json", coordinaciones)
     escribir_json("serie_temporal.json", serie)
+    cruce["hechos"] = anonimizar_lista(cruce["hechos"]) if anonimo else cruce["hechos"]
+    escribir_json("cruce_hechos_fatales.json", cruce)
     # El perimetro del estado viaja con los demas insumos calculados para que
     # el ensamblador lo incruste en el tablero.
     if PERIMETRO.exists():

@@ -32,6 +32,7 @@ ARCHIVOS = {
     "territorio": "perfil_territorial.json",
     "coordinaciones": "perfil_coordinaciones.json",
     "serie": "serie_temporal.json",
+    "cruce": "cruce_hechos_fatales.json",
     "perimetro": "perimetro_edomex.json",
     "municipios": "municipios_edomex.json",
 }

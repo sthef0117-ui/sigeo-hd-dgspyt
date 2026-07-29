@@ -101,7 +101,7 @@ def anonimizar_texto(texto):
 
 CAMPOS_LIBRES = (
     "notas", "referencia", "desarrollo_hechos", "observaciones",
-    "informacion_adicional", "acciones_ssem",
+    "informacion_adicional", "acciones_ssem", "descripcion",
 )
 
 

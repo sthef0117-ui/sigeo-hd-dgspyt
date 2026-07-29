@@ -208,10 +208,11 @@ html[data-tema="oscuro"] .hoja h2{color:#7a1327}
     <button data-v="v-territorio"><span class="n">02</span> Territorio</button>
     <button data-v="v-coordinaciones"><span class="n">03</span> Coordinaciones</button>
     <div class="grupo">Investigar</div>
-    <button data-v="v-casos"><span class="n">04</span> Casos a revisar</button>
+    <button data-v="v-cruce"><span class="n">04</span> ¿Es o no es homicidio?</button>
+    <button data-v="v-casos"><span class="n">05</span> Casos a revisar</button>
     <div class="grupo">Operar</div>
-    <button data-v="v-ubicaciones"><span class="n">05</span> Ubicaciones</button>
-    <button data-v="v-informe"><span class="n">06</span> Informe de mandos</button>
+    <button data-v="v-ubicaciones"><span class="n">06</span> Ubicaciones</button>
+    <button data-v="v-informe"><span class="n">07</span> Informe de mandos</button>
   </nav>
   <div class="pie-nav">
     Cifras calculadas desde los insumos oficiales.<br>
@@ -389,7 +390,64 @@ html[data-tema="oscuro"] .hoja h2{color:#7a1327}
     </div>
   </section>
 
-  <!-- ══════════ 04 CASOS ══════════ -->
+  <!-- ══════════ 04 CRUCE DE FUENTES ══════════ -->
+  <section class="vista" id="v-cruce">
+    <div class="aviso a-azul">
+      <b>Qué hace este cruce.</b> El proyecto abre por los homicidios dolosos y son pocos:
+      eso permite revisarlos uno por uno. Aquí se contrasta la tabla de homicidios
+      corroborados contra los hechos fatales que registró el C5, para separar lo que es
+      de lo que no es un homicidio. Dos registros se consideran el mismo hecho si están
+      a menos de <b>1.5 km</b> y dentro de <b>±12 horas</b>.
+    </div>
+
+    <div class="rej r4" id="cifras-cruce"></div>
+
+    <div class="rej r3">
+      <div class="prio">
+        <div class="cab"><div class="tit">Muerte en el C5 sin carpeta</div>
+          <span class="et e-rojo" id="n-sincarpeta"></span></div>
+        <div class="txt">El C5 registró una muerte violenta y no aparece en la tabla de
+          homicidios corroborados.</div>
+        <div class="pie">Verificar si existe carpeta o si se clasificó como otro delito.
+          <b>No prueba subregistro</b>: puede ser rezago de corroboración o un reporte que
+          al llegar resultó ser otra cosa.</div>
+      </div>
+      <div class="prio">
+        <div class="cab"><div class="tit">Homicidio sin rastro en el C5</div>
+          <span class="et e-ambar" id="n-sinrastro"></span></div>
+        <div class="txt">La carpeta existe pero ninguna llamada de emergencia coincide en
+          lugar y hora.</div>
+        <div class="pie">El hecho no entró por el 911 o la cabina no lo capturó.
+          <b>No implica error</b>: pudo reportarse por policía municipal o por la Fiscalía.</div>
+      </div>
+      <div class="prio">
+        <div class="cab"><div class="tit">Hallazgo por reclasificar</div>
+          <span class="et e-morado" id="n-reclas"></span></div>
+        <div class="txt">Persona hallada con huellas de violencia sin homicidio
+          corroborado asociado.</div>
+        <div class="pie">Contrastar con el parte del primer respondiente.</div>
+      </div>
+    </div>
+
+    <div class="tarjeta">
+      <h2>Hechos contrastados <span class="nota" id="nota-cruce"></span></h2>
+      <div style="padding:11px 16px;border-bottom:1px solid var(--borde)">
+        <div class="filtros">
+          <span class="lb">Veredicto</span>
+          <button class="pastilla on" data-vd="TODOS">Todos</button>
+          <button class="pastilla" data-vd="C5_SIN_CARPETA">Sin carpeta</button>
+          <button class="pastilla" data-vd="HD_SIN_RASTRO_C5">Sin rastro C5</button>
+          <button class="pastilla" data-vd="REVISAR_CLASIFICACION">Por reclasificar</button>
+          <button class="pastilla" data-vd="CONFIRMADO">Confirmados</button>
+        </div>
+      </div>
+      <div class="tabla-env"><table id="t-cruce"></table></div>
+    </div>
+
+    <div class="aviso a-ambar" id="aviso-ventana"></div>
+  </section>
+
+  <!-- ══════════ 05 CASOS ══════════ -->
   <section class="vista" id="v-casos">
     <div class="aviso a-rojo">
       <b>Esto es una prioridad de revisión documental, no un dictamen pericial.</b>
@@ -595,7 +653,7 @@ const N=n=>(n==null?"—":Number(n).toLocaleString("es-MX"));
 const E=s=>String(s==null?"":s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 const PCT=(a,b)=>b?Math.round(a*1000/b)/10:0;
 const R=DATOS.resumen;
-let mapa, capas={}, filtro={sector:"TODOS", nivel:"TODOS"}, secSel=null;
+let mapa, capas={}, filtro={sector:"TODOS", nivel:"TODOS", veredicto:"TODOS"}, secSel=null;
 const estado={coloreo:"coordinacion"};
 const EDOMEX=[[18.33,-100.62],[20.32,-98.52]];  // envolvente del Estado de México
 
@@ -1069,7 +1127,77 @@ function coordinaciones(){
   });
 }
 
-/* ═══════════════════════════════ 04 Casos ════════════════════════════════ */
+/* ══════════════════ 04 ¿Es o no es homicidio? — cruce ════════════════════ */
+const ETIQUETA_VEREDICTO={
+  CONFIRMADO:["Confirmado","e-verde"],
+  C5_SIN_CARPETA:["Sin carpeta","e-rojo"],
+  HD_SIN_RASTRO_C5:["Sin rastro C5","e-ambar"],
+  REVISAR_CLASIFICACION:["Por reclasificar","e-morado"],
+  NO_VERIFICABLE:["No verificable","e-gris"]};
+
+function cruce(){
+  const C=DATOS.cruce||{hechos:[],resumen:{},ventana:{}};
+  const v=C.ventana, r=C.resumen;
+  document.getElementById("cifras-cruce").innerHTML=`
+   <div class="cifra acc"><div class="rot">Ventana de cruce</div>
+     <div class="v num" style="font-size:1.3rem">${E(v.desde)} a ${E(v.hasta)}</div>
+     <div class="d">donde las dos fuentes se traslapan</div></div>
+   <div class="cifra rojo"><div class="rot">Muertes sin carpeta</div>
+     <div class="v num">${r.c5_sin_carpeta}</div>
+     <div class="d">registradas por el C5, ausentes de la tabla de HD</div></div>
+   <div class="cifra ambar"><div class="rot">Homicidios sin rastro</div>
+     <div class="v num">${r.hd_sin_rastro}</div>
+     <div class="d">de ${v.hd_en_ventana} corroborados en la ventana</div></div>
+   <div class="cifra verde"><div class="rot">Confirmados por ambas</div>
+     <div class="v num">${r.confirmados}</div>
+     <div class="d">carpeta y llamada del mismo hecho</div></div>`;
+
+  document.getElementById("n-sincarpeta").textContent=`${r.c5_sin_carpeta} casos`;
+  document.getElementById("n-sinrastro").textContent=`${r.hd_sin_rastro} casos`;
+  document.getElementById("n-reclas").textContent=`${r.revisar_clasificacion} casos`;
+  document.getElementById("nota-cruce").textContent=
+    `${C.hechos.length} registros · ${v.hechos_fatales_c5} hechos fatales del C5 en la ventana`;
+  document.getElementById("aviso-ventana").innerHTML=
+    `<b>Por qué la ventana es más corta que el corte.</b> El C5 cubre del
+     ${E(v.c5_desde)} al ${E(v.c5_hasta)} y la tabla de homicidios del ${E(v.hd_desde)} al
+     ${E(v.hd_hasta)}. El cruce solo corre en la intersección: fuera de ella una ausencia
+     no significa nada, solo que la otra fuente todavía no llega.
+     <b>${v.muertes_fuera_de_corte} muertes violentas del C5 quedaron fuera</b> por esa razón
+     y no se cuentan como discrepancia.`;
+  listaCruce();
+}
+
+function listaCruce(){
+  let lista=(DATOS.cruce||{hechos:[]}).hechos;
+  if(filtro.veredicto!=="TODOS") lista=lista.filter(h=>h.veredicto===filtro.veredicto);
+  tabla("t-cruce",
+    [["Origen"],["Referencia"],["Fecha y hora"],["Municipio"],
+     ["Clasificación de origen"],["Veredicto"],["Lectura"]],
+    lista.map((h,i)=>{
+      const [txt,cl]=ETIQUETA_VEREDICTO[h.veredicto]||["—","e-gris"];
+      return `<tr class="click" data-h="${i}">
+        <td><span class="et ${h.origen==="C5"?"e-azul":"e-gris"}">${E(h.origen)}</span></td>
+        <td class="m">${E(h.referencia)}</td>
+        <td class="m">${E(h.fecha)} ${E(h.hora.slice(0,5))}</td>
+        <td>${E(h.municipio)||"—"}</td>
+        <td style="font-size:.78rem">${E(h.clasificacion_origen)}</td>
+        <td><span class="et ${cl}">${txt}</span></td>
+        <td style="font-size:.78rem;color:var(--tx2)">${E(h.lectura)}</td></tr>
+      <tr class="desplegable" id="h-${i}" style="display:none"><td colspan="7">
+        ${h.descripcion?`<b>Descripción del hecho</b><div style="margin-top:5px;padding:9px;background:var(--sup);border:1px solid var(--borde);border-radius:6px">${E(h.descripcion)}</div>`:""}
+        ${h.coincidencias&&h.coincidencias.length?`<div style="margin-top:9px"><b>Llamadas que respaldan la carpeta</b><ul style="margin:5px 0 0 18px">${
+          h.coincidencias.map(c=>`<li><span class="m">${E(c.folio)}</span> · ${E(c.incidente)} · ${E(c.hora.slice(0,5))} · a ${c.distancia_km} km</li>`).join("")}</ul></div>`:""}
+        ${h.lat?`<div class="m" style="margin-top:8px;color:var(--tx3)">${h.lat}, ${h.lng}</div>`:""}
+      </td></tr>`;}));
+
+  // tabla() ya escribió; enganchar el desplegado
+  document.querySelectorAll("#t-cruce tr.click").forEach(tr=>tr.addEventListener("click",()=>{
+    const d=document.getElementById("h-"+tr.dataset.h);
+    d.style.display = d.style.display==="none" ? "table-row" : "none";
+  }));
+}
+
+/* ═══════════════════════════════ 05 Casos ════════════════════════════════ */
 function casos(){
   const a=R.auditoria;
   document.getElementById("nota-cohorte").textContent =
@@ -1286,6 +1414,7 @@ function informe(){
 const TITULOS={"v-panorama":["Panorama","Lectura general del corte y prioridades de la reunión"],
  "v-territorio":["Territorio","Dónde ocurre la violencia y qué despliegue hay cerca"],
  "v-coordinaciones":["Coordinaciones","Perfil territorial para la mesa con coordinadores"],
+ "v-cruce":["¿Es o no es homicidio?","Cruce de la tabla de homicidios contra los hechos fatales del C5"],
  "v-casos":["Casos a revisar","Decesos dudosos, suicidios y personas no localizadas"],
  "v-ubicaciones":["Ubicaciones","Extractor NLP en formato Windows Maps"],
  "v-informe":["Informe de mandos","Hoja ejecutiva imprimible"]};
@@ -1329,6 +1458,10 @@ document.querySelectorAll("[data-cl]").forEach(b=>b.addEventListener("click",()=
   document.querySelectorAll("[data-cl]").forEach(x=>x.classList.remove("on"));
   b.classList.add("on"); filtro.sector=b.dataset.cl; listaSectores();
 }));
+document.querySelectorAll("[data-vd]").forEach(b=>b.addEventListener("click",()=>{
+  document.querySelectorAll("[data-vd]").forEach(x=>x.classList.remove("on"));
+  b.classList.add("on"); filtro.veredicto=b.dataset.vd; listaCruce();
+}));
 document.querySelectorAll("[data-nv]").forEach(b=>b.addEventListener("click",()=>{
   document.querySelectorAll("[data-nv]").forEach(x=>x.classList.remove("on"));
   b.classList.add("on"); filtro.nivel=b.dataset.nv; listaCasos();
@@ -1341,7 +1474,7 @@ window.addEventListener("load",()=>{
   TITULOS["v-panorama"][1]=`Estado de México · C5 del ${S0.desde}h al ${S0.hasta}h `+
     `(${R.serie.horas} horas) · ${N(R.c5.llamadas_totales)} llamadas`;
   document.getElementById("contexto").textContent=TITULOS["v-panorama"][1];
-  panorama(); graficas(); iniciarMapa(); territorio();
+  panorama(); graficas(); iniciarMapa(); territorio(); cruce();
   coordinaciones(); casos(); ubicaciones(); informe();
 });
 </script>
