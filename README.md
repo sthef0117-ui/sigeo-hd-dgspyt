@@ -46,11 +46,24 @@ donde ya hay despliegue y aun así hay violencia, y los expedientes que conviene
 pedir a la FGJEM. Cada bloque trae el acuerdo sugerido.
 
 **02 · Territorio** — mapa y detector de zonas ciegas en una sola pantalla, porque
-son la misma pregunta. El mapa abre encuadrado en el **Estado de México completo**,
-que es la jurisdicción de la Dirección, no solo en la zona metropolitana. Capas
-base al estilo Windows Maps (Carretera, Vista aérea, Híbrido), capas operativas
-conmutables (homicidios, llamadas, bases, calor, sectores) y una lista de sectores
-a la derecha; al hacer clic el mapa vuela al sector y abre su evidencia.
+son la misma pregunta.
+
+El mapa es **cartografía propia**: se dibujan los 121 polígonos municipales del
+Estado de México en lugar de pedir mosaicos a un proveedor. Eso evita tramitar
+llave de suscripción, elimina el crédito de terceros impreso sobre el mapa y hace
+que se parezca al mural de la Dirección. El municipio se colorea por
+**coordinación regional**, por **número de homicidios** o sin relleno.
+
+Capas conmutables (homicidios, llamadas, bases, calor, sectores), perímetro del
+estado trazado en toda su orilla, botón de **estado completo** y una lista de
+sectores a la derecha; al hacer clic el mapa vuela al sector y abre su evidencia.
+
+> **Fuente de los límites municipales.** Se derivan de un conjunto público de
+> límites administrativos y traen tres municipios de creación reciente sin
+> polígono: San José del Rincón, Tonanitla y Valle de Chalco. Para uso
+> institucional conviene sustituirlos por el **Marco Geoestadístico del INEGI**,
+> que es la fuente oficial y de uso libre. `src/preparar_poligonos.py` acepta
+> cualquier GeoJSON de municipios: simplifica y normaliza los nombres solo.
 
 *«¿Por qué no se patrulla ahí?»* se calcula así: el territorio se divide en celdas
 de ~2.2 km; en cada una se suma la violencia registrada (homicidio corroborado ×10
@@ -157,9 +170,8 @@ coordinación asignada» en lugar de asignarles una a la fuerza.
 cuatro páginas.
 
 El visual de mapa de Power BI usa **Bing Maps de forma nativa**, sin tramitar
-llave. En el tablero HTML no es posible: Bing y Azure Maps requieren clave de
-suscripción y servir sus mosaicos sin ella viola la licencia, por eso ahí se usa
-cartografía Esri.
+llave. El tablero HTML resuelve lo mismo por otra vía: dibuja su propia
+cartografía vectorial y no depende de ningún proveedor de mosaicos.
 
 ---
 

@@ -297,6 +297,11 @@ html[data-tema="oscuro"] .hoja h2{color:#7a1327}
       <div class="tarjeta mapa-caja">
         <h2>Mapa operativo
           <span class="filtros" id="capas">
+            <span class="lb">Colorear</span>
+            <button class="pastilla on" data-coloreo="coordinacion">Coordinación</button>
+            <button class="pastilla" data-coloreo="homicidios">Homicidios</button>
+            <button class="pastilla" data-coloreo="ninguno">Ninguno</button>
+            <span class="lb" style="margin-left:6px">Capas</span>
             <button class="pastilla on" data-capa="hd">Homicidios</button>
             <button class="pastilla" data-capa="c5">Llamadas 911</button>
             <button class="pastilla" data-capa="bases">Bases</button>
@@ -331,14 +336,19 @@ html[data-tema="oscuro"] .hoja h2{color:#7a1327}
       </div>
     </div>
 
-    <div class="leyenda">
-      <span><span class="pt" style="background:#c1121f"></span>Homicidio doloso</span>
-      <span><span class="pt" style="background:#f59e0b"></span>Llamada 911 con violencia</span>
-      <span><span class="pt" style="background:#0f766e"></span>Base DGSPYT en uso</span>
-      <span><span class="pt" style="background:#6d28d9"></span>Sector detectado</span>
-      <span><span style="display:inline-block;width:16px;height:3px;background:#7a1327;
-        outline:2px solid #fff;margin-right:6px;vertical-align:middle"></span>Perímetro del Estado de México</span>
-      <span style="margin-left:auto;color:var(--tx3)">Capa base: Carretera · Vista aérea · Híbrido</span>
+    <div class="tarjeta">
+      <div class="cuerpo" style="gap:10px">
+        <div class="leyenda" id="leyenda-mapa"></div>
+        <div class="leyenda" style="border-top:1px solid var(--borde);padding-top:9px">
+          <span><span class="pt" style="background:#7a1327"></span>Homicidio doloso</span>
+          <span><span class="pt" style="background:#b45309"></span>Llamada 911 con violencia</span>
+          <span><span class="pt" style="background:#0f766e"></span>Base DGSPYT en uso</span>
+          <span><span class="pt" style="background:#6d28d9"></span>Sector detectado</span>
+          <span><span style="display:inline-block;width:16px;height:3px;background:#7a1327;
+            margin-right:6px;vertical-align:middle"></span>Perímetro del estado</span>
+          <span style="margin-left:auto;color:var(--tx3)">Cartografía propia · sin proveedor externo</span>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -583,6 +593,7 @@ const E=s=>String(s==null?"":s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">
 const PCT=(a,b)=>b?Math.round(a*1000/b)/10:0;
 const R=DATOS.resumen;
 let mapa, capas={}, filtro={sector:"TODOS", nivel:"TODOS"}, secSel=null;
+const estado={coloreo:"coordinacion"};
 const EDOMEX=[[18.33,-100.62],[20.32,-98.52]];  // envolvente del Estado de México
 
 // El portapapeles moderno solo existe en contexto seguro; abriendo el archivo
@@ -798,33 +809,58 @@ function popupSector(z){
 }
 
 function iniciarMapa(){
-  // La jurisdiccion es estatal: el mapa abre con el Estado de Mexico completo.
-  // El encuadre exacto se aplica al mostrar la vista, porque Leaflet no puede
-  // medir un contenedor oculto y encuadraria el mundo entero.
-  mapa=L.map("mapa",{zoomControl:false}).setView([19.52,-99.10],10);
+  // Cartografía propia: se dibujan los polígonos municipales en lugar de pedir
+  // mosaicos a un proveedor. Sin proveedor no hay llave que tramitar ni crédito
+  // ajeno impreso sobre el mapa, y el resultado se parece al mural de la
+  // Dirección: el estado dividido por coordinación regional.
+  mapa=L.map("mapa",{zoomControl:false,attributionControl:false,
+    zoomSnap:.25,minZoom:7,maxZoom:16}).setView([19.52,-99.10],10);
   L.control.zoom({position:"bottomright"}).addTo(mapa);
-  // Capas base limpias. Los mosaicos de Microsoft (Bing / Azure Maps) exigen
-  // llave de suscripcion y no pueden servirse sin ella; mientras no exista esa
-  // llave se usa cartografia Esri, que si permite uso directo.
-  const gris=L.tileLayer(
-    "https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}",
-    {maxZoom:16,attribution:"&copy; Esri · DGSPYT"});
-  const calles=L.tileLayer(
-    "https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}",
-    {maxZoom:19,attribution:"&copy; Esri · DGSPYT"});
-  const aerea=L.tileLayer(
-    "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
-    {maxZoom:19,attribution:"Imagery &copy; Esri · DGSPYT"});
-  const etiq=L.tileLayer(
-    "https://server.arcgisonline.com/ArcGIS/rest/services/Reference/World_Boundaries_and_Places/MapServer/tile/{z}/{y}/{x}",
-    {maxZoom:19});
-  const rotulos=L.tileLayer(
-    "https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Reference/MapServer/tile/{z}/{y}/{x}",
-    {maxZoom:16});
-  const mapaBase=L.layerGroup([gris,rotulos]).addTo(mapa);
-  L.control.layers({"Mapa base":mapaBase,"Calles":calles,
-    "Vista aérea":L.layerGroup([aerea,etiq])},null,
-    {position:"topright",collapsed:false}).addTo(mapa);
+
+  const COLOR_COORD={
+    "METROPOLITANA":"#c94f6d", "ECATEPEC":"#d98032", "ORIENTE":"#5b8c5a",
+    "CHALCO":"#7d6bb0", "VALLE TOLUCA":"#3f7fa6", "ATLACOMULCO":"#b8933f",
+    "IXTAPAN":"#4aa39b", "VALLE DE BRAVO":"#9c6b4f"};
+
+  const datosMun={};
+  DATOS.territorio.forEach(t=>datosMun[t.municipio]=t);
+  const maxHD=Math.max(1,...DATOS.territorio.map(t=>t.hd_eventos));
+
+  function relleno(municipio){
+    const t=datosMun[municipio];
+    if(estado.coloreo==="ninguno") return {color:"transparent",opacidad:0};
+    if(estado.coloreo==="coordinacion"){
+      const c=t&&t.coordinacion?COLOR_COORD[t.coordinacion]:null;
+      return c?{color:c,opacidad:.42}:{color:"#b9c0c9",opacidad:.3};
+    }
+    const n=t?t.hd_eventos:0;
+    if(!n) return {color:"#dfe3e8",opacidad:.55};
+    const paso=[[1,"#f7d5d9"],[2,"#eda9b2"],[4,"#dd7285"],[6,"#c33f59"],[99,"#8f1d33"]];
+    return {color:paso.find(p=>n<=p[0])[1],opacidad:.85};
+  }
+
+  capas.municipios=L.geoJSON(DATOS.municipios,{
+    style:f=>{
+      const r=relleno(f.properties.municipio);
+      return {color:"#ffffff",weight:1,opacity:.9,
+              fillColor:r.color,fillOpacity:r.opacidad};
+    },
+    onEachFeature:(f,capa)=>{
+      const t=datosMun[f.properties.municipio];
+      capa.bindTooltip(
+        `<b>${E(f.properties.nombre)}</b>`+
+        (t?`<br>${t.hd_eventos} homicidio(s) · ${N(t.llamadas_violentas)} llamadas`+
+            `<br>${E(t.coordinacion)||"sin coordinación"}`:"<br>sin registros en el corte"),
+        {sticky:true});
+      capa.on("mouseover",()=>capa.setStyle({weight:2.5,color:"#16202c"}));
+      capa.on("mouseout",()=>capa.setStyle({weight:1,color:"#ffffff"}));
+    }}).addTo(mapa);
+
+  // Perímetro del Estado de México, marcado en toda su orilla.
+  if(DATOS.perimetro){
+    L.geoJSON(DATOS.perimetro,{style:{color:"#7a1327",weight:3,opacity:1,
+      fill:false,lineJoin:"round"},interactive:false}).addTo(mapa);
+  }
 
   capas.hd=L.layerGroup().addTo(mapa);
   capas.c5=L.layerGroup();
@@ -832,29 +868,40 @@ function iniciarMapa(){
   capas.sectores=L.layerGroup();
 
   DATOS.hd.filter(d=>d.lat).forEach(d=>{
-    L.circleMarker([d.lat,d.lng],{radius:7,fillColor:"#c1121f",color:"#fff",weight:2,fillOpacity:.95})
-      .bindPopup(popupHD(d),{maxWidth:340}).addTo(capas.hd);
+    L.circleMarker([d.lat,d.lng],{radius:6.5,fillColor:"#7a1327",color:"#fff",
+      weight:2,fillOpacity:1}).bindPopup(popupHD(d),{maxWidth:340}).addTo(capas.hd);
   });
   DATOS.llamadas.filter(d=>d.lat&&d.peso_violencia>0).forEach(d=>{
-    L.circleMarker([d.lat,d.lng],{radius:4,fillColor:"#f59e0b",color:"#fff",weight:1.2,fillOpacity:.9})
-      .bindPopup(popup911(d),{maxWidth:320}).addTo(capas.c5);
+    L.circleMarker([d.lat,d.lng],{radius:3.5,fillColor:"#b45309",color:"#fff",
+      weight:1,fillOpacity:.9}).bindPopup(popup911(d),{maxWidth:320}).addTo(capas.c5);
   });
   DATOS.bases.forEach(b=>{
-    L.circleMarker([b.lat,b.lng],{radius:5.5,fillColor:"#0f766e",color:"#fff",weight:1.8,fillOpacity:.95})
-      .bindPopup(`<div style="font-family:Inter,sans-serif;font-size:.8rem;line-height:1.5">
-        <b>${E(b.unidad)}</b><br>${E(b.municipio)}<br>
-        ${E(b.ubicacion)||""}<br>Personal: <b>${N(b.personal_total)}</b>
-        (${N(b.personal_hombres)} H / ${N(b.personal_mujeres)} M)</div>`,{maxWidth:300}).addTo(capas.bases);
+    L.circleMarker([b.lat,b.lng],{radius:5,fillColor:"#0f766e",color:"#fff",
+      weight:1.6,fillOpacity:1}).bindPopup(
+      `<div style="font-family:Inter,sans-serif;font-size:.8rem;line-height:1.5">
+        <b>${E(b.unidad)}</b><br>${E(b.municipio)}<br>${E(b.ubicacion)||""}
+        <br>Personal: <b>${N(b.personal_total)}</b></div>`,{maxWidth:300}).addTo(capas.bases);
   });
   DATOS.zonas.forEach(z=>{
     const c=z.clasificacion==="DESATENDIDO"?"#c1121f":z.clasificacion==="SATURADO"?"#b45309":"#6d28d9";
-    L.circle([z.lat,z.lng],{radius:1100,color:c,fillColor:c,fillOpacity:.14,weight:2})
+    L.circle([z.lat,z.lng],{radius:1100,color:c,fillColor:c,fillOpacity:.15,weight:1.6})
       .bindPopup(popupSector(z),{maxWidth:330}).addTo(capas.sectores);
   });
   capas.calor=L.heatLayer(
     DATOS.llamadas.filter(d=>d.lat&&d.peso_violencia>0).map(d=>[d.lat,d.lng,Math.min(d.peso_violencia/6,1)])
       .concat(DATOS.hd.filter(d=>d.lat).map(d=>[d.lat,d.lng,1])),
     {radius:25,blur:20,maxZoom:14});
+
+  document.querySelectorAll("[data-coloreo]").forEach(b=>b.addEventListener("click",()=>{
+    document.querySelectorAll("[data-coloreo]").forEach(x=>x.classList.remove("on"));
+    b.classList.add("on"); estado.coloreo=b.dataset.coloreo;
+    capas.municipios.setStyle(f=>{
+      const r=relleno(f.properties.municipio);
+      return {color:"#ffffff",weight:1,opacity:.9,fillColor:r.color,fillOpacity:r.opacidad};
+    });
+    pintarLeyendaMapa(COLOR_COORD);
+  }));
+  pintarLeyendaMapa(COLOR_COORD);
 
   document.getElementById("ver-estado").addEventListener("click",()=>{
     mapa.fitBounds(EDOMEX,{animate:false,padding:[12,12]});
@@ -865,6 +912,18 @@ function iniciarMapa(){
     const c=capas[b.dataset.capa];
     if(b.classList.contains("on")) c.addTo(mapa); else mapa.removeLayer(c);
   }));
+}
+
+function pintarLeyendaMapa(COLOR_COORD){
+  const caja=document.getElementById("leyenda-mapa");
+  if(estado.coloreo==="coordinacion"){
+    caja.innerHTML=Object.entries(COLOR_COORD).map(([k,v])=>
+      `<span><span class="pt" style="background:${v}"></span>${E(k)}</span>`).join("");
+  } else if(estado.coloreo==="homicidios"){
+    caja.innerHTML=[["#dfe3e8","sin homicidios"],["#f7d5d9","1"],["#eda9b2","2"],
+      ["#dd7285","3 a 4"],["#c33f59","5 a 6"],["#8f1d33","7 o más"]].map(([c,t])=>
+      `<span><span class="pt" style="background:${c}"></span>${t}</span>`).join("");
+  } else caja.innerHTML='<span style="color:var(--tx3)">Sin relleno municipal.</span>';
 }
 
 function popupHD(d){

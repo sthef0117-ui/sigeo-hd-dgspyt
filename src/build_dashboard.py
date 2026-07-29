@@ -33,6 +33,7 @@ ARCHIVOS = {
     "coordinaciones": "perfil_coordinaciones.json",
     "serie": "serie_temporal.json",
     "perimetro": "perimetro_edomex.json",
+    "municipios": "municipios_edomex.json",
 }
 
 

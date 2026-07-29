@@ -44,6 +44,7 @@ XLS_INSTALACIONES = (INSUMOS / "estructura" /
                      "INSTALACIONES_DGSPYT_290426_QR L.xlsx")
 XLS_BASES = INSUMOS / "whatsapp" / "INMUEBLES GENERAL DGSPYT.xlsx"
 PERIMETRO = RAIZ / "poligonos" / "perimetro_edomex.geojson"
+MUNICIPIOS = RAIZ / "poligonos" / "municipios_edomex.geojson"
 # Los cortes de 911 se descubren solos en insumos/excel: ver cortes_911().
 
 NULOS = {"", "0", "0.0", "NONE", "NULL", "N/A", "NA", "SIN DATO",
@@ -1355,6 +1356,9 @@ def main():
     if PERIMETRO.exists():
         escribir_json("perimetro_edomex.json",
                       json.loads(PERIMETRO.read_text(encoding="utf-8")))
+    if MUNICIPIOS.exists():
+        escribir_json("municipios_edomex.json",
+                      json.loads(MUNICIPIOS.read_text(encoding="utf-8")))
     escribir_json("auditoria_decesos.json", publicable(auditoria))
     escribir_json("resumen_ejecutivo.json", resumen)
     escribir_sqlite(hd, llamadas, bases, sectores, auditoria)
