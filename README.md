@@ -58,6 +58,12 @@ Capas conmutables (homicidios, llamadas, bases, calor, sectores), perímetro del
 estado trazado en toda su orilla, botón de **estado completo** y una lista de
 sectores a la derecha; al hacer clic el mapa vuela al sector y abre su evidencia.
 
+**Detalle a nivel calle.** Al abrir la ficha de un hecho el mapa se acerca al
+punto y enciende solo la capa de calles: una dirección no sirve si no se ve dónde
+cae. Mientras esa capa está apagada el mapa no depende de nadie y no aparece
+crédito de proveedor; al encenderla aparece, porque entonces sí hay a quién
+acreditar. También se puede prender a mano, en calles o satélite.
+
 > **Fuente de los límites municipales.** Se derivan de un conjunto público de
 > límites administrativos y traen tres municipios de creación reciente sin
 > polígono: San José del Rincón, Tonanitla y Valle de Chalco. Para uso
@@ -90,6 +96,14 @@ de presión. Al hacer clic en la fila se despliega cómo se compone ese número.
                  × (1 + mín(dist media, 6)/4)
                  × (1 + sectores desatendidos × 0.25)
 ```
+
+**Clasificación de los municipios.** El inventario es de inmuebles, no de
+territorio, así que 22 municipios sin inmueble propio no traían coordinación. Se
+completan en dos pasos y cada municipio guarda de dónde salió su asignación:
+`catalogo` si viene declarada, `escision` si se hereda del municipio del que se
+separó, y `vecindad` si se toma la coordinación mayoritaria entre sus colindantes,
+calculada sobre los polígonos. Los 108 municipios quedan clasificados: 86 por
+catálogo y 22 por vecindad.
 
 > **Qué mide y qué no.** Mide condiciones del territorio. **No mide el desempeño de
 > una persona:** los insumos no contienen asignación nominal de mando, turnos ni

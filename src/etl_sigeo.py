@@ -974,6 +974,103 @@ def perfil_territorial(hd, llamadas, bases, sectores):
     return salida
 
 
+# Municipios creados despues de que se levanto la cartografia de origen: no
+# tienen poligono propio, asi que su coordinacion se hereda del municipio del
+# que se escindieron. Es un hecho administrativo, no una estimacion.
+ESCISIONES = {
+    "VALLE DE CHALCO": "CHALCO",          # escindido de Chalco, 1994
+    "TONANITLA": "JALTENCO",              # escindido de Jaltenco, 2003
+    "SAN JOSE DEL RINCON": "SAN FELIPE DEL PROGRESO",  # escindido en 2001
+}
+
+
+def _vertices(geometria):
+    tipo = geometria.get("type")
+    if tipo == "Polygon":
+        anillos = geometria["coordinates"]
+    elif tipo == "MultiPolygon":
+        anillos = [a for p in geometria["coordinates"] for a in p]
+    else:
+        return []
+    return [(p[1], p[0]) for anillo in anillos for p in anillo]
+
+
+def completar_coordinaciones(territorio, ruta_municipios=None):
+    """
+    Asigna coordinacion a los municipios que el inventario no cataloga.
+
+    Un municipio queda sin coordinacion cuando no tiene inmueble propio de la
+    DGSPYT: el inventario es de inmuebles, no de territorio. Dejarlos en un
+    cajon aparte hacia inutil el cuadro de mando.
+
+    Se resuelve en dos pasos, y cada municipio guarda de donde salio su
+    asignacion para que el mando pueda distinguir el dato oficial del inferido:
+
+      catalogo   declarado en el inventario de instalaciones
+      escision   heredado del municipio del que se escindio
+      vecindad   la coordinacion mayoritaria entre sus municipios colindantes
+
+    La vecindad se calcula sobre los poligonos municipales: dos municipios
+    colindan si comparten vertices de frontera.
+    """
+    por_nombre = {t["municipio"]: t for t in territorio}
+    for t in territorio:
+        t["coordinacion_origen"] = "catalogo" if t["coordinacion"] else ""
+
+    # Paso 1: escisiones documentadas.
+    for hijo, padre in ESCISIONES.items():
+        t = por_nombre.get(hijo)
+        madre = por_nombre.get(padre)
+        if t and not t["coordinacion"] and madre and madre["coordinacion"]:
+            t["coordinacion"] = madre["coordinacion"]
+            t["coordinacion_origen"] = "escision"
+
+    # Paso 2: vecindad sobre la cartografia.
+    ruta = ruta_municipios or MUNICIPIOS
+    pendientes = [t for t in territorio if not t["coordinacion"]]
+    if not pendientes or not ruta.exists():
+        return territorio
+
+    geo = json.loads(ruta.read_text(encoding="utf-8"))
+    vertices = {}
+    for f in geo.get("features", []):
+        nombre = f["properties"].get("municipio")
+        if nombre:
+            vertices.setdefault(nombre, []).extend(_vertices(f["geometry"]))
+
+    # Rejilla gruesa para no comparar todos contra todos.
+    PASO = 0.02
+    indice = defaultdict(set)
+    for nombre, puntos in vertices.items():
+        for lat, lng in puntos:
+            indice[(round(lat / PASO), round(lng / PASO))].add(nombre)
+
+    for intento in range(4):  # la vecindad se propaga hacia afuera
+        quedan = [t for t in territorio if not t["coordinacion"]]
+        if not quedan:
+            break
+        for t in quedan:
+            puntos = vertices.get(t["municipio"])
+            if not puntos:
+                continue
+            votos = Counter()
+            for lat, lng in puntos:
+                celda = (round(lat / PASO), round(lng / PASO))
+                for dy in (-1, 0, 1):
+                    for dx in (-1, 0, 1):
+                        for vecino in indice.get((celda[0] + dy, celda[1] + dx), ()):
+                            if vecino == t["municipio"]:
+                                continue
+                            otro = por_nombre.get(vecino)
+                            if otro and otro["coordinacion"]:
+                                votos[otro["coordinacion"]] += 1
+            if votos:
+                t["coordinacion"] = votos.most_common(1)[0][0]
+                t["coordinacion_origen"] = "vecindad"
+
+    return territorio
+
+
 def perfil_coordinaciones(territorio):
     """
     Agrega el perfil municipal a la division con la que sesiona el mando.
@@ -1303,6 +1400,10 @@ def main():
           f"({len(serie['por_hora'])} horas)")
 
     territorio = perfil_territorial(hd, llamadas, bases, sectores)
+    territorio = completar_coordinaciones(territorio)
+    origen = Counter(t["coordinacion_origen"] or "sin asignar" for t in territorio)
+    print("  clasificación municipal .... "
+          + " · ".join(f"{v} por {k}" for k, v in origen.most_common()))
     coordinaciones = perfil_coordinaciones(territorio)
     print(f"  municipios perfilados ...... {len(territorio)}")
     print(f"  coordinaciones regionales .. {len(coordinaciones['coordinaciones'])} "

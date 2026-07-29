@@ -307,6 +307,9 @@ html[data-tema="oscuro"] .hoja h2{color:#7a1327}
             <button class="pastilla" data-capa="bases">Bases</button>
             <button class="pastilla" data-capa="calor">Calor</button>
             <button class="pastilla" data-capa="sectores">Sectores</button>
+            <span class="lb" style="margin-left:6px">Detalle</span>
+            <button class="pastilla" data-capa="calles">Calles</button>
+            <button class="pastilla" data-capa="satelite">Satélite</button>
             <button class="pastilla" id="ver-estado" style="border-color:var(--guinda);color:var(--guinda)">Estado completo</button>
           </span>
         </h2>
@@ -813,9 +816,20 @@ function iniciarMapa(){
   // mosaicos a un proveedor. Sin proveedor no hay llave que tramitar ni crédito
   // ajeno impreso sobre el mapa, y el resultado se parece al mural de la
   // Dirección: el estado dividido por coordinación regional.
-  mapa=L.map("mapa",{zoomControl:false,attributionControl:false,
-    zoomSnap:.25,minZoom:7,maxZoom:16}).setView([19.52,-99.10],10);
+  mapa=L.map("mapa",{zoomControl:false,zoomSnap:.25,minZoom:7,maxZoom:18,
+    attributionControl:true}).setView([19.52,-99.10],10);
+  mapa.attributionControl.setPrefix(false);
   L.control.zoom({position:"bottomright"}).addTo(mapa);
+
+  // Detalle a nivel calle. Se enciende solo cuando hace falta ubicar un hecho
+  // en el terreno; mientras esta apagado el mapa no depende de nadie y no
+  // aparece credito de proveedor.
+  capas.calles=L.tileLayer(
+    "https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}",
+    {maxZoom:18,opacity:.9,attribution:"Calles &copy; Esri"});
+  capas.satelite=L.tileLayer(
+    "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
+    {maxZoom:18,opacity:.9,attribution:"Imagen &copy; Esri"});
 
   const COLOR_COORD={
     "METROPOLITANA":"#c94f6d", "ECATEPEC":"#d98032", "ORIENTE":"#5b8c5a",
@@ -869,11 +883,13 @@ function iniciarMapa(){
 
   DATOS.hd.filter(d=>d.lat).forEach(d=>{
     L.circleMarker([d.lat,d.lng],{radius:6.5,fillColor:"#7a1327",color:"#fff",
-      weight:2,fillOpacity:1}).bindPopup(popupHD(d),{maxWidth:340}).addTo(capas.hd);
+      weight:2,fillOpacity:1}).bindPopup(popupHD(d),{maxWidth:340})
+      .on("popupopen",()=>acercarAlHecho(d.lat,d.lng)).addTo(capas.hd);
   });
   DATOS.llamadas.filter(d=>d.lat&&d.peso_violencia>0).forEach(d=>{
     L.circleMarker([d.lat,d.lng],{radius:3.5,fillColor:"#b45309",color:"#fff",
-      weight:1,fillOpacity:.9}).bindPopup(popup911(d),{maxWidth:320}).addTo(capas.c5);
+      weight:1,fillOpacity:.9}).bindPopup(popup911(d),{maxWidth:320})
+      .on("popupopen",()=>acercarAlHecho(d.lat,d.lng)).addTo(capas.c5);
   });
   DATOS.bases.forEach(b=>{
     L.circleMarker([b.lat,b.lng],{radius:5,fillColor:"#0f766e",color:"#fff",
@@ -892,13 +908,22 @@ function iniciarMapa(){
       .concat(DATOS.hd.filter(d=>d.lat).map(d=>[d.lat,d.lng,1])),
     {radius:25,blur:20,maxZoom:14});
 
+  function repintarMunicipios(){
+    const detalle=["calles","satelite"].some(c=>mapa.hasLayer(capas[c]));
+    capas.municipios.setStyle(f=>{
+      const r=relleno(f.properties.municipio);
+      // Con mosaicos de fondo el relleno se aclara para no tapar la calle.
+      return {color:detalle?"#16202c":"#ffffff",weight:detalle?1.4:1,
+              opacity:detalle?.75:.9, fillColor:r.color,
+              fillOpacity:detalle?Math.min(r.opacidad,.12):r.opacidad};
+    });
+  }
+  window._repintarMunicipios=repintarMunicipios;
+
   document.querySelectorAll("[data-coloreo]").forEach(b=>b.addEventListener("click",()=>{
     document.querySelectorAll("[data-coloreo]").forEach(x=>x.classList.remove("on"));
     b.classList.add("on"); estado.coloreo=b.dataset.coloreo;
-    capas.municipios.setStyle(f=>{
-      const r=relleno(f.properties.municipio);
-      return {color:"#ffffff",weight:1,opacity:.9,fillColor:r.color,fillOpacity:r.opacidad};
-    });
+    repintarMunicipios();
     pintarLeyendaMapa(COLOR_COORD);
   }));
   pintarLeyendaMapa(COLOR_COORD);
@@ -911,6 +936,13 @@ function iniciarMapa(){
     b.classList.toggle("on");
     const c=capas[b.dataset.capa];
     if(b.classList.contains("on")) c.addTo(mapa); else mapa.removeLayer(c);
+    if(["calles","satelite"].includes(b.dataset.capa)){
+      // Solo una capa de fondo a la vez.
+      const otra=b.dataset.capa==="calles"?"satelite":"calles";
+      const chipOtra=document.querySelector(`[data-capa="${otra}"]`);
+      if(b.classList.contains("on") && chipOtra.classList.contains("on")) chipOtra.click();
+      if(window._repintarMunicipios) window._repintarMunicipios();
+    }
   }));
 }
 
@@ -924,6 +956,13 @@ function pintarLeyendaMapa(COLOR_COORD){
       ["#dd7285","3 a 4"],["#c33f59","5 a 6"],["#8f1d33","7 o más"]].map(([c,t])=>
       `<span><span class="pt" style="background:${c}"></span>${t}</span>`).join("");
   } else caja.innerHTML='<span style="color:var(--tx3)">Sin relleno municipal.</span>';
+}
+
+function acercarAlHecho(lat,lng){
+  if(!mapa) return;
+  const chip=document.querySelector('[data-capa="calles"]');
+  if(chip && !chip.classList.contains("on")) chip.click();
+  mapa.setView([lat,lng], Math.max(mapa.getZoom(),16), {animate:false});
 }
 
 function popupHD(d){
