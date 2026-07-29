@@ -176,6 +176,22 @@ coordinación asignada» en lugar de asignarles una a la fuerza.
 
 ---
 
+## Presentación para la reunión
+
+```bash
+python src/build_presentacion.py
+```
+
+Genera `presentacion/SIGEO-HD_Reunion_Mandos.pptx`: seis láminas en 16:9 con
+portada, panorama del corte, carga por coordinación regional, sectores
+desatendidos frente a saturados, casos de prioridad alta y acuerdos propuestos.
+
+Responde al apunte de la reunión —«Bosquejo para presentar»— y **no requiere
+instalar nada**. Todas las cifras y gráficas salen del pipeline, así que la
+presentación se rehace en un comando cada corte nuevo.
+
+---
+
 ## Power BI
 
 `python src/export_powerbi.py` genera en `powerbi/` un modelo en estrella en CSV
