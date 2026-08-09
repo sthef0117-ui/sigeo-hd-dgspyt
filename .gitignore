@@ -1,3 +1,10 @@
 __pycache__/
 *.pyc
 *.tmp
+
+# La base SQLite es un artefacto generado: se rehace con
+#   python src/etl_sigeo.py
+# Con cada corte nuevo crece, ya va en 50 MB y GitHub corta en 100. No la
+# necesita el sitio publicado, solo el trabajo local, asi que deja de viajar
+# en el repositorio.
+database/sigeo_db.sqlite
