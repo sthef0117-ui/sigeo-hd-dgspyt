@@ -1549,6 +1549,27 @@ def escribir_sqlite(hd, llamadas, bases, sectores, auditoria):
          for l in llamadas])
 
     # Refresco de las tablas base ya existentes.
+    # Las dos tablas base venian de un esquema anterior y solo se vaciaban. Si
+    # la base no existe -por ejemplo, en una copia recien clonada del
+    # repositorio- hay que poder levantarla desde cero.
+    cur.executescript("""
+        CREATE TABLE IF NOT EXISTS tb_homicidios_corroborados (
+            id INTEGER PRIMARY KEY, np_consecutivo INTEGER, fecha_evento TEXT,
+            hora_evento TEXT, dia_semana TEXT, municipio TEXT, colonia TEXT,
+            calle TEXT, cuadrante TEXT, latitud REAL, longitud REAL,
+            total_victimas_hd INTEGER, sexo_victima TEXT, posible_movil TEXT,
+            desarrollo_hechos TEXT, observaciones TEXT, acciones_ssem TEXT,
+            windows_maps_query TEXT, fecha_registro TEXT
+        );
+        CREATE TABLE IF NOT EXISTS tb_llamadas_911_c5 (
+            folio_c5 TEXT PRIMARY KEY, tipo_incidente_id TEXT,
+            incidente_descripcion TEXT, fecha_llamada TEXT, hora_llamada TEXT,
+            municipio TEXT, direccion_reportada TEXT, referencia_ubicacion TEXT,
+            notas_cabina_c5 TEXT, modo_recepcion TEXT, latitud REAL,
+            longitud REAL, prioridad_nivel REAL, fecha_registro TEXT
+        );
+    """)
+
     cur.execute("DELETE FROM tb_homicidios_corroborados")
     cur.executemany(
         "INSERT INTO tb_homicidios_corroborados (id, np_consecutivo, fecha_evento,"
