@@ -682,6 +682,13 @@ function respaldoCopia(t,b,aviso){
 // Windows Maps se abre con el protocolo bingmaps:, que solo responde si la app
 // esta registrada en el equipo. Fuera de ahi el enlace no hacia nada visible,
 // asi que cada ubicacion lleva tambien un enlace web que siempre abre.
+// El URI nativo se arma aqui para no cargarlo en el archivo: es la misma
+// cadena que produce el pipeline.
+function uriMaps(consulta, lat, lng){
+  return (lat!=null && lng!=null)
+    ? `bingmaps:?collection=point.${lat}_${lng}_${encodeURIComponent(consulta)}&lvl=17`
+    : `bingmaps:?where=${encodeURIComponent(consulta)}&lvl=16`;
+}
 function urlWeb(consulta){
   return "https://www.bing.com/maps?q="+encodeURIComponent(consulta);
 }
@@ -1035,7 +1042,7 @@ function popupHD(d){
     <div style="margin-top:7px;padding-top:5px;border-top:1px solid #e6e9ed;font-family:monospace;font-size:.72rem">${E(d.windows_maps_query)}</div>
     <a href="${urlWeb(d.windows_maps_query)}" target="_blank" rel="noopener"
        style="font-size:.75rem">Ver mapa</a> ·
-    <a href="${d.uri_windows_maps}" style="font-size:.75rem">Windows Maps</a></div>`;
+    <a href="${uriMaps(d.windows_maps_query,d.lat,d.lng)}" style="font-size:.75rem">Windows Maps</a></div>`;
 }
 function popup911(d){
   return `<div style="font-family:Inter,sans-serif;font-size:.8rem;line-height:1.5">
@@ -1268,7 +1275,7 @@ function ubicaciones(){
       <td class="m">${E(d.windows_maps_query)}</td>
       <td><span class="et ${d.geo_confianza==="ALTA"?"e-verde":"e-ambar"}">${E(d.geo_confianza)}</span></td>
       <td style="font-size:.73rem;color:var(--tx3)">${E((d.geo_fuentes||[]).join(", "))||"—"}</td>
-      <td style="white-space:nowrap">${botonesMapa(d.windows_maps_query,d.uri_windows_maps)}</td></tr>`));
+      <td style="white-space:nowrap">${botonesMapa(d.windows_maps_query,uriMaps(d.windows_maps_query,d.lat,d.lng))}</td></tr>`));
 
   document.getElementById("g-run").addEventListener("click",()=>{
     const r=geocodificar({municipio:document.getElementById("g-mun").value,

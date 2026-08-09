@@ -1124,9 +1124,20 @@ def perfil_territorial(hd, llamadas, bases, sectores):
         elif s["clasificacion"] == "SATURADO":
             perfiles[s["municipio"]]["sectores_saturados"] += 1
 
-    salida = []
+    # El C5 atiende reportes de la frontera con la Ciudad de Mexico y los
+    # registra con el nombre de la demarcacion. No son territorio de la
+    # Direccion y no deben aparecer en el perfil ni en el cuadro de mando.
+    reconocidos = {b["municipio"] for b in bases if b["municipio"]}
+    if MUNICIPIOS.exists():
+        geo = json.loads(MUNICIPIOS.read_text(encoding="utf-8"))
+        reconocidos |= {f["properties"]["municipio"] for f in geo["features"]}
+
+    salida, ajenos = [], []
     for municipio, p in perfiles.items():
         if not municipio:
+            continue
+        if reconocidos and municipio not in reconocidos:
+            ajenos.append(municipio)
             continue
         propias = indice_bases.get(municipio, [])
         p["bases_en_uso"] = len(propias)
@@ -1164,6 +1175,8 @@ def perfil_territorial(hd, llamadas, bases, sectores):
             "indice_presion": indice_presion,
         })
 
+    if ajenos:
+        print("  fuera del estado, excluidos ... " + ", ".join(sorted(ajenos)))
     salida.sort(key=lambda x: x["indice_presion"], reverse=True)
     for i, x in enumerate(salida, 1):
         x["ranking"] = i
@@ -1621,17 +1634,21 @@ def main():
     # El tablero se distribuye como archivo unico (se abre desde USB en la
     # reunion de mandos), asi que la carga util va recortada: solo llamadas con
     # relevancia operativa y solo los campos que el tablero dibuja.
+    # El URI de Windows Maps se arma en el navegador a partir de la consulta:
+    # cargarlo pesaba 1.4 MB. La direccion y la referencia tampoco se muestran
+    # en ninguna vista, solo alimentan al extractor, y ese ya corrio.
     CAMPOS_TABLERO = (
         "folio", "incidente", "familia", "peso_violencia", "fecha", "hora",
-        "municipio", "direccion", "referencia", "lat", "lng",
-        "windows_maps_query", "geo_confianza", "geo_fuentes", "uri_windows_maps",
+        "municipio", "lat", "lng",
+        "windows_maps_query", "geo_confianza", "geo_fuentes",
     )
     llamadas_tablero = []
     for l in llamadas:
-        # El mapa solo dibuja llamadas con violencia, y la vista de ubicaciones
-        # solo las que el extractor recupero. El resto no se dibuja en ningun
-        # lado y solo engordaria el archivo que viaja en USB.
-        relevante = (l["peso_violencia"] > 0
+        # El mapa solo dibuja llamadas con violencia Y con coordenada; la vista
+        # de ubicaciones, solo las que el extractor recupero. Una llamada
+        # violenta sin coordenada y sin recuperar no aparece en ninguna vista y
+        # solo engordaria el archivo que viaja en USB.
+        relevante = ((l["peso_violencia"] > 0 and l["lat"] is not None)
                      or (l["lat"] is None
                          and l["geo_confianza"] in ("ALTA", "MEDIA")))
         if not relevante:
@@ -1640,7 +1657,7 @@ def main():
         # La nota completa vive en SQLite. El tablero solo la muestra en la
         # ficha de una llamada con violencia, asi que solo esas la cargan.
         nota = l["notas"] if l["peso_violencia"] > 0 else ""
-        fila["notas"] = nota[:400] + "…" if len(nota) > 400 else nota
+        fila["notas"] = nota[:260] + "…" if len(nota) > 260 else nota
         llamadas_tablero.append(fila)
 
     def publicable(registros):

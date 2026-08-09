@@ -3,13 +3,13 @@
   "desde": "2026-07-22",
   "hasta": "2026-07-26",
   "c5_desde": "2026-07-22",
-  "c5_hasta": "2026-07-28",
+  "c5_hasta": "2026-08-06",
   "hd_desde": "2026-07-01",
   "hd_hasta": "2026-07-26",
   "hd_en_ventana": 12,
   "hd_totales": 56,
   "hechos_fatales_c5": 173,
-  "muertes_fuera_de_corte": 7
+  "muertes_fuera_de_corte": 26
  },
  "hechos": [
   {

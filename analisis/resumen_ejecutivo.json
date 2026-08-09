@@ -1,5 +1,5 @@
 {
- "generado": "2026-07-28 22:31",
+ "generado": "2026-08-08 20:23",
  "corte": "Homicidios dolosos julio 2026 · Llamadas C5 26-27 julio 2026",
  "hd": {
   "eventos": 56,
@@ -58,61 +58,61 @@
   "nocturnos": 31
  },
  "c5": {
-  "llamadas_totales": 22811,
-  "llamadas_violentas": 3735,
-  "arma_fuego": 368,
-  "con_coordenada": 15352,
+  "llamadas_totales": 36672,
+  "llamadas_violentas": 6856,
+  "arma_fuego": 724,
+  "con_coordenada": 27136,
   "top_incidentes_violentos": [
    [
     "PERSONA AGRESIVA",
-    1106
+    2030
    ],
    [
     "VIOLENCIA CONTRA LAS MUJERES",
-    569
+    1004
    ],
    [
     "ALTERACION DEL ORDEN PUBLICO POR PERSONA ALCOHOLIZADA",
-    297
+    520
    ],
    [
     "RIÑA",
-    266
+    452
    ],
    [
     "DETONACION POR ARMA DE FUEGO",
-    224
+    433
    ],
    [
     "VIOLENCIA FAMILIAR",
-    189
-   ],
-   [
-    "VIOLENCIA DE PAREJA",
-    113
+    352
    ],
    [
     "PORTACION DE ARMAS DE FUEGO O CARTUCHOS",
-    105
+    212
+   ],
+   [
+    "ROBO DE VEHICULO PARTICULAR CON VIOLENCIA",
+    209
    ]
   ]
  },
  "geocodificacion": {
   "distribucion_confianza": {
-   "COORDENADA": 15352,
-   "BAJA": 537,
-   "MEDIA": 511,
-   "ALTA": 459,
-   "NULA": 5952
+   "COORDENADA": 27136,
+   "BAJA": 804,
+   "MEDIA": 960,
+   "ALTA": 852,
+   "NULA": 6920
   },
-  "sin_coordenada_original": 7459,
-  "sin_coordenada_sin_texto": 4869,
-  "universo_recuperable": 2590,
-  "recuperadas_por_nlp": 970,
-  "porcentaje_recuperado": 37.5,
-  "violentas_sin_coordenada": 189,
-  "violentas_recuperadas": 182,
-  "porcentaje_violentas_recuperado": 96.3
+  "sin_coordenada_original": 9536,
+  "sin_coordenada_sin_texto": 5449,
+  "universo_recuperable": 4087,
+  "recuperadas_por_nlp": 1812,
+  "porcentaje_recuperado": 44.3,
+  "violentas_sin_coordenada": 365,
+  "violentas_recuperadas": 357,
+  "porcentaje_violentas_recuperado": 97.8
  },
  "cobertura": {
   "bases_inventariadas": 198,
@@ -124,47 +124,47 @@
   "hd_a_mas_de_3km_de_base": 14
  },
  "zonas_ciegas": {
-  "sectores_detectados": 363,
+  "sectores_detectados": 489,
   "top": [
-   {
-    "sector_id": "SEC-973_-4964",
-    "municipio": "NAUCALPAN",
-    "indice_ceguera": 166.0,
-    "dist_base_km": 3.36,
-    "eventos_hd": 0,
-    "llamadas_violentas": 21
-   },
    {
     "sector_id": "SEC-972_-4964",
     "municipio": "NAUCALPAN",
-    "indice_ceguera": 161.1,
+    "indice_ceguera": 292.2,
     "dist_base_km": 2.79,
     "eventos_hd": 1,
-    "llamadas_violentas": 33
+    "llamadas_violentas": 62
    },
    {
-    "sector_id": "SEC-967_-4983",
-    "municipio": "TOLUCA",
-    "indice_ceguera": 150.4,
-    "dist_base_km": 4.14,
+    "sector_id": "SEC-973_-4964",
+    "municipio": "NAUCALPAN",
+    "indice_ceguera": 263.7,
+    "dist_base_km": 3.36,
     "eventos_hd": 0,
-    "llamadas_violentas": 22
+    "llamadas_violentas": 38
    },
    {
     "sector_id": "SEC-968_-4984",
     "municipio": "TOLUCA",
-    "indice_ceguera": 140.0,
+    "indice_ceguera": 240.0,
     "dist_base_km": 6.48,
     "eventos_hd": 0,
-    "llamadas_violentas": 17
+    "llamadas_violentas": 30
+   },
+   {
+    "sector_id": "SEC-972_-4965",
+    "municipio": "NAUCALPAN",
+    "indice_ceguera": 237.3,
+    "dist_base_km": 4.59,
+    "eventos_hd": 0,
+    "llamadas_violentas": 32
    },
    {
     "sector_id": "SEC-972_-4963",
     "municipio": "NAUCALPAN",
-    "indice_ceguera": 128.2,
+    "indice_ceguera": 233.5,
     "dist_base_km": 1.81,
     "eventos_hd": 0,
-    "llamadas_violentas": 35
+    "llamadas_violentas": 69
    }
   ]
  },
@@ -187,95 +187,95 @@
   "municipios_con_coordinacion": 94
  },
  "serie": {
-  "archivos": 4,
-  "horas": 120,
+  "archivos": 16,
+  "horas": 218,
   "desde": "2026-07-22 15",
-  "hasta": "2026-07-28 02"
+  "hasta": "2026-08-06 02"
  },
  "auditoria": {
-  "casos_revisados": 247,
-  "prioridad_alta": 20,
-  "prioridad_media": 53,
-  "prioridad_baja": 174,
+  "casos_revisados": 487,
+  "prioridad_alta": 37,
+  "prioridad_media": 121,
+  "prioridad_baja": 329,
   "por_tipo": [
    [
     "PERSONA TIRADA EN VIA PUBLICA",
-    93
+    199
    ],
    [
     "PERSONA NO LOCALIZADA O DESAPARECIDA",
-    77
+    153
    ],
    [
     "TENTATIVA DE SUICIDIO",
-    25
+    43
    ],
    [
     "PERSONA TIRADA EN LA VIA PUBLICA CON HUELLAS DE VIOLENCIA",
-    19
-   ],
-   [
-    "HOMICIDIO",
-    13
+    32
    ],
    [
     "AMENAZA DE SUICIDIO",
-    12
+    27
+   ],
+   [
+    "HOMICIDIO",
+    18
    ],
    [
     "SUICIDIO",
-    8
+    15
    ]
   ]
  },
  "territorio_top": [
   {
    "municipio": "TOLUCA",
-   "indice_presion": 2817.8,
+   "indice_presion": 7263.0,
    "hd_eventos": 0,
-   "llamadas_violentas": 442,
-   "sectores_desatendidos": 13,
+   "llamadas_violentas": 807,
+   "sectores_desatendidos": 20,
    "personal_total": 742
   },
   {
    "municipio": "ECATEPEC",
-   "indice_presion": 1104.7,
+   "indice_presion": 2356.6,
    "hd_eventos": 9,
-   "llamadas_violentas": 353,
-   "sectores_desatendidos": 3,
+   "llamadas_violentas": 645,
+   "sectores_desatendidos": 5,
    "personal_total": 1056
   },
   {
    "municipio": "NAUCALPAN",
-   "indice_presion": 796.3,
+   "indice_presion": 1892.2,
    "hd_eventos": 6,
-   "llamadas_violentas": 249,
-   "sectores_desatendidos": 3,
+   "llamadas_violentas": 454,
+   "sectores_desatendidos": 6,
    "personal_total": 309
   },
   {
    "municipio": "CHIMALHUACAN",
-   "indice_presion": 407.9,
+   "indice_presion": 906.2,
    "hd_eventos": 3,
-   "llamadas_violentas": 166,
-   "sectores_desatendidos": 1,
+   "llamadas_violentas": 281,
+   "sectores_desatendidos": 3,
    "personal_total": 371
   },
   {
-   "municipio": "CUAUTITLAN IZCALLI",
-   "indice_presion": 380.8,
-   "hd_eventos": 5,
-   "llamadas_violentas": 126,
-   "sectores_desatendidos": 2,
-   "personal_total": 268
+   "municipio": "ZUMPANGO",
+   "indice_presion": 731.2,
+   "hd_eventos": 1,
+   "llamadas_violentas": 120,
+   "sectores_desatendidos": 5,
+   "personal_total": 51
   },
   {
-   "municipio": "ZUMPANGO",
-   "indice_presion": 341.2,
-   "hd_eventos": 1,
-   "llamadas_violentas": 68,
+   "municipio": "TLALNEPANTLA",
+   "indice_presion": 684.0,
+   "hd_eventos": 2,
+   "llamadas_violentas": 283,
    "sectores_desatendidos": 3,
-   "personal_total": 51
+   "personal_total": 426
   }
  ],
  "anonimizado": true
