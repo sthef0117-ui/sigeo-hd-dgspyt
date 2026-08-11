@@ -202,7 +202,8 @@ def main():
     banda(d, 0, ALTO, TINTA)
     texto(d, cm(2.5), cm(4.2), cm(24), cm(2), "HOMICIDIOS DOLOSOS", tam=40,
           negrita=True, color=BLANCO)
-    texto(d, cm(2.5), cm(6.4), cm(24), cm(1.2), "Análisis de corte · Julio 2026",
+    _per = R["hd"].get("periodo", "").capitalize()
+    texto(d, cm(2.5), cm(6.4), cm(24), cm(1.2), "Análisis de corte · " + _per,
           tam=20, color=RGBColor(0xE0, 0x52, 0x6F))
     texto(d, cm(2.5), cm(8.6), cm(26), cm(2),
           "Dirección General de Seguridad Pública y Tránsito\n"

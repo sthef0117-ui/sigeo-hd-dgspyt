@@ -292,7 +292,7 @@ html[data-tema="oscuro"] .hoja h2{color:#7a1327}
     </div>
 
     <div class="tarjeta">
-      <h2>Homicidios dolosos por día <span class="nota">56 eventos · julio 2026</span></h2>
+      <h2>Homicidios dolosos por día <span class="nota" id="nota-hd-dia"></span></h2>
       <div class="cuerpo"><div class="lienzo" style="height:200px"><canvas id="cDiaGrande"></canvas></div></div>
     </div>
 
@@ -700,6 +700,7 @@ function geocodificar({municipio="",direccion="",referencia="",notas="",lat=null
 
 /* ═══════════════════════════════════ Utilidades ══════════════════════════ */
 const N=n=>(n==null?"—":Number(n).toLocaleString("es-MX"));
+const titulo_es_periodo=p=>p?p.charAt(0).toUpperCase()+p.slice(1):"";
 const E=s=>String(s==null?"":s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 const PCT=(a,b)=>b?Math.round(a*1000/b)/10:0;
 const R=DATOS.resumen;
@@ -1366,7 +1367,7 @@ function informe(){
    <div class="enc">
      <div>
        <h2>HOMICIDIOS DOLOSOS · ANÁLISIS DE CORTE</h2>
-       <div style="color:#475467;font-weight:600">Unidad de Homicidios Dolosos · Julio 2026</div>
+       <div style="color:#475467;font-weight:600">Unidad de Homicidios Dolosos · ${titulo_es_periodo(R.hd.periodo)}</div>
      </div>
      <div style="text-align:right;font-size:.78rem;color:#667085">
        Documento de trabajo interno<br>Generado ${E(R.generado)}<br>
@@ -1526,6 +1527,8 @@ document.querySelectorAll("[data-nv]").forEach(b=>b.addEventListener("click",()=
 
 window.addEventListener("load",()=>{
   document.getElementById("sello").textContent=R.generado;
+  var nhd=document.getElementById("nota-hd-dia");
+  if(nhd) nhd.textContent=R.hd.eventos+" eventos · "+R.hd.periodo;
   const S0=DATOS.serie;
   document.querySelector("header .ctx").dataset.base="";
   TITULOS["v-panorama"][1]=`Estado de México · C5 del ${S0.desde}h al ${S0.hasta}h `+

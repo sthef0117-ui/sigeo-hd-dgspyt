@@ -1,61 +1,62 @@
 {
- "generado": "2026-08-08 20:23",
- "corte": "Homicidios dolosos julio 2026 · Llamadas C5 26-27 julio 2026",
+ "generado": "2026-08-11 09:30",
+ "corte": "Homicidios dolosos enero–agosto de 2026",
  "hd": {
-  "eventos": 56,
-  "victimas": 63,
-  "georreferenciados": 55,
-  "sin_coordenada": 1,
-  "municipios": 27,
+  "periodo": "enero–agosto de 2026",
+  "eventos": 560,
+  "victimas": 617,
+  "georreferenciados": 534,
+  "sin_coordenada": 26,
+  "municipios": 78,
   "top_municipios": [
    [
     "ECATEPEC",
-    9
+    66
    ],
    [
     "NAUCALPAN",
-    6
+    36
    ],
    [
     "CUAUTITLAN IZCALLI",
-    5
+    35
    ],
    [
-    "NEZAHUALCOYOTL",
-    4
+    "TLALNEPANTLA",
+    25
    ],
    [
-    "CHIMALHUACAN",
-    3
+    "TULTITLAN",
+    24
    ],
    [
-    "ACOLMAN",
-    2
+    "NICOLAS ROMERO",
+    23
    ]
   ],
   "top_moviles": [
    [
-    "Se desconoce el móvil de la agresión",
-    18
+    "Se desconoce el Móvil de la Agresión",
+    173
    ],
    [
-    "Posible ajuste de cuentas",
-    16
+    "SIN DATOS",
+    123
    ],
    [
-    "Riña",
-    7
+    "Sin datos",
+    33
    ],
    [
-    "Ajuste de cuentas",
-    7
+    "Ataque directo por venta de droga",
+    31
    ],
    [
-    "Robo",
-    2
+    "Probable riña",
+    26
    ]
   ],
-  "nocturnos": 31
+  "nocturnos": 263
  },
  "c5": {
   "llamadas_totales": 36672,
@@ -118,53 +119,53 @@
   "bases_inventariadas": 198,
   "bases_en_uso_georreferenciadas": 167,
   "personal_total": 10877,
-  "dist_hd_base_promedio_km": 2.1,
-  "dist_hd_base_mediana_km": 1.9,
-  "dist_hd_base_maxima_km": 6.23,
-  "hd_a_mas_de_3km_de_base": 14
+  "dist_hd_base_promedio_km": 3.26,
+  "dist_hd_base_mediana_km": 2.39,
+  "dist_hd_base_maxima_km": 29.54,
+  "hd_a_mas_de_3km_de_base": 211
  },
  "zonas_ciegas": {
-  "sectores_detectados": 489,
+  "sectores_detectados": 604,
   "top": [
    {
     "sector_id": "SEC-972_-4964",
     "municipio": "NAUCALPAN",
-    "indice_ceguera": 292.2,
+    "indice_ceguera": 395.5,
     "dist_base_km": 2.79,
-    "eventos_hd": 1,
+    "eventos_hd": 6,
     "llamadas_violentas": 62
-   },
-   {
-    "sector_id": "SEC-973_-4964",
-    "municipio": "NAUCALPAN",
-    "indice_ceguera": 263.7,
-    "dist_base_km": 3.36,
-    "eventos_hd": 0,
-    "llamadas_violentas": 38
-   },
-   {
-    "sector_id": "SEC-968_-4984",
-    "municipio": "TOLUCA",
-    "indice_ceguera": 240.0,
-    "dist_base_km": 6.48,
-    "eventos_hd": 0,
-    "llamadas_violentas": 30
    },
    {
     "sector_id": "SEC-972_-4965",
     "municipio": "NAUCALPAN",
-    "indice_ceguera": 237.3,
+    "indice_ceguera": 336.2,
     "dist_base_km": 4.59,
-    "eventos_hd": 0,
+    "eventos_hd": 3,
     "llamadas_violentas": 32
    },
    {
-    "sector_id": "SEC-972_-4963",
+    "sector_id": "SEC-984_-4957",
+    "municipio": "TULTEPEC",
+    "indice_ceguera": 326.0,
+    "dist_base_km": 5.21,
+    "eventos_hd": 6,
+    "llamadas_violentas": 10
+   },
+   {
+    "sector_id": "SEC-988_-4962",
+    "municipio": "TEOLOYUCAN",
+    "indice_ceguera": 320.1,
+    "dist_base_km": 3.74,
+    "eventos_hd": 8,
+    "llamadas_violentas": 5
+   },
+   {
+    "sector_id": "SEC-973_-4964",
     "municipio": "NAUCALPAN",
-    "indice_ceguera": 233.5,
-    "dist_base_km": 1.81,
-    "eventos_hd": 0,
-    "llamadas_violentas": 69
+    "indice_ceguera": 317.3,
+    "dist_base_km": 3.36,
+    "eventos_hd": 2,
+    "llamadas_violentas": 38
    }
   ]
  },
@@ -194,9 +195,9 @@
  },
  "auditoria": {
   "casos_revisados": 487,
-  "prioridad_alta": 37,
-  "prioridad_media": 121,
-  "prioridad_baja": 329,
+  "prioridad_alta": 64,
+  "prioridad_media": 213,
+  "prioridad_baja": 210,
   "por_tipo": [
    [
     "PERSONA TIRADA EN VIA PUBLICA",
@@ -231,51 +232,51 @@
  "territorio_top": [
   {
    "municipio": "TOLUCA",
-   "indice_presion": 7263.0,
-   "hd_eventos": 0,
+   "indice_presion": 10163.5,
+   "hd_eventos": 5,
    "llamadas_violentas": 807,
-   "sectores_desatendidos": 20,
+   "sectores_desatendidos": 21,
    "personal_total": 742
   },
   {
    "municipio": "ECATEPEC",
-   "indice_presion": 2356.6,
-   "hd_eventos": 9,
+   "indice_presion": 4828.5,
+   "hd_eventos": 66,
    "llamadas_violentas": 645,
-   "sectores_desatendidos": 5,
+   "sectores_desatendidos": 6,
    "personal_total": 1056
   },
   {
    "municipio": "NAUCALPAN",
-   "indice_presion": 1892.2,
-   "hd_eventos": 6,
+   "indice_presion": 3822.2,
+   "hd_eventos": 36,
    "llamadas_violentas": 454,
-   "sectores_desatendidos": 6,
+   "sectores_desatendidos": 7,
    "personal_total": 309
   },
   {
-   "municipio": "CHIMALHUACAN",
-   "indice_presion": 906.2,
-   "hd_eventos": 3,
-   "llamadas_violentas": 281,
-   "sectores_desatendidos": 3,
-   "personal_total": 371
-  },
-  {
    "municipio": "ZUMPANGO",
-   "indice_presion": 731.2,
-   "hd_eventos": 1,
+   "indice_presion": 2344.5,
+   "hd_eventos": 17,
    "llamadas_violentas": 120,
-   "sectores_desatendidos": 5,
+   "sectores_desatendidos": 9,
    "personal_total": 51
   },
   {
    "municipio": "TLALNEPANTLA",
-   "indice_presion": 684.0,
-   "hd_eventos": 2,
+   "indice_presion": 2165.3,
+   "hd_eventos": 25,
    "llamadas_violentas": 283,
-   "sectores_desatendidos": 3,
+   "sectores_desatendidos": 6,
    "personal_total": 426
+  },
+  {
+   "municipio": "TECAMAC",
+   "indice_presion": 2110.5,
+   "hd_eventos": 18,
+   "llamadas_violentas": 202,
+   "sectores_desatendidos": 9,
+   "personal_total": 242
   }
  ],
  "anonimizado": true

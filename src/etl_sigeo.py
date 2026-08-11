@@ -141,11 +141,14 @@ def haversine_km(lat1, lng1, lat2, lng2):
 # en dos y sus homicidios quedan separados de sus propias llamadas.
 SUFIJOS_MUNICIPIO = (
     " DE MORELOS", " DE JUAREZ", " DE ZARAGOZA", " DE BAZ", " SOLIDARIDAD",
+    " DE BERRIOZABAL",
 )
 ALIAS_MUNICIPIO = {
     "CIUDAD NEZAHUALCOYOTL": "NEZAHUALCOYOTL",
     "NEZA": "NEZAHUALCOYOTL",
     "CUAUTITLAN MEXICO": "CUAUTITLAN",
+    # Error de captura en los insumos: "San Antonio A Isla" por "La Isla".
+    "SAN ANTONIO A ISLA": "SAN ANTONIO LA ISLA",
 }
 
 
@@ -171,45 +174,144 @@ def en_edomex(lat, lng):
 # 1. Homicidios dolosos corroborados (hoja CORROBORADOS)
 # --------------------------------------------------------------------------
 
-def cargar_hd():
-    wb = openpyxl.load_workbook(XLS_HD, read_only=True, data_only=True)
-    ws = wb["CORROBORADOS"]
-    registros = []
-    for fila in ws.iter_rows(min_row=2, values_only=True):
-        np_ = limpio(fila[0])
-        if not np_ or not np_.replace(".0", "").isdigit():
+# La DGSPYT entrega los corroborados en varios archivos y cada uno ordena las
+# columnas distinto: el concentrado validado invierte "posible movil" e
+# "informacion adicional", y el corte de agosto no trae esa ultima columna. Por
+# eso las columnas se localizan por nombre y no por posicion.
+COLUMNAS_HD = {
+    "np": ("N.P.", "NP", "CONSECUTIVO", "N. P."),
+    "fecha": ("FECHA",),
+    "dia": ("DIA",),
+    "hora": ("HORA",),
+    "municipio": ("MUNICIPIO",),
+    "colonia": ("COLONIA",),
+    "calle": ("CALLE",),
+    "lat": ("LATITUD",),
+    "lng": ("LONGITUD",),
+    "total": ("TOTAL HD", "TOTAL_HOMICIDIOS", "TOTAL DE HOMICIDIOS",
+              "TOTAL DE VICTIMAS"),
+    "sexo": ("SEXO",),
+    "cuadrante": ("CUADRANTE",),
+    "acciones_ssem": ("ACCIONES SSEM",),
+}
+
+
+def _archivos_hd():
+    """Todos los concentrados de homicidios corroborados en insumos/excel."""
+    carpeta = INSUMOS / "excel"
+    prioridad = []  # el concentrado validado manda; luego agosto; luego el resto
+    resto = []
+    for p in sorted(carpeta.glob("*.xlsx")):
+        if p.name.startswith("~$"):
             continue
-        lat, lng = a_float(fila[7]), a_float(fila[8])
-        if not en_edomex(lat, lng):
-            lat = lng = None
-        municipio = municipio_canonico(fila[4])
-        colonia = limpio(fila[5])
-        calle = limpio(fila[6])
-        geo = geocodificar(municipio=municipio, colonia=colonia, calle=calle,
-                           notas=limpio(fila[13]), lat=lat, lng=lng)
-        registros.append({
-            "id": int(float(np_)),
-            "fecha": a_fecha(fila[1]),
-            "dia_semana": limpio(fila[2]),
-            "hora": a_hora(fila[3]),
-            "municipio": municipio,
-            "colonia": colonia,
-            "calle": calle,
-            "cuadrante": limpio(fila[12]),
-            "lat": lat,
-            "lng": lng,
-            "total_hd": int(float(limpio(fila[9]) or 1)),
-            "sexo": limpio(fila[11]),
-            "movil": limpio(fila[14]) or "Se desconoce el móvil de la agresión",
-            "observaciones": limpio(fila[10]),
-            "desarrollo_hechos": limpio(fila[13]),
-            "informacion_adicional": limpio(fila[15]),
-            "acciones_ssem": limpio(fila[16]),
-            "windows_maps_query": geo["query"],
-            "geo_confianza": geo["confianza"],
-            "uri_windows_maps": geo["uri_windows_maps"],
-        })
-    wb.close()
+        n = _norm(p.name)
+        if "HOMICIDIO" not in n and "ACCIONES DE HD" not in n:
+            continue
+        if "VALIDADO" in n or "CONCENTRADO" in n:
+            prioridad.insert(0, p)
+        elif "AGOSTO" in n or "GENERAL" in n:
+            prioridad.append(p)
+        else:
+            resto.append(p)
+    return prioridad + resto
+
+
+def _mapa_hd(fila_encabezado):
+    etiquetas = [_norm(v) for v in fila_encabezado]
+    mapa = {}
+    for campo, alias in COLUMNAS_HD.items():
+        for i, e in enumerate(etiquetas):
+            if e in alias:
+                mapa[campo] = i
+                break
+    # Estos dos vienen invertidos entre archivos: se localizan por subcadena.
+    for i, e in enumerate(etiquetas):
+        if "DESARROLLO" in e and "desarrollo" not in mapa:
+            mapa["desarrollo"] = i
+        elif e.startswith("OBSERVACIONES") and "observaciones" not in mapa:
+            mapa["observaciones"] = i
+        elif "ADICIONAL" in e and "info" not in mapa:
+            mapa["info"] = i
+        elif "MOVIL" in e and "movil" not in mapa:
+            mapa["movil"] = i
+    return mapa
+
+
+def _clave_hd(reg):
+    """Identidad de un homicidio para deduplicar entre archivos."""
+    if reg["lat"] and reg["lng"]:
+        return (reg["fecha"], round(reg["lat"], 4), round(reg["lng"], 4))
+    return (reg["fecha"], reg["hora"], reg["municipio"],
+            _norm(reg["desarrollo_hechos"])[:60])
+
+
+def cargar_hd():
+    vistos, registros, sig_id = {}, [], 1
+    for ruta in _archivos_hd():
+        wb = openpyxl.load_workbook(ruta, read_only=True, data_only=True)
+        if "CORROBORADOS" not in wb.sheetnames:
+            wb.close()
+            continue
+        ws = wb["CORROBORADOS"]
+        encabezado = next(ws.iter_rows(min_row=1, max_row=1, values_only=True))
+        m = _mapa_hd(encabezado)
+        if "municipio" not in m or "fecha" not in m:
+            wb.close()
+            continue
+
+        def col(fila, campo):
+            i = m.get(campo)
+            return fila[i] if i is not None and i < len(fila) else None
+
+        for fila in ws.iter_rows(min_row=2, values_only=True):
+            np_ = limpio(col(fila, "np"))
+            if not np_ or not np_.replace(".0", "").isdigit():
+                continue
+            lat, lng = a_float(col(fila, "lat")), a_float(col(fila, "lng"))
+            if not en_edomex(lat, lng):
+                lat = lng = None
+            municipio = municipio_canonico(col(fila, "municipio"))
+            colonia = limpio(col(fila, "colonia"))
+            calle = limpio(col(fila, "calle"))
+            desarrollo = limpio(col(fila, "desarrollo"))
+            reg = {
+                "fecha": a_fecha(col(fila, "fecha")),
+                "dia_semana": limpio(col(fila, "dia")),
+                "hora": a_hora(col(fila, "hora")),
+                "municipio": municipio,
+                "colonia": colonia,
+                "calle": calle,
+                "cuadrante": limpio(col(fila, "cuadrante")),
+                "lat": lat,
+                "lng": lng,
+                "total_hd": int(float(limpio(col(fila, "total")) or 1)),
+                "sexo": limpio(col(fila, "sexo")),
+                "movil": limpio(col(fila, "movil")) or "Se desconoce el móvil de la agresión",
+                "observaciones": limpio(col(fila, "observaciones")),
+                "desarrollo_hechos": desarrollo,
+                "informacion_adicional": limpio(col(fila, "info")),
+                "acciones_ssem": limpio(col(fila, "acciones_ssem")),
+                "fuente": ruta.name,
+            }
+            if not reg["fecha"]:
+                continue
+            clave = _clave_hd(reg)
+            if clave in vistos:  # ya lo trajo un archivo de mayor prioridad
+                continue
+            vistos[clave] = True
+            geo = geocodificar(municipio=municipio, colonia=colonia, calle=calle,
+                               notas=desarrollo, lat=lat, lng=lng)
+            reg["id"] = sig_id
+            reg["windows_maps_query"] = geo["query"]
+            reg["geo_confianza"] = geo["confianza"]
+            reg["uri_windows_maps"] = geo["uri_windows_maps"]
+            registros.append(reg)
+            sig_id += 1
+        wb.close()
+
+    registros.sort(key=lambda r: (r["fecha"], r["hora"]))
+    for i, r in enumerate(registros, 1):
+        r["id"] = i
     return registros
 
 
@@ -1127,10 +1229,13 @@ def perfil_territorial(hd, llamadas, bases, sectores):
     # El C5 atiende reportes de la frontera con la Ciudad de Mexico y los
     # registra con el nombre de la demarcacion. No son territorio de la
     # Direccion y no deben aparecer en el perfil ni en el cuadro de mando.
+    # Ambos lados pasan por la normalizacion actual: la cartografia se
+    # canonizo al construirla, con reglas que pudieron cambiar despues.
     reconocidos = {b["municipio"] for b in bases if b["municipio"]}
     if MUNICIPIOS.exists():
         geo = json.loads(MUNICIPIOS.read_text(encoding="utf-8"))
-        reconocidos |= {f["properties"]["municipio"] for f in geo["features"]}
+        reconocidos |= {municipio_canonico(f["properties"]["municipio"])
+                        for f in geo["features"]}
 
     salida, ajenos = [], []
     for municipio, p in perfiles.items():
@@ -1392,10 +1497,23 @@ def resumen_ejecutivo(hd, llamadas, bases, sectores, auditoria, serie=None):
     viol_rescatadas = [l for l in viol_sin_coord
                        if l["geo_confianza"] in ("ALTA", "MEDIA")]
 
+    # Periodo real de los homicidios, calculado de los datos y no fijo.
+    MESES = ["", "enero", "febrero", "marzo", "abril", "mayo", "junio", "julio",
+             "agosto", "septiembre", "octubre", "noviembre", "diciembre"]
+    fechas_hd = sorted(h["fecha"] for h in hd if h["fecha"])
+    if fechas_hd:
+        f0, f1 = fechas_hd[0], fechas_hd[-1]
+        m0, m1, anio = int(f0[5:7]), int(f1[5:7]), f1[:4]
+        periodo = (f"{MESES[m0]} de {anio}" if m0 == m1
+                   else f"{MESES[m0]}–{MESES[m1]} de {anio}")
+    else:
+        periodo = ""
+
     return {
         "generado": datetime.now().strftime("%Y-%m-%d %H:%M"),
-        "corte": "Homicidios dolosos julio 2026 · Llamadas C5 26-27 julio 2026",
+        "corte": f"Homicidios dolosos {periodo}",
         "hd": {
+            "periodo": periodo,
             "eventos": len(hd),
             "victimas": sum(h["total_hd"] for h in hd),
             "georreferenciados": len(hd_geo),
