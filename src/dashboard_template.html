@@ -195,6 +195,56 @@ html[data-tema="oscuro"] .hoja h2{color:#7a1327}
 </style>
 </head>
 <body>
+
+<!-- Cortina de acceso. No es cifrado ni sustituye a un repositorio privado:
+     es una contrasena compartida que evita que quien llegue por casualidad al
+     enlace lea el tablero. Los datos que carga ya estan anonimizados. -->
+<div id="acceso" style="position:fixed;inset:0;z-index:9999;background:#0e131a;
+  display:flex;align-items:center;justify-content:center;font-family:'Inter',system-ui,sans-serif">
+  <div style="max-width:380px;width:88%;text-align:center;color:#e9eef4">
+    <div style="font-size:1.4rem;font-weight:800;letter-spacing:-.02em;color:#e0526f">SIGEO&#8209;HD</div>
+    <div style="font-size:.8rem;color:#9daabb;margin-top:4px;letter-spacing:.06em;text-transform:uppercase">DGSPYT · Unidad de Homicidios Dolosos</div>
+    <div style="font-size:.86rem;color:#9daabb;margin:22px 0 14px">Acceso restringido. Introduzca la clave proporcionada por la Dirección.</div>
+    <input id="acceso-clave" type="password" placeholder="Clave de acceso" autocomplete="off"
+      style="width:100%;padding:12px 14px;border-radius:9px;border:1px solid #3a4654;
+      background:#161d26;color:#e9eef4;font-size:1rem;text-align:center;font-family:inherit">
+    <div id="acceso-error" style="color:#f2707c;font-size:.8rem;height:18px;margin-top:8px"></div>
+    <button id="acceso-btn" style="width:100%;padding:11px;border:none;border-radius:9px;
+      background:#7a1327;color:#fff;font-weight:700;font-size:.9rem;cursor:pointer;font-family:inherit">Entrar</button>
+    <div style="font-size:.7rem;color:#6d7a8a;margin-top:16px;line-height:1.5">
+      Documento de trabajo interno. Prohibida su difusión conforme a la Ley General
+      de Protección de Datos Personales en Posesión de Sujetos Obligados.</div>
+  </div>
+</div>
+<script>
+(function(){
+  // SHA-256 de la clave compartida. Cambiarla: recalcular el hash y sustituir.
+  var HASH="280c459e36feaac7f137d9e99ae01c23fd18140eaefd0c9c76487084dab43440";
+  var ok=false;
+  async function sha256(t){
+    var b=await crypto.subtle.digest("SHA-256",new TextEncoder().encode(t));
+    return [...new Uint8Array(b)].map(x=>x.toString(16).padStart(2,"0")).join("");
+  }
+  async function probar(){
+    var v=document.getElementById("acceso-clave").value;
+    if(await sha256(v)===HASH){
+      ok=true; sessionStorage.setItem("sigeo_ok","1");
+      document.getElementById("acceso").style.display="none";
+    } else {
+      document.getElementById("acceso-error").textContent="Clave incorrecta.";
+    }
+  }
+  if(sessionStorage.getItem("sigeo_ok")==="1"){
+    document.getElementById("acceso").style.display="none";
+  }
+  document.getElementById("acceso-btn").addEventListener("click",probar);
+  document.getElementById("acceso-clave").addEventListener("keydown",function(e){
+    if(e.key==="Enter") probar();
+  });
+  document.getElementById("acceso-clave").focus();
+})();
+</script>
+
 <div class="shell">
 
 <aside class="no-print">

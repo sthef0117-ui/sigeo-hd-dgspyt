@@ -8,3 +8,14 @@ __pycache__/
 # necesita el sitio publicado, solo el trabajo local, asi que deja de viajar
 # en el repositorio.
 database/sigeo_db.sqlite
+
+# --- Datos personales: NO se publican ---
+# El repositorio es de acceso compartido. Los insumos crudos del C5 y de la
+# DGSPYT contienen nombres de victimas, notas de cabina y fotos. Solo se
+# publica lo que produce el pipeline ya anonimizado (analisis/ e index.html).
+insumos/
+historico_c5/
+entregables/*.docx
+entregables/*.pdf
+poligonos/*.jpeg
+poligonos/*.mp4
