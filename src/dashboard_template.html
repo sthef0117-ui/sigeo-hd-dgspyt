@@ -179,6 +179,20 @@ label.cmp{display:block;font-size:.685rem;font-weight:700;letter-spacing:.055em;
   text-decoration:none;cursor:pointer;border:none;width:100%;text-align:center}
 .leaflet-control-attribution{font-size:.63rem!important}
 
+/* Franja "¿Qué es esto?" — explica cada pantalla en lenguaje llano */
+.que-es{display:flex;align-items:flex-start;gap:11px;background:var(--azul-f);
+  border:1px solid var(--azul);border-radius:10px;padding:12px 14px;margin-bottom:4px}
+.que-es .ico{flex:none;width:26px;height:26px;border-radius:50%;background:var(--azul);
+  color:#fff;font-weight:800;font-size:.95rem;display:flex;align-items:center;
+  justify-content:center;margin-top:1px}
+html[data-tema="oscuro"] .que-es .ico{color:#0e131a}
+.que-es .tx{flex:1;font-size:.92rem;line-height:1.5;color:var(--tx)}
+.que-es .tx b{font-weight:700}
+.que-es .cerrar{flex:none;background:none;border:none;color:var(--tx3);font-size:1.1rem;
+  cursor:pointer;padding:0 2px;line-height:1}
+.que-es .cerrar:hover{color:var(--tx)}
+@media print{.que-es{display:none!important}}
+
 /* Dossier de inteligencia */
 .ficha-barra{display:flex;justify-content:space-between;align-items:center;gap:14px;
   flex-wrap:wrap;background:var(--sup);border:1px solid var(--borde);border-radius:10px;
@@ -338,6 +352,7 @@ html[data-tema="oscuro"] .hoja h2{color:#7a1327}
       <div class="ctx" id="contexto"></div>
     </div>
     <div class="acciones">
+      <button class="btn" id="ayuda-btn" title="Mostrar u ocultar las explicaciones">Ayuda: sí</button>
       <button class="btn" id="tema">Modo oscuro</button>
       <button class="btn btn-p" id="ir-informe">Informe de mandos</button>
     </div>
@@ -1715,6 +1730,34 @@ const TITULOS={"v-panorama":["Panorama","Lectura general del corte y prioridades
  "v-ubicaciones":["Ubicaciones","Extractor NLP en formato Windows Maps"],
  "v-informe":["Informe de mandos","Hoja ejecutiva imprimible"]};
 
+// Una frase llana por pantalla: qué es y para qué sirve, en lenguaje de mando.
+const EXPLICA={
+ "v-panorama":"<b>El resumen del periodo de un vistazo.</b> Cuántos homicidios hubo, en qué municipios y a qué hora. Es el punto de partida.",
+ "v-territorio":"<b>El mapa del estado.</b> Cada punto es un homicidio; tócalo para ver su historia. El color de cada municipio muestra qué tan cargada está la zona.",
+ "v-coordinaciones":"<b>La violencia de cada coordinación frente a la gente que tiene.</b> Sirve para sentarse con cada coordinador con números en la mano, no con opiniones.",
+ "v-ficha":"<b>El expediente de un solo homicidio, ya explicado:</b> qué pasó, qué hay a su alrededor y qué conviene investigar. Búscalo por municipio, fecha o número.",
+ "v-cruce":"<b>Compara la lista oficial de homicidios contra las muertes que reportó el 911.</b> Muestra cuáles no cuadran y hay que revisar.",
+ "v-casos":"<b>Muertes dudosas y suicidios que podrían ser homicidios.</b> Una lista de qué expedientes vale la pena volver a mirar.",
+ "v-ubicaciones":"<b>Convierte una descripción escrita en un punto del mapa.</b> Ej.: «frente al Oxxo de la avenida X» se vuelve una ubicación que se abre en Maps.",
+ "v-informe":"<b>Una hoja lista para imprimir y llevar a la reunión</b> con lo más importante del corte."
+};
+function pintarAyuda(){
+  const oculta=sessionStorage.getItem("sigeo_ayuda")==="no";
+  document.getElementById("ayuda-btn").textContent="Ayuda: "+(oculta?"no":"sí");
+  document.querySelectorAll(".que-es").forEach(e=>e.remove());
+  if(oculta) return;
+  for(const id in EXPLICA){
+    const v=document.getElementById(id); if(!v) continue;
+    const b=document.createElement("div"); b.className="que-es";
+    b.innerHTML=`<div class="ico">i</div><div class="tx">${EXPLICA[id]}</div>`+
+      `<button class="cerrar" title="Ocultar todas las ayudas">✕</button>`;
+    b.querySelector(".cerrar").addEventListener("click",()=>{
+      sessionStorage.setItem("sigeo_ayuda","no"); pintarAyuda();
+    });
+    v.insertBefore(b, v.firstChild);
+  }
+}
+
 function irA(id){
   document.querySelectorAll("nav button").forEach(b=>b.classList.toggle("on",b.dataset.v===id));
   document.querySelectorAll(".vista").forEach(v=>v.classList.toggle("on",v.id===id));
@@ -1774,6 +1817,11 @@ window.addEventListener("load",()=>{
   document.getElementById("contexto").textContent=TITULOS["v-panorama"][1];
   panorama(); graficas(); iniciarMapa(); territorio(); cruce();
   coordinaciones(); casos(); ubicaciones(); informe(); iniciarFicha();
+  pintarAyuda();
+  document.getElementById("ayuda-btn").addEventListener("click",()=>{
+    const oculta=sessionStorage.getItem("sigeo_ayuda")==="no";
+    sessionStorage.setItem("sigeo_ayuda", oculta?"si":"no"); pintarAyuda();
+  });
 });
 </script>
 </body>
