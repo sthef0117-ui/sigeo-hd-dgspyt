@@ -228,8 +228,8 @@ def main():
          f"{round(R['hd']['nocturnos']*100/R['hd']['eventos'])}% entre 22:00 y 06:00", ROJO),
         ("Distancia a base", f"{R['cobertura']['dist_hd_base_mediana_km']} km",
          f"mediana · {R['cobertura']['hd_a_mas_de_3km_de_base']} a más de 3 km", TINTA),
-        ("Personal desplegado", N(R["cobertura"]["personal_total"]),
-         f"en {R['cobertura']['bases_en_uso_georreferenciadas']} bases en uso", RGBColor(0x0F, 0x76, 0x6E)),
+        ("Homicidios lejos de base", str(R["cobertura"]["hd_a_mas_de_3km_de_base"]),
+         "a más de 3 km de la base más cercana", RGBColor(0x0F, 0x76, 0x6E)),
     ]):
         tarjeta(d, cm(1.2) + i * (a + sep), cm(3.5), a, cm(4), rot, val, det, col)
 
@@ -254,31 +254,31 @@ def main():
     # ---------- 3. Coordinaciones ----------
     d = pres.slides.add_slide(vacia)
     encabezado(d, "Carga por coordinación regional",
-               "La columna que decide: carga de violencia por cada 100 elementos adscritos")
+               "Carga de violencia y presión relativa al despliegue de cada coordinación")
 
     def dibujar_carga(ax):
-        cs = sorted(coord, key=lambda c: c["carga_por_100_elementos"] or 0)
+        cs = sorted(coord, key=lambda c: c["carga_violencia"])
         ax.barh([titulo_es(c["coordinacion"]) for c in cs],
-                [c["carga_por_100_elementos"] or 0 for c in cs], color=HB, height=.66)
+                [c["carga_violencia"] for c in cs], color=HB, height=.66)
         for i, c in enumerate(cs):
-            ax.text((c["carga_por_100_elementos"] or 0) + 1, i,
-                    f"{c['carga_por_100_elementos']}", va="center",
-                    fontsize=9, color="#16202c")
+            ax.text(c["carga_violencia"] + 5, i, str(c["carga_violencia"]),
+                    va="center", fontsize=9, color="#16202c")
+        ax.set_xlabel("carga = homicidios ×10 + llamadas con violencia",
+                      fontsize=8, color="#596573")
         ax.grid(axis="x", color="#eceff3")
         ax.set_axisbelow(True)
 
     d.shapes.add_picture(str(grafica("carga", dibujar_carga, 7.6, 4.6)),
                          cm(1.2), cm(3.6), width=cm(15))
     tabla(d, cm(16.8), cm(3.6), cm(15),
-          ["Coordinación", "Mpios", "HD", "Personal", "/100 el."],
+          ["Coordinación", "Mpios", "HD", "Despliegue", "Presión rel."],
           [[titulo_es(c["coordinacion"]), c["total_municipios"], c["hd_eventos"],
-            N(c["personal_total"]), c["carga_por_100_elementos"]] for c in coord],
-          anchos=[38, 13, 11, 20, 18], tam=10)
+            c.get("despliegue_banda", "—"), c.get("presion_banda", "—")] for c in coord],
+          anchos=[36, 12, 10, 22, 20], tam=10)
     texto(d, cm(1.2), cm(15.6), cm(30.5), cm(2.2),
-          "Mide condiciones del territorio, no el desempeño de una persona: los insumos no "
-          "contienen asignación nominal de mando, turnos ni recorridos.\n"
-          "22 de los 108 municipios se clasificaron por vecindad territorial al no tener "
-          "inmueble propio en el inventario.",
+          "Mide condiciones del territorio, no el desempeño de una persona. Las cifras de "
+          "personal no se detallan; se expresan como nivel de despliegue. La precisión "
+          "numérica se reserva a los eventos de homicidio.",
           tam=10, color=GRIS)
 
     # ---------- 4. Zonas ciegas ----------
@@ -291,16 +291,16 @@ def main():
                f"{len(desat)} desatendidos · {len(satur)} saturados")
     texto(d, cm(1.2), cm(3.4), cm(15), cm(1),
           "EXTENDER COBERTURA", tam=12, negrita=True, color=ROJO)
-    tabla(d, cm(1.2), cm(4.2), cm(15), ["Municipio", "Índice", "Base a", "Personal 3 km"],
+    tabla(d, cm(1.2), cm(4.2), cm(15), ["Municipio", "Índice", "Base a", "Despliegue"],
           [[titulo_es(z["municipio"]), z["indice_ceguera"], f"{z['dist_base_km']} km",
-            N(z["personal_3km"])] for z in desat[:8]],
-          anchos=[45, 18, 19, 18], tam=10)
+            z.get("despliegue_banda", "—")] for z in desat[:8]],
+          anchos=[42, 16, 18, 24], tam=10)
     texto(d, cm(16.8), cm(3.4), cm(15), cm(1),
           "REVISAR EL PATRULLAJE QUE YA EXISTE", tam=12, negrita=True, color=AMBAR)
-    tabla(d, cm(16.8), cm(4.2), cm(15), ["Municipio", "Violencia", "Base a", "Personal 3 km"],
+    tabla(d, cm(16.8), cm(4.2), cm(15), ["Municipio", "Violencia", "Base a", "Despliegue"],
           [[titulo_es(z["municipio"]), z["indice_violencia"], f"{z['dist_base_km']} km",
-            N(z["personal_3km"])] for z in satur[:8]],
-          anchos=[45, 18, 19, 18], tam=10)
+            z.get("despliegue_banda", "—")] for z in satur[:8]],
+          anchos=[42, 16, 18, 24], tam=10)
     texto(d, cm(1.2), cm(15.8), cm(30.5), cm(1.8),
           "Izquierda: hay violencia y no hay despliegue a distancia útil. Procede extender "
           "cobertura o reasignar cuadrante.\n"

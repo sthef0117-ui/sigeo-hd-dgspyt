@@ -106,16 +106,18 @@ def main():
                          for b in bases_geo), 2)
 
     # --- Dimensiones -------------------------------------------------------
+    # Las cifras de personal no se exportan: se usa el nivel de despliegue
+    # (banda). La precisión numérica se reserva a los eventos de homicidio.
     escribir("dim_municipio.csv",
              ["municipio", "coordinacion", "subdireccion", "bases_en_uso",
-              "personal_total", "sectores_desatendidos", "sectores_saturados",
+              "despliegue_banda", "sectores_desatendidos", "sectores_saturados",
               "dist_media_hd_base_km", "indice_presion"],
              [{**t, "coordinacion": t["coordinacion"] or "SIN CATALOGAR"}
               for t in territorio])
 
     escribir("dim_coordinacion.csv",
-             ["coordinacion", "total_municipios", "bases_en_uso", "personal_total",
-              "carga_violencia", "carga_por_100_elementos",
+             ["coordinacion", "total_municipios", "bases_en_uso", "despliegue_banda",
+              "carga_violencia", "presion_banda",
               "sectores_desatendidos", "sectores_saturados", "ranking"],
              coord["coordinaciones"])
 
@@ -202,7 +204,7 @@ def main():
         "eventos_hd": s["eventos_hd"],
         "llamadas_violentas": s["llamadas_violentas"],
         "dist_base_km": s["dist_base_km"],
-        "personal_3km": s["personal_3km"],
+        "despliegue_banda": s.get("despliegue_banda",""),
         "limitrofe": "Sí" if s["limitrofe"] else "No",
         "diagnostico": s["diagnostico"],
     } for s in sectores]

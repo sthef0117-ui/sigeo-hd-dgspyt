@@ -125,7 +125,7 @@
           "z": 3,
           "width": 940,
           "height": 245,
-          "config": "{\"name\": \"v3-tableEx-20-435\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 20, \"y\": 435, \"z\": 3, \"width\": 940, \"height\": 245}}], \"singleVisual\": {\"visualType\": \"tableEx\", \"projections\": {\"Values\": [{\"queryRef\": \"fact_sectores.ranking\"}, {\"queryRef\": \"fact_sectores.municipio\"}, {\"queryRef\": \"fact_sectores.clasificacion\"}, {\"queryRef\": \"fact_sectores.indice_ceguera\"}, {\"queryRef\": \"fact_sectores.dist_base_km\"}, {\"queryRef\": \"fact_sectores.personal_3km\"}, {\"queryRef\": \"fact_sectores.diagnostico\"}]}, \"drillFilterOtherVisuals\": true, \"vcObjects\": {\"title\": [{\"properties\": {\"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Sectores ordenados por brecha de cobertura'\"}}}, \"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}}}]}}}",
+          "config": "{\"name\": \"v3-tableEx-20-435\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 20, \"y\": 435, \"z\": 3, \"width\": 940, \"height\": 245}}], \"singleVisual\": {\"visualType\": \"tableEx\", \"projections\": {\"Values\": [{\"queryRef\": \"fact_sectores.ranking\"}, {\"queryRef\": \"fact_sectores.municipio\"}, {\"queryRef\": \"fact_sectores.clasificacion\"}, {\"queryRef\": \"fact_sectores.indice_ceguera\"}, {\"queryRef\": \"fact_sectores.dist_base_km\"}, {\"queryRef\": \"fact_sectores.despliegue_banda\"}, {\"queryRef\": \"fact_sectores.diagnostico\"}]}, \"drillFilterOtherVisuals\": true, \"vcObjects\": {\"title\": [{\"properties\": {\"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Sectores ordenados por brecha de cobertura'\"}}}, \"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}}}]}}}",
           "filters": "[]"
         },
         {
@@ -155,7 +155,7 @@
           "z": 1,
           "width": 1240,
           "height": 300,
-          "config": "{\"name\": \"v1-tableEx-20-20\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 20, \"y\": 20, \"z\": 1, \"width\": 1240, \"height\": 300}}], \"singleVisual\": {\"visualType\": \"tableEx\", \"projections\": {\"Values\": [{\"queryRef\": \"dim_coordinacion.ranking\"}, {\"queryRef\": \"dim_coordinacion.coordinacion\"}, {\"queryRef\": \"dim_coordinacion.total_municipios\"}, {\"queryRef\": \"dim_coordinacion.Carga de violencia\"}, {\"queryRef\": \"dim_coordinacion.Personal desplegado\"}, {\"queryRef\": \"dim_coordinacion.Carga por 100 elementos\"}, {\"queryRef\": \"dim_coordinacion.Sectores desatendidos\"}, {\"queryRef\": \"dim_coordinacion.Sectores saturados\"}]}, \"drillFilterOtherVisuals\": true, \"vcObjects\": {\"title\": [{\"properties\": {\"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Coordinaciones regionales'\"}}}, \"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}}}]}}}",
+          "config": "{\"name\": \"v1-tableEx-20-20\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 20, \"y\": 20, \"z\": 1, \"width\": 1240, \"height\": 300}}], \"singleVisual\": {\"visualType\": \"tableEx\", \"projections\": {\"Values\": [{\"queryRef\": \"dim_coordinacion.ranking\"}, {\"queryRef\": \"dim_coordinacion.coordinacion\"}, {\"queryRef\": \"dim_coordinacion.total_municipios\"}, {\"queryRef\": \"dim_coordinacion.Carga de violencia\"}, {\"queryRef\": \"dim_coordinacion.despliegue_banda\"}, {\"queryRef\": \"dim_coordinacion.presion_banda\"}, {\"queryRef\": \"dim_coordinacion.Sectores desatendidos\"}, {\"queryRef\": \"dim_coordinacion.Sectores saturados\"}]}, \"drillFilterOtherVisuals\": true, \"vcObjects\": {\"title\": [{\"properties\": {\"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Coordinaciones regionales'\"}}}, \"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}}}]}}}",
           "filters": "[]"
         },
         {
@@ -164,7 +164,7 @@
           "z": 2,
           "width": 620,
           "height": 345,
-          "config": "{\"name\": \"v2-barChart-20-335\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 20, \"y\": 335, \"z\": 2, \"width\": 620, \"height\": 345}}], \"singleVisual\": {\"visualType\": \"barChart\", \"projections\": {\"Category\": [{\"queryRef\": \"dim_coordinacion.coordinacion\"}], \"Y\": [{\"queryRef\": \"dim_coordinacion.Carga por 100 elementos\"}]}, \"drillFilterOtherVisuals\": true, \"vcObjects\": {\"title\": [{\"properties\": {\"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Carga de violencia por cada 100 elementos adscritos'\"}}}, \"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}}}]}}}",
+          "config": "{\"name\": \"v2-barChart-20-335\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 20, \"y\": 335, \"z\": 2, \"width\": 620, \"height\": 345}}], \"singleVisual\": {\"visualType\": \"barChart\", \"projections\": {\"Category\": [{\"queryRef\": \"dim_coordinacion.coordinacion\"}], \"Y\": [{\"queryRef\": \"dim_coordinacion.Carga de violencia\"}]}, \"drillFilterOtherVisuals\": true, \"vcObjects\": {\"title\": [{\"properties\": {\"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Carga de violencia por coordinación'\"}}}, \"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}}}]}}}",
           "filters": "[]"
         },
         {
@@ -173,7 +173,7 @@
           "z": 3,
           "width": 605,
           "height": 345,
-          "config": "{\"name\": \"v3-tableEx-655-335\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 655, \"y\": 335, \"z\": 3, \"width\": 605, \"height\": 345}}], \"singleVisual\": {\"visualType\": \"tableEx\", \"projections\": {\"Values\": [{\"queryRef\": \"dim_municipio.municipio\"}, {\"queryRef\": \"dim_municipio.coordinacion\"}, {\"queryRef\": \"dim_municipio.indice_presion\"}, {\"queryRef\": \"dim_municipio.personal_total\"}, {\"queryRef\": \"dim_municipio.sectores_desatendidos\"}]}, \"drillFilterOtherVisuals\": true, \"vcObjects\": {\"title\": [{\"properties\": {\"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Detalle por municipio'\"}}}, \"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}}}]}}}",
+          "config": "{\"name\": \"v3-tableEx-655-335\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 655, \"y\": 335, \"z\": 3, \"width\": 605, \"height\": 345}}], \"singleVisual\": {\"visualType\": \"tableEx\", \"projections\": {\"Values\": [{\"queryRef\": \"dim_municipio.municipio\"}, {\"queryRef\": \"dim_municipio.coordinacion\"}, {\"queryRef\": \"dim_municipio.indice_presion\"}, {\"queryRef\": \"dim_municipio.despliegue_banda\"}, {\"queryRef\": \"dim_municipio.sectores_desatendidos\"}]}, \"drillFilterOtherVisuals\": true, \"vcObjects\": {\"title\": [{\"properties\": {\"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Detalle por municipio'\"}}}, \"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}}}]}}}",
           "filters": "[]"
         }
       ],

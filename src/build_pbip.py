@@ -45,16 +45,15 @@ TABLAS = {
         "archivo": "dim_municipio.csv",
         "columnas": [("municipio", TEXTO), ("coordinacion", TEXTO),
                      ("subdireccion", TEXTO), ("bases_en_uso", ENTERO),
-                     ("personal_total", ENTERO), ("sectores_desatendidos", ENTERO),
+                     ("despliegue_banda", TEXTO), ("sectores_desatendidos", ENTERO),
                      ("sectores_saturados", ENTERO),
                      ("dist_media_hd_base_km", DECIMAL), ("indice_presion", DECIMAL)],
     },
     "dim_coordinacion": {
         "archivo": "dim_coordinacion.csv",
         "columnas": [("coordinacion", TEXTO), ("total_municipios", ENTERO),
-                     ("bases_en_uso", ENTERO), ("personal_total", ENTERO),
-                     ("carga_violencia", ENTERO),
-                     ("carga_por_100_elementos", DECIMAL),
+                     ("bases_en_uso", ENTERO), ("despliegue_banda", TEXTO),
+                     ("carga_violencia", ENTERO), ("presion_banda", TEXTO),
                      ("sectores_desatendidos", ENTERO),
                      ("sectores_saturados", ENTERO), ("ranking", ENTERO)],
     },
@@ -85,7 +84,7 @@ TABLAS = {
                      ("longitud", DECIMAL), ("indice_ceguera", DECIMAL),
                      ("indice_violencia", DECIMAL), ("eventos_hd", ENTERO),
                      ("llamadas_violentas", ENTERO), ("dist_base_km", DECIMAL),
-                     ("personal_3km", ENTERO), ("limitrofe", TEXTO),
+                     ("despliegue_banda", TEXTO), ("limitrofe", TEXTO),
                      ("diagnostico", TEXTO)],
     },
     "fact_auditoria": {
@@ -122,10 +121,7 @@ MEDIDAS = [
     ("Homicidios nocturnos",
      'CALCULATE ( [Homicidios], fact_homicidios[franja] = "nocturna (22-06)" )', "#,0"),
     ("% nocturnos", "DIVIDE ( [Homicidios nocturnos], [Homicidios] )", "0.0%"),
-    ("Personal desplegado", "SUM ( dim_municipio[personal_total] )", "#,0"),
     ("Carga de violencia", "[Homicidios] * 10 + [Llamadas con violencia]", "#,0"),
-    ("Carga por 100 elementos",
-     "DIVIDE ( [Carga de violencia] * 100, [Personal desplegado] )", "#,0.0"),
     ("Distancia mediana a base",
      "MEDIANX ( fact_homicidios, fact_homicidios[dist_base_km] )", "#,0.00"),
     ("Homicidios lejos de base",
@@ -335,7 +331,7 @@ def construir_informe():
                                 campo("fact_sectores", "clasificacion"),
                                 campo("fact_sectores", "indice_ceguera"),
                                 campo("fact_sectores", "dist_base_km"),
-                                campo("fact_sectores", "personal_3km"),
+                                campo("fact_sectores", "despliegue_banda"),
                                 campo("fact_sectores", "diagnostico")]},
                     "Sectores ordenados por brecha de cobertura", o))
     o += 1
@@ -352,22 +348,22 @@ def construir_informe():
                                 campo("dim_coordinacion", "coordinacion"),
                                 campo("dim_coordinacion", "total_municipios"),
                                 medida("Carga de violencia"),
-                                medida("Personal desplegado"),
-                                medida("Carga por 100 elementos"),
+                                campo("dim_coordinacion", "despliegue_banda"),
+                                campo("dim_coordinacion", "presion_banda"),
                                 medida("Sectores desatendidos"),
                                 medida("Sectores saturados")]},
                     "Coordinaciones regionales", o))
     o += 1
     v.append(visual(20, 335, 620, 345, "barChart",
                     {"Category": [campo("dim_coordinacion", "coordinacion")],
-                     "Y": [medida("Carga por 100 elementos")]},
-                    "Carga de violencia por cada 100 elementos adscritos", o))
+                     "Y": [medida("Carga de violencia")]},
+                    "Carga de violencia por coordinación", o))
     o += 1
     v.append(visual(655, 335, 605, 345, "tableEx",
                     {"Values": [campo("dim_municipio", "municipio"),
                                 campo("dim_municipio", "coordinacion"),
                                 campo("dim_municipio", "indice_presion"),
-                                campo("dim_municipio", "personal_total"),
+                                campo("dim_municipio", "despliegue_banda"),
                                 campo("dim_municipio", "sectores_desatendidos")]},
                     "Detalle por municipio", o))
     paginas.append(("Coordinaciones", v))

@@ -133,15 +133,39 @@ def leer_pdf(ruta):
     return marca, txt[:4000]
 
 
+def _ocr_disponible():
+    try:
+        import pytesseract
+        pytesseract.get_tesseract_version()
+        return True
+    except Exception:
+        return False
+
+
 def leer_imagen(ruta):
+    """
+    Las imágenes son evidencia reservada: su contenido gráfico NUNCA se muestra
+    ni se publica. Si el equipo tiene Tesseract instalado, se lee el texto de la
+    captura (tarjetas de WhatsApp) solo para extraer municipio, fecha o folio y
+    poder vincularla; ese texto se usa internamente, no se vuelca al catálogo.
+    """
     from PIL import Image
     try:
         with Image.open(ruta) as im:
             dim = f"{im.width}×{im.height}"
+            texto = ""
+            if _ocr_disponible():
+                import pytesseract
+                try:
+                    texto = pytesseract.image_to_string(im, lang="spa")
+                except Exception:
+                    texto = pytesseract.image_to_string(im)
     except Exception:
-        dim = "?"
-    # El nombre suele traer la fecha (IMG-20260723..., WhatsApp Image 2026-...).
-    return f"Imagen · {dim} · sin lectura de texto (captura)", ruta.name
+        return "Imagen (no legible) · evidencia reservada", ""
+    if texto.strip():
+        return f"Imagen · {dim} · texto leído por OCR · evidencia reservada", texto + " " + ruta.name
+    return (f"Imagen · {dim} · sin OCR (instale Tesseract para leerla) · "
+            "evidencia reservada", ruta.name)
 
 
 def clasificar(ruta):

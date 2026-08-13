@@ -23,12 +23,12 @@
    "arma_fuego": 176,
    "carga_violencia": 3482,
    "bases_en_uso": 33,
-   "personal_total": 1590,
    "dist_media_hd_base_km": 3.03,
    "sectores_desatendidos": 43,
    "sectores_saturados": 30,
-   "carga_por_100_elementos": 219.0,
-   "ranking": 1
+   "ranking": 1,
+   "despliegue_banda": "Medio",
+   "presion_banda": "Alta"
   },
   {
    "coordinacion": "ECATEPEC",
@@ -56,12 +56,12 @@
    "arma_fuego": 148,
    "carga_violencia": 2982,
    "bases_en_uso": 26,
-   "personal_total": 1841,
    "dist_media_hd_base_km": 4.36,
    "sectores_desatendidos": 38,
    "sectores_saturados": 21,
-   "carga_por_100_elementos": 162.0,
-   "ranking": 2
+   "ranking": 2,
+   "despliegue_banda": "Amplio",
+   "presion_banda": "Alta"
   },
   {
    "coordinacion": "ORIENTE",
@@ -91,12 +91,12 @@
    "arma_fuego": 97,
    "carga_violencia": 2043,
    "bases_en_uso": 24,
-   "personal_total": 2047,
    "dist_media_hd_base_km": 4.32,
    "sectores_desatendidos": 36,
    "sectores_saturados": 13,
-   "carga_por_100_elementos": 99.8,
-   "ranking": 3
+   "ranking": 3,
+   "despliegue_banda": "Amplio",
+   "presion_banda": "Media"
   },
   {
    "coordinacion": "VALLE TOLUCA",
@@ -125,12 +125,12 @@
    "arma_fuego": 152,
    "carga_violencia": 1831,
    "bases_en_uso": 26,
-   "personal_total": 1498,
    "dist_media_hd_base_km": 4.59,
    "sectores_desatendidos": 63,
    "sectores_saturados": 12,
-   "carga_por_100_elementos": 122.2,
-   "ranking": 4
+   "ranking": 4,
+   "despliegue_banda": "Medio",
+   "presion_banda": "Media"
   },
   {
    "coordinacion": "CHALCO",
@@ -157,12 +157,12 @@
    "arma_fuego": 76,
    "carga_violencia": 1128,
    "bases_en_uso": 25,
-   "personal_total": 1699,
    "dist_media_hd_base_km": 4.05,
    "sectores_desatendidos": 13,
    "sectores_saturados": 14,
-   "carga_por_100_elementos": 66.4,
-   "ranking": 5
+   "ranking": 5,
+   "despliegue_banda": "Medio",
+   "presion_banda": "Media"
   },
   {
    "coordinacion": "ATLACOMULCO",
@@ -189,12 +189,12 @@
    "arma_fuego": 34,
    "carga_violencia": 439,
    "bases_en_uso": 18,
-   "personal_total": 780,
    "dist_media_hd_base_km": 5.42,
    "sectores_desatendidos": 17,
    "sectores_saturados": 1,
-   "carga_por_100_elementos": 56.3,
-   "ranking": 6
+   "ranking": 6,
+   "despliegue_banda": "Reducido",
+   "presion_banda": "Baja"
   },
   {
    "coordinacion": "IXTAPAN",
@@ -222,12 +222,12 @@
    "arma_fuego": 22,
    "carga_violencia": 389,
    "bases_en_uso": 20,
-   "personal_total": 876,
    "dist_media_hd_base_km": 6.9,
    "sectores_desatendidos": 11,
    "sectores_saturados": 4,
-   "carga_por_100_elementos": 44.4,
-   "ranking": 7
+   "ranking": 7,
+   "despliegue_banda": "Reducido",
+   "presion_banda": "Baja"
   },
   {
    "coordinacion": "VALLE DE BRAVO",
@@ -252,12 +252,12 @@
    "arma_fuego": 17,
    "carga_violencia": 157,
    "bases_en_uso": 13,
-   "personal_total": 443,
    "dist_media_hd_base_km": 9.1,
    "sectores_desatendidos": 6,
    "sectores_saturados": 0,
-   "carga_por_100_elementos": 35.4,
-   "ranking": 8
+   "ranking": 8,
+   "despliegue_banda": "Reducido",
+   "presion_banda": "Baja"
   }
  ],
  "sin_catalogar": {

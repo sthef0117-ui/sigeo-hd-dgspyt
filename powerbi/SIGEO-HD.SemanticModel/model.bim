@@ -136,10 +136,10 @@
             "summarizeBy": "none"
           },
           {
-            "name": "personal_total",
-            "dataType": "int64",
-            "sourceColumn": "personal_total",
-            "lineageTag": "col-dim_municipio-personal_total",
+            "name": "despliegue_banda",
+            "dataType": "string",
+            "sourceColumn": "despliegue_banda",
+            "lineageTag": "col-dim_municipio-despliegue_banda",
             "summarizeBy": "none"
           },
           {
@@ -177,7 +177,7 @@
             "mode": "import",
             "source": {
               "type": "m",
-              "expression": "let\n    Origen = Csv.Document(File.Contents(RutaDatos & \"\\dim_municipio.csv\"), [Delimiter=\",\", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),\n    Encabezados = Table.PromoteHeaders(Origen, [PromoteAllScalars=true]),\n    Tipos = Table.TransformColumnTypes(Encabezados, {{\"municipio\", type text}, {\"coordinacion\", type text}, {\"subdireccion\", type text}, {\"bases_en_uso\", Int64.Type}, {\"personal_total\", Int64.Type}, {\"sectores_desatendidos\", Int64.Type}, {\"sectores_saturados\", Int64.Type}, {\"dist_media_hd_base_km\", type number}, {\"indice_presion\", type number}})\nin\n    Tipos"
+              "expression": "let\n    Origen = Csv.Document(File.Contents(RutaDatos & \"\\dim_municipio.csv\"), [Delimiter=\",\", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),\n    Encabezados = Table.PromoteHeaders(Origen, [PromoteAllScalars=true]),\n    Tipos = Table.TransformColumnTypes(Encabezados, {{\"municipio\", type text}, {\"coordinacion\", type text}, {\"subdireccion\", type text}, {\"bases_en_uso\", Int64.Type}, {\"despliegue_banda\", type text}, {\"sectores_desatendidos\", Int64.Type}, {\"sectores_saturados\", Int64.Type}, {\"dist_media_hd_base_km\", type number}, {\"indice_presion\", type number}})\nin\n    Tipos"
             }
           }
         ]
@@ -208,10 +208,10 @@
             "summarizeBy": "none"
           },
           {
-            "name": "personal_total",
-            "dataType": "int64",
-            "sourceColumn": "personal_total",
-            "lineageTag": "col-dim_coordinacion-personal_total",
+            "name": "despliegue_banda",
+            "dataType": "string",
+            "sourceColumn": "despliegue_banda",
+            "lineageTag": "col-dim_coordinacion-despliegue_banda",
             "summarizeBy": "none"
           },
           {
@@ -222,10 +222,10 @@
             "summarizeBy": "none"
           },
           {
-            "name": "carga_por_100_elementos",
-            "dataType": "double",
-            "sourceColumn": "carga_por_100_elementos",
-            "lineageTag": "col-dim_coordinacion-carga_por_100_elementos",
+            "name": "presion_banda",
+            "dataType": "string",
+            "sourceColumn": "presion_banda",
+            "lineageTag": "col-dim_coordinacion-presion_banda",
             "summarizeBy": "none"
           },
           {
@@ -256,7 +256,7 @@
             "mode": "import",
             "source": {
               "type": "m",
-              "expression": "let\n    Origen = Csv.Document(File.Contents(RutaDatos & \"\\dim_coordinacion.csv\"), [Delimiter=\",\", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),\n    Encabezados = Table.PromoteHeaders(Origen, [PromoteAllScalars=true]),\n    Tipos = Table.TransformColumnTypes(Encabezados, {{\"coordinacion\", type text}, {\"total_municipios\", Int64.Type}, {\"bases_en_uso\", Int64.Type}, {\"personal_total\", Int64.Type}, {\"carga_violencia\", Int64.Type}, {\"carga_por_100_elementos\", type number}, {\"sectores_desatendidos\", Int64.Type}, {\"sectores_saturados\", Int64.Type}, {\"ranking\", Int64.Type}})\nin\n    Tipos"
+              "expression": "let\n    Origen = Csv.Document(File.Contents(RutaDatos & \"\\dim_coordinacion.csv\"), [Delimiter=\",\", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),\n    Encabezados = Table.PromoteHeaders(Origen, [PromoteAllScalars=true]),\n    Tipos = Table.TransformColumnTypes(Encabezados, {{\"coordinacion\", type text}, {\"total_municipios\", Int64.Type}, {\"bases_en_uso\", Int64.Type}, {\"despliegue_banda\", type text}, {\"carga_violencia\", Int64.Type}, {\"presion_banda\", type text}, {\"sectores_desatendidos\", Int64.Type}, {\"sectores_saturados\", Int64.Type}, {\"ranking\", Int64.Type}})\nin\n    Tipos"
             }
           }
         ],
@@ -298,70 +298,58 @@
             "lineageTag": "med-5"
           },
           {
-            "name": "Personal desplegado",
-            "expression": "SUM ( dim_municipio[personal_total] )",
-            "formatString": "#,0",
-            "lineageTag": "med-6"
-          },
-          {
             "name": "Carga de violencia",
             "expression": "[Homicidios] * 10 + [Llamadas con violencia]",
             "formatString": "#,0",
-            "lineageTag": "med-7"
-          },
-          {
-            "name": "Carga por 100 elementos",
-            "expression": "DIVIDE ( [Carga de violencia] * 100, [Personal desplegado] )",
-            "formatString": "#,0.0",
-            "lineageTag": "med-8"
+            "lineageTag": "med-6"
           },
           {
             "name": "Distancia mediana a base",
             "expression": "MEDIANX ( fact_homicidios, fact_homicidios[dist_base_km] )",
             "formatString": "#,0.00",
-            "lineageTag": "med-9"
+            "lineageTag": "med-7"
           },
           {
             "name": "Homicidios lejos de base",
             "expression": "CALCULATE ( [Homicidios], fact_homicidios[dist_base_km] > 3 )",
             "formatString": "#,0",
-            "lineageTag": "med-10"
+            "lineageTag": "med-8"
           },
           {
             "name": "Sectores desatendidos",
             "expression": "CALCULATE ( COUNTROWS ( fact_sectores ), fact_sectores[clasificacion] = \"DESATENDIDO\" )",
             "formatString": "#,0",
-            "lineageTag": "med-11"
+            "lineageTag": "med-9"
           },
           {
             "name": "Sectores saturados",
             "expression": "CALCULATE ( COUNTROWS ( fact_sectores ), fact_sectores[clasificacion] = \"SATURADO\" )",
             "formatString": "#,0",
-            "lineageTag": "med-12"
+            "lineageTag": "med-10"
           },
           {
             "name": "Casos prioridad alta",
             "expression": "CALCULATE ( COUNTROWS ( fact_auditoria ), fact_auditoria[nivel_revision] = \"ALTA\" )",
             "formatString": "#,0",
-            "lineageTag": "med-13"
+            "lineageTag": "med-11"
           },
           {
             "name": "Casos auditados",
             "expression": "COUNTROWS ( fact_auditoria )",
             "formatString": "#,0",
-            "lineageTag": "med-14"
+            "lineageTag": "med-12"
           },
           {
             "name": "Homicidios periodo anterior",
             "expression": "CALCULATE ( [Homicidios], DATEADD ( dim_calendario[fecha], -7, DAY ) )",
             "formatString": "#,0",
-            "lineageTag": "med-15"
+            "lineageTag": "med-13"
           },
           {
             "name": "Variación semanal",
             "expression": "DIVIDE ( [Homicidios] - [Homicidios periodo anterior], [Homicidios periodo anterior] )",
             "formatString": "0.0%",
-            "lineageTag": "med-16"
+            "lineageTag": "med-14"
           }
         ]
       },
@@ -714,10 +702,10 @@
             "summarizeBy": "none"
           },
           {
-            "name": "personal_3km",
-            "dataType": "int64",
-            "sourceColumn": "personal_3km",
-            "lineageTag": "col-fact_sectores-personal_3km",
+            "name": "despliegue_banda",
+            "dataType": "string",
+            "sourceColumn": "despliegue_banda",
+            "lineageTag": "col-fact_sectores-despliegue_banda",
             "summarizeBy": "none"
           },
           {
@@ -741,7 +729,7 @@
             "mode": "import",
             "source": {
               "type": "m",
-              "expression": "let\n    Origen = Csv.Document(File.Contents(RutaDatos & \"\\fact_sectores.csv\"), [Delimiter=\",\", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),\n    Encabezados = Table.PromoteHeaders(Origen, [PromoteAllScalars=true]),\n    Tipos = Table.TransformColumnTypes(Encabezados, {{\"sector_id\", type text}, {\"ranking\", Int64.Type}, {\"municipio\", type text}, {\"coordinacion\", type text}, {\"colonias\", type text}, {\"clasificacion\", type text}, {\"latitud\", type number}, {\"longitud\", type number}, {\"indice_ceguera\", type number}, {\"indice_violencia\", type number}, {\"eventos_hd\", Int64.Type}, {\"llamadas_violentas\", Int64.Type}, {\"dist_base_km\", type number}, {\"personal_3km\", Int64.Type}, {\"limitrofe\", type text}, {\"diagnostico\", type text}})\nin\n    Tipos"
+              "expression": "let\n    Origen = Csv.Document(File.Contents(RutaDatos & \"\\fact_sectores.csv\"), [Delimiter=\",\", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),\n    Encabezados = Table.PromoteHeaders(Origen, [PromoteAllScalars=true]),\n    Tipos = Table.TransformColumnTypes(Encabezados, {{\"sector_id\", type text}, {\"ranking\", Int64.Type}, {\"municipio\", type text}, {\"coordinacion\", type text}, {\"colonias\", type text}, {\"clasificacion\", type text}, {\"latitud\", type number}, {\"longitud\", type number}, {\"indice_ceguera\", type number}, {\"indice_violencia\", type number}, {\"eventos_hd\", Int64.Type}, {\"llamadas_violentas\", Int64.Type}, {\"dist_base_km\", type number}, {\"despliegue_banda\", type text}, {\"limitrofe\", type text}, {\"diagnostico\", type text}})\nin\n    Tipos"
             }
           }
         ]

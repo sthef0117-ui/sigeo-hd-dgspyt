@@ -1727,8 +1727,74 @@ def resumen_ejecutivo(hd, llamadas, bases, sectores, auditoria, serie=None):
 # 7. Persistencia
 # --------------------------------------------------------------------------
 
-def escribir_json(nombre, datos):
+# --------------------------------------------------------------------------
+# Bandas cualitativas de despliegue
+#
+# Regla del proyecto: las cifras exactas de personal y despliegue no se
+# publican -podrian revelar que hay elementos sin desplegar-. Se sustituyen
+# por bandas ("Amplio / Medio / Reducido", presion "Alta / Media / Baja").
+# Los numeros exactos quedan solo en la base SQLite local. La precision
+# numerica se reserva a los eventos de homicidio.
+# --------------------------------------------------------------------------
+
+def _banda(valor, cortes, etiquetas):
+    for c, e in zip(cortes, etiquetas):
+        if valor <= c:
+            return e
+    return etiquetas[-1]
+
+
+def bandas_despliegue(coordinaciones, territorio, sectores):
+    """Convierte personal y carga/100 en bandas; deja los numeros crudos en SQLite."""
+    pers = sorted(c["personal_total"] for c in coordinaciones["coordinaciones"]
+                  if c["personal_total"])
+    if pers:
+        t1, t2 = pers[len(pers) // 3], pers[2 * len(pers) // 3]
+        for c in coordinaciones["coordinaciones"]:
+            c["despliegue_banda"] = ("Sin despliegue propio" if not c["personal_total"]
+                                     else _banda(c["personal_total"], [t1, t2],
+                                                 ["Reducido", "Medio", "Amplio"]))
+    presiones = sorted(c["carga_por_100_elementos"] for c in coordinaciones["coordinaciones"]
+                       if c["carga_por_100_elementos"] is not None)
+    if presiones:
+        p1, p2 = presiones[len(presiones) // 3], presiones[2 * len(presiones) // 3]
+        for c in coordinaciones["coordinaciones"]:
+            v = c["carga_por_100_elementos"]
+            c["presion_banda"] = ("—" if v is None
+                                  else _banda(v, [p1, p2], ["Baja", "Media", "Alta"]))
+
+    pm = sorted(t["personal_total"] for t in territorio if t["personal_total"])
+    m1, m2 = (pm[len(pm) // 3], pm[2 * len(pm) // 3]) if pm else (0, 0)
+    for t in territorio:
+        t["despliegue_banda"] = ("Sin inmueble propio" if not t["personal_total"]
+                                 else _banda(t["personal_total"], [m1, m2],
+                                             ["Reducido", "Medio", "Amplio"]))
+    for s in sectores:
+        s["despliegue_banda"] = ("Sin despliegue cercano" if not s["personal_3km"]
+                                 else _banda(s["personal_3km"], [m1, m2],
+                                             ["Reducido", "Medio", "Amplio"]))
+
+
+# Campos de personal que NO se publican (quedan solo en SQLite).
+_PERSONAL_OCULTO = ("personal_total", "personal_3km", "personal_1km",
+                    "carga_por_100_elementos", "personal_hombres",
+                    "personal_mujeres", "personal")
+
+
+def _sin_personal(obj):
+    """Copia recursiva sin los campos de personal crudos."""
+    if isinstance(obj, dict):
+        return {k: _sin_personal(v) for k, v in obj.items()
+                if k not in _PERSONAL_OCULTO}
+    if isinstance(obj, list):
+        return [_sin_personal(x) for x in obj]
+    return obj
+
+
+def escribir_json(nombre, datos, ocultar_personal=False):
     ANALISIS.mkdir(parents=True, exist_ok=True)
+    if ocultar_personal:
+        datos = _sin_personal(datos)
     ruta = ANALISIS / nombre
     ruta.write_text(json.dumps(datos, ensure_ascii=False, indent=1), encoding="utf-8")
     return ruta
@@ -1940,17 +2006,20 @@ def main():
     def publicable(registros):
         return anonimizar_lista(registros) if anonimo else registros
 
+    # Bandas de despliegue; las cifras crudas de personal NO se publican.
+    bandas_despliegue(coordinaciones, territorio, sectores)
+
     resumen["anonimizado"] = anonimo
     escribir_json("corroborados_sigeo.json", publicable(hd))
     escribir_json("llamadas_911_sigeo.json", publicable(llamadas_tablero))
-    escribir_json("bases_dgspyt.json", bases)
-    escribir_json("zonas_ciegas.json", sectores)
-    escribir_json("perfil_territorial.json", territorio)
-    escribir_json("perfil_coordinaciones.json", coordinaciones)
+    escribir_json("bases_dgspyt.json", bases, ocultar_personal=True)
+    escribir_json("zonas_ciegas.json", sectores, ocultar_personal=True)
+    escribir_json("perfil_territorial.json", territorio, ocultar_personal=True)
+    escribir_json("perfil_coordinaciones.json", coordinaciones, ocultar_personal=True)
     escribir_json("serie_temporal.json", serie)
     cruce["hechos"] = anonimizar_lista(cruce["hechos"]) if anonimo else cruce["hechos"]
     escribir_json("cruce_hechos_fatales.json", cruce)
-    escribir_json("fichas_inteligencia.json", fichas)
+    escribir_json("fichas_inteligencia.json", fichas, ocultar_personal=True)
     # El perimetro del estado viaja con los demas insumos calculados para que
     # el ensamblador lo incruste en el tablero.
     if PERIMETRO.exists():
@@ -1960,7 +2029,7 @@ def main():
         escribir_json("municipios_edomex.json",
                       json.loads(MUNICIPIOS.read_text(encoding="utf-8")))
     escribir_json("auditoria_decesos.json", publicable(auditoria))
-    escribir_json("resumen_ejecutivo.json", resumen)
+    escribir_json("resumen_ejecutivo.json", resumen, ocultar_personal=True)
     escribir_sqlite(hd, llamadas, bases, sectores, auditoria)
 
     print("  datos personales ........... "

@@ -9,10 +9,7 @@
   "tipo_construccion": "MODULO DE VIGILANCIA (TECALLI)",
   "en_uso": true,
   "lat": 19.958473,
-  "lng": -99.847644,
-  "personal_hombres": 34,
-  "personal_mujeres": 6,
-  "personal_total": 40
+  "lng": -99.847644
  },
  {
   "cvo": 2,
@@ -24,10 +21,7 @@
   "tipo_construccion": "EDIFICIO (2 O MAS PLANTAS)",
   "en_uso": true,
   "lat": 19.6348126,
-  "lng": -98.91412396,
-  "personal_hombres": 15,
-  "personal_mujeres": 5,
-  "personal_total": 20
+  "lng": -98.91412396
  },
  {
   "cvo": 3,
@@ -39,10 +33,7 @@
   "tipo_construccion": "EDIFICIO (1 PLANTA)",
   "en_uso": true,
   "lat": 19.5846123,
-  "lng": -98.9827881,
-  "personal_hombres": 42,
-  "personal_mujeres": 5,
-  "personal_total": 47
+  "lng": -98.9827881
  },
  {
   "cvo": 4,
@@ -54,10 +45,7 @@
   "tipo_construccion": "CASA",
   "en_uso": true,
   "lat": 20.0942582,
-  "lng": -99.800222,
-  "personal_hombres": 15,
-  "personal_mujeres": 2,
-  "personal_total": 17
+  "lng": -99.800222
  },
  {
   "cvo": 5,
@@ -69,10 +57,7 @@
   "tipo_construccion": "MODULO DE VIGILANCIA (TECALLI)",
   "en_uso": true,
   "lat": null,
-  "lng": null,
-  "personal_hombres": 35,
-  "personal_mujeres": 12,
-  "personal_total": 47
+  "lng": null
  },
  {
   "cvo": 6,
@@ -84,10 +69,7 @@
   "tipo_construccion": "CASA",
   "en_uso": true,
   "lat": 19.232351,
-  "lng": -100.069065,
-  "personal_hombres": 0,
-  "personal_mujeres": 0,
-  "personal_total": 0
+  "lng": -100.069065
  },
  {
   "cvo": 7,
@@ -99,10 +81,7 @@
   "tipo_construccion": "MODULO DE VIGILANCIA (TECALLI)",
   "en_uso": false,
   "lat": null,
-  "lng": null,
-  "personal_hombres": 0,
-  "personal_mujeres": 0,
-  "personal_total": 0
+  "lng": null
  },
  {
   "cvo": 8,
@@ -114,10 +93,7 @@
   "tipo_construccion": "EDIFICIO (1 PLANTA)",
   "en_uso": true,
   "lat": 19.1182451,
-  "lng": -98.756817721,
-  "personal_hombres": 59,
-  "personal_mujeres": 24,
-  "personal_total": 84
+  "lng": -98.756817721
  },
  {
   "cvo": 9,
@@ -129,10 +105,7 @@
   "tipo_construccion": "EDIFICIO (1 PLANTA)",
   "en_uso": true,
   "lat": 19.112025,
-  "lng": -98.7752,
-  "personal_hombres": 64,
-  "personal_mujeres": 12,
-  "personal_total": 76
+  "lng": -98.7752
  },
  {
   "cvo": 10,
@@ -144,10 +117,7 @@
   "tipo_construccion": "EDIFICIO (2 O MAS PLANTAS)",
   "en_uso": true,
   "lat": 19.98214,
-  "lng": -99.17796,
-  "personal_hombres": 28,
-  "personal_mujeres": 2,
-  "personal_total": 30
+  "lng": -99.17796
  },
  {
   "cvo": 11,
@@ -159,10 +129,7 @@
   "tipo_construccion": "EDIFICIO (1 PLANTA)",
   "en_uso": true,
   "lat": 19.5620859006443,
-  "lng": -99.2494016822087,
-  "personal_hombres": 34,
-  "personal_mujeres": 6,
-  "personal_total": 40
+  "lng": -99.2494016822087
  },
  {
   "cvo": 12,
@@ -174,10 +141,7 @@
   "tipo_construccion": "EDIFICIO (1 PLANTA)",
   "en_uso": true,
   "lat": 19.6065642570124,
-  "lng": -99.2498600286223,
-  "personal_hombres": 33,
-  "personal_mujeres": 4,
-  "personal_total": 37
+  "lng": -99.2498600286223
  },
  {
   "cvo": 13,
@@ -189,10 +153,7 @@
   "tipo_construccion": "MODULO DE VIGILANCIA (TECALLI)",
   "en_uso": true,
   "lat": 19.5611573620268,
-  "lng": -99.2466016686942,
-  "personal_hombres": 14,
-  "personal_mujeres": 5,
-  "personal_total": 19
+  "lng": -99.2466016686942
  },
  {
   "cvo": 14,
@@ -204,10 +165,7 @@
   "tipo_construccion": "EDIFICIO (2 O MAS PLANTAS)",
   "en_uso": true,
   "lat": 19.5616119,
-  "lng": -99.2627455,
-  "personal_hombres": 33,
-  "personal_mujeres": 9,
-  "personal_total": 42
+  "lng": -99.2627455
  },
  {
   "cvo": 15,
@@ -219,10 +177,7 @@
   "tipo_construccion": "EDIFICIO (1 PLANTA)",
   "en_uso": true,
   "lat": null,
-  "lng": null,
-  "personal_hombres": 41,
-  "personal_mujeres": 5,
-  "personal_total": 46
+  "lng": null
  },
  {
   "cvo": 16,
@@ -234,10 +189,7 @@
   "tipo_construccion": "EDIFICIO (1 PLANTA)",
   "en_uso": true,
   "lat": null,
-  "lng": null,
-  "personal_hombres": 28,
-  "personal_mujeres": 2,
-  "personal_total": 30
+  "lng": null
  },
  {
   "cvo": 17,
@@ -249,10 +201,7 @@
   "tipo_construccion": "EDIFICIO (2 O MAS PLANTAS)",
   "en_uso": true,
   "lat": 19.792628,
-  "lng": -99.767498,
-  "personal_hombres": 25,
-  "personal_mujeres": 2,
-  "personal_total": 27
+  "lng": -99.767498
  },
  {
   "cvo": 18,
@@ -264,10 +213,7 @@
   "tipo_construccion": "EDIFICIO (1 PLANTA)",
   "en_uso": true,
   "lat": null,
-  "lng": null,
-  "personal_hombres": 35,
-  "personal_mujeres": 5,
-  "personal_total": 40
+  "lng": null
  },
  {
   "cvo": 19,
@@ -279,10 +225,7 @@
   "tipo_construccion": "EDIFICIO (2 O MAS PLANTAS)",
   "en_uso": true,
   "lat": 19.8059167,
-  "lng": -99.8708056,
-  "personal_hombres": 37,
-  "personal_mujeres": 1,
-  "personal_total": 38
+  "lng": -99.8708056
  },
  {
   "cvo": 20,
@@ -294,10 +237,7 @@
   "tipo_construccion": "MODULO DE VIGILANCIA (TECALLI)",
   "en_uso": true,
   "lat": 19.8052837,
-  "lng": -99.8717435,
-  "personal_hombres": 37,
-  "personal_mujeres": 1,
-  "personal_total": 38
+  "lng": -99.8717435
  },
  {
   "cvo": 21,
@@ -309,10 +249,7 @@
   "tipo_construccion": "EDIFICIO (1 PLANTA)",
   "en_uso": true,
   "lat": 19.0307657,
-  "lng": -98.783137721,
-  "personal_hombres": 52,
-  "personal_mujeres": 3,
-  "personal_total": 55
+  "lng": -98.783137721
  },
  {
   "cvo": 22,
@@ -324,10 +261,7 @@
   "tipo_construccion": "EDIFICIO (2 O MAS PLANTAS)",
   "en_uso": true,
   "lat": 19.745953,
-  "lng": -98.66621,
-  "personal_hombres": 32,
-  "personal_mujeres": 9,
-  "personal_total": 41
+  "lng": -98.66621
  },
  {
   "cvo": 23,
@@ -339,10 +273,7 @@
   "tipo_construccion": "EDIFICIO (2 O MAS PLANTAS)",
   "en_uso": true,
   "lat": 19.1247336,
-  "lng": -98.779659719,
-  "personal_hombres": 41,
-  "personal_mujeres": 15,
-  "personal_total": 56
+  "lng": -98.779659719
  },
  {
   "cvo": 24,
@@ -354,10 +285,7 @@
   "tipo_construccion": "MODULO DE VIGILANCIA (TECALLI)",
   "en_uso": true,
   "lat": 19.21284,
-  "lng": -99.634636,
-  "personal_hombres": 28,
-  "personal_mujeres": 3,
-  "personal_total": 31
+  "lng": -99.634636
  },
  {
   "cvo": 25,
@@ -369,10 +297,7 @@
   "tipo_construccion": "EDIFICIO (1 PLANTA)",
   "en_uso": true,
   "lat": 19.289288907961,
-  "lng": -98.9096495350105,
-  "personal_hombres": 16,
-  "personal_mujeres": 0,
-  "personal_total": 16
+  "lng": -98.9096495350105
  },
  {
   "cvo": 26,
@@ -384,10 +309,7 @@
   "tipo_construccion": "MODULO DE VIGILANCIA (TECALLI)",
   "en_uso": true,
   "lat": 19.27658,
-  "lng": -98.884317,
-  "personal_hombres": 48,
-  "personal_mujeres": 11,
-  "personal_total": 59
+  "lng": -98.884317
  },
  {
   "cvo": 27,
@@ -399,10 +321,7 @@
   "tipo_construccion": "EDIFICIO (2 O MAS PLANTAS)",
   "en_uso": true,
   "lat": 19.2696038773517,
-  "lng": -98.8305701424195,
-  "personal_hombres": 276,
-  "personal_mujeres": 140,
-  "personal_total": 416
+  "lng": -98.8305701424195
  },
  {
   "cvo": 28,
@@ -414,10 +333,7 @@
   "tipo_construccion": "MODULO DE VIGILANCIA (TECALLI)",
   "en_uso": true,
   "lat": 19.2795293836526,
-  "lng": -98.9109628596302,
-  "personal_hombres": 42,
-  "personal_mujeres": 17,
-  "personal_total": 59
+  "lng": -98.9109628596302
  },
  {
   "cvo": 29,
@@ -429,10 +345,7 @@
   "tipo_construccion": "MODULO DE VIGILANCIA (TECALLI)",
   "en_uso": true,
   "lat": 19.2877928753689,
-  "lng": -98.9160504536061,
-  "personal_hombres": 52,
-  "personal_mujeres": 24,
-  "personal_total": 76
+  "lng": -98.9160504536061
  },
  {
   "cvo": 30,
@@ -444,10 +357,7 @@
   "tipo_construccion": "EDIFICIO (2 O MAS PLANTAS)",
   "en_uso": true,
   "lat": 19.262229,
-  "lng": -98.904202,
-  "personal_hombres": 7,
-  "personal_mujeres": 9,
-  "personal_total": 16
+  "lng": -98.904202
  },
  {
   "cvo": 31,
@@ -459,10 +369,7 @@
   "tipo_construccion": "EDIFICIO (1 PLANTA)",
   "en_uso": true,
   "lat": 19.263551,
-  "lng": -98.873613,
-  "personal_hombres": 75,
-  "personal_mujeres": 21,
-  "personal_total": 96
+  "lng": -98.873613
  },
  {
   "cvo": 32,
@@ -474,10 +381,7 @@
   "tipo_construccion": "EDIFICIO (1 PLANTA)",
   "en_uso": true,
   "lat": 19.819246,
-  "lng": -99.531646,
-  "personal_hombres": 32,
-  "personal_mujeres": 8,
-  "personal_total": 40
+  "lng": -99.531646
  },
  {
   "cvo": 33,
@@ -489,10 +393,7 @@
   "tipo_construccion": "MODULO DE VIGILANCIA (TECALLI)",
   "en_uso": true,
   "lat": 19.2041294,
-  "lng": -99.5689058,
-  "personal_hombres": 15,
-  "personal_mujeres": 0,
-  "personal_total": 15
+  "lng": -99.5689058
  },
  {
   "cvo": 34,
@@ -504,10 +405,7 @@
   "tipo_construccion": "CASA",
   "en_uso": true,
   "lat": 19.5517437212934,
-  "lng": -98.8806827883381,
-  "personal_hombres": 54,
-  "personal_mujeres": 12,
-  "personal_total": 66
+  "lng": -98.8806827883381
  },
  {
   "cvo": 35,
@@ -519,10 +417,7 @@
   "tipo_construccion": "EDIFICIO (2 O MAS PLANTAS)",
   "en_uso": true,
   "lat": 19.546297,
-  "lng": -98.896984,
-  "personal_hombres": 34,
-  "personal_mujeres": 3,
-  "personal_total": 37
+  "lng": -98.896984
  },
  {
   "cvo": 36,
@@ -534,10 +429,7 @@
   "tipo_construccion": "MODULO DE VIGILANCIA (TECALLI)",
   "en_uso": true,
   "lat": 19.375835,
-  "lng": -98.969912,
-  "personal_hombres": 56,
-  "personal_mujeres": 19,
-  "personal_total": 75
+  "lng": -98.969912
  },
  {
   "cvo": 37,
@@ -549,10 +441,7 @@
   "tipo_construccion": "ALMACEN",
   "en_uso": true,
   "lat": 19.4151128,
-  "lng": -98.9294359,
-  "personal_hombres": 58,
-  "personal_mujeres": 23,
-  "personal_total": 81
+  "lng": -98.9294359
  },
  {
   "cvo": 38,
@@ -564,10 +453,7 @@
   "tipo_construccion": "EDIFICIO (1 PLANTA)",
   "en_uso": true,
   "lat": 19.4440845481167,
-  "lng": -98.9635482062014,
-  "personal_hombres": 168,
-  "personal_mujeres": 47,
-  "personal_total": 215
+  "lng": -98.9635482062014
  },
  {
   "cvo": 39,
@@ -579,10 +465,7 @@
   "tipo_construccion": "EDIFICIO (1 PLANTA)",
   "en_uso": true,
   "lat": 19.627797,
-  "lng": -99.104275,
-  "personal_hombres": 37,
-  "personal_mujeres": 2,
-  "personal_total": 39
+  "lng": -99.104275
  },
  {
   "cvo": 40,
@@ -594,10 +477,7 @@
   "tipo_construccion": "EDIFICIO (1 PLANTA)",
   "en_uso": true,
   "lat": null,
-  "lng": null,
-  "personal_hombres": 54,
-  "personal_mujeres": 10,
-  "personal_total": 64
+  "lng": null
  },
  {
   "cvo": 41,
@@ -609,10 +489,7 @@
   "tipo_construccion": "MODULO DE VIGILANCIA (TECALLI)",
   "en_uso": false,
   "lat": 18.921209,
-  "lng": -99.768235,
-  "personal_hombres": 0,
-  "personal_mujeres": 0,
-  "personal_total": 0
+  "lng": -99.768235
  },
  {
   "cvo": 42,
@@ -624,10 +501,7 @@
   "tipo_construccion": "MODULO DE VIGILANCIA (TECALLI)",
   "en_uso": true,
   "lat": 19.195556,
-  "lng": -98.864224,
-  "personal_hombres": 39,
-  "personal_mujeres": 14,
-  "personal_total": 53
+  "lng": -98.864224
  },
  {
   "cvo": 43,
@@ -639,10 +513,7 @@
   "tipo_construccion": "MODULO DE VIGILANCIA (TECALLI)",
   "en_uso": true,
   "lat": 19.75079,
-  "lng": -99.20064,
-  "personal_hombres": 30,
-  "personal_mujeres": 2,
-  "personal_total": 32
+  "lng": -99.20064
  },
  {
   "cvo": 44,
@@ -654,10 +525,7 @@
   "tipo_construccion": "EDIFICIO (1 PLANTA)",
   "en_uso": true,
   "lat": null,
-  "lng": null,
-  "personal_hombres": 83,
-  "personal_mujeres": 27,
-  "personal_total": 110
+  "lng": null
  },
  {
   "cvo": 45,
@@ -669,10 +537,7 @@
   "tipo_construccion": "EDIFICIO (1 PLANTA)",
   "en_uso": true,
   "lat": 19.60755395,
-  "lng": -99.2021753,
-  "personal_hombres": 39,
-  "personal_mujeres": 13,
-  "personal_total": 52
+  "lng": -99.2021753
  },
  {
   "cvo": 46,
@@ -684,10 +549,7 @@
   "tipo_construccion": "EDIFICIO (2 O MAS PLANTAS)",
   "en_uso": true,
   "lat": 19.659176,
-  "lng": -99.192505,
-  "personal_hombres": 101,
-  "personal_mujeres": 21,
-  "personal_total": 122
+  "lng": -99.192505
  },
  {
   "cvo": 47,
@@ -699,10 +561,7 @@
   "tipo_construccion": "MODULO DE VIGILANCIA (TECALLI)",
   "en_uso": true,
   "lat": 19.67666,
-  "lng": -99.213244,
-  "personal_hombres": 42,
-  "personal_mujeres": 14,
-  "personal_total": 56
+  "lng": -99.213244
  },
  {
   "cvo": 48,
@@ -714,10 +573,7 @@
   "tipo_construccion": "",
   "en_uso": true,
   "lat": 19.635265,
-  "lng": -99.204109,
-  "personal_hombres": 37,
-  "personal_mujeres": 1,
-  "personal_total": 38
+  "lng": -99.204109
  },
  {
   "cvo": 49,
@@ -729,10 +585,7 @@
   "tipo_construccion": "EDIFICIO (1 PLANTA)",
   "en_uso": true,
   "lat": 19.305876,
-  "lng": -100.144776,
-  "personal_hombres": 44,
-  "personal_mujeres": 1,
-  "personal_total": 45
+  "lng": -100.144776
  },
  {
   "cvo": 50,
@@ -744,10 +597,7 @@
   "tipo_construccion": "EDIFICIO (1 PLANTA)",
   "en_uso": true,
   "lat": 19.520118,
-  "lng": -99.032895,
-  "personal_hombres": 55,
-  "personal_mujeres": 44,
-  "personal_total": 99
+  "lng": -99.032895
  },
  {
   "cvo": 51,
@@ -759,10 +609,7 @@
   "tipo_construccion": "MODULO DE VIGILANCIA (TECALLI)",
   "en_uso": true,
   "lat": 19.548922,
-  "lng": -99.051287,
-  "personal_hombres": 62,
-  "personal_mujeres": 4,
-  "personal_total": 66
+  "lng": -99.051287
  },
  {
   "cvo": 52,
@@ -774,10 +621,7 @@
   "tipo_construccion": "EDIFICIO (1 PLANTA)",
   "en_uso": true,
   "lat": 19.587654,
-  "lng": -99.024364,
-  "personal_hombres": 60,
-  "personal_mujeres": 13,
-  "personal_total": 73
+  "lng": -99.024364
  },
  {
   "cvo": 53,
@@ -789,10 +633,7 @@
   "tipo_construccion": "EDIFICIO (1 PLANTA)",
   "en_uso": true,
   "lat": 19.607181,
-  "lng": -99.050808,
-  "personal_hombres": 26,
-  "personal_mujeres": 6,
-  "personal_total": 32
+  "lng": -99.050808
  },
  {
   "cvo": 54,
@@ -804,10 +645,7 @@
   "tipo_construccion": "EDIFICIO (1 PLANTA)",
   "en_uso": true,
   "lat": 19.52847,
-  "lng": -99.05304,
-  "personal_hombres": 55,
-  "personal_mujeres": 9,
-  "personal_total": 64
+  "lng": -99.05304
  },
  {
   "cvo": 55,
@@ -819,10 +657,7 @@
   "tipo_construccion": "EDIFICIO (1 PLANTA)",
   "en_uso": true,
   "lat": 19.515337,
-  "lng": -99.080396,
-  "personal_hombres": 67,
-  "personal_mujeres": 13,
-  "personal_total": 80
+  "lng": -99.080396
  },
  {
   "cvo": 56,
@@ -834,10 +669,7 @@
   "tipo_construccion": "EDIFICIO (2 O MAS PLANTAS)",
   "en_uso": true,
   "lat": 19.582519,
-  "lng": -99.017099,
-  "personal_hombres": 319,
-  "personal_mujeres": 160,
-  "personal_total": 479
+  "lng": -99.017099
  },
  {
   "cvo": 57,
@@ -849,10 +681,7 @@
   "tipo_construccion": "MODULO DE VIGILANCIA (TECALLI)",
   "en_uso": true,
   "lat": 19.621307,
-  "lng": -99.000946,
-  "personal_hombres": 51,
-  "personal_mujeres": 13,
-  "personal_total": 64
+  "lng": -99.000946
  },
  {
   "cvo": 58,
@@ -864,10 +693,7 @@
   "tipo_construccion": "MODULO DE VIGILANCIA (TECALLI)",
   "en_uso": true,
   "lat": 19.574732,
-  "lng": -99.020225,
-  "personal_hombres": 17,
-  "personal_mujeres": 6,
-  "personal_total": 23
+  "lng": -99.020225
  },
  {
   "cvo": 59,
@@ -879,10 +705,7 @@
   "tipo_construccion": "EDIFICIO (1 PLANTA)",
   "en_uso": true,
   "lat": 19.599169,
-  "lng": -99.036123,
-  "personal_hombres": 65,
-  "personal_mujeres": 11,
-  "personal_total": 76
+  "lng": -99.036123
  },
  {
   "cvo": 60,
@@ -894,10 +717,7 @@
   "tipo_construccion": "MODULO DE VIGILANCIA (TECALLI)",
   "en_uso": true,
   "lat": 19.797792,
-  "lng": -100.138387,
-  "personal_hombres": 22,
-  "personal_mujeres": 0,
-  "personal_total": 22
+  "lng": -100.138387
  },
  {
   "cvo": 61,
@@ -909,10 +729,7 @@
   "tipo_construccion": "EDIFICIO (1 PLANTA)",
   "en_uso": true,
   "lat": 19.84207,
-  "lng": -99.23451,
-  "personal_hombres": 10,
-  "personal_mujeres": 3,
-  "personal_total": 13
+  "lng": -99.23451
  },
  {
   "cvo": 62,
@@ -924,10 +741,7 @@
   "tipo_construccion": "MODULO DE VIGILANCIA (TECALLI)",
   "en_uso": true,
   "lat": 19.819293,
-  "lng": -99.241167,
-  "personal_hombres": 44,
-  "personal_mujeres": 2,
-  "personal_total": 46
+  "lng": -99.241167
  },
  {
   "cvo": 63,
@@ -939,10 +753,7 @@
   "tipo_construccion": "MODULO DE VIGILANCIA (TECALLI)",
   "en_uso": true,
   "lat": 19.82181,
-  "lng": -99.190068,
-  "personal_hombres": 26,
-  "personal_mujeres": 2,
-  "personal_total": 28
+  "lng": -99.190068
  },
  {
   "cvo": 64,
@@ -954,10 +765,7 @@
   "tipo_construccion": "MODULO DE VIGILANCIA (TECALLI)",
   "en_uso": true,
   "lat": 19.405794,
-  "lng": -99.279349,
-  "personal_hombres": 37,
-  "personal_mujeres": 6,
-  "personal_total": 43
+  "lng": -99.279349
  },
  {
   "cvo": 65,
@@ -969,10 +777,7 @@
   "tipo_construccion": "EDIFICIO (2 O MAS PLANTAS)",
   "en_uso": true,
   "lat": 19.3731680975141,
-  "lng": -99.3431222562681,
-  "personal_hombres": 24,
-  "personal_mujeres": 1,
-  "personal_total": 25
+  "lng": -99.3431222562681
  },
  {
   "cvo": 66,
@@ -984,10 +789,7 @@
   "tipo_construccion": "EDIFICIO (1 PLANTA)",
   "en_uso": true,
   "lat": 19.433683,
-  "lng": -99.249774,
-  "personal_hombres": 21,
-  "personal_mujeres": 3,
-  "personal_total": 24
+  "lng": -99.249774
  },
  {
   "cvo": 67,
@@ -999,10 +801,7 @@
   "tipo_construccion": "MODULO DE VIGILANCIA (TECALLI)",
   "en_uso": true,
   "lat": 19.556492,
-  "lng": -99.417729,
-  "personal_hombres": 28,
-  "personal_mujeres": 2,
-  "personal_total": 30
+  "lng": -99.417729
  },
  {
   "cvo": 68,
@@ -1014,10 +813,7 @@
   "tipo_construccion": "CASA",
   "en_uso": true,
   "lat": 19.2947069991173,
-  "lng": -98.8823829999095,
-  "personal_hombres": 38,
-  "personal_mujeres": 13,
-  "personal_total": 51
+  "lng": -98.8823829999095
  },
  {
   "cvo": 69,
@@ -1029,10 +825,7 @@
   "tipo_construccion": "MODULO DE VIGILANCIA (TECALLI)",
   "en_uso": true,
   "lat": 19.3057892528632,
-  "lng": -98.8722536751236,
-  "personal_hombres": 48,
-  "personal_mujeres": 9,
-  "personal_total": 57
+  "lng": -98.8722536751236
  },
  {
   "cvo": 70,
@@ -1044,10 +837,7 @@
   "tipo_construccion": "MODULO DE VIGILANCIA (TECALLI)",
   "en_uso": true,
   "lat": 19.3186403535548,
-  "lng": -98.9190889153982,
-  "personal_hombres": 42,
-  "personal_mujeres": 12,
-  "personal_total": 54
+  "lng": -98.9190889153982
  },
  {
   "cvo": 71,
@@ -1059,10 +849,7 @@
   "tipo_construccion": "CASA",
   "en_uso": true,
   "lat": 19.3115719890147,
-  "lng": -98.89944785496,
-  "personal_hombres": 11,
-  "personal_mujeres": 4,
-  "personal_total": 15
+  "lng": -98.89944785496
  },
  {
   "cvo": 72,
@@ -1074,10 +861,7 @@
   "tipo_construccion": "MODULO DE VIGILANCIA (TECALLI)",
   "en_uso": true,
   "lat": 19.3210715295005,
-  "lng": -98.9410984389283,
-  "personal_hombres": 38,
-  "personal_mujeres": 8,
-  "personal_total": 46
+  "lng": -98.9410984389283
  },
  {
   "cvo": 73,
@@ -1089,10 +873,7 @@
   "tipo_construccion": "MODULO DE VIGILANCIA (TECALLI)",
   "en_uso": true,
   "lat": 19.311559,
-  "lng": -98.899508,
-  "personal_hombres": 8,
-  "personal_mujeres": 8,
-  "personal_total": 16
+  "lng": -98.899508
  },
  {
   "cvo": 74,
@@ -1104,10 +885,7 @@
   "tipo_construccion": "MODULO DE VIGILANCIA (TECALLI)",
   "en_uso": true,
   "lat": 19.299314,
-  "lng": -98.875606,
-  "personal_hombres": 55,
-  "personal_mujeres": 2,
-  "personal_total": 57
+  "lng": -98.875606
  },
  {
   "cvo": 75,
@@ -1119,10 +897,7 @@
   "tipo_construccion": "EDIFICIO (2 O MAS PLANTAS)",
   "en_uso": true,
   "lat": 18.845104,
-  "lng": -99.681729,
-  "personal_hombres": 14,
-  "personal_mujeres": 8,
-  "personal_total": 22
+  "lng": -99.681729
  },
  {
   "cvo": 76,
@@ -1134,10 +909,7 @@
   "tipo_construccion": "EDIFICIO (1 PLANTA)",
   "en_uso": true,
   "lat": 18.853305,
-  "lng": -99.673557,
-  "personal_hombres": 30,
-  "personal_mujeres": 4,
-  "personal_total": 34
+  "lng": -99.673557
  },
  {
   "cvo": 77,
@@ -1149,10 +921,7 @@
   "tipo_construccion": "EDIFICIO (1 PLANTA)",
   "en_uso": true,
   "lat": 18.839763,
-  "lng": -99.686055,
-  "personal_hombres": 21,
-  "personal_mujeres": 1,
-  "personal_total": 22
+  "lng": -99.686055
  },
  {
   "cvo": 78,
@@ -1164,10 +933,7 @@
   "tipo_construccion": "MODULO DE VIGILANCIA (TECALLI)",
   "en_uso": true,
   "lat": 18.837007,
-  "lng": -99.673904,
-  "personal_hombres": 11,
-  "personal_mujeres": 1,
-  "personal_total": 12
+  "lng": -99.673904
  },
  {
   "cvo": 79,
@@ -1179,10 +945,7 @@
   "tipo_construccion": "EDIFICIO (2 O MAS PLANTAS)",
   "en_uso": true,
   "lat": 19.5703917,
-  "lng": -99.7592372,
-  "personal_hombres": 66,
-  "personal_mujeres": 11,
-  "personal_total": 77
+  "lng": -99.7592372
  },
  {
   "cvo": 80,
@@ -1194,10 +957,7 @@
   "tipo_construccion": "EDIFICIO (1 PLANTA)",
   "en_uso": true,
   "lat": null,
-  "lng": null,
-  "personal_hombres": 31,
-  "personal_mujeres": 5,
-  "personal_total": 36
+  "lng": null
  },
  {
   "cvo": 81,
@@ -1209,10 +969,7 @@
   "tipo_construccion": "EDIFICIO (2 O MAS PLANTAS)",
   "en_uso": true,
   "lat": 19.9512189,
-  "lng": -99.5493345,
-  "personal_hombres": 159,
-  "personal_mujeres": 24,
-  "personal_total": 183
+  "lng": -99.5493345
  },
  {
   "cvo": 82,
@@ -1224,10 +981,7 @@
   "tipo_construccion": "MODULO DE VIGILANCIA (TECALLI)",
   "en_uso": true,
   "lat": null,
-  "lng": null,
-  "personal_hombres": 26,
-  "personal_mujeres": 2,
-  "personal_total": 28
+  "lng": null
  },
  {
   "cvo": 83,
@@ -1239,10 +993,7 @@
   "tipo_construccion": "EDIFICIO (1 PLANTA)",
   "en_uso": true,
   "lat": 19.658666,
-  "lng": -99.670744,
-  "personal_hombres": 32,
-  "personal_mujeres": 6,
-  "personal_total": 38
+  "lng": -99.670744
  },
  {
   "cvo": 84,
@@ -1254,10 +1005,7 @@
   "tipo_construccion": "EDIFICIO (1 PLANTA)",
   "en_uso": true,
   "lat": 19.7009573,
-  "lng": -99.7905924,
-  "personal_hombres": 24,
-  "personal_mujeres": 5,
-  "personal_total": 29
+  "lng": -99.7905924
  },
  {
   "cvo": 85,
@@ -1269,10 +1017,7 @@
   "tipo_construccion": "MODULO DE VIGILANCIA (TECALLI)",
   "en_uso": true,
   "lat": 19.045476,
-  "lng": -99.529472,
-  "personal_hombres": 39,
-  "personal_mujeres": 2,
-  "personal_total": 41
+  "lng": -99.529472
  },
  {
   "cvo": 86,
@@ -1284,10 +1029,7 @@
   "tipo_construccion": "EDIFICIO (1 PLANTA)",
   "en_uso": true,
   "lat": 19.114781,
-  "lng": -98.88057,
-  "personal_hombres": 34,
-  "personal_mujeres": 2,
-  "personal_total": 36
+  "lng": -98.88057
  },
  {
   "cvo": 87,
@@ -1299,10 +1041,7 @@
   "tipo_construccion": "EDIFICIO (1 PLANTA)",
   "en_uso": true,
   "lat": 19.351768,
-  "lng": -98.93782,
-  "personal_hombres": 346,
-  "personal_mujeres": 170,
-  "personal_total": 516
+  "lng": -98.93782
  },
  {
   "cvo": 88,
@@ -1314,10 +1053,7 @@
   "tipo_construccion": "EDIFICIO (1 PLANTA)",
   "en_uso": false,
   "lat": 18.917597,
-  "lng": -100.300185,
-  "personal_hombres": 0,
-  "personal_mujeres": 0,
-  "personal_total": 0
+  "lng": -100.300185
  },
  {
   "cvo": 89,
@@ -1329,10 +1065,7 @@
   "tipo_construccion": "EDIFICIO (1 PLANTA)",
   "en_uso": true,
   "lat": 18.951383,
-  "lng": -99.494308,
-  "personal_hombres": 72,
-  "personal_mujeres": 7,
-  "personal_total": 79
+  "lng": -99.494308
  },
  {
   "cvo": 90,
@@ -1344,10 +1077,7 @@
   "tipo_construccion": "MODULO DE VIGILANCIA (TECALLI)",
   "en_uso": true,
   "lat": 19.2869634,
-  "lng": -99.6023236,
-  "personal_hombres": 30,
-  "personal_mujeres": 10,
-  "personal_total": 40
+  "lng": -99.6023236
  },
  {
   "cvo": 91,
@@ -1359,10 +1089,7 @@
   "tipo_construccion": "EDIFICIO (1 PLANTA)",
   "en_uso": true,
   "lat": null,
-  "lng": null,
-  "personal_hombres": 40,
-  "personal_mujeres": 4,
-  "personal_total": 0
+  "lng": null
  },
  {
   "cvo": 92,
@@ -1374,10 +1101,7 @@
   "tipo_construccion": "EDIFICIO (1 PLANTA)",
   "en_uso": true,
   "lat": null,
-  "lng": null,
-  "personal_hombres": 65,
-  "personal_mujeres": 9,
-  "personal_total": 74
+  "lng": null
  },
  {
   "cvo": 93,
@@ -1389,10 +1113,7 @@
   "tipo_construccion": "MODULO DE VIGILANCIA (TECALLI)",
   "en_uso": true,
   "lat": 19.210615,
-  "lng": -99.588755,
-  "personal_hombres": 19,
-  "personal_mujeres": 3,
-  "personal_total": 22
+  "lng": -99.588755
  },
  {
   "cvo": 94,
@@ -1404,10 +1125,7 @@
   "tipo_construccion": "EDIFICIO (2 O MAS PLANTAS)",
   "en_uso": true,
   "lat": 19.7774444,
-  "lng": -99.6683611,
-  "personal_hombres": 29,
-  "personal_mujeres": 2,
-  "personal_total": 31
+  "lng": -99.6683611
  },
  {
   "cvo": 95,
@@ -1419,10 +1137,7 @@
   "tipo_construccion": "EDIFICIO (1 PLANTA)",
   "en_uso": true,
   "lat": 19.4626469807801,
-  "lng": -99.2166974685433,
-  "personal_hombres": 27,
-  "personal_mujeres": 11,
-  "personal_total": 38
+  "lng": -99.2166974685433
  },
  {
   "cvo": 96,
@@ -1434,10 +1149,7 @@
   "tipo_construccion": "EDIFICIO (1 PLANTA)",
   "en_uso": true,
   "lat": 19.4250040953142,
-  "lng": -99.2440949,
-  "personal_hombres": 0,
-  "personal_mujeres": 0,
-  "personal_total": 0
+  "lng": -99.2440949
  },
  {
   "cvo": 97,
@@ -1449,10 +1161,7 @@
   "tipo_construccion": "EDIFICIO (1 PLANTA)",
   "en_uso": true,
   "lat": 19.4876994671102,
-  "lng": -99.242973504558,
-  "personal_hombres": 27,
-  "personal_mujeres": 0,
-  "personal_total": 27
+  "lng": -99.242973504558
  },
  {
   "cvo": 98,
@@ -1464,10 +1173,7 @@
   "tipo_construccion": "MODULO DE VIGILANCIA (TECALLI)",
   "en_uso": true,
   "lat": 19.4667803846677,
-  "lng": -99.2381782960437,
-  "personal_hombres": 33,
-  "personal_mujeres": 5,
-  "personal_total": 38
+  "lng": -99.2381782960437
  },
  {
   "cvo": 99,
@@ -1479,10 +1185,7 @@
   "tipo_construccion": "EDIFICIO (2 O MAS PLANTAS)",
   "en_uso": true,
   "lat": null,
-  "lng": null,
-  "personal_hombres": 28,
-  "personal_mujeres": 3,
-  "personal_total": 31
+  "lng": null
  },
  {
   "cvo": 100,
@@ -1494,10 +1197,7 @@
   "tipo_construccion": "ALMACEN",
   "en_uso": true,
   "lat": null,
-  "lng": null,
-  "personal_hombres": 79,
-  "personal_mujeres": 7,
-  "personal_total": 86
+  "lng": null
  },
  {
   "cvo": 101,
@@ -1509,10 +1209,7 @@
   "tipo_construccion": "EDIFICIO (2 O MAS PLANTAS)",
   "en_uso": true,
   "lat": 19.5154017577518,
-  "lng": -99.2328829212247,
-  "personal_hombres": 80,
-  "personal_mujeres": 9,
-  "personal_total": 89
+  "lng": -99.2328829212247
  },
  {
   "cvo": 102,
@@ -1524,10 +1221,7 @@
   "tipo_construccion": "EDIFICIO (1 PLANTA)",
   "en_uso": true,
   "lat": 19.421676,
-  "lng": -99.009608,
-  "personal_hombres": 14,
-  "personal_mujeres": 1,
-  "personal_total": 15
+  "lng": -99.009608
  },
  {
   "cvo": 103,
@@ -1539,10 +1233,7 @@
   "tipo_construccion": "",
   "en_uso": true,
   "lat": 19.487974,
-  "lng": -99.0476095,
-  "personal_hombres": 60,
-  "personal_mujeres": 15,
-  "personal_total": 75
+  "lng": -99.0476095
  },
  {
   "cvo": 104,
@@ -1554,10 +1245,7 @@
   "tipo_construccion": "EDIFICIO (1 PLANTA)",
   "en_uso": true,
   "lat": 19.41567,
-  "lng": -99.0145,
-  "personal_hombres": 39,
-  "personal_mujeres": 8,
-  "personal_total": 47
+  "lng": -99.0145
  },
  {
   "cvo": 105,
@@ -1569,10 +1257,7 @@
   "tipo_construccion": "EDIFICIO (2 O MAS PLANTAS)",
   "en_uso": true,
   "lat": 19.41187,
-  "lng": -99.01128,
-  "personal_hombres": 13,
-  "personal_mujeres": 4,
-  "personal_total": 17
+  "lng": -99.01128
  },
  {
   "cvo": 106,
@@ -1584,10 +1269,7 @@
   "tipo_construccion": "MODULO DE VIGILANCIA (TECALLI)",
   "en_uso": true,
   "lat": null,
-  "lng": null,
-  "personal_hombres": 28,
-  "personal_mujeres": 6,
-  "personal_total": 34
+  "lng": null
  },
  {
   "cvo": 107,
@@ -1599,10 +1281,7 @@
   "tipo_construccion": "EDIFICIO (2 O MAS PLANTAS)",
   "en_uso": true,
   "lat": 19.3965,
-  "lng": -99.04817,
-  "personal_hombres": 63,
-  "personal_mujeres": 23,
-  "personal_total": 86
+  "lng": -99.04817
  },
  {
   "cvo": 108,
@@ -1614,10 +1293,7 @@
   "tipo_construccion": "EDIFICIO (2 O MAS PLANTAS)",
   "en_uso": true,
   "lat": 19.39001,
-  "lng": -99.03397,
-  "personal_hombres": 50,
-  "personal_mujeres": 21,
-  "personal_total": 71
+  "lng": -99.03397
  },
  {
   "cvo": 109,
@@ -1629,10 +1305,7 @@
   "tipo_construccion": "EDIFICIO (1 PLANTA)",
   "en_uso": true,
   "lat": 19.37658,
-  "lng": -98.99358,
-  "personal_hombres": 50,
-  "personal_mujeres": 24,
-  "personal_total": 74
+  "lng": -98.99358
  },
  {
   "cvo": 110,
@@ -1644,10 +1317,7 @@
   "tipo_construccion": "EDIFICIO (1 PLANTA)",
   "en_uso": true,
   "lat": 19.470095,
-  "lng": -99.042694,
-  "personal_hombres": 55,
-  "personal_mujeres": 15,
-  "personal_total": 70
+  "lng": -99.042694
  },
  {
   "cvo": 111,
@@ -1659,10 +1329,7 @@
   "tipo_construccion": "",
   "en_uso": true,
   "lat": 19.434742,
-  "lng": -98.998693,
-  "personal_hombres": 45,
-  "personal_mujeres": 2,
-  "personal_total": 47
+  "lng": -98.998693
  },
  {
   "cvo": 112,
@@ -1674,10 +1341,7 @@
   "tipo_construccion": "EDIFICIO (2 O MAS PLANTAS)",
   "en_uso": true,
   "lat": 19.630348,
-  "lng": -99.292259,
-  "personal_hombres": 64,
-  "personal_mujeres": 8,
-  "personal_total": 72
+  "lng": -99.292259
  },
  {
   "cvo": 113,
@@ -1689,10 +1353,7 @@
   "tipo_construccion": "",
   "en_uso": true,
   "lat": 19.6237595654915,
-  "lng": -99.3224082009628,
-  "personal_hombres": 0,
-  "personal_mujeres": 40,
-  "personal_total": 40
+  "lng": -99.3224082009628
  },
  {
   "cvo": 114,
@@ -1704,10 +1365,7 @@
   "tipo_construccion": "MODULO DE VIGILANCIA (TECALLI)",
   "en_uso": true,
   "lat": null,
-  "lng": null,
-  "personal_hombres": 35,
-  "personal_mujeres": 9,
-  "personal_total": 44
+  "lng": null
  },
  {
   "cvo": 115,
@@ -1719,10 +1377,7 @@
   "tipo_construccion": "EDIFICIO (1 PLANTA)",
   "en_uso": true,
   "lat": null,
-  "lng": null,
-  "personal_hombres": 13,
-  "personal_mujeres": 3,
-  "personal_total": 16
+  "lng": null
  },
  {
   "cvo": 116,
@@ -1734,10 +1389,7 @@
   "tipo_construccion": "CASA",
   "en_uso": true,
   "lat": 18.979974,
-  "lng": -99.419712,
-  "personal_hombres": 31,
-  "personal_mujeres": 1,
-  "personal_total": 32
+  "lng": -99.419712
  },
  {
   "cvo": 117,
@@ -1749,10 +1401,7 @@
   "tipo_construccion": "EDIFICIO (1 PLANTA)",
   "en_uso": true,
   "lat": 19.697868,
-  "lng": -98.755813,
-  "personal_hombres": 32,
-  "personal_mujeres": 7,
-  "personal_total": 39
+  "lng": -98.755813
  },
  {
   "cvo": 118,
@@ -1764,10 +1413,7 @@
   "tipo_construccion": "EDIFICIO (2 O MAS PLANTAS)",
   "en_uso": true,
   "lat": 19.1201963191943,
-  "lng": -100.297077925353,
-  "personal_hombres": 29,
-  "personal_mujeres": 1,
-  "personal_total": 30
+  "lng": -100.297077925353
  },
  {
   "cvo": 119,
@@ -1779,10 +1425,7 @@
   "tipo_construccion": "EDIFICIO (1 PLANTA)",
   "en_uso": true,
   "lat": 19.3826285,
-  "lng": -99.5807732,
-  "personal_hombres": 31,
-  "personal_mujeres": 6,
-  "personal_total": 37
+  "lng": -99.5807732
  },
  {
   "cvo": 120,
@@ -1794,10 +1437,7 @@
   "tipo_construccion": "EDIFICIO (2 O MAS PLANTAS)",
   "en_uso": true,
   "lat": 19.0548214,
-  "lng": -98.79581261825,
-  "personal_hombres": 46,
-  "personal_mujeres": 12,
-  "personal_total": 58
+  "lng": -98.79581261825
  },
  {
   "cvo": 121,
@@ -1809,10 +1449,7 @@
   "tipo_construccion": "CASA",
   "en_uso": true,
   "lat": 20.223874,
-  "lng": -99.8151642,
-  "personal_hombres": 17,
-  "personal_mujeres": 2,
-  "personal_total": 19
+  "lng": -99.8151642
  },
  {
   "cvo": 122,
@@ -1824,10 +1461,7 @@
   "tipo_construccion": "MODULO DE VIGILANCIA (TECALLI)",
   "en_uso": true,
   "lat": 19.142509,
-  "lng": -99.582268,
-  "personal_hombres": 19,
-  "personal_mujeres": 5,
-  "personal_total": 24
+  "lng": -99.582268
  },
  {
   "cvo": 123,
@@ -1839,10 +1473,7 @@
   "tipo_construccion": "EDIFICIO (1 PLANTA)",
   "en_uso": true,
   "lat": 19.716132,
-  "lng": -99.944897,
-  "personal_hombres": 37,
-  "personal_mujeres": 4,
-  "personal_total": 41
+  "lng": -99.944897
  },
  {
   "cvo": 124,
@@ -1854,10 +1485,7 @@
   "tipo_construccion": "MODULO DE VIGILANCIA (TECALLI)",
   "en_uso": true,
   "lat": 19.64813,
-  "lng": -100.126525,
-  "personal_hombres": 24,
-  "personal_mujeres": 0,
-  "personal_total": 24
+  "lng": -100.126525
  },
  {
   "cvo": 125,
@@ -1869,10 +1497,7 @@
   "tipo_construccion": "EDIFICIO (2 O MAS PLANTAS)",
   "en_uso": true,
   "lat": 19.7053156596763,
-  "lng": -98.8347051288348,
-  "personal_hombres": 46,
-  "personal_mujeres": 13,
-  "personal_total": 59
+  "lng": -98.8347051288348
  },
  {
   "cvo": 126,
@@ -1884,10 +1509,7 @@
   "tipo_construccion": "EDIFICIO (1 PLANTA)",
   "en_uso": true,
   "lat": 19.282957,
-  "lng": -99.540508,
-  "personal_hombres": 64,
-  "personal_mujeres": 21,
-  "personal_total": 85
+  "lng": -99.540508
  },
  {
   "cvo": 127,
@@ -1899,10 +1521,7 @@
   "tipo_construccion": "MODULO DE VIGILANCIA (TECALLI)",
   "en_uso": true,
   "lat": 20.0123318,
-  "lng": -99.5266586,
-  "personal_hombres": 36,
-  "personal_mujeres": 8,
-  "personal_total": 44
+  "lng": -99.5266586
  },
  {
   "cvo": 128,
@@ -1914,10 +1533,7 @@
   "tipo_construccion": "EDIFICIO (1 PLANTA)",
   "en_uso": true,
   "lat": 19.658319,
-  "lng": -99.000795,
-  "personal_hombres": 101,
-  "personal_mujeres": 30,
-  "personal_total": 131
+  "lng": -99.000795
  },
  {
   "cvo": 129,
@@ -1929,10 +1545,7 @@
   "tipo_construccion": "EDIFICIO (2 O MAS PLANTAS)",
   "en_uso": true,
   "lat": 19.651533,
-  "lng": -99.036719,
-  "personal_hombres": 40,
-  "personal_mujeres": 15,
-  "personal_total": 55
+  "lng": -99.036719
  },
  {
   "cvo": 130,
@@ -1944,10 +1557,7 @@
   "tipo_construccion": "EDIFICIO (2 O MAS PLANTAS)",
   "en_uso": true,
   "lat": 19.757794,
-  "lng": -98.973223,
-  "personal_hombres": 48,
-  "personal_mujeres": 8,
-  "personal_total": 56
+  "lng": -98.973223
  },
  {
   "cvo": 131,
@@ -1959,10 +1569,7 @@
   "tipo_construccion": "EDIFICIO (2 O MAS PLANTAS)",
   "en_uso": true,
   "lat": null,
-  "lng": null,
-  "personal_hombres": 24,
-  "personal_mujeres": 3,
-  "personal_total": 27
+  "lng": null
  },
  {
   "cvo": 132,
@@ -1974,10 +1581,7 @@
   "tipo_construccion": "EDIFICIO (1 PLANTA)",
   "en_uso": true,
   "lat": 19.9306273,
-  "lng": -100.0071184,
-  "personal_hombres": 31,
-  "personal_mujeres": 1,
-  "personal_total": 32
+  "lng": -100.0071184
  },
  {
   "cvo": 133,
@@ -1989,10 +1593,7 @@
   "tipo_construccion": "MODULO DE VIGILANCIA (TECALLI)",
   "en_uso": true,
   "lat": 19.40404,
-  "lng": -99.619914,
-  "personal_hombres": 35,
-  "personal_mujeres": 3,
-  "personal_total": 38
+  "lng": -99.619914
  },
  {
   "cvo": 134,
@@ -2004,10 +1605,7 @@
   "tipo_construccion": "EDIFICIO (2 O MAS PLANTAS)",
   "en_uso": true,
   "lat": 18.956861,
-  "lng": -99.59865,
-  "personal_hombres": 192,
-  "personal_mujeres": 49,
-  "personal_total": 241
+  "lng": -99.59865
  },
  {
   "cvo": 135,
@@ -2019,10 +1617,7 @@
   "tipo_construccion": "EDIFICIO (1 PLANTA)",
   "en_uso": true,
   "lat": 18.963096,
-  "lng": -99.59957,
-  "personal_hombres": 43,
-  "personal_mujeres": 23,
-  "personal_total": 66
+  "lng": -99.59957
  },
  {
   "cvo": 136,
@@ -2034,10 +1629,7 @@
   "tipo_construccion": "MODULO DE VIGILANCIA (TECALLI)",
   "en_uso": true,
   "lat": 18.974953,
-  "lng": -99.585987,
-  "personal_hombres": 29,
-  "personal_mujeres": 4,
-  "personal_total": 33
+  "lng": -99.585987
  },
  {
   "cvo": 137,
@@ -2049,10 +1641,7 @@
   "tipo_construccion": "MODULO DE VIGILANCIA (TECALLI)",
   "en_uso": true,
   "lat": 19.127583,
-  "lng": -99.593712,
-  "personal_hombres": 23,
-  "personal_mujeres": 2,
-  "personal_total": 25
+  "lng": -99.593712
  },
  {
   "cvo": 138,
@@ -2064,10 +1653,7 @@
   "tipo_construccion": "MODULO DE VIGILANCIA (TECALLI)",
   "en_uso": true,
   "lat": 19.126221,
-  "lng": -99.580713,
-  "personal_hombres": 0,
-  "personal_mujeres": 27,
-  "personal_total": 27
+  "lng": -99.580713
  },
  {
   "cvo": 139,
@@ -2079,10 +1665,7 @@
   "tipo_construccion": "MODULO DE VIGILANCIA (TECALLI)",
   "en_uso": true,
   "lat": 19.10227,
-  "lng": -99.58643,
-  "personal_hombres": 31,
-  "personal_mujeres": 12,
-  "personal_total": 43
+  "lng": -99.58643
  },
  {
   "cvo": 140,
@@ -2094,10 +1677,7 @@
   "tipo_construccion": "MODULO DE VIGILANCIA (TECALLI)",
   "en_uso": true,
   "lat": 19.112529,
-  "lng": -99.530318,
-  "personal_hombres": 22,
-  "personal_mujeres": 7,
-  "personal_total": 29
+  "lng": -99.530318
  },
  {
   "cvo": 141,
@@ -2109,10 +1689,7 @@
   "tipo_construccion": "EDIFICIO (2 O MAS PLANTAS)",
   "en_uso": true,
   "lat": 19.1057664,
-  "lng": -99.5837454,
-  "personal_hombres": 45,
-  "personal_mujeres": 5,
-  "personal_total": 50
+  "lng": -99.5837454
  },
  {
   "cvo": 142,
@@ -2124,10 +1701,7 @@
   "tipo_construccion": "EDIFICIO (1 PLANTA)",
   "en_uso": true,
   "lat": 19.69408,
-  "lng": -98.878415,
-  "personal_hombres": 37,
-  "personal_mujeres": 11,
-  "personal_total": 48
+  "lng": -98.878415
  },
  {
   "cvo": 143,
@@ -2139,10 +1713,7 @@
   "tipo_construccion": "EDIFICIO (1 PLANTA)",
   "en_uso": true,
   "lat": 19.0377171,
-  "lng": -98.806541119,
-  "personal_hombres": 62,
-  "personal_mujeres": 15,
-  "personal_total": 77
+  "lng": -98.806541119
  },
  {
   "cvo": 144,
@@ -2154,10 +1725,7 @@
   "tipo_construccion": "MODULO DE VIGILANCIA (TECALLI)",
   "en_uso": true,
   "lat": 19.0395578,
-  "lng": -98.827817914,
-  "personal_hombres": 44,
-  "personal_mujeres": 8,
-  "personal_total": 52
+  "lng": -98.827817914
  },
  {
   "cvo": 145,
@@ -2169,10 +1737,7 @@
   "tipo_construccion": "EDIFICIO (2 O MAS PLANTAS)",
   "en_uso": true,
   "lat": 19.712654,
-  "lng": -99.221399,
-  "personal_hombres": 25,
-  "personal_mujeres": 4,
-  "personal_total": 29
+  "lng": -99.221399
  },
  {
   "cvo": 146,
@@ -2184,10 +1749,7 @@
   "tipo_construccion": "",
   "en_uso": true,
   "lat": null,
-  "lng": null,
-  "personal_hombres": 0,
-  "personal_mujeres": 0,
-  "personal_total": 0
+  "lng": null
  },
  {
   "cvo": 147,
@@ -2199,10 +1761,7 @@
   "tipo_construccion": "",
   "en_uso": true,
   "lat": null,
-  "lng": null,
-  "personal_hombres": 7,
-  "personal_mujeres": 0,
-  "personal_total": 7
+  "lng": null
  },
  {
   "cvo": 148,
@@ -2214,10 +1773,7 @@
   "tipo_construccion": "EDIFICIO (2 O MAS PLANTAS)",
   "en_uso": true,
   "lat": null,
-  "lng": null,
-  "personal_hombres": 61,
-  "personal_mujeres": 5,
-  "personal_total": 66
+  "lng": null
  },
  {
   "cvo": 149,
@@ -2229,10 +1785,7 @@
   "tipo_construccion": "EDIFICIO (2 O MAS PLANTAS)",
   "en_uso": true,
   "lat": 19.5220303785342,
-  "lng": -98.8848544711651,
-  "personal_hombres": 143,
-  "personal_mujeres": 49,
-  "personal_total": 192
+  "lng": -98.8848544711651
  },
  {
   "cvo": 150,
@@ -2244,10 +1797,7 @@
   "tipo_construccion": "EDIFICIO (2 O MAS PLANTAS)",
   "en_uso": true,
   "lat": 19.441321,
-  "lng": -98.904891,
-  "personal_hombres": 48,
-  "personal_mujeres": 6,
-  "personal_total": 54
+  "lng": -98.904891
  },
  {
   "cvo": 151,
@@ -2259,10 +1809,7 @@
   "tipo_construccion": "MODULO DE VIGILANCIA (TECALLI)",
   "en_uso": true,
   "lat": 19.5934503803289,
-  "lng": -98.9189158846604,
-  "personal_hombres": 36,
-  "personal_mujeres": 3,
-  "personal_total": 39
+  "lng": -98.9189158846604
  },
  {
   "cvo": 152,
@@ -2274,10 +1821,7 @@
   "tipo_construccion": "MODULO DE VIGILANCIA (TECALLI)",
   "en_uso": true,
   "lat": 19.16987,
-  "lng": -99.46675,
-  "personal_hombres": 83,
-  "personal_mujeres": 16,
-  "personal_total": 99
+  "lng": -99.46675
  },
  {
   "cvo": 153,
@@ -2289,10 +1833,7 @@
   "tipo_construccion": "MODULO DE VIGILANCIA (TECALLI)",
   "en_uso": true,
   "lat": 19.8777602,
-  "lng": -99.7329907,
-  "personal_hombres": 28,
-  "personal_mujeres": 2,
-  "personal_total": 30
+  "lng": -99.7329907
  },
  {
   "cvo": 154,
@@ -2304,10 +1845,7 @@
   "tipo_construccion": "CASA",
   "en_uso": true,
   "lat": 19.200718,
-  "lng": -98.800224,
-  "personal_hombres": 51,
-  "personal_mujeres": 15,
-  "personal_total": 66
+  "lng": -98.800224
  },
  {
   "cvo": 155,
@@ -2319,10 +1857,7 @@
   "tipo_construccion": "EDIFICIO (1 PLANTA)",
   "en_uso": true,
   "lat": 19.5198723927146,
-  "lng": -99.09793599999999,
-  "personal_hombres": 31,
-  "personal_mujeres": 3,
-  "personal_total": 34
+  "lng": -99.09793599999999
  },
  {
   "cvo": 156,
@@ -2334,10 +1869,7 @@
   "tipo_construccion": "EDIFICIO (1 PLANTA)",
   "en_uso": true,
   "lat": 19.5848403,
-  "lng": -99.1977443,
-  "personal_hombres": 14,
-  "personal_mujeres": 0,
-  "personal_total": 14
+  "lng": -99.1977443
  },
  {
   "cvo": 157,
@@ -2349,10 +1881,7 @@
   "tipo_construccion": "MODULO DE VIGILANCIA (TECALLI)",
   "en_uso": true,
   "lat": 19.5166970686168,
-  "lng": -99.2147485622276,
-  "personal_hombres": 25,
-  "personal_mujeres": 8,
-  "personal_total": 33
+  "lng": -99.2147485622276
  },
  {
   "cvo": 158,
@@ -2364,10 +1893,7 @@
   "tipo_construccion": "EDIFICIO (1 PLANTA)",
   "en_uso": true,
   "lat": 19.523603,
-  "lng": -99.200047,
-  "personal_hombres": 37,
-  "personal_mujeres": 10,
-  "personal_total": 47
+  "lng": -99.200047
  },
  {
   "cvo": 159,
@@ -2379,10 +1905,7 @@
   "tipo_construccion": "EDIFICIO (2 O MAS PLANTAS)",
   "en_uso": true,
   "lat": 19.531628,
-  "lng": -99.192008,
-  "personal_hombres": 188,
-  "personal_mujeres": 19,
-  "personal_total": 207
+  "lng": -99.192008
  },
  {
   "cvo": 160,
@@ -2394,10 +1917,7 @@
   "tipo_construccion": "MODULO DE VIGILANCIA (TECALLI)",
   "en_uso": true,
   "lat": 19.512574,
-  "lng": -99.176513,
-  "personal_hombres": 19,
-  "personal_mujeres": 1,
-  "personal_total": 20
+  "lng": -99.176513
  },
  {
   "cvo": 161,
@@ -2409,10 +1929,7 @@
   "tipo_construccion": "EDIFICIO (1 PLANTA)",
   "en_uso": true,
   "lat": 19.5589021025277,
-  "lng": -99.2192580175401,
-  "personal_hombres": 30,
-  "personal_mujeres": 9,
-  "personal_total": 39
+  "lng": -99.2192580175401
  },
  {
   "cvo": 162,
@@ -2424,10 +1941,7 @@
   "tipo_construccion": "EDIFICIO (1 PLANTA)",
   "en_uso": true,
   "lat": 19.506524,
-  "lng": -99.165753,
-  "personal_hombres": 28,
-  "personal_mujeres": 4,
-  "personal_total": 32
+  "lng": -99.165753
  },
  {
   "cvo": 163,
@@ -2439,10 +1953,7 @@
   "tipo_construccion": "MODULO DE VIGILANCIA (TECALLI)",
   "en_uso": false,
   "lat": null,
-  "lng": null,
-  "personal_hombres": 0,
-  "personal_mujeres": 0,
-  "personal_total": 0
+  "lng": null
  },
  {
   "cvo": 164,
@@ -2454,10 +1965,7 @@
   "tipo_construccion": "MODULO DE VIGILANCIA (TECALLI)",
   "en_uso": false,
   "lat": null,
-  "lng": null,
-  "personal_hombres": 0,
-  "personal_mujeres": 0,
-  "personal_total": 0
+  "lng": null
  },
  {
   "cvo": 165,
@@ -2469,10 +1977,7 @@
   "tipo_construccion": "EDIFICIO (2 O MAS PLANTAS)",
   "en_uso": true,
   "lat": 19.2836967,
-  "lng": -99.6584044,
-  "personal_hombres": 27,
-  "personal_mujeres": 7,
-  "personal_total": 34
+  "lng": -99.6584044
  },
  {
   "cvo": 166,
@@ -2484,10 +1989,7 @@
   "tipo_construccion": "MODULO DE VIGILANCIA (TECALLI)",
   "en_uso": true,
   "lat": 19.3157733,
-  "lng": -99.6345,
-  "personal_hombres": 25,
-  "personal_mujeres": 2,
-  "personal_total": 27
+  "lng": -99.6345
  },
  {
   "cvo": 167,
@@ -2499,10 +2001,7 @@
   "tipo_construccion": "MODULO DE VIGILANCIA (TECALLI)",
   "en_uso": true,
   "lat": 19.271467,
-  "lng": -99.665826,
-  "personal_hombres": 51,
-  "personal_mujeres": 9,
-  "personal_total": 60
+  "lng": -99.665826
  },
  {
   "cvo": 168,
@@ -2514,10 +2013,7 @@
   "tipo_construccion": "",
   "en_uso": true,
   "lat": 19.286781,
-  "lng": -99.636645,
-  "personal_hombres": 132,
-  "personal_mujeres": 60,
-  "personal_total": 192
+  "lng": -99.636645
  },
  {
   "cvo": 169,
@@ -2529,10 +2025,7 @@
   "tipo_construccion": "CASA",
   "en_uso": true,
   "lat": 19.373612,
-  "lng": -99.575431,
-  "personal_hombres": 9,
-  "personal_mujeres": 4,
-  "personal_total": 13
+  "lng": -99.575431
  },
  {
   "cvo": 170,
@@ -2544,10 +2037,7 @@
   "tipo_construccion": "MODULO DE VIGILANCIA (TECALLI)",
   "en_uso": true,
   "lat": 19.302958,
-  "lng": -99.632329,
-  "personal_hombres": 34,
-  "personal_mujeres": 7,
-  "personal_total": 41
+  "lng": -99.632329
  },
  {
   "cvo": 171,
@@ -2559,10 +2049,7 @@
   "tipo_construccion": "EDIFICIO (1 PLANTA)",
   "en_uso": true,
   "lat": 19.2756554,
-  "lng": -99.6582904,
-  "personal_hombres": 0,
-  "personal_mujeres": 0,
-  "personal_total": 0
+  "lng": -99.6582904
  },
  {
   "cvo": 172,
@@ -2574,10 +2061,7 @@
   "tipo_construccion": "EDIFICIO (1 PLANTA)",
   "en_uso": true,
   "lat": 19.2807699,
-  "lng": -99.6442112,
-  "personal_hombres": 0,
-  "personal_mujeres": 0,
-  "personal_total": 0
+  "lng": -99.6442112
  },
  {
   "cvo": 173,
@@ -2589,10 +2073,7 @@
   "tipo_construccion": "EDIFICIO (1 PLANTA)",
   "en_uso": true,
   "lat": 19.280487,
-  "lng": -99.638278,
-  "personal_hombres": 49,
-  "personal_mujeres": 8,
-  "personal_total": 57
+  "lng": -99.638278
  },
  {
   "cvo": 174,
@@ -2604,10 +2085,7 @@
   "tipo_construccion": "EDIFICIO (2 O MAS PLANTAS)",
   "en_uso": true,
   "lat": 19.285756,
-  "lng": -99.6388337,
-  "personal_hombres": 197,
-  "personal_mujeres": 80,
-  "personal_total": 277
+  "lng": -99.6388337
  },
  {
   "cvo": 175,
@@ -2619,10 +2097,7 @@
   "tipo_construccion": "EDIFICIO (1 PLANTA)",
   "en_uso": true,
   "lat": 19.3157733,
-  "lng": -99.6345,
-  "personal_hombres": 33,
-  "personal_mujeres": 8,
-  "personal_total": 41
+  "lng": -99.6345
  },
  {
   "cvo": 176,
@@ -2634,10 +2109,7 @@
   "tipo_construccion": "EDIFICIO (2 O MAS PLANTAS)",
   "en_uso": true,
   "lat": 19.691635,
-  "lng": -99.053741,
-  "personal_hombres": 82,
-  "personal_mujeres": 20,
-  "personal_total": 102
+  "lng": -99.053741
  },
  {
   "cvo": 177,
@@ -2649,10 +2121,7 @@
   "tipo_construccion": "MODULO DE VIGILANCIA (TECALLI)",
   "en_uso": false,
   "lat": 18.7598289,
-  "lng": -99.6216865,
-  "personal_hombres": 0,
-  "personal_mujeres": 0,
-  "personal_total": 0
+  "lng": -99.6216865
  },
  {
   "cvo": 178,
@@ -2664,10 +2133,7 @@
   "tipo_construccion": "EDIFICIO (1 PLANTA)",
   "en_uso": false,
   "lat": 18.7598387,
-  "lng": -99.6216755,
-  "personal_hombres": 20,
-  "personal_mujeres": 1,
-  "personal_total": 21
+  "lng": -99.6216755
  },
  {
   "cvo": 179,
@@ -2679,10 +2145,7 @@
   "tipo_construccion": "",
   "en_uso": true,
   "lat": 19.692889,
-  "lng": -99.080376,
-  "personal_hombres": 32,
-  "personal_mujeres": 3,
-  "personal_total": 35
+  "lng": -99.080376
  },
  {
   "cvo": 180,
@@ -2694,10 +2157,7 @@
   "tipo_construccion": "MODULO DE VIGILANCIA (TECALLI)",
   "en_uso": true,
   "lat": 19.599139,
-  "lng": -99.17153,
-  "personal_hombres": 25,
-  "personal_mujeres": 5,
-  "personal_total": 30
+  "lng": -99.17153
  },
  {
   "cvo": 181,
@@ -2709,10 +2169,7 @@
   "tipo_construccion": "EDIFICIO (1 PLANTA)",
   "en_uso": true,
   "lat": null,
-  "lng": null,
-  "personal_hombres": 32,
-  "personal_mujeres": 1,
-  "personal_total": 33
+  "lng": null
  },
  {
   "cvo": 182,
@@ -2724,10 +2181,7 @@
   "tipo_construccion": "MODULO DE VIGILANCIA (TECALLI)",
   "en_uso": true,
   "lat": 19.161839,
-  "lng": -100.122054,
-  "personal_hombres": 23,
-  "personal_mujeres": 1,
-  "personal_total": 24
+  "lng": -100.122054
  },
  {
   "cvo": 183,
@@ -2739,10 +2193,7 @@
   "tipo_construccion": "EDIFICIO (2 O MAS PLANTAS)",
   "en_uso": true,
   "lat": null,
-  "lng": null,
-  "personal_hombres": 94,
-  "personal_mujeres": 18,
-  "personal_total": 112
+  "lng": null
  },
  {
   "cvo": 184,
@@ -2754,10 +2205,7 @@
   "tipo_construccion": "MODULO DE VIGILANCIA (TECALLI)",
   "en_uso": true,
   "lat": 19.223615,
-  "lng": -100.130611,
-  "personal_hombres": 36,
-  "personal_mujeres": 2,
-  "personal_total": 38
+  "lng": -100.130611
  },
  {
   "cvo": 185,
@@ -2769,10 +2217,7 @@
   "tipo_construccion": "MODULO DE VIGILANCIA (TECALLI)",
   "en_uso": true,
   "lat": 19.161207,
-  "lng": -100.10549,
-  "personal_hombres": 15,
-  "personal_mujeres": 0,
-  "personal_total": 15
+  "lng": -100.10549
  },
  {
   "cvo": 186,
@@ -2784,10 +2229,7 @@
   "tipo_construccion": "MODULO DE VIGILANCIA (TECALLI)",
   "en_uso": true,
   "lat": 19.297079,
-  "lng": -98.952392,
-  "personal_hombres": 43,
-  "personal_mujeres": 9,
-  "personal_total": 52
+  "lng": -98.952392
  },
  {
   "cvo": 187,
@@ -2799,10 +2241,7 @@
   "tipo_construccion": "MODULO DE VIGILANCIA (TECALLI)",
   "en_uso": true,
   "lat": null,
-  "lng": null,
-  "personal_hombres": 24,
-  "personal_mujeres": 5,
-  "personal_total": 29
+  "lng": null
  },
  {
   "cvo": 188,
@@ -2814,10 +2253,7 @@
   "tipo_construccion": "MODULO DE VIGILANCIA (TECALLI)",
   "en_uso": true,
   "lat": 18.968161,
-  "lng": -99.644532,
-  "personal_hombres": 22,
-  "personal_mujeres": 10,
-  "personal_total": 32
+  "lng": -99.644532
  },
  {
   "cvo": 189,
@@ -2829,10 +2265,7 @@
   "tipo_construccion": "MODULO DE VIGILANCIA (TECALLI)",
   "en_uso": true,
   "lat": 19.411152,
-  "lng": -99.921013,
-  "personal_hombres": 26,
-  "personal_mujeres": 2,
-  "personal_total": 28
+  "lng": -99.921013
  },
  {
   "cvo": 190,
@@ -2844,10 +2277,7 @@
   "tipo_construccion": "EDIFICIO (1 PLANTA)",
   "en_uso": true,
   "lat": 19.442146,
-  "lng": -99.994509,
-  "personal_hombres": 27,
-  "personal_mujeres": 4,
-  "personal_total": 31
+  "lng": -99.994509
  },
  {
   "cvo": 191,
@@ -2859,10 +2289,7 @@
   "tipo_construccion": "MODULO DE VIGILANCIA (TECALLI)",
   "en_uso": true,
   "lat": 19.16996,
-  "lng": -99.46694,
-  "personal_hombres": 20,
-  "personal_mujeres": 1,
-  "personal_total": 21
+  "lng": -99.46694
  },
  {
   "cvo": 192,
@@ -2874,10 +2301,7 @@
   "tipo_construccion": "MODULO DE VIGILANCIA (TECALLI)",
   "en_uso": false,
   "lat": 18.7232821,
-  "lng": -99.7754977,
-  "personal_hombres": 0,
-  "personal_mujeres": 0,
-  "personal_total": 0
+  "lng": -99.7754977
  },
  {
   "cvo": 193,
@@ -2889,10 +2313,7 @@
   "tipo_construccion": "EDIFICIO (1 PLANTA)",
   "en_uso": true,
   "lat": 19.27752,
-  "lng": -99.749924,
-  "personal_hombres": 155,
-  "personal_mujeres": 19,
-  "personal_total": 174
+  "lng": -99.749924
  },
  {
   "cvo": 194,
@@ -2904,10 +2325,7 @@
   "tipo_construccion": "MODULO DE VIGILANCIA (TECALLI)",
   "en_uso": true,
   "lat": 19.2953232535949,
-  "lng": -99.7336025760173,
-  "personal_hombres": 36,
-  "personal_mujeres": 8,
-  "personal_total": 44
+  "lng": -99.7336025760173
  },
  {
   "cvo": 195,
@@ -2919,10 +2337,7 @@
   "tipo_construccion": "MODULO DE VIGILANCIA (TECALLI)",
   "en_uso": false,
   "lat": 19.809819,
-  "lng": -99.154122,
-  "personal_hombres": 0,
-  "personal_mujeres": 0,
-  "personal_total": 0
+  "lng": -99.154122
  },
  {
   "cvo": 196,
@@ -2934,10 +2349,7 @@
   "tipo_construccion": "MODULO DE VIGILANCIA (TECALLI)",
   "en_uso": true,
   "lat": 19.812921,
-  "lng": -99.111191,
-  "personal_hombres": 44,
-  "personal_mujeres": 7,
-  "personal_total": 51
+  "lng": -99.111191
  },
  {
   "cvo": 197,
@@ -2949,10 +2361,7 @@
   "tipo_construccion": "MODULO DE VIGILANCIA (TECALLI)",
   "en_uso": true,
   "lat": 19.434752,
-  "lng": -98.998842,
-  "personal_hombres": 47,
-  "personal_mujeres": 2,
-  "personal_total": 49
+  "lng": -98.998842
  },
  {
   "cvo": 198,
@@ -2964,9 +2373,6 @@
   "tipo_construccion": "MODULO DE VIGILANCIA (TECALLI)",
   "en_uso": true,
   "lat": 18.929786,
-  "lng": -99.436186,
-  "personal_hombres": 5,
-  "personal_mujeres": 1,
-  "personal_total": 6
+  "lng": -99.436186
  }
 ]

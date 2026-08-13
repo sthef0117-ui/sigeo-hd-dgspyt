@@ -861,9 +861,9 @@ function panorama(){
    <div class="cifra azul"><div class="rot">Distancia a base más cercana</div>
      <div class="v num">${c.dist_hd_base_mediana_km} km</div>
      <div class="d">mediana por homicidio · ${N(c.hd_a_mas_de_3km_de_base)} eventos a más de 3 km</div></div>
-   <div class="cifra verde"><div class="rot">Despliegue inventariado</div>
-     <div class="v num">${N(c.personal_total)}</div>
-     <div class="d">elementos en ${N(c.bases_en_uso_georreferenciadas)} bases en uso</div></div>`;
+   <div class="cifra verde"><div class="rot">Homicidios lejos de una base</div>
+     <div class="v num">${N(c.hd_a_mas_de_3km_de_base)}</div>
+     <div class="d">a más de 3 km de la base más cercana</div></div>`;
 
   const desat=DATOS.zonas.filter(z=>z.clasificacion==="DESATENDIDO");
   const satur=DATOS.zonas.filter(z=>z.clasificacion==="SATURADO");
@@ -876,13 +876,13 @@ function panorama(){
      <div class="cab"><div class="tit">Extender cobertura</div><span class="et e-rojo">${desat.length} sectores</span></div>
      <div class="txt">El más crítico es <b>${E(d0?d0.municipio:"—")}</b>${d0&&d0.colonias.length?` (${E(d0.colonias[0])})`:""}:
        violencia ${d0?d0.indice_violencia:"—"} con la base más cercana a <b>${d0?d0.dist_base_km:"—"} km</b>
-       y ${d0?N(d0.personal_3km):"—"} elementos a 3 km.</div>
+       y despliegue cercano ${d0?E((d0.despliegue_banda||"").toLowerCase()):"—"}.</div>
      <div class="pie">Acuerdo sugerido: reasignar cuadrante o desplegar punto fijo.</div>
    </div>
    <div class="prio">
      <div class="cab"><div class="tit">Revisar el patrullaje que ya existe</div><span class="et e-ambar">${satur.length} sectores</span></div>
      <div class="txt"><b>${E(s0?s0.municipio:"—")}</b>${s0&&s0.colonias.length?` (${E(s0.colonias[0])})`:""}
-       concentra violencia ${s0?s0.indice_violencia:"—"} con <b>${s0?N(s0.personal_3km):"—"} elementos</b>
+       concentra violencia ${s0?s0.indice_violencia:"—"} con <b>despliegue ${s0?E((s0.despliegue_banda||"").toLowerCase()):"—"}</b>
        a menos de ${s0?s0.dist_base_km:"—"} km. Aquí no falta cobertura.</div>
      <div class="pie">Acuerdo sugerido: revisar horarios y recorridos, no sumar inmuebles.</div>
    </div>
@@ -991,7 +991,7 @@ function listaSectores(){
         <span class="et ${cl}">${E(z.clasificacion)}</span></div>
       <div class="l2">${E(z.colonias.join(" · "))||E(z.sector_id)}</div>
       <div class="l2">índice <b>${z.indice_ceguera}</b> · ${z.eventos_hd} HD ·
-        ${z.llamadas_violentas} llam · base a ${z.dist_base_km} km · ${N(z.personal_3km)} elem
+        ${z.llamadas_violentas} llam · base a ${z.dist_base_km} km · despliegue ${E((z.despliegue_banda||"").toLowerCase())}
         ${z.limitrofe?' · <span class="et e-azul">LIMÍTROFE</span>':""}</div>
     </div>`;}).join("") || `<div style="padding:20px;color:var(--tx3);font-size:.8rem">Sin sectores.</div>`;
 
@@ -1013,7 +1013,7 @@ function popupSector(z){
     ${z.colonias.length?`<div style="color:#667085">${E(z.colonias.join(", "))}</div>`:""}
     <div style="margin-top:6px">Índice de ceguera <b>${z.indice_ceguera}</b> (lugar ${z.ranking} de ${DATOS.zonas.length})<br>
     Violencia ${z.indice_violencia} · ${z.eventos_hd} homicidios · ${z.llamadas_violentas} llamadas<br>
-    Base más cercana a <b>${z.dist_base_km} km</b> · ${N(z.personal_3km)} elementos a 3 km</div>
+    Base más cercana a <b>${z.dist_base_km} km</b> · despliegue ${E((z.despliegue_banda||"").toLowerCase())}</div>
     <div style="margin-top:7px;padding-top:6px;border-top:1px solid #e6e9ed">${E(z.diagnostico)}</div>
     ${z.sin_camaras_reportado?'<div style="margin-top:6px;color:#b45309"><b>Las acciones SSEM asientan que no se localizaron cámaras.</b></div>':""}
   </div>`;
@@ -1104,7 +1104,7 @@ function iniciarMapa(){
       weight:1.6,fillOpacity:1}).bindPopup(
       `<div style="font-family:Inter,sans-serif;font-size:.8rem;line-height:1.5">
         <b>${E(b.unidad)}</b><br>${E(b.municipio)}<br>${E(b.ubicacion)||""}
-        <br>Personal: <b>${N(b.personal_total)}</b></div>`,{maxWidth:300}).addTo(capas.bases);
+        </div>`,{maxWidth:300}).addTo(capas.bases);
   });
   DATOS.zonas.forEach(z=>{
     const c=z.clasificacion==="DESATENDIDO"?"#c1121f":z.clasificacion==="SATURADO"?"#b45309":"#6d28d9";
@@ -1202,7 +1202,7 @@ function coordinaciones(){
   tabla("t-coordinaciones",
     [["#","num"],["Coordinación regional"],["Municipios","num"],["Carga de violencia","num"],
      ["HD","num"],["Víct.","num"],["Llam. viol.","num"],["Arma fuego","num"],
-     ["Bases","num"],["Personal","num"],["Carga /100 elem.","num"],
+     ["Bases","num"],["Despliegue"],["Presión relativa"],
      ["Desat.","num"],["Sat.","num"]],
     C.map(c=>`<tr>
       <td class="num">${c.ranking}</td>
@@ -1216,8 +1216,8 @@ function coordinaciones(){
       <td class="num">${c.llamadas_violentas}</td>
       <td class="num">${c.arma_fuego}</td>
       <td class="num">${c.bases_en_uso}</td>
-      <td class="num">${N(c.personal_total)}</td>
-      <td class="num">${c.carga_por_100_elementos==null?"—":c.carga_por_100_elementos}</td>
+      <td>${E(c.despliegue_banda||"—")}</td>
+      <td>${E(c.presion_banda||"—")}</td>
       <td class="num">${c.sectores_desatendidos||"—"}</td>
       <td class="num">${c.sectores_saturados||"—"}</td>
     </tr>`));
@@ -1236,7 +1236,7 @@ function coordinaciones(){
       <td class="num">${t.llamadas_violentas}</td>
       <td class="num">${t.arma_fuego}</td>
       <td class="num">${t.bases_en_uso}</td>
-      <td class="num">${N(t.personal_total)}</td>
+      <td>${E(t.despliegue_banda||"—")}</td>
       <td class="num">${t.dist_media_hd_base_km==null?"—":t.dist_media_hd_base_km+" km"}</td>
       <td class="num">${t.sectores_desatendidos?`<span class="et e-rojo">${t.sectores_desatendidos}</span>`:"—"}</td>
       <td class="num">${t.sectores_saturados?`<span class="et e-ambar">${t.sectores_saturados}</span>`:"—"}</td>
@@ -1250,13 +1250,13 @@ function coordinaciones(){
       <br><br>
       ${t.hd_a_mas_de_3km?`<b>${t.hd_a_mas_de_3km}</b> de sus ${t.hd_eventos} homicidios ocurrieron a más de 3 km de cualquier base en uso. `:""}
       ${t.hd_nocturnos?`<b>${t.hd_nocturnos}</b> en franja nocturna. `:""}
-      ${t.personal_total===0&&t.bases_en_uso>0?`<span style="color:var(--ambar)"><b>Aviso de calidad del dato:</b> el inventario registra ${t.bases_en_uso} inmueble(s) en uso pero sin personal adscrito capturado.</span>`:""}
+      ${t.despliegue_banda==="Sin inmueble propio"?"":""}
       ${t.bases_en_uso===0?`<span style="color:var(--ambar)"><b>Sin inmueble propio en el inventario DGSPYT.</b> La atención depende de bases de municipios vecinos.</span>`:""}
     </td></tr>`);
 
   tabla("t-territorio",
     [["#","num"],["Municipio"],["Índice de presión","num"],["HD","num"],["Víct.","num"],
-     ["Llam. viol.","num"],["Arma fuego","num"],["Bases","num"],["Personal","num"],
+     ["Llam. viol.","num"],["Arma fuego","num"],["Bases","num"],["Despliegue"],
      ["Dist. media","num"],["Desat.","num"],["Sat.","num"]], filas);
 
   document.querySelectorAll("#t-territorio tr.click").forEach(tr=>{
@@ -1471,22 +1471,22 @@ function informe(){
 
    <h3>1. Carga por coordinación regional</h3>
    <table><thead><tr><th>#</th><th>Coordinación</th><th>Mpios.</th><th>Carga</th><th>HD</th>
-     <th>Llam. viol.</th><th>Arma fuego</th><th>Personal</th><th>Carga /100 elem.</th>
+     <th>Llam. viol.</th><th>Arma fuego</th><th>Despliegue</th><th>Presión rel.</th>
      <th>Desat.</th><th>Sat.</th></tr></thead>
      <tbody>${((DATOS.coordinaciones||{}).coordinaciones||[]).map(c=>`<tr><td>${c.ranking}</td>
        <td>${E(c.coordinacion)}</td><td>${c.total_municipios}</td><td>${c.carga_violencia}</td>
        <td>${c.hd_eventos}</td><td>${c.llamadas_violentas}</td><td>${c.arma_fuego}</td>
-       <td>${N(c.personal_total)}</td>
-       <td>${c.carga_por_100_elementos==null?"—":c.carga_por_100_elementos}</td>
+       <td>${E(c.despliegue_banda||"—")}</td>
+       <td>${E(c.presion_banda||"—")}</td>
        <td>${c.sectores_desatendidos}</td><td>${c.sectores_saturados}</td></tr>`).join("")}</tbody></table>
 
    <h4 style="margin-top:16px;font-size:.9rem">Municipios de mayor presión</h4>
    <table><thead><tr><th>#</th><th>Municipio</th><th>Coordinación</th><th>Índice</th><th>HD</th>
-     <th>Llam. viol.</th><th>Personal</th><th>Dist. media</th><th>Desat.</th></tr></thead>
+     <th>Llam. viol.</th><th>Despliegue</th><th>Dist. media</th><th>Desat.</th></tr></thead>
      <tbody>${DATOS.territorio.slice(0,10).map(t=>`<tr><td>${t.ranking}</td><td>${E(t.municipio)}</td>
        <td>${E(t.coordinacion)||"—"}</td>
        <td>${t.indice_presion}</td><td>${t.hd_eventos}</td><td>${t.llamadas_violentas}</td>
-       <td>${N(t.personal_total)}</td>
+       <td>${E(t.despliegue_banda||"—")}</td>
        <td>${t.dist_media_hd_base_km==null?"—":t.dist_media_hd_base_km+" km"}</td>
        <td>${t.sectores_desatendidos}</td></tr>`).join("")}</tbody></table>
    <p style="font-size:.76rem;color:#667085;margin-top:6px">
@@ -1496,16 +1496,16 @@ function informe(){
    <h3>2. Cobertura de patrullaje y zonas ciegas</h3>
    <p>Se contrastaron los ${N(R.hd.eventos)} homicidios y las ${N(R.c5.llamadas_violentas)} llamadas con
      violencia del corte contra el inventario de ${N(c.bases_inventariadas)} inmuebles DGSPYT
-     (${N(c.bases_en_uso_georreferenciadas)} en uso y georreferenciados, ${N(c.personal_total)} elementos adscritos).
+     (${N(c.bases_en_uso_georreferenciadas)} en uso y georreferenciados).
      La distancia mediana de un homicidio a la base más cercana es de <b>${c.dist_hd_base_mediana_km} km</b>,
      con un máximo de ${c.dist_hd_base_maxima_km} km; <b>${N(c.hd_a_mas_de_3km_de_base)} eventos</b> ocurrieron
      a más de 3 km de cualquier base en uso. De los ${N(R.zonas_ciegas.sectores_detectados)} sectores con violencia
      registrada, <b>${desat.length}</b> son desatendidos y <b>${satur.length}</b> saturados.</p>
    <table><thead><tr><th>#</th><th>Municipio</th><th>Diagnóstico</th><th>Índice</th><th>HD</th>
-     <th>Llamadas</th><th>Base más cercana</th><th>Personal 3 km</th></tr></thead>
+     <th>Llamadas</th><th>Base más cercana</th><th>Despliegue</th></tr></thead>
      <tbody>${top.map(z=>`<tr><td>${z.ranking}</td><td>${E(z.municipio)}</td><td>${E(z.clasificacion)}</td>
        <td>${z.indice_ceguera}</td><td>${z.eventos_hd}</td><td>${z.llamadas_violentas}</td>
-       <td>${z.dist_base_km} km</td><td>${N(z.personal_3km)}</td></tr>`).join("")}</tbody></table>
+       <td>${z.dist_base_km} km</td><td>${E(z.despliegue_banda||"—")}</td></tr>`).join("")}</tbody></table>
 
    <h3>3. Geocodificación en formato Windows Maps</h3>
    <p>De las ${N(g.sin_coordenada_original)} llamadas sin coordenada del corte, ${N(g.sin_coordenada_sin_texto)}
@@ -1623,7 +1623,7 @@ function renderDossier(id){
     : "El punto no coincide con ningún sector de concentración de violencia detectado.";
   const baseTxt = f.base
     ? `La base DGSPYT más cercana es <b>${E(f.base.unidad)}</b> (${E(f.base.municipio)}),
-       a <b>${f.base.dist_km} km</b>, con ${N(f.base.personal)} elementos adscritos.`
+       a <b>${f.base.dist_km} km</b>.`
     : "No se pudo calcular la base más cercana por falta de coordenada.";
 
   // ---- Patrón cercano ----

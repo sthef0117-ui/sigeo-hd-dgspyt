@@ -1,5 +1,5 @@
 {
- "generado": "2026-08-13 07:58",
+ "generado": "2026-08-13 13:46",
  "corte": "Homicidios dolosos enero–agosto de 2026",
  "hd": {
   "periodo": "enero–agosto de 2026",
@@ -118,7 +118,6 @@
  "cobertura": {
   "bases_inventariadas": 198,
   "bases_en_uso_georreferenciadas": 167,
-  "personal_total": 10877,
   "dist_hd_base_promedio_km": 3.26,
   "dist_hd_base_mediana_km": 2.39,
   "dist_hd_base_maxima_km": 29.54,
@@ -235,48 +234,42 @@
    "indice_presion": 10163.5,
    "hd_eventos": 5,
    "llamadas_violentas": 807,
-   "sectores_desatendidos": 21,
-   "personal_total": 742
+   "sectores_desatendidos": 21
   },
   {
    "municipio": "ECATEPEC",
    "indice_presion": 4828.5,
    "hd_eventos": 66,
    "llamadas_violentas": 645,
-   "sectores_desatendidos": 6,
-   "personal_total": 1056
+   "sectores_desatendidos": 6
   },
   {
    "municipio": "NAUCALPAN",
    "indice_presion": 3822.2,
    "hd_eventos": 36,
    "llamadas_violentas": 454,
-   "sectores_desatendidos": 7,
-   "personal_total": 309
+   "sectores_desatendidos": 7
   },
   {
    "municipio": "ZUMPANGO",
    "indice_presion": 2344.5,
    "hd_eventos": 17,
    "llamadas_violentas": 120,
-   "sectores_desatendidos": 9,
-   "personal_total": 51
+   "sectores_desatendidos": 9
   },
   {
    "municipio": "TLALNEPANTLA",
    "indice_presion": 2165.3,
    "hd_eventos": 25,
    "llamadas_violentas": 283,
-   "sectores_desatendidos": 6,
-   "personal_total": 426
+   "sectores_desatendidos": 6
   },
   {
    "municipio": "TECAMAC",
    "indice_presion": 2110.5,
    "hd_eventos": 18,
    "llamadas_violentas": 202,
-   "sectores_desatendidos": 9,
-   "personal_total": 242
+   "sectores_desatendidos": 9
   }
  ],
  "anonimizado": true

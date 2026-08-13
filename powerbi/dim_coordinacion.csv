@@ -1,9 +1,9 @@
-﻿coordinacion,total_municipios,bases_en_uso,personal_total,carga_violencia,carga_por_100_elementos,sectores_desatendidos,sectores_saturados,ranking
-METROPOLITANA,12,33,1590,3482,219.0,43,30,1
-ECATEPEC,15,26,1841,2982,162.0,38,21,2
-ORIENTE,17,24,2047,2043,99.8,36,13,3
-VALLE TOLUCA,16,26,1498,1831,122.2,63,12,4
-CHALCO,14,25,1699,1128,66.4,13,14,5
-ATLACOMULCO,14,18,780,439,56.3,17,1,6
-IXTAPAN,15,20,876,389,44.4,11,4,7
-VALLE DE BRAVO,12,13,443,157,35.4,6,0,8
+﻿coordinacion,total_municipios,bases_en_uso,despliegue_banda,carga_violencia,presion_banda,sectores_desatendidos,sectores_saturados,ranking
+METROPOLITANA,12,33,Medio,3482,Alta,43,30,1
+ECATEPEC,15,26,Amplio,2982,Alta,38,21,2
+ORIENTE,17,24,Amplio,2043,Media,36,13,3
+VALLE TOLUCA,16,26,Medio,1831,Media,63,12,4
+CHALCO,14,25,Medio,1128,Media,13,14,5
+ATLACOMULCO,14,18,Reducido,439,Baja,17,1,6
+IXTAPAN,15,20,Reducido,389,Baja,11,4,7
+VALLE DE BRAVO,12,13,Reducido,157,Baja,6,0,8
