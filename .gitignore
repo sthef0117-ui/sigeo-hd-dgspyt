@@ -19,3 +19,7 @@ entregables/*.docx
 entregables/*.pdf
 poligonos/*.jpeg
 poligonos/*.mp4
+
+# La bandeja recibe material revuelto con datos personales: no se versiona.
+insumos/bandeja/
+analisis/bandeja.json

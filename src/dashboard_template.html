@@ -183,8 +183,16 @@ label.cmp{display:block;font-size:.685rem;font-weight:700;letter-spacing:.055em;
 .ficha-barra{display:flex;justify-content:space-between;align-items:center;gap:14px;
   flex-wrap:wrap;background:var(--sup);border:1px solid var(--borde);border-radius:10px;
   padding:12px 16px;box-shadow:var(--sombra)}
-.ficha-barra select{padding:8px 11px;border-radius:8px;border:1px solid var(--borde2);
-  background:var(--sup2);color:var(--tx);font-family:var(--f);font-size:.85rem;min-width:340px;max-width:70vw}
+.ficha-barra input{width:100%;padding:9px 12px;border-radius:8px;border:1px solid var(--borde2);
+  background:var(--sup2);color:var(--tx);font-family:var(--f);font-size:.9rem;margin-top:4px}
+#ficha-resultados{position:relative}
+#ficha-resultados .caja{position:absolute;z-index:50;left:0;right:0;background:var(--sup);
+  border:1px solid var(--borde2);border-radius:8px;box-shadow:var(--sombra2);max-height:320px;
+  overflow-y:auto;margin-top:4px}
+#ficha-resultados .r{padding:9px 12px;cursor:pointer;border-bottom:1px solid var(--borde);font-size:.85rem}
+#ficha-resultados .r:hover{background:var(--sup3)}
+#ficha-resultados .r b{color:var(--guinda)}
+#ficha-resultados .r small{color:var(--tx3);display:block;font-size:.75rem}
 .ficha-nav{display:flex;gap:8px;align-items:center}
 .dossier{background:var(--sup);border:1px solid var(--borde);border-radius:12px;
   box-shadow:var(--sombra);max-width:1000px;margin:0 auto;overflow:hidden}
@@ -495,9 +503,10 @@ html[data-tema="oscuro"] .hoja h2{color:#7a1327}
   <!-- ══════════ 04 FICHA DE INTELIGENCIA ══════════ -->
   <section class="vista" id="v-ficha">
     <div class="ficha-barra no-print">
-      <div>
-        <span class="lb">Homicidio</span>
-        <select id="ficha-sel"></select>
+      <div style="flex:1;min-width:260px">
+        <span class="lb">Buscar homicidio</span>
+        <input type="text" id="ficha-buscar" placeholder="municipio, colonia, fecha, móvil o HD-#..." autocomplete="off">
+        <div id="ficha-resultados"></div>
       </div>
       <div class="ficha-nav">
         <button class="btn-sec" id="ficha-prev">‹ Anterior</button>
@@ -1533,11 +1542,38 @@ const HDPORID={}; DATOS.hd.forEach(h=>HDPORID[h.id]=h);
 const cap=s=>s?s.charAt(0).toUpperCase()+s.slice(1):s;
 const DIASEM=["domingo","lunes","martes","miércoles","jueves","viernes","sábado"];
 
+const NORM=s=>(s||"").normalize("NFD").replace(/[̀-ͯ]/g,"").toLowerCase();
 function iniciarFicha(){
-  const sel=document.getElementById("ficha-sel");
-  sel.innerHTML=DATOS.hd.slice().sort((a,b)=>(a.fecha<b.fecha?1:-1)).map(h=>
-    `<option value="${h.id}">HD-${h.id} · ${E(h.fecha)} · ${E(h.municipio)}${h.colonia?" · "+E(h.colonia):""}</option>`).join("");
-  sel.addEventListener("change",()=>abrirFicha(+sel.value));
+  const inp=document.getElementById("ficha-buscar");
+  const caja=document.getElementById("ficha-resultados");
+  // Índice de búsqueda: todo lo consultable de cada homicidio en una cadena.
+  DATOS.hd.forEach(h=>h._busq=NORM([`hd-${h.id}`,h.municipio,h.colonia,h.calle,
+    h.fecha,h.movil,h.dia_semana,(FICHAS[h.id]||{}).coordinacion].join(" ")));
+
+  function buscar(){
+    const q=NORM(inp.value).trim();
+    if(!q){ caja.innerHTML=""; return; }
+    let res;
+    const mId=q.match(/^hd-?(\d+)$|^(\d+)$/);  // "HD-3" o "3" -> ese id exacto
+    if(mId){
+      const id=+(mId[1]||mId[2]);
+      res=DATOS.hd.filter(h=>h.id===id);
+    } else {
+      const terms=q.split(/\s+/);
+      res=DATOS.hd.filter(h=>terms.every(t=>h._busq.includes(t)))
+        .sort((a,b)=>a.fecha<b.fecha?1:-1).slice(0,30);
+    }
+    caja.innerHTML=res.length?`<div class="caja">`+res.map(h=>
+      `<div class="r" data-id="${h.id}"><b>HD-${h.id}</b> · ${E(h.municipio)}${h.colonia?" · "+E(h.colonia):""}
+        <small>${E(h.fecha)} · ${E(h.movil)}</small></div>`).join("")+`</div>`
+      :`<div class="caja"><div class="r" style="cursor:default;color:var(--tx3)">Sin resultados para «${E(inp.value)}»</div></div>`;
+    caja.querySelectorAll(".r[data-id]").forEach(el=>el.addEventListener("click",()=>{
+      abrirFicha(+el.dataset.id); inp.value=""; caja.innerHTML="";
+    }));
+  }
+  inp.addEventListener("input",buscar);
+  inp.addEventListener("focus",buscar);
+  document.addEventListener("click",e=>{ if(!e.target.closest("#ficha-resultados,#ficha-buscar")) caja.innerHTML=""; });
   document.getElementById("ficha-prev").addEventListener("click",()=>saltarFicha(-1));
   document.getElementById("ficha-next").addEventListener("click",()=>saltarFicha(1));
   abrirFicha(DATOS.hd[DATOS.hd.length-1].id);  // el más reciente
