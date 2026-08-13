@@ -162,8 +162,60 @@ label.cmp{display:block;font-size:.685rem;font-weight:700;letter-spacing:.055em;
   box-shadow:var(--sombra2)!important;background:var(--sup)!important;color:var(--tx)!important;
   font-family:var(--f)!important;font-size:.78rem!important;padding:8px 11px!important}
 .leaflet-control-layers label{display:flex;align-items:center;gap:7px;margin:3px 0;font-weight:550;cursor:pointer}
-.leaflet-popup-content-wrapper{border-radius:8px!important}
+/* Popups legibles y con fondo solido, no se pierden sobre el mapa */
+.leaflet-popup-content-wrapper{border-radius:10px!important;background:var(--sup)!important;
+  color:var(--tx)!important;box-shadow:0 6px 24px rgba(16,24,40,.28)!important;
+  border:1px solid var(--borde)!important;padding:2px 4px!important}
+.leaflet-popup-tip{background:var(--sup)!important;border:1px solid var(--borde)!important}
+.leaflet-popup-content{margin:12px 14px!important;font-family:var(--f)!important;
+  color:var(--tx)!important;max-height:340px;overflow-y:auto}
+.leaflet-popup-content b{color:var(--tx)!important}
+.leaflet-container a.leaflet-popup-close-button{color:var(--tx3)!important;font-size:20px!important;padding:6px 8px 0 0!important}
+.pop-tit{font-weight:800;font-size:.92rem;letter-spacing:-.01em}
+.pop-sub{color:var(--tx3);font-size:.76rem;margin-top:1px}
+.pop-row{margin-top:6px;font-size:.82rem;line-height:1.5}
+.pop-btn{display:inline-block;margin-top:9px;padding:7px 12px;border-radius:8px;
+  background:var(--guinda);color:#fff!important;font-weight:700;font-size:.8rem;
+  text-decoration:none;cursor:pointer;border:none;width:100%;text-align:center}
 .leaflet-control-attribution{font-size:.63rem!important}
+
+/* Dossier de inteligencia */
+.ficha-barra{display:flex;justify-content:space-between;align-items:center;gap:14px;
+  flex-wrap:wrap;background:var(--sup);border:1px solid var(--borde);border-radius:10px;
+  padding:12px 16px;box-shadow:var(--sombra)}
+.ficha-barra select{padding:8px 11px;border-radius:8px;border:1px solid var(--borde2);
+  background:var(--sup2);color:var(--tx);font-family:var(--f);font-size:.85rem;min-width:340px;max-width:70vw}
+.ficha-nav{display:flex;gap:8px;align-items:center}
+.dossier{background:var(--sup);border:1px solid var(--borde);border-radius:12px;
+  box-shadow:var(--sombra);max-width:1000px;margin:0 auto;overflow:hidden}
+.dossier .cinta{background:var(--tinta,#16202c);background:#16202c;color:#fff;padding:20px 30px}
+.dossier .cinta .folio{font-family:var(--m);font-size:.72rem;color:#9daabb;letter-spacing:.08em}
+.dossier .cinta h2{font-size:1.5rem;font-weight:800;letter-spacing:-.02em;margin-top:4px}
+.dossier .cinta .meta{color:#b9c0c9;font-size:.86rem;margin-top:5px}
+.dossier .cuerpo-d{padding:26px 30px;display:flex;flex-direction:column;gap:22px}
+.dsec{}
+.dsec > h3{font-size:.74rem;font-weight:800;letter-spacing:.07em;text-transform:uppercase;
+  color:var(--guinda);border-bottom:2px solid var(--borde);padding-bottom:6px;margin-bottom:12px}
+.dgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+@media(max-width:820px){.dgrid{grid-template-columns:repeat(2,1fr)}}
+.dcelda{background:var(--sup2);border:1px solid var(--borde);border-radius:9px;padding:11px 13px}
+.dcelda .k{font-size:.68rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--tx3)}
+.dcelda .v{font-size:1.05rem;font-weight:750;margin-top:3px;letter-spacing:-.01em}
+.dcelda .v small{font-size:.72rem;font-weight:500;color:var(--tx2)}
+.dparr{font-size:.92rem;line-height:1.65;color:var(--tx)}
+.dparr b{font-weight:700}
+.dnota{font-size:.8rem;color:var(--tx2);line-height:1.55;background:var(--gris-f);
+  border-left:3px solid var(--borde2);padding:10px 13px;border-radius:0 8px 8px 0}
+.dlista{font-size:.86rem;line-height:1.6}
+.dlista li{margin-bottom:4px}
+.hip{background:var(--azul-f);border:1px solid var(--azul);border-radius:9px;padding:13px 15px;
+  font-size:.88rem;line-height:1.6;color:var(--tx)}
+.hip .lb-hip{font-weight:800;color:var(--azul);font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;display:block;margin-bottom:6px}
+@media print{
+  .ficha-barra{display:none!important}
+  .dossier{box-shadow:none;border:none;max-width:none}
+  aside,header{display:none!important}
+}
 
 /* ---------- Informe imprimible ---------- */
 .hoja{background:#fff;color:#101828;padding:40px 44px;border-radius:10px;max-width:960px;margin:0 auto;
@@ -258,11 +310,12 @@ html[data-tema="oscuro"] .hoja h2{color:#7a1327}
     <button data-v="v-territorio"><span class="n">02</span> Territorio</button>
     <button data-v="v-coordinaciones"><span class="n">03</span> Coordinaciones</button>
     <div class="grupo">Investigar</div>
-    <button data-v="v-cruce"><span class="n">04</span> ¿Es o no es homicidio?</button>
-    <button data-v="v-casos"><span class="n">05</span> Casos a revisar</button>
+    <button data-v="v-ficha"><span class="n">04</span> Ficha de inteligencia</button>
+    <button data-v="v-cruce"><span class="n">05</span> ¿Es o no es homicidio?</button>
+    <button data-v="v-casos"><span class="n">06</span> Casos a revisar</button>
     <div class="grupo">Operar</div>
-    <button data-v="v-ubicaciones"><span class="n">06</span> Ubicaciones</button>
-    <button data-v="v-informe"><span class="n">07</span> Informe de mandos</button>
+    <button data-v="v-ubicaciones"><span class="n">07</span> Ubicaciones</button>
+    <button data-v="v-informe"><span class="n">08</span> Informe de mandos</button>
   </nav>
   <div class="pie-nav">
     Cifras calculadas desde los insumos oficiales.<br>
@@ -348,20 +401,19 @@ html[data-tema="oscuro"] .hoja h2{color:#7a1327}
       <div class="tarjeta mapa-caja">
         <h2>Mapa operativo
           <span class="filtros" id="capas">
-            <span class="lb">Colorear</span>
-            <button class="pastilla on" data-coloreo="coordinacion">Coordinación</button>
-            <button class="pastilla" data-coloreo="homicidios">Homicidios</button>
-            <button class="pastilla" data-coloreo="ninguno">Ninguno</button>
-            <span class="lb" style="margin-left:6px">Capas</span>
             <button class="pastilla on" data-capa="hd">Homicidios</button>
-            <button class="pastilla" data-capa="c5">Llamadas 911</button>
+            <button class="pastilla" data-capa="calor">Concentración</button>
+            <button class="pastilla" data-capa="sectores">Zonas ciegas</button>
             <button class="pastilla" data-capa="bases">Bases</button>
-            <button class="pastilla" data-capa="calor">Calor</button>
-            <button class="pastilla" data-capa="sectores">Sectores</button>
-            <span class="lb" style="margin-left:6px">Detalle</span>
-            <button class="pastilla" data-capa="calles">Calles</button>
-            <button class="pastilla" data-capa="satelite">Satélite</button>
-            <button class="pastilla" id="ver-estado" style="border-color:var(--guinda);color:var(--guinda)">Estado completo</button>
+            <span style="width:1px;height:20px;background:var(--borde);margin:0 3px"></span>
+            <button class="pastilla" data-capa="calles" title="Ver calles bajo los puntos">Calles</button>
+            <button class="pastilla" id="ver-estado" style="border-color:var(--guinda);color:var(--guinda)">Ver estado</button>
+            <span class="lb" style="margin-left:6px" id="lb-color">Relleno</span>
+            <select id="coloreo-sel" style="padding:5px 8px;border-radius:14px;border:1px solid var(--borde2);background:var(--sup2);color:var(--tx);font-size:.75rem;font-family:var(--f)">
+              <option value="coordinacion">por coordinación</option>
+              <option value="homicidios">por nº de homicidios</option>
+              <option value="ninguno">sin relleno</option>
+            </select>
           </span>
         </h2>
         <div id="mapa"></div>
@@ -440,7 +492,23 @@ html[data-tema="oscuro"] .hoja h2{color:#7a1327}
     </div>
   </section>
 
-  <!-- ══════════ 04 CRUCE DE FUENTES ══════════ -->
+  <!-- ══════════ 04 FICHA DE INTELIGENCIA ══════════ -->
+  <section class="vista" id="v-ficha">
+    <div class="ficha-barra no-print">
+      <div>
+        <span class="lb">Homicidio</span>
+        <select id="ficha-sel"></select>
+      </div>
+      <div class="ficha-nav">
+        <button class="btn-sec" id="ficha-prev">‹ Anterior</button>
+        <button class="btn-sec" id="ficha-next">Siguiente ›</button>
+        <button class="btn btn-p" onclick="window.print()">Imprimir / PDF</button>
+      </div>
+    </div>
+    <div id="ficha-doc" class="dossier"></div>
+  </section>
+
+  <!-- ══════════ 05 CRUCE DE FUENTES ══════════ -->
   <section class="vista" id="v-cruce">
     <div class="aviso a-azul">
       <b>Qué hace este cruce.</b> El proyecto abre por los homicidios dolosos y son pocos:
@@ -1036,12 +1104,10 @@ function iniciarMapa(){
   }
   window._repintarMunicipios=repintarMunicipios;
 
-  document.querySelectorAll("[data-coloreo]").forEach(b=>b.addEventListener("click",()=>{
-    document.querySelectorAll("[data-coloreo]").forEach(x=>x.classList.remove("on"));
-    b.classList.add("on"); estado.coloreo=b.dataset.coloreo;
-    repintarMunicipios();
-    pintarLeyendaMapa(COLOR_COORD);
-  }));
+  const selColor=document.getElementById("coloreo-sel");
+  if(selColor) selColor.addEventListener("change",()=>{
+    estado.coloreo=selColor.value; repintarMunicipios(); pintarLeyendaMapa(COLOR_COORD);
+  });
   pintarLeyendaMapa(COLOR_COORD);
 
   document.getElementById("ver-estado").addEventListener("click",()=>{
@@ -1051,14 +1117,9 @@ function iniciarMapa(){
   document.querySelectorAll("[data-capa]").forEach(b=>b.addEventListener("click",()=>{
     b.classList.toggle("on");
     const c=capas[b.dataset.capa];
+    if(!c) return;
     if(b.classList.contains("on")) c.addTo(mapa); else mapa.removeLayer(c);
-    if(["calles","satelite"].includes(b.dataset.capa)){
-      // Solo una capa de fondo a la vez.
-      const otra=b.dataset.capa==="calles"?"satelite":"calles";
-      const chipOtra=document.querySelector(`[data-capa="${otra}"]`);
-      if(b.classList.contains("on") && chipOtra.classList.contains("on")) chipOtra.click();
-      if(window._repintarMunicipios) window._repintarMunicipios();
-    }
+    if(b.dataset.capa==="calles" && window._repintarMunicipios) window._repintarMunicipios();
   }));
 }
 
@@ -1082,26 +1143,23 @@ function acercarAlHecho(lat,lng){
 }
 
 function popupHD(d){
-  return `<div style="font-family:Inter,sans-serif;font-size:.8rem;line-height:1.5">
-    <div style="font-weight:700;color:#c1121f">Homicidio doloso · registro ${d.id}</div>
-    <div style="color:#667085">${E(d.fecha)} ${E(d.dia_semana)} · ${E(d.hora)}</div>
-    <div style="margin-top:5px"><b>${E(d.municipio)}</b>${d.colonia?" · "+E(d.colonia):""}<br>
-    ${E(d.calle)||""}<br>Móvil: ${E(d.movil)}<br>Víctimas: ${d.total_hd}</div>
-    ${d.desarrollo_hechos?`<div style="margin-top:6px;padding-top:5px;border-top:1px solid #e6e9ed">${E(d.desarrollo_hechos)}</div>`:""}
-    ${d.acciones_ssem?`<details style="margin-top:5px"><summary style="cursor:pointer;color:#1d4ed8">Acciones SSEM</summary>
-      <div style="margin-top:4px;color:#475467">${E(d.acciones_ssem)}</div></details>`:""}
-    <div style="margin-top:7px;padding-top:5px;border-top:1px solid #e6e9ed;font-family:monospace;font-size:.72rem">${E(d.windows_maps_query)}</div>
-    <a href="${urlWeb(d.windows_maps_query)}" target="_blank" rel="noopener"
-       style="font-size:.75rem">Ver mapa</a> ·
-    <a href="${uriMaps(d.windows_maps_query,d.lat,d.lng)}" style="font-size:.75rem">Windows Maps</a></div>`;
+  const f=FICHAS[String(d.id)]||{};
+  const extra=f.vecinos_total?` · ${f.vecinos_total} HD a 2 km`:"";
+  return `<div style="min-width:230px">
+    <div class="pop-tit" style="color:var(--guinda)">Homicidio doloso · HD-${d.id}</div>
+    <div class="pop-sub">${E(d.fecha)} · ${E(d.hora)||"s/hora"}${extra}</div>
+    <div class="pop-row"><b>${E(d.municipio)}</b>${d.colonia?" · "+E(d.colonia):""}<br>
+      Móvil: ${E(d.movil)}<br>Víctimas: ${d.total_hd}${f.arma?" · "+E(f.arma):""}</div>
+    <button class="pop-btn" onclick="verFichaDe(${d.id})">Abrir ficha de inteligencia →</button>
+  </div>`;
 }
 function popup911(d){
-  return `<div style="font-family:Inter,sans-serif;font-size:.8rem;line-height:1.5">
-    <div style="font-weight:700;color:#b45309">${E(d.incidente)}</div>
-    <div style="color:#667085">Folio ${E(d.folio)} · ${E(d.fecha)} ${E(d.hora)}</div>
-    <div style="margin-top:4px"><b>${E(d.municipio)}</b></div>
-    ${d.notas?`<div style="margin-top:6px;padding-top:5px;border-top:1px solid #e6e9ed;color:#475467">${E(d.notas)}</div>`:""}
-    <div style="margin-top:7px;font-family:monospace;font-size:.72rem">${E(d.windows_maps_query)}</div></div>`;
+  return `<div style="min-width:210px">
+    <div class="pop-tit" style="color:var(--ambar)">${E(d.incidente)}</div>
+    <div class="pop-sub">Folio ${E(d.folio)} · ${E(d.fecha)} ${E(d.hora)}</div>
+    <div class="pop-row"><b>${E(d.municipio)}</b></div>
+    ${d.notas?`<div class="pop-row" style="color:var(--tx2);font-size:.78rem">${E(d.notas)}</div>`:""}
+  </div>`;
 }
 
 /* ═════════════════════════════ 03 Coordinaciones ═════════════════════════ */
@@ -1468,10 +1526,154 @@ function informe(){
    </div>`;
 }
 
+/* ═════════════════ 04 Ficha de inteligencia (producto estratégico) ═══════ */
+let fichaActual=null;
+const FICHAS=DATOS.fichas||{};
+const HDPORID={}; DATOS.hd.forEach(h=>HDPORID[h.id]=h);
+const cap=s=>s?s.charAt(0).toUpperCase()+s.slice(1):s;
+const DIASEM=["domingo","lunes","martes","miércoles","jueves","viernes","sábado"];
+
+function iniciarFicha(){
+  const sel=document.getElementById("ficha-sel");
+  sel.innerHTML=DATOS.hd.slice().sort((a,b)=>(a.fecha<b.fecha?1:-1)).map(h=>
+    `<option value="${h.id}">HD-${h.id} · ${E(h.fecha)} · ${E(h.municipio)}${h.colonia?" · "+E(h.colonia):""}</option>`).join("");
+  sel.addEventListener("change",()=>abrirFicha(+sel.value));
+  document.getElementById("ficha-prev").addEventListener("click",()=>saltarFicha(-1));
+  document.getElementById("ficha-next").addEventListener("click",()=>saltarFicha(1));
+  abrirFicha(DATOS.hd[DATOS.hd.length-1].id);  // el más reciente
+}
+function saltarFicha(paso){
+  const ids=DATOS.hd.map(h=>h.id); let i=ids.indexOf(fichaActual)+paso;
+  if(i<0)i=ids.length-1; if(i>=ids.length)i=0; abrirFicha(ids[i]);
+}
+function abrirFicha(id){
+  fichaActual=id;
+  const s=document.getElementById("ficha-sel"); if(s) s.value=id;
+  document.getElementById("ficha-doc").innerHTML=renderDossier(id);
+}
+function verFichaDe(id){ irA("v-ficha"); setTimeout(()=>abrirFicha(id),60); }
+
+function renderDossier(id){
+  const h=HDPORID[id], f=FICHAS[String(id)]||{};
+  if(!h) return "<div class='cuerpo-d'>Homicidio no encontrado.</div>";
+  const fecha=new Date(h.fecha+"T00:00:00");
+  const dia=isNaN(fecha)?E(h.dia_semana):DIASEM[fecha.getDay()];
+  const geo = h.lat ? `${h.lat.toFixed(5)}, ${h.lng.toFixed(5)}` : "sin coordenada validada";
+
+  // ---- Narrativa del hecho ----
+  const relato = h.desarrollo_hechos ? E(h.desarrollo_hechos)
+    : "El registro no incluye desarrollo de los hechos.";
+
+  // ---- Encuadre territorial ----
+  const secTxt = f.sector
+    ? `El punto cae en el sector <b>${E(f.sector.sector_id)}</b>, clasificado como
+       <b>${E(f.sector.clasificacion)}</b> (índice de ceguera ${f.sector.indice_ceguera}).
+       ${E(f.sector.diagnostico||"")}`
+    : "El punto no coincide con ningún sector de concentración de violencia detectado.";
+  const baseTxt = f.base
+    ? `La base DGSPYT más cercana es <b>${E(f.base.unidad)}</b> (${E(f.base.municipio)}),
+       a <b>${f.base.dist_km} km</b>, con ${N(f.base.personal)} elementos adscritos.`
+    : "No se pudo calcular la base más cercana por falta de coordenada.";
+
+  // ---- Patrón cercano ----
+  let patronTxt, patronLista="";
+  if(!h.lat){
+    patronTxt="Sin coordenada validada no es posible analizar el entorno inmediato del hecho.";
+  } else if(f.vecinos_total===0){
+    patronTxt="En un radio de 2 km no se registró otro homicidio doloso en todo el periodo: hecho aislado en el mapa.";
+  } else {
+    patronTxt=`En un radio de 2 km se registraron <b>${f.vecinos_total} homicidio(s)</b> más
+      durante el periodo, lo que ubica este caso en una zona de concentración.`;
+    patronLista="<ul class='dlista'>"+f.vecinos.map(v=>
+      `<li>HD-${v.id} · ${E(v.fecha)} · ${E(v.colonia)||"s/colonia"} · a ${v.dist_km} km · ${E(v.movil)}</li>`).join("")+"</ul>";
+  }
+
+  // ---- Correlación 911 ----
+  let c5Txt, c5Lista="";
+  if(!f.en_ventana_c5){
+    c5Txt="La fecha del hecho queda fuera de la ventana de llamadas del C5 disponible, por lo que no puede correlacionarse con el 911.";
+  } else if(f.llamadas_cerca_total===0){
+    c5Txt="Dentro de la ventana del C5, no se halló ninguna llamada de emergencia con violencia a menos de 1.5 km y ±48 h del hecho.";
+  } else {
+    c5Txt=`Se identificaron <b>${f.llamadas_cerca_total} llamada(s)</b> de emergencia con violencia
+      a menos de 1.5 km y ±48 h del homicidio. Posible actividad previa o relacionada:`;
+    c5Lista="<ul class='dlista'>"+f.llamadas_cerca.map(c=>
+      `<li><span class="m">${E(c.folio)}</span> · ${E(c.incidente)} · ${E(c.fecha)} ${E(c.hora.slice(0,5))} · a ${c.dist_km} km</li>`).join("")+"</ul>";
+  }
+
+  // ---- Comparativos ----
+  const movTop=(f.movil_muni_top||[]).map(m=>`${E(m[0])} (${m[1]})`).join(" · ")||"—";
+  const armaTop=(f.arma_muni_top||[]).map(m=>`${E(m[0])} (${m[1]})`).join(" · ")||"—";
+
+  // ---- Hipótesis / líneas (claramente marcadas como generadas) ----
+  const hip=[];
+  if(f.arma==="Arma de fuego") hip.push("El uso de arma de fuego es consistente con agresión planificada; conviene contrastar casquillos y balística con hechos cercanos.");
+  if(f.vecinos_total>=2) hip.push(`La concentración de ${f.vecinos_total} homicidios en 2 km sugiere una disputa territorial o una serie; revisar si comparten móvil, arma u horario.`);
+  if(f.llamadas_cerca_total>0) hip.push("Existen llamadas de emergencia próximas en tiempo y espacio: solicitar audios y videovigilancia C5 de esas ventanas.");
+  if(f.sector && f.sector.clasificacion==="DESATENDIDO") hip.push("El hecho ocurre en un sector desatendido: la brecha de patrullaje es una línea de análisis operativo, no solo de investigación.");
+  if(f.franja==="nocturna") hip.push("Ocurrió en franja nocturna (22:00–06:00), la de mayor riesgo; evaluar cobertura en ese horario en la zona.");
+  if(!hip.length) hip.push("Con la información disponible no se desprenden líneas automáticas; se sugiere revisión manual del expediente.");
+
+  return `
+   <div class="cinta">
+     <div class="folio">SIGEO-HD · FICHA DE INTELIGENCIA · REGISTRO HD-${h.id}</div>
+     <h2>Homicidio doloso — ${E(h.municipio)}</h2>
+     <div class="meta">${cap(dia)} ${E(h.fecha)} · ${E(h.hora)||"hora no registrada"} ·
+       ${E(h.colonia)||"colonia no especificada"} · Coordinación ${E(f.coordinacion)||"no asignada"}</div>
+   </div>
+   <div class="cuerpo-d">
+
+     <div class="dgrid">
+       <div class="dcelda"><div class="k">Víctimas</div><div class="v">${h.total_hd} <small>${E(h.sexo)||""}</small></div></div>
+       <div class="dcelda"><div class="k">Arma / mecánica</div><div class="v" style="font-size:.92rem">${E(f.arma)}</div></div>
+       <div class="dcelda"><div class="k">Franja horaria</div><div class="v" style="font-size:.92rem">${cap(E(f.franja))}</div></div>
+       <div class="dcelda"><div class="k">Móvil registrado</div><div class="v" style="font-size:.86rem">${E(h.movil)}</div></div>
+     </div>
+
+     <div class="dsec"><h3>1 · El hecho</h3>
+       <p class="dparr">${relato}</p>
+       ${h.acciones_ssem?`<div class="dnota" style="margin-top:10px"><b>Acciones SSEM registradas:</b> ${E(h.acciones_ssem)}</div>`:""}
+       <div class="dnota" style="margin-top:10px"><b>Ubicación:</b> ${E(h.calle)||"vía no especificada"}, ${E(h.colonia)||"s/colonia"}, ${E(h.municipio)}. <span class="m">${geo}</span></div>
+     </div>
+
+     <div class="dsec"><h3>2 · Encuadre territorial</h3>
+       <p class="dparr">${E(h.municipio)} acumula <b>${f.muni_hd_total} homicidio(s)</b> en el periodo,
+         el <b>${f.muni_pct_estado}%</b> del estado, y ocupa el <b>lugar ${f.muni_ranking||"—"} de ${f.muni_de_total}</b>
+         municipios con homicidio.
+         ${f.colonia_hd>1?` En la colonia <b>${E(h.colonia)}</b> se concentran ${f.colonia_hd} de esos casos.`:""}</p>
+       <p class="dparr" style="margin-top:8px">${secTxt}</p>
+       <p class="dparr" style="margin-top:8px">${baseTxt}</p>
+     </div>
+
+     <div class="dsec"><h3>3 · Patrón en el entorno (2 km)</h3>
+       <p class="dparr">${patronTxt}</p>${patronLista}</div>
+
+     <div class="dsec"><h3>4 · Correlación con emergencias 911</h3>
+       <p class="dparr">${c5Txt}</p>${c5Lista}</div>
+
+     <div class="dsec"><h3>5 · Contexto del municipio</h3>
+       <div class="dgrid" style="grid-template-columns:1fr 1fr">
+         <div class="dcelda"><div class="k">Móviles predominantes en ${E(h.municipio)}</div><div class="v" style="font-size:.84rem;font-weight:600">${movTop}</div></div>
+         <div class="dcelda"><div class="k">Mecánica predominante</div><div class="v" style="font-size:.84rem;font-weight:600">${armaTop}</div></div>
+       </div>
+     </div>
+
+     <div class="dsec"><h3>6 · Líneas de análisis sugeridas</h3>
+       <div class="hip"><span class="lb-hip">Generadas por el sistema · no son conclusiones ni dictamen</span>
+         <ul class="dlista" style="margin-left:16px">${hip.map(x=>`<li>${x}</li>`).join("")}</ul></div>
+     </div>
+
+     <div class="dnota">Ficha generada por SIGEO-HD a partir de los insumos oficiales. Las líneas de análisis
+       son apoyo a la investigación, no sustituyen la carpeta ni el dictamen pericial. Datos personales
+       suprimidos en la versión publicable.</div>
+   </div>`;
+}
+
 /* ═══════════════════════════════ Navegación ══════════════════════════════ */
 const TITULOS={"v-panorama":["Panorama","Lectura general del corte y prioridades de la reunión"],
  "v-territorio":["Territorio","Dónde ocurre la violencia y qué despliegue hay cerca"],
  "v-coordinaciones":["Coordinaciones","Perfil territorial para la mesa con coordinadores"],
+ "v-ficha":["Ficha de inteligencia","Dossier analítico por homicidio · producto estratégico"],
  "v-cruce":["¿Es o no es homicidio?","Cruce de la tabla de homicidios contra los hechos fatales del C5"],
  "v-casos":["Casos a revisar","Decesos dudosos, suicidios y personas no localizadas"],
  "v-ubicaciones":["Ubicaciones","Extractor NLP en formato Windows Maps"],
@@ -1535,7 +1737,7 @@ window.addEventListener("load",()=>{
     `(${R.serie.horas} horas) · ${N(R.c5.llamadas_totales)} llamadas`;
   document.getElementById("contexto").textContent=TITULOS["v-panorama"][1];
   panorama(); graficas(); iniciarMapa(); territorio(); cruce();
-  coordinaciones(); casos(); ubicaciones(); informe();
+  coordinaciones(); casos(); ubicaciones(); informe(); iniciarFicha();
 });
 </script>
 </body>

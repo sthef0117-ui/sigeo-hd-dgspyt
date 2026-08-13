@@ -67,8 +67,20 @@ REGLAS = [
     (re.compile(r"\b[A-Z]{4}\d{6}[HM][A-Z]{5}[A-Z0-9]{2}\b"), MARCA),
     (re.compile(r"\b[A-Z]{3,4}\d{6}[A-Z0-9]{3}\b"), MARCA),
 
-    # Placas vehiculares del Estado de Mexico.
-    (re.compile(r"\bPLACAS?\s*:?\s*[A-Z0-9\-]{5,10}\b"), "PLACAS " + MARCA),
+    # Placas vehiculares (may/min): "placas MPN506A", "PLACAS: ABC-12-34".
+    (re.compile(r"\bPLACAS?\s*:?\s*[A-Z0-9]{2,4}[- ]?[A-Z0-9]{1,4}[- ]?[A-Z0-9]{0,4}\b",
+                re.IGNORECASE), "placas " + MARCA),
+
+    # Nombre propio tras una expresion posesiva o de identificacion, en
+    # cualquier caja: "propiedad de Jose Salto Orozco", "a nombre de ...",
+    # "conducido por ...", "identificado como ...". El desarrollo de hechos de
+    # los HD viene en texto normal, no en mayusculas, y estas fugas se colaban.
+    (re.compile(rf"\b(propiedad de|a nombre de|conducid[oa] por|tripulad[oa] por|"
+                rf"identificad[oa] como|responde al nombre de|de nombre|"
+                rf"al mando de|a cargo de)\s+"
+                rf"[{_MAY}][{_MAY}{_MIN}]+(?:\s+(?:de|del|la|los|y)?\s*"
+                rf"[{_MAY}][{_MAY}{_MIN}]+){{1,4}}",
+                re.IGNORECASE), r"\1 " + MARCA),
 ]
 
 # Nombre de victima al inicio del desarrollo de hechos, con edad entre

@@ -1458,6 +1458,139 @@ def perfil_coordinaciones(territorio):
 
 
 # --------------------------------------------------------------------------
+# 6b. Ficha de inteligencia por homicidio
+# --------------------------------------------------------------------------
+
+def _familia_arma(texto):
+    t = _norm(texto)
+    if re.search(r"ARMA DE FUEGO|PROYECTIL|IMPACTO DE BALA|DISPARO|CALIBRE", t):
+        return "Arma de fuego"
+    if re.search(r"ARMA BLANCA|CUCHILL|NAVAJA|PUNZOCORTANTE|APUÑAL", t):
+        return "Arma blanca"
+    if re.search(r"GOLPE|CONTUNDENTE|ASFIXIA|ESTRANGUL", t):
+        return "Golpes / asfixia"
+    return "No determinada"
+
+
+def fichas_inteligencia(hd, llamadas, bases, sectores, territorio, serie):
+    """
+    Para cada homicidio, precalcula el contexto que un analista pondria en una
+    ficha de inteligencia: patron cercano, encuadre territorial, correlacion con
+    el 911 y comparativos. La narrativa se redacta en el tablero a partir de
+    estos hechos; aqui solo se calculan.
+    """
+    total = len(hd)
+    hd_geo = [h for h in hd if h["lat"]]
+    porder = {t["municipio"]: t for t in territorio}
+    ranking_muni = sorted(territorio, key=lambda t: -t["hd_eventos"])
+    pos_muni = {t["municipio"]: i + 1 for i, t in enumerate(ranking_muni)}
+    n_muni_con_hd = sum(1 for t in territorio if t["hd_eventos"] > 0)
+
+    # Movil predominante por municipio.
+    movil_muni = defaultdict(Counter)
+    arma_muni = defaultdict(Counter)
+    for h in hd:
+        movil_muni[h["municipio"]][h["movil"]] += 1
+        arma_muni[h["municipio"]][_familia_arma(h["observaciones"] + " " +
+                                                h["desarrollo_hechos"])] += 1
+
+    bases_geo = [b for b in bases if b["lat"] and b["en_uso"]]
+    viol = [l for l in llamadas if l["lat"] and l["peso_violencia"] > 0]
+    c5_desde = serie.get("desde", "")[:10] if serie else ""
+    c5_hasta = serie.get("hasta", "")[:10] if serie else ""
+
+    fichas = {}
+    for h in hd:
+        muni = h["municipio"]
+        t = porder.get(muni, {})
+        arma = _familia_arma(h["observaciones"] + " " + h["desarrollo_hechos"])
+        mm = minutos(h["hora"])
+        franja = ("nocturna" if mm is not None and (mm >= 22 * 60 or mm < 6 * 60)
+                  else "matutina" if mm is not None and mm < 12 * 60
+                  else "vespertina" if mm is not None else "sin hora")
+
+        ficha = {
+            "arma": arma,
+            "franja": franja,
+            "coordinacion": t.get("coordinacion", ""),
+            "muni_hd_total": t.get("hd_eventos", 0),
+            "muni_ranking": pos_muni.get(muni),
+            "muni_de_total": n_muni_con_hd,
+            "muni_pct_estado": round(t.get("hd_eventos", 0) * 100 / max(total, 1), 1),
+            "colonia_hd": sum(1 for x in hd if x["municipio"] == muni
+                              and x["colonia"] and _norm(x["colonia"]) == _norm(h["colonia"])),
+            "movil_muni_top": movil_muni[muni].most_common(3),
+            "arma_muni_top": arma_muni[muni].most_common(3),
+            "vecinos": [], "vecinos_total": 0,
+            "base": None, "sector": None,
+            "llamadas_cerca": [], "llamadas_cerca_total": 0,
+            "en_ventana_c5": bool(h["fecha"] and c5_desde <= h["fecha"] <= c5_hasta),
+        }
+
+        if h["lat"]:
+            # Homicidios vecinos en 2 km, en todo el periodo.
+            vec = []
+            for x in hd_geo:
+                if x["id"] == h["id"]:
+                    continue
+                d = haversine_km(h["lat"], h["lng"], x["lat"], x["lng"])
+                if d <= 2.0:
+                    vec.append({"id": x["id"], "fecha": x["fecha"],
+                                "colonia": x["colonia"], "movil": x["movil"],
+                                "dist_km": round(d, 2)})
+            vec.sort(key=lambda v: v["dist_km"])
+            ficha["vecinos"] = vec[:6]
+            ficha["vecinos_total"] = len(vec)
+
+            # Base DGSPYT mas cercana.
+            mejor, dm = None, 1e9
+            for b in bases_geo:
+                d = haversine_km(h["lat"], h["lng"], b["lat"], b["lng"])
+                if d < dm:
+                    dm, mejor = d, b
+            if mejor:
+                ficha["base"] = {"unidad": mejor["unidad"],
+                                 "municipio": mejor["municipio"],
+                                 "dist_km": round(dm, 2),
+                                 "personal": mejor["personal_total"]}
+
+            # Sector de zona ciega que lo contiene.
+            for s in sectores:
+                if abs(s["lat"] - h["lat"]) <= CELDA_GRADOS and \
+                        abs(s["lng"] - h["lng"]) <= CELDA_GRADOS:
+                    ficha["sector"] = {"sector_id": s["sector_id"],
+                                       "clasificacion": s["clasificacion"],
+                                       "indice_ceguera": s["indice_ceguera"],
+                                       "diagnostico": s["diagnostico"]}
+                    break
+
+            # Correlacion 911: llamadas violentas a 1.5 km y +-48 h.
+            if ficha["en_ventana_c5"]:
+                cerca = []
+                for l in viol:
+                    d = haversine_km(h["lat"], h["lng"], l["lat"], l["lng"])
+                    if d > 1.5:
+                        continue
+                    if l["fecha"] and h["fecha"]:
+                        try:
+                            dd = abs((datetime.strptime(l["fecha"], "%Y-%m-%d") -
+                                      datetime.strptime(h["fecha"], "%Y-%m-%d")).days)
+                        except ValueError:
+                            dd = 99
+                        if dd > 2:
+                            continue
+                    cerca.append({"folio": l["folio"], "incidente": l["incidente"],
+                                  "fecha": l["fecha"], "hora": l["hora"],
+                                  "dist_km": round(d, 2)})
+                cerca.sort(key=lambda c: c["dist_km"])
+                ficha["llamadas_cerca"] = cerca[:8]
+                ficha["llamadas_cerca_total"] = len(cerca)
+
+        fichas[str(h["id"])] = ficha
+    return fichas
+
+
+# --------------------------------------------------------------------------
 # 7. Resumen ejecutivo calculado
 # --------------------------------------------------------------------------
 
@@ -1763,6 +1896,11 @@ def main():
     print(f"  coordinaciones regionales .. {len(coordinaciones['coordinaciones'])} "
           f"(+{coordinaciones['sin_catalogar']['total']} municipios sin catalogar)")
 
+    fichas = fichas_inteligencia(hd, llamadas, bases, sectores, territorio, serie)
+    con_corr = sum(1 for f in fichas.values() if f["llamadas_cerca_total"])
+    print(f"  fichas de inteligencia ..... {len(fichas)} "
+          f"({con_corr} con correlación 911)")
+
     resumen = resumen_ejecutivo(hd, llamadas, bases, sectores, auditoria, serie)
     resumen["territorio_top"] = [
         {k: t[k] for k in ("municipio", "indice_presion", "hd_eventos",
@@ -1812,6 +1950,7 @@ def main():
     escribir_json("serie_temporal.json", serie)
     cruce["hechos"] = anonimizar_lista(cruce["hechos"]) if anonimo else cruce["hechos"]
     escribir_json("cruce_hechos_fatales.json", cruce)
+    escribir_json("fichas_inteligencia.json", fichas)
     # El perimetro del estado viaja con los demas insumos calculados para que
     # el ensamblador lo incruste en el tablero.
     if PERIMETRO.exists():
