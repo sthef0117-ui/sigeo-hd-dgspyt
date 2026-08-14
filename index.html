@@ -289,8 +289,43 @@ html[data-tema="oscuro"] .hoja h2{color:#7a1327}
 .hoja li{margin-bottom:4px}
 .hoja .caja{background:#f7f8fa;border:1px solid #e6e9ed;border-radius:7px;padding:14px 16px}
 .hoja .fin{margin-top:26px;padding-top:11px;border-top:1px solid #e6e9ed;font-size:.7rem;color:#667085}
+
+/* ---------- Informe como presentación (diapositivas) ---------- */
+.pres{max-width:1000px;margin:0 auto;display:flex;flex-direction:column;gap:20px}
+.slide{background:#fff;color:#16202c;border:1px solid #e6e9ed;border-radius:14px;
+  box-shadow:var(--sombra2);padding:28px 32px;position:relative;overflow:hidden}
+.slide::before{content:"";position:absolute;top:0;left:0;height:100%;width:6px;background:#7a1327}
+.slide h3{font-size:1.05rem;color:#7a1327;margin:0 0 15px;border:none;padding:0;letter-spacing:-.01em}
+.slide .paso{position:absolute;top:16px;right:22px;font-size:.72rem;font-weight:700;color:#c8ccd2;letter-spacing:.08em}
+.slide-portada{background:linear-gradient(135deg,#7a1327 0%,#16202c 100%);color:#fff;border:none}
+.slide-portada::before{display:none}
+.slide-portada .kk{font-size:.8rem;letter-spacing:.14em;opacity:.8;font-weight:600}
+.slide-portada h2{color:#fff;font-size:1.7rem;margin:6px 0 2px;letter-spacing:-.02em}
+.slide-portada .peri{opacity:.85;font-size:.9rem}
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:13px;margin-top:20px}
+.kpi{background:rgba(255,255,255,.12);border-radius:11px;padding:14px 15px}
+.kpi .n{font-size:1.9rem;font-weight:800;line-height:1}
+.kpi .l{font-size:.71rem;opacity:.9;margin-top:6px;line-height:1.25}
+.cards3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.pcard{border-radius:12px;padding:15px 17px;border:1px solid #e6e9ed}
+.pcard .num{font-size:1.5rem;font-weight:800;line-height:1}
+.pcard .h{font-weight:800;font-size:.9rem;margin:3px 0 6px}
+.pcard .b{font-size:.82rem;color:#344054;line-height:1.45}
+.pcard .ac{margin-top:9px;font-size:.77rem;font-style:italic;color:#475467;border-top:1px dashed #d0d5dd;padding-top:7px}
+.pcard.rojo{background:#fdf1f2;border-color:#f0c7cd}.pcard.rojo .h,.pcard.rojo .num{color:#b01e33}
+.pcard.ambar{background:#fdf5ec;border-color:#f0d9bd}.pcard.ambar .h,.pcard.ambar .num{color:#a15a10}
+.pcard.morado{background:#f5f2fb;border-color:#dbcff0}.pcard.morado .h,.pcard.morado .num{color:#6d28d9}
+.barra-h{display:flex;align-items:center;gap:11px;margin:8px 0}
+.barra-h .et{width:180px;font-size:.82rem;font-weight:600;flex:none;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.barra-h .tr{flex:1;height:22px;background:#eef1f4;border-radius:6px;overflow:hidden}
+.barra-h .tr i{display:block;height:100%;background:linear-gradient(90deg,#b23347,#7a1327);border-radius:6px;min-width:2px}
+.barra-h .vv{width:52px;text-align:right;font-size:.82rem;font-weight:800;flex:none}
+.barra-h .bn{width:78px;font-size:.72rem;color:#667085;flex:none;text-align:right}
+@media (max-width:820px){.kpis{grid-template-columns:repeat(2,1fr)}.cards3{grid-template-columns:1fr}
+  .barra-h .et{width:120px}}
+
 @media print{
-  @page{margin:14mm}
+  @page{margin:12mm}
   body{background:#fff}
   aside,header,.no-print{display:none!important}
   .shell{display:block}
@@ -300,6 +335,10 @@ html[data-tema="oscuro"] .hoja h2{color:#7a1327}
   .hoja h3{page-break-after:avoid}
   table{page-break-inside:auto}
   tr{page-break-inside:avoid}
+  .pres{gap:0}
+  .slide{box-shadow:none;border:none;border-radius:0;page-break-after:always;padding:6mm 0}
+  .slide-portada{background:#7a1327!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .kpi,.pcard,.barra-h .tr i{-webkit-print-color-adjust:exact;print-color-adjust:exact}
 }
 </style>
 </head>
@@ -718,7 +757,7 @@ html[data-tema="oscuro"] .hoja h2{color:#7a1327}
       </div>
       <button class="btn btn-p" onclick="window.print()">Imprimir / Guardar PDF</button>
     </div>
-    <div class="hoja" id="hoja"></div>
+    <div id="hoja"></div>
   </section>
 </main>
 </div>
@@ -1629,131 +1668,78 @@ function ubicaciones(){
 
 /* ═══════════════════════════════ 06 Informe ══════════════════════════════ */
 function informe(){
-  const c=R.cobertura, g=R.geocodificacion;
+  const c=R.cobertura;
   const desat=DATOS.zonas.filter(z=>z.clasificacion==="DESATENDIDO");
   const satur=DATOS.zonas.filter(z=>z.clasificacion==="SATURADO");
   const altas=DATOS.auditoria.filter(a=>a.nivel_revision==="ALTA");
-  const top=DATOS.zonas.slice(0,6);
   const d0=desat[0], s0=satur.slice().sort((a,b)=>b.indice_violencia-a.indice_violencia)[0];
   const top3=altas.slice().sort((a,b)=>b.puntaje-a.puntaje).slice(0,3);
+  const coords=((DATOS.coordinaciones||{}).coordinaciones||[]);
+  const maxCarga=Math.max(1,...coords.map(x=>x.carga_violencia));
+  const muni=DATOS.territorio.filter(t=>t.indice_presion>0).slice(0,7);
+  const maxPres=Math.max(1,...muni.map(t=>t.indice_presion));
+  const desatTop=desat.slice(0,4);
+  const kpi=(n,l)=>`<div class="kpi"><div class="n">${n}</div><div class="l">${l}</div></div>`;
+  const barra=(et,val,max,bn)=>`<div class="barra-h"><span class="et">${E(et)}</span>`+
+    `<span class="tr"><i style="width:${Math.max(2,Math.round(val/max*100))}%"></i></span>`+
+    `<span class="vv">${N(val)}</span><span class="bn">${bn||""}</span></div>`;
 
   document.getElementById("hoja").innerHTML=`
-   <div class="enc">
-     <div>
-       <h2>HOMICIDIOS DOLOSOS · ANÁLISIS DE CORTE</h2>
-       <div style="color:#475467;font-weight:600">Unidad de Homicidios Dolosos · ${titulo_es_periodo(R.hd.periodo)}</div>
+   <div class="pres">
+     <div class="slide slide-portada">
+       <div class="kk">DGSPYT · UNIDAD DE HOMICIDIOS DOLOSOS</div>
+       <h2>Homicidios dolosos — Análisis de corte</h2>
+       <div class="peri">${titulo_es_periodo(R.hd.periodo)} · generado ${E(R.generado)}</div>
+       <div class="kpis">
+         ${kpi(N(R.hd.eventos),"Homicidios dolosos")}
+         ${kpi(N(R.hd.victimas),"Víctimas fatales")}
+         ${kpi(PCT(R.hd.nocturnos,R.hd.eventos)+"%","En franja nocturna (22–06 h)")}
+         ${kpi(c.dist_hd_base_mediana_km+" km","Distancia mediana a base")}
+       </div>
      </div>
-     <div style="text-align:right;font-size:.78rem;color:#667085">
-       Documento de trabajo interno<br>Generado ${E(R.generado)}<br>
-       <span style="font-size:.72rem">Cifras sin validar por las áreas responsables</span></div>
-   </div>
 
-   <div style="margin:6px 0 16px;padding:13px 16px;border:1px solid #e6d3d7;
-     border-left:4px solid #7a1327;border-radius:7px;background:#faf5f6">
-     <h3 style="margin:0 0 9px;border:none;color:#7a1327;padding:0">Prioridades para el acuerdo</h3>
-     <ol style="margin:0;padding-left:19px;line-height:1.5">
-       <li><b>Extender cobertura.</b> ${desat.length} sectores desatendidos; el más crítico
-         <b>${E(d0?d0.municipio:"—")}</b>${d0&&d0.colonias.length?` (${E(d0.colonias[0])})`:""},
-         base a ${d0?d0.dist_base_km:"—"} km. <i>Acuerdo: reasignar cuadrante o desplegar punto fijo.</i></li>
-       <li><b>Revisar el patrullaje que ya existe.</b> ${satur.length} sectores saturados;
-         <b>${E(s0?s0.municipio:"—")}</b> concentra violencia con despliegue
-         ${s0?E((s0.despliegue_banda||"").toLowerCase()):"—"}. <i>Acuerdo: revisar horarios y recorridos, no sumar inmuebles.</i></li>
-       <li><b>Solicitar expedientes a la FGJEM.</b> ${altas.length} casos de prioridad alta${top3.length?": "+top3.map(a=>E(a.municipio)||"s/mpio").join(", "):""}.
-         <i>Acuerdo: pedir carpeta y turnar a Criminalística.</i></li>
-     </ol>
-   </div>
+     <div class="slide"><span class="paso">01</span>
+       <h3>Prioridades para el acuerdo</h3>
+       <div class="cards3">
+         <div class="pcard rojo"><div class="num">${desat.length}</div>
+           <div class="h">Extender cobertura</div>
+           <div class="b">Sectores desatendidos. El más crítico: <b>${E(d0?d0.municipio:"—")}</b>${d0&&d0.colonias.length?" ("+E(d0.colonias[0])+")":""}, base a ${d0?d0.dist_base_km:"—"} km.</div>
+           <div class="ac">Acuerdo: reasignar cuadrante o desplegar punto fijo.</div></div>
+         <div class="pcard ambar"><div class="num">${satur.length}</div>
+           <div class="h">Revisar el patrullaje</div>
+           <div class="b">Sectores saturados. <b>${E(s0?s0.municipio:"—")}</b> concentra violencia con despliegue ${s0?E((s0.despliegue_banda||"").toLowerCase()):"—"}.</div>
+           <div class="ac">Acuerdo: revisar horarios y recorridos, no sumar inmuebles.</div></div>
+         <div class="pcard morado"><div class="num">${altas.length}</div>
+           <div class="h">Solicitar expedientes</div>
+           <div class="b">Prioridad alta a la FGJEM${top3.length?": "+top3.map(a=>E(a.municipio)||"s/mpio").join(", "):""}.</div>
+           <div class="ac">Acuerdo: pedir carpeta y turnar a Criminalística.</div></div>
+       </div>
+     </div>
 
-   <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
-     <div class="caja"><h3 style="margin-top:0;border-color:#7a1327">Resumen operativo</h3>
-       <ul>
-         <li><b>Eventos corroborados:</b> ${N(R.hd.eventos)}</li>
-         <li><b>Víctimas fatales:</b> ${N(R.hd.victimas)}</li>
-         <li><b>Municipios afectados:</b> ${N(R.hd.municipios)}</li>
-         <li><b>En franja nocturna (22:00–06:00):</b> ${N(R.hd.nocturnos)} (${PCT(R.hd.nocturnos,R.hd.eventos)}%)</li>
-         <li><b>Georreferenciados:</b> ${N(R.hd.georreferenciados)} de ${N(R.hd.eventos)}</li>
-       </ul></div>
-     <div class="caja"><h3 style="margin-top:0;border-color:#7a1327">Móviles predominantes</h3>
-       <ul>${R.hd.top_moviles.map(m=>`<li><b>${E(m[0])}:</b> ${m[1]} (${PCT(m[1],R.hd.eventos)}%)</li>`).join("")}</ul></div>
-   </div>
+     <div class="slide"><span class="paso">02</span>
+       <h3>Carga de violencia por coordinación regional</h3>
+       ${coords.map(x=>barra(x.coordinacion,x.carga_violencia,maxCarga,"presión "+((x.presion_banda||"—").toLowerCase()))).join("")}
+       <p style="font-size:.75rem;color:#667085;margin-top:10px">Mide condiciones del territorio, no el desempeño de una persona.</p>
+     </div>
 
-   <h3>1. Carga por coordinación regional</h3>
-   <table><thead><tr><th>#</th><th>Coordinación</th><th>Mpios.</th><th>Carga</th><th>HD</th>
-     <th>Llam. viol.</th><th>Arma fuego</th><th>Despliegue</th><th>Presión rel.</th>
-     <th>Desat.</th><th>Sat.</th></tr></thead>
-     <tbody>${((DATOS.coordinaciones||{}).coordinaciones||[]).map(c=>`<tr><td>${c.ranking}</td>
-       <td>${E(c.coordinacion)}</td><td>${c.total_municipios}</td><td>${c.carga_violencia}</td>
-       <td>${c.hd_eventos}</td><td>${c.llamadas_violentas}</td><td>${c.arma_fuego}</td>
-       <td>${E(c.despliegue_banda||"—")}</td>
-       <td>${E(c.presion_banda||"—")}</td>
-       <td>${c.sectores_desatendidos}</td><td>${c.sectores_saturados}</td></tr>`).join("")}</tbody></table>
+     <div class="slide"><span class="paso">03</span>
+       <h3>Municipios de mayor presión</h3>
+       ${muni.map(t=>barra(t.municipio,t.indice_presion,maxPres,t.hd_eventos+" HD")).join("")}
+     </div>
 
-   <h4 style="margin-top:16px;font-size:.9rem">Municipios de mayor presión</h4>
-   <table><thead><tr><th>#</th><th>Municipio</th><th>Coordinación</th><th>Índice</th><th>HD</th>
-     <th>Llam. viol.</th><th>Despliegue</th><th>Dist. media</th><th>Desat.</th></tr></thead>
-     <tbody>${DATOS.territorio.slice(0,10).map(t=>`<tr><td>${t.ranking}</td><td>${E(t.municipio)}</td>
-       <td>${E(t.coordinacion)||"—"}</td>
-       <td>${t.indice_presion}</td><td>${t.hd_eventos}</td><td>${t.llamadas_violentas}</td>
-       <td>${E(t.despliegue_banda||"—")}</td>
-       <td>${t.dist_media_hd_base_km==null?"—":t.dist_media_hd_base_km+" km"}</td>
-       <td>${t.sectores_desatendidos}</td></tr>`).join("")}</tbody></table>
-   <p style="font-size:.76rem;color:#667085;margin-top:6px">
-     Los índices miden condiciones del territorio (violencia, despliegue disponible y brechas de cobertura),
-     no el desempeño individual de un mando: los insumos no contienen asignación nominal, turnos ni recorridos.</p>
+     <div class="slide"><span class="paso">04</span>
+       <h3>Cobertura y zonas ciegas</h3>
+       <div class="cards3">
+         <div class="pcard"><div class="num">${c.dist_hd_base_mediana_km} km</div><div class="h">Distancia mediana a base</div><div class="b">${N(c.hd_a_mas_de_3km_de_base)} homicidios a más de 3 km de una base en uso.</div></div>
+         <div class="pcard rojo"><div class="num">${desat.length}</div><div class="h">Sectores desatendidos</div><div class="b">Violencia sin despliegue a distancia útil.</div></div>
+         <div class="pcard ambar"><div class="num">${satur.length}</div><div class="h">Sectores saturados</div><div class="b">Con base cercana y aun así concentran violencia.</div></div>
+       </div>
+       ${desatTop.length?`<div style="margin-top:14px"><b style="font-size:.85rem">Desatendidos a atender primero</b>${desatTop.map(z=>barra(z.municipio+(z.colonias.length?" · "+z.colonias[0]:""),z.indice_ceguera,desatTop[0].indice_ceguera,z.dist_base_km+" km")).join("")}</div>`:""}
+     </div>
 
-   <h3>2. Cobertura de patrullaje y zonas ciegas</h3>
-   <p>Se contrastaron los ${N(R.hd.eventos)} homicidios y las ${N(R.c5.llamadas_violentas)} llamadas con
-     violencia del corte contra el inventario de ${N(c.bases_inventariadas)} inmuebles DGSPYT
-     (${N(c.bases_en_uso_georreferenciadas)} en uso y georreferenciados).
-     La distancia mediana de un homicidio a la base más cercana es de <b>${c.dist_hd_base_mediana_km} km</b>,
-     con un máximo de ${c.dist_hd_base_maxima_km} km; <b>${N(c.hd_a_mas_de_3km_de_base)} eventos</b> ocurrieron
-     a más de 3 km de cualquier base en uso. De los ${N(R.zonas_ciegas.sectores_detectados)} sectores con violencia
-     registrada, <b>${desat.length}</b> son desatendidos y <b>${satur.length}</b> saturados.</p>
-   <table><thead><tr><th>#</th><th>Municipio</th><th>Diagnóstico</th><th>Índice</th><th>HD</th>
-     <th>Llamadas</th><th>Base más cercana</th><th>Despliegue</th></tr></thead>
-     <tbody>${top.map(z=>`<tr><td>${z.ranking}</td><td>${E(z.municipio)}</td><td>${E(z.clasificacion)}</td>
-       <td>${z.indice_ceguera}</td><td>${z.eventos_hd}</td><td>${z.llamadas_violentas}</td>
-       <td>${z.dist_base_km} km</td><td>${E(z.despliegue_banda||"—")}</td></tr>`).join("")}</tbody></table>
-
-   <h3>3. Geocodificación en formato Windows Maps</h3>
-   <p>De las ${N(g.sin_coordenada_original)} llamadas sin coordenada del corte, ${N(g.sin_coordenada_sin_texto)}
-     son mudas, colgadas, de broma o transferidas y no contienen descripción alguna. El universo recuperable
-     es de <b>${N(g.universo_recuperable)}</b> llamadas, de las cuales el extractor resuelve
-     <b>${N(g.recuperadas_por_nlp)}</b> (${g.porcentaje_recuperado}%) con confianza alta o media.
-     En el subconjunto crítico —llamadas con violencia sin coordenada— la recuperación es de
-     <b>${g.violentas_recuperadas} de ${g.violentas_sin_coordenada} (${g.porcentaje_violentas_recuperado}%)</b>.</p>
-
-   <h3>4. Decesos dudosos, suicidios y personas no localizadas</h3>
-   <p>Se auditaron <b>${R.auditoria.casos_revisados}</b> reportes del corte:
-     ${R.auditoria.prioridad_alta} de prioridad alta, ${R.auditoria.prioridad_media} media y
-     ${R.auditoria.prioridad_baja} baja. <b>El resultado es una prioridad de revisión documental, no un
-     dictamen pericial;</b> la determinación de la mecánica de los hechos corresponde a los servicios
-     periciales y a la FGJEM.</p>
-   ${altas.length?`<table><thead><tr><th>Folio C5</th><th>Municipio</th><th>Clasificación de origen</th>
-     <th>Motivo de revisión</th></tr></thead><tbody>${altas.map(x=>`<tr><td>${E(x.folio)}</td>
-     <td>${E(x.municipio)||"—"}</td><td>${E(x.incidente)}</td>
-     <td>${E(x.indicadores.filter(i=>i.peso>0).map(i=>i.motivo).join("; "))}</td></tr>`).join("")}</tbody></table>`:""}
-
-   <h3>5. Acuerdos propuestos</h3>
-   <ol>
-     <li>Extender cobertura o reasignar cuadrante en los <b>${desat.length} sectores desatendidos</b>,
-       priorizando ${E(desat.slice(0,3).map(z=>z.municipio).join(", "))||"los de mayor índice"}.</li>
-     <li>Revisar efectividad y horarios del patrullaje en los <b>${satur.length} sectores saturados</b>,
-       donde ya existe base y personal a menos de 1.5 km y aun así se concentra la violencia.</li>
-     <li>Solicitar a la FGJEM las carpetas de los <b>${R.auditoria.prioridad_alta} casos de prioridad alta</b>
-       y turnarlos a Criminalística.</li>
-     <li>Instruir a cabina C5 la captura obligatoria del campo de referencia de ubicación: es el insumo que
-       permite recuperar el ${g.porcentaje_violentas_recuperado}% de las llamadas con violencia que llegan
-       sin coordenada.</li>
-     <li>Revisar la videovigilancia en los sectores donde las acciones SSEM asientan ausencia de cámaras.</li>
-     <li>Completar en el inventario de inmuebles el personal adscrito de las bases que hoy aparecen sin
-       captura: sin ese dato la medición de cobertura subestima el despliegue real.</li>
-   </ol>
-
-   <div class="fin">
-     Generado por SIGEO-HD DGSPYT a partir de los insumos oficiales del corte.
-     Los datos personales de víctimas, personas no localizadas y reportantes fueron suprimidos conforme a la
-     Ley General de Protección de Datos Personales en Posesión de Sujetos Obligados.
-     Cifras reproducibles con <span style="font-family:monospace">python src/etl_sigeo.py</span>.
+     <div style="text-align:center;font-size:.72rem;color:#667085;padding:6px 0 2px">
+       Generado por SIGEO-HD DGSPYT desde los insumos oficiales. Datos personales suprimidos conforme a la Ley General de Protección de Datos Personales. Reproducible con python src/etl_sigeo.py.
+     </div>
    </div>`;
 }
 
