@@ -23,3 +23,6 @@ poligonos/*.mp4
 # La bandeja recibe material revuelto con datos personales: no se versiona.
 insumos/bandeja/
 analisis/bandeja.json
+
+# Entregables con datos personales (teléfonos, nombres de reportantes): no se versionan
+entregables/*.xlsx
