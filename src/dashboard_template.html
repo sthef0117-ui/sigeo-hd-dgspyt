@@ -368,11 +368,9 @@ html[data-tema="oscuro"] .hoja h2{color:#7a1327}
     <button data-v="v-coordinaciones"><span class="n">03</span> Coordinaciones</button>
     <div class="grupo">Investigar</div>
     <button data-v="v-ficha"><span class="n">04</span> Ficha de inteligencia</button>
-    <button data-v="v-cruce"><span class="n">05</span> ¿Es o no es homicidio?</button>
-    <button data-v="v-casos"><span class="n">06</span> Casos a revisar</button>
     <div class="grupo">Operar</div>
-    <button data-v="v-ubicaciones"><span class="n">07</span> Ubicaciones</button>
-    <button data-v="v-informe"><span class="n">08</span> Informe de mandos</button>
+    <button data-v="v-ubicaciones"><span class="n">05</span> Ubicaciones</button>
+    <button data-v="v-informe"><span class="n">06</span> Informe de mandos</button>
   </nav>
   <div class="pie-nav">
     Cifras calculadas desde los insumos oficiales.<br>
@@ -934,10 +932,12 @@ function panorama(){
      <div class="pie">Acuerdo sugerido: revisar horarios y recorridos, no sumar inmuebles.</div>
    </div>
    <div class="prio">
-     <div class="cab"><div class="tit">Expedientes a solicitar</div><span class="et e-morado">${altas.length} casos</span></div>
-     <div class="txt">De los ${R.auditoria.casos_revisados} decesos dudosos, suicidios y no localizados del corte,
-       ${altas.length} concentran indicadores que justifican pedir la carpeta a la FGJEM.</div>
-     <div class="pie">Municipio con mayor presión territorial: <b>${E(t0?t0.municipio:"—")}</b>.</div>
+     <div class="cab"><div class="tit">Expedientes a solicitar a la FGJEM</div><span class="et e-morado">${altas.length} casos</span></div>
+     <div class="txt">De ${R.auditoria.casos_revisados} decesos dudosos, suicidios y no localizados del corte, los <b>3 de mayor prioridad</b>:
+       <ol style="margin:6px 0 0 17px;padding:0">${altas.slice().sort((a,b)=>b.puntaje-a.puntaje).slice(0,3).map(a=>
+         `<li style="margin-bottom:2px"><b>${E(a.municipio)||"—"}</b> · ${E(a.incidente)}
+            <span style="color:var(--tx3)">(${a.indicadores.length} indicadores)</span></li>`).join("")||"<li>Sin casos de prioridad alta en el corte.</li>"}</ol></div>
+     <div class="pie">Acuerdo sugerido: solicitar carpeta y turnar a Criminalística. El sistema ya los filtró; no hay lista que revisar a mano.</div>
    </div>`;
 
   document.getElementById("nota-noct").textContent =
@@ -1634,6 +1634,8 @@ function informe(){
   const satur=DATOS.zonas.filter(z=>z.clasificacion==="SATURADO");
   const altas=DATOS.auditoria.filter(a=>a.nivel_revision==="ALTA");
   const top=DATOS.zonas.slice(0,6);
+  const d0=desat[0], s0=satur.slice().sort((a,b)=>b.indice_violencia-a.indice_violencia)[0];
+  const top3=altas.slice().sort((a,b)=>b.puntaje-a.puntaje).slice(0,3);
 
   document.getElementById("hoja").innerHTML=`
    <div class="enc">
@@ -1644,6 +1646,21 @@ function informe(){
      <div style="text-align:right;font-size:.78rem;color:#667085">
        Documento de trabajo interno<br>Generado ${E(R.generado)}<br>
        <span style="font-size:.72rem">Cifras sin validar por las áreas responsables</span></div>
+   </div>
+
+   <div style="margin:6px 0 16px;padding:13px 16px;border:1px solid #e6d3d7;
+     border-left:4px solid #7a1327;border-radius:7px;background:#faf5f6">
+     <h3 style="margin:0 0 9px;border:none;color:#7a1327;padding:0">Prioridades para el acuerdo</h3>
+     <ol style="margin:0;padding-left:19px;line-height:1.5">
+       <li><b>Extender cobertura.</b> ${desat.length} sectores desatendidos; el más crítico
+         <b>${E(d0?d0.municipio:"—")}</b>${d0&&d0.colonias.length?` (${E(d0.colonias[0])})`:""},
+         base a ${d0?d0.dist_base_km:"—"} km. <i>Acuerdo: reasignar cuadrante o desplegar punto fijo.</i></li>
+       <li><b>Revisar el patrullaje que ya existe.</b> ${satur.length} sectores saturados;
+         <b>${E(s0?s0.municipio:"—")}</b> concentra violencia con despliegue
+         ${s0?E((s0.despliegue_banda||"").toLowerCase()):"—"}. <i>Acuerdo: revisar horarios y recorridos, no sumar inmuebles.</i></li>
+       <li><b>Solicitar expedientes a la FGJEM.</b> ${altas.length} casos de prioridad alta${top3.length?": "+top3.map(a=>E(a.municipio)||"s/mpio").join(", "):""}.
+         <i>Acuerdo: pedir carpeta y turnar a Criminalística.</i></li>
+     </ol>
    </div>
 
    <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
