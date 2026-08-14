@@ -27,6 +27,7 @@ rotos y los nombres de municipio dejan de coincidir entre tablas.
 import csv
 import json
 import math
+import re
 import sys
 from datetime import date, datetime, timedelta
 from pathlib import Path
@@ -34,6 +35,68 @@ from pathlib import Path
 RAIZ = Path(__file__).resolve().parent.parent
 ANALISIS = RAIZ / "analisis"
 SALIDA = RAIZ / "powerbi"
+INSUMOS = RAIZ / "insumos"
+EVID = SALIDA / "evidencia"
+# El proyecto se abre desde la copia principal, no desde el worktree. La ruta
+# de las fotos (columna ImageUrl) debe apuntar ahí para que rendericen.
+COPIA_PRINCIPAL = Path(r"C:\Users\xXZaB\.gemini\antigravity\scratch\sigeo_hd_dgspyt")
+
+
+def _foto_uri(stem):
+    ruta = COPIA_PRINCIPAL / "powerbi" / "evidencia" / (stem + ".png")
+    return "file:///" + str(ruta).replace("\\", "/")
+
+
+def _fecha_de_nombre(nombre):
+    """Deriva la fecha de la captura desde su nombre: IMG-20260723-... o
+    'Captura ... 2026-08-13 ...'. Es la fecha de la imagen, no del hecho."""
+    m = re.search(r"(20\d{2})[-_]?(\d{2})[-_]?(\d{2})", nombre)
+    if not m:
+        return ""
+    y, mo, d = m.group(1), m.group(2), m.group(3)
+    if "01" <= mo <= "12" and "01" <= d <= "31":
+        return f"{y}-{mo}-{d}"
+    return ""
+
+
+def construir_evidencia():
+    """
+    Recorta la foto real de cada captura de WhatsApp y la deja en powerbi/
+    evidencia/ para anexarla al Power BI como evidencia (uso interno, reservado).
+    Devuelve las filas de dim_evidencia. Best-effort: si algo no se puede leer,
+    se omite sin romper el resto.
+    """
+    sys.path.insert(0, str(Path(__file__).parent))
+    try:
+        from recorte import recortar_foto
+    except Exception:
+        print("  evidencia .................. omitida (falta Pillow/recorte)")
+        return []
+    EVID.mkdir(parents=True, exist_ok=True)
+    exts = {".jpg", ".jpeg", ".png", ".webp"}
+    origen = []
+    for sub in ("whatsapp", "bandeja"):
+        d = INSUMOS / sub
+        if d.exists():
+            for p in sorted(d.iterdir()):
+                if p.is_file() and p.suffix.lower() in exts and p.name != "CATALOGO.md":
+                    origen.append(p)
+    filas = []
+    for p in origen:
+        destino = EVID / (p.stem + ".png")
+        try:
+            recortar_foto(p, destino)
+        except Exception:
+            continue
+        filas.append({
+            "fecha": _fecha_de_nombre(p.name),
+            "municipio": "",
+            "lugar": "",
+            "caso": p.stem[:60],
+            "foto": _foto_uri(p.stem),
+        })
+    print(f"  evidencia .................. {len(filas)} foto(s) en {EVID}")
+    return filas
 
 DIAS_ES = ["lunes", "martes", "miércoles", "jueves", "viernes", "sábado", "domingo"]
 MESES_ES = ["enero", "febrero", "marzo", "abril", "mayo", "junio", "julio",
@@ -226,6 +289,11 @@ def main():
         "longitud": a["lng"],
     } for a in auditoria]
     escribir("fact_auditoria.csv", list(filas_aud[0].keys()), filas_aud)
+
+    # --- Evidencia (fotos de escena, reservadas, uso interno) --------------
+    evid = construir_evidencia()
+    if evid:
+        escribir("dim_evidencia.csv", ["fecha", "municipio", "lugar", "caso", "foto"], evid)
 
     print(f"  carpeta .................. {SALIDA}")
     print("  Siguiente paso: powerbi/MODELO.md")

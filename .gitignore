@@ -26,3 +26,9 @@ analisis/bandeja.json
 
 # Entregables con datos personales (teléfonos, nombres de reportantes): no se versionan
 entregables/*.xlsx
+
+# Fotos de escena recortadas para Power BI: evidencia reservada, no se versiona
+powerbi/evidencia/
+
+# CSV de Power BI: artefactos generados (algunos con narrativa/datos personales). Se rehacen con export_powerbi.py
+powerbi/*.csv

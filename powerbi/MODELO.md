@@ -2,13 +2,31 @@
 
 ## Camino corto: abrir el proyecto ya armado
 
-**Doble clic en `SIGEO-HD.pbip`.** El proyecto trae el modelo completo: las 7
-tablas, las 8 relaciones, las 17 medidas DAX y las 4 páginas con sus visuales.
+**Doble clic en `SIGEO-HD.pbip`.** El proyecto trae el modelo completo: 8
+tablas, 9 relaciones, 15 medidas DAX y **5 páginas** con sus visuales.
 No hay que arrastrar campos ni escribir medidas.
 
 Requisitos: **Power BI Desktop de 2024 en adelante** (el formato de proyecto
 `.pbip` no existe en versiones anteriores). Descarga en
 <https://powerbi.microsoft.com/desktop/> o desde Microsoft Store.
+
+### Seleccionar cortes por periodo o fecha exacta
+Cada página trae un **segmentador «Periodo / fecha»** sobre `dim_calendario[fecha]`.
+Por ser columna de fecha, Power BI lo muestra como un rango **«entre»**: se
+arrastran los extremos para elegir un periodo, o se pone la misma fecha en inicio
+y fin para un día exacto. Todos los visuales de esa página se recalculan solos.
+Para actualizar con datos nuevos: se reejecuta el pipeline (abajo) y en Power BI
+**Inicio → Actualizar**.
+
+### Página «Evidencia» (fotos de escena — reservada)
+Anexa las fotos recortadas de las capturas de WhatsApp, filtrables por el mismo
+segmentador de fecha. Es **material reservado de uso interno**: no se publica.
+Las imágenes se leen de `powerbi/evidencia/` mediante rutas locales
+(`file:///…`, columna categorizada como *Image URL*). **Requiere abrir el
+proyecto desde la copia principal** (`…\sigeo_hd_dgspyt\powerbi\`), no desde otra
+carpeta, o las rutas de las fotos no coincidirán. Si las miniaturas no aparecen
+en la tabla, es por la restricción de imágenes locales de Power BI: reportarlo y
+se ajusta (p. ej. hospedando las fotos).
 
 La ruta de los CSV vive en el parámetro **RutaDatos** (Inicio → Transformar
 datos → Administrar parámetros). Si mueven la carpeta de sitio, se cambia ahí y

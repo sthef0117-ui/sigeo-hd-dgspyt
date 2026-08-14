@@ -66,27 +66,36 @@
           "x": 20,
           "y": 440,
           "z": 7,
-          "width": 400,
+          "width": 380,
           "height": 240,
-          "config": "{\"name\": \"v7-columnChart-20-440\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 20, \"y\": 440, \"z\": 7, \"width\": 400, \"height\": 240}}], \"singleVisual\": {\"visualType\": \"columnChart\", \"projections\": {\"Category\": [{\"queryRef\": \"fact_homicidios.hora_num\"}], \"Y\": [{\"queryRef\": \"dim_coordinacion.Homicidios\"}]}, \"drillFilterOtherVisuals\": true, \"vcObjects\": {\"title\": [{\"properties\": {\"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Homicidios por hora del día'\"}}}, \"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}}}]}}}",
+          "config": "{\"name\": \"v7-columnChart-20-440\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 20, \"y\": 440, \"z\": 7, \"width\": 380, \"height\": 240}}], \"singleVisual\": {\"visualType\": \"columnChart\", \"projections\": {\"Category\": [{\"queryRef\": \"fact_homicidios.hora_num\"}], \"Y\": [{\"queryRef\": \"dim_coordinacion.Homicidios\"}]}, \"drillFilterOtherVisuals\": true, \"vcObjects\": {\"title\": [{\"properties\": {\"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Homicidios por hora del día'\"}}}, \"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}}}]}}}",
           "filters": "[]"
         },
         {
-          "x": 435,
+          "x": 410,
           "y": 440,
           "z": 8,
-          "width": 400,
+          "width": 375,
           "height": 240,
-          "config": "{\"name\": \"v8-donutChart-435-440\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 435, \"y\": 440, \"z\": 8, \"width\": 400, \"height\": 240}}], \"singleVisual\": {\"visualType\": \"donutChart\", \"projections\": {\"Category\": [{\"queryRef\": \"fact_homicidios.movil\"}], \"Y\": [{\"queryRef\": \"dim_coordinacion.Homicidios\"}]}, \"drillFilterOtherVisuals\": true, \"vcObjects\": {\"title\": [{\"properties\": {\"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Móvil de la agresión'\"}}}, \"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}}}]}}}",
+          "config": "{\"name\": \"v8-donutChart-410-440\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 410, \"y\": 440, \"z\": 8, \"width\": 375, \"height\": 240}}], \"singleVisual\": {\"visualType\": \"donutChart\", \"projections\": {\"Category\": [{\"queryRef\": \"fact_homicidios.movil\"}], \"Y\": [{\"queryRef\": \"dim_coordinacion.Homicidios\"}]}, \"drillFilterOtherVisuals\": true, \"vcObjects\": {\"title\": [{\"properties\": {\"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Móvil de la agresión'\"}}}, \"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}}}]}}}",
           "filters": "[]"
         },
         {
-          "x": 850,
+          "x": 795,
           "y": 440,
           "z": 9,
-          "width": 410,
+          "width": 225,
           "height": 240,
-          "config": "{\"name\": \"v9-slicer-850-440\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 850, \"y\": 440, \"z\": 9, \"width\": 410, \"height\": 240}}], \"singleVisual\": {\"visualType\": \"slicer\", \"projections\": {\"Values\": [{\"queryRef\": \"dim_coordinacion.coordinacion\"}]}, \"drillFilterOtherVisuals\": true, \"vcObjects\": {\"title\": [{\"properties\": {\"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Coordinación regional'\"}}}, \"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}}}]}}}",
+          "config": "{\"name\": \"v9-slicer-795-440\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 795, \"y\": 440, \"z\": 9, \"width\": 225, \"height\": 240}}], \"singleVisual\": {\"visualType\": \"slicer\", \"projections\": {\"Values\": [{\"queryRef\": \"dim_coordinacion.coordinacion\"}]}, \"drillFilterOtherVisuals\": true, \"vcObjects\": {\"title\": [{\"properties\": {\"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Coordinación regional'\"}}}, \"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 1030,
+          "y": 440,
+          "z": 10,
+          "width": 230,
+          "height": 240,
+          "config": "{\"name\": \"v10-slicer-1030-440\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 1030, \"y\": 440, \"z\": 10, \"width\": 230, \"height\": 240}}], \"singleVisual\": {\"visualType\": \"slicer\", \"projections\": {\"Values\": [{\"queryRef\": \"dim_calendario.fecha\"}]}, \"drillFilterOtherVisuals\": true, \"vcObjects\": {\"title\": [{\"properties\": {\"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Periodo / fecha'\"}}}, \"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}}}]}}}",
           "filters": "[]"
         }
       ],
@@ -123,18 +132,27 @@
           "x": 20,
           "y": 435,
           "z": 3,
-          "width": 940,
+          "width": 700,
           "height": 245,
-          "config": "{\"name\": \"v3-tableEx-20-435\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 20, \"y\": 435, \"z\": 3, \"width\": 940, \"height\": 245}}], \"singleVisual\": {\"visualType\": \"tableEx\", \"projections\": {\"Values\": [{\"queryRef\": \"fact_sectores.ranking\"}, {\"queryRef\": \"fact_sectores.municipio\"}, {\"queryRef\": \"fact_sectores.clasificacion\"}, {\"queryRef\": \"fact_sectores.indice_ceguera\"}, {\"queryRef\": \"fact_sectores.dist_base_km\"}, {\"queryRef\": \"fact_sectores.despliegue_banda\"}, {\"queryRef\": \"fact_sectores.diagnostico\"}]}, \"drillFilterOtherVisuals\": true, \"vcObjects\": {\"title\": [{\"properties\": {\"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Sectores ordenados por brecha de cobertura'\"}}}, \"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}}}]}}}",
+          "config": "{\"name\": \"v3-tableEx-20-435\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 20, \"y\": 435, \"z\": 3, \"width\": 700, \"height\": 245}}], \"singleVisual\": {\"visualType\": \"tableEx\", \"projections\": {\"Values\": [{\"queryRef\": \"fact_sectores.ranking\"}, {\"queryRef\": \"fact_sectores.municipio\"}, {\"queryRef\": \"fact_sectores.clasificacion\"}, {\"queryRef\": \"fact_sectores.indice_ceguera\"}, {\"queryRef\": \"fact_sectores.dist_base_km\"}, {\"queryRef\": \"fact_sectores.despliegue_banda\"}, {\"queryRef\": \"fact_sectores.diagnostico\"}]}, \"drillFilterOtherVisuals\": true, \"vcObjects\": {\"title\": [{\"properties\": {\"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Sectores ordenados por brecha de cobertura'\"}}}, \"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}}}]}}}",
           "filters": "[]"
         },
         {
-          "x": 975,
+          "x": 730,
           "y": 435,
           "z": 4,
-          "width": 285,
+          "width": 255,
           "height": 245,
-          "config": "{\"name\": \"v4-slicer-975-435\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 975, \"y\": 435, \"z\": 4, \"width\": 285, \"height\": 245}}], \"singleVisual\": {\"visualType\": \"slicer\", \"projections\": {\"Values\": [{\"queryRef\": \"fact_sectores.clasificacion\"}]}, \"drillFilterOtherVisuals\": true, \"vcObjects\": {\"title\": [{\"properties\": {\"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Diagnóstico'\"}}}, \"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}}}]}}}",
+          "config": "{\"name\": \"v4-slicer-730-435\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 730, \"y\": 435, \"z\": 4, \"width\": 255, \"height\": 245}}], \"singleVisual\": {\"visualType\": \"slicer\", \"projections\": {\"Values\": [{\"queryRef\": \"fact_sectores.clasificacion\"}]}, \"drillFilterOtherVisuals\": true, \"vcObjects\": {\"title\": [{\"properties\": {\"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Diagnóstico'\"}}}, \"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 995,
+          "y": 435,
+          "z": 5,
+          "width": 265,
+          "height": 245,
+          "config": "{\"name\": \"v5-slicer-995-435\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 995, \"y\": 435, \"z\": 5, \"width\": 265, \"height\": 245}}], \"singleVisual\": {\"visualType\": \"slicer\", \"projections\": {\"Values\": [{\"queryRef\": \"dim_calendario.fecha\"}]}, \"drillFilterOtherVisuals\": true, \"vcObjects\": {\"title\": [{\"properties\": {\"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Periodo / fecha'\"}}}, \"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}}}]}}}",
           "filters": "[]"
         }
       ],
@@ -171,9 +189,18 @@
           "x": 655,
           "y": 335,
           "z": 3,
-          "width": 605,
+          "width": 395,
           "height": 345,
-          "config": "{\"name\": \"v3-tableEx-655-335\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 655, \"y\": 335, \"z\": 3, \"width\": 605, \"height\": 345}}], \"singleVisual\": {\"visualType\": \"tableEx\", \"projections\": {\"Values\": [{\"queryRef\": \"dim_municipio.municipio\"}, {\"queryRef\": \"dim_municipio.coordinacion\"}, {\"queryRef\": \"dim_municipio.indice_presion\"}, {\"queryRef\": \"dim_municipio.despliegue_banda\"}, {\"queryRef\": \"dim_municipio.sectores_desatendidos\"}]}, \"drillFilterOtherVisuals\": true, \"vcObjects\": {\"title\": [{\"properties\": {\"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Detalle por municipio'\"}}}, \"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}}}]}}}",
+          "config": "{\"name\": \"v3-tableEx-655-335\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 655, \"y\": 335, \"z\": 3, \"width\": 395, \"height\": 345}}], \"singleVisual\": {\"visualType\": \"tableEx\", \"projections\": {\"Values\": [{\"queryRef\": \"dim_municipio.municipio\"}, {\"queryRef\": \"dim_municipio.coordinacion\"}, {\"queryRef\": \"dim_municipio.indice_presion\"}, {\"queryRef\": \"dim_municipio.despliegue_banda\"}, {\"queryRef\": \"dim_municipio.sectores_desatendidos\"}]}, \"drillFilterOtherVisuals\": true, \"vcObjects\": {\"title\": [{\"properties\": {\"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Detalle por municipio'\"}}}, \"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 1060,
+          "y": 335,
+          "z": 4,
+          "width": 200,
+          "height": 345,
+          "config": "{\"name\": \"v4-slicer-1060-335\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 1060, \"y\": 335, \"z\": 4, \"width\": 200, \"height\": 345}}], \"singleVisual\": {\"visualType\": \"slicer\", \"projections\": {\"Values\": [{\"queryRef\": \"dim_calendario.fecha\"}]}, \"drillFilterOtherVisuals\": true, \"vcObjects\": {\"title\": [{\"properties\": {\"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Periodo / fecha'\"}}}, \"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}}}]}}}",
           "filters": "[]"
         }
       ],
@@ -210,18 +237,57 @@
           "x": 630,
           "y": 20,
           "z": 3,
-          "width": 630,
+          "width": 300,
           "height": 120,
-          "config": "{\"name\": \"v3-slicer-630-20\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 630, \"y\": 20, \"z\": 3, \"width\": 630, \"height\": 120}}], \"singleVisual\": {\"visualType\": \"slicer\", \"projections\": {\"Values\": [{\"queryRef\": \"fact_auditoria.nivel_revision\"}]}, \"drillFilterOtherVisuals\": true, \"vcObjects\": {\"title\": [{\"properties\": {\"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Prioridad de revisión'\"}}}, \"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}}}]}}}",
+          "config": "{\"name\": \"v3-slicer-630-20\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 630, \"y\": 20, \"z\": 3, \"width\": 300, \"height\": 120}}], \"singleVisual\": {\"visualType\": \"slicer\", \"projections\": {\"Values\": [{\"queryRef\": \"fact_auditoria.nivel_revision\"}]}, \"drillFilterOtherVisuals\": true, \"vcObjects\": {\"title\": [{\"properties\": {\"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Prioridad de revisión'\"}}}, \"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 945,
+          "y": 20,
+          "z": 4,
+          "width": 315,
+          "height": 120,
+          "config": "{\"name\": \"v4-slicer-945-20\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 945, \"y\": 20, \"z\": 4, \"width\": 315, \"height\": 120}}], \"singleVisual\": {\"visualType\": \"slicer\", \"projections\": {\"Values\": [{\"queryRef\": \"dim_calendario.fecha\"}]}, \"drillFilterOtherVisuals\": true, \"vcObjects\": {\"title\": [{\"properties\": {\"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Periodo / fecha'\"}}}, \"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}}}]}}}",
           "filters": "[]"
         },
         {
           "x": 20,
           "y": 155,
-          "z": 4,
+          "z": 5,
           "width": 1240,
           "height": 525,
-          "config": "{\"name\": \"v4-tableEx-20-155\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 20, \"y\": 155, \"z\": 4, \"width\": 1240, \"height\": 525}}], \"singleVisual\": {\"visualType\": \"tableEx\", \"projections\": {\"Values\": [{\"queryRef\": \"fact_auditoria.folio\"}, {\"queryRef\": \"fact_auditoria.municipio\"}, {\"queryRef\": \"fact_auditoria.incidente\"}, {\"queryRef\": \"fact_auditoria.nivel_revision\"}, {\"queryRef\": \"fact_auditoria.puntaje\"}, {\"queryRef\": \"fact_auditoria.indicadores\"}, {\"queryRef\": \"fact_auditoria.accion_sugerida\"}]}, \"drillFilterOtherVisuals\": true, \"vcObjects\": {\"title\": [{\"properties\": {\"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Decesos dudosos, suicidios y personas no localizadas'\"}}}, \"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}}}]}}}",
+          "config": "{\"name\": \"v5-tableEx-20-155\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 20, \"y\": 155, \"z\": 5, \"width\": 1240, \"height\": 525}}], \"singleVisual\": {\"visualType\": \"tableEx\", \"projections\": {\"Values\": [{\"queryRef\": \"fact_auditoria.folio\"}, {\"queryRef\": \"fact_auditoria.municipio\"}, {\"queryRef\": \"fact_auditoria.incidente\"}, {\"queryRef\": \"fact_auditoria.nivel_revision\"}, {\"queryRef\": \"fact_auditoria.puntaje\"}, {\"queryRef\": \"fact_auditoria.indicadores\"}, {\"queryRef\": \"fact_auditoria.accion_sugerida\"}]}, \"drillFilterOtherVisuals\": true, \"vcObjects\": {\"title\": [{\"properties\": {\"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Decesos dudosos, suicidios y personas no localizadas'\"}}}, \"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}}}]}}}",
+          "filters": "[]"
+        }
+      ],
+      "config": "{\"visibility\": 0}",
+      "displayOption": 1,
+      "width": 1280.0,
+      "height": 720.0
+    },
+    {
+      "name": "pagina4",
+      "displayName": "Evidencia",
+      "filters": "[]",
+      "ordinal": 4,
+      "visualContainers": [
+        {
+          "x": 20,
+          "y": 20,
+          "z": 1,
+          "width": 300,
+          "height": 660,
+          "config": "{\"name\": \"v1-slicer-20-20\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 20, \"y\": 20, \"z\": 1, \"width\": 300, \"height\": 660}}], \"singleVisual\": {\"visualType\": \"slicer\", \"projections\": {\"Values\": [{\"queryRef\": \"dim_calendario.fecha\"}]}, \"drillFilterOtherVisuals\": true, \"vcObjects\": {\"title\": [{\"properties\": {\"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Periodo / fecha'\"}}}, \"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 335,
+          "y": 20,
+          "z": 2,
+          "width": 925,
+          "height": 660,
+          "config": "{\"name\": \"v2-tableEx-335-20\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 335, \"y\": 20, \"z\": 2, \"width\": 925, \"height\": 660}}], \"singleVisual\": {\"visualType\": \"tableEx\", \"projections\": {\"Values\": [{\"queryRef\": \"dim_evidencia.foto\"}, {\"queryRef\": \"dim_evidencia.fecha\"}, {\"queryRef\": \"dim_evidencia.caso\"}]}, \"drillFilterOtherVisuals\": true, \"vcObjects\": {\"title\": [{\"properties\": {\"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Evidencia fotográfica — reservada (uso interno)'\"}}}, \"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}}}]}}}",
           "filters": "[]"
         }
       ],

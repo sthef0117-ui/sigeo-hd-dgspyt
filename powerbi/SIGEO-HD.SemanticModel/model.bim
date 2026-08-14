@@ -844,6 +844,60 @@
             }
           }
         ]
+      },
+      {
+        "name": "dim_evidencia",
+        "lineageTag": "tbl-dim_evidencia",
+        "columns": [
+          {
+            "name": "fecha",
+            "dataType": "dateTime",
+            "sourceColumn": "fecha",
+            "lineageTag": "col-dim_evidencia-fecha",
+            "summarizeBy": "none",
+            "formatString": "yyyy-mm-dd"
+          },
+          {
+            "name": "municipio",
+            "dataType": "string",
+            "sourceColumn": "municipio",
+            "lineageTag": "col-dim_evidencia-municipio",
+            "summarizeBy": "none",
+            "dataCategory": "City"
+          },
+          {
+            "name": "lugar",
+            "dataType": "string",
+            "sourceColumn": "lugar",
+            "lineageTag": "col-dim_evidencia-lugar",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "caso",
+            "dataType": "string",
+            "sourceColumn": "caso",
+            "lineageTag": "col-dim_evidencia-caso",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "foto",
+            "dataType": "string",
+            "sourceColumn": "foto",
+            "lineageTag": "col-dim_evidencia-foto",
+            "summarizeBy": "none",
+            "dataCategory": "ImageUrl"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "dim_evidencia",
+            "mode": "import",
+            "source": {
+              "type": "m",
+              "expression": "let\n    Origen = Csv.Document(File.Contents(RutaDatos & \"\\dim_evidencia.csv\"), [Delimiter=\",\", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),\n    Encabezados = Table.PromoteHeaders(Origen, [PromoteAllScalars=true]),\n    Tipos = Table.TransformColumnTypes(Encabezados, {{\"fecha\", type date}, {\"municipio\", type text}, {\"lugar\", type text}, {\"caso\", type text}, {\"foto\", type text}})\nin\n    Tipos"
+            }
+          }
+        ]
       }
     ],
     "relationships": [
@@ -910,12 +964,20 @@
         "toTable": "dim_coordinacion",
         "toColumn": "coordinacion",
         "crossFilteringBehavior": "oneDirection"
+      },
+      {
+        "name": "rel-8",
+        "fromTable": "dim_evidencia",
+        "fromColumn": "fecha",
+        "toTable": "dim_calendario",
+        "toColumn": "fecha",
+        "crossFilteringBehavior": "oneDirection"
       }
     ],
     "annotations": [
       {
         "name": "PBI_QueryOrder",
-        "value": "[\"RutaDatos\", \"dim_calendario\", \"dim_municipio\", \"dim_coordinacion\", \"fact_homicidios\", \"fact_llamadas\", \"fact_sectores\", \"fact_auditoria\"]"
+        "value": "[\"RutaDatos\", \"dim_calendario\", \"dim_municipio\", \"dim_coordinacion\", \"fact_homicidios\", \"fact_llamadas\", \"fact_sectores\", \"fact_auditoria\", \"dim_evidencia\"]"
       }
     ]
   }

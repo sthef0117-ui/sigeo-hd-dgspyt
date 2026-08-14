@@ -112,6 +112,17 @@ RELACIONES = [
     ("dim_coordinacion", "coordinacion", "dim_municipio", "coordinacion"),
 ]
 
+# Evidencia: fotos de escena recortadas (uso interno, reservado). Solo se
+# incorpora si el export generó el CSV, para no romper cuando no hay capturas.
+HAY_EVIDENCIA = (PBI / "dim_evidencia.csv").exists()
+if HAY_EVIDENCIA:
+    TABLAS["dim_evidencia"] = {
+        "archivo": "dim_evidencia.csv",
+        "columnas": [("fecha", FECHA), ("municipio", TEXTO), ("lugar", TEXTO),
+                     ("caso", TEXTO), ("foto", TEXTO)],
+    }
+    RELACIONES.append(("dim_calendario", "fecha", "dim_evidencia", "fecha"))
+
 MEDIDAS = [
     ("Homicidios", "COUNTROWS ( fact_homicidios )", "#,0"),
     ("Víctimas", "SUM ( fact_homicidios[victimas] )", "#,0"),
@@ -172,6 +183,8 @@ def construir_modelo():
                 col["dataCategory"] = "Longitude"
             if c == "municipio":
                 col["dataCategory"] = "City"
+            if c == "foto":
+                col["dataCategory"] = "ImageUrl"
             columnas.append(col)
 
         tabla = {
@@ -274,6 +287,15 @@ def medida(nombre):
     return {"queryRef": f"dim_coordinacion.{nombre}"}
 
 
+def slicer_fecha(x, y, ancho, alto, orden):
+    """Segmentador por fecha del calendario: al ser columna de fecha, Power BI
+    lo muestra como rango 'entre', que permite elegir un periodo o una fecha
+    exacta (inicio = fin)."""
+    return visual(x, y, ancho, alto, "slicer",
+                  {"Values": [campo("dim_calendario", "fecha")]},
+                  "Periodo / fecha", orden)
+
+
 def construir_informe():
     A = 1280.0  # ancho de pagina
     paginas = []
@@ -296,19 +318,21 @@ def construir_informe():
                      "Y": [medida("Homicidios")]},
                     "Homicidios por municipio", o))
     o += 1
-    v.append(visual(20, 440, 400, 240, "columnChart",
+    v.append(visual(20, 440, 380, 240, "columnChart",
                     {"Category": [campo("fact_homicidios", "hora_num")],
                      "Y": [medida("Homicidios")]},
                     "Homicidios por hora del día", o))
     o += 1
-    v.append(visual(435, 440, 400, 240, "donutChart",
+    v.append(visual(410, 440, 375, 240, "donutChart",
                     {"Category": [campo("fact_homicidios", "movil")],
                      "Y": [medida("Homicidios")]},
                     "Móvil de la agresión", o))
     o += 1
-    v.append(visual(850, 440, 410, 240, "slicer",
+    v.append(visual(795, 440, 225, 240, "slicer",
                     {"Values": [campo("dim_coordinacion", "coordinacion")]},
                     "Coordinación regional", o))
+    o += 1
+    v.append(slicer_fecha(1030, 440, 230, 240, o))
     paginas.append(("Homicidios dolosos", v))
 
     # ---- Pagina 2: Territorio ----
@@ -325,7 +349,7 @@ def construir_informe():
                      "Series": [campo("fact_sectores", "clasificacion")]},
                     "Sectores de zona ciega", o))
     o += 1
-    v.append(visual(20, 435, 940, 245, "tableEx",
+    v.append(visual(20, 435, 700, 245, "tableEx",
                     {"Values": [campo("fact_sectores", "ranking"),
                                 campo("fact_sectores", "municipio"),
                                 campo("fact_sectores", "clasificacion"),
@@ -335,9 +359,11 @@ def construir_informe():
                                 campo("fact_sectores", "diagnostico")]},
                     "Sectores ordenados por brecha de cobertura", o))
     o += 1
-    v.append(visual(975, 435, 285, 245, "slicer",
+    v.append(visual(730, 435, 255, 245, "slicer",
                     {"Values": [campo("fact_sectores", "clasificacion")]},
                     "Diagnóstico", o))
+    o += 1
+    v.append(slicer_fecha(995, 435, 265, 245, o))
     paginas.append(("Territorio", v))
 
     # ---- Pagina 3: Coordinaciones ----
@@ -359,13 +385,15 @@ def construir_informe():
                      "Y": [medida("Carga de violencia")]},
                     "Carga de violencia por coordinación", o))
     o += 1
-    v.append(visual(655, 335, 605, 345, "tableEx",
+    v.append(visual(655, 335, 395, 345, "tableEx",
                     {"Values": [campo("dim_municipio", "municipio"),
                                 campo("dim_municipio", "coordinacion"),
                                 campo("dim_municipio", "indice_presion"),
                                 campo("dim_municipio", "despliegue_banda"),
                                 campo("dim_municipio", "sectores_desatendidos")]},
                     "Detalle por municipio", o))
+    o += 1
+    v.append(slicer_fecha(1060, 335, 200, 345, o))
     paginas.append(("Coordinaciones", v))
 
     # ---- Pagina 4: Casos a revisar ----
@@ -375,9 +403,11 @@ def construir_informe():
         v.append(visual(20 + i * 305, 20, 285, 120, "card",
                         {"Values": [medida(m)]}, m, o))
     o += 1
-    v.append(visual(630, 20, 630, 120, "slicer",
+    v.append(visual(630, 20, 300, 120, "slicer",
                     {"Values": [campo("fact_auditoria", "nivel_revision")]},
                     "Prioridad de revisión", o))
+    o += 1
+    v.append(slicer_fecha(945, 20, 315, 120, o))
     o += 1
     v.append(visual(20, 155, 1240, 525, "tableEx",
                     {"Values": [campo("fact_auditoria", "folio"),
@@ -389,6 +419,19 @@ def construir_informe():
                                 campo("fact_auditoria", "accion_sugerida")]},
                     "Decesos dudosos, suicidios y personas no localizadas", o))
     paginas.append(("Casos a revisar", v))
+
+    # ---- Pagina 5: Evidencia (fotos de escena, reservada) ----
+    if HAY_EVIDENCIA:
+        v, o = [], 0
+        o += 1
+        v.append(slicer_fecha(20, 20, 300, 660, o))
+        o += 1
+        v.append(visual(335, 20, 925, 660, "tableEx",
+                        {"Values": [campo("dim_evidencia", "foto"),
+                                    campo("dim_evidencia", "fecha"),
+                                    campo("dim_evidencia", "caso")]},
+                        "Evidencia fotográfica — reservada (uso interno)", o))
+        paginas.append(("Evidencia", v))
 
     secciones = []
     for i, (nombre, visuales) in enumerate(paginas):
