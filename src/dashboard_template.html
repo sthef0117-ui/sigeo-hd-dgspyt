@@ -208,6 +208,41 @@ html[data-tema="oscuro"] .que-es .ico{color:#0e131a}
 #ficha-resultados .r b{color:var(--guinda)}
 #ficha-resultados .r small{color:var(--tx3);display:block;font-size:.75rem}
 .ficha-nav{display:flex;gap:8px;align-items:center}
+
+/* ── Buscador universal del mapa: el corazón de la app ── */
+.buscador-univ{padding:14px 16px 12px}
+.buscador-univ .titu{font-size:.82rem;font-weight:700;color:var(--tx);margin-bottom:2px}
+.buscador-univ .titu .g{color:var(--guinda)}
+.buscador-univ .sub{font-size:.75rem;color:var(--tx3);margin-bottom:9px}
+.bu-caja{position:relative}
+.bu-caja .lupa{position:absolute;left:13px;top:50%;transform:translateY(-50%);
+  font-size:1rem;opacity:.6;pointer-events:none}
+#bu-input{width:100%;padding:12px 14px 12px 40px;border-radius:10px;
+  border:1.5px solid var(--borde2);background:var(--sup2);color:var(--tx);
+  font-family:var(--f);font-size:.95rem}
+#bu-input:focus{outline:none;border-color:var(--guinda)}
+#bu-res{position:relative}
+#bu-res .caja{position:absolute;z-index:60;left:0;right:0;background:var(--sup);
+  border:1px solid var(--borde2);border-radius:10px;box-shadow:var(--sombra2);
+  max-height:380px;overflow-y:auto;margin-top:5px}
+#bu-res .grupo{padding:6px 12px;font-size:.68rem;font-weight:700;letter-spacing:.04em;
+  text-transform:uppercase;color:var(--tx3);background:var(--sup3);position:sticky;top:0}
+#bu-res .r{display:flex;align-items:center;gap:10px;padding:9px 12px;cursor:pointer;
+  border-bottom:1px solid var(--borde)}
+#bu-res .r:hover{background:var(--sup3)}
+#bu-res .r .chip{flex:none;width:22px;height:22px;border-radius:6px;display:grid;
+  place-items:center;font-size:.72rem;font-weight:700;color:#fff}
+#bu-res .r .cuerpo{flex:1;min-width:0}
+#bu-res .r .t1{font-size:.85rem;font-weight:600;color:var(--tx);
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#bu-res .r .t2{font-size:.74rem;color:var(--tx3);
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#bu-res .r .accion{flex:none;font-size:.72rem;font-weight:700;color:var(--guinda);
+  border:1px solid var(--guinda);border-radius:14px;padding:3px 9px;background:transparent}
+#bu-res .r .accion:hover{background:var(--guinda);color:#fff}
+#bu-res .vacio{padding:16px 12px;color:var(--tx3);font-size:.82rem}
+.ch-hd{background:#7a1327}.ch-sec{background:#6d28d9}.ch-base{background:#0f766e}
+.ch-mun{background:#3f7fa6}.ch-caso{background:#b45309}
 .dossier{background:var(--sup);border:1px solid var(--borde);border-radius:12px;
   box-shadow:var(--sombra);max-width:1000px;margin:0 auto;overflow:hidden}
 .dossier .cinta{background:var(--tinta,#16202c);background:#16202c;color:#fff;padding:20px 30px}
@@ -410,6 +445,18 @@ html[data-tema="oscuro"] .hoja h2{color:#7a1327}
 
   <!-- ══════════ 02 TERRITORIO ══════════ -->
   <section class="vista" id="v-territorio">
+    <div class="tarjeta buscador-univ">
+      <div class="titu">Buscador <span class="g">SIGEO</span> — encuentra y genera producto</div>
+      <div class="sub">Escribe lo que sea (municipio, colonia, HD-#, fecha, móvil, sector, base, caso)
+        o toca un punto del mapa. Cada resultado te lleva al lugar y te abre su ficha.</div>
+      <div class="bu-caja">
+        <span class="lupa">🔎</span>
+        <input type="text" id="bu-input" autocomplete="off"
+          placeholder="Buscar en todo el sistema…">
+      </div>
+      <div id="bu-res"></div>
+    </div>
+
     <div class="aviso a-azul">
       <b>¿Por qué no se patrulla ahí?</b> — El territorio se divide en celdas de ~2.2&nbsp;km.
       En cada una se suma la violencia registrada (homicidio corroborado ×10 y cada llamada 911 según
@@ -1017,6 +1064,149 @@ function popupSector(z){
     <div style="margin-top:7px;padding-top:6px;border-top:1px solid #e6e9ed">${E(z.diagnostico)}</div>
     ${z.sin_camaras_reportado?'<div style="margin-top:6px;color:#b45309"><b>Las acciones SSEM asientan que no se localizaron cámaras.</b></div>':""}
   </div>`;
+}
+
+/* ═══════════ Buscador universal: buscar información + generar producto ═════
+   Un solo índice de todo lo consultable. Cada resultado hace las dos cosas que
+   son el propósito de la app: ubica el hecho en el mapa y abre su producto.  */
+let BU_INDICE=null;
+
+function encenderCapa(nombre){
+  const chip=document.querySelector(`[data-capa="${nombre}"]`);
+  if(chip && !chip.classList.contains("on")) chip.click();
+}
+// Lleva a la vista del mapa y ejecuta el vuelo DESPUÉS de que irA() ajuste el
+// tamaño del contenedor; si no, el encuadre automático pisaría el vuelo.
+function buEnMapa(fn){
+  const yaEsta=document.getElementById("v-territorio").classList.contains("on");
+  window._encuadrado=true;   // evita que el encuadre general robe el vuelo
+  irA("v-territorio");
+  setTimeout(fn, yaEsta?20:200);
+}
+function volarA(lat,lng,zoom){
+  if(mapa) mapa.setView([lat,lng], zoom||15, {animate:true});
+}
+
+// --- Acciones por tipo (ubicar en mapa + abrir su ficha/popup) ---
+function buUbicaHD(id){
+  const d=HDPORID[id]; if(!d||!d.lat) return;
+  buEnMapa(()=>{ encenderCapa("hd"); volarA(d.lat,d.lng,16);
+    L.popup({maxWidth:340}).setLatLng([d.lat,d.lng]).setContent(popupHD(d)).openOn(mapa); });
+}
+function buUbicaSector(sid){
+  const z=DATOS.zonas.find(s=>s.sector_id===sid); if(!z) return;
+  buEnMapa(()=>{ encenderCapa("sectores"); volarA(z.lat,z.lng,14);
+    L.popup({maxWidth:330}).setLatLng([z.lat,z.lng]).setContent(popupSector(z)).openOn(mapa); });
+}
+function buUbicaBase(idx){
+  const b=DATOS.bases[idx]; if(!b) return;
+  buEnMapa(()=>{ encenderCapa("bases"); volarA(b.lat,b.lng,15);
+    L.popup({maxWidth:300}).setLatLng([b.lat,b.lng]).setContent(
+    `<div style="font-family:Inter,sans-serif;font-size:.8rem;line-height:1.5">
+      <b>${E(b.unidad)}</b><br>${E(b.municipio)}<br>${E(b.ubicacion)||""}</div>`).openOn(mapa); });
+}
+function buUbicaMunicipio(nombre){
+  buEnMapa(()=>{
+    if(!capas.municipios) return;
+    let hallada=null;
+    capas.municipios.eachLayer(l=>{ if(l.feature&&l.feature.properties.municipio===nombre) hallada=l; });
+    if(hallada){ mapa.fitBounds(hallada.getBounds(),{animate:true,padding:[20,20]});
+      hallada.openTooltip(); }
+  });
+}
+function buUbicaCaso(idx){ irA("v-casos"); }
+
+// --- Construcción del índice (una sola vez) ---
+function buConstruirIndice(){
+  const ix=[];
+  DATOS.hd.forEach(h=>{
+    const f=FICHAS[String(h.id)]||{};
+    ix.push({tipo:"HD",chip:"HD",clase:"ch-hd",prio:1,
+      t1:`HD-${h.id} · ${h.municipio}${h.colonia?" · "+h.colonia:""}`,
+      t2:`${h.fecha||"s/f"} · ${h.movil||"móvil s/d"}`,
+      accion:"Ficha →", ir:()=>buUbicaHD(h.id), producto:()=>verFichaDe(h.id),
+      busq:NORM([`hd-${h.id}`,h.municipio,h.colonia,h.calle,h.fecha,h.movil,
+        h.dia_semana,f.coordinacion].join(" "))});
+  });
+  DATOS.zonas.forEach(z=>{
+    ix.push({tipo:"SEC",chip:"ZC",clase:"ch-sec",prio:2,
+      t1:`Zona ciega · ${z.municipio} · ${z.clasificacion}`,
+      t2:`${z.colonias.join(", ")||z.sector_id} · índice ${z.indice_ceguera}`,
+      accion:"Ver →", ir:()=>buUbicaSector(z.sector_id), producto:()=>buUbicaSector(z.sector_id),
+      busq:NORM([z.sector_id,z.municipio,z.clasificacion,z.colonias.join(" ")].join(" "))});
+  });
+  DATOS.territorio.filter(t=>t.carga_violencia>0).forEach(t=>{
+    ix.push({tipo:"MUN",chip:"MU",clase:"ch-mun",prio:3,
+      t1:`${t.municipio}`,
+      t2:`${t.coordinacion||"sin coordinación"} · ${t.hd_eventos} HD · ${t.llamadas_violentas} llam.`,
+      accion:"Mapa →", ir:()=>buUbicaMunicipio(t.municipio), producto:()=>buUbicaMunicipio(t.municipio),
+      busq:NORM([t.municipio,t.coordinacion,...(t.colonias_reincidentes||[])].join(" "))});
+  });
+  DATOS.bases.forEach((b,i)=>{
+    ix.push({tipo:"BASE",chip:"BA",clase:"ch-base",prio:4,
+      t1:`Base ${b.unidad}`, t2:`${b.municipio} · ${b.ubicacion||""}`,
+      accion:"Mapa →", ir:()=>buUbicaBase(i), producto:()=>buUbicaBase(i),
+      busq:NORM([b.unidad,b.municipio,b.ubicacion].join(" "))});
+  });
+  // Solo los casos que ameritan acción (alta/media); los de seguimiento
+  // estadístico no se indexan para no ahogar la búsqueda.
+  (DATOS.auditoria||[]).forEach((a,i)=>{
+    if(a.nivel_revision!=="ALTA"&&a.nivel_revision!=="MEDIA") return;
+    ix.push({tipo:"CASO",chip:"CA",clase:"ch-caso",prio:5,
+      t1:`Caso ${a.folio||i} · ${a.incidente||""}`,
+      t2:`${a.municipio||""} · prioridad ${(a.nivel_revision||"").toLowerCase()}`,
+      accion:"Ver →", ir:()=>buUbicaCaso(i), producto:()=>buUbicaCaso(i),
+      busq:NORM([a.folio,a.incidente,a.municipio,a.nivel_revision].join(" "))});
+  });
+  return ix;
+}
+
+const BU_ETIQUETA={HD:"Homicidios dolosos",SEC:"Zonas ciegas / sectores",
+  MUN:"Municipios",BASE:"Bases DGSPYT",CASO:"Casos a revisar"};
+
+function iniciarBuscadorUniversal(){
+  const inp=document.getElementById("bu-input");
+  const caja=document.getElementById("bu-res");
+  if(!inp||!caja) return;
+  BU_INDICE=buConstruirIndice();
+
+  function pintar(res){
+    if(!res.length){ caja.innerHTML=`<div class="caja"><div class="vacio">Sin resultados.
+      Prueba con un municipio, una colonia, HD-#, una fecha o "desatendido".</div></div>`; return; }
+    let html=`<div class="caja">`, tipoPrev=null;
+    res.forEach((r,i)=>{
+      if(r.tipo!==tipoPrev){ html+=`<div class="grupo">${BU_ETIQUETA[r.tipo]||r.tipo}</div>`; tipoPrev=r.tipo; }
+      html+=`<div class="r" data-i="${i}">
+        <span class="chip ${r.clase}">${r.chip}</span>
+        <span class="cuerpo"><span class="t1">${E(r.t1)}</span><span class="t2">${E(r.t2)}</span></span>
+        <button class="accion" data-prod="${i}">${E(r.accion)}</button></div>`;
+    });
+    caja.innerHTML=html+`</div>`;
+    caja.querySelectorAll(".r").forEach(el=>el.addEventListener("click",e=>{
+      const r=res[+el.dataset.i];
+      if(e.target.classList.contains("accion")) r.producto(); else r.ir();
+      inp.value=""; caja.innerHTML="";
+    }));
+  }
+
+  function buscar(){
+    const q=NORM(inp.value).trim();
+    if(!q){ caja.innerHTML=""; return; }
+    const mId=q.match(/^hd-?(\d+)$/);
+    let res;
+    if(mId){ const id=+mId[1]; res=BU_INDICE.filter(r=>r.tipo==="HD"&&HDPORID[id]&&r.busq.includes(`hd-${id} `)); }
+    if(!res||!res.length){
+      const terms=q.split(/\s+/);
+      res=BU_INDICE.filter(r=>terms.every(t=>r.busq.includes(t)));
+    }
+    res=res.sort((a,b)=>a.prio-b.prio).slice(0,25);
+    pintar(res);
+  }
+  inp.addEventListener("input",buscar);
+  inp.addEventListener("focus",buscar);
+  document.addEventListener("click",e=>{
+    if(!e.target.closest("#bu-res,#bu-input")) caja.innerHTML="";
+  });
 }
 
 function iniciarMapa(){
@@ -1817,6 +2007,7 @@ window.addEventListener("load",()=>{
   document.getElementById("contexto").textContent=TITULOS["v-panorama"][1];
   panorama(); graficas(); iniciarMapa(); territorio(); cruce();
   coordinaciones(); casos(); ubicaciones(); informe(); iniciarFicha();
+  iniciarBuscadorUniversal();
   pintarAyuda();
   document.getElementById("ayuda-btn").addEventListener("click",()=>{
     const oculta=sessionStorage.getItem("sigeo_ayuda")==="no";
