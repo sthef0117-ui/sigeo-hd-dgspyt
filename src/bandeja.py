@@ -28,6 +28,7 @@ from pathlib import Path
 RAIZ = Path(__file__).resolve().parent.parent
 BANDEJA = RAIZ / "insumos" / "bandeja"
 ANALISIS = RAIZ / "analisis"
+EVIDENCIA = BANDEJA / "_evidencia"   # fotos recortadas, reservadas, no publicables
 
 IGNORAR = {"LEEME.txt", "CATALOGO.md"}
 EXT_EXCEL = {".xlsx", ".xls", ".xlsm"}
@@ -142,12 +143,37 @@ def _ocr_disponible():
         return False
 
 
+def _recortar_evidencia(ruta):
+    """
+    Aísla la foto real de la captura de WhatsApp y la deja recortada en la
+    carpeta reservada. Devuelve una etiqueta corta del resultado. El recorte
+    es best-effort: si no logra aislar la foto, conserva la captura completa,
+    siempre como evidencia reservada. Nada de esto se publica.
+    """
+    try:
+        from recorte import recortar_foto
+    except Exception:
+        return ""
+    EVIDENCIA.mkdir(parents=True, exist_ok=True)
+    destino = EVIDENCIA / (ruta.stem + "_foto.png")
+    try:
+        r = recortar_foto(ruta, destino)
+    except Exception:
+        return ""
+    if r["recortada"]:
+        return " · foto recortada → _evidencia/ (reservada)"
+    return " · captura conservada en _evidencia/ (reservada)"
+
+
 def leer_imagen(ruta):
     """
     Las imágenes son evidencia reservada: su contenido gráfico NUNCA se muestra
-    ni se publica. Si el equipo tiene Tesseract instalado, se lee el texto de la
-    captura (tarjetas de WhatsApp) solo para extraer municipio, fecha o folio y
-    poder vincularla; ese texto se usa internamente, no se vuelca al catálogo.
+    ni se publica. Se hacen dos cosas con ellas, ambas internas:
+
+      1. Se recorta la FOTO real de la escena y se deja aparte, reservada
+         (el texto del chat no se recorta; para eso está el OCR).
+      2. Si el equipo tiene Tesseract, se lee el texto de la tarjeta solo para
+         extraer municipio, fecha o folio y poder vincular la captura.
     """
     from PIL import Image
     try:
@@ -162,10 +188,12 @@ def leer_imagen(ruta):
                     texto = pytesseract.image_to_string(im)
     except Exception:
         return "Imagen (no legible) · evidencia reservada", ""
+    corte = _recortar_evidencia(ruta)
     if texto.strip():
-        return f"Imagen · {dim} · texto leído por OCR · evidencia reservada", texto + " " + ruta.name
+        return (f"Imagen · {dim} · texto leído por OCR · evidencia reservada{corte}",
+                texto + " " + ruta.name)
     return (f"Imagen · {dim} · sin OCR (instale Tesseract para leerla) · "
-            "evidencia reservada", ruta.name)
+            f"evidencia reservada{corte}", ruta.name)
 
 
 def clasificar(ruta):
@@ -231,7 +259,8 @@ def main():
 
     archivos = [p for p in sorted(BANDEJA.rglob("*"))
                 if p.is_file() and p.name not in IGNORAR
-                and "_organizado" not in p.parts]
+                and "_organizado" not in p.parts
+                and "_evidencia" not in p.parts]
     if not archivos:
         print("La bandeja está vacía.")
         print(f"Deja archivos en: {BANDEJA}")
