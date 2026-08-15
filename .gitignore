@@ -32,3 +32,6 @@ powerbi/evidencia/
 
 # CSV de Power BI: artefactos generados (algunos con narrativa/datos personales). Se rehacen con export_powerbi.py
 powerbi/*.csv
+
+# Tarjetas de WhatsApp con nombres completos: interno, no se versiona (la web va enmascarada en index.html)
+analisis/tarjetas_whatsapp.json

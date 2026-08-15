@@ -243,6 +243,12 @@ html[data-tema="oscuro"] .que-es .ico{color:#0e131a}
 #bu-res .vacio{padding:16px 12px;color:var(--tx3);font-size:.82rem}
 .ch-hd{background:#7a1327}.ch-sec{background:#6d28d9}.ch-base{background:#0f766e}
 .ch-mun{background:#3f7fa6}.ch-caso{background:#b45309}
+.evi-res{border:1px solid var(--borde2);border-radius:8px;background:var(--sup2);padding:0 13px;margin-top:4px}
+.evi-res summary{cursor:pointer;padding:11px 0;font-size:.85rem;font-weight:700;color:var(--guinda);list-style:none}
+.evi-res summary::-webkit-details-marker{display:none}
+.evi-res summary::before{content:"▸ ";color:var(--guinda)}
+.evi-res[open] summary::before{content:"▾ "}
+.evi-res .evi-cuerpo{padding:0 0 13px;font-size:.84rem;color:var(--tx2);line-height:1.55}
 .dossier{background:var(--sup);border:1px solid var(--borde);border-radius:12px;
   box-shadow:var(--sombra);max-width:1000px;margin:0 auto;overflow:hidden}
 .dossier .cinta{background:var(--tinta,#16202c);background:#16202c;color:#fff;padding:20px 30px}
@@ -1197,10 +1203,64 @@ function buConstruirIndice(){
       accion:"Ver →", ir:()=>buUbicaCaso(i), producto:()=>buUbicaCaso(i),
       busq:NORM([a.folio,a.incidente,a.municipio,a.nivel_revision].join(" "))});
   });
+  // Tarjetas de WhatsApp: homicidios reales reportados por el chat. Prioridad
+  // alta en la búsqueda: son hechos, no numeralia.
+  (DATOS.tarjetas||[]).forEach((t,i)=>{
+    const hd=t.clasificacion==="HOMICIDIO DOLOSO";
+    ix.push({tipo:"WA",chip:"WA",clase:"ch-hd",prio:hd?0:6,
+      t1:`${t.municipio||"¿?"} · ${t.arma}${t.victima_edad?" · "+t.victima_edad+" años":""}`,
+      t2:`${t.clasificacion}${t.lugar?" · "+t.lugar:""}`,
+      accion:"Ficha →", ir:()=>verFichaTarjeta(i), producto:()=>verFichaTarjeta(i),
+      busq:NORM([t.municipio,t.lugar,t.arma,t.movil,t.causa_reportada,t.narrativa].join(" "))});
+  });
   return ix;
 }
+function verFichaTarjeta(i){ irA("v-ficha"); setTimeout(()=>{
+  document.getElementById("ficha-doc").innerHTML=renderDossierTarjeta(i);
+},60); }
+function renderDossierTarjeta(i){
+  const t=(DATOS.tarjetas||[])[i]; if(!t) return "<div class='cuerpo-d'>Tarjeta no encontrada.</div>";
+  const hd=t.clasificacion==="HOMICIDIO DOLOSO";
+  const vic=(t.victima_edad?t.victima_edad+" años":"edad s/d")+
+    (t.victima_sexo&&t.victima_sexo!=="No determinado"?" · "+t.victima_sexo.toLowerCase():"");
+  return `
+   <div class="cinta">
+     <div class="folio">SIGEO-HD · FICHA DE INTELIGENCIA · REPORTE WHATSAPP</div>
+     <h2>${hd?"Homicidio doloso":E(t.clasificacion)} — ${E(t.municipio)||"municipio por confirmar"}</h2>
+     <div class="meta">${E(t.fecha_mensaje)||"fecha del reporte s/d"} · ${E(t.lugar)||"lugar no especificado"} ·
+       reporte no corroborado contra la tabla oficial de HD</div>
+   </div>
+   <div class="cuerpo-d">
+     <div class="dgrid">
+       <div class="dcelda"><div class="k">Clasificación</div><div class="v" style="font-size:.9rem">${hd?'<span class="et e-rojo">HD</span>':E(t.clasificacion)}</div></div>
+       <div class="dcelda"><div class="k">Arma / mecánica</div><div class="v" style="font-size:.9rem">${E(t.arma)}</div></div>
+       <div class="dcelda"><div class="k">Víctima</div><div class="v" style="font-size:.9rem">${vic}</div></div>
+       <div class="dcelda"><div class="k">Agresores</div><div class="v" style="font-size:.9rem">${t.num_agresores?t.num_agresores+" sujetos":"en investigación"}</div></div>
+     </div>
+     <div class="dsec"><h3>1 · El hecho</h3>
+       <p class="dparr">${E(t.narrativa)}</p>
+       <div class="dnota" style="margin-top:10px"><b>Lugar:</b> ${E(t.lugar)||"no especificado"}, ${E(t.municipio)||"municipio por confirmar"}.
+         ${t.causa_reportada?`<br><b>Causa reportada:</b> ${E(t.causa_reportada)}.`:""}
+         ${t.movil?`<br><b>Móvil probable:</b> ${E(t.movil)}.`:""}</div>
+     </div>
+     <div class="dsec"><h3>2 · Lectura de inteligencia</h3>
+       <p class="dparr">${hd
+         ? "El reporte reúne elementos de homicidio doloso ("+E(t.arma).toLowerCase()+"). Debe corroborarse contra la tabla oficial de HD; si no aparece ahí, es un posible subregistro y conviene solicitar la carpeta a la FGJEM."
+         : "Clasificación provisional: "+E(t.clasificacion)+". Requiere revisión de la carpeta para confirmar competencia."}</p>
+       <div class="dnota"><b>Origen:</b> tarjeta informativa de WhatsApp procesada por SIGEO-HD. Hecho reportado, aún no validado contra el concentrado oficial. Los nombres se omiten en esta vista web por protección de datos; el expediente interno los conserva.</div>
+     </div>
+     <details class="evi-res">
+       <summary>Evidencia fotográfica · reservada (clic para ver estatus)</summary>
+       <div class="evi-cuerpo">La captura de este hecho contiene una fotografía de escena. Es
+       <b>material gráfico reservado</b> y <b>no se muestra en el tablero web</b>. Está disponible,
+       recortada, en los productos internos: la página <b>Evidencia</b> del Power BI y la carpeta local
+       reservada <span class="m">powerbi/evidencia/</span>.</div>
+     </details>
+     <div class="no-print"><button class="btn btn-p" onclick="window.print()">Imprimir / PDF</button></div>
+   </div>`;
+}
 
-const BU_ETIQUETA={HD:"Homicidios dolosos",SEC:"Zonas ciegas / sectores",
+const BU_ETIQUETA={WA:"Reportes de WhatsApp (HD reales)",HD:"Homicidios dolosos",SEC:"Zonas ciegas / sectores",
   MUN:"Municipios",BASE:"Bases DGSPYT",CASO:"Casos a revisar"};
 
 function iniciarBuscadorUniversal(){
