@@ -63,6 +63,71 @@ def _clasificar(texto, arma):
     return "REVISAR — sin arma clara"
 
 
+def _a_fecha(txt):
+    """'13/08/26' o '13/08/2026' -> (2026,8,13); None si no se puede."""
+    m = re.match(r"(\d{1,2})/(\d{1,2})/(\d{2,4})", str(txt or ""))
+    if not m:
+        return None
+    d, mo, y = int(m.group(1)), int(m.group(2)), int(m.group(3))
+    if y < 100:
+        y += 2000
+    try:
+        from datetime import date
+        return date(y, mo, d)
+    except ValueError:
+        return None
+
+
+def cruzar_con_sabana(eventos):
+    """
+    Marca cada tarjeta según esté o no en el concentrado oficial de HD (la
+    'sábana'). Empata por municipio y cercanía de fecha (±3 días, usando la
+    fecha del mensaje como aproximación del hecho). Si empata, hereda las
+    coordenadas del registro oficial —útiles para ubicar el punto en el mapa—.
+    """
+    from datetime import timedelta
+    p = ANALISIS / "corroborados_sigeo.json"
+    sabana = json.loads(p.read_text(encoding="utf-8")) if p.exists() else []
+    por_muni = {}
+    for h in sabana:
+        por_muni.setdefault(_norm(h.get("municipio")), []).append(h)
+
+    for e in eventos:
+        e["en_sabana"] = False
+        e["sabana_id"] = None
+        e["estatus_sabana"] = "Sin verificar"
+        e["lat"] = None
+        e["lng"] = None
+        if e["clasificacion"] != "HOMICIDIO DOLOSO":
+            continue
+        f_ev = _a_fecha(e.get("fecha_mensaje"))
+        candidatos = por_muni.get(_norm(e["municipio"]), [])
+        mejor = None
+        for h in candidatos:
+            f_h = None
+            if h.get("fecha"):
+                try:
+                    from datetime import date
+                    y, mo, d = (int(x) for x in h["fecha"].split("-"))
+                    f_h = date(y, mo, d)
+                except Exception:
+                    f_h = None
+            cerca = (f_ev and f_h and abs((f_ev - f_h).days) <= 3)
+            if cerca or (not f_ev):  # si no hay fecha, empata por municipio
+                mejor = h
+                if cerca:
+                    break
+        if mejor:
+            e["en_sabana"] = True
+            e["sabana_id"] = mejor.get("id")
+            e["estatus_sabana"] = "En sábana (registrado)"
+            e["lat"] = mejor.get("lat")
+            e["lng"] = mejor.get("lng")
+        else:
+            e["estatus_sabana"] = "POSIBLE SUBREGISTRO (no está en la sábana)"
+    return eventos
+
+
 def separar_mensajes(txt):
     """Corta el chat en (fecha, remitente, cuerpo) por cada marca de mensaje."""
     marcas = list(_RE_MSG.finditer(txt))
@@ -116,25 +181,37 @@ def main():
         vistos.add(clave)
         unicos.append(e)
 
+    cruzar_con_sabana(unicos)
+
     ANALISIS.mkdir(parents=True, exist_ok=True)
     (ANALISIS / "tarjetas_whatsapp.json").write_text(
         json.dumps(unicos, ensure_ascii=False, indent=1), encoding="utf-8")
 
     hd = [e for e in unicos if e["clasificacion"] == "HOMICIDIO DOLOSO"]
+    en_sabana = [e for e in hd if e["en_sabana"]]
+    subregistro = [e for e in hd if not e["en_sabana"]]
     rev = [e for e in unicos if e["clasificacion"].startswith("REVISAR")]
     nohd = [e for e in unicos if e["clasificacion"].startswith("NO HD")]
 
     L = ["# Tarjetas de WhatsApp — hechos reportados", "",
          f"Total de tarjetas leídas: **{len(unicos)}**", "",
          f"- Homicidios dolosos (por arma): **{len(hd)}**",
+         f"    - Ya en la sábana oficial: **{len(en_sabana)}**",
+         f"    - **Posible subregistro (no están en la sábana): {len(subregistro)}**",
          f"- A revisar (causa a determinar / sin arma clara): **{len(rev)}**",
          f"- No HD (tránsito / suicidio): **{len(nohd)}**", "",
-         "## Homicidios dolosos", ""]
-    for e in hd:
+         "## Homicidios dolosos — POSIBLE SUBREGISTRO (revisar primero)", "",
+         "_No se localizaron en el concentrado oficial; conviene solicitar carpeta a la FGJEM._", ""]
+    for e in subregistro:
         L.append(f"- **{e['municipio'] or '¿?'}** · {e['arma']} · "
                  f"{('víctima '+str(e['victima_edad'])+' años') if e['victima_edad'] else 'edad s/d'}"
                  f"{' · '+e['lugar'] if e['lugar'] else ''}  \n"
-                 f"  _{e['movil']}_ · causa: {e['causa_reportada'] or '—'}")
+                 f"  _{e['movil']}_ · fecha reporte {e.get('fecha_mensaje','')}")
+    L += ["", "## Homicidios dolosos — ya en la sábana", ""]
+    for e in en_sabana:
+        L.append(f"- **{e['municipio'] or '¿?'}** · {e['arma']} · "
+                 f"{('víctima '+str(e['victima_edad'])+' años') if e['victima_edad'] else 'edad s/d'}"
+                 f" · HD-{e['sabana_id']}{' · '+e['lugar'] if e['lugar'] else ''}")
     L += ["", "## A revisar", ""]
     for e in rev:
         L.append(f"- {e['municipio'] or '¿?'} · causa: {e['causa_reportada'] or '—'}"
@@ -149,6 +226,8 @@ def main():
     print("SIGEO-HD DGSPYT - ingesta de WhatsApp")
     print(f"  tarjetas leidas ............ {len(unicos)}")
     print(f"  homicidios dolosos ......... {len(hd)}")
+    print(f"    ya en la sabana .......... {len(en_sabana)}")
+    print(f"    posible subregistro ...... {len(subregistro)}")
     print(f"  a revisar .................. {len(rev)}")
     print(f"  no HD (transito/suicidio) .. {len(nohd)}")
     print(f"  JSON ....................... {ANALISIS / 'tarjetas_whatsapp.json'}")

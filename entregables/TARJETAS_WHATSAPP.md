@@ -3,101 +3,96 @@
 Total de tarjetas leídas: **71**
 
 - Homicidios dolosos (por arma): **45**
+    - Ya en la sábana oficial: **12**
+    - **Posible subregistro (no están en la sábana): 33**
 - A revisar (causa a determinar / sin arma clara): **23**
 - No HD (tránsito / suicidio): **3**
 
-## Homicidios dolosos
+## Homicidios dolosos — POSIBLE SUBREGISTRO (revisar primero)
+
+_No se localizaron en el concentrado oficial; conviene solicitar carpeta a la FGJEM._
 
 - **ECATEPEC** · Arma blanca · víctima 38 años  
-  _Se desconoce el móvil de la agresión_ · causa: 1 PERSONA MUERTA POR HERIDA DE ARMA BLANCA
+  _Se desconoce el móvil de la agresión_ · fecha reporte 13/08/26
 - **TEXCOCO** · Arma de fuego · víctima 27 años · Cerrada de Álvaro Obregón  
-  _Posible riña / entre conocidos_ · causa: 1 PERSONA MUERTA POR IMPACTOS DE BALA
+  _Posible riña / entre conocidos_ · fecha reporte 13/08/26
 - **TLALNEPANTLA** · Arma de fuego · víctima 35 años  
-  _Posible riña / entre conocidos_ · causa: 1 PERSONA LESIONADA POR IMPACTO DE BALA
+  _Posible riña / entre conocidos_ · fecha reporte 13/08/26
 - **COACALCO** · Arma de fuego · edad s/d  
-  _Se desconoce el móvil de la agresión_ · causa: 1 PERSONA MUERTA POR IMPACTOS DE BALA
+  _Se desconoce el móvil de la agresión_ · fecha reporte 13/08/26
 - **POLOTITLAN** · Arma de fuego · víctima 44 años  
-  _Posible riña / entre conocidos_ · causa: 1 PERSONA MUERTA POR IMPACTO DE BALA
+  _Posible riña / entre conocidos_ · fecha reporte 13/08/26
 - **TEMASCALAPA** · Arma de fuego · edad s/d  
-  _Se desconoce el móvil de la agresión_ · causa: 1 PERSONA MUERTA POR IMPACTO DE BALA
+  _Se desconoce el móvil de la agresión_ · fecha reporte 13/08/26
 - **LA PAZ** · Arma de fuego · víctima 56 años  
-  _Se desconoce el móvil de la agresión_ · causa: PERSONA MUERTA POR IMPACTO DE BALA
+  _Se desconoce el móvil de la agresión_ · fecha reporte 13/08/26
 - **NAUCALPAN** · Arma de fuego · víctima 27 años  
-  _Se desconoce el móvil de la agresión_ · causa: 1 PERSONA MUERTA POR IMPACTO DE BALA
+  _Se desconoce el móvil de la agresión_ · fecha reporte 13/08/26
 - **TLALNEPANTLA** · Arma de fuego · víctima 23 años · Calle Mirador  
-  _Se desconoce el móvil de la agresión_ · causa: UNA PERSONA MUERTA POR IMPACTO DE BALA
+  _Se desconoce el móvil de la agresión_ · fecha reporte 13/08/26
 - **ECATEPEC** · Arma de fuego · víctima 24 años  
-  _Se desconoce el móvil de la agresión_ · causa: PERSONA MUERTA POR IMPACTOS DE BALA
+  _Se desconoce el móvil de la agresión_ · fecha reporte 13/08/26
 - **NEZAHUALCOYOTL** · Arma de fuego · víctima 17 años · Avenida Nezahualcóyotl sin número Colonia C  
-  _Se desconoce el móvil de la agresión_ · causa: 1 PERSONA MUERTA Y 1 LESIONADO POR IMPACTO DE PROYECTIL DE ARMA DE FUEGO
+  _Se desconoce el móvil de la agresión_ · fecha reporte 13/08/26
 - **IXTAPALUCA** · Arma de fuego · edad s/d  
-  _Se desconoce el móvil de la agresión_ · causa: 1 PERSONA MUERTA POR DISPARO DE ARMA DE FUEGO
+  _Se desconoce el móvil de la agresión_ · fecha reporte 13/08/26
 - **TLALNEPANTLA** · Arma de fuego · edad s/d  
-  _Se desconoce el móvil de la agresión_ · causa: 1 PERSONA MUERTA POR DISPARO DE ARMA DE FUEGO
+  _Se desconoce el móvil de la agresión_ · fecha reporte 13/08/26
 - **NEXTLALPAN** · Arma blanca · edad s/d  
-  _Se desconoce el móvil de la agresión_ · causa: PERSONA MUERTA POR ARMA PUNZOCORTANTE
+  _Se desconoce el móvil de la agresión_ · fecha reporte 13/08/26
 - **IXTAPALUCA** · Arma de fuego · víctima 25 años  
-  _Se desconoce el móvil de la agresión_ · causa: 1 PERSONA MUERTA POR IMPACTO DE BALA
+  _Se desconoce el móvil de la agresión_ · fecha reporte 13/08/26
 - **TLALNEPANTLA** · Arma de fuego · edad s/d  
-  _Se desconoce el móvil de la agresión_ · causa: 1 PERSONA MUERTA POR IMPACTO DE BALA
+  _Se desconoce el móvil de la agresión_ · fecha reporte 13/08/26
 - **VALLE DE CHALCO** · Arma de fuego · víctima 55 años · Avenida Moctezuma  
-  _Se desconoce el móvil de la agresión_ · causa: 1 PERSONA MUERTA POR IMPACTO DE BALA
+  _Se desconoce el móvil de la agresión_ · fecha reporte 13/08/26
 - **ECATEPEC** · Arma blanca · víctima 63 años · Avenida de las Flores  
-  _Posible riña / entre conocidos_ · causa: 1 PERSONA MUERTA POR HERIDAS DE ARMA BLANCA Y 1 DETENIDO
+  _Posible riña / entre conocidos_ · fecha reporte 13/08/26
 - **TULTITLAN** · Arma de fuego · víctima 27 años · Avenida Hidalgo  
-  _Se desconoce el móvil de la agresión_ · causa: 1 PERSONA MUERTA Y 1 LESIONADA POR IMPACTO DE BALA
+  _Se desconoce el móvil de la agresión_ · fecha reporte 13/08/26
 - **TECAMAC** · Arma de fuego · víctima 35 años · Cerrada de Jardines de La Viña  
-  _Posible robo_ · causa: PERSONA MUERTA POR IMPACTO DE BALA
+  _Posible robo_ · fecha reporte 13/08/26
 - **ECATEPEC** · Arma de fuego · víctima 33 años  
-  _Se desconoce el móvil de la agresión_ · causa: PERSONA MUERTA POR IMPACTOS DE BALA
+  _Se desconoce el móvil de la agresión_ · fecha reporte 13/08/26
 - **ZUMPANGO** · Arma de fuego · edad s/d  
-  _Se desconoce el móvil de la agresión_ · causa: UNA PERSONA MUERTA Y UNA LESIONADA POR IMPACTOS DE BALA
+  _Se desconoce el móvil de la agresión_ · fecha reporte 13/08/26
 - **ECATEPEC** · Arma de fuego · edad s/d · Av. Tamaulipas esquina Felipe carrillo puerto col  
-  _Se desconoce el móvil de la agresión_ · causa: UNA PERSONA MUERTA POR ASFIXIA LA CUAL SE ENCUENTRA MANIATADA Y ENCOBIJADA
+  _Se desconoce el móvil de la agresión_ · fecha reporte 13/08/26
 - **ALMOLOYA** · Arma de fuego · víctima 27 años · Privada Cerro Tlaloc, Fraccionamiento Colinas del Sol  
-  _Posible riña / entre conocidos_ · causa: PERSONA MUERTA POR IMPACTO DE BALA
+  _Posible riña / entre conocidos_ · fecha reporte 13/08/26
 - **NEZAHUALCOYOTL** · Arma de fuego · víctima 16 años  
-  _Posible riña / entre conocidos_ · causa: PERSONA MUERTA POR IMPACTO DE BALA
+  _Posible riña / entre conocidos_ · fecha reporte 13/08/26
 - **LA PAZ** · Arma de fuego · víctima 10 años · Av. Texcoco Manzana 96 Lote 12, Col. Ancón  
-  _Se desconoce el móvil de la agresión_ · causa: UNA PERSONA MUERTA Y DOS PERSONAS LESIONADAS POR IMPACTOS DE BALA
-- **ECATEPEC** · Arma de fuego · víctima 30 años  
-  _Se desconoce el móvil de la agresión_ · causa: 1 PERSONA MUERTA POR IMPACTO DE BALA
+  _Se desconoce el móvil de la agresión_ · fecha reporte 13/08/26
 - **TOLUCA** · Arma de fuego · edad s/d  
-  _Se desconoce el móvil de la agresión_ · causa: 1 PERSONA MUERTA POR PROYECTIL DE ARMA DE FUEGO
+  _Se desconoce el móvil de la agresión_ · fecha reporte 23/07/26
 - **OCOYOACAC** · Arma de fuego · víctima 21 años  
-  _Se desconoce el móvil de la agresión_ · causa: 1 PERSONA MUERTA POR IMPACTO DE BALA Y 2 LESIONADOS POR GOLPES
-- **NAUCALPAN** · Arma de fuego · víctima 30 años · Boulevard Manuel Ávila Camacho  
-  _Posible riña / entre conocidos_ · causa: 1 PERSONA MUERTA, y 1 LESIONADA POR DISPAROS DE ARMA DE FUEGO, ASÍ COMO 3 DETENIDOS
-- **NICOLAS ROMERO** · Arma de fuego · víctima 36 años  
-  _Se desconoce el móvil de la agresión_ · causa: 1 PERSONA MUERTA POR IMPACTOS DE BALA
+  _Se desconoce el móvil de la agresión_ · fecha reporte 23/07/26
 - **CHALCO** · Arma de fuego · edad s/d  
-  _Se desconoce el móvil de la agresión_ · causa: 1 PERSONA MUERTA POR IMPACTO DE BALA
-- **TECAMAC** · Arma de fuego · edad s/d  
-  _Se desconoce el móvil de la agresión_ · causa: 1 PERSONA MUERTA POR IMPACTO DE BALA
+  _Se desconoce el móvil de la agresión_ · fecha reporte 23/07/26
 - **TEOTIHUACAN** · Arma de fuego · víctima 24 años  
-  _Se desconoce el móvil de la agresión_ · causa: 1 ELEMENTO DE LA SEDENA MUERTO POR IMPACTO DE BALA - SUICIDIO
-- **CUAUTITLAN IZCALLI** · Arma de fuego · edad s/d  
-  _Se desconoce el móvil de la agresión_ · causa: PERSONA MUERTA POR IMPACTO DE BALA
+  _Se desconoce el móvil de la agresión_ · fecha reporte 24/07/26
 - **ZUMPANGO** · Arma de fuego · víctima 48 años · Calle Florencia, Fraccionamiento Nuevos Paseos de San Juan  
-  _Se desconoce el móvil de la agresión_ · causa: PERSONA MUERTA POR IMPACTO DE BALA
+  _Se desconoce el móvil de la agresión_ · fecha reporte 25/07/26
 - **ATIZAPAN** · Arma de fuego · víctima 26 años  
-  _Se desconoce el móvil de la agresión_ · causa: 1 PERSONA MUERTA POR IMPACTO DE BALA
-- **NAUCALPAN** · Arma blanca · víctima 34 años · Calle Estacas con dirección a la Universidad  
-  _Posible riña / entre conocidos_ · causa: 1 PERSONA MUERTA POR ARMA BLANCA Y 1 DETENIDO
-- **ACAMBAY** · Arma de fuego · víctima 22 años  
-  _Posible riña / entre conocidos_ · causa: 1 PERSONA MUERTA POR IMPACTO DE BALA
+  _Se desconoce el móvil de la agresión_ · fecha reporte 25/07/26
 - **MELCHOR OCAMPO** · Arma de fuego · víctima 24 años  
-  _Se desconoce el móvil de la agresión_ · causa: 1 PERSONA MUERTA POR IMPACTO DE BALA
-- **ECATEPEC** · Arma de fuego · víctima 38 años  
-  _Se desconoce el móvil de la agresión_ · causa: 1 PERSONA MUERTA POR PROYECTIL DE ARMA DE FUEGO Y 1 LESIONADA
-- **ACOLMAN** · Arma de fuego · víctima 33 años  
-  _Se desconoce el móvil de la agresión_ · causa: 1 PERSONA MUERTA POR IMPACTO DE BALA
-- **NAUCALPAN** · Arma de fuego · víctima 32 años  
-  _Posible riña / entre conocidos_ · causa: 1 PERSONA MUERTA POR IMPACTO DE BALA Y 2 LESIONADAS, ASI COMO 1 LESIONADA POR GOLPES
-- **NAUCALPAN** · Arma de fuego · víctima 18 años  
-  _Posible riña / entre conocidos_ · causa: 2 PERSONAS LESIONADAS POR IMPACTO DE BALA
-- **NICOLAS ROMERO** · Arma de fuego · edad s/d  
-  _Se desconoce el móvil de la agresión_ · causa: 1 PERSONA MUERTA POR IMPACTO DE BALA - SUICIDIO
+  _Se desconoce el móvil de la agresión_ · fecha reporte 26/07/26
+
+## Homicidios dolosos — ya en la sábana
+
+- **ECATEPEC** · Arma de fuego · víctima 30 años · HD-528
+- **NAUCALPAN** · Arma de fuego · víctima 30 años · HD-519 · Boulevard Manuel Ávila Camacho
+- **NICOLAS ROMERO** · Arma de fuego · víctima 36 años · HD-527
+- **TECAMAC** · Arma de fuego · edad s/d · HD-530
+- **CUAUTITLAN IZCALLI** · Arma de fuego · edad s/d · HD-523
+- **NAUCALPAN** · Arma blanca · víctima 34 años · HD-526 · Calle Estacas con dirección a la Universidad
+- **ACAMBAY** · Arma de fuego · víctima 22 años · HD-533
+- **ECATEPEC** · Arma de fuego · víctima 38 años · HD-528
+- **ACOLMAN** · Arma de fuego · víctima 33 años · HD-534
+- **NAUCALPAN** · Arma de fuego · víctima 32 años · HD-526
+- **NAUCALPAN** · Arma de fuego · víctima 18 años · HD-526
+- **NICOLAS ROMERO** · Arma de fuego · edad s/d · HD-527
 
 ## A revisar
 

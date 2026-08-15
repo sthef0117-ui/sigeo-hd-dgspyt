@@ -249,6 +249,9 @@ html[data-tema="oscuro"] .que-es .ico{color:#0e131a}
 .evi-res summary::before{content:"▸ ";color:var(--guinda)}
 .evi-res[open] summary::before{content:"▾ "}
 .evi-res .evi-cuerpo{padding:0 0 13px;font-size:.84rem;color:var(--tx2);line-height:1.55}
+.pop-foto{background:#f2ede1;border:1px dashed #c9a24a;color:#7a5a12;border-radius:6px;
+  padding:6px 8px;font-size:.72rem;font-weight:600;text-align:center}
+html[data-tema="oscuro"] .pop-foto{background:#2a2418;border-color:#7a5a12;color:#d9be7a}
 .dossier{background:var(--sup);border:1px solid var(--borde);border-radius:12px;
   box-shadow:var(--sombra);max-width:1000px;margin:0 auto;overflow:hidden}
 .dossier .cinta{background:var(--tinta,#16202c);background:#16202c;color:#fff;padding:20px 30px}
@@ -1159,7 +1162,42 @@ function buUbicaMunicipio(nombre){
       hallada.openTooltip(); }
   });
 }
-function buUbicaCaso(idx){ irA("v-casos"); }
+function buUbicaCaso(idx){ irA("v-territorio");
+  const a=(DATOS.auditoria||[])[idx];
+  if(a&&a.lat&&a.lng){ volarA(a.lat,a.lng,15);
+    L.popup({maxWidth:300}).setLatLng([a.lat,a.lng]).setContent(
+      `<div style="min-width:220px"><div class="pop-tit" style="color:var(--ambar)">${E(a.incidente)}</div>
+       <div class="pop-sub">Folio ${E(a.folio)} · prioridad ${E((a.nivel_revision||"").toLowerCase())}</div>
+       <div class="pop-row"><b>${E(a.municipio)||""}</b></div></div>`).openOn(mapa);
+  } else if(a){ buUbicaMunicipio(a.municipio); } }
+function popupTarjeta(i){
+  const t=(DATOS.tarjetas||[])[i]; if(!t) return "";
+  const hd=t.clasificacion==="HOMICIDIO DOLOSO";
+  const nota=(t.narrativa||"").replace(/\s+/g," ").slice(0,170);
+  const etSab=t.en_sabana
+    ? '<span class="et e-verde">En sábana</span>'
+    : (hd?'<span class="et e-rojo">Posible subregistro</span>':"");
+  return `<div style="min-width:250px;max-width:300px">
+    <div class="pop-tit" style="color:var(--guinda)">${hd?"Homicidio doloso":E(t.clasificacion)} · ${E(t.municipio)||"s/mpio"}</div>
+    <div class="pop-sub">${E(t.arma)}${t.victima_edad?" · "+t.victima_edad+" años":""}${t.num_agresores?" · "+t.num_agresores+" agresores":""}</div>
+    <div style="margin:6px 0">${etSab} <span class="et e-gris">Reporte WhatsApp</span></div>
+    <div class="pop-foto">📷 Evidencia de escena — reservada (en productos internos)</div>
+    <div class="pop-row" style="font-size:.77rem;color:var(--tx2);margin-top:5px">${E(nota)}…</div>
+    <button class="pop-btn" onclick="verFichaTarjeta(${i})">Explorar ficha de inteligencia →</button>
+  </div>`;
+}
+function buUbicaTarjeta(i){
+  const t=(DATOS.tarjetas||[])[i]; if(!t) return;
+  irA("v-territorio");
+  if(t.lat&&t.lng){
+    encenderCapa("hd"); volarA(t.lat,t.lng,16);
+    L.popup({maxWidth:320}).setLatLng([t.lat,t.lng]).setContent(popupTarjeta(i)).openOn(mapa);
+  } else if(t.municipio){
+    buUbicaMunicipio(t.municipio);
+    setTimeout(()=>{ if(mapa) L.popup({maxWidth:320}).setLatLng(mapa.getCenter())
+      .setContent(popupTarjeta(i)).openOn(mapa); }, 420);
+  } else { verFichaTarjeta(i); }
+}
 
 // --- Construcción del índice (una sola vez) ---
 function buConstruirIndice(){
@@ -1207,10 +1245,12 @@ function buConstruirIndice(){
   // alta en la búsqueda: son hechos, no numeralia.
   (DATOS.tarjetas||[]).forEach((t,i)=>{
     const hd=t.clasificacion==="HOMICIDIO DOLOSO";
+    const sab=t.en_sabana?" · en sábana":(hd?" · posible subregistro":"");
     ix.push({tipo:"WA",chip:"WA",clase:"ch-hd",prio:hd?0:6,
       t1:`${t.municipio||"¿?"} · ${t.arma}${t.victima_edad?" · "+t.victima_edad+" años":""}`,
-      t2:`${t.clasificacion}${t.lugar?" · "+t.lugar:""}`,
-      accion:"Ficha →", ir:()=>verFichaTarjeta(i), producto:()=>verFichaTarjeta(i),
+      t2:`${t.clasificacion}${sab}${t.lugar?" · "+t.lugar:""}`,
+      // Primero el mapa (punto + generales), la ficha va en el botón.
+      accion:"Ficha →", ir:()=>buUbicaTarjeta(i), producto:()=>verFichaTarjeta(i),
       busq:NORM([t.municipio,t.lugar,t.arma,t.movil,t.causa_reportada,t.narrativa].join(" "))});
   });
   return ix;
